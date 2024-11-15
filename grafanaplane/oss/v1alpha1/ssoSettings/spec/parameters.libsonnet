@@ -33,6 +33,325 @@
   },
   forProvider+:
     {
+      '#withLdapSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)\nThe LDAP settings set. Required for the ldap provider.' } },
+      withLdapSettings(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              ldapSettings:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withLdapSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)\nThe LDAP settings set. Required for the ldap provider.' } },
+      withLdapSettingsMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              ldapSettings+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      ldapSettings+:
+        {
+          '#': { help: '', name: 'ldapSettings' },
+          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.' } },
+          withAllowSignUp(value=true): {
+            allowSignUp: value,
+          },
+          '#withConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) The LDAP configuration. (see below for nested schema)\nThe LDAP configuration.' } },
+          withConfig(value): {
+            config:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) The LDAP configuration. (see below for nested schema)\nThe LDAP configuration.' } },
+          withConfigMixin(value): {
+            config+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          config+:
+            {
+              '#': { help: '', name: 'config' },
+              '#withServers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) The LDAP servers configuration. (see below for nested schema)\nThe LDAP servers configuration.' } },
+              withServers(value): {
+                servers:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withServersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) The LDAP servers configuration. (see below for nested schema)\nThe LDAP servers configuration.' } },
+              withServersMixin(value): {
+                servers+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              servers+:
+                {
+                  '#': { help: '', name: 'servers' },
+                  '#withAttributes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) The LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.\nThe LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.' } },
+                  withAttributes(value): {
+                    attributes: value,
+                  },
+                  '#withAttributesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) The LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.\nThe LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.' } },
+                  withAttributesMixin(value): {
+                    attributes+: value,
+                  },
+                  '#withBindDn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The search user bind DN.\nThe search user bind DN.' } },
+                  withBindDn(value): {
+                    bindDn: value,
+                  },
+                  '#withBindPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The search user bind password.\nThe search user bind password.' } },
+                  withBindPasswordSecretRef(value): {
+                    bindPasswordSecretRef: value,
+                  },
+                  '#withBindPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The search user bind password.\nThe search user bind password.' } },
+                  withBindPasswordSecretRefMixin(value): {
+                    bindPasswordSecretRef+: value,
+                  },
+                  bindPasswordSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        bindPasswordSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        bindPasswordSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        bindPasswordSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withClientCert': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The path to the client certificate.\nThe path to the client certificate.' } },
+                  withClientCert(value): {
+                    clientCert: value,
+                  },
+                  '#withClientCertValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Base64 encoded value of the client certificate.\nThe Base64 encoded value of the client certificate.' } },
+                  withClientCertValue(value): {
+                    clientCertValue: value,
+                  },
+                  '#withClientKeySecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The path to the client private key.\nThe path to the client private key.' } },
+                  withClientKeySecretRef(value): {
+                    clientKeySecretRef: value,
+                  },
+                  '#withClientKeySecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The path to the client private key.\nThe path to the client private key.' } },
+                  withClientKeySecretRefMixin(value): {
+                    clientKeySecretRef+: value,
+                  },
+                  clientKeySecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        clientKeySecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        clientKeySecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        clientKeySecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withClientKeyValueSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Base64 encoded value of the client private key.\nThe Base64 encoded value of the client private key.' } },
+                  withClientKeyValueSecretRef(value): {
+                    clientKeyValueSecretRef: value,
+                  },
+                  '#withClientKeyValueSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Base64 encoded value of the client private key.\nThe Base64 encoded value of the client private key.' } },
+                  withClientKeyValueSecretRefMixin(value): {
+                    clientKeyValueSecretRef+: value,
+                  },
+                  clientKeyValueSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        clientKeyValueSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        clientKeyValueSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        clientKeyValueSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withGroupMappings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) For mapping an LDAP group to a Grafana organization and role. (see below for nested schema)\nFor mapping an LDAP group to a Grafana organization and role.' } },
+                  withGroupMappings(value): {
+                    groupMappings:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withGroupMappingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) For mapping an LDAP group to a Grafana organization and role. (see below for nested schema)\nFor mapping an LDAP group to a Grafana organization and role.' } },
+                  withGroupMappingsMixin(value): {
+                    groupMappings+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  groupMappings+:
+                    {
+                      '#': { help: '', name: 'groupMappings' },
+                      '#withGrafanaAdmin': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If set to true, it makes the user of group_dn Grafana server admin.\nIf set to true, it makes the user of group_dn Grafana server admin.' } },
+                      withGrafanaAdmin(value=true): {
+                        grafanaAdmin: value,
+                      },
+                      '#withGroupDn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) LDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").\nLDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").' } },
+                      withGroupDn(value): {
+                        groupDn: value,
+                      },
+                      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The Grafana organization database id.\nThe Grafana organization database id.' } },
+                      withOrgId(value): {
+                        orgId: value,
+                      },
+                      '#withOrgRole': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Assign users of group_dn the organization role Admin, Editor, or Viewer.\nAssign users of group_dn the organization role Admin, Editor, or Viewer.' } },
+                      withOrgRole(value): {
+                        orgRole: value,
+                      },
+                    },
+                  '#withGroupSearchBaseDns': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of the base DNs to search through for groups. Typically uses ou=groups.\nAn array of the base DNs to search through for groups. Typically uses ou=groups.' } },
+                  withGroupSearchBaseDns(value): {
+                    groupSearchBaseDns:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withGroupSearchBaseDnsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of the base DNs to search through for groups. Typically uses ou=groups.\nAn array of the base DNs to search through for groups. Typically uses ou=groups.' } },
+                  withGroupSearchBaseDnsMixin(value): {
+                    groupSearchBaseDns+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withGroupSearchFilter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Group search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).\nGroup search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).' } },
+                  withGroupSearchFilter(value): {
+                    groupSearchFilter: value,
+                  },
+                  '#withGroupSearchFilterUserAttribute': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The %s in the search filter will be replaced with the attribute defined in this field.\nThe %s in the search filter will be replaced with the attribute defined in this field.' } },
+                  withGroupSearchFilterUserAttribute(value): {
+                    groupSearchFilterUserAttribute: value,
+                  },
+                  '#withHost': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The LDAP server host.\nThe LDAP server host.' } },
+                  withHost(value): {
+                    host: value,
+                  },
+                  '#withMinTlsVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Minimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.\nMinimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.' } },
+                  withMinTlsVersion(value): {
+                    minTlsVersion: value,
+                  },
+                  '#withPort': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The LDAP server port.\nThe LDAP server port.' } },
+                  withPort(value): {
+                    port: value,
+                  },
+                  '#withRootCaCert': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The path to the root CA certificate.\nThe path to the root CA certificate.' } },
+                  withRootCaCert(value): {
+                    rootCaCert: value,
+                  },
+                  '#withRootCaCertValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The Base64 encoded values of the root CA certificates.\nThe Base64 encoded values of the root CA certificates.' } },
+                  withRootCaCertValue(value): {
+                    rootCaCertValue:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withRootCaCertValueMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The Base64 encoded values of the root CA certificates.\nThe Base64 encoded values of the root CA certificates.' } },
+                  withRootCaCertValueMixin(value): {
+                    rootCaCertValue+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withSearchBaseDns': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of base DNs to search through.\nAn array of base DNs to search through.' } },
+                  withSearchBaseDns(value): {
+                    searchBaseDns:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withSearchBaseDnsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of base DNs to search through.\nAn array of base DNs to search through.' } },
+                  withSearchBaseDnsMixin(value): {
+                    searchBaseDns+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withSearchFilter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".\nThe user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".' } },
+                  withSearchFilter(value): {
+                    searchFilter: value,
+                  },
+                  '#withSslSkipVerify': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If set to true, the SSL cert validation will be skipped.\nIf set to true, the SSL cert validation will be skipped.' } },
+                  withSslSkipVerify(value=true): {
+                    sslSkipVerify: value,
+                  },
+                  '#withStartTls': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If set to true, use LDAP with STARTTLS instead of LDAPS.\nIf set to true, use LDAP with STARTTLS instead of LDAPS.' } },
+                  withStartTls(value=true): {
+                    startTls: value,
+                  },
+                  '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The timeout in seconds for connecting to the LDAP host.\nThe timeout in seconds for connecting to the LDAP host.' } },
+                  withTimeout(value): {
+                    timeout: value,
+                  },
+                  '#withTlsCiphers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Accepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.\nAccepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.' } },
+                  withTlsCiphers(value): {
+                    tlsCiphers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withTlsCiphersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Accepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.\nAccepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.' } },
+                  withTlsCiphersMixin(value): {
+                    tlsCiphers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withUseSsl': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).\nSet to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).' } },
+                  withUseSsl(value=true): {
+                    useSsl: value,
+                  },
+                },
+            },
+          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for LDAP. Defaults to `true`.' } },
+          withEnabled(value=true): {
+            enabled: value,
+          },
+          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from LDAP.' } },
+          withSkipOrgRoleSync(value=true): {
+            skipOrgRoleSync: value,
+          },
+        },
       '#withOauth2Settings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) The OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers. (see below for nested schema)\nThe OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers.' } },
       withOauth2Settings(value): {
         spec+: {
@@ -66,7 +385,7 @@
           withAllowAssignGrafanaAdmin(value=true): {
             allowAssignGrafanaAdmin: value,
           },
-          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nIf not enabled, only existing Grafana users can log in using OAuth.' } },
+          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nIf not enabled, only existing Grafana users can log in using OAuth.' } },
           withAllowSignUp(value=true): {
             allowSignUp: value,
           },
@@ -159,7 +478,7 @@
           withEmptyScopes(value=true): {
             emptyScopes: value,
           },
-          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.' } },
+          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.' } },
           withEnabled(value=true): {
             enabled: value,
           },
@@ -183,6 +502,14 @@
           withNameAttributePath(value): {
             nameAttributePath: value,
           },
+          '#withOrgAttributePath': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) JMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.\nJMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.' } },
+          withOrgAttributePath(value): {
+            orgAttributePath: value,
+          },
+          '#withOrgMapping': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.' } },
+          withOrgMapping(value): {
+            orgMapping: value,
+          },
           '#withRoleAttributePath': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) JMESPath expression to use for Grafana role lookup.\nJMESPath expression to use for Grafana role lookup.' } },
           withRoleAttributePath(value): {
             roleAttributePath: value,
@@ -199,7 +526,7 @@
           withSignoutRedirectUrl(value): {
             signoutRedirectUrl: value,
           },
-          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
+          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
           withSkipOrgRoleSync(value=true): {
             skipOrgRoleSync: value,
           },
@@ -244,7 +571,7 @@
             useRefreshToken: value,
           },
         },
-      '#withProviderName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.' } },
+      '#withProviderName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.' } },
       withProviderName(value): {
         spec+: {
           parameters+: {
@@ -287,7 +614,7 @@
           withAllowIdpInitiated(value=true): {
             allowIdpInitiated: value,
           },
-          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.' } },
+          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.' } },
           withAllowSignUp(value=true): {
             allowSignUp: value,
           },
@@ -356,9 +683,21 @@
                 },
               },
             },
-          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.' } },
+          '#withClientId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The client Id of your OAuth2 app.\nThe client Id of your OAuth2 app.' } },
+          withClientId(value): {
+            clientId: value,
+          },
+          '#withClientSecret': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Sensitive) The client secret of your OAuth2 app.\nThe client secret of your OAuth2 app.' } },
+          withClientSecret(value): {
+            clientSecret: value,
+          },
+          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.' } },
           withEnabled(value=true): {
             enabled: value,
+          },
+          '#withForceUseGraphApi': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.\nIf enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.' } },
+          withForceUseGraphApi(value=true): {
+            forceUseGraphApi: value,
           },
           '#withIdpMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'encoded string for the IdP SAML metadata XML.\nBase64-encoded string for the IdP SAML metadata XML.' } },
           withIdpMetadata(value): {
@@ -388,7 +727,7 @@
           withNameIdFormat(value): {
             nameIdFormat: value,
           },
-          '#withOrgMapping': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.' } },
+          '#withOrgMapping': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.' } },
           withOrgMapping(value): {
             orgMapping: value,
           },
@@ -457,9 +796,13 @@
           withSingleLogout(value=true): {
             singleLogout: value,
           },
-          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
+          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
           withSkipOrgRoleSync(value=true): {
             skipOrgRoleSync: value,
+          },
+          '#withTokenUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The token endpoint of your OAuth2 provider. Required for azuread, okta and generic_oauth providers.\nThe token endpoint of your OAuth2 provider. Required for Azure AD providers.' } },
+          withTokenUrl(value): {
+            tokenUrl: value,
           },
         },
     },
@@ -481,6 +824,325 @@
   },
   initProvider+:
     {
+      '#withLdapSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)\nThe LDAP settings set. Required for the ldap provider.' } },
+      withLdapSettings(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              ldapSettings:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withLdapSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)\nThe LDAP settings set. Required for the ldap provider.' } },
+      withLdapSettingsMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              ldapSettings+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      ldapSettings+:
+        {
+          '#': { help: '', name: 'ldapSettings' },
+          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.' } },
+          withAllowSignUp(value=true): {
+            allowSignUp: value,
+          },
+          '#withConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) The LDAP configuration. (see below for nested schema)\nThe LDAP configuration.' } },
+          withConfig(value): {
+            config:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) The LDAP configuration. (see below for nested schema)\nThe LDAP configuration.' } },
+          withConfigMixin(value): {
+            config+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          config+:
+            {
+              '#': { help: '', name: 'config' },
+              '#withServers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) The LDAP servers configuration. (see below for nested schema)\nThe LDAP servers configuration.' } },
+              withServers(value): {
+                servers:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withServersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) The LDAP servers configuration. (see below for nested schema)\nThe LDAP servers configuration.' } },
+              withServersMixin(value): {
+                servers+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              servers+:
+                {
+                  '#': { help: '', name: 'servers' },
+                  '#withAttributes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) The LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.\nThe LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.' } },
+                  withAttributes(value): {
+                    attributes: value,
+                  },
+                  '#withAttributesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) The LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.\nThe LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.' } },
+                  withAttributesMixin(value): {
+                    attributes+: value,
+                  },
+                  '#withBindDn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The search user bind DN.\nThe search user bind DN.' } },
+                  withBindDn(value): {
+                    bindDn: value,
+                  },
+                  '#withBindPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The search user bind password.\nThe search user bind password.' } },
+                  withBindPasswordSecretRef(value): {
+                    bindPasswordSecretRef: value,
+                  },
+                  '#withBindPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The search user bind password.\nThe search user bind password.' } },
+                  withBindPasswordSecretRefMixin(value): {
+                    bindPasswordSecretRef+: value,
+                  },
+                  bindPasswordSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        bindPasswordSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        bindPasswordSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        bindPasswordSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withClientCert': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The path to the client certificate.\nThe path to the client certificate.' } },
+                  withClientCert(value): {
+                    clientCert: value,
+                  },
+                  '#withClientCertValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Base64 encoded value of the client certificate.\nThe Base64 encoded value of the client certificate.' } },
+                  withClientCertValue(value): {
+                    clientCertValue: value,
+                  },
+                  '#withClientKeySecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The path to the client private key.\nThe path to the client private key.' } },
+                  withClientKeySecretRef(value): {
+                    clientKeySecretRef: value,
+                  },
+                  '#withClientKeySecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The path to the client private key.\nThe path to the client private key.' } },
+                  withClientKeySecretRefMixin(value): {
+                    clientKeySecretRef+: value,
+                  },
+                  clientKeySecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        clientKeySecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        clientKeySecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        clientKeySecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withClientKeyValueSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Base64 encoded value of the client private key.\nThe Base64 encoded value of the client private key.' } },
+                  withClientKeyValueSecretRef(value): {
+                    clientKeyValueSecretRef: value,
+                  },
+                  '#withClientKeyValueSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Base64 encoded value of the client private key.\nThe Base64 encoded value of the client private key.' } },
+                  withClientKeyValueSecretRefMixin(value): {
+                    clientKeyValueSecretRef+: value,
+                  },
+                  clientKeyValueSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        clientKeyValueSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        clientKeyValueSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        clientKeyValueSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withGroupMappings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) For mapping an LDAP group to a Grafana organization and role. (see below for nested schema)\nFor mapping an LDAP group to a Grafana organization and role.' } },
+                  withGroupMappings(value): {
+                    groupMappings:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withGroupMappingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) For mapping an LDAP group to a Grafana organization and role. (see below for nested schema)\nFor mapping an LDAP group to a Grafana organization and role.' } },
+                  withGroupMappingsMixin(value): {
+                    groupMappings+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  groupMappings+:
+                    {
+                      '#': { help: '', name: 'groupMappings' },
+                      '#withGrafanaAdmin': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If set to true, it makes the user of group_dn Grafana server admin.\nIf set to true, it makes the user of group_dn Grafana server admin.' } },
+                      withGrafanaAdmin(value=true): {
+                        grafanaAdmin: value,
+                      },
+                      '#withGroupDn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) LDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").\nLDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").' } },
+                      withGroupDn(value): {
+                        groupDn: value,
+                      },
+                      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The Grafana organization database id.\nThe Grafana organization database id.' } },
+                      withOrgId(value): {
+                        orgId: value,
+                      },
+                      '#withOrgRole': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Assign users of group_dn the organization role Admin, Editor, or Viewer.\nAssign users of group_dn the organization role Admin, Editor, or Viewer.' } },
+                      withOrgRole(value): {
+                        orgRole: value,
+                      },
+                    },
+                  '#withGroupSearchBaseDns': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of the base DNs to search through for groups. Typically uses ou=groups.\nAn array of the base DNs to search through for groups. Typically uses ou=groups.' } },
+                  withGroupSearchBaseDns(value): {
+                    groupSearchBaseDns:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withGroupSearchBaseDnsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of the base DNs to search through for groups. Typically uses ou=groups.\nAn array of the base DNs to search through for groups. Typically uses ou=groups.' } },
+                  withGroupSearchBaseDnsMixin(value): {
+                    groupSearchBaseDns+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withGroupSearchFilter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Group search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).\nGroup search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).' } },
+                  withGroupSearchFilter(value): {
+                    groupSearchFilter: value,
+                  },
+                  '#withGroupSearchFilterUserAttribute': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The %s in the search filter will be replaced with the attribute defined in this field.\nThe %s in the search filter will be replaced with the attribute defined in this field.' } },
+                  withGroupSearchFilterUserAttribute(value): {
+                    groupSearchFilterUserAttribute: value,
+                  },
+                  '#withHost': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The LDAP server host.\nThe LDAP server host.' } },
+                  withHost(value): {
+                    host: value,
+                  },
+                  '#withMinTlsVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Minimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.\nMinimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.' } },
+                  withMinTlsVersion(value): {
+                    minTlsVersion: value,
+                  },
+                  '#withPort': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The LDAP server port.\nThe LDAP server port.' } },
+                  withPort(value): {
+                    port: value,
+                  },
+                  '#withRootCaCert': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The path to the root CA certificate.\nThe path to the root CA certificate.' } },
+                  withRootCaCert(value): {
+                    rootCaCert: value,
+                  },
+                  '#withRootCaCertValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The Base64 encoded values of the root CA certificates.\nThe Base64 encoded values of the root CA certificates.' } },
+                  withRootCaCertValue(value): {
+                    rootCaCertValue:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withRootCaCertValueMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The Base64 encoded values of the root CA certificates.\nThe Base64 encoded values of the root CA certificates.' } },
+                  withRootCaCertValueMixin(value): {
+                    rootCaCertValue+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withSearchBaseDns': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of base DNs to search through.\nAn array of base DNs to search through.' } },
+                  withSearchBaseDns(value): {
+                    searchBaseDns:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withSearchBaseDnsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) An array of base DNs to search through.\nAn array of base DNs to search through.' } },
+                  withSearchBaseDnsMixin(value): {
+                    searchBaseDns+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withSearchFilter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".\nThe user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".' } },
+                  withSearchFilter(value): {
+                    searchFilter: value,
+                  },
+                  '#withSslSkipVerify': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If set to true, the SSL cert validation will be skipped.\nIf set to true, the SSL cert validation will be skipped.' } },
+                  withSslSkipVerify(value=true): {
+                    sslSkipVerify: value,
+                  },
+                  '#withStartTls': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If set to true, use LDAP with STARTTLS instead of LDAPS.\nIf set to true, use LDAP with STARTTLS instead of LDAPS.' } },
+                  withStartTls(value=true): {
+                    startTls: value,
+                  },
+                  '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The timeout in seconds for connecting to the LDAP host.\nThe timeout in seconds for connecting to the LDAP host.' } },
+                  withTimeout(value): {
+                    timeout: value,
+                  },
+                  '#withTlsCiphers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Accepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.\nAccepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.' } },
+                  withTlsCiphers(value): {
+                    tlsCiphers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withTlsCiphersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Accepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.\nAccepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.' } },
+                  withTlsCiphersMixin(value): {
+                    tlsCiphers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withUseSsl': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).\nSet to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).' } },
+                  withUseSsl(value=true): {
+                    useSsl: value,
+                  },
+                },
+            },
+          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for LDAP. Defaults to `true`.' } },
+          withEnabled(value=true): {
+            enabled: value,
+          },
+          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from LDAP.' } },
+          withSkipOrgRoleSync(value=true): {
+            skipOrgRoleSync: value,
+          },
+        },
       '#withOauth2Settings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) The OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers. (see below for nested schema)\nThe OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers.' } },
       withOauth2Settings(value): {
         spec+: {
@@ -514,7 +1176,7 @@
           withAllowAssignGrafanaAdmin(value=true): {
             allowAssignGrafanaAdmin: value,
           },
-          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nIf not enabled, only existing Grafana users can log in using OAuth.' } },
+          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nIf not enabled, only existing Grafana users can log in using OAuth.' } },
           withAllowSignUp(value=true): {
             allowSignUp: value,
           },
@@ -607,7 +1269,7 @@
           withEmptyScopes(value=true): {
             emptyScopes: value,
           },
-          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.' } },
+          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.' } },
           withEnabled(value=true): {
             enabled: value,
           },
@@ -631,6 +1293,14 @@
           withNameAttributePath(value): {
             nameAttributePath: value,
           },
+          '#withOrgAttributePath': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) JMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.\nJMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.' } },
+          withOrgAttributePath(value): {
+            orgAttributePath: value,
+          },
+          '#withOrgMapping': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.' } },
+          withOrgMapping(value): {
+            orgMapping: value,
+          },
           '#withRoleAttributePath': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) JMESPath expression to use for Grafana role lookup.\nJMESPath expression to use for Grafana role lookup.' } },
           withRoleAttributePath(value): {
             roleAttributePath: value,
@@ -647,7 +1317,7 @@
           withSignoutRedirectUrl(value): {
             signoutRedirectUrl: value,
           },
-          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
+          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
           withSkipOrgRoleSync(value=true): {
             skipOrgRoleSync: value,
           },
@@ -692,7 +1362,7 @@
             useRefreshToken: value,
           },
         },
-      '#withProviderName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.' } },
+      '#withProviderName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.' } },
       withProviderName(value): {
         spec+: {
           parameters+: {
@@ -735,7 +1405,7 @@
           withAllowIdpInitiated(value=true): {
             allowIdpInitiated: value,
           },
-          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.' } },
+          '#withAllowSignUp': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.' } },
           withAllowSignUp(value=true): {
             allowSignUp: value,
           },
@@ -804,9 +1474,21 @@
                 },
               },
             },
-          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.' } },
+          '#withClientId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The client Id of your OAuth2 app.\nThe client Id of your OAuth2 app.' } },
+          withClientId(value): {
+            clientId: value,
+          },
+          '#withClientSecret': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Sensitive) The client secret of your OAuth2 app.\nThe client secret of your OAuth2 app.' } },
+          withClientSecret(value): {
+            clientSecret: value,
+          },
+          '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.' } },
           withEnabled(value=true): {
             enabled: value,
+          },
+          '#withForceUseGraphApi': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.\nIf enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.' } },
+          withForceUseGraphApi(value=true): {
+            forceUseGraphApi: value,
           },
           '#withIdpMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'encoded string for the IdP SAML metadata XML.\nBase64-encoded string for the IdP SAML metadata XML.' } },
           withIdpMetadata(value): {
@@ -836,7 +1518,7 @@
           withNameIdFormat(value): {
             nameIdFormat: value,
           },
-          '#withOrgMapping': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.' } },
+          '#withOrgMapping': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.' } },
           withOrgMapping(value): {
             orgMapping: value,
           },
@@ -905,9 +1587,13 @@
           withSingleLogout(value=true): {
             singleLogout: value,
           },
-          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
+          '#withSkipOrgRoleSync': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.' } },
           withSkipOrgRoleSync(value=true): {
             skipOrgRoleSync: value,
+          },
+          '#withTokenUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The token endpoint of your OAuth2 provider. Required for azuread, okta and generic_oauth providers.\nThe token endpoint of your OAuth2 provider. Required for Azure AD providers.' } },
+          withTokenUrl(value): {
+            tokenUrl: value,
           },
         },
     },

@@ -6,6 +6,7 @@
 
 * [email](email.md)
 * [microsoftTeams](microsoftTeams.md)
+* [mobileApp](mobileApp.md)
 * [phoneCall](phoneCall.md)
 * [slack](slack.md)
 * [sms](sms.md)
@@ -20,6 +21,8 @@
 * [`fn withGroupingKey(value)`](#fn-withgroupingkey)
 * [`fn withMicrosoftTeams(value)`](#fn-withmicrosoftteams)
 * [`fn withMicrosoftTeamsMixin(value)`](#fn-withmicrosoftteamsmixin)
+* [`fn withMobileApp(value)`](#fn-withmobileapp)
+* [`fn withMobileAppMixin(value)`](#fn-withmobileappmixin)
 * [`fn withPhoneCall(value)`](#fn-withphonecall)
 * [`fn withPhoneCallMixin(value)`](#fn-withphonecallmixin)
 * [`fn withResolveSignal(value)`](#fn-withresolvesignal)
@@ -93,8 +96,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)
-Templates for Microsoft Teams.
+(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)
+Templates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.
 ### fn withMicrosoftTeamsMixin
 
 ```jsonnet
@@ -105,8 +108,32 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)
-Templates for Microsoft Teams.
+(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)
+Templates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.
+### fn withMobileApp
+
+```jsonnet
+withMobileApp(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)
+Templates for Mobile app push notifications.
+### fn withMobileAppMixin
+
+```jsonnet
+withMobileAppMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)
+Templates for Mobile app push notifications.
 ### fn withPhoneCall
 
 ```jsonnet

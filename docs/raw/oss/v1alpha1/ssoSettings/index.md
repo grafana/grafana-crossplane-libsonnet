@@ -4,8 +4,10 @@
 
 ## Subpackages
 
+* [spec.parameters.forProvider.ldapSettings](spec/parameters/forProvider/ldapSettings/index.md)
 * [spec.parameters.forProvider.oauth2Settings](spec/parameters/forProvider/oauth2Settings.md)
 * [spec.parameters.forProvider.samlSettings](spec/parameters/forProvider/samlSettings.md)
+* [spec.parameters.initProvider.ldapSettings](spec/parameters/initProvider/ldapSettings/index.md)
 * [spec.parameters.initProvider.oauth2Settings](spec/parameters/initProvider/oauth2Settings.md)
 * [spec.parameters.initProvider.samlSettings](spec/parameters/initProvider/samlSettings.md)
 
@@ -75,12 +77,16 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withLdapSettings(value)`](#fn-specparametersforproviderwithldapsettings)
+      * [`fn withLdapSettingsMixin(value)`](#fn-specparametersforproviderwithldapsettingsmixin)
       * [`fn withOauth2Settings(value)`](#fn-specparametersforproviderwithoauth2settings)
       * [`fn withOauth2SettingsMixin(value)`](#fn-specparametersforproviderwithoauth2settingsmixin)
       * [`fn withProviderName(value)`](#fn-specparametersforproviderwithprovidername)
       * [`fn withSamlSettings(value)`](#fn-specparametersforproviderwithsamlsettings)
       * [`fn withSamlSettingsMixin(value)`](#fn-specparametersforproviderwithsamlsettingsmixin)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withLdapSettings(value)`](#fn-specparametersinitproviderwithldapsettings)
+      * [`fn withLdapSettingsMixin(value)`](#fn-specparametersinitproviderwithldapsettingsmixin)
       * [`fn withOauth2Settings(value)`](#fn-specparametersinitproviderwithoauth2settings)
       * [`fn withOauth2SettingsMixin(value)`](#fn-specparametersinitproviderwithoauth2settingsmixin)
       * [`fn withProviderName(value)`](#fn-specparametersinitproviderwithprovidername)
@@ -858,6 +864,30 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withLdapSettings
+
+```jsonnet
+spec.parameters.forProvider.withLdapSettings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)
+The LDAP settings set. Required for the ldap provider.
+###### fn spec.parameters.forProvider.withLdapSettingsMixin
+
+```jsonnet
+spec.parameters.forProvider.withLdapSettingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)
+The LDAP settings set. Required for the ldap provider.
 ###### fn spec.parameters.forProvider.withOauth2Settings
 
 ```jsonnet
@@ -892,8 +922,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.
-The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.
+(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.
+The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.
 ###### fn spec.parameters.forProvider.withSamlSettings
 
 ```jsonnet
@@ -921,6 +951,30 @@ The SAML settings set. Required for the saml provider.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withLdapSettings
+
+```jsonnet
+spec.parameters.initProvider.withLdapSettings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)
+The LDAP settings set. Required for the ldap provider.
+###### fn spec.parameters.initProvider.withLdapSettingsMixin
+
+```jsonnet
+spec.parameters.initProvider.withLdapSettingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)
+The LDAP settings set. Required for the ldap provider.
 ###### fn spec.parameters.initProvider.withOauth2Settings
 
 ```jsonnet
@@ -955,8 +1009,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.
-The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.
+(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.
+The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.
 ###### fn spec.parameters.initProvider.withSamlSettings
 
 ```jsonnet

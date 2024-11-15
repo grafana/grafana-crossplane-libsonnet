@@ -5,7 +5,7 @@ Jsonnet library providing a namespaced set of compositions/XRDs for the Grafana 
 ## Install
 
 ```
-jb install github.com/Duologic/grafana-crossplane-libsonnet/grafanaplane@0.0.3-0.18.0
+jb install github.com/Duologic/grafana-crossplane-libsonnet/grafanaplane@0.0.4-0.21.0
 ```
 
 ## Usage

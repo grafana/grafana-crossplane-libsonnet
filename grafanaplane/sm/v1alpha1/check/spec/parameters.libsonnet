@@ -479,19 +479,69 @@
               basicAuth+:
                 {
                   '#': { help: '', name: 'basicAuth' },
-                  '#withPassword': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Basic auth password.\nBasic auth password.' } },
-                  withPassword(value): {
-                    password: value,
+                  '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Basic auth password.\nBasic auth password.' } },
+                  withPasswordSecretRef(value): {
+                    passwordSecretRef: value,
                   },
+                  '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Basic auth password.\nBasic auth password.' } },
+                  withPasswordSecretRefMixin(value): {
+                    passwordSecretRef+: value,
+                  },
+                  passwordSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        passwordSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        passwordSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        passwordSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
                   '#withUsername': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Basic auth username.\nBasic auth username.' } },
                   withUsername(value): {
                     username: value,
                   },
                 },
-              '#withBearerToken': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Token for use with bearer authorization header.\nToken for use with bearer authorization header.' } },
-              withBearerToken(value): {
-                bearerToken: value,
+              '#withBearerTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Token for use with bearer authorization header.\nToken for use with bearer authorization header.' } },
+              withBearerTokenSecretRef(value): {
+                bearerTokenSecretRef: value,
               },
+              '#withBearerTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Token for use with bearer authorization header.\nToken for use with bearer authorization header.' } },
+              withBearerTokenSecretRefMixin(value): {
+                bearerTokenSecretRef+: value,
+              },
+              bearerTokenSecretRef+:
+                {
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                  withKey(value): {
+                    bearerTokenSecretRef+: {
+                      key: value,
+                    },
+                  },
+                  '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                  withName(value): {
+                    bearerTokenSecretRef+: {
+                      name: value,
+                    },
+                  },
+                  '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                  withNamespace(value): {
+                    bearerTokenSecretRef+: {
+                      namespace: value,
+                    },
+                  },
+                },
               '#withBody': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The body of the HTTP request used in probe.\nThe body of the HTTP request used in probe.' } },
               withBody(value): {
                 body: value,
@@ -1643,19 +1693,69 @@
               basicAuth+:
                 {
                   '#': { help: '', name: 'basicAuth' },
-                  '#withPassword': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Basic auth password.\nBasic auth password.' } },
-                  withPassword(value): {
-                    password: value,
+                  '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Basic auth password.\nBasic auth password.' } },
+                  withPasswordSecretRef(value): {
+                    passwordSecretRef: value,
                   },
+                  '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Basic auth password.\nBasic auth password.' } },
+                  withPasswordSecretRefMixin(value): {
+                    passwordSecretRef+: value,
+                  },
+                  passwordSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        passwordSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        passwordSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        passwordSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
                   '#withUsername': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Basic auth username.\nBasic auth username.' } },
                   withUsername(value): {
                     username: value,
                   },
                 },
-              '#withBearerToken': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Token for use with bearer authorization header.\nToken for use with bearer authorization header.' } },
-              withBearerToken(value): {
-                bearerToken: value,
+              '#withBearerTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Token for use with bearer authorization header.\nToken for use with bearer authorization header.' } },
+              withBearerTokenSecretRef(value): {
+                bearerTokenSecretRef: value,
               },
+              '#withBearerTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Token for use with bearer authorization header.\nToken for use with bearer authorization header.' } },
+              withBearerTokenSecretRefMixin(value): {
+                bearerTokenSecretRef+: value,
+              },
+              bearerTokenSecretRef+:
+                {
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                  withKey(value): {
+                    bearerTokenSecretRef+: {
+                      key: value,
+                    },
+                  },
+                  '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                  withName(value): {
+                    bearerTokenSecretRef+: {
+                      name: value,
+                    },
+                  },
+                  '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                  withNamespace(value): {
+                    bearerTokenSecretRef+: {
+                      namespace: value,
+                    },
+                  },
+                },
               '#withBody': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The body of the HTTP request used in probe.\nThe body of the HTTP request used in probe.' } },
               withBody(value): {
                 body: value,

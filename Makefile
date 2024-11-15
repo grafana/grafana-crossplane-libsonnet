@@ -1,5 +1,5 @@
-LIBRARY_VERSION:=0.0.3
-PROVIDER_VERSION:=0.18.0
+LIBRARY_VERSION:=0.0.4
+PROVIDER_VERSION:=0.21.0
 JSONNET_BIN:=jrsonnet
 
 VENDOR_DEPTHS:=$(shell find generator/vendor -type f)

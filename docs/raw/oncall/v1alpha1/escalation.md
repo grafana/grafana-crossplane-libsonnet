@@ -94,6 +94,7 @@
       * [`fn withPersonsToNotifyNextEachTime(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtime)
       * [`fn withPersonsToNotifyNextEachTimeMixin(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtimemixin)
       * [`fn withPosition(value)`](#fn-specparametersforproviderwithposition)
+      * [`fn withSeverity(value)`](#fn-specparametersforproviderwithseverity)
       * [`fn withType(value)`](#fn-specparametersforproviderwithtype)
       * [`obj actionToTriggerRef`](#obj-specparametersforprovideractiontotriggerref)
         * [`fn withName(value)`](#fn-specparametersforprovideractiontotriggerrefwithname)
@@ -170,6 +171,7 @@
       * [`fn withPersonsToNotifyNextEachTime(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtime)
       * [`fn withPersonsToNotifyNextEachTimeMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtimemixin)
       * [`fn withPosition(value)`](#fn-specparametersinitproviderwithposition)
+      * [`fn withSeverity(value)`](#fn-specparametersinitproviderwithseverity)
       * [`fn withType(value)`](#fn-specparametersinitproviderwithtype)
       * [`obj actionToTriggerRef`](#obj-specparametersinitprovideractiontotriggerref)
         * [`fn withName(value)`](#fn-specparametersinitprovideractiontotriggerrefwithname)
@@ -1057,8 +1059,8 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) The duration of delay for wait type step.
-The duration of delay for wait type step.
+86400) seconds
+The duration of delay for wait type step. (60-86400) seconds
 ###### fn spec.parameters.forProvider.withEscalationChainId
 
 ```jsonnet
@@ -1292,6 +1294,18 @@ PARAMETERS:
 
 (Number) The position of the escalation step (starts from 0).
 The position of the escalation step (starts from 0).
+###### fn spec.parameters.forProvider.withSeverity
+
+```jsonnet
+spec.parameters.forProvider.withSeverity(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The severity of the incident for declare_incident type step.
+The severity of the incident for declare_incident type step.
 ###### fn spec.parameters.forProvider.withType
 
 ```jsonnet
@@ -1302,8 +1316,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members
-The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members
+(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
+The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
 ###### obj spec.parameters.forProvider.actionToTriggerRef
 
 
@@ -1865,8 +1879,8 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) The duration of delay for wait type step.
-The duration of delay for wait type step.
+86400) seconds
+The duration of delay for wait type step. (60-86400) seconds
 ###### fn spec.parameters.initProvider.withEscalationChainId
 
 ```jsonnet
@@ -2100,6 +2114,18 @@ PARAMETERS:
 
 (Number) The position of the escalation step (starts from 0).
 The position of the escalation step (starts from 0).
+###### fn spec.parameters.initProvider.withSeverity
+
+```jsonnet
+spec.parameters.initProvider.withSeverity(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The severity of the incident for declare_incident type step.
+The severity of the incident for declare_incident type step.
 ###### fn spec.parameters.initProvider.withType
 
 ```jsonnet
@@ -2110,8 +2136,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members
-The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members
+(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
+The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
 ###### obj spec.parameters.initProvider.actionToTriggerRef
 
 

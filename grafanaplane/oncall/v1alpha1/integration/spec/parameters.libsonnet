@@ -336,14 +336,14 @@
           withGroupingKey(value): {
             groupingKey: value,
           },
-          '#withMicrosoftTeams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)\nTemplates for Microsoft Teams.' } },
+          '#withMicrosoftTeams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)\nTemplates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.' } },
           withMicrosoftTeams(value): {
             microsoftTeams:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withMicrosoftTeamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)\nTemplates for Microsoft Teams.' } },
+          '#withMicrosoftTeamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)\nTemplates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.' } },
           withMicrosoftTeamsMixin(value): {
             microsoftTeams+:
               (if std.isArray(value)
@@ -357,6 +357,32 @@
               withImageUrl(value): {
                 imageUrl: value,
               },
+              '#withMessage': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Template for Alert message.\nTemplate for Alert message.' } },
+              withMessage(value): {
+                message: value,
+              },
+              '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Template for Alert title.\nTemplate for Alert title.' } },
+              withTitle(value): {
+                title: value,
+              },
+            },
+          '#withMobileApp': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)\nTemplates for Mobile app push notifications.' } },
+          withMobileApp(value): {
+            mobileApp:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withMobileAppMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)\nTemplates for Mobile app push notifications.' } },
+          withMobileAppMixin(value): {
+            mobileApp+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          mobileApp+:
+            {
+              '#': { help: '', name: 'mobileApp' },
               '#withMessage': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Template for Alert message.\nTemplate for Alert message.' } },
               withMessage(value): {
                 message: value,
@@ -841,14 +867,14 @@
           withGroupingKey(value): {
             groupingKey: value,
           },
-          '#withMicrosoftTeams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)\nTemplates for Microsoft Teams.' } },
+          '#withMicrosoftTeams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)\nTemplates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.' } },
           withMicrosoftTeams(value): {
             microsoftTeams:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withMicrosoftTeamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)\nTemplates for Microsoft Teams.' } },
+          '#withMicrosoftTeamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)\nTemplates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.' } },
           withMicrosoftTeamsMixin(value): {
             microsoftTeams+:
               (if std.isArray(value)
@@ -862,6 +888,32 @@
               withImageUrl(value): {
                 imageUrl: value,
               },
+              '#withMessage': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Template for Alert message.\nTemplate for Alert message.' } },
+              withMessage(value): {
+                message: value,
+              },
+              '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Template for Alert title.\nTemplate for Alert title.' } },
+              withTitle(value): {
+                title: value,
+              },
+            },
+          '#withMobileApp': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)\nTemplates for Mobile app push notifications.' } },
+          withMobileApp(value): {
+            mobileApp:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withMobileAppMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)\nTemplates for Mobile app push notifications.' } },
+          withMobileAppMixin(value): {
+            mobileApp+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          mobileApp+:
+            {
+              '#': { help: '', name: 'mobileApp' },
               '#withMessage': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Template for Alert message.\nTemplate for Alert message.' } },
               withMessage(value): {
                 message: value,

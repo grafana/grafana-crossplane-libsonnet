@@ -237,6 +237,16 @@
           },
         },
       },
+      '#withUntil': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")\nThe end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")" } },
+      withUntil(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              until: value,
+            },
+          },
+        },
+      },
       '#withUsers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'call users (for single_event and recurrent_event event type).\nThe list of on-call users (for single_event and recurrent_event event type).' } },
       withUsers(value): {
         spec+: {
@@ -492,6 +502,16 @@
           parameters+: {
             initProvider+: {
               type: value,
+            },
+          },
+        },
+      },
+      '#withUntil': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")\nThe end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")" } },
+      withUntil(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              until: value,
             },
           },
         },

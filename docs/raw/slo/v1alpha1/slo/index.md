@@ -94,6 +94,7 @@
       * [`fn withObjectivesMixin(value)`](#fn-specparametersforproviderwithobjectivesmixin)
       * [`fn withQuery(value)`](#fn-specparametersforproviderwithquery)
       * [`fn withQueryMixin(value)`](#fn-specparametersforproviderwithquerymixin)
+      * [`fn withSearchExpression(value)`](#fn-specparametersforproviderwithsearchexpression)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withAlerting(value)`](#fn-specparametersinitproviderwithalerting)
       * [`fn withAlertingMixin(value)`](#fn-specparametersinitproviderwithalertingmixin)
@@ -108,6 +109,7 @@
       * [`fn withObjectivesMixin(value)`](#fn-specparametersinitproviderwithobjectivesmixin)
       * [`fn withQuery(value)`](#fn-specparametersinitproviderwithquery)
       * [`fn withQueryMixin(value)`](#fn-specparametersinitproviderwithquerymixin)
+      * [`fn withSearchExpression(value)`](#fn-specparametersinitproviderwithsearchexpression)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -1048,6 +1050,18 @@ PARAMETERS:
 
 (Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
 Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
+###### fn spec.parameters.forProvider.withSearchExpression
+
+```jsonnet
+spec.parameters.forProvider.withSearchExpression(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
 ##### obj spec.parameters.initProvider
 
 
@@ -1219,6 +1233,18 @@ PARAMETERS:
 
 (Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
 Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
+###### fn spec.parameters.initProvider.withSearchExpression
+
+```jsonnet
+spec.parameters.initProvider.withSearchExpression(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
 ##### obj spec.parameters.providerConfigRef
 
 

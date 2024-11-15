@@ -14,7 +14,8 @@
 * [`fn new(validStatusCodes=[200])`](#fn-new)
 * [`fn withBasicAuth(value)`](#fn-withbasicauth)
 * [`fn withBasicAuthMixin(value)`](#fn-withbasicauthmixin)
-* [`fn withBearerToken(value)`](#fn-withbearertoken)
+* [`fn withBearerTokenSecretRef(value)`](#fn-withbearertokensecretref)
+* [`fn withBearerTokenSecretRefMixin(value)`](#fn-withbearertokensecretrefmixin)
 * [`fn withBody(value)`](#fn-withbody)
 * [`fn withCacheBustingQueryParamName(value)`](#fn-withcachebustingqueryparamname)
 * [`fn withFailIfBodyMatchesRegexp(value)`](#fn-withfailifbodymatchesregexp)
@@ -41,6 +42,10 @@
 * [`fn withValidHttpVersionsMixin(value)`](#fn-withvalidhttpversionsmixin)
 * [`fn withValidStatusCodes(value)`](#fn-withvalidstatuscodes)
 * [`fn withValidStatusCodesMixin(value)`](#fn-withvalidstatuscodesmixin)
+* [`obj bearerTokenSecretRef`](#obj-bearertokensecretref)
+  * [`fn withKey(value)`](#fn-bearertokensecretrefwithkey)
+  * [`fn withName(value)`](#fn-bearertokensecretrefwithname)
+  * [`fn withNamespace(value)`](#fn-bearertokensecretrefwithnamespace)
 
 ## Fields
 
@@ -81,17 +86,29 @@ PARAMETERS:
 
 (Block Set, Max: 1) Basic auth settings. (see below for nested schema)
 Basic auth settings.
-### fn withBearerToken
+### fn withBearerTokenSecretRef
 
 ```jsonnet
-withBearerToken(value)
+withBearerTokenSecretRef(value)
 ```
 
 PARAMETERS:
 
-* **value** (`string`)
+* **value** (`object`)
 
-(String) Token for use with bearer authorization header.
+(String, Sensitive) Token for use with bearer authorization header.
+Token for use with bearer authorization header.
+### fn withBearerTokenSecretRefMixin
+
+```jsonnet
+withBearerTokenSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) Token for use with bearer authorization header.
 Token for use with bearer authorization header.
 ### fn withBody
 
@@ -408,3 +425,39 @@ PARAMETERS:
 
 (Set of Number) Accepted status codes. If unset, defaults to 2xx.
 Accepted status codes. If unset, defaults to 2xx.
+### obj bearerTokenSecretRef
+
+
+#### fn bearerTokenSecretRef.withKey
+
+```jsonnet
+bearerTokenSecretRef.withKey(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The key to select.
+#### fn bearerTokenSecretRef.withName
+
+```jsonnet
+bearerTokenSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+#### fn bearerTokenSecretRef.withNamespace
+
+```jsonnet
+bearerTokenSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.

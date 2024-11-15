@@ -247,7 +247,7 @@
               },
             },
         },
-      '#withDuration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The duration of delay for wait type step.\nThe duration of delay for wait type step.' } },
+      '#withDuration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '86400) seconds\nThe duration of delay for wait type step. (60-86400) seconds' } },
       withDuration(value): {
         spec+: {
           parameters+: {
@@ -797,7 +797,17 @@
           },
         },
       },
-      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members' } },
+      '#withSeverity': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The severity of the incident for declare_incident type step.\nThe severity of the incident for declare_incident type step.' } },
+      withSeverity(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              severity: value,
+            },
+          },
+        },
+      },
+      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident' } },
       withType(value): {
         spec+: {
           parameters+: {
@@ -1040,7 +1050,7 @@
               },
             },
         },
-      '#withDuration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The duration of delay for wait type step.\nThe duration of delay for wait type step.' } },
+      '#withDuration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '86400) seconds\nThe duration of delay for wait type step. (60-86400) seconds' } },
       withDuration(value): {
         spec+: {
           parameters+: {
@@ -1590,7 +1600,17 @@
           },
         },
       },
-      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members' } },
+      '#withSeverity': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The severity of the incident for declare_incident type step.\nThe severity of the incident for declare_incident type step.' } },
+      withSeverity(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              severity: value,
+            },
+          },
+        },
+      },
+      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident' } },
       withType(value): {
         spec+: {
           parameters+: {

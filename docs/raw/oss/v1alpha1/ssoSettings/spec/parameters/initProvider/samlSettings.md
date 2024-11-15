@@ -17,7 +17,10 @@
 * [`fn withCertificatePath(value)`](#fn-withcertificatepath)
 * [`fn withCertificateSecretRef(value)`](#fn-withcertificatesecretref)
 * [`fn withCertificateSecretRefMixin(value)`](#fn-withcertificatesecretrefmixin)
+* [`fn withClientId(value)`](#fn-withclientid)
+* [`fn withClientSecret(value)`](#fn-withclientsecret)
 * [`fn withEnabled(value=true)`](#fn-withenabled)
+* [`fn withForceUseGraphApi(value=true)`](#fn-withforceusegraphapi)
 * [`fn withIdpMetadata(value)`](#fn-withidpmetadata)
 * [`fn withIdpMetadataPath(value)`](#fn-withidpmetadatapath)
 * [`fn withIdpMetadataUrl(value)`](#fn-withidpmetadataurl)
@@ -38,6 +41,7 @@
 * [`fn withSignatureAlgorithm(value)`](#fn-withsignaturealgorithm)
 * [`fn withSingleLogout(value=true)`](#fn-withsinglelogout)
 * [`fn withSkipOrgRoleSync(value=true)`](#fn-withskiporgrolesync)
+* [`fn withTokenUrl(value)`](#fn-withtokenurl)
 * [`obj certificateSecretRef`](#obj-certificatesecretref)
   * [`fn withKey(value)`](#fn-certificatesecretrefwithkey)
   * [`fn withName(value)`](#fn-certificatesecretrefwithname)
@@ -73,7 +77,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) If not enabled, only existing Grafana users can log in using OAuth.
+(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.
 Whether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.
 ### fn withAllowedOrganizations
 
@@ -208,6 +212,30 @@ PARAMETERS:
 
 encoded string for the SP X.509 certificate.
 Base64-encoded string for the SP X.509 certificate.
+### fn withClientId
+
+```jsonnet
+withClientId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The client Id of your OAuth2 app.
+The client Id of your OAuth2 app.
+### fn withClientSecret
+
+```jsonnet
+withClientSecret(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String, Sensitive) The client secret of your OAuth2 app.
+The client secret of your OAuth2 app.
 ### fn withEnabled
 
 ```jsonnet
@@ -219,8 +247,21 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.
+(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.
 Define whether this configuration is enabled for SAML. Defaults to `true`.
+### fn withForceUseGraphApi
+
+```jsonnet
+withForceUseGraphApi(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.
+If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.
 ### fn withIdpMetadata
 
 ```jsonnet
@@ -315,7 +356,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.
+or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.
 List of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.
 ### fn withPrivateKeyPath
 
@@ -461,8 +502,20 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Prevent synchronizing users’ organization roles from your IdP.
+(Boolean) Prevent synchronizing users’ organization roles from LDAP.
 Prevent synchronizing users’ organization roles from your IdP.
+### fn withTokenUrl
+
+```jsonnet
+withTokenUrl(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The token endpoint of your OAuth2 provider. Required for azuread, okta and generic_oauth providers.
+The token endpoint of your OAuth2 provider. Required for Azure AD providers.
 ### obj certificateSecretRef
 
 

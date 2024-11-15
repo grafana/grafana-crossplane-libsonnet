@@ -29,6 +29,8 @@
 * [`fn withLoginAttributePath(value)`](#fn-withloginattributepath)
 * [`fn withName(value)`](#fn-withname)
 * [`fn withNameAttributePath(value)`](#fn-withnameattributepath)
+* [`fn withOrgAttributePath(value)`](#fn-withorgattributepath)
+* [`fn withOrgMapping(value)`](#fn-withorgmapping)
 * [`fn withRoleAttributePath(value)`](#fn-withroleattributepath)
 * [`fn withRoleAttributeStrict(value=true)`](#fn-withroleattributestrict)
 * [`fn withScopes(value)`](#fn-withscopes)
@@ -75,7 +77,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) If not enabled, only existing Grafana users can log in using OAuth.
+(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.
 If not enabled, only existing Grafana users can log in using OAuth.
 ### fn withAllowedDomains
 
@@ -296,7 +298,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.
+(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.
 Define whether this configuration is enabled for the specified provider. Defaults to `true`.
 ### fn withGroupsAttributePath
 
@@ -358,6 +360,30 @@ PARAMETERS:
 
 (String) JMESPath expression to use for user name lookup from the user ID token. This name will be used as the user’s display name. Only applicable to Generic OAuth.
 JMESPath expression to use for user name lookup from the user ID token. This name will be used as the user’s display name. Only applicable to Generic OAuth.
+### fn withOrgAttributePath
+
+```jsonnet
+withOrgAttributePath(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) JMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.
+JMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.
+### fn withOrgMapping
+
+```jsonnet
+withOrgMapping(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.
+List of comma- or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.
 ### fn withRoleAttributePath
 
 ```jsonnet
@@ -418,7 +444,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Prevent synchronizing users’ organization roles from your IdP.
+(Boolean) Prevent synchronizing users’ organization roles from LDAP.
 Prevent synchronizing users’ organization roles from your IdP.
 ### fn withTeamIds
 

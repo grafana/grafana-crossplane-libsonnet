@@ -8687,7 +8687,7 @@
                                           additionalProperties: {
                                             type: 'string',
                                           },
-                                          description: 'value pairs of metadata to attach to the alert rule that may add user-defined context, but cannot be used for matching, grouping, or routing. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule that may add user-defined context, but cannot be used for matching, grouping, or routing. Defaults to `map[]`.',
+                                          description: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.',
                                           type: 'object',
                                           'x-kubernetes-map-type': 'granular',
                                         },
@@ -9071,7 +9071,7 @@
                                           additionalProperties: {
                                             type: 'string',
                                           },
-                                          description: 'value pairs of metadata to attach to the alert rule that may add user-defined context, but cannot be used for matching, grouping, or routing. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule that may add user-defined context, but cannot be used for matching, grouping, or routing. Defaults to `map[]`.',
+                                          description: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.',
                                           type: 'object',
                                           'x-kubernetes-map-type': 'granular',
                                         },
@@ -20589,6 +20589,11 @@
                     type: 'FromCompositeFieldPath',
                   },
                   {
+                    fromFieldPath: 'spec.parameters.forProvider.severity',
+                    toFieldPath: 'spec.forProvider.severity',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
                     fromFieldPath: 'spec.parameters.forProvider.type',
                     toFieldPath: 'spec.forProvider.type',
                     type: 'FromCompositeFieldPath',
@@ -20756,6 +20761,11 @@
                   {
                     fromFieldPath: 'spec.parameters.initProvider.position',
                     toFieldPath: 'spec.initProvider.position',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
+                    fromFieldPath: 'spec.parameters.initProvider.severity',
+                    toFieldPath: 'spec.initProvider.severity',
                     type: 'FromCompositeFieldPath',
                   },
                   {
@@ -20972,7 +20982,7 @@
                                     type: 'object',
                                   },
                                   duration: {
-                                    description: '(Number) The duration of delay for wait type step.\nThe duration of delay for wait type step.',
+                                    description: '86400) seconds\nThe duration of delay for wait type step. (60-86400) seconds',
                                     type: 'number',
                                   },
                                   escalationChainId: {
@@ -21175,8 +21185,12 @@
                                     description: '(Number) The position of the escalation step (starts from 0).\nThe position of the escalation step (starts from 0).',
                                     type: 'number',
                                   },
+                                  severity: {
+                                    description: '(String) The severity of the incident for declare_incident type step.\nThe severity of the incident for declare_incident type step.',
+                                    type: 'string',
+                                  },
                                   type: {
-                                    description: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members',
+                                    description: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident',
                                     type: 'string',
                                   },
                                 },
@@ -21266,7 +21280,7 @@
                                     type: 'object',
                                   },
                                   duration: {
-                                    description: '(Number) The duration of delay for wait type step.\nThe duration of delay for wait type step.',
+                                    description: '86400) seconds\nThe duration of delay for wait type step. (60-86400) seconds',
                                     type: 'number',
                                   },
                                   escalationChainId: {
@@ -21469,8 +21483,12 @@
                                     description: '(Number) The position of the escalation step (starts from 0).\nThe position of the escalation step (starts from 0).',
                                     type: 'number',
                                   },
+                                  severity: {
+                                    description: '(String) The severity of the incident for declare_incident type step.\nThe severity of the incident for declare_incident type step.',
+                                    type: 'string',
+                                  },
                                   type: {
-                                    description: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members',
+                                    description: '(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident\nThe type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident',
                                     type: 'string',
                                   },
                                 },
@@ -22435,13 +22453,30 @@
                                           type: 'string',
                                         },
                                         microsoftTeams: {
-                                          description: '(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)\nTemplates for Microsoft Teams.',
+                                          description: '(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)\nTemplates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.',
                                           items: {
                                             properties: {
                                               imageUrl: {
                                                 description: '(String) Template for Alert image url.\nTemplate for Alert image url.',
                                                 type: 'string',
                                               },
+                                              message: {
+                                                description: '(String) Template for Alert message.\nTemplate for Alert message.',
+                                                type: 'string',
+                                              },
+                                              title: {
+                                                description: '(String) Template for Alert title.\nTemplate for Alert title.',
+                                                type: 'string',
+                                              },
+                                            },
+                                            type: 'object',
+                                          },
+                                          type: 'array',
+                                        },
+                                        mobileApp: {
+                                          description: '(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)\nTemplates for Mobile app push notifications.',
+                                          items: {
+                                            properties: {
                                               message: {
                                                 description: '(String) Template for Alert message.\nTemplate for Alert message.',
                                                 type: 'string',
@@ -22745,13 +22780,30 @@
                                           type: 'string',
                                         },
                                         microsoftTeams: {
-                                          description: '(Block List, Max: 1) Templates for Microsoft Teams. (see below for nested schema)\nTemplates for Microsoft Teams.',
+                                          description: '(Block List, Max: 1) Templates for Microsoft Teams. NOTE: Microsoft Teams templates are only available on Grafana Cloud. (see below for nested schema)\nTemplates for Microsoft Teams. **NOTE**: Microsoft Teams templates are only available on Grafana Cloud.',
                                           items: {
                                             properties: {
                                               imageUrl: {
                                                 description: '(String) Template for Alert image url.\nTemplate for Alert image url.',
                                                 type: 'string',
                                               },
+                                              message: {
+                                                description: '(String) Template for Alert message.\nTemplate for Alert message.',
+                                                type: 'string',
+                                              },
+                                              title: {
+                                                description: '(String) Template for Alert title.\nTemplate for Alert title.',
+                                                type: 'string',
+                                              },
+                                            },
+                                            type: 'object',
+                                          },
+                                          type: 'array',
+                                        },
+                                        mobileApp: {
+                                          description: '(Block List, Max: 1) Templates for Mobile app push notifications. (see below for nested schema)\nTemplates for Mobile app push notifications.',
+                                          items: {
+                                            properties: {
                                               message: {
                                                 description: '(String) Template for Alert message.\nTemplate for Alert message.',
                                                 type: 'string',
@@ -23166,6 +23218,11 @@
                     type: 'FromCompositeFieldPath',
                   },
                   {
+                    fromFieldPath: 'spec.parameters.forProvider.until',
+                    toFieldPath: 'spec.forProvider.until',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
                     fromFieldPath: 'spec.parameters.forProvider.users',
                     toFieldPath: 'spec.forProvider.users',
                     type: 'FromCompositeFieldPath',
@@ -23243,6 +23300,11 @@
                   {
                     fromFieldPath: 'spec.parameters.initProvider.type',
                     toFieldPath: 'spec.initProvider.type',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
+                    fromFieldPath: 'spec.parameters.initProvider.until',
+                    toFieldPath: 'spec.initProvider.until',
                     type: 'FromCompositeFieldPath',
                   },
                   {
@@ -23457,6 +23519,10 @@
                                     description: "(String) The shift's type. Can be rolling_users, recurrent_event, single_event\nThe shift's type. Can be rolling_users, recurrent_event, single_event",
                                     type: 'string',
                                   },
+                                  until: {
+                                    description: "call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")\nThe end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")",
+                                    type: 'string',
+                                  },
                                   users: {
                                     description: 'call users (for single_event and recurrent_event event type).\nThe list of on-call users (for single_event and recurrent_event event type).',
                                     items: {
@@ -23547,6 +23613,10 @@
                                   },
                                   type: {
                                     description: "(String) The shift's type. Can be rolling_users, recurrent_event, single_event\nThe shift's type. Can be rolling_users, recurrent_event, single_event",
+                                    type: 'string',
+                                  },
+                                  until: {
+                                    description: "call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")\nThe end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example \"2020-09-05T08:00:00\")",
                                     type: 'string',
                                   },
                                   users: {
@@ -38857,6 +38927,11 @@
                     type: 'FromCompositeFieldPath',
                   },
                   {
+                    fromFieldPath: 'spec.parameters.forProvider.ldapSettings',
+                    toFieldPath: 'spec.forProvider.ldapSettings',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
                     fromFieldPath: 'spec.parameters.forProvider.oauth2Settings',
                     toFieldPath: 'spec.forProvider.oauth2Settings',
                     type: 'FromCompositeFieldPath',
@@ -38869,6 +38944,11 @@
                   {
                     fromFieldPath: 'spec.parameters.forProvider.samlSettings',
                     toFieldPath: 'spec.forProvider.samlSettings',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
+                    fromFieldPath: 'spec.parameters.initProvider.ldapSettings',
+                    toFieldPath: 'spec.initProvider.ldapSettings',
                     type: 'FromCompositeFieldPath',
                   },
                   {
@@ -39014,6 +39094,231 @@
                               },
                               forProvider: {
                                 properties: {
+                                  ldapSettings: {
+                                    description: '(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)\nThe LDAP settings set. Required for the ldap provider.',
+                                    items: {
+                                      properties: {
+                                        allowSignUp: {
+                                          description: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.',
+                                          type: 'boolean',
+                                        },
+                                        config: {
+                                          description: '(Block List, Min: 1, Max: 1) The LDAP configuration. (see below for nested schema)\nThe LDAP configuration.',
+                                          items: {
+                                            properties: {
+                                              servers: {
+                                                description: '(Block List, Min: 1) The LDAP servers configuration. (see below for nested schema)\nThe LDAP servers configuration.',
+                                                items: {
+                                                  properties: {
+                                                    attributes: {
+                                                      additionalProperties: {
+                                                        type: 'string',
+                                                      },
+                                                      description: '(Map of String) The LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.\nThe LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.',
+                                                      type: 'object',
+                                                      'x-kubernetes-map-type': 'granular',
+                                                    },
+                                                    bindDn: {
+                                                      description: '(String) The search user bind DN.\nThe search user bind DN.',
+                                                      type: 'string',
+                                                    },
+                                                    bindPasswordSecretRef: {
+                                                      description: '(String, Sensitive) The search user bind password.\nThe search user bind password.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
+                                                    },
+                                                    clientCert: {
+                                                      description: '(String) The path to the client certificate.\nThe path to the client certificate.',
+                                                      type: 'string',
+                                                    },
+                                                    clientCertValue: {
+                                                      description: '(String) The Base64 encoded value of the client certificate.\nThe Base64 encoded value of the client certificate.',
+                                                      type: 'string',
+                                                    },
+                                                    clientKeySecretRef: {
+                                                      description: '(String, Sensitive) The path to the client private key.\nThe path to the client private key.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
+                                                    },
+                                                    clientKeyValueSecretRef: {
+                                                      description: '(String, Sensitive) The Base64 encoded value of the client private key.\nThe Base64 encoded value of the client private key.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
+                                                    },
+                                                    groupMappings: {
+                                                      description: '(Block List) For mapping an LDAP group to a Grafana organization and role. (see below for nested schema)\nFor mapping an LDAP group to a Grafana organization and role.',
+                                                      items: {
+                                                        properties: {
+                                                          grafanaAdmin: {
+                                                            description: '(Boolean) If set to true, it makes the user of group_dn Grafana server admin.\nIf set to true, it makes the user of group_dn Grafana server admin.',
+                                                            type: 'boolean',
+                                                          },
+                                                          groupDn: {
+                                                            description: '(String) LDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").\nLDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").',
+                                                            type: 'string',
+                                                          },
+                                                          orgId: {
+                                                            description: '(Number) The Grafana organization database id.\nThe Grafana organization database id.',
+                                                            type: 'number',
+                                                          },
+                                                          orgRole: {
+                                                            description: '(String) Assign users of group_dn the organization role Admin, Editor, or Viewer.\nAssign users of group_dn the organization role Admin, Editor, or Viewer.',
+                                                            type: 'string',
+                                                          },
+                                                        },
+                                                        type: 'object',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    groupSearchBaseDns: {
+                                                      description: '(List of String) An array of the base DNs to search through for groups. Typically uses ou=groups.\nAn array of the base DNs to search through for groups. Typically uses ou=groups.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    groupSearchFilter: {
+                                                      description: '(String) Group search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).\nGroup search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).',
+                                                      type: 'string',
+                                                    },
+                                                    groupSearchFilterUserAttribute: {
+                                                      description: '(String) The %s in the search filter will be replaced with the attribute defined in this field.\nThe %s in the search filter will be replaced with the attribute defined in this field.',
+                                                      type: 'string',
+                                                    },
+                                                    host: {
+                                                      description: '(String) The LDAP server host.\nThe LDAP server host.',
+                                                      type: 'string',
+                                                    },
+                                                    minTlsVersion: {
+                                                      description: '(String) Minimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.\nMinimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.',
+                                                      type: 'string',
+                                                    },
+                                                    port: {
+                                                      description: '(Number) The LDAP server port.\nThe LDAP server port.',
+                                                      type: 'number',
+                                                    },
+                                                    rootCaCert: {
+                                                      description: '(String) The path to the root CA certificate.\nThe path to the root CA certificate.',
+                                                      type: 'string',
+                                                    },
+                                                    rootCaCertValue: {
+                                                      description: '(List of String) The Base64 encoded values of the root CA certificates.\nThe Base64 encoded values of the root CA certificates.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    searchBaseDns: {
+                                                      description: '(List of String) An array of base DNs to search through.\nAn array of base DNs to search through.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    searchFilter: {
+                                                      description: '(String) The user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".\nThe user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".',
+                                                      type: 'string',
+                                                    },
+                                                    sslSkipVerify: {
+                                                      description: '(Boolean) If set to true, the SSL cert validation will be skipped.\nIf set to true, the SSL cert validation will be skipped.',
+                                                      type: 'boolean',
+                                                    },
+                                                    startTls: {
+                                                      description: '(Boolean) If set to true, use LDAP with STARTTLS instead of LDAPS.\nIf set to true, use LDAP with STARTTLS instead of LDAPS.',
+                                                      type: 'boolean',
+                                                    },
+                                                    timeout: {
+                                                      description: '(Number) The timeout in seconds for connecting to the LDAP host.\nThe timeout in seconds for connecting to the LDAP host.',
+                                                      type: 'number',
+                                                    },
+                                                    tlsCiphers: {
+                                                      description: '(List of String) Accepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.\nAccepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    useSsl: {
+                                                      description: '(Boolean) Set to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).\nSet to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).',
+                                                      type: 'boolean',
+                                                    },
+                                                  },
+                                                  type: 'object',
+                                                },
+                                                type: 'array',
+                                              },
+                                            },
+                                            type: 'object',
+                                          },
+                                          type: 'array',
+                                        },
+                                        enabled: {
+                                          description: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for LDAP. Defaults to `true`.',
+                                          type: 'boolean',
+                                        },
+                                        skipOrgRoleSync: {
+                                          description: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from LDAP.',
+                                          type: 'boolean',
+                                        },
+                                      },
+                                      type: 'object',
+                                    },
+                                    type: 'array',
+                                  },
                                   oauth2Settings: {
                                     description: '(Block Set, Max: 1) The OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers. (see below for nested schema)\nThe OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers.',
                                     items: {
@@ -39023,7 +39328,7 @@
                                           type: 'boolean',
                                         },
                                         allowSignUp: {
-                                          description: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nIf not enabled, only existing Grafana users can log in using OAuth.',
+                                          description: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nIf not enabled, only existing Grafana users can log in using OAuth.',
                                           type: 'boolean',
                                         },
                                         allowedDomains: {
@@ -39110,7 +39415,7 @@
                                           type: 'boolean',
                                         },
                                         enabled: {
-                                          description: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.',
+                                          description: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.',
                                           type: 'boolean',
                                         },
                                         groupsAttributePath: {
@@ -39133,6 +39438,14 @@
                                           description: '(String) JMESPath expression to use for user name lookup from the user ID token. This name will be used as the user’s display name. Only applicable to Generic OAuth.\nJMESPath expression to use for user name lookup from the user ID token. This name will be used as the user’s display name. Only applicable to Generic OAuth.',
                                           type: 'string',
                                         },
+                                        orgAttributePath: {
+                                          description: '(String) JMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.\nJMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.',
+                                          type: 'string',
+                                        },
+                                        orgMapping: {
+                                          description: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.',
+                                          type: 'string',
+                                        },
                                         roleAttributePath: {
                                           description: '(String) JMESPath expression to use for Grafana role lookup.\nJMESPath expression to use for Grafana role lookup.',
                                           type: 'string',
@@ -39150,7 +39463,7 @@
                                           type: 'string',
                                         },
                                         skipOrgRoleSync: {
-                                          description: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.',
+                                          description: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.',
                                           type: 'boolean',
                                         },
                                         teamIds: {
@@ -39199,7 +39512,7 @@
                                     type: 'array',
                                   },
                                   providerName: {
-                                    description: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.',
+                                    description: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.',
                                     type: 'string',
                                   },
                                   samlSettings: {
@@ -39211,7 +39524,7 @@
                                           type: 'boolean',
                                         },
                                         allowSignUp: {
-                                          description: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.',
+                                          description: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.',
                                           type: 'boolean',
                                         },
                                         allowedOrganizations: {
@@ -39273,8 +39586,20 @@
                                           ],
                                           type: 'object',
                                         },
+                                        clientId: {
+                                          description: '(String) The client Id of your OAuth2 app.\nThe client Id of your OAuth2 app.',
+                                          type: 'string',
+                                        },
+                                        clientSecret: {
+                                          description: '(String, Sensitive) The client secret of your OAuth2 app.\nThe client secret of your OAuth2 app.',
+                                          type: 'string',
+                                        },
                                         enabled: {
-                                          description: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.',
+                                          description: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.',
+                                          type: 'boolean',
+                                        },
+                                        forceUseGraphApi: {
+                                          description: '(Boolean) If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.\nIf enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.',
                                           type: 'boolean',
                                         },
                                         idpMetadata: {
@@ -39306,7 +39631,7 @@
                                           type: 'string',
                                         },
                                         orgMapping: {
-                                          description: 'or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.',
+                                          description: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.',
                                           type: 'string',
                                         },
                                         privateKeyPath: {
@@ -39369,8 +39694,12 @@
                                           type: 'boolean',
                                         },
                                         skipOrgRoleSync: {
-                                          description: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.',
+                                          description: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.',
                                           type: 'boolean',
+                                        },
+                                        tokenUrl: {
+                                          description: '(String) The token endpoint of your OAuth2 provider. Required for azuread, okta and generic_oauth providers.\nThe token endpoint of your OAuth2 provider. Required for Azure AD providers.',
+                                          type: 'string',
                                         },
                                       },
                                       type: 'object',
@@ -39383,6 +39712,231 @@
                               initProvider: {
                                 description: 'THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.',
                                 properties: {
+                                  ldapSettings: {
+                                    description: '(Block Set, Max: 1) The LDAP settings set. Required for the ldap provider. (see below for nested schema)\nThe LDAP settings set. Required for the ldap provider.',
+                                    items: {
+                                      properties: {
+                                        allowSignUp: {
+                                          description: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.',
+                                          type: 'boolean',
+                                        },
+                                        config: {
+                                          description: '(Block List, Min: 1, Max: 1) The LDAP configuration. (see below for nested schema)\nThe LDAP configuration.',
+                                          items: {
+                                            properties: {
+                                              servers: {
+                                                description: '(Block List, Min: 1) The LDAP servers configuration. (see below for nested schema)\nThe LDAP servers configuration.',
+                                                items: {
+                                                  properties: {
+                                                    attributes: {
+                                                      additionalProperties: {
+                                                        type: 'string',
+                                                      },
+                                                      description: '(Map of String) The LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.\nThe LDAP server attributes. The following attributes can be configured: email, member_of, name, surname, username.',
+                                                      type: 'object',
+                                                      'x-kubernetes-map-type': 'granular',
+                                                    },
+                                                    bindDn: {
+                                                      description: '(String) The search user bind DN.\nThe search user bind DN.',
+                                                      type: 'string',
+                                                    },
+                                                    bindPasswordSecretRef: {
+                                                      description: '(String, Sensitive) The search user bind password.\nThe search user bind password.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
+                                                    },
+                                                    clientCert: {
+                                                      description: '(String) The path to the client certificate.\nThe path to the client certificate.',
+                                                      type: 'string',
+                                                    },
+                                                    clientCertValue: {
+                                                      description: '(String) The Base64 encoded value of the client certificate.\nThe Base64 encoded value of the client certificate.',
+                                                      type: 'string',
+                                                    },
+                                                    clientKeySecretRef: {
+                                                      description: '(String, Sensitive) The path to the client private key.\nThe path to the client private key.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
+                                                    },
+                                                    clientKeyValueSecretRef: {
+                                                      description: '(String, Sensitive) The Base64 encoded value of the client private key.\nThe Base64 encoded value of the client private key.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
+                                                    },
+                                                    groupMappings: {
+                                                      description: '(Block List) For mapping an LDAP group to a Grafana organization and role. (see below for nested schema)\nFor mapping an LDAP group to a Grafana organization and role.',
+                                                      items: {
+                                                        properties: {
+                                                          grafanaAdmin: {
+                                                            description: '(Boolean) If set to true, it makes the user of group_dn Grafana server admin.\nIf set to true, it makes the user of group_dn Grafana server admin.',
+                                                            type: 'boolean',
+                                                          },
+                                                          groupDn: {
+                                                            description: '(String) LDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").\nLDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard ("*").',
+                                                            type: 'string',
+                                                          },
+                                                          orgId: {
+                                                            description: '(Number) The Grafana organization database id.\nThe Grafana organization database id.',
+                                                            type: 'number',
+                                                          },
+                                                          orgRole: {
+                                                            description: '(String) Assign users of group_dn the organization role Admin, Editor, or Viewer.\nAssign users of group_dn the organization role Admin, Editor, or Viewer.',
+                                                            type: 'string',
+                                                          },
+                                                        },
+                                                        type: 'object',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    groupSearchBaseDns: {
+                                                      description: '(List of String) An array of the base DNs to search through for groups. Typically uses ou=groups.\nAn array of the base DNs to search through for groups. Typically uses ou=groups.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    groupSearchFilter: {
+                                                      description: '(String) Group search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).\nGroup search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available).',
+                                                      type: 'string',
+                                                    },
+                                                    groupSearchFilterUserAttribute: {
+                                                      description: '(String) The %s in the search filter will be replaced with the attribute defined in this field.\nThe %s in the search filter will be replaced with the attribute defined in this field.',
+                                                      type: 'string',
+                                                    },
+                                                    host: {
+                                                      description: '(String) The LDAP server host.\nThe LDAP server host.',
+                                                      type: 'string',
+                                                    },
+                                                    minTlsVersion: {
+                                                      description: '(String) Minimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.\nMinimum TLS version allowed. Accepted values are: TLS1.2, TLS1.3.',
+                                                      type: 'string',
+                                                    },
+                                                    port: {
+                                                      description: '(Number) The LDAP server port.\nThe LDAP server port.',
+                                                      type: 'number',
+                                                    },
+                                                    rootCaCert: {
+                                                      description: '(String) The path to the root CA certificate.\nThe path to the root CA certificate.',
+                                                      type: 'string',
+                                                    },
+                                                    rootCaCertValue: {
+                                                      description: '(List of String) The Base64 encoded values of the root CA certificates.\nThe Base64 encoded values of the root CA certificates.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    searchBaseDns: {
+                                                      description: '(List of String) An array of base DNs to search through.\nAn array of base DNs to search through.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    searchFilter: {
+                                                      description: '(String) The user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".\nThe user search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)".',
+                                                      type: 'string',
+                                                    },
+                                                    sslSkipVerify: {
+                                                      description: '(Boolean) If set to true, the SSL cert validation will be skipped.\nIf set to true, the SSL cert validation will be skipped.',
+                                                      type: 'boolean',
+                                                    },
+                                                    startTls: {
+                                                      description: '(Boolean) If set to true, use LDAP with STARTTLS instead of LDAPS.\nIf set to true, use LDAP with STARTTLS instead of LDAPS.',
+                                                      type: 'boolean',
+                                                    },
+                                                    timeout: {
+                                                      description: '(Number) The timeout in seconds for connecting to the LDAP host.\nThe timeout in seconds for connecting to the LDAP host.',
+                                                      type: 'number',
+                                                    },
+                                                    tlsCiphers: {
+                                                      description: '(List of String) Accepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.\nAccepted TLS ciphers. For a complete list of supported ciphers, refer to: https://go.dev/src/crypto/tls/cipher_suites.go.',
+                                                      items: {
+                                                        type: 'string',
+                                                      },
+                                                      type: 'array',
+                                                    },
+                                                    useSsl: {
+                                                      description: '(Boolean) Set to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).\nSet to true if LDAP server should use an encrypted TLS connection (either with STARTTLS or LDAPS).',
+                                                      type: 'boolean',
+                                                    },
+                                                  },
+                                                  type: 'object',
+                                                },
+                                                type: 'array',
+                                              },
+                                            },
+                                            type: 'object',
+                                          },
+                                          type: 'array',
+                                        },
+                                        enabled: {
+                                          description: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for LDAP. Defaults to `true`.',
+                                          type: 'boolean',
+                                        },
+                                        skipOrgRoleSync: {
+                                          description: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from LDAP.',
+                                          type: 'boolean',
+                                        },
+                                      },
+                                      type: 'object',
+                                    },
+                                    type: 'array',
+                                  },
                                   oauth2Settings: {
                                     description: '(Block Set, Max: 1) The OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers. (see below for nested schema)\nThe OAuth2 settings set. Required for github, gitlab, google, azuread, okta, generic_oauth providers.',
                                     items: {
@@ -39392,7 +39946,7 @@
                                           type: 'boolean',
                                         },
                                         allowSignUp: {
-                                          description: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nIf not enabled, only existing Grafana users can log in using OAuth.',
+                                          description: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nIf not enabled, only existing Grafana users can log in using OAuth.',
                                           type: 'boolean',
                                         },
                                         allowedDomains: {
@@ -39479,7 +40033,7 @@
                                           type: 'boolean',
                                         },
                                         enabled: {
-                                          description: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.',
+                                          description: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for the specified provider. Defaults to `true`.',
                                           type: 'boolean',
                                         },
                                         groupsAttributePath: {
@@ -39502,6 +40056,14 @@
                                           description: '(String) JMESPath expression to use for user name lookup from the user ID token. This name will be used as the user’s display name. Only applicable to Generic OAuth.\nJMESPath expression to use for user name lookup from the user ID token. This name will be used as the user’s display name. Only applicable to Generic OAuth.',
                                           type: 'string',
                                         },
+                                        orgAttributePath: {
+                                          description: '(String) JMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.\nJMESPath expression to use for the organization mapping lookup from the user ID token. The extracted list will be used for the organization mapping (to match "Organization" in the "org_mapping"). Only applicable to Generic OAuth and Okta.',
+                                          type: 'string',
+                                        },
+                                        orgMapping: {
+                                          description: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.',
+                                          type: 'string',
+                                        },
                                         roleAttributePath: {
                                           description: '(String) JMESPath expression to use for Grafana role lookup.\nJMESPath expression to use for Grafana role lookup.',
                                           type: 'string',
@@ -39519,7 +40081,7 @@
                                           type: 'string',
                                         },
                                         skipOrgRoleSync: {
-                                          description: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.',
+                                          description: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.',
                                           type: 'boolean',
                                         },
                                         teamIds: {
@@ -39568,7 +40130,7 @@
                                     type: 'array',
                                   },
                                   providerName: {
-                                    description: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml.',
+                                    description: '(String) The name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.\nThe name of the SSO provider. Supported values: github, gitlab, google, azuread, okta, generic_oauth, saml, ldap.',
                                     type: 'string',
                                   },
                                   samlSettings: {
@@ -39580,7 +40142,7 @@
                                           type: 'boolean',
                                         },
                                         allowSignUp: {
-                                          description: '(Boolean) If not enabled, only existing Grafana users can log in using OAuth.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.',
+                                          description: '(Boolean) Whether to allow new Grafana user creation through LDAP login. If set to false, then only existing Grafana users can log in with LDAP.\nWhether to allow new Grafana user creation through SAML login. If set to false, then only existing Grafana users can log in with SAML.',
                                           type: 'boolean',
                                         },
                                         allowedOrganizations: {
@@ -39642,8 +40204,20 @@
                                           ],
                                           type: 'object',
                                         },
+                                        clientId: {
+                                          description: '(String) The client Id of your OAuth2 app.\nThe client Id of your OAuth2 app.',
+                                          type: 'string',
+                                        },
+                                        clientSecret: {
+                                          description: '(String, Sensitive) The client secret of your OAuth2 app.\nThe client secret of your OAuth2 app.',
+                                          type: 'string',
+                                        },
                                         enabled: {
-                                          description: '(Boolean) Define whether this configuration is enabled for the specified provider. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.',
+                                          description: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.',
+                                          type: 'boolean',
+                                        },
+                                        forceUseGraphApi: {
+                                          description: '(Boolean) If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.\nIf enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.',
                                           type: 'boolean',
                                         },
                                         idpMetadata: {
@@ -39675,7 +40249,7 @@
                                           type: 'string',
                                         },
                                         orgMapping: {
-                                          description: 'or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.',
+                                          description: 'or space-separated Organization:OrgIdOrOrgName:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: None, Viewer, Editor or Admin.\nList of comma- or space-separated Organization:OrgId:Role mappings. Organization can be * meaning “All users”. Role is optional and can have the following values: Viewer, Editor or Admin.',
                                           type: 'string',
                                         },
                                         privateKeyPath: {
@@ -39738,8 +40312,12 @@
                                           type: 'boolean',
                                         },
                                         skipOrgRoleSync: {
-                                          description: '(Boolean) Prevent synchronizing users’ organization roles from your IdP.\nPrevent synchronizing users’ organization roles from your IdP.',
+                                          description: '(Boolean) Prevent synchronizing users’ organization roles from LDAP.\nPrevent synchronizing users’ organization roles from your IdP.',
                                           type: 'boolean',
+                                        },
+                                        tokenUrl: {
+                                          description: '(String) The token endpoint of your OAuth2 provider. Required for azuread, okta and generic_oauth providers.\nThe token endpoint of your OAuth2 provider. Required for Azure AD providers.',
+                                          type: 'string',
                                         },
                                       },
                                       type: 'object',
@@ -41496,6 +42074,11 @@
                     type: 'FromCompositeFieldPath',
                   },
                   {
+                    fromFieldPath: 'spec.parameters.forProvider.searchExpression',
+                    toFieldPath: 'spec.forProvider.searchExpression',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
                     fromFieldPath: 'spec.parameters.initProvider.alerting',
                     toFieldPath: 'spec.initProvider.alerting',
                     type: 'FromCompositeFieldPath',
@@ -41533,6 +42116,11 @@
                   {
                     fromFieldPath: 'spec.parameters.initProvider.query',
                     toFieldPath: 'spec.initProvider.query',
+                    type: 'FromCompositeFieldPath',
+                  },
+                  {
+                    fromFieldPath: 'spec.parameters.initProvider.searchExpression',
+                    toFieldPath: 'spec.initProvider.searchExpression',
                     type: 'FromCompositeFieldPath',
                   },
                   {
@@ -41685,11 +42273,11 @@
                                           items: {
                                             properties: {
                                               key: {
-                                                description: '(String)',
+                                                description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                 type: 'string',
                                               },
                                               value: {
-                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                 type: 'string',
                                               },
                                             },
@@ -41706,11 +42294,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -41723,11 +42311,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -41745,11 +42333,11 @@
                                           items: {
                                             properties: {
                                               key: {
-                                                description: '(String)',
+                                                description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                 type: 'string',
                                               },
                                               value: {
-                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                 type: 'string',
                                               },
                                             },
@@ -41766,11 +42354,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -41783,11 +42371,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -41907,11 +42495,11 @@
                                     items: {
                                       properties: {
                                         key: {
-                                          description: '(String)',
+                                          description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                           type: 'string',
                                         },
                                         value: {
-                                          description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                          description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                           type: 'string',
                                         },
                                       },
@@ -41989,6 +42577,10 @@
                                       type: 'object',
                                     },
                                     type: 'array',
+                                  },
+                                  searchExpression: {
+                                    description: '(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.',
+                                    type: 'string',
                                   },
                                 },
                                 type: 'object',
@@ -42018,11 +42610,11 @@
                                           items: {
                                             properties: {
                                               key: {
-                                                description: '(String)',
+                                                description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                 type: 'string',
                                               },
                                               value: {
-                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                 type: 'string',
                                               },
                                             },
@@ -42039,11 +42631,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -42056,11 +42648,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -42078,11 +42670,11 @@
                                           items: {
                                             properties: {
                                               key: {
-                                                description: '(String)',
+                                                description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                 type: 'string',
                                               },
                                               value: {
-                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                 type: 'string',
                                               },
                                             },
@@ -42099,11 +42691,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -42116,11 +42708,11 @@
                                                 items: {
                                                   properties: {
                                                     key: {
-                                                      description: '(String)',
+                                                      description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                                       type: 'string',
                                                     },
                                                     value: {
-                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                                      description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                                       type: 'string',
                                                     },
                                                   },
@@ -42240,11 +42832,11 @@
                                     items: {
                                       properties: {
                                         key: {
-                                          description: '(String)',
+                                          description: '(String) Key for filtering and identification\nKey for filtering and identification',
                                           type: 'string',
                                         },
                                         value: {
-                                          description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.',
+                                          description: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value',
                                           type: 'string',
                                         },
                                       },
@@ -42322,6 +42914,10 @@
                                       type: 'object',
                                     },
                                     type: 'array',
+                                  },
+                                  searchExpression: {
+                                    description: '(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.',
+                                    type: 'string',
                                   },
                                 },
                                 type: 'object',
@@ -43016,9 +43612,28 @@
                                                 description: '(Block Set, Max: 1) Basic auth settings. (see below for nested schema)\nBasic auth settings.',
                                                 items: {
                                                   properties: {
-                                                    password: {
-                                                      description: '(String) Basic auth password.\nBasic auth password.',
-                                                      type: 'string',
+                                                    passwordSecretRef: {
+                                                      description: '(String, Sensitive) Basic auth password.\nBasic auth password.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
                                                     },
                                                     username: {
                                                       description: '(String) Basic auth username.\nBasic auth username.',
@@ -43029,9 +43644,28 @@
                                                 },
                                                 type: 'array',
                                               },
-                                              bearerToken: {
-                                                description: '(String) Token for use with bearer authorization header.\nToken for use with bearer authorization header.',
-                                                type: 'string',
+                                              bearerTokenSecretRef: {
+                                                description: '(String, Sensitive) Token for use with bearer authorization header.\nToken for use with bearer authorization header.',
+                                                properties: {
+                                                  key: {
+                                                    description: 'The key to select.',
+                                                    type: 'string',
+                                                  },
+                                                  name: {
+                                                    description: 'Name of the secret.',
+                                                    type: 'string',
+                                                  },
+                                                  namespace: {
+                                                    description: 'Namespace of the secret.',
+                                                    type: 'string',
+                                                  },
+                                                },
+                                                required: [
+                                                  'key',
+                                                  'name',
+                                                  'namespace',
+                                                ],
+                                                type: 'object',
                                               },
                                               body: {
                                                 description: '(String) The body of the HTTP request used in probe.\nThe body of the HTTP request used in probe.',
@@ -43753,22 +44387,63 @@
                                                 description: '(Block Set, Max: 1) Basic auth settings. (see below for nested schema)\nBasic auth settings.',
                                                 items: {
                                                   properties: {
-                                                    password: {
-                                                      description: '(String) Basic auth password.\nBasic auth password.',
-                                                      type: 'string',
+                                                    passwordSecretRef: {
+                                                      description: '(String, Sensitive) Basic auth password.\nBasic auth password.',
+                                                      properties: {
+                                                        key: {
+                                                          description: 'The key to select.',
+                                                          type: 'string',
+                                                        },
+                                                        name: {
+                                                          description: 'Name of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                        namespace: {
+                                                          description: 'Namespace of the secret.',
+                                                          type: 'string',
+                                                        },
+                                                      },
+                                                      required: [
+                                                        'key',
+                                                        'name',
+                                                        'namespace',
+                                                      ],
+                                                      type: 'object',
                                                     },
                                                     username: {
                                                       description: '(String) Basic auth username.\nBasic auth username.',
                                                       type: 'string',
                                                     },
                                                   },
+                                                  required: [
+                                                    'passwordSecretRef',
+                                                  ],
                                                   type: 'object',
                                                 },
                                                 type: 'array',
                                               },
-                                              bearerToken: {
-                                                description: '(String) Token for use with bearer authorization header.\nToken for use with bearer authorization header.',
-                                                type: 'string',
+                                              bearerTokenSecretRef: {
+                                                description: '(String, Sensitive) Token for use with bearer authorization header.\nToken for use with bearer authorization header.',
+                                                properties: {
+                                                  key: {
+                                                    description: 'The key to select.',
+                                                    type: 'string',
+                                                  },
+                                                  name: {
+                                                    description: 'Name of the secret.',
+                                                    type: 'string',
+                                                  },
+                                                  namespace: {
+                                                    description: 'Namespace of the secret.',
+                                                    type: 'string',
+                                                  },
+                                                },
+                                                required: [
+                                                  'key',
+                                                  'name',
+                                                  'namespace',
+                                                ],
+                                                type: 'object',
                                               },
                                               body: {
                                                 description: '(String) The body of the HTTP request used in probe.\nThe body of the HTTP request used in probe.',

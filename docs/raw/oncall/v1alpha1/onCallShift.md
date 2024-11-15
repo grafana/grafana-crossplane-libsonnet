@@ -86,6 +86,7 @@
       * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
       * [`fn withTimeZone(value)`](#fn-specparametersforproviderwithtimezone)
       * [`fn withType(value)`](#fn-specparametersforproviderwithtype)
+      * [`fn withUntil(value)`](#fn-specparametersforproviderwithuntil)
       * [`fn withUsers(value)`](#fn-specparametersforproviderwithusers)
       * [`fn withUsersMixin(value)`](#fn-specparametersforproviderwithusersmixin)
       * [`fn withWeekStart(value)`](#fn-specparametersforproviderwithweekstart)
@@ -108,6 +109,7 @@
       * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
       * [`fn withTimeZone(value)`](#fn-specparametersinitproviderwithtimezone)
       * [`fn withType(value)`](#fn-specparametersinitproviderwithtype)
+      * [`fn withUntil(value)`](#fn-specparametersinitproviderwithuntil)
       * [`fn withUsers(value)`](#fn-specparametersinitproviderwithusers)
       * [`fn withUsersMixin(value)`](#fn-specparametersinitproviderwithusersmixin)
       * [`fn withWeekStart(value)`](#fn-specparametersinitproviderwithweekstart)
@@ -1099,6 +1101,18 @@ PARAMETERS:
 
 (String) The shift's type. Can be rolling_users, recurrent_event, single_event
 The shift's type. Can be rolling_users, recurrent_event, single_event
+###### fn spec.parameters.forProvider.withUntil
+
+```jsonnet
+spec.parameters.forProvider.withUntil(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
+The end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
 ###### fn spec.parameters.forProvider.withUsers
 
 ```jsonnet
@@ -1354,6 +1368,18 @@ PARAMETERS:
 
 (String) The shift's type. Can be rolling_users, recurrent_event, single_event
 The shift's type. Can be rolling_users, recurrent_event, single_event
+###### fn spec.parameters.initProvider.withUntil
+
+```jsonnet
+spec.parameters.initProvider.withUntil(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
+The end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
 ###### fn spec.parameters.initProvider.withUsers
 
 ```jsonnet

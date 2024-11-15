@@ -101,11 +101,11 @@
           annotation+:
             {
               '#': { help: '', name: 'annotation' },
-              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
@@ -144,11 +144,11 @@
               annotation+:
                 {
                   '#': { help: '', name: 'annotation' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -170,11 +170,11 @@
               label+:
                 {
                   '#': { help: '', name: 'label' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -197,11 +197,11 @@
           label+:
             {
               '#': { help: '', name: 'label' },
-              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
@@ -240,11 +240,11 @@
               annotation+:
                 {
                   '#': { help: '', name: 'annotation' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -266,11 +266,11 @@
               label+:
                 {
                   '#': { help: '', name: 'label' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -468,11 +468,11 @@
       label+:
         {
           '#': { help: '', name: 'label' },
-          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
           withKey(value): {
             key: value,
           },
-          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
           withValue(value): {
             value: value,
           },
@@ -621,6 +621,16 @@
             type: value,
           },
         },
+      '#withSearchExpression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.' } },
+      withSearchExpression(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              searchExpression: value,
+            },
+          },
+        },
+      },
     },
   '#withInitProvider': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.' } },
   withInitProvider(value): {
@@ -708,11 +718,11 @@
           annotation+:
             {
               '#': { help: '', name: 'annotation' },
-              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
@@ -751,11 +761,11 @@
               annotation+:
                 {
                   '#': { help: '', name: 'annotation' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -777,11 +787,11 @@
               label+:
                 {
                   '#': { help: '', name: 'label' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -804,11 +814,11 @@
           label+:
             {
               '#': { help: '', name: 'label' },
-              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
@@ -847,11 +857,11 @@
               annotation+:
                 {
                   '#': { help: '', name: 'annotation' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -873,11 +883,11 @@
               label+:
                 {
                   '#': { help: '', name: 'label' },
-                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -1075,11 +1085,11 @@
       label+:
         {
           '#': { help: '', name: 'label' },
-          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Key for filtering and identification\nKey for filtering and identification' } },
           withKey(value): {
             key: value,
           },
-          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
           withValue(value): {
             value: value,
           },
@@ -1228,6 +1238,16 @@
             type: value,
           },
         },
+      '#withSearchExpression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.' } },
+      withSearchExpression(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              searchExpression: value,
+            },
+          },
+        },
+      },
     },
   '#withManagementPolicies': { 'function': { args: [{ default: ['*'], enums: null, name: 'value', type: ['array'] }], help: 'THIS IS A BETA FIELD. It is on by default but can be opted out\nthrough a Crossplane feature flag.\nManagementPolicies specify the array of actions Crossplane is allowed to\ntake on the managed and external resources.\nThis field is planned to replace the DeletionPolicy field in a future\nrelease. Currently, both could be set independently and non-default\nvalues would be honored if the feature flag is enabled. If both are\ncustom, the DeletionPolicy field will be ignored.\nSee the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223\nand this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md' } },
   withManagementPolicies(value): {
