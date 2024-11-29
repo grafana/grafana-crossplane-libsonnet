@@ -1,0 +1,15 @@
+apiVersion: meta.pkg.crossplane.io/v1
+kind: Configuration
+metadata:
+  annotations:
+    meta.crossplane.io/description: "This configuration provides Compositions that map 1:1 to the managed resources with the only goal is to provide a namespaced resource of the same managed resource."
+    meta.crossplane.io/license: Apache-2.0
+    meta.crossplane.io/maintainer: Grafana
+    meta.crossplane.io/source: github.com/grafana/grafana-crossplane-libsonnet
+  name: sm.grafana.crossplane.io.namespaced
+spec:
+  crossplane:
+    version: ">=v1.17"
+  dependsOn:
+    - provider: xpkg.upbound.io/grafana/provider-grafana
+      version: ">=v0.21.0"

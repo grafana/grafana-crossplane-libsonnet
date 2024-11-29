@@ -1,0 +1,147 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xschedules.oncall.grafana.crossplane.io.namespaced
+  name: schedule-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: oncall.grafana.crossplane.io.namespaced/v1alpha1
+    kind: XSchedule
+  resources:
+    - base:
+        apiVersion: oncall.grafana.crossplane.io/v1alpha1
+        kind: Schedule
+      name: schedule
+      patches:
+        - fromFieldPath: spec.parameters.externalName
+          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.enableWebOverrides
+          toFieldPath: spec.forProvider.enableWebOverrides
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.icalUrlOverrides
+          toFieldPath: spec.forProvider.icalUrlOverrides
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.icalUrlPrimary
+          toFieldPath: spec.forProvider.icalUrlPrimary
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.name
+          toFieldPath: spec.forProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.shifts
+          toFieldPath: spec.forProvider.shifts
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.shiftsRef
+          toFieldPath: spec.forProvider.shiftsRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.shiftsSelector.matchControllerRef
+          toFieldPath: spec.forProvider.shiftsSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.shiftsSelector.matchLabels
+          toFieldPath: spec.forProvider.shiftsSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.shiftsSelector.policy.resolution
+          toFieldPath: spec.forProvider.shiftsSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.shiftsSelector.policy.resolve
+          toFieldPath: spec.forProvider.shiftsSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.slack
+          toFieldPath: spec.forProvider.slack
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.teamId
+          toFieldPath: spec.forProvider.teamId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.timeZone
+          toFieldPath: spec.forProvider.timeZone
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.type
+          toFieldPath: spec.forProvider.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.enableWebOverrides
+          toFieldPath: spec.initProvider.enableWebOverrides
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.icalUrlOverrides
+          toFieldPath: spec.initProvider.icalUrlOverrides
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.icalUrlPrimary
+          toFieldPath: spec.initProvider.icalUrlPrimary
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.name
+          toFieldPath: spec.initProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.shifts
+          toFieldPath: spec.initProvider.shifts
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.shiftsRef
+          toFieldPath: spec.initProvider.shiftsRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.shiftsSelector.matchControllerRef
+          toFieldPath: spec.initProvider.shiftsSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.shiftsSelector.matchLabels
+          toFieldPath: spec.initProvider.shiftsSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.shiftsSelector.policy.resolution
+          toFieldPath: spec.initProvider.shiftsSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.shiftsSelector.policy.resolve
+          toFieldPath: spec.initProvider.shiftsSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.slack
+          toFieldPath: spec.initProvider.slack
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.teamId
+          toFieldPath: spec.initProvider.teamId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.timeZone
+          toFieldPath: spec.initProvider.timeZone
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.type
+          toFieldPath: spec.initProvider.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.managementPolicies
+          toFieldPath: spec.managementPolicies
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.name
+          toFieldPath: spec.providerConfigRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+          toFieldPath: spec.providerConfigRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+          toFieldPath: spec.providerConfigRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+          toFieldPath: spec.publishConnectionDetailsTo.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+          toFieldPath: spec.writeConnectionSecretToRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+          toFieldPath: spec.writeConnectionSecretToRef.namespace
+          type: FromCompositeFieldPath

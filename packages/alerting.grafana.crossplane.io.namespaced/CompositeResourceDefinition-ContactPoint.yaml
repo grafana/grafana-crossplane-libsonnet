@@ -1,0 +1,249 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xcontactpoints.alerting.grafana.crossplane.io.namespaced
+  name: contactpoint-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: alerting.grafana.crossplane.io.namespaced/v1alpha1
+    kind: XContactPoint
+  resources:
+    - base:
+        apiVersion: alerting.grafana.crossplane.io/v1alpha1
+        kind: ContactPoint
+      name: contactpoint
+      patches:
+        - fromFieldPath: spec.parameters.externalName
+          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.alertmanager
+          toFieldPath: spec.forProvider.alertmanager
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.dingding
+          toFieldPath: spec.forProvider.dingding
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.disableProvenance
+          toFieldPath: spec.forProvider.disableProvenance
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.discord
+          toFieldPath: spec.forProvider.discord
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.email
+          toFieldPath: spec.forProvider.email
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.googlechat
+          toFieldPath: spec.forProvider.googlechat
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.kafka
+          toFieldPath: spec.forProvider.kafka
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.line
+          toFieldPath: spec.forProvider.line
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.name
+          toFieldPath: spec.forProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.oncall
+          toFieldPath: spec.forProvider.oncall
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.opsgenie
+          toFieldPath: spec.forProvider.opsgenie
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.orgId
+          toFieldPath: spec.forProvider.orgId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationRef.name
+          toFieldPath: spec.forProvider.organizationRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationRef.policy.resolution
+          toFieldPath: spec.forProvider.organizationRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationRef.policy.resolve
+          toFieldPath: spec.forProvider.organizationRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.matchControllerRef
+          toFieldPath: spec.forProvider.organizationSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.matchLabels
+          toFieldPath: spec.forProvider.organizationSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.policy.resolution
+          toFieldPath: spec.forProvider.organizationSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.policy.resolve
+          toFieldPath: spec.forProvider.organizationSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.pagerduty
+          toFieldPath: spec.forProvider.pagerduty
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.pushover
+          toFieldPath: spec.forProvider.pushover
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.sensugo
+          toFieldPath: spec.forProvider.sensugo
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.slack
+          toFieldPath: spec.forProvider.slack
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.sns
+          toFieldPath: spec.forProvider.sns
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.teams
+          toFieldPath: spec.forProvider.teams
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.telegram
+          toFieldPath: spec.forProvider.telegram
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.threema
+          toFieldPath: spec.forProvider.threema
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.victorops
+          toFieldPath: spec.forProvider.victorops
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.webex
+          toFieldPath: spec.forProvider.webex
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.webhook
+          toFieldPath: spec.forProvider.webhook
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.wecom
+          toFieldPath: spec.forProvider.wecom
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.alertmanager
+          toFieldPath: spec.initProvider.alertmanager
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.dingding
+          toFieldPath: spec.initProvider.dingding
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.disableProvenance
+          toFieldPath: spec.initProvider.disableProvenance
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.discord
+          toFieldPath: spec.initProvider.discord
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.email
+          toFieldPath: spec.initProvider.email
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.googlechat
+          toFieldPath: spec.initProvider.googlechat
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.kafka
+          toFieldPath: spec.initProvider.kafka
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.line
+          toFieldPath: spec.initProvider.line
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.name
+          toFieldPath: spec.initProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.oncall
+          toFieldPath: spec.initProvider.oncall
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.opsgenie
+          toFieldPath: spec.initProvider.opsgenie
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.orgId
+          toFieldPath: spec.initProvider.orgId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationRef.name
+          toFieldPath: spec.initProvider.organizationRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationRef.policy.resolution
+          toFieldPath: spec.initProvider.organizationRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationRef.policy.resolve
+          toFieldPath: spec.initProvider.organizationRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.matchControllerRef
+          toFieldPath: spec.initProvider.organizationSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.matchLabels
+          toFieldPath: spec.initProvider.organizationSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.policy.resolution
+          toFieldPath: spec.initProvider.organizationSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.policy.resolve
+          toFieldPath: spec.initProvider.organizationSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.pagerduty
+          toFieldPath: spec.initProvider.pagerduty
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.pushover
+          toFieldPath: spec.initProvider.pushover
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.sensugo
+          toFieldPath: spec.initProvider.sensugo
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.slack
+          toFieldPath: spec.initProvider.slack
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.sns
+          toFieldPath: spec.initProvider.sns
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.teams
+          toFieldPath: spec.initProvider.teams
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.telegram
+          toFieldPath: spec.initProvider.telegram
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.threema
+          toFieldPath: spec.initProvider.threema
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.victorops
+          toFieldPath: spec.initProvider.victorops
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.webex
+          toFieldPath: spec.initProvider.webex
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.webhook
+          toFieldPath: spec.initProvider.webhook
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.wecom
+          toFieldPath: spec.initProvider.wecom
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.managementPolicies
+          toFieldPath: spec.managementPolicies
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.name
+          toFieldPath: spec.providerConfigRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+          toFieldPath: spec.providerConfigRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+          toFieldPath: spec.providerConfigRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+          toFieldPath: spec.publishConnectionDetailsTo.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+          toFieldPath: spec.writeConnectionSecretToRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+          toFieldPath: spec.writeConnectionSecretToRef.namespace
+          type: FromCompositeFieldPath
