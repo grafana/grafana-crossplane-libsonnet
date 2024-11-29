@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "dependencies": [
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/google/go-jsonnet.git",
+          "subdir": "testdata"
+        }
+      },
+      "version": "master"
+    }
+  ],
+  "legacyImports": true
+}
