@@ -1,0 +1,273 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xescalations.oncall.grafana.crossplane.io.namespaced
+  name: escalation-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: oncall.grafana.crossplane.io.namespaced/v1alpha1
+    kind: XEscalation
+  resources:
+    - base:
+        apiVersion: oncall.grafana.crossplane.io/v1alpha1
+        kind: Escalation
+      name: escalation
+      patches:
+        - fromFieldPath: spec.parameters.externalName
+          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTrigger
+          toFieldPath: spec.forProvider.actionToTrigger
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTriggerRef.name
+          toFieldPath: spec.forProvider.actionToTriggerRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTriggerRef.policy.resolution
+          toFieldPath: spec.forProvider.actionToTriggerRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTriggerRef.policy.resolve
+          toFieldPath: spec.forProvider.actionToTriggerRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTriggerSelector.matchControllerRef
+          toFieldPath: spec.forProvider.actionToTriggerSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTriggerSelector.matchLabels
+          toFieldPath: spec.forProvider.actionToTriggerSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTriggerSelector.policy.resolution
+          toFieldPath: spec.forProvider.actionToTriggerSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.actionToTriggerSelector.policy.resolve
+          toFieldPath: spec.forProvider.actionToTriggerSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.duration
+          toFieldPath: spec.forProvider.duration
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainId
+          toFieldPath: spec.forProvider.escalationChainId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainRef.name
+          toFieldPath: spec.forProvider.escalationChainRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainRef.policy.resolution
+          toFieldPath: spec.forProvider.escalationChainRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainRef.policy.resolve
+          toFieldPath: spec.forProvider.escalationChainRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.matchControllerRef
+          toFieldPath: spec.forProvider.escalationChainSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.matchLabels
+          toFieldPath: spec.forProvider.escalationChainSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.policy.resolution
+          toFieldPath: spec.forProvider.escalationChainSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.policy.resolve
+          toFieldPath: spec.forProvider.escalationChainSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.groupToNotify
+          toFieldPath: spec.forProvider.groupToNotify
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.important
+          toFieldPath: spec.forProvider.important
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyIfTimeFrom
+          toFieldPath: spec.forProvider.notifyIfTimeFrom
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyIfTimeTo
+          toFieldPath: spec.forProvider.notifyIfTimeTo
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromSchedule
+          toFieldPath: spec.forProvider.notifyOnCallFromSchedule
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromScheduleRef.name
+          toFieldPath: spec.forProvider.notifyOnCallFromScheduleRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromScheduleRef.policy.resolution
+          toFieldPath: spec.forProvider.notifyOnCallFromScheduleRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromScheduleRef.policy.resolve
+          toFieldPath: spec.forProvider.notifyOnCallFromScheduleRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromScheduleSelector.matchControllerRef
+          toFieldPath: spec.forProvider.notifyOnCallFromScheduleSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromScheduleSelector.matchLabels
+          toFieldPath: spec.forProvider.notifyOnCallFromScheduleSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromScheduleSelector.policy.resolution
+          toFieldPath: spec.forProvider.notifyOnCallFromScheduleSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyOnCallFromScheduleSelector.policy.resolve
+          toFieldPath: spec.forProvider.notifyOnCallFromScheduleSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.notifyToTeamMembers
+          toFieldPath: spec.forProvider.notifyToTeamMembers
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.personsToNotify
+          toFieldPath: spec.forProvider.personsToNotify
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.personsToNotifyNextEachTime
+          toFieldPath: spec.forProvider.personsToNotifyNextEachTime
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.position
+          toFieldPath: spec.forProvider.position
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.severity
+          toFieldPath: spec.forProvider.severity
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.type
+          toFieldPath: spec.forProvider.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTrigger
+          toFieldPath: spec.initProvider.actionToTrigger
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTriggerRef.name
+          toFieldPath: spec.initProvider.actionToTriggerRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTriggerRef.policy.resolution
+          toFieldPath: spec.initProvider.actionToTriggerRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTriggerRef.policy.resolve
+          toFieldPath: spec.initProvider.actionToTriggerRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTriggerSelector.matchControllerRef
+          toFieldPath: spec.initProvider.actionToTriggerSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTriggerSelector.matchLabels
+          toFieldPath: spec.initProvider.actionToTriggerSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTriggerSelector.policy.resolution
+          toFieldPath: spec.initProvider.actionToTriggerSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.actionToTriggerSelector.policy.resolve
+          toFieldPath: spec.initProvider.actionToTriggerSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.duration
+          toFieldPath: spec.initProvider.duration
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainId
+          toFieldPath: spec.initProvider.escalationChainId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainRef.name
+          toFieldPath: spec.initProvider.escalationChainRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainRef.policy.resolution
+          toFieldPath: spec.initProvider.escalationChainRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainRef.policy.resolve
+          toFieldPath: spec.initProvider.escalationChainRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.matchControllerRef
+          toFieldPath: spec.initProvider.escalationChainSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.matchLabels
+          toFieldPath: spec.initProvider.escalationChainSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.policy.resolution
+          toFieldPath: spec.initProvider.escalationChainSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.policy.resolve
+          toFieldPath: spec.initProvider.escalationChainSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.groupToNotify
+          toFieldPath: spec.initProvider.groupToNotify
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.important
+          toFieldPath: spec.initProvider.important
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyIfTimeFrom
+          toFieldPath: spec.initProvider.notifyIfTimeFrom
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyIfTimeTo
+          toFieldPath: spec.initProvider.notifyIfTimeTo
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromSchedule
+          toFieldPath: spec.initProvider.notifyOnCallFromSchedule
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromScheduleRef.name
+          toFieldPath: spec.initProvider.notifyOnCallFromScheduleRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromScheduleRef.policy.resolution
+          toFieldPath: spec.initProvider.notifyOnCallFromScheduleRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromScheduleRef.policy.resolve
+          toFieldPath: spec.initProvider.notifyOnCallFromScheduleRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromScheduleSelector.matchControllerRef
+          toFieldPath: spec.initProvider.notifyOnCallFromScheduleSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromScheduleSelector.matchLabels
+          toFieldPath: spec.initProvider.notifyOnCallFromScheduleSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromScheduleSelector.policy.resolution
+          toFieldPath: spec.initProvider.notifyOnCallFromScheduleSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyOnCallFromScheduleSelector.policy.resolve
+          toFieldPath: spec.initProvider.notifyOnCallFromScheduleSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.notifyToTeamMembers
+          toFieldPath: spec.initProvider.notifyToTeamMembers
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.personsToNotify
+          toFieldPath: spec.initProvider.personsToNotify
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.personsToNotifyNextEachTime
+          toFieldPath: spec.initProvider.personsToNotifyNextEachTime
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.position
+          toFieldPath: spec.initProvider.position
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.severity
+          toFieldPath: spec.initProvider.severity
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.type
+          toFieldPath: spec.initProvider.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.managementPolicies
+          toFieldPath: spec.managementPolicies
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.name
+          toFieldPath: spec.providerConfigRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+          toFieldPath: spec.providerConfigRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+          toFieldPath: spec.providerConfigRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+          toFieldPath: spec.publishConnectionDetailsTo.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+          toFieldPath: spec.writeConnectionSecretToRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+          toFieldPath: spec.writeConnectionSecretToRef.namespace
+          type: FromCompositeFieldPath

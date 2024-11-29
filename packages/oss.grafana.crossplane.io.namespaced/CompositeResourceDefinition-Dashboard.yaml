@@ -1,0 +1,177 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xdashboards.oss.grafana.crossplane.io.namespaced
+  name: dashboard-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: oss.grafana.crossplane.io.namespaced/v1alpha1
+    kind: XDashboard
+  resources:
+    - base:
+        apiVersion: oss.grafana.crossplane.io/v1alpha1
+        kind: Dashboard
+      name: dashboard
+      patches:
+        - fromFieldPath: spec.parameters.externalName
+          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.configJson
+          toFieldPath: spec.forProvider.configJson
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folder
+          toFieldPath: spec.forProvider.folder
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folderRef.name
+          toFieldPath: spec.forProvider.folderRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folderRef.policy.resolution
+          toFieldPath: spec.forProvider.folderRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folderRef.policy.resolve
+          toFieldPath: spec.forProvider.folderRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folderSelector.matchControllerRef
+          toFieldPath: spec.forProvider.folderSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folderSelector.matchLabels
+          toFieldPath: spec.forProvider.folderSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folderSelector.policy.resolution
+          toFieldPath: spec.forProvider.folderSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.folderSelector.policy.resolve
+          toFieldPath: spec.forProvider.folderSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.message
+          toFieldPath: spec.forProvider.message
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.orgId
+          toFieldPath: spec.forProvider.orgId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationRef.name
+          toFieldPath: spec.forProvider.organizationRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationRef.policy.resolution
+          toFieldPath: spec.forProvider.organizationRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationRef.policy.resolve
+          toFieldPath: spec.forProvider.organizationRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.matchControllerRef
+          toFieldPath: spec.forProvider.organizationSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.matchLabels
+          toFieldPath: spec.forProvider.organizationSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.policy.resolution
+          toFieldPath: spec.forProvider.organizationSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.organizationSelector.policy.resolve
+          toFieldPath: spec.forProvider.organizationSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.overwrite
+          toFieldPath: spec.forProvider.overwrite
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.configJson
+          toFieldPath: spec.initProvider.configJson
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folder
+          toFieldPath: spec.initProvider.folder
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folderRef.name
+          toFieldPath: spec.initProvider.folderRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folderRef.policy.resolution
+          toFieldPath: spec.initProvider.folderRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folderRef.policy.resolve
+          toFieldPath: spec.initProvider.folderRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folderSelector.matchControllerRef
+          toFieldPath: spec.initProvider.folderSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folderSelector.matchLabels
+          toFieldPath: spec.initProvider.folderSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folderSelector.policy.resolution
+          toFieldPath: spec.initProvider.folderSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.folderSelector.policy.resolve
+          toFieldPath: spec.initProvider.folderSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.message
+          toFieldPath: spec.initProvider.message
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.orgId
+          toFieldPath: spec.initProvider.orgId
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationRef.name
+          toFieldPath: spec.initProvider.organizationRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationRef.policy.resolution
+          toFieldPath: spec.initProvider.organizationRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationRef.policy.resolve
+          toFieldPath: spec.initProvider.organizationRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.matchControllerRef
+          toFieldPath: spec.initProvider.organizationSelector.matchControllerRef
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.matchLabels
+          toFieldPath: spec.initProvider.organizationSelector.matchLabels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.policy.resolution
+          toFieldPath: spec.initProvider.organizationSelector.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.organizationSelector.policy.resolve
+          toFieldPath: spec.initProvider.organizationSelector.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.overwrite
+          toFieldPath: spec.initProvider.overwrite
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.managementPolicies
+          toFieldPath: spec.managementPolicies
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.name
+          toFieldPath: spec.providerConfigRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+          toFieldPath: spec.providerConfigRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+          toFieldPath: spec.providerConfigRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+          toFieldPath: spec.publishConnectionDetailsTo.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+          toFieldPath: spec.writeConnectionSecretToRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+          toFieldPath: spec.writeConnectionSecretToRef.namespace
+          type: FromCompositeFieldPath

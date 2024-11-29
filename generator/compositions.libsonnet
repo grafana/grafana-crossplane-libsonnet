@@ -1,22 +1,21 @@
 local namespaced = import './namespaced.libsonnet';
+local crossplane = import 'github.com/jsonnet-libs/crossplane-libsonnet/crossplane/1.14/main.libsonnet';
 
-local helpers = import 'github.com/crdsonnet/crdsonnet/crdsonnet/helpers.libsonnet';
-local crdsonnet = import 'github.com/crdsonnet/crdsonnet/crdsonnet/main.libsonnet';
+local configuration(key, version) =
+  local conf = crossplane.pkg.v1.configuration;
+  conf.new(key)
+  + conf.spec.withPackage('xpkg.upbound.io/grafana/' + key + ':' + version);
 
-std.foldl(
-  function(acc, def)
-    local group = helpers.getGroupKey(def.definition.spec.group, 'grafana.crossplane.io');
-    local version = 'v1alpha1';
-    local kind = helpers.camelCaseKind(crdsonnet.xrd.getKind(def.definition));
+local groups =
+  std.set(
+    std.map(
+      function(def)
+        def.definition.spec.group,
+      namespaced
+    )
+  );
 
-    acc + {
-      [group]+: {
-        [version]+: {
-          [kind]+:
-            def,
-        },
-      },
-    },
-  namespaced,
-  {}
-)
+function(configurationVersion) {
+  [group]: configuration(group, configurationVersion)
+  for group in groups
+}

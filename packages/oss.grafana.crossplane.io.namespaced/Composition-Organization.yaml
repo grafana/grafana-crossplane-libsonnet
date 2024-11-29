@@ -1,0 +1,105 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xorganizations.oss.grafana.crossplane.io.namespaced
+  name: organization-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: oss.grafana.crossplane.io.namespaced/v1alpha1
+    kind: XOrganization
+  resources:
+    - base:
+        apiVersion: oss.grafana.crossplane.io/v1alpha1
+        kind: Organization
+      name: organization
+      patches:
+        - fromFieldPath: spec.parameters.externalName
+          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.adminUser
+          toFieldPath: spec.forProvider.adminUser
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.admins
+          toFieldPath: spec.forProvider.admins
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.createUsers
+          toFieldPath: spec.forProvider.createUsers
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.editors
+          toFieldPath: spec.forProvider.editors
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.name
+          toFieldPath: spec.forProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.usersWithoutAccess
+          toFieldPath: spec.forProvider.usersWithoutAccess
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.viewers
+          toFieldPath: spec.forProvider.viewers
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.adminUser
+          toFieldPath: spec.initProvider.adminUser
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.admins
+          toFieldPath: spec.initProvider.admins
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.createUsers
+          toFieldPath: spec.initProvider.createUsers
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.editors
+          toFieldPath: spec.initProvider.editors
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.name
+          toFieldPath: spec.initProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.usersWithoutAccess
+          toFieldPath: spec.initProvider.usersWithoutAccess
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.viewers
+          toFieldPath: spec.initProvider.viewers
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.managementPolicies
+          toFieldPath: spec.managementPolicies
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.name
+          toFieldPath: spec.providerConfigRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+          toFieldPath: spec.providerConfigRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+          toFieldPath: spec.providerConfigRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+          toFieldPath: spec.publishConnectionDetailsTo.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+          toFieldPath: spec.writeConnectionSecretToRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+          toFieldPath: spec.writeConnectionSecretToRef.namespace
+          type: FromCompositeFieldPath

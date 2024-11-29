@@ -1,0 +1,105 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xusers.oss.grafana.crossplane.io.namespaced
+  name: user-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: oss.grafana.crossplane.io.namespaced/v1alpha1
+    kind: XUser
+  resources:
+    - base:
+        apiVersion: oss.grafana.crossplane.io/v1alpha1
+        kind: User
+      name: user
+      patches:
+        - fromFieldPath: spec.parameters.externalName
+          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.email
+          toFieldPath: spec.forProvider.email
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.isAdmin
+          toFieldPath: spec.forProvider.isAdmin
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.login
+          toFieldPath: spec.forProvider.login
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.name
+          toFieldPath: spec.forProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.key
+          toFieldPath: spec.forProvider.passwordSecretRef.key
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.name
+          toFieldPath: spec.forProvider.passwordSecretRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.namespace
+          toFieldPath: spec.forProvider.passwordSecretRef.namespace
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.email
+          toFieldPath: spec.initProvider.email
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.isAdmin
+          toFieldPath: spec.initProvider.isAdmin
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.login
+          toFieldPath: spec.initProvider.login
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.name
+          toFieldPath: spec.initProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.key
+          toFieldPath: spec.initProvider.passwordSecretRef.key
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.name
+          toFieldPath: spec.initProvider.passwordSecretRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.namespace
+          toFieldPath: spec.initProvider.passwordSecretRef.namespace
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.managementPolicies
+          toFieldPath: spec.managementPolicies
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.name
+          toFieldPath: spec.providerConfigRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+          toFieldPath: spec.providerConfigRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+          toFieldPath: spec.providerConfigRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+          toFieldPath: spec.publishConnectionDetailsTo.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+          toFieldPath: spec.writeConnectionSecretToRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+          toFieldPath: spec.writeConnectionSecretToRef.namespace
+          type: FromCompositeFieldPath

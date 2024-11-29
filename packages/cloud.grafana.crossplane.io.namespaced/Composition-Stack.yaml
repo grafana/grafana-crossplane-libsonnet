@@ -1,0 +1,111 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xstacks.cloud.grafana.crossplane.io.namespaced
+  name: stack-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: cloud.grafana.crossplane.io.namespaced/v1alpha1
+    kind: XStack
+  resources:
+    - base:
+        apiVersion: cloud.grafana.crossplane.io/v1alpha1
+        kind: Stack
+      name: stack
+      patches:
+        - fromFieldPath: spec.parameters.externalName
+          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.deletionPolicy
+          toFieldPath: spec.deletionPolicy
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.description
+          toFieldPath: spec.forProvider.description
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.labels
+          toFieldPath: spec.forProvider.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.name
+          toFieldPath: spec.forProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.regionSlug
+          toFieldPath: spec.forProvider.regionSlug
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.slug
+          toFieldPath: spec.forProvider.slug
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.url
+          toFieldPath: spec.forProvider.url
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.waitForReadiness
+          toFieldPath: spec.forProvider.waitForReadiness
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.forProvider.waitForReadinessTimeout
+          toFieldPath: spec.forProvider.waitForReadinessTimeout
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.description
+          toFieldPath: spec.initProvider.description
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.labels
+          toFieldPath: spec.initProvider.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.name
+          toFieldPath: spec.initProvider.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.regionSlug
+          toFieldPath: spec.initProvider.regionSlug
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.slug
+          toFieldPath: spec.initProvider.slug
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.url
+          toFieldPath: spec.initProvider.url
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.waitForReadiness
+          toFieldPath: spec.initProvider.waitForReadiness
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.initProvider.waitForReadinessTimeout
+          toFieldPath: spec.initProvider.waitForReadinessTimeout
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.managementPolicies
+          toFieldPath: spec.managementPolicies
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.name
+          toFieldPath: spec.providerConfigRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+          toFieldPath: spec.providerConfigRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+          toFieldPath: spec.providerConfigRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+          toFieldPath: spec.publishConnectionDetailsTo.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+          toFieldPath: spec.writeConnectionSecretToRef.name
+          type: FromCompositeFieldPath
+        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+          toFieldPath: spec.writeConnectionSecretToRef.namespace
+          type: FromCompositeFieldPath
