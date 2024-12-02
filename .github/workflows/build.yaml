@@ -16,11 +16,11 @@ on:
         required: true
         default: current
 
-#env:
-#  DOCKER_USR: ${{ secrets.DOCKER_USR }}
+env:
+  UPBOUND_MARKETPLACE_PUSH_ROBOT_USR: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -34,19 +34,20 @@ jobs:
           command: -h
 
       - name: Build xpkg
-        run: make output
+        run: make build
         env:
           CROSSPLANE: './crossplane'
 
-# - name: Login to Docker
-#   uses: docker/login-action@v3
-#   if: env.DOCKER_USR != ''
-#   with:
-#     registry: registry.upbound.io
-#     username: ${{ secrets.DOCKER_USR }}
-#     password: ${{ secrets.DOCKER_PSW }}
+      - name: Login to Upbound
+        uses: docker/login-action@v3
+        if: env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
+        with:
+          registry: xpkg.upbound.io
+          username: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
+          password: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
 
-# - name: Push xpkg
-#   uses: crossplane-contrib/xpkg-action@master
-#   with:
-#     command: push configuration -f test/xpkg-action-test/xpkg-action-test.xpkg registry.upbound.io/crossplane-test/xpkg-action-test:v0.0.1
+      - name: Push xpkg
+        run: make push
+        if: env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
+        env:
+          CROSSPLANE: './crossplane'
