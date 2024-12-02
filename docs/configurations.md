@@ -1,6 +1,6 @@
 # configurations
 
-This package contains Configurations for the generated Compositions and CompositeResourceDefinitions (XRD). A single configuration imports compositions for a resource group.
+This package contains Configurations for the generated Compositions and CompositeResourceDefinitions (XRD). A single configuration imports compositions for a resource group. For more granular selection of XRDs, consider using the manifests in 'packages/' on the root of this repository.
 
 The Configurations can be imported like this:
 

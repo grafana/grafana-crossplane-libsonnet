@@ -12,7 +12,13 @@ local raw = import './raw.libsonnet';
       'grafanaplane',
       'github.com/grafana/grafana-crossplane-libsonnet/grafanaplane',
       |||
-        Jsonnet library providing a namespaced set of compositions/XRDs for the Grafana Crossplane provider. The compositions, XRDs and the library for creating the XRD objects is generated.
+        This repository provides a set of Crossplane Configurations packages and and accompanying Jsonnet library.
+
+        The Configuration packages provide a set of (namespaced) composition/XRD pairs that map directly to their non-namespaced Managed resources equivalents.
+
+        The library consists of two parts, the manually written functions to get started quicly and the full library in `raw/`. They can be used in combination with each other.
+
+        Most of this library is generated: the Compositions/XRDs packages, Configurations and the library in `raw/`.
       |||,
       'main.libsonnet',
       import 'version.libsonnet',
@@ -32,7 +38,7 @@ local raw = import './raw.libsonnet';
         d.package.newSub(
           'configurations',
           |||
-            This package contains Configurations for the generated Compositions and CompositeResourceDefinitions (XRD). A single configuration imports compositions for a resource group.
+            This package contains Configurations for the generated Compositions and CompositeResourceDefinitions (XRD). A single configuration imports compositions for a resource group. For more granular selection of XRDs, consider using the manifests in 'packages/' on the root of this repository.
 
             The Configurations can be imported like this:
 
