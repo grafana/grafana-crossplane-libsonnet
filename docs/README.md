@@ -1,6 +1,12 @@
 # grafanaplane
 
-Jsonnet library providing a namespaced set of compositions/XRDs for the Grafana Crossplane provider. The compositions, XRDs and the library for creating the XRD objects is generated.
+This repository provides a set of Crossplane Configurations packages and and accompanying Jsonnet library.
+
+The Configuration packages provide a set of (namespaced) composition/XRD pairs that map directly to their non-namespaced Managed resources equivalents.
+
+The library consists of two parts, the manually written functions to get started quicly and the full library in `raw/`. They can be used in combination with each other.
+
+Most of this library is generated: the Compositions/XRDs packages, Configurations and the library in `raw/`.
 
 ## Install
 
