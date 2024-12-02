@@ -9,7 +9,7 @@
       name: 'alerting',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/alerting:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-alerting:0.0.7-0.21.0',
     },
   },
   cloud: {
@@ -22,7 +22,7 @@
       name: 'cloud',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/cloud:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloud:0.0.7-0.21.0',
     },
   },
   enterprise: {
@@ -35,7 +35,7 @@
       name: 'enterprise',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/enterprise:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-enterprise:0.0.7-0.21.0',
     },
   },
   ml: {
@@ -48,7 +48,7 @@
       name: 'ml',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/ml:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-ml:0.0.7-0.21.0',
     },
   },
   oncall: {
@@ -61,7 +61,7 @@
       name: 'oncall',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/oncall:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oncall:0.0.7-0.21.0',
     },
   },
   oss: {
@@ -74,7 +74,7 @@
       name: 'oss',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/oss:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oss:0.0.7-0.21.0',
     },
   },
   slo: {
@@ -87,7 +87,7 @@
       name: 'slo',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/slo:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-slo:0.0.7-0.21.0',
     },
   },
   sm: {
@@ -100,7 +100,7 @@
       name: 'sm',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/sm:0.0.6-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-sm:0.0.7-0.21.0',
     },
   },
 }
