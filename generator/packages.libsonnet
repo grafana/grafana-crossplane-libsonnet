@@ -21,14 +21,14 @@ local manifest(value) = std.manifestYamlDoc(value, true, false);
 std.foldl(
   function(acc, item)
     local group = item.definition.spec.group;
+    local configurationName = 'grafana-namespaced-' + std.splitLimit(group, '.', 1)[0];
     local kind = item.definition.spec.claimNames.kind;
     acc
     + {
-      [group + '/package.yaml']: manifest(package(group)),
-      [group + '/Composition-' + kind + '.yaml']: manifest(item.composition),
-      [group + '/CompositeResourceDefinition-' + kind + '.yaml']: manifest(item.composition),
+      [configurationName + '/package.yaml']: manifest(package(configurationName)),
+      [configurationName + '/Composition-' + kind + '.yaml']: manifest(item.composition),
+      [configurationName + '/CompositeResourceDefinition-' + kind + '.yaml']: manifest(item.composition),
     },
   namespaced,
   {}
 )
-
