@@ -12,6 +12,7 @@ generator/crds.yaml:
 	curl -sLO https://github.com/grafana/crossplane-provider-grafana/releases/download/v$(PROVIDER_VERSION)/crds.yaml
 
 grafanaplane/raw.libsonnet: generator/main.libsonnet generator/namespaced.libsonnet generator/crds.yaml $(VENDOR_DEPTHS)
+	rm -rf grafanaplane/raw && \
 	FILES=$$($(JSONNET_BIN) \
 		  -S -c -m grafanaplane \
 		  -J generator/vendor \
@@ -21,17 +22,20 @@ grafanaplane/raw.libsonnet: generator/main.libsonnet generator/namespaced.libson
 
 grafanaplane/compositions.libsonnet: generator/compositions.libsonnet generator/namespaced.libsonnet generator/crds.yaml $(VENDOR_DEPTHS)
 	$(JSONNET_BIN) \
-		-J generator/vendor generator/compositions.libsonnet \
-		-A 'configurationVersion=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)'| \
+		-J generator/vendor \
+		-A 'configurationVersion=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)' \
+		generator/compositions.libsonnet | \
 		jsonnetfmt - > grafanaplane/compositions.libsonnet
 
 packages: generator/packages.libsonnet generator/namespaced.libsonnet generator/crds.yaml $(VENDOR_DEPTHS)
+	rm -rf packages && \
 	$(JSONNET_BIN) -S -m packages -c -J generator/vendor generator/packages.libsonnet
 
 packages=$(wildcard packages/*)
-output: packages $(packages)
-	rm -rf output && mkdir -p output/packages
-	$(foreach pkg,$(packages),$(CROSSPLANE) xpkg build --package-root=$(pkg) --package-file=output/$(pkg)-$(LIBRARY_VERSION)-$(PROVIDER_VERSION).xpkg;)
+push_packages: packages $(packages)
+	rm -rf output && mkdir -p output/
+	$(foreach pkg,$(packages),$(CROSSPLANE) xpkg build --package-root=$(pkg) --package-file=output/$(patsubst packages/%,%,$(pkg)).xpkg;)
+	$(foreach pkg,$(packages),echo $(CROSSPLANE) xpkg push configuration -f output/$(patsubst packages/%,%,$(pkg)).xpkg registry.upbound.io/grafana/$(patsubst packages/%,%,$(pkg)).xpkg:v$(LIBRARY_VERSION)-$(PROVIDER_VERSION);)
 
 docs: $(shell find grafanaplane/ -type f)
 	@rm -rf docs/
@@ -43,3 +47,9 @@ docs: $(shell find grafanaplane/ -type f)
 .PHONY: tag
 tag:
 	git tag $(LIBRARY_VERSION)-$(PROVIDER_VERSION)
+
+.PHONY: build
+build: grafanaplane/raw.libsonnet grafanaplane/compositions.libsonnet packages
+
+.PHONY: push
+push: push_packages
