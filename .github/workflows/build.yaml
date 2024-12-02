@@ -2,9 +2,6 @@ name: Build
 
 on:
   pull_request: {}
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       channel:
@@ -15,9 +12,6 @@ on:
         description: release version
         required: true
         default: current
-
-env:
-  UPBOUND_MARKETPLACE_PUSH_ROBOT_USR: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
 
 jobs:
   build:
@@ -38,16 +32,12 @@ jobs:
         env:
           CROSSPLANE: './crossplane'
 
-      - name: Login to Upbound
-        uses: docker/login-action@v3
-        if: env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
-        with:
-          registry: xpkg.upbound.io
-          username: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
-          password: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
+      - name: Check if file changed
+        id: changed
+        uses: tj-actions/verify-changed-files@v20
 
-      - name: Push xpkg
-        run: make push
-        if: env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
+      - name: No files changed
+        if: "${{ steps.changed.outputs.files_changed == 'true' }}"
+        run: "echo 'Please run `make build`' && exit 1"
         env:
-          CROSSPLANE: './crossplane'
+          CHANGED_FILES: "${{ steps.changed.outputs.changed_files }}"
