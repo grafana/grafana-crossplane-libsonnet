@@ -35,6 +35,9 @@ jobs:
       - name: Check if file changed
         id: changed
         uses: tj-actions/verify-changed-files@v20
+        with:
+          files: |
+            !crossplane
 
       - name: No files changed
         if: "${{ steps.changed.outputs.files_changed == 'true' }}"
