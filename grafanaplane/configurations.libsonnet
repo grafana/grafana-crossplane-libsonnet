@@ -6,10 +6,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'alerting',
+      name: 'grafana-namespaced-alerting',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-alerting:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-alerting:0.0.8-0.21.0',
     },
   },
   cloud: {
@@ -19,10 +19,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'cloud',
+      name: 'grafana-namespaced-cloud',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloud:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloud:0.0.8-0.21.0',
     },
   },
   enterprise: {
@@ -32,10 +32,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'enterprise',
+      name: 'grafana-namespaced-enterprise',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-enterprise:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-enterprise:0.0.8-0.21.0',
     },
   },
   ml: {
@@ -45,10 +45,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'ml',
+      name: 'grafana-namespaced-ml',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-ml:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-ml:0.0.8-0.21.0',
     },
   },
   oncall: {
@@ -58,10 +58,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'oncall',
+      name: 'grafana-namespaced-oncall',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oncall:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oncall:0.0.8-0.21.0',
     },
   },
   oss: {
@@ -71,10 +71,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'oss',
+      name: 'grafana-namespaced-oss',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oss:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oss:0.0.8-0.21.0',
     },
   },
   slo: {
@@ -84,10 +84,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'slo',
+      name: 'grafana-namespaced-slo',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-slo:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-slo:0.0.8-0.21.0',
     },
   },
   sm: {
@@ -97,10 +97,10 @@
       annotations: {
         'tanka.dev/namespaced': 'false',
       },
-      name: 'sm',
+      name: 'grafana-namespaced-sm',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-sm:0.0.7-0.21.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-sm:0.0.8-0.21.0',
     },
   },
 }
