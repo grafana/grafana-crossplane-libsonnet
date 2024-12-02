@@ -1,4 +1,4 @@
-LIBRARY_VERSION:=0.0.5
+LIBRARY_VERSION:=0.0.6
 PROVIDER_VERSION:=0.21.0
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crank
@@ -6,7 +6,7 @@ REGISTRY?=ghcr.io
 
 VENDOR_DEPTHS:=$(shell find generator/vendor -type f)
 
-grafanaplane: grafanaplane/raw.libsonnet grafanaplane/compositions.libsonnet
+grafanaplane: grafanaplane/raw.libsonnet grafanaplane/configurations.libsonnet
 
 generator/crds.yaml:
 	cd generator && \
@@ -21,12 +21,12 @@ grafanaplane/raw.libsonnet: generator/main.libsonnet generator/namespaced.libson
 		  generator/main.libsonnet) && \
 	xargs -n1 jsonnetfmt -i <<< "$${FILES}"
 
-grafanaplane/compositions.libsonnet: generator/compositions.libsonnet generator/namespaced.libsonnet generator/crds.yaml $(VENDOR_DEPTHS)
+grafanaplane/configurations.libsonnet: generator/configurations.libsonnet generator/namespaced.libsonnet generator/crds.yaml $(VENDOR_DEPTHS)
 	$(JSONNET_BIN) \
 		-J generator/vendor \
 		-A 'configurationVersion=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)' \
-		generator/compositions.libsonnet | \
-		jsonnetfmt - > grafanaplane/compositions.libsonnet
+		generator/configurations.libsonnet | \
+		jsonnetfmt - > grafanaplane/configurations.libsonnet
 
 packages: generator/packages.libsonnet generator/namespaced.libsonnet generator/crds.yaml $(VENDOR_DEPTHS)
 	rm -rf packages && \
@@ -50,7 +50,7 @@ tag:
 	git tag $(LIBRARY_VERSION)-$(PROVIDER_VERSION)
 
 .PHONY: build
-build: grafanaplane/raw.libsonnet grafanaplane/compositions.libsonnet packages
+build: grafanaplane/raw.libsonnet grafanaplane/configurations.libsonnet packages
 
 .PHONY: push
 push: push_packages

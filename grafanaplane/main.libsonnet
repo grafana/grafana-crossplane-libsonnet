@@ -1,7 +1,7 @@
 local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
-local compositions = import './compositions.libsonnet';
+local configurations = import './configurations.libsonnet';
 local raw = import './raw.libsonnet';
 
 {
@@ -10,7 +10,7 @@ local raw = import './raw.libsonnet';
   '#':
     d.package.new(
       'grafanaplane',
-      'github.com/Duologic/grafana-crossplane-libsonnet/grafanaplane',
+      'github.com/grafana/grafana-crossplane-libsonnet/grafanaplane',
       |||
         Jsonnet library providing a namespaced set of compositions/XRDs for the Grafana Crossplane provider. The compositions, XRDs and the library for creating the XRD objects is generated.
       |||,
@@ -25,41 +25,33 @@ local raw = import './raw.libsonnet';
     raw
     + { '#': d.package.newSub('raw', "Generated libraries for all the compositions in case the manually curated functions aren't sufficient.") },
 
-  compositions:
-    compositions
+  configurations:
+    configurations
     + {
       '#':
         d.package.newSub(
-          'compositions',
+          'configurations',
           |||
-            This package contains the generated Compositions and CompositeResourceDefinitions (XRD).
+            This package contains Configurations for the generated Compositions and CompositeResourceDefinitions (XRD). A single configuration imports compositions for a resource group.
 
-            The compositions/XRDs can be imported like this:
+            The Configurations can be imported like this:
 
             ```jsonnet
-            local grafanaplane = import 'github.com/Duologic/grafana-crossplane-libsonnet/grafanaplane/main.libsonnet';
-            local compositions = grafanaplane.compositions;
+            local grafanaplane = import 'github.com/grafana/grafana-crossplane-libsonnet/grafanaplane/main.libsonnet';
+            local configurations = grafanaplane.configurations;
 
             [
-              # Each composition has a `definition` and `composition` key
-              compositions.oss.v1alpha1.folder.composition,
-              compositions.oss.v1alpha1.folder.definition,
-
-              # When using Tanka, then providing the higher level objects is also possible
-              compositions.cloud.v1alpha1.stack, # a composition/XRD pair
-              compositions.oss,                  # whole group of composition/XRD pairs
+            %s
             ]
             ```
-
-            Available resources:
-
           |||
-          + '- ' + std.join('\n- ', [
-            std.join('.', [group.key, version.key, kind])
-            for group in std.objectKeysValues(compositions)
-            for version in std.objectKeysValues(group.value)
-            for kind in std.objectFields(version.value)
-          ])
+          % std.join(
+            ',\n',
+            std.map(
+              function(item) '  configuration.' + item,
+              std.objectFields(configurations)
+            )
+          )
         ),
     },
 
