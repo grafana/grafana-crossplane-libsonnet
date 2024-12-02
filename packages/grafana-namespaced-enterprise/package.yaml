@@ -6,7 +6,7 @@ metadata:
     meta.crossplane.io/license: Apache-2.0
     meta.crossplane.io/maintainer: Grafana
     meta.crossplane.io/source: github.com/grafana/grafana-crossplane-libsonnet
-  name: cloud.grafana.crossplane.io.namespaced
+  name: grafana-namespaced-enterprise
 spec:
   crossplane:
     version: ">=v1.17"
