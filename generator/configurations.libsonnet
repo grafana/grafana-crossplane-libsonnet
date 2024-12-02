@@ -4,7 +4,7 @@ local crossplane = import 'github.com/jsonnet-libs/crossplane-libsonnet/crosspla
 local configuration(key, version) =
   local conf = crossplane.pkg.v1.configuration;
   conf.new(key)
-  + conf.spec.withPackage('ghcr.io/grafana/crossplane/' + key + ':' + version);
+  + conf.spec.withPackage('ghcr.io/grafana/crossplane/grafana-namespaced-' + key + ':' + version);
 
 local groups =
   std.set(
