@@ -35,7 +35,7 @@ packages=$(wildcard packages/*)
 push_packages: packages $(packages)
 	rm -rf output && mkdir -p output/
 	$(foreach pkg,$(packages),$(CROSSPLANE) xpkg build --package-root=$(pkg) --package-file=output/$(patsubst packages/%,%,$(pkg)).xpkg;)
-	$(foreach pkg,$(packages),echo $(CROSSPLANE) xpkg push configuration -f output/$(patsubst packages/%,%,$(pkg)).xpkg registry.upbound.io/grafana/$(patsubst packages/%,%,$(pkg)).xpkg:v$(LIBRARY_VERSION)-$(PROVIDER_VERSION);)
+	$(foreach pkg,$(packages),$(CROSSPLANE) xpkg push configuration -f output/$(patsubst packages/%,%,$(pkg)).xpkg registry.upbound.io/grafana/$(patsubst packages/%,%,$(pkg)).xpkg:v$(LIBRARY_VERSION)-$(PROVIDER_VERSION);)
 
 docs: $(shell find grafanaplane/ -type f)
 	@rm -rf docs/

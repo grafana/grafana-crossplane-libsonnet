@@ -1,0 +1,47 @@
+name: Build
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: release channel
+        required: true
+        default: stable
+      version:
+        description: release version
+        required: true
+        default: current
+
+env:
+  UPBOUND_MARKETPLACE_PUSH_ROBOT_USR: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: setup Crossplane cli
+        uses: crossplane-contrib/xpkg-action@master
+        with:
+          channel: ${{ github.event.inputs.channel }}
+          version: ${{ github.event.inputs.version }}
+          command: -h
+
+      - name: Login to Upbound
+        uses: docker/login-action@v3
+        if: env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
+        with:
+          registry: xpkg.upbound.io
+          username: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
+          password: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_PSW }}
+
+      - name: Push xpkg
+        run: make push
+        if: ${{ github.ref == 'refs/heads/main' }} && env.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR != ''
+        env:
+          CROSSPLANE: './crossplane'
