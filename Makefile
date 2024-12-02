@@ -3,6 +3,7 @@ PROVIDER_VERSION:=0.21.0
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crank
 REGISTRY?=ghcr.io
+SHELL:=/bin/bash
 
 VENDOR_DEPTHS:=$(shell find generator/vendor -type f)
 

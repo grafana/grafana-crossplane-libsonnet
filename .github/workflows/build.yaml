@@ -27,17 +27,31 @@ jobs:
           version: ${{ github.event.inputs.version }}
           command: -h
 
-      - name: Build xpkg
-        run: make build
+      - name: move crossplane cli
+        run: "mkdir -p $TARGET_PATH && mv ./crossplane $TARGET_PATH"
         env:
-          CROSSPLANE: './crossplane'
+          TARGET_PATH: "${{ github.workspace }}/bin"
+
+      - name: setup jsonnet-fmt
+        run: |
+          go install "github.com/google/go-jsonnet/cmd/jsonnetfmt@v0.20.0"
+          echo "$HOME/go/bin" >> "$GITHUB_PATH"
+
+      - name: setup jrsonnet
+        uses: Duologic/tanka-exporter-workflow/.github/actions/jrsonnet-install@main
+
+      - name: Build xpkg
+        run: "make -B build"
+        shell: bash
+        env:
+          CROSSPLANE: '${{ github.workspace }}/bin/crossplane'
 
       - name: Check if file changed
         id: changed
         uses: tj-actions/verify-changed-files@v20
         with:
           files: |
-            !crossplane
+            !bin
 
       - name: No files changed
         if: "${{ steps.changed.outputs.files_changed == 'true' }}"
