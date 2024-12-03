@@ -2,53 +2,32 @@ name: Build
 
 on:
   pull_request: {}
-  workflow_dispatch:
-    inputs:
-      channel:
-        description: release channel
-        required: true
-        default: stable
-      version:
-        description: release version
-        required: true
-        default: current
 
 jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: setup Crossplane cli
-        uses: crossplane-contrib/xpkg-action@master
+        uses: grafana/shared-workflows/actions/setup-crossplane@duologic/setup-crossplane
+
+      - name: setup go-jsonnet
+        uses: zendesk/setup-jsonnet@f683a0d16f479db69751bd8d3a49a09e22b45b39 # v12
         with:
-          channel: ${{ github.event.inputs.channel }}
-          version: ${{ github.event.inputs.version }}
-          command: -h
-
-      - name: move crossplane cli
-        run: "mkdir -p $TARGET_PATH && mv ./crossplane $TARGET_PATH"
-        env:
-          TARGET_PATH: "${{ github.workspace }}/bin"
-
-      - name: setup jsonnet-fmt
-        run: |
-          go install "github.com/google/go-jsonnet/cmd/jsonnetfmt@v0.20.0"
-          echo "$HOME/go/bin" >> "$GITHUB_PATH"
+          version: v0.20.0
 
       - name: setup jrsonnet
-        uses: Duologic/tanka-exporter-workflow/.github/actions/jrsonnet-install@main
+        uses: grafana/shared-workflows/actions/setup-jrsonnet@duologic/setup-jrsonnet
 
       - name: Build xpkg
         run: "make -B build"
         shell: bash
-        env:
-          CROSSPLANE: '${{ github.workspace }}/bin/crossplane'
 
       - name: Check if file changed
         id: changed
-        uses: tj-actions/verify-changed-files@v20
+        uses: tj-actions/verify-changed-files@6ed7632824d235029086612d4330d659005af687 # v20.0.1
         with:
           files: |
             !bin
