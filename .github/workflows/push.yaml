@@ -24,7 +24,7 @@ jobs:
         uses: grafana/shared-workflows/actions/setup-crossplane@duologic/setup-crossplane
 
       - name: Log in to the GitHub Container registry
-        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
