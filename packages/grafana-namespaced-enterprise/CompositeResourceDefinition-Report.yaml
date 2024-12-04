@@ -1,177 +1,672 @@
 apiVersion: apiextensions.crossplane.io/v1
-kind: Composition
+kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  labels:
-    crossplane.io/xrd: xreports.enterprise.grafana.crossplane.io.namespaced
-  name: report-namespaced
+  name: xreports.enterprise.grafana.crossplane.io.namespaced
 spec:
-  compositeTypeRef:
-    apiVersion: enterprise.grafana.crossplane.io.namespaced/v1alpha1
+  claimNames:
+    kind: Report
+    plural: reports
+  defaultCompositionRef:
+    name: report-namespaced
+  group: enterprise.grafana.crossplane.io.namespaced
+  names:
     kind: XReport
-  resources:
-    - base:
-        apiVersion: enterprise.grafana.crossplane.io/v1alpha1
-        kind: Report
-      name: report
-      patches:
-        - fromFieldPath: spec.parameters.externalName
-          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.deletionPolicy
-          toFieldPath: spec.deletionPolicy
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dashboards
-          toFieldPath: spec.forProvider.dashboards
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.formats
-          toFieldPath: spec.forProvider.formats
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.includeDashboardLink
-          toFieldPath: spec.forProvider.includeDashboardLink
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.includeTableCsv
-          toFieldPath: spec.forProvider.includeTableCsv
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.layout
-          toFieldPath: spec.forProvider.layout
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.message
-          toFieldPath: spec.forProvider.message
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.name
-          toFieldPath: spec.forProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.orgId
-          toFieldPath: spec.forProvider.orgId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.organizationRef.name
-          toFieldPath: spec.forProvider.organizationRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.organizationRef.policy.resolution
-          toFieldPath: spec.forProvider.organizationRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.organizationRef.policy.resolve
-          toFieldPath: spec.forProvider.organizationRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.organizationSelector.matchControllerRef
-          toFieldPath: spec.forProvider.organizationSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.organizationSelector.matchLabels
-          toFieldPath: spec.forProvider.organizationSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.organizationSelector.policy.resolution
-          toFieldPath: spec.forProvider.organizationSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.organizationSelector.policy.resolve
-          toFieldPath: spec.forProvider.organizationSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.orientation
-          toFieldPath: spec.forProvider.orientation
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.recipients
-          toFieldPath: spec.forProvider.recipients
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.replyTo
-          toFieldPath: spec.forProvider.replyTo
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.schedule
-          toFieldPath: spec.forProvider.schedule
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dashboards
-          toFieldPath: spec.initProvider.dashboards
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.formats
-          toFieldPath: spec.initProvider.formats
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.includeDashboardLink
-          toFieldPath: spec.initProvider.includeDashboardLink
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.includeTableCsv
-          toFieldPath: spec.initProvider.includeTableCsv
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.layout
-          toFieldPath: spec.initProvider.layout
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.message
-          toFieldPath: spec.initProvider.message
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.name
-          toFieldPath: spec.initProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.orgId
-          toFieldPath: spec.initProvider.orgId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.organizationRef.name
-          toFieldPath: spec.initProvider.organizationRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.organizationRef.policy.resolution
-          toFieldPath: spec.initProvider.organizationRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.organizationRef.policy.resolve
-          toFieldPath: spec.initProvider.organizationRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.organizationSelector.matchControllerRef
-          toFieldPath: spec.initProvider.organizationSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.organizationSelector.matchLabels
-          toFieldPath: spec.initProvider.organizationSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.organizationSelector.policy.resolution
-          toFieldPath: spec.initProvider.organizationSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.organizationSelector.policy.resolve
-          toFieldPath: spec.initProvider.organizationSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.orientation
-          toFieldPath: spec.initProvider.orientation
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.recipients
-          toFieldPath: spec.initProvider.recipients
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.replyTo
-          toFieldPath: spec.initProvider.replyTo
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.schedule
-          toFieldPath: spec.initProvider.schedule
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.managementPolicies
-          toFieldPath: spec.managementPolicies
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.name
-          toFieldPath: spec.providerConfigRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
-          toFieldPath: spec.providerConfigRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
-          toFieldPath: spec.providerConfigRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
-          toFieldPath: spec.publishConnectionDetailsTo.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
-          toFieldPath: spec.writeConnectionSecretToRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
-          toFieldPath: spec.writeConnectionSecretToRef.namespace
-          type: FromCompositeFieldPath
+    plural: xreports
+  versions:
+    - name: v1alpha1
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            metadata:
+              type: object
+            spec:
+              properties:
+                parameters:
+                  description: ReportSpec defines the desired state of Report
+                  properties:
+                    deletionPolicy:
+                      default: Delete
+                      description: |-
+                        DeletionPolicy specifies what will happen to the underlying external
+                        when this managed resource is deleted - either "Delete" or "Orphan" the
+                        external resource.
+                        This field is planned to be deprecated in favor of the ManagementPolicies
+                        field in a future release. Currently, both could be set independently and
+                        non-default values would be honored if the feature flag is enabled.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                      enum:
+                        - Orphan
+                        - Delete
+                      type: string
+                    externalName:
+                      description: |
+                        The name of the managed resource inside the Provider.
+                        By default Providers give external resources the same name as the Kubernetes object. A provider uses the external name to lookup a managed resource in an external system. The provider looks up the resource in the external system to determine if it exists, and if it matches the managed resource’s desired state. If the provider can’t find the resource, it creates it.
+                        
+                        Docs: https://docs.crossplane.io/latest/concepts/managed-resources/#naming-external-resources
+                      type: string
+                    forProvider:
+                      properties:
+                        dashboards:
+                          description: |-
+                            (Block List) List of dashboards to render into the report (see below for nested schema)
+                            List of dashboards to render into the report
+                          items:
+                            properties:
+                              reportVariables:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Add report variables to the dashboard. Values should be separated by commas.
+                                  Add report variables to the dashboard. Values should be separated by commas.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              timeRange:
+                                description: |-
+                                  (Block List, Max: 1) Time range of the report. (see below for nested schema)
+                                  Time range of the report.
+                                items:
+                                  properties:
+                                    from:
+                                      description: |-
+                                        (String) Start of the time range.
+                                        Start of the time range.
+                                      type: string
+                                    to:
+                                      description: |-
+                                        (String) End of the time range.
+                                        End of the time range.
+                                      type: string
+                                  type: object
+                                type: array
+                              uid:
+                                description: |-
+                                  (String) Dashboard uid.
+                                  Dashboard uid.
+                                type: string
+                            type: object
+                          type: array
+                        formats:
+                          description: |-
+                            (Set of String) Specifies what kind of attachment to generate for the report. Allowed values: pdf, csv, image.
+                            Specifies what kind of attachment to generate for the report. Allowed values: `pdf`, `csv`, `image`.
+                          items:
+                            type: string
+                          type: array
+                          x-kubernetes-list-type: set
+                        includeDashboardLink:
+                          description: |-
+                            (Boolean) Whether to include a link to the dashboard in the report. Defaults to true.
+                            Whether to include a link to the dashboard in the report. Defaults to `true`.
+                          type: boolean
+                        includeTableCsv:
+                          description: |-
+                            (Boolean) Whether to include a CSV file of table panel data. Defaults to false.
+                            Whether to include a CSV file of table panel data. Defaults to `false`.
+                          type: boolean
+                        layout:
+                          description: |-
+                            (String) Layout of the report. Allowed values: simple, grid. Defaults to grid.
+                            Layout of the report. Allowed values: `simple`, `grid`. Defaults to `grid`.
+                          type: string
+                        message:
+                          description: |-
+                            (String) Message to be sent in the report.
+                            Message to be sent in the report.
+                          type: string
+                        name:
+                          description: |-
+                            (String) Name of the report.
+                            Name of the report.
+                          type: string
+                        orgId:
+                          description: |-
+                            (String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
+                            The Organization ID. If not set, the Org ID defined in the provider block will be used.
+                          type: string
+                        organizationRef:
+                          description: Reference to a Organization in oss to populate orgId.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        organizationSelector:
+                          description: Selector for a Organization in oss to populate orgId.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        orientation:
+                          description: |-
+                            (String) Orientation of the report. Allowed values: landscape, portrait. Defaults to landscape.
+                            Orientation of the report. Allowed values: `landscape`, `portrait`. Defaults to `landscape`.
+                          type: string
+                        recipients:
+                          description: |-
+                            (List of String) List of recipients of the report.
+                            List of recipients of the report.
+                          items:
+                            type: string
+                          type: array
+                        replyTo:
+                          description: |-
+                            to email address of the report.
+                            Reply-to email address of the report.
+                          type: string
+                        schedule:
+                          description: |-
+                            (Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)
+                            Schedule of the report.
+                          items:
+                            properties:
+                              customInterval:
+                                description: |-
+                                  (String) Custom interval of the report.
+                                  Note: This field is only available when frequency is set to custom.
+                                  Custom interval of the report.
+                                  **Note:** This field is only available when frequency is set to `custom`.
+                                type: string
+                              endTime:
+                                description: |-
+                                  01-02T15:04:05 format if you want to set a custom timezone
+                                  End time of the report. If empty, the report will be sent indefinitely (according to frequency). Note that times will be saved as UTC in Grafana. Use 2006-01-02T15:04:05 format if you want to set a custom timezone
+                                type: string
+                              frequency:
+                                description: |-
+                                  (String) Frequency of the report. Allowed values: never, once, hourly, daily, weekly, monthly, custom.
+                                  Frequency of the report. Allowed values: `never`, `once`, `hourly`, `daily`, `weekly`, `monthly`, `custom`.
+                                type: string
+                              lastDayOfMonth:
+                                description: |-
+                                  (Boolean) Send the report on the last day of the month Defaults to false.
+                                  Send the report on the last day of the month Defaults to `false`.
+                                type: boolean
+                              startTime:
+                                description: |-
+                                  01-02T15:04:05 format if you want to set a custom timezone
+                                  Start time of the report. If empty, the start date will be set to the creation time. Note that times will be saved as UTC in Grafana. Use 2006-01-02T15:04:05 format if you want to set a custom timezone
+                                type: string
+                              timezone:
+                                description: |-
+                                  (String) Set the report time zone. Defaults to GMT.
+                                  Set the report time zone. Defaults to `GMT`.
+                                type: string
+                              workdaysOnly:
+                                description: |-
+                                  (Boolean) Whether to send the report only on work days. Defaults to false.
+                                  Whether to send the report only on work days. Defaults to `false`.
+                                type: boolean
+                            type: object
+                          type: array
+                      type: object
+                    initProvider:
+                      description: |-
+                        THIS IS A BETA FIELD. It will be honored
+                        unless the Management Policies feature flag is disabled.
+                        InitProvider holds the same fields as ForProvider, with the exception
+                        of Identifier and other resource reference fields. The fields that are
+                        in InitProvider are merged into ForProvider when the resource is created.
+                        The same fields are also added to the terraform ignore_changes hook, to
+                        avoid updating them after creation. This is useful for fields that are
+                        required on creation, but we do not desire to update them after creation,
+                        for example because of an external controller is managing them, like an
+                        autoscaler.
+                      properties:
+                        dashboards:
+                          description: |-
+                            (Block List) List of dashboards to render into the report (see below for nested schema)
+                            List of dashboards to render into the report
+                          items:
+                            properties:
+                              reportVariables:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Add report variables to the dashboard. Values should be separated by commas.
+                                  Add report variables to the dashboard. Values should be separated by commas.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              timeRange:
+                                description: |-
+                                  (Block List, Max: 1) Time range of the report. (see below for nested schema)
+                                  Time range of the report.
+                                items:
+                                  properties:
+                                    from:
+                                      description: |-
+                                        (String) Start of the time range.
+                                        Start of the time range.
+                                      type: string
+                                    to:
+                                      description: |-
+                                        (String) End of the time range.
+                                        End of the time range.
+                                      type: string
+                                  type: object
+                                type: array
+                              uid:
+                                description: |-
+                                  (String) Dashboard uid.
+                                  Dashboard uid.
+                                type: string
+                            type: object
+                          type: array
+                        formats:
+                          description: |-
+                            (Set of String) Specifies what kind of attachment to generate for the report. Allowed values: pdf, csv, image.
+                            Specifies what kind of attachment to generate for the report. Allowed values: `pdf`, `csv`, `image`.
+                          items:
+                            type: string
+                          type: array
+                          x-kubernetes-list-type: set
+                        includeDashboardLink:
+                          description: |-
+                            (Boolean) Whether to include a link to the dashboard in the report. Defaults to true.
+                            Whether to include a link to the dashboard in the report. Defaults to `true`.
+                          type: boolean
+                        includeTableCsv:
+                          description: |-
+                            (Boolean) Whether to include a CSV file of table panel data. Defaults to false.
+                            Whether to include a CSV file of table panel data. Defaults to `false`.
+                          type: boolean
+                        layout:
+                          description: |-
+                            (String) Layout of the report. Allowed values: simple, grid. Defaults to grid.
+                            Layout of the report. Allowed values: `simple`, `grid`. Defaults to `grid`.
+                          type: string
+                        message:
+                          description: |-
+                            (String) Message to be sent in the report.
+                            Message to be sent in the report.
+                          type: string
+                        name:
+                          description: |-
+                            (String) Name of the report.
+                            Name of the report.
+                          type: string
+                        orgId:
+                          description: |-
+                            (String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
+                            The Organization ID. If not set, the Org ID defined in the provider block will be used.
+                          type: string
+                        organizationRef:
+                          description: Reference to a Organization in oss to populate orgId.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        organizationSelector:
+                          description: Selector for a Organization in oss to populate orgId.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        orientation:
+                          description: |-
+                            (String) Orientation of the report. Allowed values: landscape, portrait. Defaults to landscape.
+                            Orientation of the report. Allowed values: `landscape`, `portrait`. Defaults to `landscape`.
+                          type: string
+                        recipients:
+                          description: |-
+                            (List of String) List of recipients of the report.
+                            List of recipients of the report.
+                          items:
+                            type: string
+                          type: array
+                        replyTo:
+                          description: |-
+                            to email address of the report.
+                            Reply-to email address of the report.
+                          type: string
+                        schedule:
+                          description: |-
+                            (Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)
+                            Schedule of the report.
+                          items:
+                            properties:
+                              customInterval:
+                                description: |-
+                                  (String) Custom interval of the report.
+                                  Note: This field is only available when frequency is set to custom.
+                                  Custom interval of the report.
+                                  **Note:** This field is only available when frequency is set to `custom`.
+                                type: string
+                              endTime:
+                                description: |-
+                                  01-02T15:04:05 format if you want to set a custom timezone
+                                  End time of the report. If empty, the report will be sent indefinitely (according to frequency). Note that times will be saved as UTC in Grafana. Use 2006-01-02T15:04:05 format if you want to set a custom timezone
+                                type: string
+                              frequency:
+                                description: |-
+                                  (String) Frequency of the report. Allowed values: never, once, hourly, daily, weekly, monthly, custom.
+                                  Frequency of the report. Allowed values: `never`, `once`, `hourly`, `daily`, `weekly`, `monthly`, `custom`.
+                                type: string
+                              lastDayOfMonth:
+                                description: |-
+                                  (Boolean) Send the report on the last day of the month Defaults to false.
+                                  Send the report on the last day of the month Defaults to `false`.
+                                type: boolean
+                              startTime:
+                                description: |-
+                                  01-02T15:04:05 format if you want to set a custom timezone
+                                  Start time of the report. If empty, the start date will be set to the creation time. Note that times will be saved as UTC in Grafana. Use 2006-01-02T15:04:05 format if you want to set a custom timezone
+                                type: string
+                              timezone:
+                                description: |-
+                                  (String) Set the report time zone. Defaults to GMT.
+                                  Set the report time zone. Defaults to `GMT`.
+                                type: string
+                              workdaysOnly:
+                                description: |-
+                                  (Boolean) Whether to send the report only on work days. Defaults to false.
+                                  Whether to send the report only on work days. Defaults to `false`.
+                                type: boolean
+                            type: object
+                          type: array
+                      type: object
+                    managementPolicies:
+                      default:
+                        - "*"
+                      description: |-
+                        THIS IS A BETA FIELD. It is on by default but can be opted out
+                        through a Crossplane feature flag.
+                        ManagementPolicies specify the array of actions Crossplane is allowed to
+                        take on the managed and external resources.
+                        This field is planned to replace the DeletionPolicy field in a future
+                        release. Currently, both could be set independently and non-default
+                        values would be honored if the feature flag is enabled. If both are
+                        custom, the DeletionPolicy field will be ignored.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                        and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                      items:
+                        description: |-
+                          A ManagementAction represents an action that the Crossplane controllers
+                          can take on an external resource.
+                        enum:
+                          - Observe
+                          - Create
+                          - Update
+                          - Delete
+                          - LateInitialize
+                          - "*"
+                        type: string
+                      type: array
+                    providerConfigRef:
+                      default:
+                        name: default
+                      description: |-
+                        ProviderConfigReference specifies how the provider that will be used to
+                        create, observe, update, and delete this managed resource should be
+                        configured.
+                      properties:
+                        name:
+                          description: Name of the referenced object.
+                          type: string
+                        policy:
+                          description: Policies for referencing.
+                          properties:
+                            resolution:
+                              default: Required
+                              description: |-
+                                Resolution specifies whether resolution of this reference is required.
+                                The default is 'Required', which means the reconcile will fail if the
+                                reference cannot be resolved. 'Optional' means this reference will be
+                                a no-op if it cannot be resolved.
+                              enum:
+                                - Required
+                                - Optional
+                              type: string
+                            resolve:
+                              description: |-
+                                Resolve specifies when this reference should be resolved. The default
+                                is 'IfNotPresent', which will attempt to resolve the reference only when
+                                the corresponding field is not present. Use 'Always' to resolve the
+                                reference on every reconcile.
+                              enum:
+                                - Always
+                                - IfNotPresent
+                              type: string
+                          type: object
+                      required:
+                        - name
+                      type: object
+                    publishConnectionDetailsTo:
+                      description: |-
+                        PublishConnectionDetailsTo specifies the connection secret config which
+                        contains a name, metadata and a reference to secret store config to
+                        which any connection details for this managed resource should be written.
+                        Connection details frequently include the endpoint, username,
+                        and password required to connect to the managed resource.
+                      properties:
+                        configRef:
+                          default:
+                            name: default
+                          description: |-
+                            SecretStoreConfigRef specifies which secret store config should be used
+                            for this ConnectionSecret.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        metadata:
+                          description: Metadata is the metadata for connection secret.
+                          properties:
+                            annotations:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                Annotations are the annotations to be added to connection secret.
+                                - For Kubernetes secrets, this will be used as "metadata.annotations".
+                                - It is up to Secret Store implementation for others store types.
+                              type: object
+                            labels:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                Labels are the labels/tags to be added to connection secret.
+                                - For Kubernetes secrets, this will be used as "metadata.labels".
+                                - It is up to Secret Store implementation for others store types.
+                              type: object
+                            type:
+                              description: |-
+                                Type is the SecretType for the connection secret.
+                                - Only valid for Kubernetes Secret Stores.
+                              type: string
+                          type: object
+                        name:
+                          description: Name is the name of the connection secret.
+                          type: string
+                      required:
+                        - name
+                      type: object
+                    writeConnectionSecretToRef:
+                      description: |-
+                        WriteConnectionSecretToReference specifies the namespace and name of a
+                        Secret to which any connection details for this managed resource should
+                        be written. Connection details frequently include the endpoint, username,
+                        and password required to connect to the managed resource.
+                        This field is planned to be replaced in a future release in favor of
+                        PublishConnectionDetailsTo. Currently, both could be set independently
+                        and connection details would be published to both without affecting
+                        each other.
+                      properties:
+                        name:
+                          description: Name of the secret.
+                          type: string
+                        namespace:
+                          description: Namespace of the secret.
+                          type: string
+                      required:
+                        - name
+                        - namespace
+                      type: object
+                  required:
+                    - forProvider
+                  type: object
+                  x-kubernetes-validations:
+                    - message: spec.forProvider.name is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.name) || (has(self.initProvider) && has(self.initProvider.name))"
+                    - message: spec.forProvider.recipients is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.recipients) || (has(self.initProvider) && has(self.initProvider.recipients))"
+                    - message: spec.forProvider.schedule is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.schedule) || (has(self.initProvider) && has(self.initProvider.schedule))"
+              type: object
+          type: object
+      served: true

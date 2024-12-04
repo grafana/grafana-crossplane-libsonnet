@@ -1,195 +1,696 @@
 apiVersion: apiextensions.crossplane.io/v1
-kind: Composition
+kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  labels:
-    crossplane.io/xrd: xroutes.oncall.grafana.crossplane.io.namespaced
-  name: route-namespaced
+  name: xroutes.oncall.grafana.crossplane.io.namespaced
 spec:
-  compositeTypeRef:
-    apiVersion: oncall.grafana.crossplane.io.namespaced/v1alpha1
+  claimNames:
+    kind: Route
+    plural: routes
+  defaultCompositionRef:
+    name: route-namespaced
+  group: oncall.grafana.crossplane.io.namespaced
+  names:
     kind: XRoute
-  resources:
-    - base:
-        apiVersion: oncall.grafana.crossplane.io/v1alpha1
-        kind: Route
-      name: route
-      patches:
-        - fromFieldPath: spec.parameters.externalName
-          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.deletionPolicy
-          toFieldPath: spec.deletionPolicy
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainId
-          toFieldPath: spec.forProvider.escalationChainId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainRef.name
-          toFieldPath: spec.forProvider.escalationChainRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainRef.policy.resolution
-          toFieldPath: spec.forProvider.escalationChainRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainRef.policy.resolve
-          toFieldPath: spec.forProvider.escalationChainRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.matchControllerRef
-          toFieldPath: spec.forProvider.escalationChainSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.matchLabels
-          toFieldPath: spec.forProvider.escalationChainSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.policy.resolution
-          toFieldPath: spec.forProvider.escalationChainSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.escalationChainSelector.policy.resolve
-          toFieldPath: spec.forProvider.escalationChainSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationId
-          toFieldPath: spec.forProvider.integrationId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationRef.name
-          toFieldPath: spec.forProvider.integrationRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationRef.policy.resolution
-          toFieldPath: spec.forProvider.integrationRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationRef.policy.resolve
-          toFieldPath: spec.forProvider.integrationRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationSelector.matchControllerRef
-          toFieldPath: spec.forProvider.integrationSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationSelector.matchLabels
-          toFieldPath: spec.forProvider.integrationSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationSelector.policy.resolution
-          toFieldPath: spec.forProvider.integrationSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationSelector.policy.resolve
-          toFieldPath: spec.forProvider.integrationSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.msteams
-          toFieldPath: spec.forProvider.msteams
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.position
-          toFieldPath: spec.forProvider.position
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.routingRegex
-          toFieldPath: spec.forProvider.routingRegex
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.routingType
-          toFieldPath: spec.forProvider.routingType
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.slack
-          toFieldPath: spec.forProvider.slack
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.telegram
-          toFieldPath: spec.forProvider.telegram
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainId
-          toFieldPath: spec.initProvider.escalationChainId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainRef.name
-          toFieldPath: spec.initProvider.escalationChainRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainRef.policy.resolution
-          toFieldPath: spec.initProvider.escalationChainRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainRef.policy.resolve
-          toFieldPath: spec.initProvider.escalationChainRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.matchControllerRef
-          toFieldPath: spec.initProvider.escalationChainSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.matchLabels
-          toFieldPath: spec.initProvider.escalationChainSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.policy.resolution
-          toFieldPath: spec.initProvider.escalationChainSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.escalationChainSelector.policy.resolve
-          toFieldPath: spec.initProvider.escalationChainSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationId
-          toFieldPath: spec.initProvider.integrationId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationRef.name
-          toFieldPath: spec.initProvider.integrationRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationRef.policy.resolution
-          toFieldPath: spec.initProvider.integrationRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationRef.policy.resolve
-          toFieldPath: spec.initProvider.integrationRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationSelector.matchControllerRef
-          toFieldPath: spec.initProvider.integrationSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationSelector.matchLabels
-          toFieldPath: spec.initProvider.integrationSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationSelector.policy.resolution
-          toFieldPath: spec.initProvider.integrationSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationSelector.policy.resolve
-          toFieldPath: spec.initProvider.integrationSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.msteams
-          toFieldPath: spec.initProvider.msteams
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.position
-          toFieldPath: spec.initProvider.position
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.routingRegex
-          toFieldPath: spec.initProvider.routingRegex
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.routingType
-          toFieldPath: spec.initProvider.routingType
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.slack
-          toFieldPath: spec.initProvider.slack
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.telegram
-          toFieldPath: spec.initProvider.telegram
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.managementPolicies
-          toFieldPath: spec.managementPolicies
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.name
-          toFieldPath: spec.providerConfigRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
-          toFieldPath: spec.providerConfigRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
-          toFieldPath: spec.providerConfigRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
-          toFieldPath: spec.publishConnectionDetailsTo.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
-          toFieldPath: spec.writeConnectionSecretToRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
-          toFieldPath: spec.writeConnectionSecretToRef.namespace
-          type: FromCompositeFieldPath
+    plural: xroutes
+  versions:
+    - name: v1alpha1
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            metadata:
+              type: object
+            spec:
+              properties:
+                parameters:
+                  description: RouteSpec defines the desired state of Route
+                  properties:
+                    deletionPolicy:
+                      default: Delete
+                      description: |-
+                        DeletionPolicy specifies what will happen to the underlying external
+                        when this managed resource is deleted - either "Delete" or "Orphan" the
+                        external resource.
+                        This field is planned to be deprecated in favor of the ManagementPolicies
+                        field in a future release. Currently, both could be set independently and
+                        non-default values would be honored if the feature flag is enabled.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                      enum:
+                        - Orphan
+                        - Delete
+                      type: string
+                    externalName:
+                      description: |
+                        The name of the managed resource inside the Provider.
+                        By default Providers give external resources the same name as the Kubernetes object. A provider uses the external name to lookup a managed resource in an external system. The provider looks up the resource in the external system to determine if it exists, and if it matches the managed resource’s desired state. If the provider can’t find the resource, it creates it.
+                        
+                        Docs: https://docs.crossplane.io/latest/concepts/managed-resources/#naming-external-resources
+                      type: string
+                    forProvider:
+                      properties:
+                        escalationChainId:
+                          description: |-
+                            (String) The ID of the escalation chain.
+                            The ID of the escalation chain.
+                          type: string
+                        escalationChainRef:
+                          description: Reference to a EscalationChain in oncall to populate escalationChainId.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        escalationChainSelector:
+                          description: Selector for a EscalationChain in oncall to populate escalationChainId.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        integrationId:
+                          description: |-
+                            (String) The ID of the integration.
+                            The ID of the integration.
+                          type: string
+                        integrationRef:
+                          description: Reference to a Integration in oncall to populate integrationId.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        integrationSelector:
+                          description: Selector for a Integration in oncall to populate integrationId.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        msteams:
+                          description: |-
+                            specific settings for a route. (see below for nested schema)
+                            MS teams-specific settings for a route.
+                          items:
+                            properties:
+                              enabled:
+                                description: |-
+                                  (Boolean) Enable notification in MS teams. Defaults to true.
+                                  Enable notification in MS teams. Defaults to `true`.
+                                type: boolean
+                              id:
+                                description: |-
+                                  (String) The ID of this resource.
+                                  MS teams channel id. Alerts will be directed to this channel in Microsoft teams.
+                                type: string
+                            type: object
+                          type: array
+                        position:
+                          description: |-
+                            (Number) The position of the route (starts from 0).
+                            The position of the route (starts from 0).
+                          type: number
+                        routingRegex:
+                          description: |-
+                            (String) Python Regex query. Route is chosen for an alert if there is a match inside the alert payload.
+                            Python Regex query. Route is chosen for an alert if there is a match inside the alert payload.
+                          type: string
+                        routingType:
+                          description: |-
+                            (String) The type of route. Can be jinja2, regex Defaults to regex.
+                            The type of route. Can be jinja2, regex Defaults to `regex`.
+                          type: string
+                        slack:
+                          description: |-
+                            specific settings for a route. (see below for nested schema)
+                            Slack-specific settings for a route.
+                          items:
+                            properties:
+                              channelId:
+                                description: |-
+                                  (String) Slack channel id. Alerts will be directed to this channel in Slack.
+                                  Slack channel id. Alerts will be directed to this channel in Slack.
+                                type: string
+                              enabled:
+                                description: |-
+                                  (Boolean) Enable notification in MS teams. Defaults to true.
+                                  Enable notification in Slack. Defaults to `true`.
+                                type: boolean
+                            type: object
+                          type: array
+                        telegram:
+                          description: |-
+                            specific settings for a route. (see below for nested schema)
+                            Telegram-specific settings for a route.
+                          items:
+                            properties:
+                              enabled:
+                                description: |-
+                                  (Boolean) Enable notification in MS teams. Defaults to true.
+                                  Enable notification in Telegram. Defaults to `true`.
+                                type: boolean
+                              id:
+                                description: |-
+                                  (String) The ID of this resource.
+                                  Telegram channel id. Alerts will be directed to this channel in Telegram.
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    initProvider:
+                      description: |-
+                        THIS IS A BETA FIELD. It will be honored
+                        unless the Management Policies feature flag is disabled.
+                        InitProvider holds the same fields as ForProvider, with the exception
+                        of Identifier and other resource reference fields. The fields that are
+                        in InitProvider are merged into ForProvider when the resource is created.
+                        The same fields are also added to the terraform ignore_changes hook, to
+                        avoid updating them after creation. This is useful for fields that are
+                        required on creation, but we do not desire to update them after creation,
+                        for example because of an external controller is managing them, like an
+                        autoscaler.
+                      properties:
+                        escalationChainId:
+                          description: |-
+                            (String) The ID of the escalation chain.
+                            The ID of the escalation chain.
+                          type: string
+                        escalationChainRef:
+                          description: Reference to a EscalationChain in oncall to populate escalationChainId.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        escalationChainSelector:
+                          description: Selector for a EscalationChain in oncall to populate escalationChainId.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        integrationId:
+                          description: |-
+                            (String) The ID of the integration.
+                            The ID of the integration.
+                          type: string
+                        integrationRef:
+                          description: Reference to a Integration in oncall to populate integrationId.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        integrationSelector:
+                          description: Selector for a Integration in oncall to populate integrationId.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        msteams:
+                          description: |-
+                            specific settings for a route. (see below for nested schema)
+                            MS teams-specific settings for a route.
+                          items:
+                            properties:
+                              enabled:
+                                description: |-
+                                  (Boolean) Enable notification in MS teams. Defaults to true.
+                                  Enable notification in MS teams. Defaults to `true`.
+                                type: boolean
+                              id:
+                                description: |-
+                                  (String) The ID of this resource.
+                                  MS teams channel id. Alerts will be directed to this channel in Microsoft teams.
+                                type: string
+                            type: object
+                          type: array
+                        position:
+                          description: |-
+                            (Number) The position of the route (starts from 0).
+                            The position of the route (starts from 0).
+                          type: number
+                        routingRegex:
+                          description: |-
+                            (String) Python Regex query. Route is chosen for an alert if there is a match inside the alert payload.
+                            Python Regex query. Route is chosen for an alert if there is a match inside the alert payload.
+                          type: string
+                        routingType:
+                          description: |-
+                            (String) The type of route. Can be jinja2, regex Defaults to regex.
+                            The type of route. Can be jinja2, regex Defaults to `regex`.
+                          type: string
+                        slack:
+                          description: |-
+                            specific settings for a route. (see below for nested schema)
+                            Slack-specific settings for a route.
+                          items:
+                            properties:
+                              channelId:
+                                description: |-
+                                  (String) Slack channel id. Alerts will be directed to this channel in Slack.
+                                  Slack channel id. Alerts will be directed to this channel in Slack.
+                                type: string
+                              enabled:
+                                description: |-
+                                  (Boolean) Enable notification in MS teams. Defaults to true.
+                                  Enable notification in Slack. Defaults to `true`.
+                                type: boolean
+                            type: object
+                          type: array
+                        telegram:
+                          description: |-
+                            specific settings for a route. (see below for nested schema)
+                            Telegram-specific settings for a route.
+                          items:
+                            properties:
+                              enabled:
+                                description: |-
+                                  (Boolean) Enable notification in MS teams. Defaults to true.
+                                  Enable notification in Telegram. Defaults to `true`.
+                                type: boolean
+                              id:
+                                description: |-
+                                  (String) The ID of this resource.
+                                  Telegram channel id. Alerts will be directed to this channel in Telegram.
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    managementPolicies:
+                      default:
+                        - "*"
+                      description: |-
+                        THIS IS A BETA FIELD. It is on by default but can be opted out
+                        through a Crossplane feature flag.
+                        ManagementPolicies specify the array of actions Crossplane is allowed to
+                        take on the managed and external resources.
+                        This field is planned to replace the DeletionPolicy field in a future
+                        release. Currently, both could be set independently and non-default
+                        values would be honored if the feature flag is enabled. If both are
+                        custom, the DeletionPolicy field will be ignored.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                        and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                      items:
+                        description: |-
+                          A ManagementAction represents an action that the Crossplane controllers
+                          can take on an external resource.
+                        enum:
+                          - Observe
+                          - Create
+                          - Update
+                          - Delete
+                          - LateInitialize
+                          - "*"
+                        type: string
+                      type: array
+                    providerConfigRef:
+                      default:
+                        name: default
+                      description: |-
+                        ProviderConfigReference specifies how the provider that will be used to
+                        create, observe, update, and delete this managed resource should be
+                        configured.
+                      properties:
+                        name:
+                          description: Name of the referenced object.
+                          type: string
+                        policy:
+                          description: Policies for referencing.
+                          properties:
+                            resolution:
+                              default: Required
+                              description: |-
+                                Resolution specifies whether resolution of this reference is required.
+                                The default is 'Required', which means the reconcile will fail if the
+                                reference cannot be resolved. 'Optional' means this reference will be
+                                a no-op if it cannot be resolved.
+                              enum:
+                                - Required
+                                - Optional
+                              type: string
+                            resolve:
+                              description: |-
+                                Resolve specifies when this reference should be resolved. The default
+                                is 'IfNotPresent', which will attempt to resolve the reference only when
+                                the corresponding field is not present. Use 'Always' to resolve the
+                                reference on every reconcile.
+                              enum:
+                                - Always
+                                - IfNotPresent
+                              type: string
+                          type: object
+                      required:
+                        - name
+                      type: object
+                    publishConnectionDetailsTo:
+                      description: |-
+                        PublishConnectionDetailsTo specifies the connection secret config which
+                        contains a name, metadata and a reference to secret store config to
+                        which any connection details for this managed resource should be written.
+                        Connection details frequently include the endpoint, username,
+                        and password required to connect to the managed resource.
+                      properties:
+                        configRef:
+                          default:
+                            name: default
+                          description: |-
+                            SecretStoreConfigRef specifies which secret store config should be used
+                            for this ConnectionSecret.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        metadata:
+                          description: Metadata is the metadata for connection secret.
+                          properties:
+                            annotations:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                Annotations are the annotations to be added to connection secret.
+                                - For Kubernetes secrets, this will be used as "metadata.annotations".
+                                - It is up to Secret Store implementation for others store types.
+                              type: object
+                            labels:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                Labels are the labels/tags to be added to connection secret.
+                                - For Kubernetes secrets, this will be used as "metadata.labels".
+                                - It is up to Secret Store implementation for others store types.
+                              type: object
+                            type:
+                              description: |-
+                                Type is the SecretType for the connection secret.
+                                - Only valid for Kubernetes Secret Stores.
+                              type: string
+                          type: object
+                        name:
+                          description: Name is the name of the connection secret.
+                          type: string
+                      required:
+                        - name
+                      type: object
+                    writeConnectionSecretToRef:
+                      description: |-
+                        WriteConnectionSecretToReference specifies the namespace and name of a
+                        Secret to which any connection details for this managed resource should
+                        be written. Connection details frequently include the endpoint, username,
+                        and password required to connect to the managed resource.
+                        This field is planned to be replaced in a future release in favor of
+                        PublishConnectionDetailsTo. Currently, both could be set independently
+                        and connection details would be published to both without affecting
+                        each other.
+                      properties:
+                        name:
+                          description: Name of the secret.
+                          type: string
+                        namespace:
+                          description: Namespace of the secret.
+                          type: string
+                      required:
+                        - name
+                        - namespace
+                      type: object
+                  required:
+                    - forProvider
+                  type: object
+                  x-kubernetes-validations:
+                    - message: spec.forProvider.position is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.position) || (has(self.initProvider) && has(self.initProvider.position))"
+                    - message: spec.forProvider.routingRegex is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.routingRegex) || (has(self.initProvider) && has(self.initProvider.routingRegex))"
+              type: object
+          type: object
+      served: true

@@ -27,7 +27,7 @@ std.foldl(
     + {
       [configurationName + '/package.yaml']: manifest(package(configurationName)),
       [configurationName + '/Composition-' + kind + '.yaml']: manifest(item.composition),
-      [configurationName + '/CompositeResourceDefinition-' + kind + '.yaml']: manifest(item.composition),
+      [configurationName + '/CompositeResourceDefinition-' + kind + '.yaml']: manifest(item.definition),
     },
   namespaced,
   {}
