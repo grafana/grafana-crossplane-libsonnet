@@ -1,171 +1,484 @@
 apiVersion: apiextensions.crossplane.io/v1
-kind: Composition
+kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  labels:
-    crossplane.io/xrd: xjobs.ml.grafana.crossplane.io.namespaced
-  name: job-namespaced
+  name: xjobs.ml.grafana.crossplane.io.namespaced
 spec:
-  compositeTypeRef:
-    apiVersion: ml.grafana.crossplane.io.namespaced/v1alpha1
+  claimNames:
+    kind: Job
+    plural: jobs
+  defaultCompositionRef:
+    name: job-namespaced
+  group: ml.grafana.crossplane.io.namespaced
+  names:
     kind: XJob
-  resources:
-    - base:
-        apiVersion: ml.grafana.crossplane.io/v1alpha1
-        kind: Job
-      name: job
-      patches:
-        - fromFieldPath: spec.parameters.externalName
-          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.deletionPolicy
-          toFieldPath: spec.deletionPolicy
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.customLabels
-          toFieldPath: spec.forProvider.customLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dataSourceRef.name
-          toFieldPath: spec.forProvider.dataSourceRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dataSourceRef.policy.resolution
-          toFieldPath: spec.forProvider.dataSourceRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dataSourceRef.policy.resolve
-          toFieldPath: spec.forProvider.dataSourceRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.matchControllerRef
-          toFieldPath: spec.forProvider.dataSourceSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.matchLabels
-          toFieldPath: spec.forProvider.dataSourceSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.policy.resolution
-          toFieldPath: spec.forProvider.dataSourceSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.policy.resolve
-          toFieldPath: spec.forProvider.dataSourceSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.datasourceType
-          toFieldPath: spec.forProvider.datasourceType
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.datasourceUid
-          toFieldPath: spec.forProvider.datasourceUid
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.description
-          toFieldPath: spec.forProvider.description
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.holidays
-          toFieldPath: spec.forProvider.holidays
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.hyperParams
-          toFieldPath: spec.forProvider.hyperParams
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.interval
-          toFieldPath: spec.forProvider.interval
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.metric
-          toFieldPath: spec.forProvider.metric
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.name
-          toFieldPath: spec.forProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.queryParams
-          toFieldPath: spec.forProvider.queryParams
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.trainingWindow
-          toFieldPath: spec.forProvider.trainingWindow
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.customLabels
-          toFieldPath: spec.initProvider.customLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dataSourceRef.name
-          toFieldPath: spec.initProvider.dataSourceRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dataSourceRef.policy.resolution
-          toFieldPath: spec.initProvider.dataSourceRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dataSourceRef.policy.resolve
-          toFieldPath: spec.initProvider.dataSourceRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.matchControllerRef
-          toFieldPath: spec.initProvider.dataSourceSelector.matchControllerRef
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.matchLabels
-          toFieldPath: spec.initProvider.dataSourceSelector.matchLabels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.policy.resolution
-          toFieldPath: spec.initProvider.dataSourceSelector.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.policy.resolve
-          toFieldPath: spec.initProvider.dataSourceSelector.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.datasourceType
-          toFieldPath: spec.initProvider.datasourceType
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.datasourceUid
-          toFieldPath: spec.initProvider.datasourceUid
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.description
-          toFieldPath: spec.initProvider.description
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.holidays
-          toFieldPath: spec.initProvider.holidays
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.hyperParams
-          toFieldPath: spec.initProvider.hyperParams
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.interval
-          toFieldPath: spec.initProvider.interval
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.metric
-          toFieldPath: spec.initProvider.metric
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.name
-          toFieldPath: spec.initProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.queryParams
-          toFieldPath: spec.initProvider.queryParams
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.trainingWindow
-          toFieldPath: spec.initProvider.trainingWindow
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.managementPolicies
-          toFieldPath: spec.managementPolicies
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.name
-          toFieldPath: spec.providerConfigRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
-          toFieldPath: spec.providerConfigRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
-          toFieldPath: spec.providerConfigRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
-          toFieldPath: spec.publishConnectionDetailsTo.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
-          toFieldPath: spec.writeConnectionSecretToRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
-          toFieldPath: spec.writeConnectionSecretToRef.namespace
-          type: FromCompositeFieldPath
+    plural: xjobs
+  versions:
+    - name: v1alpha1
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            metadata:
+              type: object
+            spec:
+              properties:
+                parameters:
+                  description: JobSpec defines the desired state of Job
+                  properties:
+                    deletionPolicy:
+                      default: Delete
+                      description: |-
+                        DeletionPolicy specifies what will happen to the underlying external
+                        when this managed resource is deleted - either "Delete" or "Orphan" the
+                        external resource.
+                        This field is planned to be deprecated in favor of the ManagementPolicies
+                        field in a future release. Currently, both could be set independently and
+                        non-default values would be honored if the feature flag is enabled.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                      enum:
+                        - Orphan
+                        - Delete
+                      type: string
+                    externalName:
+                      description: |
+                        The name of the managed resource inside the Provider.
+                        By default Providers give external resources the same name as the Kubernetes object. A provider uses the external name to lookup a managed resource in an external system. The provider looks up the resource in the external system to determine if it exists, and if it matches the managed resource’s desired state. If the provider can’t find the resource, it creates it.
+                        
+                        Docs: https://docs.crossplane.io/latest/concepts/managed-resources/#naming-external-resources
+                      type: string
+                    forProvider:
+                      properties:
+                        customLabels:
+                          additionalProperties:
+                            type: string
+                          description: An object representing the custom labels added on the forecast.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        dataSourceRef:
+                          description: Reference to a DataSource in oss to populate datasourceUid.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        dataSourceSelector:
+                          description: Selector for a DataSource in oss to populate datasourceUid.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        datasourceType:
+                          description: "The type of datasource being queried. Currently allowed values are prometheus, graphite, loki, postgres, and datadog."
+                          type: string
+                        datasourceUid:
+                          description: The uid of the datasource to query.
+                          type: string
+                        description:
+                          description: A description of the job.
+                          type: string
+                        holidays:
+                          description: A list of holiday IDs or names to take into account when training the model.
+                          items:
+                            type: string
+                          type: array
+                        hyperParams:
+                          additionalProperties:
+                            type: string
+                          description: "The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`."
+                          type: object
+                          x-kubernetes-map-type: granular
+                        interval:
+                          description: "The data interval in seconds to train the data on. Defaults to `300`."
+                          type: number
+                        metric:
+                          description: The metric used to query the job results.
+                          type: string
+                        name:
+                          description: The name of the job.
+                          type: string
+                        queryParams:
+                          additionalProperties:
+                            type: string
+                          description: An object representing the query params to query Grafana with.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        trainingWindow:
+                          description: "The data interval in seconds to train the data on. Defaults to `7776000`."
+                          type: number
+                      type: object
+                    initProvider:
+                      description: |-
+                        THIS IS A BETA FIELD. It will be honored
+                        unless the Management Policies feature flag is disabled.
+                        InitProvider holds the same fields as ForProvider, with the exception
+                        of Identifier and other resource reference fields. The fields that are
+                        in InitProvider are merged into ForProvider when the resource is created.
+                        The same fields are also added to the terraform ignore_changes hook, to
+                        avoid updating them after creation. This is useful for fields that are
+                        required on creation, but we do not desire to update them after creation,
+                        for example because of an external controller is managing them, like an
+                        autoscaler.
+                      properties:
+                        customLabels:
+                          additionalProperties:
+                            type: string
+                          description: An object representing the custom labels added on the forecast.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        dataSourceRef:
+                          description: Reference to a DataSource in oss to populate datasourceUid.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        dataSourceSelector:
+                          description: Selector for a DataSource in oss to populate datasourceUid.
+                          properties:
+                            matchControllerRef:
+                              description: |-
+                                MatchControllerRef ensures an object with the same controller reference
+                                as the selecting object is selected.
+                              type: boolean
+                            matchLabels:
+                              additionalProperties:
+                                type: string
+                              description: MatchLabels ensures an object with matching labels is selected.
+                              type: object
+                            policy:
+                              description: Policies for selection.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          type: object
+                        datasourceType:
+                          description: "The type of datasource being queried. Currently allowed values are prometheus, graphite, loki, postgres, and datadog."
+                          type: string
+                        datasourceUid:
+                          description: The uid of the datasource to query.
+                          type: string
+                        description:
+                          description: A description of the job.
+                          type: string
+                        holidays:
+                          description: A list of holiday IDs or names to take into account when training the model.
+                          items:
+                            type: string
+                          type: array
+                        hyperParams:
+                          additionalProperties:
+                            type: string
+                          description: "The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`."
+                          type: object
+                          x-kubernetes-map-type: granular
+                        interval:
+                          description: "The data interval in seconds to train the data on. Defaults to `300`."
+                          type: number
+                        metric:
+                          description: The metric used to query the job results.
+                          type: string
+                        name:
+                          description: The name of the job.
+                          type: string
+                        queryParams:
+                          additionalProperties:
+                            type: string
+                          description: An object representing the query params to query Grafana with.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        trainingWindow:
+                          description: "The data interval in seconds to train the data on. Defaults to `7776000`."
+                          type: number
+                      type: object
+                    managementPolicies:
+                      default:
+                        - "*"
+                      description: |-
+                        THIS IS A BETA FIELD. It is on by default but can be opted out
+                        through a Crossplane feature flag.
+                        ManagementPolicies specify the array of actions Crossplane is allowed to
+                        take on the managed and external resources.
+                        This field is planned to replace the DeletionPolicy field in a future
+                        release. Currently, both could be set independently and non-default
+                        values would be honored if the feature flag is enabled. If both are
+                        custom, the DeletionPolicy field will be ignored.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                        and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                      items:
+                        description: |-
+                          A ManagementAction represents an action that the Crossplane controllers
+                          can take on an external resource.
+                        enum:
+                          - Observe
+                          - Create
+                          - Update
+                          - Delete
+                          - LateInitialize
+                          - "*"
+                        type: string
+                      type: array
+                    providerConfigRef:
+                      default:
+                        name: default
+                      description: |-
+                        ProviderConfigReference specifies how the provider that will be used to
+                        create, observe, update, and delete this managed resource should be
+                        configured.
+                      properties:
+                        name:
+                          description: Name of the referenced object.
+                          type: string
+                        policy:
+                          description: Policies for referencing.
+                          properties:
+                            resolution:
+                              default: Required
+                              description: |-
+                                Resolution specifies whether resolution of this reference is required.
+                                The default is 'Required', which means the reconcile will fail if the
+                                reference cannot be resolved. 'Optional' means this reference will be
+                                a no-op if it cannot be resolved.
+                              enum:
+                                - Required
+                                - Optional
+                              type: string
+                            resolve:
+                              description: |-
+                                Resolve specifies when this reference should be resolved. The default
+                                is 'IfNotPresent', which will attempt to resolve the reference only when
+                                the corresponding field is not present. Use 'Always' to resolve the
+                                reference on every reconcile.
+                              enum:
+                                - Always
+                                - IfNotPresent
+                              type: string
+                          type: object
+                      required:
+                        - name
+                      type: object
+                    publishConnectionDetailsTo:
+                      description: |-
+                        PublishConnectionDetailsTo specifies the connection secret config which
+                        contains a name, metadata and a reference to secret store config to
+                        which any connection details for this managed resource should be written.
+                        Connection details frequently include the endpoint, username,
+                        and password required to connect to the managed resource.
+                      properties:
+                        configRef:
+                          default:
+                            name: default
+                          description: |-
+                            SecretStoreConfigRef specifies which secret store config should be used
+                            for this ConnectionSecret.
+                          properties:
+                            name:
+                              description: Name of the referenced object.
+                              type: string
+                            policy:
+                              description: Policies for referencing.
+                              properties:
+                                resolution:
+                                  default: Required
+                                  description: |-
+                                    Resolution specifies whether resolution of this reference is required.
+                                    The default is 'Required', which means the reconcile will fail if the
+                                    reference cannot be resolved. 'Optional' means this reference will be
+                                    a no-op if it cannot be resolved.
+                                  enum:
+                                    - Required
+                                    - Optional
+                                  type: string
+                                resolve:
+                                  description: |-
+                                    Resolve specifies when this reference should be resolved. The default
+                                    is 'IfNotPresent', which will attempt to resolve the reference only when
+                                    the corresponding field is not present. Use 'Always' to resolve the
+                                    reference on every reconcile.
+                                  enum:
+                                    - Always
+                                    - IfNotPresent
+                                  type: string
+                              type: object
+                          required:
+                            - name
+                          type: object
+                        metadata:
+                          description: Metadata is the metadata for connection secret.
+                          properties:
+                            annotations:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                Annotations are the annotations to be added to connection secret.
+                                - For Kubernetes secrets, this will be used as "metadata.annotations".
+                                - It is up to Secret Store implementation for others store types.
+                              type: object
+                            labels:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                Labels are the labels/tags to be added to connection secret.
+                                - For Kubernetes secrets, this will be used as "metadata.labels".
+                                - It is up to Secret Store implementation for others store types.
+                              type: object
+                            type:
+                              description: |-
+                                Type is the SecretType for the connection secret.
+                                - Only valid for Kubernetes Secret Stores.
+                              type: string
+                          type: object
+                        name:
+                          description: Name is the name of the connection secret.
+                          type: string
+                      required:
+                        - name
+                      type: object
+                    writeConnectionSecretToRef:
+                      description: |-
+                        WriteConnectionSecretToReference specifies the namespace and name of a
+                        Secret to which any connection details for this managed resource should
+                        be written. Connection details frequently include the endpoint, username,
+                        and password required to connect to the managed resource.
+                        This field is planned to be replaced in a future release in favor of
+                        PublishConnectionDetailsTo. Currently, both could be set independently
+                        and connection details would be published to both without affecting
+                        each other.
+                      properties:
+                        name:
+                          description: Name of the secret.
+                          type: string
+                        namespace:
+                          description: Namespace of the secret.
+                          type: string
+                      required:
+                        - name
+                        - namespace
+                      type: object
+                  required:
+                    - forProvider
+                  type: object
+                  x-kubernetes-validations:
+                    - message: spec.forProvider.datasourceType is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.datasourceType) || (has(self.initProvider) && has(self.initProvider.datasourceType))"
+                    - message: spec.forProvider.metric is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.metric) || (has(self.initProvider) && has(self.initProvider.metric))"
+                    - message: spec.forProvider.name is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.name) || (has(self.initProvider) && has(self.initProvider.name))"
+                    - message: spec.forProvider.queryParams is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.queryParams) || (has(self.initProvider) && has(self.initProvider.queryParams))"
+              type: object
+          type: object
+      served: true
