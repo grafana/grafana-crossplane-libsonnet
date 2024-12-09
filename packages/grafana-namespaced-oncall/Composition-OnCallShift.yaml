@@ -10,156 +10,164 @@ spec:
   compositeTypeRef:
     apiVersion: oncall.grafana.crossplane.io.namespaced/v1alpha1
     kind: XOnCallShift
-  resources:
-    - base:
-        apiVersion: oncall.grafana.crossplane.io/v1alpha1
-        kind: OnCallShift
-      name: oncallshift
-      patches:
-        - fromFieldPath: spec.parameters.externalName
-          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.deletionPolicy
-          toFieldPath: spec.deletionPolicy
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.byDay
-          toFieldPath: spec.forProvider.byDay
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.byMonth
-          toFieldPath: spec.forProvider.byMonth
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.byMonthday
-          toFieldPath: spec.forProvider.byMonthday
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.duration
-          toFieldPath: spec.forProvider.duration
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.frequency
-          toFieldPath: spec.forProvider.frequency
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.interval
-          toFieldPath: spec.forProvider.interval
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.level
-          toFieldPath: spec.forProvider.level
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.name
-          toFieldPath: spec.forProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.rollingUsers
-          toFieldPath: spec.forProvider.rollingUsers
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.start
-          toFieldPath: spec.forProvider.start
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.startRotationFromUserIndex
-          toFieldPath: spec.forProvider.startRotationFromUserIndex
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.teamId
-          toFieldPath: spec.forProvider.teamId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.timeZone
-          toFieldPath: spec.forProvider.timeZone
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.type
-          toFieldPath: spec.forProvider.type
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.until
-          toFieldPath: spec.forProvider.until
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.users
-          toFieldPath: spec.forProvider.users
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.weekStart
-          toFieldPath: spec.forProvider.weekStart
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.byDay
-          toFieldPath: spec.initProvider.byDay
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.byMonth
-          toFieldPath: spec.initProvider.byMonth
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.byMonthday
-          toFieldPath: spec.initProvider.byMonthday
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.duration
-          toFieldPath: spec.initProvider.duration
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.frequency
-          toFieldPath: spec.initProvider.frequency
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.interval
-          toFieldPath: spec.initProvider.interval
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.level
-          toFieldPath: spec.initProvider.level
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.name
-          toFieldPath: spec.initProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.rollingUsers
-          toFieldPath: spec.initProvider.rollingUsers
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.start
-          toFieldPath: spec.initProvider.start
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.startRotationFromUserIndex
-          toFieldPath: spec.initProvider.startRotationFromUserIndex
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.teamId
-          toFieldPath: spec.initProvider.teamId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.timeZone
-          toFieldPath: spec.initProvider.timeZone
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.type
-          toFieldPath: spec.initProvider.type
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.until
-          toFieldPath: spec.initProvider.until
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.users
-          toFieldPath: spec.initProvider.users
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.weekStart
-          toFieldPath: spec.initProvider.weekStart
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.managementPolicies
-          toFieldPath: spec.managementPolicies
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.name
-          toFieldPath: spec.providerConfigRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
-          toFieldPath: spec.providerConfigRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
-          toFieldPath: spec.providerConfigRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
-          toFieldPath: spec.publishConnectionDetailsTo.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
-          toFieldPath: spec.writeConnectionSecretToRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
-          toFieldPath: spec.writeConnectionSecretToRef.namespace
-          type: FromCompositeFieldPath
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: oncall.grafana.crossplane.io/v1alpha1
+              kind: OnCallShift
+            name: oncallshift
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.byDay
+                toFieldPath: spec.forProvider.byDay
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.byMonth
+                toFieldPath: spec.forProvider.byMonth
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.byMonthday
+                toFieldPath: spec.forProvider.byMonthday
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.duration
+                toFieldPath: spec.forProvider.duration
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.frequency
+                toFieldPath: spec.forProvider.frequency
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.interval
+                toFieldPath: spec.forProvider.interval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.level
+                toFieldPath: spec.forProvider.level
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.name
+                toFieldPath: spec.forProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.rollingUsers
+                toFieldPath: spec.forProvider.rollingUsers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.start
+                toFieldPath: spec.forProvider.start
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.startRotationFromUserIndex
+                toFieldPath: spec.forProvider.startRotationFromUserIndex
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamId
+                toFieldPath: spec.forProvider.teamId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.timeZone
+                toFieldPath: spec.forProvider.timeZone
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.type
+                toFieldPath: spec.forProvider.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.until
+                toFieldPath: spec.forProvider.until
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.users
+                toFieldPath: spec.forProvider.users
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.weekStart
+                toFieldPath: spec.forProvider.weekStart
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.byDay
+                toFieldPath: spec.initProvider.byDay
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.byMonth
+                toFieldPath: spec.initProvider.byMonth
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.byMonthday
+                toFieldPath: spec.initProvider.byMonthday
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.duration
+                toFieldPath: spec.initProvider.duration
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.frequency
+                toFieldPath: spec.initProvider.frequency
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.interval
+                toFieldPath: spec.initProvider.interval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.level
+                toFieldPath: spec.initProvider.level
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.name
+                toFieldPath: spec.initProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.rollingUsers
+                toFieldPath: spec.initProvider.rollingUsers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.start
+                toFieldPath: spec.initProvider.start
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.startRotationFromUserIndex
+                toFieldPath: spec.initProvider.startRotationFromUserIndex
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamId
+                toFieldPath: spec.initProvider.teamId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.timeZone
+                toFieldPath: spec.initProvider.timeZone
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.type
+                toFieldPath: spec.initProvider.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.until
+                toFieldPath: spec.initProvider.until
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.users
+                toFieldPath: spec.initProvider.users
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.weekStart
+                toFieldPath: spec.initProvider.weekStart
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+                toFieldPath: spec.publishConnectionDetailsTo.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform

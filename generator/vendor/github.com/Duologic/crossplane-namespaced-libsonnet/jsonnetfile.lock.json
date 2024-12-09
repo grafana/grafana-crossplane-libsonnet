@@ -5,12 +5,32 @@
       "source": {
         "git": {
           "remote": "https://github.com/jsonnet-libs/crossplane-libsonnet.git",
-          "subdir": "crossplane/1.14"
+          "subdir": "crossplane/1.17"
         }
       },
-      "version": "b8c879544f4292f788770373c900f9fde696a23b",
-      "sum": "40w1wppQmnIUUMoWAY5sd3rWl6HwKhIuSb/8XNBjJCY=",
+      "version": "4a23ed218573867f36482f8e61f5fc1e53e2b3ba",
+      "sum": "82xry+Tem3DEdhzvdxfUPsTYCqiQuNgXpBmOlcWLai8=",
       "name": "crossplane"
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/crossplane-libsonnet.git",
+          "subdir": "function-cel-filter/0.1"
+        }
+      },
+      "version": "4a23ed218573867f36482f8e61f5fc1e53e2b3ba",
+      "sum": "fiDqkkc58FFgl84AIglAXFW8ab0Ix1+ByItZPs552V8="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/crossplane-libsonnet.git",
+          "subdir": "function-patch-and-transform/0.7"
+        }
+      },
+      "version": "4a23ed218573867f36482f8e61f5fc1e53e2b3ba",
+      "sum": "+u8oE6qegNSf1FqLwvznBHPlS8a9D/pJTOTksO27iFE="
     }
   ],
   "legacyImports": false
