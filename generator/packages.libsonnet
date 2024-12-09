@@ -1,4 +1,4 @@
-local crossplane = import 'github.com/jsonnet-libs/crossplane-libsonnet/crossplane/1.14/main.libsonnet';
+local crossplane = import 'github.com/jsonnet-libs/crossplane-libsonnet/crossplane/1.17/main.libsonnet';
 local namespaced = import 'namespaced.libsonnet';
 
 local package(key) =
