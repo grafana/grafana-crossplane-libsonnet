@@ -1,7 +1,7 @@
 LIBRARY_VERSION:=0.0.9
 PROVIDER_VERSION:=0.21.0
 JSONNET_BIN:=jrsonnet
-CROSSPLANE?=crank
+CROSSPLANE?=crossplane
 REGISTRY?=ghcr.io
 SHELL:=/bin/bash
 
