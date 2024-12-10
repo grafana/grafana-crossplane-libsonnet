@@ -10,162 +10,170 @@ spec:
   compositeTypeRef:
     apiVersion: oncall.grafana.crossplane.io.namespaced/v1alpha1
     kind: XOutgoingWebhook
-  resources:
-    - base:
-        apiVersion: oncall.grafana.crossplane.io/v1alpha1
-        kind: OutgoingWebhook
-      name: outgoingwebhook
-      patches:
-        - fromFieldPath: spec.parameters.externalName
-          toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.deletionPolicy
-          toFieldPath: spec.deletionPolicy
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.authorizationHeaderSecretRef.key
-          toFieldPath: spec.forProvider.authorizationHeaderSecretRef.key
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.authorizationHeaderSecretRef.name
-          toFieldPath: spec.forProvider.authorizationHeaderSecretRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.authorizationHeaderSecretRef.namespace
-          toFieldPath: spec.forProvider.authorizationHeaderSecretRef.namespace
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.data
-          toFieldPath: spec.forProvider.data
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.forwardWholePayload
-          toFieldPath: spec.forProvider.forwardWholePayload
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.headers
-          toFieldPath: spec.forProvider.headers
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.httpMethod
-          toFieldPath: spec.forProvider.httpMethod
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.integrationFilter
-          toFieldPath: spec.forProvider.integrationFilter
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.isWebhookEnabled
-          toFieldPath: spec.forProvider.isWebhookEnabled
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.name
-          toFieldPath: spec.forProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.key
-          toFieldPath: spec.forProvider.passwordSecretRef.key
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.name
-          toFieldPath: spec.forProvider.passwordSecretRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.namespace
-          toFieldPath: spec.forProvider.passwordSecretRef.namespace
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.teamId
-          toFieldPath: spec.forProvider.teamId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.triggerTemplate
-          toFieldPath: spec.forProvider.triggerTemplate
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.triggerType
-          toFieldPath: spec.forProvider.triggerType
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.url
-          toFieldPath: spec.forProvider.url
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.forProvider.user
-          toFieldPath: spec.forProvider.user
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.authorizationHeaderSecretRef.key
-          toFieldPath: spec.initProvider.authorizationHeaderSecretRef.key
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.authorizationHeaderSecretRef.name
-          toFieldPath: spec.initProvider.authorizationHeaderSecretRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.authorizationHeaderSecretRef.namespace
-          toFieldPath: spec.initProvider.authorizationHeaderSecretRef.namespace
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.data
-          toFieldPath: spec.initProvider.data
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.forwardWholePayload
-          toFieldPath: spec.initProvider.forwardWholePayload
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.headers
-          toFieldPath: spec.initProvider.headers
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.httpMethod
-          toFieldPath: spec.initProvider.httpMethod
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.integrationFilter
-          toFieldPath: spec.initProvider.integrationFilter
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.isWebhookEnabled
-          toFieldPath: spec.initProvider.isWebhookEnabled
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.name
-          toFieldPath: spec.initProvider.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.key
-          toFieldPath: spec.initProvider.passwordSecretRef.key
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.name
-          toFieldPath: spec.initProvider.passwordSecretRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.namespace
-          toFieldPath: spec.initProvider.passwordSecretRef.namespace
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.teamId
-          toFieldPath: spec.initProvider.teamId
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.triggerTemplate
-          toFieldPath: spec.initProvider.triggerTemplate
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.triggerType
-          toFieldPath: spec.initProvider.triggerType
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.url
-          toFieldPath: spec.initProvider.url
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.initProvider.user
-          toFieldPath: spec.initProvider.user
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.managementPolicies
-          toFieldPath: spec.managementPolicies
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.name
-          toFieldPath: spec.providerConfigRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
-          toFieldPath: spec.providerConfigRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
-          toFieldPath: spec.providerConfigRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
-          toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
-          toFieldPath: spec.publishConnectionDetailsTo.metadata.type
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
-          toFieldPath: spec.publishConnectionDetailsTo.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
-          toFieldPath: spec.writeConnectionSecretToRef.name
-          type: FromCompositeFieldPath
-        - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
-          toFieldPath: spec.writeConnectionSecretToRef.namespace
-          type: FromCompositeFieldPath
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: oncall.grafana.crossplane.io/v1alpha1
+              kind: OutgoingWebhook
+            name: outgoingwebhook
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.authorizationHeaderSecretRef.key
+                toFieldPath: spec.forProvider.authorizationHeaderSecretRef.key
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.authorizationHeaderSecretRef.name
+                toFieldPath: spec.forProvider.authorizationHeaderSecretRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.authorizationHeaderSecretRef.namespace
+                toFieldPath: spec.forProvider.authorizationHeaderSecretRef.namespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.data
+                toFieldPath: spec.forProvider.data
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.forwardWholePayload
+                toFieldPath: spec.forProvider.forwardWholePayload
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.headers
+                toFieldPath: spec.forProvider.headers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.httpMethod
+                toFieldPath: spec.forProvider.httpMethod
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.integrationFilter
+                toFieldPath: spec.forProvider.integrationFilter
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.isWebhookEnabled
+                toFieldPath: spec.forProvider.isWebhookEnabled
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.name
+                toFieldPath: spec.forProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.key
+                toFieldPath: spec.forProvider.passwordSecretRef.key
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.name
+                toFieldPath: spec.forProvider.passwordSecretRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.namespace
+                toFieldPath: spec.forProvider.passwordSecretRef.namespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamId
+                toFieldPath: spec.forProvider.teamId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.triggerTemplate
+                toFieldPath: spec.forProvider.triggerTemplate
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.triggerType
+                toFieldPath: spec.forProvider.triggerType
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.url
+                toFieldPath: spec.forProvider.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.user
+                toFieldPath: spec.forProvider.user
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.authorizationHeaderSecretRef.key
+                toFieldPath: spec.initProvider.authorizationHeaderSecretRef.key
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.authorizationHeaderSecretRef.name
+                toFieldPath: spec.initProvider.authorizationHeaderSecretRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.authorizationHeaderSecretRef.namespace
+                toFieldPath: spec.initProvider.authorizationHeaderSecretRef.namespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.data
+                toFieldPath: spec.initProvider.data
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.forwardWholePayload
+                toFieldPath: spec.initProvider.forwardWholePayload
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.headers
+                toFieldPath: spec.initProvider.headers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.httpMethod
+                toFieldPath: spec.initProvider.httpMethod
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.integrationFilter
+                toFieldPath: spec.initProvider.integrationFilter
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.isWebhookEnabled
+                toFieldPath: spec.initProvider.isWebhookEnabled
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.name
+                toFieldPath: spec.initProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.key
+                toFieldPath: spec.initProvider.passwordSecretRef.key
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.name
+                toFieldPath: spec.initProvider.passwordSecretRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.namespace
+                toFieldPath: spec.initProvider.passwordSecretRef.namespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamId
+                toFieldPath: spec.initProvider.teamId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.triggerTemplate
+                toFieldPath: spec.initProvider.triggerTemplate
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.triggerType
+                toFieldPath: spec.initProvider.triggerType
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.url
+                toFieldPath: spec.initProvider.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.user
+                toFieldPath: spec.initProvider.user
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+                toFieldPath: spec.publishConnectionDetailsTo.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform

@@ -5,12 +5,28 @@
       "source": {
         "git": {
           "remote": "https://github.com/jsonnet-libs/crossplane-libsonnet.git",
-          "subdir": "crossplane/1.14"
+          "subdir": "crossplane/1.17"
         }
       },
-      "version": "main",
-      "name": "crossplane"
+      "version": "main"
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/crossplane-libsonnet.git",
+          "subdir": "function-cel-filter/0.1"
+        }
+      },
+      "version": "main"
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/crossplane-libsonnet.git",
+          "subdir": "function-patch-and-transform/0.7"
+        }
+      },
+      "version": "main"
     }
-  ],
-  "legacyImports": true
+  ]
 }
