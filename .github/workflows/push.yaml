@@ -33,5 +33,3 @@ jobs:
       - name: Push xpkg
         run: make push
         if: ${{ github.ref == 'refs/heads/main' }} && env.REGISTRY != ''
-        env:
-          CROSSPLANE: './crossplane'
