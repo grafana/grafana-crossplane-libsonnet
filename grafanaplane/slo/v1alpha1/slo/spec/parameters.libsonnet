@@ -287,7 +287,7 @@
           },
         },
       },
-      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
       withDestinationDatasource(value): {
         spec+: {
           parameters+: {
@@ -300,7 +300,7 @@
           },
         },
       },
-      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
       withDestinationDatasourceMixin(value): {
         spec+: {
           parameters+: {
@@ -424,7 +424,7 @@
                   },
                 },
             },
-          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID for the Mimir Datasource\nUID for the Mimir Datasource' } },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID for the Datasource\nUID for the Datasource' } },
           withUid(value): {
             uid: value,
           },
@@ -904,7 +904,7 @@
           },
         },
       },
-      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
       withDestinationDatasource(value): {
         spec+: {
           parameters+: {
@@ -917,7 +917,7 @@
           },
         },
       },
-      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
       withDestinationDatasourceMixin(value): {
         spec+: {
           parameters+: {
@@ -1041,7 +1041,7 @@
                   },
                 },
             },
-          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID for the Mimir Datasource\nUID for the Mimir Datasource' } },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID for the Datasource\nUID for the Datasource' } },
           withUid(value): {
             uid: value,
           },

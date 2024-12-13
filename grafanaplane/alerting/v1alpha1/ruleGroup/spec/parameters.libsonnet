@@ -620,14 +620,14 @@
           withNoDataState(value): {
             noDataState: value,
           },
-          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled." } },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled." } },
           withNotificationSettings(value): {
             notificationSettings:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled." } },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled." } },
           withNotificationSettingsMixin(value): {
             notificationSettings+:
               (if std.isArray(value)
@@ -788,6 +788,32 @@
               '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing. Default is 4 hours.\nMinimum time interval for re-sending a notification if an alert is still firing. Default is 4 hours.' } },
               withRepeatInterval(value): {
                 repeatInterval: value,
+              },
+            },
+          '#withRecord': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled. (see below for nested schema)\nSettings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled." } },
+          withRecord(value): {
+            record:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withRecordMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled. (see below for nested schema)\nSettings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled." } },
+          withRecordMixin(value): {
+            record+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          record+:
+            {
+              '#': { help: '', name: 'record' },
+              '#withFrom': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) The number of seconds in the past, relative to when the rule is evaluated, at which the time range begins.\nThe ref id of the query node in the data field to use as the source of the metric.' } },
+              withFrom(value): {
+                from: value,
+              },
+              '#withMetric': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the metric to write to.\nThe name of the metric to write to.' } },
+              withMetric(value): {
+                metric: value,
               },
             },
         },
@@ -1397,14 +1423,14 @@
           withNoDataState(value): {
             noDataState: value,
           },
-          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled." } },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled." } },
           withNotificationSettings(value): {
             notificationSettings:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled." } },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled. (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled." } },
           withNotificationSettingsMixin(value): {
             notificationSettings+:
               (if std.isArray(value)
@@ -1565,6 +1591,32 @@
               '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing. Default is 4 hours.\nMinimum time interval for re-sending a notification if an alert is still firing. Default is 4 hours.' } },
               withRepeatInterval(value): {
                 repeatInterval: value,
+              },
+            },
+          '#withRecord': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled. (see below for nested schema)\nSettings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled." } },
+          withRecord(value): {
+            record:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withRecordMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block List, Max: 1) Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled. (see below for nested schema)\nSettings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled." } },
+          withRecordMixin(value): {
+            record+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          record+:
+            {
+              '#': { help: '', name: 'record' },
+              '#withFrom': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) The number of seconds in the past, relative to when the rule is evaluated, at which the time range begins.\nThe ref id of the query node in the data field to use as the source of the metric.' } },
+              withFrom(value): {
+                from: value,
+              },
+              '#withMetric': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the metric to write to.\nThe name of the metric to write to.' } },
+              withMetric(value): {
+                metric: value,
               },
             },
         },

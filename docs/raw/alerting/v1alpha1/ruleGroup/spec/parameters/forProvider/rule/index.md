@@ -6,6 +6,7 @@
 
 * [data](data/index.md)
 * [notificationSettings](notificationSettings.md)
+* [record](record.md)
 
 ## Index
 
@@ -23,6 +24,8 @@
 * [`fn withNoDataState(value)`](#fn-withnodatastate)
 * [`fn withNotificationSettings(value)`](#fn-withnotificationsettings)
 * [`fn withNotificationSettingsMixin(value)`](#fn-withnotificationsettingsmixin)
+* [`fn withRecord(value)`](#fn-withrecord)
+* [`fn withRecordMixin(value)`](#fn-withrecordmixin)
 
 ## Fields
 
@@ -181,8 +184,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled. (see below for nested schema)
-Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled.
+(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled. (see below for nested schema)
+Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled.
 ### fn withNotificationSettingsMixin
 
 ```jsonnet
@@ -193,5 +196,29 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled. (see below for nested schema)
-Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' enabled.
+(Block List, Max: 1) Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled. (see below for nested schema)
+Notification settings for the rule. If specified, it overrides the notification policies. Available since Grafana 10.4, requires feature flag 'alertingSimplifiedRouting' to be enabled.
+### fn withRecord
+
+```jsonnet
+withRecord(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List, Max: 1) Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled. (see below for nested schema)
+Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled.
+### fn withRecordMixin
+
+```jsonnet
+withRecordMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List, Max: 1) Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled. (see below for nested schema)
+Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled.

@@ -82,8 +82,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) UID for the Mimir Datasource
-UID for the Mimir Datasource
+(String) UID for the Datasource
+UID for the Datasource
 ### obj ref
 
 

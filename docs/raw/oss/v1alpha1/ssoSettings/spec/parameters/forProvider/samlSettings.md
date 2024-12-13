@@ -20,6 +20,7 @@
 * [`fn withClientId(value)`](#fn-withclientid)
 * [`fn withClientSecret(value)`](#fn-withclientsecret)
 * [`fn withEnabled(value=true)`](#fn-withenabled)
+* [`fn withEntityId(value)`](#fn-withentityid)
 * [`fn withForceUseGraphApi(value=true)`](#fn-withforceusegraphapi)
 * [`fn withIdpMetadata(value)`](#fn-withidpmetadata)
 * [`fn withIdpMetadataPath(value)`](#fn-withidpmetadatapath)
@@ -249,6 +250,18 @@ PARAMETERS:
 
 (Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.
 Define whether this configuration is enabled for SAML. Defaults to `true`.
+### fn withEntityId
+
+```jsonnet
+withEntityId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The entity ID is a globally unique identifier for the service provider. It is used to identify the service provider to the identity provider. Defaults to the URL of the Grafana instance if not set.
+The entity ID is a globally unique identifier for the service provider. It is used to identify the service provider to the identity provider. Defaults to the URL of the Grafana instance if not set.
 ### fn withForceUseGraphApi
 
 ```jsonnet

@@ -940,7 +940,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
+(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
 Destination Datasource sets the datasource defined for an SLO
 ###### fn spec.parameters.forProvider.withDestinationDatasourceMixin
 
@@ -952,7 +952,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
+(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
 Destination Datasource sets the datasource defined for an SLO
 ###### fn spec.parameters.forProvider.withFolderUid
 
@@ -1123,7 +1123,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
+(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
 Destination Datasource sets the datasource defined for an SLO
 ###### fn spec.parameters.initProvider.withDestinationDatasourceMixin
 
@@ -1135,7 +1135,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
+(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
 Destination Datasource sets the datasource defined for an SLO
 ###### fn spec.parameters.initProvider.withFolderUid
 

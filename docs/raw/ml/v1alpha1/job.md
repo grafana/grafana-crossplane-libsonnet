@@ -1042,7 +1042,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.
+The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.
 ###### fn spec.parameters.forProvider.withHyperParamsMixin
 
 ```jsonnet
@@ -1053,7 +1053,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.
+The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.
 ###### fn spec.parameters.forProvider.withInterval
 
 ```jsonnet
@@ -1418,7 +1418,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.
+The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.
 ###### fn spec.parameters.initProvider.withHyperParamsMixin
 
 ```jsonnet
@@ -1429,7 +1429,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.
+The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.
 ###### fn spec.parameters.initProvider.withInterval
 
 ```jsonnet

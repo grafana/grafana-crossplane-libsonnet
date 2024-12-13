@@ -4,6 +4,7 @@
 
 ## Subpackages
 
+* [browser](browser.md)
 * [dns](dns/index.md)
 * [grpc](grpc/index.md)
 * [http](http/index.md)
@@ -15,6 +16,8 @@
 
 ## Index
 
+* [`fn withBrowser(value)`](#fn-withbrowser)
+* [`fn withBrowserMixin(value)`](#fn-withbrowsermixin)
 * [`fn withDns(value)`](#fn-withdns)
 * [`fn withDnsMixin(value)`](#fn-withdnsmixin)
 * [`fn withGrpc(value)`](#fn-withgrpc)
@@ -34,6 +37,30 @@
 
 ## Fields
 
+### fn withBrowser
+
+```jsonnet
+withBrowser(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/. (see below for nested schema)
+Settings for browser check. See https://grafana.com/docs/grafana-cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/.
+### fn withBrowserMixin
+
+```jsonnet
+withBrowserMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/. (see below for nested schema)
+Settings for browser check. See https://grafana.com/docs/grafana-cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/.
 ### fn withDns
 
 ```jsonnet

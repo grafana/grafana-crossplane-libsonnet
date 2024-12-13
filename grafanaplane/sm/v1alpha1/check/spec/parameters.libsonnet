@@ -158,6 +158,28 @@
       settings+:
         {
           '#': { help: '', name: 'settings' },
+          '#withBrowser': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/. (see below for nested schema)\nSettings for browser check. See https://grafana.com/docs/grafana-cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/.' } },
+          withBrowser(value): {
+            browser:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withBrowserMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/. (see below for nested schema)\nSettings for browser check. See https://grafana.com/docs/grafana-cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/.' } },
+          withBrowserMixin(value): {
+            browser+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          browser+:
+            {
+              '#': { help: '', name: 'browser' },
+              '#withScript': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              withScript(value): {
+                script: value,
+              },
+            },
           '#withDns': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Settings for DNS check. The target must be a valid hostname (or IP address for PTR records). (see below for nested schema)\nSettings for DNS check. The target must be a valid hostname (or IP address for `PTR` records).' } },
           withDns(value): {
             dns:
@@ -549,6 +571,10 @@
               '#withCacheBustingQueryParamName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the query parameter used to prevent the server from using a cached response. Each probe will assign a random value to this parameter each time a request is made.\nThe name of the query parameter used to prevent the server from using a cached response. Each probe will assign a random value to this parameter each time a request is made.' } },
               withCacheBustingQueryParamName(value): {
                 cacheBustingQueryParamName: value,
+              },
+              '#withCompression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Check fails if the response body is not compressed using this compression algorithm. One of none, identity, br, gzip, deflate.\nCheck fails if the response body is not compressed using this compression algorithm. One of `none`, `identity`, `br`, `gzip`, `deflate`.' } },
+              withCompression(value): {
+                compression: value,
               },
               '#withFailIfBodyMatchesRegexp': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) List of regexes. If any match the response body, the check will fail.\nList of regexes. If any match the response body, the check will fail.' } },
               withFailIfBodyMatchesRegexp(value): {
@@ -1372,6 +1398,28 @@
       settings+:
         {
           '#': { help: '', name: 'settings' },
+          '#withBrowser': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/. (see below for nested schema)\nSettings for browser check. See https://grafana.com/docs/grafana-cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/.' } },
+          withBrowser(value): {
+            browser:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withBrowserMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/. (see below for nested schema)\nSettings for browser check. See https://grafana.com/docs/grafana-cloud/testing/synthetic-monitoring/create-checks/checks/k6-browser/.' } },
+          withBrowserMixin(value): {
+            browser+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          browser+:
+            {
+              '#': { help: '', name: 'browser' },
+              '#withScript': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              withScript(value): {
+                script: value,
+              },
+            },
           '#withDns': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Settings for DNS check. The target must be a valid hostname (or IP address for PTR records). (see below for nested schema)\nSettings for DNS check. The target must be a valid hostname (or IP address for `PTR` records).' } },
           withDns(value): {
             dns:
@@ -1763,6 +1811,10 @@
               '#withCacheBustingQueryParamName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the query parameter used to prevent the server from using a cached response. Each probe will assign a random value to this parameter each time a request is made.\nThe name of the query parameter used to prevent the server from using a cached response. Each probe will assign a random value to this parameter each time a request is made.' } },
               withCacheBustingQueryParamName(value): {
                 cacheBustingQueryParamName: value,
+              },
+              '#withCompression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Check fails if the response body is not compressed using this compression algorithm. One of none, identity, br, gzip, deflate.\nCheck fails if the response body is not compressed using this compression algorithm. One of `none`, `identity`, `br`, `gzip`, `deflate`.' } },
+              withCompression(value): {
+                compression: value,
               },
               '#withFailIfBodyMatchesRegexp': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) List of regexes. If any match the response body, the check will fail.\nList of regexes. If any match the response body, the check will fail.' } },
               withFailIfBodyMatchesRegexp(value): {
