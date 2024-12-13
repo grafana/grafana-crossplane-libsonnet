@@ -313,7 +313,7 @@
           },
         },
       },
-      '#withHyperParams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
+      '#withHyperParams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
       withHyperParams(value): {
         spec+: {
           parameters+: {
@@ -323,7 +323,7 @@
           },
         },
       },
-      '#withHyperParamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
+      '#withHyperParamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
       withHyperParamsMixin(value): {
         spec+: {
           parameters+: {
@@ -692,7 +692,7 @@
           },
         },
       },
-      '#withHyperParams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
+      '#withHyperParams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
       withHyperParams(value): {
         spec+: {
           parameters+: {
@@ -702,7 +702,7 @@
           },
         },
       },
-      '#withHyperParamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
+      '#withHyperParamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`.' } },
       withHyperParamsMixin(value): {
         spec+: {
           parameters+: {

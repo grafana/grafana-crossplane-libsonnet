@@ -73,6 +73,10 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withDataSourceRef(value)`](#fn-specparametersforproviderwithdatasourceref)
+      * [`fn withDataSourceRefMixin(value)`](#fn-specparametersforproviderwithdatasourcerefmixin)
+      * [`fn withDataSourceSelector(value)`](#fn-specparametersforproviderwithdatasourceselector)
+      * [`fn withDataSourceSelectorMixin(value)`](#fn-specparametersforproviderwithdatasourceselectormixin)
       * [`fn withDatasourceUid(value)`](#fn-specparametersforproviderwithdatasourceuid)
       * [`fn withOrgId(value)`](#fn-specparametersforproviderwithorgid)
       * [`fn withOrganizationRef(value)`](#fn-specparametersforproviderwithorganizationref)
@@ -81,6 +85,22 @@
       * [`fn withOrganizationSelectorMixin(value)`](#fn-specparametersforproviderwithorganizationselectormixin)
       * [`fn withPermissions(value)`](#fn-specparametersforproviderwithpermissions)
       * [`fn withPermissionsMixin(value)`](#fn-specparametersforproviderwithpermissionsmixin)
+      * [`obj dataSourceRef`](#obj-specparametersforproviderdatasourceref)
+        * [`fn withName(value)`](#fn-specparametersforproviderdatasourcerefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderdatasourcerefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderdatasourcerefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderdatasourcerefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderdatasourcerefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderdatasourcerefpolicywithresolve)
+      * [`obj dataSourceSelector`](#obj-specparametersforproviderdatasourceselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderdatasourceselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderdatasourceselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderdatasourceselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderdatasourceselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderdatasourceselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderdatasourceselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderdatasourceselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderdatasourceselectorpolicywithresolve)
       * [`obj organizationRef`](#obj-specparametersforproviderorganizationref)
         * [`fn withName(value)`](#fn-specparametersforproviderorganizationrefwithname)
         * [`fn withPolicy(value)`](#fn-specparametersforproviderorganizationrefwithpolicy)
@@ -98,6 +118,10 @@
           * [`fn withResolution(value="Required")`](#fn-specparametersforproviderorganizationselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersforproviderorganizationselectorpolicywithresolve)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withDataSourceRef(value)`](#fn-specparametersinitproviderwithdatasourceref)
+      * [`fn withDataSourceRefMixin(value)`](#fn-specparametersinitproviderwithdatasourcerefmixin)
+      * [`fn withDataSourceSelector(value)`](#fn-specparametersinitproviderwithdatasourceselector)
+      * [`fn withDataSourceSelectorMixin(value)`](#fn-specparametersinitproviderwithdatasourceselectormixin)
       * [`fn withDatasourceUid(value)`](#fn-specparametersinitproviderwithdatasourceuid)
       * [`fn withOrgId(value)`](#fn-specparametersinitproviderwithorgid)
       * [`fn withOrganizationRef(value)`](#fn-specparametersinitproviderwithorganizationref)
@@ -106,6 +130,22 @@
       * [`fn withOrganizationSelectorMixin(value)`](#fn-specparametersinitproviderwithorganizationselectormixin)
       * [`fn withPermissions(value)`](#fn-specparametersinitproviderwithpermissions)
       * [`fn withPermissionsMixin(value)`](#fn-specparametersinitproviderwithpermissionsmixin)
+      * [`obj dataSourceRef`](#obj-specparametersinitproviderdatasourceref)
+        * [`fn withName(value)`](#fn-specparametersinitproviderdatasourcerefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderdatasourcerefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderdatasourcerefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderdatasourcerefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderdatasourcerefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderdatasourcerefpolicywithresolve)
+      * [`obj dataSourceSelector`](#obj-specparametersinitproviderdatasourceselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderdatasourceselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderdatasourceselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderdatasourceselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderdatasourceselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderdatasourceselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderdatasourceselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderdatasourceselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderdatasourceselectorpolicywithresolve)
       * [`obj organizationRef`](#obj-specparametersinitproviderorganizationref)
         * [`fn withName(value)`](#fn-specparametersinitproviderorganizationrefwithname)
         * [`fn withPolicy(value)`](#fn-specparametersinitproviderorganizationrefwithpolicy)
@@ -894,6 +934,50 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withDataSourceRef
+
+```jsonnet
+spec.parameters.forProvider.withDataSourceRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.forProvider.withDataSourceRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withDataSourceRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.forProvider.withDataSourceSelector
+
+```jsonnet
+spec.parameters.forProvider.withDataSourceSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.forProvider.withDataSourceSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withDataSourceSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a DataSource in oss to populate datasourceUid.
 ###### fn spec.parameters.forProvider.withDatasourceUid
 
 ```jsonnet
@@ -986,6 +1070,170 @@ PARAMETERS:
 
 (Block Set) The permission items to add/update. Items that are omitted from the list will be removed. (see below for nested schema)
 The permission items to add/update. Items that are omitted from the list will be removed.
+###### obj spec.parameters.forProvider.dataSourceRef
+
+
+####### fn spec.parameters.forProvider.dataSourceRef.withName
+
+```jsonnet
+spec.parameters.forProvider.dataSourceRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.dataSourceRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.dataSourceRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.dataSourceRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.dataSourceRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.dataSourceRef.policy
+
+
+######## fn spec.parameters.forProvider.dataSourceRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.dataSourceRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.dataSourceRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.dataSourceRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.dataSourceSelector
+
+
+####### fn spec.parameters.forProvider.dataSourceSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.dataSourceSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.dataSourceSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.dataSourceSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.dataSourceSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.dataSourceSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.dataSourceSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.dataSourceSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.dataSourceSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.dataSourceSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.dataSourceSelector.policy
+
+
+######## fn spec.parameters.forProvider.dataSourceSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.dataSourceSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.dataSourceSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.dataSourceSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ###### obj spec.parameters.forProvider.organizationRef
 
 
@@ -1153,6 +1401,50 @@ reference on every reconcile.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withDataSourceRef
+
+```jsonnet
+spec.parameters.initProvider.withDataSourceRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.initProvider.withDataSourceRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withDataSourceRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.initProvider.withDataSourceSelector
+
+```jsonnet
+spec.parameters.initProvider.withDataSourceSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.initProvider.withDataSourceSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withDataSourceSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a DataSource in oss to populate datasourceUid.
 ###### fn spec.parameters.initProvider.withDatasourceUid
 
 ```jsonnet
@@ -1245,6 +1537,170 @@ PARAMETERS:
 
 (Block Set) The permission items to add/update. Items that are omitted from the list will be removed. (see below for nested schema)
 The permission items to add/update. Items that are omitted from the list will be removed.
+###### obj spec.parameters.initProvider.dataSourceRef
+
+
+####### fn spec.parameters.initProvider.dataSourceRef.withName
+
+```jsonnet
+spec.parameters.initProvider.dataSourceRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.dataSourceRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.dataSourceRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.dataSourceRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.dataSourceRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.dataSourceRef.policy
+
+
+######## fn spec.parameters.initProvider.dataSourceRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.dataSourceRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.dataSourceRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.dataSourceRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.dataSourceSelector
+
+
+####### fn spec.parameters.initProvider.dataSourceSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.dataSourceSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.dataSourceSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.dataSourceSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.dataSourceSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.dataSourceSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.dataSourceSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.dataSourceSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.dataSourceSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.dataSourceSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.dataSourceSelector.policy
+
+
+######## fn spec.parameters.initProvider.dataSourceSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.dataSourceSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.dataSourceSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.dataSourceSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ###### obj spec.parameters.initProvider.organizationRef
 
 

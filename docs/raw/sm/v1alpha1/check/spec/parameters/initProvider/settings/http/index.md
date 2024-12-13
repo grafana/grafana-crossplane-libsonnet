@@ -17,6 +17,7 @@
 * [`fn withBearerTokenSecretRefMixin(value)`](#fn-withbearertokensecretrefmixin)
 * [`fn withBody(value)`](#fn-withbody)
 * [`fn withCacheBustingQueryParamName(value)`](#fn-withcachebustingqueryparamname)
+* [`fn withCompression(value)`](#fn-withcompression)
 * [`fn withFailIfBodyMatchesRegexp(value)`](#fn-withfailifbodymatchesregexp)
 * [`fn withFailIfBodyMatchesRegexpMixin(value)`](#fn-withfailifbodymatchesregexpmixin)
 * [`fn withFailIfBodyNotMatchesRegexp(value)`](#fn-withfailifbodynotmatchesregexp)
@@ -120,6 +121,18 @@ PARAMETERS:
 
 (String) The name of the query parameter used to prevent the server from using a cached response. Each probe will assign a random value to this parameter each time a request is made.
 The name of the query parameter used to prevent the server from using a cached response. Each probe will assign a random value to this parameter each time a request is made.
+### fn withCompression
+
+```jsonnet
+withCompression(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Check fails if the response body is not compressed using this compression algorithm. One of none, identity, br, gzip, deflate.
+Check fails if the response body is not compressed using this compression algorithm. One of `none`, `identity`, `br`, `gzip`, `deflate`.
 ### fn withFailIfBodyMatchesRegexp
 
 ```jsonnet

@@ -695,6 +695,10 @@
           withEnabled(value=true): {
             enabled: value,
           },
+          '#withEntityId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The entity ID is a globally unique identifier for the service provider. It is used to identify the service provider to the identity provider. Defaults to the URL of the Grafana instance if not set.\nThe entity ID is a globally unique identifier for the service provider. It is used to identify the service provider to the identity provider. Defaults to the URL of the Grafana instance if not set.' } },
+          withEntityId(value): {
+            entityId: value,
+          },
           '#withForceUseGraphApi': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.\nIf enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.' } },
           withForceUseGraphApi(value=true): {
             forceUseGraphApi: value,
@@ -1485,6 +1489,10 @@
           '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Define whether this configuration is enabled for LDAP. Defaults to true.\nDefine whether this configuration is enabled for SAML. Defaults to `true`.' } },
           withEnabled(value=true): {
             enabled: value,
+          },
+          '#withEntityId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The entity ID is a globally unique identifier for the service provider. It is used to identify the service provider to the identity provider. Defaults to the URL of the Grafana instance if not set.\nThe entity ID is a globally unique identifier for the service provider. It is used to identify the service provider to the identity provider. Defaults to the URL of the Grafana instance if not set.' } },
+          withEntityId(value): {
+            entityId: value,
           },
           '#withForceUseGraphApi': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) If enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.\nIf enabled, Grafana will fetch groups from Microsoft Graph API instead of using the groups claim from the ID token.' } },
           withForceUseGraphApi(value=true): {

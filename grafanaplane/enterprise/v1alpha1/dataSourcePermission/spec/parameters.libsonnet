@@ -33,6 +33,210 @@
   },
   forProvider+:
     {
+      '#withDataSourceRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceRef(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              dataSourceRef: value,
+            },
+          },
+        },
+      },
+      '#withDataSourceRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceRefMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              dataSourceRef+: value,
+            },
+          },
+        },
+      },
+      dataSourceRef+:
+        {
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+          withName(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceRef+: {
+                    name: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceRef+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceRef+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      dataSourceRef+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      dataSourceRef+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
+      '#withDataSourceSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceSelector(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              dataSourceSelector: value,
+            },
+          },
+        },
+      },
+      '#withDataSourceSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceSelectorMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              dataSourceSelector+: value,
+            },
+          },
+        },
+      },
+      dataSourceSelector+:
+        {
+          '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+          withMatchControllerRef(value=true): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceSelector+: {
+                    matchControllerRef: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabels(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceSelector+: {
+                    matchLabels: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabelsMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceSelector+: {
+                    matchLabels+: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceSelector+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  dataSourceSelector+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      dataSourceSelector+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      dataSourceSelector+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
       '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID of the datasource to apply permissions to.\nUID of the datasource to apply permissions to.' } },
       withDatasourceUid(value): {
         spec+: {
@@ -538,6 +742,210 @@
   },
   initProvider+:
     {
+      '#withDataSourceRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceRef(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              dataSourceRef: value,
+            },
+          },
+        },
+      },
+      '#withDataSourceRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceRefMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              dataSourceRef+: value,
+            },
+          },
+        },
+      },
+      dataSourceRef+:
+        {
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+          withName(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceRef+: {
+                    name: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceRef+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceRef+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      dataSourceRef+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      dataSourceRef+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
+      '#withDataSourceSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceSelector(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              dataSourceSelector: value,
+            },
+          },
+        },
+      },
+      '#withDataSourceSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a DataSource in oss to populate datasourceUid.' } },
+      withDataSourceSelectorMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              dataSourceSelector+: value,
+            },
+          },
+        },
+      },
+      dataSourceSelector+:
+        {
+          '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+          withMatchControllerRef(value=true): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceSelector+: {
+                    matchControllerRef: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabels(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceSelector+: {
+                    matchLabels: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabelsMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceSelector+: {
+                    matchLabels+: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceSelector+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  dataSourceSelector+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      dataSourceSelector+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      dataSourceSelector+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
       '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID of the datasource to apply permissions to.\nUID of the datasource to apply permissions to.' } },
       withDatasourceUid(value): {
         spec+: {

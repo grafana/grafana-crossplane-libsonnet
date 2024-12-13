@@ -150,7 +150,7 @@ spec:
                         hyperParams:
                           additionalProperties:
                             type: string
-                          description: "The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`."
+                          description: "The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`."
                           type: object
                           x-kubernetes-map-type: granular
                         interval:
@@ -281,7 +281,7 @@ spec:
                         hyperParams:
                           additionalProperties:
                             type: string
-                          description: "The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/machine-learning/models/ for the full list of available hyperparameters. Defaults to `map[]`."
+                          description: "The hyperparameters used to fine tune the algorithm. See https://grafana.com/docs/grafana-cloud/alerting-and-irm/machine-learning/forecasts/models/ for the full list of available hyperparameters. Defaults to `map[]`."
                           type: object
                           x-kubernetes-map-type: granular
                         interval:

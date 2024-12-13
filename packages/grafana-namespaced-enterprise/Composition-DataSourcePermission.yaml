@@ -29,6 +29,27 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceRef.name
+                toFieldPath: spec.forProvider.dataSourceRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceRef.policy.resolution
+                toFieldPath: spec.forProvider.dataSourceRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceRef.policy.resolve
+                toFieldPath: spec.forProvider.dataSourceRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.matchControllerRef
+                toFieldPath: spec.forProvider.dataSourceSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.matchLabels
+                toFieldPath: spec.forProvider.dataSourceSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.policy.resolution
+                toFieldPath: spec.forProvider.dataSourceSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceSelector.policy.resolve
+                toFieldPath: spec.forProvider.dataSourceSelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.datasourceUid
                 toFieldPath: spec.forProvider.datasourceUid
                 type: FromCompositeFieldPath
@@ -58,6 +79,27 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.permissions
                 toFieldPath: spec.forProvider.permissions
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceRef.name
+                toFieldPath: spec.initProvider.dataSourceRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceRef.policy.resolution
+                toFieldPath: spec.initProvider.dataSourceRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceRef.policy.resolve
+                toFieldPath: spec.initProvider.dataSourceRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.matchControllerRef
+                toFieldPath: spec.initProvider.dataSourceSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.matchLabels
+                toFieldPath: spec.initProvider.dataSourceSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.policy.resolution
+                toFieldPath: spec.initProvider.dataSourceSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceSelector.policy.resolve
+                toFieldPath: spec.initProvider.dataSourceSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.datasourceUid
                 toFieldPath: spec.initProvider.datasourceUid
