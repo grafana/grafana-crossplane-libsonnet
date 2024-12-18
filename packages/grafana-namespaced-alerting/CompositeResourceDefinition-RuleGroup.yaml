@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xrulegroups.alerting.grafana.crossplane.io.namespaced
+  name: xrulegroups.alerting.grafana.net.namespaced
 spec:
   claimNames:
     kind: RuleGroup
     plural: rulegroups
   defaultCompositionRef:
     name: rulegroup-namespaced
-  group: alerting.grafana.crossplane.io.namespaced
+  group: alerting.grafana.net.namespaced
   names:
     kind: XRuleGroup
     plural: xrulegroups

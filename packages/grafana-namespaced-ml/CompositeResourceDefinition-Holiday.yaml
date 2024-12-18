@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xholidays.ml.grafana.crossplane.io.namespaced
+  name: xholidays.ml.grafana.net.namespaced
 spec:
   claimNames:
     kind: Holiday
     plural: holidays
   defaultCompositionRef:
     name: holiday-namespaced
-  group: ml.grafana.crossplane.io.namespaced
+  group: ml.grafana.net.namespaced
   names:
     kind: XHoliday
     plural: xholidays

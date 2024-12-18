@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xroleassignments.enterprise.grafana.crossplane.io.namespaced
+  name: xroleassignments.enterprise.grafana.net.namespaced
 spec:
   claimNames:
     kind: RoleAssignment
     plural: roleassignments
   defaultCompositionRef:
     name: roleassignment-namespaced
-  group: enterprise.grafana.crossplane.io.namespaced
+  group: enterprise.grafana.net.namespaced
   names:
     kind: XRoleAssignment
     plural: xroleassignments

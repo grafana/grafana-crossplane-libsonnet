@@ -7,7 +7,7 @@
     + self.metadata.withName(name),
   '#withApiVersion': { 'function': { args: [], help: '' } },
   withApiVersion(): {
-    apiVersion: 'oncall.grafana.crossplane.io.namespaced/v1alpha1',
+    apiVersion: 'oncall.grafana.net.namespaced/v1alpha1',
   },
   '#withKind': { 'function': { args: [], help: '' } },
   withKind(): {

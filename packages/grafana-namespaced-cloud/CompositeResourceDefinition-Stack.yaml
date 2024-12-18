@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xstacks.cloud.grafana.crossplane.io.namespaced
+  name: xstacks.cloud.grafana.net.namespaced
 spec:
   claimNames:
     kind: Stack
     plural: stacks
   defaultCompositionRef:
     name: stack-namespaced
-  group: cloud.grafana.crossplane.io.namespaced
+  group: cloud.grafana.net.namespaced
   names:
     kind: XStack
     plural: xstacks

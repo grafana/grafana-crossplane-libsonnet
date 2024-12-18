@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xslos.slo.grafana.crossplane.io.namespaced
+  name: xslos.slo.grafana.net.namespaced
 spec:
   claimNames:
     kind: SLO
     plural: slos
   defaultCompositionRef:
     name: slo-namespaced
-  group: slo.grafana.crossplane.io.namespaced
+  group: slo.grafana.net.namespaced
   names:
     kind: XSLO
     plural: xslos

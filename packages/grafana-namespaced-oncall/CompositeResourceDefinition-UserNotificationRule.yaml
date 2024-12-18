@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xusernotificationrules.oncall.grafana.crossplane.io.namespaced
+  name: xusernotificationrules.oncall.grafana.net.namespaced
 spec:
   claimNames:
     kind: UserNotificationRule
     plural: usernotificationrules
   defaultCompositionRef:
     name: usernotificationrule-namespaced
-  group: oncall.grafana.crossplane.io.namespaced
+  group: oncall.grafana.net.namespaced
   names:
     kind: XUserNotificationRule
     plural: xusernotificationrules

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xdatasources.oss.grafana.crossplane.io.namespaced
+  name: xdatasources.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: DataSource
     plural: datasources
   defaultCompositionRef:
     name: datasource-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XDataSource
     plural: xdatasources

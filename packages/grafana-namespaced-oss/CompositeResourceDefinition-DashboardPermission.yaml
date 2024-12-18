@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xdashboardpermissions.oss.grafana.crossplane.io.namespaced
+  name: xdashboardpermissions.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: DashboardPermission
     plural: dashboardpermissions
   defaultCompositionRef:
     name: dashboardpermission-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XDashboardPermission
     plural: xdashboardpermissions

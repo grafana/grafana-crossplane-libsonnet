@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xorganizations.oss.grafana.crossplane.io.namespaced
+  name: xorganizations.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: Organization
     plural: organizations
   defaultCompositionRef:
     name: organization-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XOrganization
     plural: xorganizations

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xescalationchains.oncall.grafana.crossplane.io.namespaced
+  name: xescalationchains.oncall.grafana.net.namespaced
 spec:
   claimNames:
     kind: EscalationChain
     plural: escalationchains
   defaultCompositionRef:
     name: escalationchain-namespaced
-  group: oncall.grafana.crossplane.io.namespaced
+  group: oncall.grafana.net.namespaced
   names:
     kind: XEscalationChain
     plural: xescalationchains

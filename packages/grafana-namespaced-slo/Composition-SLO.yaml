@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xslos.slo.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xslos.slo.grafana.net.namespaced
   name: slo-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: slo.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: slo.grafana.net.namespaced/v1alpha1
     kind: XSLO
   mode: Pipeline
   pipeline:

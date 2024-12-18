@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xusers.oss.grafana.crossplane.io.namespaced
+  name: xusers.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: User
     plural: users
   defaultCompositionRef:
     name: user-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XUser
     plural: xusers

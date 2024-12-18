@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xaccesspolicytokens.cloud.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xaccesspolicytokens.cloud.grafana.net.namespaced
   name: accesspolicytoken-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: cloud.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: cloud.grafana.net.namespaced/v1alpha1
     kind: XAccessPolicyToken
   mode: Pipeline
   pipeline:

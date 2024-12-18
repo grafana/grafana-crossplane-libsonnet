@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xoutgoingwebhooks.oncall.grafana.crossplane.io.namespaced
+  name: xoutgoingwebhooks.oncall.grafana.net.namespaced
 spec:
   claimNames:
     kind: OutgoingWebhook
     plural: outgoingwebhooks
   defaultCompositionRef:
     name: outgoingwebhook-namespaced
-  group: oncall.grafana.crossplane.io.namespaced
+  group: oncall.grafana.net.namespaced
   names:
     kind: XOutgoingWebhook
     plural: xoutgoingwebhooks

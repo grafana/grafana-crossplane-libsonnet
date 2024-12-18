@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xteamexternalgroups.enterprise.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xteamexternalgroups.enterprise.grafana.net.namespaced
   name: teamexternalgroup-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: enterprise.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: enterprise.grafana.net.namespaced/v1alpha1
     kind: XTeamExternalGroup
   mode: Pipeline
   pipeline:

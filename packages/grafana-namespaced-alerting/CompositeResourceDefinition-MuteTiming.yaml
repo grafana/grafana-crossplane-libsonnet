@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xmutetimings.alerting.grafana.crossplane.io.namespaced
+  name: xmutetimings.alerting.grafana.net.namespaced
 spec:
   claimNames:
     kind: MuteTiming
     plural: mutetimings
   defaultCompositionRef:
     name: mutetiming-namespaced
-  group: alerting.grafana.crossplane.io.namespaced
+  group: alerting.grafana.net.namespaced
   names:
     kind: XMuteTiming
     plural: xmutetimings

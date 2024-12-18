@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xdashboardpermissions.oss.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xdashboardpermissions.oss.grafana.net.namespaced
   name: dashboardpermission-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: oss.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: oss.grafana.net.namespaced/v1alpha1
     kind: XDashboardPermission
   mode: Pipeline
   pipeline:
