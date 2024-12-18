@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xoncallshifts.oncall.grafana.crossplane.io.namespaced
+  name: xoncallshifts.oncall.grafana.net.namespaced
 spec:
   claimNames:
     kind: OnCallShift
     plural: oncallshifts
   defaultCompositionRef:
     name: oncallshift-namespaced
-  group: oncall.grafana.crossplane.io.namespaced
+  group: oncall.grafana.net.namespaced
   names:
     kind: XOnCallShift
     plural: xoncallshifts

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xschedules.oncall.grafana.crossplane.io.namespaced
+  name: xschedules.oncall.grafana.net.namespaced
 spec:
   claimNames:
     kind: Schedule
     plural: schedules
   defaultCompositionRef:
     name: schedule-namespaced
-  group: oncall.grafana.crossplane.io.namespaced
+  group: oncall.grafana.net.namespaced
   names:
     kind: XSchedule
     plural: xschedules

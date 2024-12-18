@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xoutlierdetectors.ml.grafana.crossplane.io.namespaced
+  name: xoutlierdetectors.ml.grafana.net.namespaced
 spec:
   claimNames:
     kind: OutlierDetector
     plural: outlierdetectors
   defaultCompositionRef:
     name: outlierdetector-namespaced
-  group: ml.grafana.crossplane.io.namespaced
+  group: ml.grafana.net.namespaced
   names:
     kind: XOutlierDetector
     plural: xoutlierdetectors

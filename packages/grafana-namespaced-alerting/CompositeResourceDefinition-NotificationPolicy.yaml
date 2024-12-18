@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xnotificationpolicies.alerting.grafana.crossplane.io.namespaced
+  name: xnotificationpolicies.alerting.grafana.net.namespaced
 spec:
   claimNames:
     kind: NotificationPolicy
     plural: notificationpolicies
   defaultCompositionRef:
     name: notificationpolicy-namespaced
-  group: alerting.grafana.crossplane.io.namespaced
+  group: alerting.grafana.net.namespaced
   names:
     kind: XNotificationPolicy
     plural: xnotificationpolicies

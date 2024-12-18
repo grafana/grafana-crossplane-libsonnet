@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xlibrarypanels.oss.grafana.crossplane.io.namespaced
+  name: xlibrarypanels.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: LibraryPanel
     plural: librarypanels
   defaultCompositionRef:
     name: librarypanel-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XLibraryPanel
     plural: xlibrarypanels

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xteamexternalgroups.enterprise.grafana.crossplane.io.namespaced
+  name: xteamexternalgroups.enterprise.grafana.net.namespaced
 spec:
   claimNames:
     kind: TeamExternalGroup
     plural: teamexternalgroups
   defaultCompositionRef:
     name: teamexternalgroup-namespaced
-  group: enterprise.grafana.crossplane.io.namespaced
+  group: enterprise.grafana.net.namespaced
   names:
     kind: XTeamExternalGroup
     plural: xteamexternalgroups

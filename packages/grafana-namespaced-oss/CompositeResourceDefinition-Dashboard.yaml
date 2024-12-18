@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xdashboards.oss.grafana.crossplane.io.namespaced
+  name: xdashboards.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: Dashboard
     plural: dashboards
   defaultCompositionRef:
     name: dashboard-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XDashboard
     plural: xdashboards

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xprobes.sm.grafana.crossplane.io.namespaced
+  name: xprobes.sm.grafana.net.namespaced
 spec:
   claimNames:
     kind: Probe
     plural: probes
   defaultCompositionRef:
     name: probe-namespaced
-  group: sm.grafana.crossplane.io.namespaced
+  group: sm.grafana.net.namespaced
   names:
     kind: XProbe
     plural: xprobes

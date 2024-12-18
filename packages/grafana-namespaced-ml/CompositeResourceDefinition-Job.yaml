@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xjobs.ml.grafana.crossplane.io.namespaced
+  name: xjobs.ml.grafana.net.namespaced
 spec:
   claimNames:
     kind: Job
     plural: jobs
   defaultCompositionRef:
     name: job-namespaced
-  group: ml.grafana.crossplane.io.namespaced
+  group: ml.grafana.net.namespaced
   names:
     kind: XJob
     plural: xjobs

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xannotations.oss.grafana.crossplane.io.namespaced
+  name: xannotations.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: Annotation
     plural: annotations
   defaultCompositionRef:
     name: annotation-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XAnnotation
     plural: xannotations

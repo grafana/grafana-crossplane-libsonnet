@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xplugininstallations.cloud.grafana.crossplane.io.namespaced
+  name: xplugininstallations.cloud.grafana.net.namespaced
 spec:
   claimNames:
     kind: PluginInstallation
     plural: plugininstallations
   defaultCompositionRef:
     name: plugininstallation-namespaced
-  group: cloud.grafana.crossplane.io.namespaced
+  group: cloud.grafana.net.namespaced
   names:
     kind: XPluginInstallation
     plural: xplugininstallations

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xroutes.oncall.grafana.crossplane.io.namespaced
+  name: xroutes.oncall.grafana.net.namespaced
 spec:
   claimNames:
     kind: Route
     plural: routes
   defaultCompositionRef:
     name: route-namespaced
-  group: oncall.grafana.crossplane.io.namespaced
+  group: oncall.grafana.net.namespaced
   names:
     kind: XRoute
     plural: xroutes

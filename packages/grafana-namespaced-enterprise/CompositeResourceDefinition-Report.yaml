@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xreports.enterprise.grafana.crossplane.io.namespaced
+  name: xreports.enterprise.grafana.net.namespaced
 spec:
   claimNames:
     kind: Report
     plural: reports
   defaultCompositionRef:
     name: report-namespaced
-  group: enterprise.grafana.crossplane.io.namespaced
+  group: enterprise.grafana.net.namespaced
   names:
     kind: XReport
     plural: xreports

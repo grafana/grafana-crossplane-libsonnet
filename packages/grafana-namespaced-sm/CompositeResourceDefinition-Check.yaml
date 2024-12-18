@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xchecks.sm.grafana.crossplane.io.namespaced
+  name: xchecks.sm.grafana.net.namespaced
 spec:
   claimNames:
     kind: Check
     plural: checks
   defaultCompositionRef:
     name: check-namespaced
-  group: sm.grafana.crossplane.io.namespaced
+  group: sm.grafana.net.namespaced
   names:
     kind: XCheck
     plural: xchecks

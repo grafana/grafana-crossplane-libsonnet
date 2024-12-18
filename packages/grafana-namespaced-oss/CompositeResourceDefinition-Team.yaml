@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xteams.oss.grafana.crossplane.io.namespaced
+  name: xteams.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: Team
     plural: teams
   defaultCompositionRef:
     name: team-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XTeam
     plural: xteams

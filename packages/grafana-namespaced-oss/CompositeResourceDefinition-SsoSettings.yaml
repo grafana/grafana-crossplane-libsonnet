@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xssosettings.oss.grafana.crossplane.io.namespaced
+  name: xssosettings.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: SsoSettings
     plural: ssosettings
   defaultCompositionRef:
     name: ssosettings-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XSsoSettings
     plural: xssosettings
