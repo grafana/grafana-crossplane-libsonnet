@@ -62,9 +62,9 @@ local mergeDocstring(group, version, name, obj, help='') =
 local compositions =
   std.foldl(
     function(acc, def)
-      local render = crdsonnet.xrd.render(def.definition, 'grafana.crossplane.io', processor);
+      local render = crdsonnet.xrd.render(def.definition, 'grafana.net', processor);
 
-      local group = helpers.getGroupKey(def.definition.spec.group, 'grafana.crossplane.io');
+      local group = helpers.getGroupKey(def.definition.spec.group, 'grafana.net');
       local version = 'v1alpha1';
       local kind = helpers.camelCaseKind(crdsonnet.xrd.getKind(def.definition));
 
