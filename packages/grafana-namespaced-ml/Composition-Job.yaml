@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xjobs.ml.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xjobs.ml.grafana.net.namespaced
   name: job-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: ml.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: ml.grafana.net.namespaced/v1alpha1
     kind: XJob
   mode: Pipeline
   pipeline:

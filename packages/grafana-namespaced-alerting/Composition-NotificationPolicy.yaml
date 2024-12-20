@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xnotificationpolicies.alerting.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xnotificationpolicies.alerting.grafana.net.namespaced
   name: notificationpolicy-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: alerting.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: alerting.grafana.net.namespaced/v1alpha1
     kind: XNotificationPolicy
   mode: Pipeline
   pipeline:

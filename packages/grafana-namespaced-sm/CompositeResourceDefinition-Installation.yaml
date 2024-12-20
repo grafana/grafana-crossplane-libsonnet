@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xinstallations.sm.grafana.crossplane.io.namespaced
+  name: xinstallations.sm.grafana.net.namespaced
 spec:
   claimNames:
     kind: Installation
     plural: installations
   defaultCompositionRef:
     name: installation-namespaced
-  group: sm.grafana.crossplane.io.namespaced
+  group: sm.grafana.net.namespaced
   names:
     kind: XInstallation
     plural: xinstallations

@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xaccesspolicytokens.cloud.grafana.crossplane.io.namespaced
+  name: xaccesspolicytokens.cloud.grafana.net.namespaced
 spec:
   claimNames:
     kind: AccessPolicyToken
     plural: accesspolicytokens
   defaultCompositionRef:
     name: accesspolicytoken-namespaced
-  group: cloud.grafana.crossplane.io.namespaced
+  group: cloud.grafana.net.namespaced
   names:
     kind: XAccessPolicyToken
     plural: xaccesspolicytokens

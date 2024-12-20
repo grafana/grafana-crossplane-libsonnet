@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xescalations.oncall.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xescalations.oncall.grafana.net.namespaced
   name: escalation-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: oncall.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: oncall.grafana.net.namespaced/v1alpha1
     kind: XEscalation
   mode: Pipeline
   pipeline:

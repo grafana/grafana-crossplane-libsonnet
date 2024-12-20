@@ -4,11 +4,11 @@ metadata:
   annotations:
     tanka.dev/namespaced: "false"
   labels:
-    crossplane.io/xrd: xchecks.sm.grafana.crossplane.io.namespaced
+    crossplane.io/xrd: xchecks.sm.grafana.net.namespaced
   name: check-namespaced
 spec:
   compositeTypeRef:
-    apiVersion: sm.grafana.crossplane.io.namespaced/v1alpha1
+    apiVersion: sm.grafana.net.namespaced/v1alpha1
     kind: XCheck
   mode: Pipeline
   pipeline:

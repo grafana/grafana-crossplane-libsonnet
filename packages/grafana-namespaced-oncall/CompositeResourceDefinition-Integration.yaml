@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xintegrations.oncall.grafana.crossplane.io.namespaced
+  name: xintegrations.oncall.grafana.net.namespaced
 spec:
   claimNames:
     kind: Integration
     plural: integrations
   defaultCompositionRef:
     name: integration-namespaced
-  group: oncall.grafana.crossplane.io.namespaced
+  group: oncall.grafana.net.namespaced
   names:
     kind: XIntegration
     plural: xintegrations

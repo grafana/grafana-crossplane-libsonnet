@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xcontactpoints.alerting.grafana.crossplane.io.namespaced
+  name: xcontactpoints.alerting.grafana.net.namespaced
 spec:
   claimNames:
     kind: ContactPoint
     plural: contactpoints
   defaultCompositionRef:
     name: contactpoint-namespaced
-  group: alerting.grafana.crossplane.io.namespaced
+  group: alerting.grafana.net.namespaced
   names:
     kind: XContactPoint
     plural: xcontactpoints

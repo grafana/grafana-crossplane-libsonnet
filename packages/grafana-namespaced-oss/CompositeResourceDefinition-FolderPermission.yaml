@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xfolderpermissions.oss.grafana.crossplane.io.namespaced
+  name: xfolderpermissions.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: FolderPermission
     plural: folderpermissions
   defaultCompositionRef:
     name: folderpermission-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XFolderPermission
     plural: xfolderpermissions

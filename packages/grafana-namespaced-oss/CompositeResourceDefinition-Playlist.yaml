@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xplaylists.oss.grafana.crossplane.io.namespaced
+  name: xplaylists.oss.grafana.net.namespaced
 spec:
   claimNames:
     kind: Playlist
     plural: playlists
   defaultCompositionRef:
     name: playlist-namespaced
-  group: oss.grafana.crossplane.io.namespaced
+  group: oss.grafana.net.namespaced
   names:
     kind: XPlaylist
     plural: xplaylists

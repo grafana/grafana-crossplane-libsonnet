@@ -3,14 +3,14 @@ kind: CompositeResourceDefinition
 metadata:
   annotations:
     tanka.dev/namespaced: "false"
-  name: xdatasourcepermissions.enterprise.grafana.crossplane.io.namespaced
+  name: xdatasourcepermissions.enterprise.grafana.net.namespaced
 spec:
   claimNames:
     kind: DataSourcePermission
     plural: datasourcepermissions
   defaultCompositionRef:
     name: datasourcepermission-namespaced
-  group: enterprise.grafana.crossplane.io.namespaced
+  group: enterprise.grafana.net.namespaced
   names:
     kind: XDataSourcePermission
     plural: xdatasourcepermissions
