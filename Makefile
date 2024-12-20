@@ -1,4 +1,4 @@
-LIBRARY_VERSION:=0.1.0
+LIBRARY_VERSION:=0.2.0
 PROVIDER_VERSION:=0.22.0
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crossplane
@@ -6,6 +6,12 @@ REGISTRY?=ghcr.io
 SHELL:=/bin/bash
 
 VENDOR_DEPTHS:=$(shell find generator/vendor -type f)
+
+.PHONY: build
+build: grafanaplane/raw.libsonnet grafanaplane/configurations.libsonnet packages
+
+.PHONY: push
+push: push_packages
 
 grafanaplane: grafanaplane/raw.libsonnet grafanaplane/configurations.libsonnet
 
@@ -49,9 +55,3 @@ docs: $(shell find grafanaplane/ -type f)
 .PHONY: tag
 tag:
 	git tag $(LIBRARY_VERSION)-$(PROVIDER_VERSION)
-
-.PHONY: build
-build: grafanaplane/raw.libsonnet grafanaplane/configurations.libsonnet packages
-
-.PHONY: push
-push: push_packages
