@@ -77,9 +77,22 @@ local raw = import './raw.libsonnet';
 
   cloud: {
     local this = self,
+    local validStackSlug(slug) =
+      xtd.ascii.isLower(slug[0])
+      && std.all(
+        std.map(
+          function(c)
+            xtd.ascii.isNumber(c)
+            || xtd.ascii.isLower(c),
+          std.stringChars(slug)
+        )
+      ),
+
     stack: {
       new(name, namespace, cloudProviderConfigName, secretName=name + '-providerConfigToken'): {
         stack:
+          assert validStackSlug(name) :
+                 'The slug/name needs to be a valid subdomain. One word. Only lowercase letters and numbers allowed. Must start with a letter. No dots, dashes, underscores, or spaces.';
           raw.cloud.v1alpha1.stack.new(name)
           + raw.cloud.v1alpha1.stack.spec.parameters.providerConfigRef.withName(cloudProviderConfigName)
           + raw.cloud.v1alpha1.stack.spec.parameters.withExternalName(name)
