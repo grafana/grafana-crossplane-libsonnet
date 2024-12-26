@@ -4,14 +4,14 @@ This repository provides a set of Crossplane Configurations packages and and acc
 
 The Configuration packages provide a set of (namespaced) composition/XRD pairs that map directly to their non-namespaced Managed resources equivalents.
 
-The library consists of two parts, the manually written functions to get started quicly and the full library in `raw/`. They can be used in combination with each other.
+The library consists of two parts, the manually written functions to get started quicly and the full library in `zz/`. They can be used in combination with each other.
 
-Most of this library is generated: the Compositions/XRDs packages, Configurations and the library in `raw/`.
+Most of this library is generated: the Compositions/XRDs packages, Configurations and the library in `zz/`.
 
 ## Install
 
 ```
-jb install github.com/grafana/grafana-crossplane-libsonnet/grafanaplane@0.2.0-0.22.0
+jb install github.com/grafana/grafana-crossplane-libsonnet/grafanaplane@0.3.0-0.22.0
 ```
 
 ## Usage

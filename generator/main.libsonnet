@@ -8,6 +8,7 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 local processor = crdsonnet.processor.new('ast');
 
 local definitions = import './namespaced.libsonnet';
+local configurations = import './configurations.libsonnet';
 
 local globalDefinitions =
   std.filter(
@@ -133,13 +134,12 @@ local splitIntoFiles(objast, sub='', depth=1, maxDepth=5) =
   );
 
 function(version='main')
-  local files = splitIntoFiles(ast);
+  local files = splitIntoFiles(ast, 'zz');
   {
     [file.key]: file.value.toString()
     for file in std.objectKeysValues(files)
-    if file.key != 'main.libsonnet'
   }
   + {
-    'raw.libsonnet': (files['main.libsonnet']).toString(),
-    'version.libsonnet': std.manifestJson(version),
+    'zz/configurations.libsonnet': std.manifestJson(configurations(version)),
+    'zz/version.libsonnet': std.manifestJson(version),
   }
