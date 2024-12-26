@@ -1,8 +1,8 @@
 local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
-local configurations = import './configurations.libsonnet';
-local raw = import './raw.libsonnet';
+local configurations = import './zz/configurations.libsonnet';
+local raw = import './zz/main.libsonnet';
 
 {
   local root = self,
@@ -16,12 +16,12 @@ local raw = import './raw.libsonnet';
 
         The Configuration packages provide a set of (namespaced) composition/XRD pairs that map directly to their non-namespaced Managed resources equivalents.
 
-        The library consists of two parts, the manually written functions to get started quicly and the full library in `raw/`. They can be used in combination with each other.
+        The library consists of two parts, the manually written functions to get started quicly and the full library in `zz/`. They can be used in combination with each other.
 
-        Most of this library is generated: the Compositions/XRDs packages, Configurations and the library in `raw/`.
+        Most of this library is generated: the Compositions/XRDs packages, Configurations and the library in `zz/`.
       |||,
       'main.libsonnet',
-      import 'version.libsonnet',
+      import 'zz/version.libsonnet',
     )
     + d.package.withUsageTemplate(
       @"local %(name)s = import '%(import)s';"

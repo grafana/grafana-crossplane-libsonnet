@@ -9,7 +9,6 @@ local crds =
 // XRD metadata.name consists of `plural+group`, for some resources this became longer than 63 characters, which resulted in this error:
 //   'cannot establish control of object: Composition.apiextensions.crossplane.io "stackserviceaccounttoken-namespaced" is invalid: metadata.labels: Invalid value:"xstackserviceaccounttokens.cloud.grafana.crossplane.io.namespaced": must be no more than 63 characters'
 local renameGroup(obj) =
-  assert std.trace(std.manifestJson(obj.definition.metadata), true);
   local name = std.strReplace(obj.definition.metadata.name, 'crossplane.io', 'net');
   assert std.length(name) <= 63 : 'CompositeResourceDefinition names must be no more than 63 characters';
   obj + {

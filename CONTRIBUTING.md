@@ -18,6 +18,6 @@ Bugs or feature requests can go into [GitHub Issues](https://github.com/grafana/
 
 `generator/` is where the code generator lives.
 
-`packages/` and `docs/` are completely generated, do not edit these, changes will be overwritten by the generation process.
+`grafanaplane/` is the actual library.
 
-`grafanaplane/` except for `grafanaplane/main.libsonnet` and `grafanaplane/example.jsonnet` are generated as well.
+`grafanaplane/zz/`, `packages/` and `docs/` are completely generated, do not edit these, changes will be overwritten by the generation process.
