@@ -381,7 +381,7 @@ local raw = import './zz/main.libsonnet';
           d.argument.new('resourceId', d.T.string, default='rfc1123(name)'),
         ]
       ),
-      new(name, providerName, teamId=null, resourceId=null)::
+      new(name, providerName, resourceId=null)::
         local id = if resourceId != null then resourceId else xtd.ascii.stringToRFC1123(name);
         escalationChain.new(id)
         + escalationChain.spec.parameters.providerConfigRef.withName(providerName)
