@@ -414,7 +414,7 @@ local raw = import './zz/main.libsonnet';
         |||
           `withDefaultRoute` configures the default route using an Escalation
           Chain object's name.
-        |||
+        |||,
         [
           d.argument.new('name', d.T.string)
         ]
