@@ -9,4 +9,5 @@ local raw = import '../zz/main.libsonnet';
   integration: import './integration.libsonnet',
   route: import './route.libsonnet',
   schedule: import './schedule.libsonnet',
+  shift: import './shift.libsonnet',
 }
