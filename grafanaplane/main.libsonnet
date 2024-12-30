@@ -364,7 +364,7 @@ local raw = import './zz/main.libsonnet';
 
   },
 
-  oncall: import './oncall.libsonnet',
+  oncall: import './oncall/main.libsonnet',
 
   sm: {
     '#': d.package.newSub('sm', ''),
