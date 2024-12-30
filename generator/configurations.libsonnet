@@ -1,4 +1,3 @@
-local namespaced = import './namespaced.libsonnet';
 local crossplane = import 'github.com/jsonnet-libs/crossplane-libsonnet/crossplane/1.17/main.libsonnet';
 
 local configuration(key, version) =
@@ -6,28 +5,44 @@ local configuration(key, version) =
   conf.new(key)
   + conf.spec.withPackage('ghcr.io/grafana/crossplane/' + key + ':' + version);
 
+local xrds =
+  std.map(
+    function(o) o.definition,
+    (import './namespaced.libsonnet'),
+  );
+
+local crds =
+  std.filter(
+    function(crd) crd.spec.group != 'grafana.crossplane.io',
+    std.parseYaml(importstr './crds.yaml'),
+  );
+
 local gvkXRDs =
   std.flatMap(
-    function(def) [
+    function(definition) [
       {
-        group: def.definition.spec.group,
+        group: definition.spec.group,
         version: v.name,
-        kind: def.definition.spec.claimNames.kind,
+        kind: definition.spec.claimNames.kind,
+        plural: definition.spec.claimNames.plural,
       }
-      for v in def.definition.spec.versions
+      for v in definition.spec.versions
     ],
-    namespaced
+    xrds
   );
 
 local gvkCRDs =
-  std.map(
-    function(def) {
-      local s = std.splitLimitR(def.composition.spec.pipeline[0].input.resources[0].base.apiVersion, '/', 1),
-      group: s[0],
-      version: s[1],
-      kind: def.composition.spec.pipeline[0].input.resources[0].base.kind,
-    },
-    namespaced
+  std.flatMap(
+    function(definition) [
+      {
+        group: definition.spec.group,
+        version: v.name,
+        kind: definition.spec.names.kind,
+        plural: definition.spec.names.plural,
+      }
+      for v in definition.spec.versions
+    ],
+    crds
   );
 
 local groupSet(gvks) =
