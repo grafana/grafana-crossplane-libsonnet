@@ -6,6 +6,7 @@ local raw = import '../zz/main.libsonnet';
 {
   '#': d.package.newSub('oncall', ''),
   escalationChain: import './escalationchain.libsonnet',
+  escalation: import './escalation.libsonnet',
   integration: import './integration.libsonnet',
   route: import './route.libsonnet',
   schedule: import './schedule.libsonnet',
