@@ -1,14 +1,18 @@
-local parser = import 'github.com/Duologic/jsonnet-parser/parser.libsonnet';
 local a = import 'github.com/crdsonnet/astsonnet/main.libsonnet';
 local autils = import 'github.com/crdsonnet/astsonnet/utils.libsonnet';
+
 local helpers = import 'github.com/crdsonnet/crdsonnet/crdsonnet/helpers.libsonnet';
 local crdsonnet = import 'github.com/crdsonnet/crdsonnet/crdsonnet/main.libsonnet';
-local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
-
 local processor = crdsonnet.processor.new('ast');
 
-local definitions = import './namespaced.libsonnet';
+local utils = import './utils.libsonnet';
 local configurations = import './configurations.libsonnet';
+
+local definitions =
+  std.map(
+    function(o) o.definition,
+    (import './namespaced.libsonnet'),
+  );
 
 local globalDefinitions =
   std.filter(
@@ -16,60 +20,16 @@ local globalDefinitions =
     std.parseYaml(importstr './crds.yaml'),
   );
 
-
-local subPackageDocstring(name, help='') =
-  a.object.new([
-    a.field.new(
-      a.string.new('#'),
-      a.literal.new(
-        std.manifestJsonEx(
-          d.package.newSub(name, help)
-          , '  ', ''
-        ),
-      ),
-    ),
-  ]);
-
-local mergeDocstring(group, version, name, obj, help='') =
-  autils.deepMergeObjects([
-    a.object.new([
-      a.field.new(
-        a.id.new(group),
-        a.object.new([
-          a.field.new(
-            a.string.new('#'),
-            a.literal.new(
-              std.manifestJsonEx(
-                d.package.newSub(group, '')
-                , '  ', ''
-              ),
-            ),
-          ),
-          a.field.new(
-            a.id.new(version),
-            a.object.new([
-              a.field.new(
-                a.id.new(name),
-                subPackageDocstring(name, help)
-              ),
-            ]),
-          ),
-        ]),
-      ),
-    ]),
-    obj,
-  ]);
-
 local compositions =
   std.foldl(
-    function(acc, def)
-      local render = crdsonnet.xrd.render(def.definition, 'grafana.net', processor);
+    function(acc, definition)
+      local render = crdsonnet.xrd.render(definition, 'grafana.net', processor);
 
-      local group = helpers.getGroupKey(def.definition.spec.group, 'grafana.net');
+      local group = helpers.getGroupKey(definition.spec.group, 'grafana.net');
       local version = 'v1alpha1';
-      local kind = helpers.camelCaseKind(crdsonnet.xrd.getKind(def.definition));
+      local kind = helpers.camelCaseKind(crdsonnet.xrd.getKind(definition));
 
-      local renderWithDocs = mergeDocstring(group, version, kind, render);
+      local renderWithDocs = utils.mergeDocstring(group, version, kind, render);
 
       autils.deepMergeObjects([acc, renderWithDocs]),
     definitions,
@@ -85,7 +45,7 @@ local global =
       local version = definition.spec.versions[0].name;
       local kind = helpers.camelCaseKind(crdsonnet.crd.getKind(definition));
 
-      local renderWithDocs = mergeDocstring(group, version, kind, render);
+      local renderWithDocs = utils.mergeDocstring(group, version, kind, render);
 
       autils.deepMergeObjects([acc, renderWithDocs]),
     globalDefinitions,
@@ -94,47 +54,8 @@ local global =
 
 local ast = autils.deepMergeObjects([compositions, global]);
 
-local splitIntoFiles(objast, sub='', depth=1, maxDepth=5) =
-  local subdir = if sub != '' then sub + '/' else '';
-  std.foldl(
-    function(acc, member)
-      if member.type == 'field'
-         && member.expr.type == 'object'
-         && !std.startsWith(member.fieldname.string, '#')
-      then
-        acc
-        + {
-          [subdir + 'main.libsonnet']+:
-            a.object.withMembersMixin([
-              member
-              + a.field.withExpr(
-                if depth != maxDepth
-                then a.import_statement.new('./' + member.fieldname.string + '/main.libsonnet')
-                else a.import_statement.new('./' + member.fieldname.string + '.libsonnet')
-              ),
-            ]),
-        }
-        + (if depth != maxDepth && member.fieldname.string != 'global'
-           then splitIntoFiles(member.expr, subdir + member.fieldname.string, depth + 1)
-           else {
-             [subdir + member.fieldname.string + '.libsonnet']: member.expr,
-           })
-      else
-        acc
-        + {
-          [subdir + 'main.libsonnet']+:
-            a.object.withMembersMixin([member]),
-        }
-    ,
-    objast.members,
-    {
-      [subdir + 'main.libsonnet']:
-        a.object.new([]),
-    }
-  );
-
 function(version='main')
-  local files = splitIntoFiles(ast, 'zz');
+  local files = utils.splitIntoFiles(ast, 'zz');
   {
     [file.key]: file.value.toString()
     for file in std.objectKeysValues(files)
