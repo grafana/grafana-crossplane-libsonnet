@@ -20,7 +20,8 @@ local raw = import '../zz/main.libsonnet';
     ]
   ),
   new(name, type, providerName, resourceId=null)::
-    schedule.new(resourceId)
+    local id = if resourceId != null then resourceId else xtd.ascii.stringToRFC1123(name);
+    schedule.new(id)
     + schedule.spec.parameters.providerConfigRef.withName(providerName)
     + schedule.spec.parameters.forProvider.withName(name)
     + schedule.spec.parameters.forProvider.withType(type),
