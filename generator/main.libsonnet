@@ -61,6 +61,8 @@ function(version='main')
     for file in std.objectKeysValues(files)
   }
   + {
-    'zz/configurations.libsonnet': std.manifestJson(configurations(version)),
+    local conf = configurations(version),
+    'zz/configurations.libsonnet': std.manifestJson(conf.configurations),
     'zz/version.libsonnet': std.manifestJson(version),
+    'zz/gvks.libsonnet': std.manifestJson(conf.gvks),
   }
