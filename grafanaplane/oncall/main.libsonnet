@@ -8,4 +8,5 @@ local raw = import '../zz/main.libsonnet';
   escalationChain: import './escalationchain.libsonnet',
   integration: import './integration.libsonnet',
   route: import './route.libsonnet',
+  schedule: import './schedule.libsonnet',
 }
