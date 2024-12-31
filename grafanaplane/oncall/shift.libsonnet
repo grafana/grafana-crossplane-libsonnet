@@ -7,7 +7,7 @@ local shift = raw.oncall.v1alpha1.onCallShift;
 // Lift forProvider functions here for convenience.
 shift.spec.parameters.forProvider
 {
-  '#new': d.func.new(
+  '#new':: d.func.new(
     |||
       `new` creates an OnCallShift. The `name` is a display-friendly string,
       and `id` defaults to a slug-ified version of it.
@@ -21,7 +21,7 @@ shift.spec.parameters.forProvider
     shift.new(id)
     + super.withName(name),
 
-  '#withRollingUsers': d.func.new(
+  '#withRollingUsers':: d.func.new(
     |||
       `withRollingUsers` sets an OnCallShift to type `rolling_users` and
       configures required fields. `users` must be an array *of arrays*
