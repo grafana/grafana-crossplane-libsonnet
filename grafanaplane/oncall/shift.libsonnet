@@ -4,11 +4,9 @@ local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 local raw = import '../zz/main.libsonnet';
 local shift = raw.oncall.v1alpha1.onCallShift;
 
-// Add the forProvider functions here for convenience.
+// Lift forProvider functions here for convenience.
 shift.spec.parameters.forProvider
 {
-  local base = self,
-
   '#new': d.func.new(
     |||
       `new` creates an OnCallShift. The `name` is a display-friendly string,
@@ -21,16 +19,7 @@ shift.spec.parameters.forProvider
   ),
   new(name, id=xtd.ascii.stringToRFC1123(name))::
     shift.new(id)
-    + shift.spec.parameters.forProvider.withName(name),
-
-  '#withStart':: d.func.new(
-    |||
-      `withStart` sets the start time of the shift in `yyyy-MM-dd'T'HH:mm:ss`
-      format.
-    |||,
-    [d.argument.new('start', d.T.string)]
-  ),
-  withStart(start):: shift.spec.parameters.forProvider.withStart(start),
+    + super.withName(name),
 
   '#withRollingUsers': d.func.new(
     |||
@@ -45,7 +34,7 @@ shift.spec.parameters.forProvider
     ]
   ),
   withRollingUsers(frequency, users)::
-    shift.spec.parameters.forProvider.withType('rolling_users')
-    + shift.spec.parameters.forProvider.withRollingUsers(users)
-    + shift.spec.parameters.forProvider.withFrequency(frequency),
+    super.withType('rolling_users')
+    + super.withRollingUsers(users)
+    + super.withFrequency(frequency),
 }
