@@ -7,12 +7,23 @@ local forProvider = shift.spec.parameters.forProvider;
 
 {
   '#new':: d.func.new(
-    '`new` creates an OnCallShift. The `name` is a display-friendly string.',
-    [d.argument.new('name', d.T.string)]
+    |||
+      `new` creates an OnCallShift, which can be used in Schedules of type
+      `calendar`. `name` is a display-friendly string. `start` is a datetime as
+      `yyyy-MM-dd'T'HH:mm:ss`, such as `“2020-09-05T08:00:00”`. `duration` is
+      the length of the shift in seconds.
+    |||,
+    [
+      d.argument.new('name', d.T.string),
+      d.argument.new('start', d.T.string),
+      d.argument.new('duration', d.T.number),
+    ]
   ),
-  new(name)::
+  new(name, start, duration)::
     shift.new(xtd.ascii.stringToRFC1123(name))
-    + forProvider.withName(name),
+    + forProvider.withName(name)
+    + forProvider.withStart(start)
+    + forProvider.withDuration(duration),
 
   '#withId':: d.func.new(
     '`withId` sets the resource name for a Shift',
@@ -57,8 +68,6 @@ local forProvider = shift.spec.parameters.forProvider;
     + forProvider.withFrequency(frequency),
 
   // Expose some generated functions here.
-  '#withStart':: forProvider['#withStart'],
-  withStart:: forProvider.withStart,
   '#withStartRotationFromUserIndex':: forProvider['#withStartRotationFromUserIndex'],
   withStartRotationFromUserIndex:: forProvider.withStartRotationFromUserIndex,
   '#withByDay':: forProvider['#withByDay'],
