@@ -1,7 +1,6 @@
 local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
-local util = import '../util.libsonnet';
 local raw = import '../zz/main.libsonnet';
 local schedule = raw.oncall.v1alpha1.schedule;
 local forProvider = schedule.spec.parameters.forProvider;
@@ -29,16 +28,16 @@ forProvider  // raise forProvider functions to here
     |||
       `withShifts` sets a Schedule to type `calendar` and configures shifts.
       Shifts are only applicable to `calendar` type Schedules. `shifts` is an
-      array of Shift resource names or entire Shift manifests.
+      array of Shift resource names.
     |||,
     [
-      d.argument.new('shifts', d.T.array, default='null'),
+      d.argument.new('shifts', d.T.array),
     ]
   ),
-  withShifts(shifts=null)::
+  withShifts(shifts)::
     super.withType('calendar')
     + super.withShiftsRef([
-      super.shiftsRef.withName(util.getName(shift))
+      super.shiftsRef.withName(shift)
       for shift in shifts
     ]),
 }

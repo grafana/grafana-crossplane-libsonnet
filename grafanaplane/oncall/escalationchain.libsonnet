@@ -1,7 +1,6 @@
 local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
-local util = import '../util.libsonnet';
 local raw = import '../zz/main.libsonnet';
 local escalationChain = raw.oncall.v1alpha1.escalationChain;
 local escalation = raw.oncall.v1alpha1.escalation;
@@ -66,15 +65,15 @@ local escalation = raw.oncall.v1alpha1.escalation;
     '#notifyOnCallFromSchedule':: d.func.new(
       |||
         `notifyOnCallFromSchedule` configures an Escalation step to notify
-        on-call persons from the given Schedule. `schedule` may be either a
-        Schedule resource name or a manifest.
+        on-call persons from the given Schedule. `scheduleName` must be the
+        Schedule resource name.
       |||,
-      [d.argument.new('schedule', 'string|object')]
+      [d.argument.new('schedule', 'string')]
     ),
-    notifyOnCallFromSchedule(schedule)::
+    notifyOnCallFromSchedule(scheduleName)::
       forProvider.withType('notify_on_call_from_schedule')
       + forProvider.withNotifyOnCallFromScheduleRef(
-        forProvider.notifyOnCallFromScheduleRef.withName(util.getName(schedule))
+        forProvider.notifyOnCallFromScheduleRef.withName(scheduleName)
       ),
 
     '#notifyPersons':: d.func.new(

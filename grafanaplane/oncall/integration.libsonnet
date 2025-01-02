@@ -1,7 +1,6 @@
 local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
-local util = import '../util.libsonnet';
 local raw = import '../zz/main.libsonnet';
 local integration = raw.oncall.v1alpha1.integration;
 local route = raw.oncall.v1alpha1.route;
@@ -32,17 +31,17 @@ forProvider
   '#withDefaultChain':: d.func.new(
     |||
       `withDefaulChain` configures the default route of an Integration to use
-      an Escalation Chain. `escalationChain` is the resource name or manifest
-      of the desired Escalation Chain.
+      an Escalation Chain. `escalationChain` is the resource name of the
+      desired Escalation Chain.
     |||,
     [
-      d.argument.new('escalationChain', d.T.string),
+      d.argument.new('escalationChainName', d.T.string),
     ]
   ),
-  withDefaultChain(escalationChain):: {
+  withDefaultChain(escalationChainName):: {
     integration+:
       forProvider.withDefaultRoute(
-        forProvider.defaultRoute.escalationChainRef.withName(util.getName(escalationChain))
+        forProvider.defaultRoute.escalationChainRef.withName(escalationChainName)
       ),
   },
 
