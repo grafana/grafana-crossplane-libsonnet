@@ -65,25 +65,23 @@ local forProvider = integration.spec.parameters.forProvider;
 
   route: {
     local forProvider = route.spec.parameters.forProvider,
-    '#chain':: d.func.new(
+    '#new':: d.func.new(
       |||
-        `chain` configures a Route to reference an Escalation Chain.
+        `new` configures a Route with a given `routingRegex`.
       |||,
-      [d.argument.new('name', d.T.string)]
+      [d.argument.new('routingRegex', d.T.string)]
     ),
-    chain(name)::
-      forProvider.escalationChainRef.withName(name),
+    new(routingRegex)::
+      forProvider.withRoutingRegex(routingRegex),
 
-
-    '#withRoutingRegex':: d.func.new(
+    '#withEscalationChain':: d.func.new(
       |||
-        `withRoutingRegex` configures a Route to have routing type `regex` and
-        use the supplied regex.
+        `withEscalationChain` configures a Route with a destination Escalation
+        Chain. `escalationChainName` is the resource name of the chain.
       |||,
-      [d.argument.new('regex', d.T.string)]
+      [d.argument.new('escalationChainName', d.T.string)]
     ),
-    withRoutingRegex(regex)::
-      forProvider.withRoutingType('regex')
-      + forProvider.withRoutingRegex(regex),
+    withEscalationChain(escalationChainName)::
+      forProvider.escalationChainRef.withName(escalationChainName),
   },
 }
