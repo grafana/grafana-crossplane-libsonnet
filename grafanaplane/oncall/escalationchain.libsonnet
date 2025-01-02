@@ -6,7 +6,6 @@ local raw = import '../zz/main.libsonnet';
 local escalationChain = raw.oncall.v1alpha1.escalationChain;
 local escalation = raw.oncall.v1alpha1.escalation;
 
-escalationChain.spec.parameters.forProvider
 {
   '#new':: d.func.new(
     |||
@@ -44,6 +43,21 @@ escalationChain.spec.parameters.forProvider
         ,
         steps
       ),
+  },
+
+  '#withTeamId':: d.func.new(
+    |||
+      `withTeamId` configures the Team ID on the Escalation Chain. `teamId`
+      should be the ID of the team as a string.
+    |||,
+    [
+      d.argument.new('teamId', d.T.string),
+    ]
+  ),
+  withTeamId(teamId):: {
+    // Constructor nests the resource beneath the `chain` key, so we wrap the
+    // raw function to do the same.
+    chain+: escalationChain.spec.parameters.forProvider.withTeamId(teamId),
   },
 
   step: {
