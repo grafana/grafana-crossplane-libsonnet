@@ -11,56 +11,48 @@ local forProvider = integration.spec.parameters.forProvider;
     |||
       `new` creates an Integration. The `name` is a display-friendly string,
       and `id` defaults to a slug-ified version of it. `type` is the type of
-      Integration.
+      Integration. `defaultChainName` is the resource name of the default
+      Escalation Chain.
     |||,
     [
       d.argument.new('name', d.T.string),
       d.argument.new('type', d.T.string),
+      d.argument.new('defaultChainName', d.T.string),
       d.argument.new('id', d.T.string, default='rfc1123(name)'),
     ]
   ),
-  new(name, type, id=xtd.ascii.stringToRFC1123(name)):: {
+  new(name, type, defaultChainName, id=xtd.ascii.stringToRFC1123(name)):: {
     integrationName:: id,
+    defaultChainName:: defaultChainName,
     integration:
       integration.new(id)
-      + integration.spec.parameters.forProvider.withName(name)
-      + integration.spec.parameters.forProvider.withType(type),
-  },
-
-  '#withDefaultChain':: d.func.new(
-    |||
-      `withDefaulChain` configures the default route of an Integration to use
-      an Escalation Chain. `escalationChain` is the resource name of the
-      desired Escalation Chain.
-    |||,
-    [
-      d.argument.new('escalationChainName', d.T.string),
-    ]
-  ),
-  withDefaultChain(escalationChainName):: {
-    integration+:
-      forProvider.withDefaultRoute(
-        forProvider.defaultRoute.escalationChainRef.withName(escalationChainName)
-      ),
+      + forProvider.withName(name)
+      + forProvider.withType(type)
+      + forProvider.defaultRoute.escalationChainRef.withName(defaultChainName),
   },
 
   '#withRoutes':: d.func.new(
     |||
       `withRoute` configures Route resources connecting this Integration with
-      Escalation Chains.
+      Escalation Chains. `routes` is an array of Routes to be evaluated in
+      order. If they do not specify an Escalation Chain to route to, the
+      default chain for this Integration will be used.
     |||,
-    [d.argument.new('routes', d.T.object)]
+    [d.argument.new('routes', d.T.array)]
   ),
   withRoutes(routes):: {
-    local integrationName = self.integrationName,
-    routes: {
-      [item.key]:
-        local id = '%s-%s' % [integrationName, item.key];
-        route.new(id)
-        + route.spec.parameters.forProvider.integrationRef.withName(integrationName)
-        + item.value
-      for item in std.objectKeysValues(routes)
-    },
+    local forProvider = route.spec.parameters.forProvider,
+    routes:
+      std.mapWithIndex(
+        function(position, item)
+          route.new('%s-%d' % [self.integrationName, position])
+          + forProvider.integrationRef.withName(self.integrationName)
+          // use the default chain if not specified
+          + forProvider.escalationChainRef.withName(self.defaultChainName)
+          + forProvider.withPosition(position)
+          + item,
+        routes
+      ),
   },
 
   route: {
