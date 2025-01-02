@@ -5,7 +5,6 @@ local raw = import '../zz/main.libsonnet';
 local schedule = raw.oncall.v1alpha1.schedule;
 local forProvider = schedule.spec.parameters.forProvider;
 
-forProvider  // raise forProvider functions to here
 {
   local base = self,
 
@@ -35,9 +34,9 @@ forProvider  // raise forProvider functions to here
     ]
   ),
   withShifts(shifts)::
-    super.withType('calendar')
-    + super.withShiftsRef([
-      super.shiftsRef.withName(shift)
+    forProvider.withType('calendar')
+    + forProvider.withShiftsRef([
+      forProvider.shiftsRef.withName(shift)
       for shift in shifts
     ]),
 }

@@ -3,9 +3,8 @@ local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
 local raw = import '../zz/main.libsonnet';
 local shift = raw.oncall.v1alpha1.onCallShift;
+local forProvider = shift.spec.parameters.forProvider;
 
-// Lift forProvider functions here for convenience.
-shift.spec.parameters.forProvider
 {
   '#new':: d.func.new(
     |||
@@ -19,7 +18,7 @@ shift.spec.parameters.forProvider
   ),
   new(name, id=xtd.ascii.stringToRFC1123(name))::
     shift.new(id)
-    + super.withName(name),
+    + forProvider.withName(name),
 
   '#withRollingUsers':: d.func.new(
     |||
@@ -34,7 +33,15 @@ shift.spec.parameters.forProvider
     ]
   ),
   withRollingUsers(frequency, users)::
-    super.withType('rolling_users')
-    + super.withRollingUsers(users)
-    + super.withFrequency(frequency),
+    forProvider.withType('rolling_users')
+    + forProvider.withRollingUsers(users)
+    + forProvider.withFrequency(frequency),
+
+  // Expose some generated functions here.
+  '#withStart':: forProvider['#withStart'],
+  withStart:: forProvider.withStart,
+  '#withStartRotationFromUserIndex':: forProvider['#withStartRotationFromUserIndex'],
+  withStartRotationFromUserIndex:: forProvider.withStartRotationFromUserIndex,
+  '#withByDay':: forProvider['#withByDay'],
+  withByDay:: forProvider.withByDay,
 }
