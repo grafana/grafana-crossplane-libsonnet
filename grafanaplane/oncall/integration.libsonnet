@@ -6,7 +6,6 @@ local integration = raw.oncall.v1alpha1.integration;
 local route = raw.oncall.v1alpha1.route;
 local forProvider = integration.spec.parameters.forProvider;
 
-forProvider
 {
   '#new':: d.func.new(
     |||
