@@ -18,7 +18,6 @@ forProvider  // raise forProvider functions to here
     [
       d.argument.new('name', d.T.string),
       d.argument.new('type', d.T.string, enums=['ical', 'calendar']),
-      d.argument.new('providerName', d.T.string),
       d.argument.new('resourceId', d.T.string, default='rfc1123(name)'),
     ]
   ),
