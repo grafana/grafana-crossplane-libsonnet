@@ -9,26 +9,33 @@ local forProvider = integration.spec.parameters.forProvider;
 {
   '#new':: d.func.new(
     |||
-      `new` creates an Integration. The `name` is a display-friendly string,
-      and `id` defaults to a slug-ified version of it. `type` is the type of
-      Integration. `defaultChainName` is the resource name of the default
-      Escalation Chain.
+      `new` creates an Integration. The `name` is a display-friendly string.
+      `type` is the type of Integration. `defaultChainName` is the resource
+      name of the default Escalation Chain.
     |||,
     [
       d.argument.new('name', d.T.string),
       d.argument.new('type', d.T.string),
       d.argument.new('defaultChainName', d.T.string),
-      d.argument.new('id', d.T.string, default='rfc1123(name)'),
     ]
   ),
-  new(name, type, defaultChainName, id=xtd.ascii.stringToRFC1123(name)):: {
-    integrationName:: id,
+  new(name, type, defaultChainName):: {
+    integrationName:: xtd.ascii.stringToRFC1123(name),
     defaultChainName:: defaultChainName,
     integration:
-      integration.new(id)
+      integration.new(self.integrationName)
       + forProvider.withName(name)
       + forProvider.withType(type)
       + forProvider.defaultRoute.escalationChainRef.withName(defaultChainName),
+  },
+
+  '#withId':: d.func.new(
+    '`withId` sets the resource name for an Integration',
+    [d.argument.new('id', d.T.string)]
+  ),
+  withId(id):: {
+    integrationName:: id,
+    integration+: integration.metadata.withName(id),
   },
 
   '#withRoutes':: d.func.new(

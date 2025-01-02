@@ -7,20 +7,23 @@ local escalation = raw.oncall.v1alpha1.escalation;
 
 {
   '#new':: d.func.new(
-    |||
-      `new` creates an Escalation Chain. The `name` is a display-friendly
-      string, and `id` defaults to a slug-ified version of it.
-    |||,
-    [
-      d.argument.new('name', d.T.string),
-      d.argument.new('id', d.T.string, default='rfc1123(name)'),
-    ]
+    '`new` creates an Escalation Chain. The `name` is a display-friendly string.',
+    [d.argument.new('name', d.T.string)]
   ),
-  new(name, id=xtd.ascii.stringToRFC1123(name)):: {
-    chainName:: id,
+  new(name):: {
+    chainName:: xtd.ascii.stringToRFC1123(name),
     chain:
-      escalationChain.new(id)
+      escalationChain.new(self.chainName)
       + escalationChain.spec.parameters.forProvider.withName(name),
+  },
+
+  '#withId':: d.func.new(
+    '`withId` sets the resource name for an Escalation Chain',
+    [d.argument.new('id', d.T.string)]
+  ),
+  withId(id):: {
+    chainName:: id,
+    chain+: escalationChain.metadata.withName(id),
   },
 
   '#withSteps':: d.func.new(
@@ -29,6 +32,7 @@ local escalation = raw.oncall.v1alpha1.escalation;
       the calling Escalation Chain.
     |||,
     [
+      d.argument.new('steps', d.T.array),
     ]
   ),
   withSteps(steps):: {

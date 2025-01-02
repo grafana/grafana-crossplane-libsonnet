@@ -9,19 +9,18 @@ local forProvider = schedule.spec.parameters.forProvider;
   local base = self,
 
   '#new':: d.func.new(
-    |||
-      `new` creates a Schedule. The `name` is a display-friendly
-      string, and `id` defaults to a slug-ified version of it.
-    |||,
-    [
-      d.argument.new('name', d.T.string),
-      d.argument.new('type', d.T.string, enums=['ical', 'calendar']),
-      d.argument.new('resourceId', d.T.string, default='rfc1123(name)'),
-    ]
+    '`new` creates a Schedule. The `name` is a display-friendly string.',
+    [d.argument.new('name', d.T.string)]
   ),
-  new(name, id=xtd.ascii.stringToRFC1123(name))::
-    schedule.new(id)
+  new(name)::
+    schedule.new(xtd.ascii.stringToRFC1123(name))
     + schedule.spec.parameters.forProvider.withName(name),
+
+  '#withId':: d.func.new(
+    '`withId` sets the resource name for a Schedule',
+    [d.argument.new('id', d.T.string)]
+  ),
+  withId(id):: schedule.metadata.withName(id),
 
   '#withShifts':: d.func.new(
     |||

@@ -7,18 +7,18 @@ local forProvider = shift.spec.parameters.forProvider;
 
 {
   '#new':: d.func.new(
-    |||
-      `new` creates an OnCallShift. The `name` is a display-friendly string,
-      and `id` defaults to a slug-ified version of it.
-    |||,
-    [
-      d.argument.new('name', d.T.string),
-      d.argument.new('resourceId', d.T.string, default='rfc1123(name)'),
-    ]
+    '`new` creates an OnCallShift. The `name` is a display-friendly string.',
+    [d.argument.new('name', d.T.string)]
   ),
-  new(name, id=xtd.ascii.stringToRFC1123(name))::
-    shift.new(id)
+  new(name)::
+    shift.new(xtd.ascii.stringToRFC1123(name))
     + forProvider.withName(name),
+
+  '#withId':: d.func.new(
+    '`withId` sets the resource name for a Shift',
+    [d.argument.new('id', d.T.string)]
+  ),
+  withId(id):: shift.metadata.withName(id),
 
   '#withRollingUsers':: d.func.new(
     |||
