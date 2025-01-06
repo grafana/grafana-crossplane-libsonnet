@@ -19,27 +19,26 @@ local forProvider = schedule.spec.parameters.forProvider;
 
             local calendar = grafanaplane.oncall.schedule.calendar,
             local onCallUsers = [['bob@example.com'], ['alice@example.com']],
+            primary: calendar.new('Primary', [
+              // 24 hour daily shift
+              calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
+              + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
+              + calendar.shift.withRollingUsers('daily', onCallUsers),
+              // 72 hour weekend shift
+              calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
+              + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
+              + calendar.shift.withRollingUsers('weekly', onCallUsers),
+            ]),
 
-            primary: calendar.new('Primary', {
-              weekday:  // 24 hour daily shift
-                calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
-                + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
-                + calendar.shift.withRollingUsers('daily', onCallUsers),
-              weekend:  // 72 hour weekend shift
-                calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
-                + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
-                + calendar.shift.withRollingUsers('weekly', onCallUsers),
-            }),
-
-            secondary: calendar.new('Secondary', {
-              [shift.key]:
-                shift.value
-                // replace the resource ID
-                + calendar.shift.withId('secondary-' + shift.value.metadata.name)
-                // start rotating from the second person
-                + calendar.shift.withStartRotationFromUserIndex(1)
+            // same as the primary shift, but shifted one person
+            secondary: calendar.new('Secondary', [
+              shift
+              // replace the resource ID
+              + calendar.shift.withId('secondary-' + shift.metadata.name)
+              // start rotating from the second person
+              + calendar.shift.withStartRotationFromUserIndex(1)
               for shift in std.objectKeysValues(self.primary.shifts)
-            }),
+            ]),
       |||,
       [
         d.argument.new('name', d.T.string),
@@ -54,7 +53,7 @@ local forProvider = schedule.spec.parameters.forProvider;
         + forProvider.withType('calendar')
         + forProvider.withShiftsRef([
           forProvider.shiftsRef.withName(shift.metadata.name)
-          for shift in std.objectValues(self.shifts)
+          for shift in self.shifts
         ]),
       shifts: shifts,
     },
@@ -70,9 +69,9 @@ local forProvider = schedule.spec.parameters.forProvider;
 
     '#withShifts':: d.func.new(
       |||
-        `withShifts` sets a map of Shifts on a calendar-type Schedule.
+        `withShifts` sets an array of Shifts on a calendar-type Schedule.
       |||,
-      [d.argument.new('shifts', d.T.object)]
+      [d.argument.new('shifts', d.T.array)]
     ),
     withShifts(shifts):: {
       shifts: shifts,

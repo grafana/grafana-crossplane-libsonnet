@@ -229,27 +229,26 @@ declared like:
 
     local calendar = grafanaplane.oncall.schedule.calendar,
     local onCallUsers = [['bob@example.com'], ['alice@example.com']],
+    primary: calendar.new('Primary', [
+      // 24 hour daily shift
+      calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
+      + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
+      + calendar.shift.withRollingUsers('daily', onCallUsers),
+      // 72 hour weekend shift
+      calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
+      + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
+      + calendar.shift.withRollingUsers('weekly', onCallUsers),
+    ]),
 
-    primary: calendar.new('Primary', {
-      weekday:  // 24 hour daily shift
-        calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
-        + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
-        + calendar.shift.withRollingUsers('daily', onCallUsers),
-      weekend:  // 72 hour weekend shift
-        calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
-        + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
-        + calendar.shift.withRollingUsers('weekly', onCallUsers),
-    }),
-
-    secondary: calendar.new('Secondary', {
-      [shift.key]:
-        shift.value
-        // replace the resource ID
-        + calendar.shift.withId('secondary-' + shift.value.metadata.name)
-        // start rotating from the second person
-        + calendar.shift.withStartRotationFromUserIndex(1)
+    // same as the primary shift, but shifted one person
+    secondary: calendar.new('Secondary', [
+      shift
+      // replace the resource ID
+      + calendar.shift.withId('secondary-' + shift.metadata.name)
+      // start rotating from the second person
+      + calendar.shift.withStartRotationFromUserIndex(1)
       for shift in std.objectKeysValues(self.primary.shifts)
-    }),
+    ]),
 
 ##### fn schedule.calendar.withId
 
@@ -270,9 +269,9 @@ schedule.calendar.withShifts(shifts)
 
 PARAMETERS:
 
-* **shifts** (`object`)
+* **shifts** (`array`)
 
-`withShifts` sets a map of Shifts on a calendar-type Schedule.
+`withShifts` sets an array of Shifts on a calendar-type Schedule.
 
 ##### obj schedule.calendar.shift
 
