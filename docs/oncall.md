@@ -247,7 +247,7 @@ declared like:
       + calendar.shift.withId('secondary-' + shift.metadata.name)
       // start rotating from the second person
       + calendar.shift.withStartRotationFromUserIndex(1)
-      for shift in std.objectKeysValues(self.primary.shifts)
+      for shift in self.primary.shifts
     ]),
 
 ##### fn schedule.calendar.withId
