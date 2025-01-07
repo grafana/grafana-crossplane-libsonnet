@@ -227,28 +227,30 @@ Shifts are unordered, and so are supplied as an object to allow for
 reuse. For example, a Primary/Secondary pair of Schedules could be
 declared like:
 
-    local calendar = grafanaplane.oncall.schedule.calendar,
-    local onCallUsers = [['bob@example.com'], ['alice@example.com']],
-    primary: calendar.new('Primary', [
-      // 24 hour daily shift
-      calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
-      + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
-      + calendar.shift.withRollingUsers('daily', onCallUsers),
-      // 72 hour weekend shift
-      calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
-      + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
-      + calendar.shift.withRollingUsers('weekly', onCallUsers),
-    ]),
+```jsonnet
+local calendar = grafanaplane.oncall.schedule.calendar,
+local onCallUsers = [['bob@example.com'], ['alice@example.com']],
+primary: calendar.new('Primary', [
+  // 24 hour daily shift
+  calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
+  + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
+  + calendar.shift.withRollingUsers('daily', onCallUsers),
+  // 72 hour weekend shift
+  calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
+  + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
+  + calendar.shift.withRollingUsers('weekly', onCallUsers),
+]),
 
-    // same as the primary shift, but shifted one person
-    secondary: calendar.new('Secondary', [
-      shift
-      // replace the resource ID
-      + calendar.shift.withId('secondary-' + shift.metadata.name)
-      // start rotating from the second person
-      + calendar.shift.withStartRotationFromUserIndex(1)
-      for shift in self.primary.shifts
-    ]),
+// same as the primary shift, but shifted one person
+secondary: calendar.new('Secondary', [
+  shift
+  // replace the resource ID
+  + calendar.shift.withId('secondary-' + shift.metadata.name)
+  // start rotating from the second person
+  + calendar.shift.withStartRotationFromUserIndex(1)
+  for shift in self.primary.shifts
+]),
+```
 
 ##### fn schedule.calendar.withId
 
@@ -337,8 +339,10 @@ together.
 
 For example, if
 
-    frequency: 'daily',
-    users: [['alex@example.com', 'bob@example.com'], ['alice@example.com']]
+```jsonnet
+frequency: 'daily',
+users: [['alex@example.com', 'bob@example.com'], ['alice@example.com']]
+```
 
 then on the first day, Alex and Bob would both be notified. On the next
 day, only Alice would be. After that, Alex and Bob again, then Alice, and
