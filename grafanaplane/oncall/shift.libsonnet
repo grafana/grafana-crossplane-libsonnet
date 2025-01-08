@@ -42,8 +42,10 @@ local forProvider = shift.spec.parameters.forProvider;
 
       For example, if
 
-          frequency: 'daily',
-          users: [['alex@example.com', 'bob@example.com'], ['alice@example.com']]
+      ```jsonnet
+      frequency: 'daily',
+      users: [['alex@example.com', 'bob@example.com'], ['alice@example.com']]
+      ```
 
       then on the first day, Alex and Bob would both be notified. On the next
       day, only Alice would be. After that, Alex and Bob again, then Alice, and
