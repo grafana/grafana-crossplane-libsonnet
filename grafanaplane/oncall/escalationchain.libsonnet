@@ -76,9 +76,7 @@ local escalation = raw.oncall.v1alpha1.escalation;
     ),
     notifyOnCallFromSchedule(scheduleName)::
       forProvider.withType('notify_on_call_from_schedule')
-      + forProvider.withNotifyOnCallFromScheduleRef(
-        forProvider.notifyOnCallFromScheduleRef.withName(scheduleName)
-      ),
+      + forProvider.notifyOnCallFromScheduleRef.withName(scheduleName),
 
     '#notifyPersons':: d.func.new(
       |||
