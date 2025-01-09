@@ -42,6 +42,7 @@ local escalation = raw.oncall.v1alpha1.escalation;
           local id = '%s-%d' % [self.chainName, position];
           escalation.new(id)
           + escalation.spec.parameters.forProvider.escalationChainRef.withName(self.chainName)
+          + escalation.spec.parameters.forProvider.withPosition(position)
           + step
         ,
         steps
