@@ -26,7 +26,9 @@ local forProvider = integration.spec.parameters.forProvider;
       integration.new(self.integrationName)
       + forProvider.withName(name)
       + forProvider.withType(type)
-      + forProvider.defaultRoute.escalationChainRef.withName(defaultChainName),
+      + forProvider.withDefaultRoute(
+        forProvider.defaultRoute.escalationChainRef.withName(defaultChainName)
+      ),
   },
 
   '#withId':: d.func.new(
