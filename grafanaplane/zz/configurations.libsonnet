@@ -9,7 +9,7 @@
       name: 'grafana-namespaced-alerting',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-alerting:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-alerting:0.5.2-0.22.0',
     },
   },
   cloud: {
@@ -22,7 +22,7 @@
       name: 'grafana-namespaced-cloud',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloud:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloud:0.5.2-0.22.0',
     },
   },
   enterprise: {
@@ -35,7 +35,7 @@
       name: 'grafana-namespaced-enterprise',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-enterprise:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-enterprise:0.5.2-0.22.0',
     },
   },
   ml: {
@@ -48,7 +48,7 @@
       name: 'grafana-namespaced-ml',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-ml:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-ml:0.5.2-0.22.0',
     },
   },
   oncall: {
@@ -61,7 +61,7 @@
       name: 'grafana-namespaced-oncall',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oncall:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oncall:0.5.2-0.22.0',
     },
   },
   oss: {
@@ -74,7 +74,7 @@
       name: 'grafana-namespaced-oss',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oss:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oss:0.5.2-0.22.0',
     },
   },
   slo: {
@@ -87,7 +87,7 @@
       name: 'grafana-namespaced-slo',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-slo:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-slo:0.5.2-0.22.0',
     },
   },
   sm: {
@@ -100,7 +100,7 @@
       name: 'grafana-namespaced-sm',
     },
     spec: {
-      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-sm:0.5.1-0.22.0',
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-sm:0.5.2-0.22.0',
     },
   },
 }
