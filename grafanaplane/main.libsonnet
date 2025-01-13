@@ -89,7 +89,7 @@ local raw = import './zz/main.libsonnet';
       ),
 
     stack: {
-      new(name, namespace, cloudProviderConfigName, secretName=name + '-providerConfigToken'): {
+      new(name, namespace, cloudProviderConfigName, secretName=name + '-providerconfig-token'): {
         stack:
           assert validStackSlug(name) :
                  'The slug/name needs to be a valid subdomain. One word. Only lowercase letters and numbers allowed. Must start with a letter. No dots, dashes, underscores, or spaces.';
