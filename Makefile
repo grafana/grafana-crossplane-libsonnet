@@ -26,7 +26,7 @@ grafanaplane/zz: $(GENERATOR_DEPTHS)
 		  -J generator/vendor \
 		  -A 'version=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)' \
 		  generator/main.libsonnet) && \
-	xargs -n1 jsonnetfmt -i <<< "$${FILES}"
+	xargs -n1 jsonnetfmt --no-use-implicit-plus -i <<< "$${FILES}"
 
 packages: $(GENERATOR_DEPTHS)
 	rm -rf packages && \
@@ -48,3 +48,14 @@ docs: $(shell find grafanaplane/ -type f)
 .PHONY: tag
 tag:
 	git tag $(LIBRARY_VERSION)-$(PROVIDER_VERSION)
+
+.PHONY: fmt
+fmt:
+	@find . \
+		-path './.git' -prune \
+		-o -path './gen' -prune \
+		-o -path './docs' -prune \
+		-o -name 'vendor' -prune \
+		-o -name '*.libsonnet' -print \
+		-o -name '*.jsonnet' -print \
+		| xargs -n 1 -- jsonnetfmt --no-use-implicit-plus -i
