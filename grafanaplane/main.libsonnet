@@ -89,7 +89,7 @@ local raw = import './zz/main.libsonnet';
       ),
 
     stack: {
-      new(name, namespace, cloudProviderConfigName, secretName=name + '-providerConfigToken'): {
+      new(name, namespace, cloudProviderConfigName, secretName=name + '-providerconfig-token'): {
         stack:
           assert validStackSlug(name) :
                  'The slug/name needs to be a valid subdomain. One word. Only lowercase letters and numbers allowed. Must start with a letter. No dots, dashes, underscores, or spaces.';
@@ -101,7 +101,7 @@ local raw = import './zz/main.libsonnet';
 
         serviceAccount: this.stackServiceAccount.fromStackResource(self.stack, namespace),
         token: this.stackServiceAccountToken.fromStackServiceAccountResource(self.serviceAccount, namespace, secretName),
-        grafanaProviderConfig: root.global.providerConfig.new(name + '-grafana', namespace, secretName, 'instanceCredentials'),
+        grafanaProviderConfig: root.global.providerConfig.new(name + '-grafana', secretName, namespace, 'instanceCredentials'),
       },
     },
     stackServiceAccount: {
