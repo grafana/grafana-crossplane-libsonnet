@@ -101,7 +101,7 @@ local raw = import './zz/main.libsonnet';
 
         serviceAccount: this.stackServiceAccount.fromStackResource(self.stack, namespace),
         token: this.stackServiceAccountToken.fromStackServiceAccountResource(self.serviceAccount, namespace, secretName),
-        grafanaProviderConfig: root.global.providerConfig.new(name + '-grafana', namespace, secretName, 'instanceCredentials'),
+        grafanaProviderConfig: root.global.providerConfig.new(name + '-grafana', secretName, namespace, 'instanceCredentials'),
       },
     },
     stackServiceAccount: {
