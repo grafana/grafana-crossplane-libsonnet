@@ -1,0 +1,119 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xawscloudwatchscrapejobs.cloudprovider.grafana.net.namespaced
+  name: awscloudwatchscrapejob-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: cloudprovider.grafana.net.namespaced/v1alpha1
+    kind: XAwsCloudwatchScrapeJob
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: cloudprovider.grafana.crossplane.io/v1alpha1
+              kind: AwsCloudwatchScrapeJob
+            name: awscloudwatchscrapejob
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.awsAccountResourceId
+                toFieldPath: spec.forProvider.awsAccountResourceId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.customNamespace
+                toFieldPath: spec.forProvider.customNamespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.enabled
+                toFieldPath: spec.forProvider.enabled
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.exportTags
+                toFieldPath: spec.forProvider.exportTags
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.name
+                toFieldPath: spec.forProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.regionsSubsetOverride
+                toFieldPath: spec.forProvider.regionsSubsetOverride
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.service
+                toFieldPath: spec.forProvider.service
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.stackId
+                toFieldPath: spec.forProvider.stackId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.awsAccountResourceId
+                toFieldPath: spec.initProvider.awsAccountResourceId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.customNamespace
+                toFieldPath: spec.initProvider.customNamespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.enabled
+                toFieldPath: spec.initProvider.enabled
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.exportTags
+                toFieldPath: spec.initProvider.exportTags
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.name
+                toFieldPath: spec.initProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.regionsSubsetOverride
+                toFieldPath: spec.initProvider.regionsSubsetOverride
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.service
+                toFieldPath: spec.initProvider.service
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.stackId
+                toFieldPath: spec.initProvider.stackId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+                toFieldPath: spec.publishConnectionDetailsTo.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform

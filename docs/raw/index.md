@@ -6,6 +6,8 @@ Generated libraries for all the compositions in case the manually curated functi
 
 * [alerting](alerting/index.md)
 * [cloud](cloud/index.md)
+* [cloudprovider](cloudprovider/index.md)
+* [connections](connections/index.md)
 * [enterprise](enterprise/index.md)
 * [ml](ml/index.md)
 * [nogroup](nogroup/index.md)

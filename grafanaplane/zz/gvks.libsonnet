@@ -81,6 +81,12 @@
       },
       {
         group: 'cloud.grafana.crossplane.io',
+        kind: 'OrgMember',
+        plural: 'orgmembers',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
         kind: 'PluginInstallation',
         plural: 'plugininstallations',
         version: 'v1alpha1',
@@ -119,6 +125,12 @@
       },
       {
         group: 'cloud.grafana.net.namespaced',
+        kind: 'OrgMember',
+        plural: 'orgmembers',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.net.namespaced',
         kind: 'PluginInstallation',
         plural: 'plugininstallations',
         version: 'v1alpha1',
@@ -143,8 +155,80 @@
       },
     ],
   },
+  cloudprovider: {
+    crd: [
+      {
+        group: 'cloudprovider.grafana.crossplane.io',
+        kind: 'AwsAccount',
+        plural: 'awsaccounts',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloudprovider.grafana.crossplane.io',
+        kind: 'AwsCloudwatchScrapeJob',
+        plural: 'awscloudwatchscrapejobs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloudprovider.grafana.crossplane.io',
+        kind: 'AzureCredential',
+        plural: 'azurecredentials',
+        version: 'v1alpha1',
+      },
+    ],
+    xrd: [
+      {
+        group: 'cloudprovider.grafana.net.namespaced',
+        kind: 'AwsAccount',
+        plural: 'awsaccounts',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloudprovider.grafana.net.namespaced',
+        kind: 'AwsCloudwatchScrapeJob',
+        plural: 'awscloudwatchscrapejobs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloudprovider.grafana.net.namespaced',
+        kind: 'AzureCredential',
+        plural: 'azurecredentials',
+        version: 'v1alpha1',
+      },
+    ],
+  },
+  connections: {
+    crd: [
+      {
+        group: 'connections.grafana.crossplane.io',
+        kind: 'MetricsEndpointScrapeJob',
+        plural: 'metricsendpointscrapejobs',
+        version: 'v1alpha1',
+      },
+    ],
+    xrd: [
+      {
+        group: 'connections.grafana.net.namespaced',
+        kind: 'MetricsEndpointScrapeJob',
+        plural: 'metricsendpointscrapejobs',
+        version: 'v1alpha1',
+      },
+    ],
+  },
   enterprise: {
     crd: [
+      {
+        group: 'enterprise.grafana.crossplane.io',
+        kind: 'DataSourceConfigLbacRules',
+        plural: 'datasourceconfiglbacrules',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.crossplane.io',
+        kind: 'DataSourcePermissionItem',
+        plural: 'datasourcepermissionitems',
+        version: 'v1alpha1',
+      },
       {
         group: 'enterprise.grafana.crossplane.io',
         kind: 'DataSourcePermission',
@@ -155,6 +239,12 @@
         group: 'enterprise.grafana.crossplane.io',
         kind: 'Report',
         plural: 'reports',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.crossplane.io',
+        kind: 'RoleAssignmentItem',
+        plural: 'roleassignmentitems',
         version: 'v1alpha1',
       },
       {
@@ -179,6 +269,18 @@
     xrd: [
       {
         group: 'enterprise.grafana.net.namespaced',
+        kind: 'DataSourceConfigLbacRules',
+        plural: 'datasourceconfiglbacrules',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
+        kind: 'DataSourcePermissionItem',
+        plural: 'datasourcepermissionitems',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
         kind: 'DataSourcePermission',
         plural: 'datasourcepermissions',
         version: 'v1alpha1',
@@ -187,6 +289,12 @@
         group: 'enterprise.grafana.net.namespaced',
         kind: 'Report',
         plural: 'reports',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
+        kind: 'RoleAssignmentItem',
+        plural: 'roleassignmentitems',
         version: 'v1alpha1',
       },
       {
@@ -213,6 +321,12 @@
     crd: [
       {
         group: 'ml.grafana.crossplane.io',
+        kind: 'Alert',
+        plural: 'alerts',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'ml.grafana.crossplane.io',
         kind: 'Holiday',
         plural: 'holidays',
         version: 'v1alpha1',
@@ -231,6 +345,12 @@
       },
     ],
     xrd: [
+      {
+        group: 'ml.grafana.net.namespaced',
+        kind: 'Alert',
+        plural: 'alerts',
+        version: 'v1alpha1',
+      },
       {
         group: 'ml.grafana.net.namespaced',
         kind: 'Holiday',
@@ -363,6 +483,12 @@
       },
       {
         group: 'oss.grafana.crossplane.io',
+        kind: 'DashboardPermissionItem',
+        plural: 'dashboardpermissionitems',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
         kind: 'DashboardPermission',
         plural: 'dashboardpermissions',
         version: 'v1alpha1',
@@ -381,8 +507,20 @@
       },
       {
         group: 'oss.grafana.crossplane.io',
+        kind: 'DataSourceConfig',
+        plural: 'datasourceconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
         kind: 'DataSource',
         plural: 'datasources',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'FolderPermissionItem',
+        plural: 'folderpermissionitems',
         version: 'v1alpha1',
       },
       {
@@ -419,6 +557,12 @@
         group: 'oss.grafana.crossplane.io',
         kind: 'Playlist',
         plural: 'playlists',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'ServiceAccountPermissionItem',
+        plural: 'serviceaccountpermissionitems',
         version: 'v1alpha1',
       },
       {
@@ -467,6 +611,12 @@
       },
       {
         group: 'oss.grafana.net.namespaced',
+        kind: 'DashboardPermissionItem',
+        plural: 'dashboardpermissionitems',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
         kind: 'DashboardPermission',
         plural: 'dashboardpermissions',
         version: 'v1alpha1',
@@ -485,8 +635,20 @@
       },
       {
         group: 'oss.grafana.net.namespaced',
+        kind: 'DataSourceConfig',
+        plural: 'datasourceconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
         kind: 'DataSource',
         plural: 'datasources',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'FolderPermissionItem',
+        plural: 'folderpermissionitems',
         version: 'v1alpha1',
       },
       {
@@ -523,6 +685,12 @@
         group: 'oss.grafana.net.namespaced',
         kind: 'Playlist',
         plural: 'playlists',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'ServiceAccountPermissionItem',
+        plural: 'serviceaccountpermissionitems',
         version: 'v1alpha1',
       },
       {
