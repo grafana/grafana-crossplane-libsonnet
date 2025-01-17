@@ -11,6 +11,8 @@ local configurations = grafanaplane.configurations;
 [
   configuration.alerting,
   configuration.cloud,
+  configuration.cloudprovider,
+  configuration.connections,
   configuration.enterprise,
   configuration.ml,
   configuration.oncall,

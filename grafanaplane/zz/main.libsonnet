@@ -1,6 +1,8 @@
 {
   alerting+: import './alerting/main.libsonnet',
   cloud+: import './cloud/main.libsonnet',
+  cloudprovider+: import './cloudprovider/main.libsonnet',
+  connections+: import './connections/main.libsonnet',
   enterprise+: import './enterprise/main.libsonnet',
   ml+: import './ml/main.libsonnet',
   oncall+: import './oncall/main.libsonnet',

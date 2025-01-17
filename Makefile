@@ -1,5 +1,5 @@
 LIBRARY_VERSION:=0.5.2
-PROVIDER_VERSION:=0.22.0
+PROVIDER_VERSION:=0.24.0
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crossplane
 REGISTRY?=ghcr.io
@@ -22,6 +22,7 @@ generator/crds.yaml:
 grafanaplane/zz: $(GENERATOR_DEPTHS)
 	rm -rf grafanaplane/zz && \
 	FILES=$$($(JSONNET_BIN) \
+		  -s  1000 \
 		  -S -c -m grafanaplane \
 		  -J generator/vendor \
 		  -A 'version=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)' \
