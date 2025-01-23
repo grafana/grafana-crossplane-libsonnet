@@ -12,6 +12,12 @@ local forProvider = integration.spec.parameters.forProvider;
       `new` creates an Integration. The `name` is a display-friendly string.
       `type` is the type of Integration. `defaultChainName` is the resource
       name of the default Escalation Chain.
+
+      Note: Crossplane looks up the Escalation Chain using the cluster-scoped
+      `EscalationChain.oncall.grafana.crossplane.io` kind, rather than the
+      namespaced `EscalationChain.oncall.grafana.net.namespaced` claim kind.
+      The supplied `defaultChainName` is expected to be the claim name, so it
+      is transformed into a label selector.
     |||,
     [
       d.argument.new('name', d.T.string),
@@ -20,14 +26,23 @@ local forProvider = integration.spec.parameters.forProvider;
     ]
   ),
   new(name, type, defaultChainName):: {
+    local this = self,
     integrationName:: xtd.ascii.stringToRFC1123(name),
     defaultChainName:: defaultChainName,
     integration:
+      //
       integration.new(self.integrationName)
       + forProvider.withName(name)
       + forProvider.withType(type)
       + forProvider.withDefaultRoute(
-        forProvider.defaultRoute.escalationChainRef.withName(defaultChainName)
+        forProvider.defaultRoute.escalationChainSelector.withMatchControllerRef(true)
+        + forProvider.defaultRoute.escalationChainSelector.withMatchLabels({
+          'crossplane.io/claim-name': this.defaultChainName,
+          // Ideally, we'd like to match the `claim-namespace` also, but we
+          // do not necessarily know it. By setting `MatchControllerRef` to
+          // true, we reduce the risk that we accidentally match a different
+          // claim.
+        })
       ),
   },
 
@@ -51,13 +66,17 @@ local forProvider = integration.spec.parameters.forProvider;
   ),
   withRoutes(routes):: {
     local forProvider = route.spec.parameters.forProvider,
+    local this = self,
     routes:
       std.mapWithIndex(
         function(position, item)
           route.new('%s-%d' % [self.integrationName, position])
           + forProvider.integrationRef.withName(self.integrationName)
-          // use the default chain if not specified
-          + forProvider.escalationChainRef.withName(self.defaultChainName)
+          // use the default chain if not specified; see `new()`
+          + forProvider.escalationChainSelector.withMatchControllerRef(true)
+          + forProvider.escalationChainSelector.withMatchLabels({
+            'crossplane.io/claim-name': this.defaultChainName,
+          })
           + forProvider.withPosition(position)
           + item,
         routes
@@ -83,6 +102,9 @@ local forProvider = integration.spec.parameters.forProvider;
       [d.argument.new('escalationChainName', d.T.string)]
     ),
     withEscalationChain(escalationChainName)::
-      forProvider.escalationChainRef.withName(escalationChainName),
+      forProvider.escalationChainSelector.withMatchControllerRef(true)
+      + forProvider.escalationChainSelector.withMatchLabels({
+        'crossplane.io/claim-name': escalationChainName,
+      }),
   },
 }
