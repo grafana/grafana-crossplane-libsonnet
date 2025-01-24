@@ -101,8 +101,10 @@ local forProvider = integration.spec.parameters.forProvider;
         Chain. `name` and `namespace` are the resource name and namespace of
         the chain claim.
       |||,
-      [d.argument.new('name', d.T.string)]
-      [d.argument.new('namespace', d.T.string)]
+      [
+        d.argument.new('name', d.T.string),
+        d.argument.new('namespace', d.T.string),
+      ]
     ),
     withEscalationChain(name, namespace)::
       forProvider.escalationChainSelector.withMatchLabels({
