@@ -81,13 +81,19 @@ local escalation = raw.oncall.v1alpha1.escalation;
       |||
         `notifyOnCallFromSchedule` configures an Escalation step to notify
         on-call persons from the given Schedule. `scheduleName` must be the
-        Schedule resource name.
+        Schedule resource name, and `scheduleNamespace` must be its namespace.
       |||,
-      [d.argument.new('schedule', 'string')]
+      [
+        d.argument.new('scheduleName', 'string'),
+        d.argument.new('scheduleNamespace', 'string'),
+      ]
     ),
-    notifyOnCallFromSchedule(scheduleName)::
+    notifyOnCallFromSchedule(scheduleName, scheduleNamespace)::
       forProvider.withType('notify_on_call_from_schedule')
-      + forProvider.notifyOnCallFromScheduleRef.withName(scheduleName),
+      + forProvider.notifyOnCallFromScheduleSelector.withMatchLabels({
+        'crossplane.io/claim-name': scheduleName,
+        'crossplane.io/claim-namespace': scheduleNamespace,
+      }),
 
     '#notifyPersons':: d.func.new(
       |||
