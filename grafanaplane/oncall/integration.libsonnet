@@ -73,7 +73,6 @@ local forProvider = integration.spec.parameters.forProvider;
           route.new('%s-%d' % [self.integrationName, position])
           + forProvider.integrationRef.withName(self.integrationName)
           // use the default chain if not specified; see `new()`
-          + forProvider.escalationChainSelector.withMatchControllerRef(true)
           + forProvider.escalationChainSelector.withMatchLabels({
             'crossplane.io/claim-name': this.defaultChainName,
             'crossplane.io/claim-namespace': this.defaultChainNamespace,
