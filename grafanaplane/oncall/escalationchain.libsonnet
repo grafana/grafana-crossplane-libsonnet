@@ -7,11 +7,17 @@ local escalation = raw.oncall.v1alpha1.escalation;
 
 {
   '#new':: d.func.new(
-    '`new` creates an Escalation Chain. The `name` is a display-friendly string.',
-    [d.argument.new('name', d.T.string)]
+    |||
+      `new` creates an Escalation Chain. `name` is a display-friendly string.\n    `namespace` is the Kubernetes namespace in which the resource will be\n    created; this is used in generated selectors.
+    |||,
+    [
+      d.argument.new('name', d.T.string),
+      d.argument.new('namespace', d.T.string),
+    ]
   ),
-  new(name):: {
+  new(name, namespace):: {
     chainName:: xtd.ascii.stringToRFC1123(name),
+    chainNamespace:: namespace,
     chain:
       escalationChain.new(self.chainName)
       + escalationChain.spec.parameters.forProvider.withName(name),
@@ -36,12 +42,16 @@ local escalation = raw.oncall.v1alpha1.escalation;
     ]
   ),
   withSteps(steps):: {
+    local this = self,
     steps:
       std.mapWithIndex(
         function(position, step)
           local id = '%s-%d' % [self.chainName, position];
           escalation.new(id)
-          + escalation.spec.parameters.forProvider.escalationChainRef.withName(self.chainName)
+          + escalation.spec.parameters.forProvider.escalationChainSelector.withMatchLabels({
+            'crossplane.io/claim-name': this.chainName,
+            'crossplane.io/claim-namespace': this.chainNamespace,
+          })
           + escalation.spec.parameters.forProvider.withPosition(position)
           + step
         ,
