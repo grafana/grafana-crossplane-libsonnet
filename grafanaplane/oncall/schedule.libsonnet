@@ -20,7 +20,7 @@ local forProvider = schedule.spec.parameters.forProvider;
         ```jsonnet
         local calendar = grafanaplane.oncall.schedule.calendar,
         local onCallUsers = [['bob@example.com'], ['alice@example.com']],
-        primary: calendar.new('Primary', [
+        primary: calendar.new('Primary', 'my-namespace', [
           // 24 hour daily shift
           calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
           + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
@@ -32,7 +32,7 @@ local forProvider = schedule.spec.parameters.forProvider;
         ]),
 
         // same as the primary shift, but shifted one person
-        secondary: calendar.new('Secondary', [
+        secondary: calendar.new('Secondary', 'my-namespace', [
           shift
           // replace the resource ID
           + calendar.shift.withId('secondary-' + shift.metadata.name)
@@ -44,11 +44,13 @@ local forProvider = schedule.spec.parameters.forProvider;
       |||,
       [
         d.argument.new('name', d.T.string),
+        d.argument.new('namespace', d.T.string),
         d.argument.new('shifts', d.T.object, default='{}'),
       ]
     ),
-    new(name, shifts={}): {
+    new(name, namespace, shifts={}): {
       scheduleName:: xtd.ascii.stringToRFC1123(name),
+      scheduleNamespace:: namespace,
       schedule:
         schedule.new(self.scheduleName)
         + forProvider.withName(name)
