@@ -70,8 +70,14 @@ local forProvider = shift.spec.parameters.forProvider;
     + forProvider.withFrequency(frequency),
 
   // Expose some generated functions here.
+  '#withInterval':: forProvider['#withInterval'],
+  withInterval:: forProvider.withInterval,
   '#withStartRotationFromUserIndex':: forProvider['#withStartRotationFromUserIndex'],
   withStartRotationFromUserIndex:: forProvider.withStartRotationFromUserIndex,
   '#withByDay':: forProvider['#withByDay'],
   withByDay:: forProvider.withByDay,
+  '#withFrequency':: forProvider['#withFrequency'],
+  withFrequency:: forProvider.withFrequency,
+  '#withWeekStart':: forProvider['#withWeekStart'],
+  withWeekStart:: forProvider.withWeekStart,
 }
