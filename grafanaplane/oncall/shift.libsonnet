@@ -23,7 +23,10 @@ local forProvider = shift.spec.parameters.forProvider;
     shift.new(xtd.ascii.stringToRFC1123(name))
     + forProvider.withName(name)
     + forProvider.withStart(start)
-    + forProvider.withDuration(duration),
+    + forProvider.withDuration(duration)
+    + forProvider.withInterval(1)  // default value upstream, still required by crossplane
+    + forProvider.withWeekStart('SU')  // default value upstream, still required by crossplane
+  ,
 
   '#withId':: d.func.new(
     '`withId` sets the resource name for a Shift',
