@@ -5,32 +5,35 @@
 ## Index
 
 * [`obj escalationChain`](#obj-escalationchain)
-  * [`fn new(name)`](#fn-escalationchainnew)
+  * [`fn new(name, namespace)`](#fn-escalationchainnew)
   * [`fn withId(id)`](#fn-escalationchainwithid)
   * [`fn withSteps(steps)`](#fn-escalationchainwithsteps)
   * [`fn withTeamId(teamId)`](#fn-escalationchainwithteamid)
   * [`obj step`](#obj-escalationchainstep)
-    * [`fn notifyOnCallFromSchedule(schedule)`](#fn-escalationchainstepnotifyoncallfromschedule)
+    * [`fn notifyOnCallFromSchedule(scheduleName, scheduleNamespace)`](#fn-escalationchainstepnotifyoncallfromschedule)
     * [`fn notifyPersons(persons)`](#fn-escalationchainstepnotifypersons)
     * [`fn wait(seconds)`](#fn-escalationchainstepwait)
 * [`obj integration`](#obj-integration)
-  * [`fn new(name, type, defaultChainName)`](#fn-integrationnew)
+  * [`fn new(name, namespace, type, defaultChainName, defaultChainNamespace)`](#fn-integrationnew)
   * [`fn withId(id)`](#fn-integrationwithid)
   * [`fn withRoutes(routes)`](#fn-integrationwithroutes)
   * [`obj route`](#obj-integrationroute)
     * [`fn new(routingRegex)`](#fn-integrationroutenew)
-    * [`fn withEscalationChain(escalationChainName)`](#fn-integrationroutewithescalationchain)
+    * [`fn withEscalationChain(name, namespace)`](#fn-integrationroutewithescalationchain)
 * [`obj schedule`](#obj-schedule)
   * [`obj calendar`](#obj-schedulecalendar)
-    * [`fn new(name, shifts="{}")`](#fn-schedulecalendarnew)
+    * [`fn new(name, namespace, shifts)`](#fn-schedulecalendarnew)
     * [`fn withId(id)`](#fn-schedulecalendarwithid)
     * [`fn withShifts(shifts)`](#fn-schedulecalendarwithshifts)
     * [`obj shift`](#obj-schedulecalendarshift)
       * [`fn new(name, start, duration)`](#fn-schedulecalendarshiftnew)
       * [`fn withByDay(value)`](#fn-schedulecalendarshiftwithbyday)
+      * [`fn withFrequency(value)`](#fn-schedulecalendarshiftwithfrequency)
       * [`fn withId(id)`](#fn-schedulecalendarshiftwithid)
+      * [`fn withInterval(value)`](#fn-schedulecalendarshiftwithinterval)
       * [`fn withRollingUsers(frequency, users)`](#fn-schedulecalendarshiftwithrollingusers)
       * [`fn withStartRotationFromUserIndex(value)`](#fn-schedulecalendarshiftwithstartrotationfromuserindex)
+      * [`fn withWeekStart(value)`](#fn-schedulecalendarshiftwithweekstart)
 
 ## Fields
 
@@ -40,14 +43,16 @@
 #### fn escalationChain.new
 
 ```jsonnet
-escalationChain.new(name)
+escalationChain.new(name, namespace)
 ```
 
 PARAMETERS:
 
 * **name** (`string`)
+* **namespace** (`string`)
 
-`new` creates an Escalation Chain. The `name` is a display-friendly string.
+`new` creates an Escalation Chain. `name` is a display-friendly string.\n    `namespace` is the Kubernetes namespace in which the resource will be\n    created; this is used in generated selectors.
+
 #### fn escalationChain.withId
 
 ```jsonnet
@@ -91,16 +96,17 @@ should be the ID of the team as a string.
 ##### fn escalationChain.step.notifyOnCallFromSchedule
 
 ```jsonnet
-escalationChain.step.notifyOnCallFromSchedule(schedule)
+escalationChain.step.notifyOnCallFromSchedule(scheduleName, scheduleNamespace)
 ```
 
 PARAMETERS:
 
-* **schedule** (`string`)
+* **scheduleName** (`string`)
+* **scheduleNamespace** (`string`)
 
 `notifyOnCallFromSchedule` configures an Escalation step to notify
 on-call persons from the given Schedule. `scheduleName` must be the
-Schedule resource name.
+Schedule resource name, and `scheduleNamespace` must be its namespace.
 
 ##### fn escalationChain.step.notifyPersons
 
@@ -134,18 +140,31 @@ the given number of seconds before proceeding.
 #### fn integration.new
 
 ```jsonnet
-integration.new(name, type, defaultChainName)
+integration.new(name, namespace, type, defaultChainName, defaultChainNamespace)
 ```
 
 PARAMETERS:
 
 * **name** (`string`)
+* **namespace** (`string`)
 * **type** (`string`)
 * **defaultChainName** (`string`)
+* **defaultChainNamespace** (`string`)
 
 `new` creates an Integration. The `name` is a display-friendly string.
-`type` is the type of Integration. `defaultChainName` is the resource
-name of the default Escalation Chain.
+The `namespace` is the namespace in which this Integration is to be
+created. `type` is the type of Integration. `defaultChainName` and
+`defaultChainNamespace` are the resource name and namespace of the
+default EscalationChain claim.
+
+Note: Crossplane looks up the Escalation Chain using the cluster-scoped
+`EscalationChain.oncall.grafana.crossplane.io` kind, rather than the
+namespaced `EscalationChain.oncall.grafana.net.namespaced` claim kind.
+This function configures an `escalationChainSelector` using the
+`crossplane.io/claim-name` and `crossplane.io/claim-namespace` labels to
+select the correct cluster-scoped resource based on the claim name.
+
+The same applies to Integration references in child `Routes`.
 
 #### fn integration.withId
 
@@ -191,15 +210,17 @@ PARAMETERS:
 ##### fn integration.route.withEscalationChain
 
 ```jsonnet
-integration.route.withEscalationChain(escalationChainName)
+integration.route.withEscalationChain(name, namespace)
 ```
 
 PARAMETERS:
 
-* **escalationChainName** (`string`)
+* **name** (`string`)
+* **namespace** (`string`)
 
 `withEscalationChain` configures a Route with a destination Escalation
-Chain. `escalationChainName` is the resource name of the chain.
+Chain. `name` and `namespace` are the resource name and namespace of
+the chain claim.
 
 ### obj schedule
 
@@ -210,14 +231,14 @@ Chain. `escalationChainName` is the resource name of the chain.
 ##### fn schedule.calendar.new
 
 ```jsonnet
-schedule.calendar.new(name, shifts="{}")
+schedule.calendar.new(name, namespace, shifts)
 ```
 
 PARAMETERS:
 
 * **name** (`string`)
+* **namespace** (`string`)
 * **shifts** (`object`)
-   - default value: `"{}"`
 
 `new` creates a Schedule with type `calendar`. It automatically
 includes references to Shift objects which are members of its `shifts`
@@ -230,7 +251,7 @@ declared like:
 ```jsonnet
 local calendar = grafanaplane.oncall.schedule.calendar,
 local onCallUsers = [['bob@example.com'], ['alice@example.com']],
-primary: calendar.new('Primary', [
+primary: calendar.new('Primary', 'my-namespace', [
   // 24 hour daily shift
   calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
   + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
@@ -242,7 +263,7 @@ primary: calendar.new('Primary', [
 ]),
 
 // same as the primary shift, but shifted one person
-secondary: calendar.new('Secondary', [
+secondary: calendar.new('Secondary', 'my-namespace', [
   shift
   // replace the resource ID
   + calendar.shift.withId('secondary-' + shift.metadata.name)
@@ -307,6 +328,18 @@ PARAMETERS:
 
 (Set of String) This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
 This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
+###### fn schedule.calendar.shift.withFrequency
+
+```jsonnet
+schedule.calendar.shift.withFrequency(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The frequency of the event. Can be hourly, daily, weekly, monthly
+The frequency of the event. Can be hourly, daily, weekly, monthly
 ###### fn schedule.calendar.shift.withId
 
 ```jsonnet
@@ -318,6 +351,18 @@ PARAMETERS:
 * **id** (`string`)
 
 `withId` sets the resource name for a Shift
+###### fn schedule.calendar.shift.withInterval
+
+```jsonnet
+schedule.calendar.shift.withInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) The positive integer representing at which intervals the recurrence rule repeats.
+The positive integer representing at which intervals the recurrence rule repeats.
 ###### fn schedule.calendar.shift.withRollingUsers
 
 ```jsonnet
@@ -365,3 +410,15 @@ PARAMETERS:
 
 call rotation starts.
 The index of the list of users in rolling_users, from which on-call rotation starts.
+###### fn schedule.calendar.shift.withWeekStart
+
+```jsonnet
+schedule.calendar.shift.withWeekStart(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Start day of the week in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
+Start day of the week in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
