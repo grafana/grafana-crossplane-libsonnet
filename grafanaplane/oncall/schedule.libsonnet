@@ -45,10 +45,10 @@ local forProvider = schedule.spec.parameters.forProvider;
       [
         d.argument.new('name', d.T.string),
         d.argument.new('namespace', d.T.string),
-        d.argument.new('shifts', d.T.object, default='{}'),
+        d.argument.new('shifts', d.T.object),
       ]
     ),
-    new(name, namespace, shifts={}): {
+    new(name, namespace, shifts): {
       scheduleName:: xtd.ascii.stringToRFC1123(name),
       scheduleNamespace:: namespace,
       schedule:
