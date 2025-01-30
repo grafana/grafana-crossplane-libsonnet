@@ -10,24 +10,44 @@ local forProvider = integration.spec.parameters.forProvider;
   '#new':: d.func.new(
     |||
       `new` creates an Integration. The `name` is a display-friendly string.
-      `type` is the type of Integration. `defaultChainName` is the resource
-      name of the default Escalation Chain.
+      The `namespace` is the namespace in which this Integration is to be
+      created. `type` is the type of Integration. `defaultChainName` and
+      `defaultChainNamespace` are the resource name and namespace of the
+      default EscalationChain claim.
+
+      Note: Crossplane looks up the Escalation Chain using the cluster-scoped
+      `EscalationChain.oncall.grafana.crossplane.io` kind, rather than the
+      namespaced `EscalationChain.oncall.grafana.net.namespaced` claim kind.
+      This function configures an `escalationChainSelector` using the
+      `crossplane.io/claim-name` and `crossplane.io/claim-namespace` labels to
+      select the correct cluster-scoped resource based on the claim name.
+
+      The same applies to Integration references in child `Routes`.
     |||,
     [
       d.argument.new('name', d.T.string),
+      d.argument.new('namespace', d.T.string),
       d.argument.new('type', d.T.string),
       d.argument.new('defaultChainName', d.T.string),
+      d.argument.new('defaultChainNamespace', d.T.string),
     ]
   ),
-  new(name, type, defaultChainName):: {
+  new(name, namespace, type, defaultChainName, defaultChainNamespace):: {
+    local this = self,
     integrationName:: xtd.ascii.stringToRFC1123(name),
+    integrationNamespace:: namespace,
     defaultChainName:: defaultChainName,
+    defaultChainNamespace:: defaultChainNamespace,
     integration:
+      //
       integration.new(self.integrationName)
       + forProvider.withName(name)
       + forProvider.withType(type)
       + forProvider.withDefaultRoute(
-        forProvider.defaultRoute.escalationChainRef.withName(defaultChainName)
+        forProvider.defaultRoute.escalationChainSelector.withMatchLabels({
+          'crossplane.io/claim-name': this.defaultChainName,
+          'crossplane.io/claim-namespace': this.defaultChainNamespace,
+        })
       ),
   },
 
@@ -51,13 +71,20 @@ local forProvider = integration.spec.parameters.forProvider;
   ),
   withRoutes(routes):: {
     local forProvider = route.spec.parameters.forProvider,
+    local this = self,
     routes:
       std.mapWithIndex(
         function(position, item)
           route.new('%s-%d' % [self.integrationName, position])
-          + forProvider.integrationRef.withName(self.integrationName)
-          // use the default chain if not specified
-          + forProvider.escalationChainRef.withName(self.defaultChainName)
+          + forProvider.integrationSelector.withMatchLabels({
+            'crossplane.io/claim-name': this.integrationName,
+            'crossplane.io/claim-namespace': this.integrationNamespace,
+          })
+          // use the default chain if not specified; see `new()`
+          + forProvider.escalationChainSelector.withMatchLabels({
+            'crossplane.io/claim-name': this.defaultChainName,
+            'crossplane.io/claim-namespace': this.defaultChainNamespace,
+          })
           + forProvider.withPosition(position)
           + item,
         routes
@@ -78,11 +105,18 @@ local forProvider = integration.spec.parameters.forProvider;
     '#withEscalationChain':: d.func.new(
       |||
         `withEscalationChain` configures a Route with a destination Escalation
-        Chain. `escalationChainName` is the resource name of the chain.
+        Chain. `name` and `namespace` are the resource name and namespace of
+        the chain claim.
       |||,
-      [d.argument.new('escalationChainName', d.T.string)]
+      [
+        d.argument.new('name', d.T.string),
+        d.argument.new('namespace', d.T.string),
+      ]
     ),
-    withEscalationChain(escalationChainName)::
-      forProvider.escalationChainRef.withName(escalationChainName),
+    withEscalationChain(name, namespace)::
+      forProvider.escalationChainSelector.withMatchLabels({
+        'crossplane.io/claim-name': name,
+        'crossplane.io/claim-namespace': namespace,
+      }),
   },
 }

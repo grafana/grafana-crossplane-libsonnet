@@ -20,7 +20,7 @@ local forProvider = schedule.spec.parameters.forProvider;
         ```jsonnet
         local calendar = grafanaplane.oncall.schedule.calendar,
         local onCallUsers = [['bob@example.com'], ['alice@example.com']],
-        primary: calendar.new('Primary', [
+        primary: calendar.new('Primary', 'my-namespace', [
           // 24 hour daily shift
           calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
           + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
@@ -32,7 +32,7 @@ local forProvider = schedule.spec.parameters.forProvider;
         ]),
 
         // same as the primary shift, but shifted one person
-        secondary: calendar.new('Secondary', [
+        secondary: calendar.new('Secondary', 'my-namespace', [
           shift
           // replace the resource ID
           + calendar.shift.withId('secondary-' + shift.metadata.name)
@@ -44,20 +44,34 @@ local forProvider = schedule.spec.parameters.forProvider;
       |||,
       [
         d.argument.new('name', d.T.string),
-        d.argument.new('shifts', d.T.object, default='{}'),
+        d.argument.new('namespace', d.T.string),
+        d.argument.new('shifts', d.T.object),
       ]
     ),
-    new(name, shifts={}): {
+    new(name, namespace, shifts): {
+      local this = self,
       scheduleName:: xtd.ascii.stringToRFC1123(name),
+      scheduleNamespace:: namespace,
+      scheduleShiftLabels:: {
+        // Shifts need to be looked up using a selector because the Schedule
+        // refers not to the claims, but to realized compositions with
+        // generated names. The Schedule cannot use a list of selectors,
+        // though, only one, so we inject this set of labels to the given
+        // shifts, and select with these.
+        'oncall.grafana.crossplane.io/schedule-claim-name': this.scheduleName,
+        'oncall.grafana.crossplane.io/schedule-claim-namespace': this.scheduleNamespace,
+      },
       schedule:
         schedule.new(self.scheduleName)
         + forProvider.withName(name)
         + forProvider.withType('calendar')
-        + forProvider.withShiftsRef([
-          forProvider.shiftsRef.withName(shift.metadata.name)
-          for shift in self.shifts
-        ]),
-      shifts: shifts,
+        + forProvider.shiftsSelector.withMatchLabels(this.scheduleShiftLabels),
+      shifts: [
+        // Inject matching labels to identify Shifts as belonging to this Schedule.
+        raw.oncall.v1alpha1.onCallShift.metadata.withLabels(this.scheduleShiftLabels)
+        + shift
+        for shift in shifts
+      ],
     },
 
     '#withId':: d.func.new(
