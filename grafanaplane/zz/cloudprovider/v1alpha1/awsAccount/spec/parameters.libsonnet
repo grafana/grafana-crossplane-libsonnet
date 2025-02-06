@@ -33,6 +33,16 @@
   },
   forProvider+:
     {
+      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'readable name for this AWS Account resource.\nAn optional human-readable name for this AWS Account resource.' } },
+      withName(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              name: value,
+            },
+          },
+        },
+      },
       '#withRegions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of regions that this AWS Account resource applies to.\nA set of regions that this AWS Account resource applies to.' } },
       withRegions(value): {
         spec+: {
@@ -98,6 +108,16 @@
   },
   initProvider+:
     {
+      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'readable name for this AWS Account resource.\nAn optional human-readable name for this AWS Account resource.' } },
+      withName(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              name: value,
+            },
+          },
+        },
+      },
       '#withRegions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of regions that this AWS Account resource applies to.\nA set of regions that this AWS Account resource applies to.' } },
       withRegions(value): {
         spec+: {

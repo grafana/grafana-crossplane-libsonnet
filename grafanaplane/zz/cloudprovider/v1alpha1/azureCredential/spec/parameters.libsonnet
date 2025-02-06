@@ -33,6 +33,112 @@
   },
   forProvider+:
     {
+      '#withAutoDiscoveryConfiguration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) The list of auto discovery configurations. (see below for nested schema)\nThe list of auto discovery configurations.' } },
+      withAutoDiscoveryConfiguration(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              autoDiscoveryConfiguration:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withAutoDiscoveryConfigurationMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) The list of auto discovery configurations. (see below for nested schema)\nThe list of auto discovery configurations.' } },
+      withAutoDiscoveryConfigurationMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              autoDiscoveryConfiguration+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      autoDiscoveryConfiguration+:
+        {
+          '#': { help: '', name: 'autoDiscoveryConfiguration' },
+          '#withResourceTypeConfigurations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) The list of resource type configurations. (see below for nested schema)\nThe list of resource type configurations.' } },
+          withResourceTypeConfigurations(value): {
+            resourceTypeConfigurations:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withResourceTypeConfigurationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) The list of resource type configurations. (see below for nested schema)\nThe list of resource type configurations.' } },
+          withResourceTypeConfigurationsMixin(value): {
+            resourceTypeConfigurations+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          resourceTypeConfigurations+:
+            {
+              '#': { help: '', name: 'resourceTypeConfigurations' },
+              '#withMetricConfiguration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) (see below for nested schema)' } },
+              withMetricConfiguration(value): {
+                metricConfiguration:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withMetricConfigurationMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) (see below for nested schema)' } },
+              withMetricConfigurationMixin(value): {
+                metricConfiguration+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              metricConfiguration+:
+                {
+                  '#': { help: '', name: 'metricConfiguration' },
+                  '#withAggregations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withAggregations(value): {
+                    aggregations:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withAggregationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withAggregationsMixin(value): {
+                    aggregations+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withDimensions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withDimensions(value): {
+                    dimensions:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withDimensionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withDimensionsMixin(value): {
+                    dimensions+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the Azure Credential.' } },
+                  withName(value): {
+                    name: value,
+                  },
+                },
+              '#withResourceTypeName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              withResourceTypeName(value): {
+                resourceTypeName: value,
+              },
+            },
+          '#withSubscriptionId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The subscription ID of the Azure account.\nThe subscription ID of the Azure account.' } },
+          withSubscriptionId(value): {
+            subscriptionId: value,
+          },
+        },
       '#withClientId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The client ID of the Azure Credential.\nThe client ID of the Azure Credential.' } },
       withClientId(value): {
         spec+: {
@@ -189,6 +295,112 @@
   },
   initProvider+:
     {
+      '#withAutoDiscoveryConfiguration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) The list of auto discovery configurations. (see below for nested schema)\nThe list of auto discovery configurations.' } },
+      withAutoDiscoveryConfiguration(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              autoDiscoveryConfiguration:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withAutoDiscoveryConfigurationMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) The list of auto discovery configurations. (see below for nested schema)\nThe list of auto discovery configurations.' } },
+      withAutoDiscoveryConfigurationMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              autoDiscoveryConfiguration+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      autoDiscoveryConfiguration+:
+        {
+          '#': { help: '', name: 'autoDiscoveryConfiguration' },
+          '#withResourceTypeConfigurations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) The list of resource type configurations. (see below for nested schema)\nThe list of resource type configurations.' } },
+          withResourceTypeConfigurations(value): {
+            resourceTypeConfigurations:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withResourceTypeConfigurationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) The list of resource type configurations. (see below for nested schema)\nThe list of resource type configurations.' } },
+          withResourceTypeConfigurationsMixin(value): {
+            resourceTypeConfigurations+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          resourceTypeConfigurations+:
+            {
+              '#': { help: '', name: 'resourceTypeConfigurations' },
+              '#withMetricConfiguration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) (see below for nested schema)' } },
+              withMetricConfiguration(value): {
+                metricConfiguration:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withMetricConfigurationMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of Object) (see below for nested schema)' } },
+              withMetricConfigurationMixin(value): {
+                metricConfiguration+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              metricConfiguration+:
+                {
+                  '#': { help: '', name: 'metricConfiguration' },
+                  '#withAggregations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withAggregations(value): {
+                    aggregations:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withAggregationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withAggregationsMixin(value): {
+                    aggregations+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withDimensions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withDimensions(value): {
+                    dimensions:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withDimensionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String)' } },
+                  withDimensionsMixin(value): {
+                    dimensions+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the Azure Credential.' } },
+                  withName(value): {
+                    name: value,
+                  },
+                },
+              '#withResourceTypeName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+              withResourceTypeName(value): {
+                resourceTypeName: value,
+              },
+            },
+          '#withSubscriptionId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The subscription ID of the Azure account.\nThe subscription ID of the Azure account.' } },
+          withSubscriptionId(value): {
+            subscriptionId: value,
+          },
+        },
       '#withClientId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The client ID of the Azure Credential.\nThe client ID of the Azure Credential.' } },
       withClientId(value): {
         spec+: {
