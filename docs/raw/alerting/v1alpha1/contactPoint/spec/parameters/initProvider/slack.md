@@ -4,6 +4,7 @@
 
 ## Index
 
+* [`fn withColor(value)`](#fn-withcolor)
 * [`fn withDisableResolveMessage(value=true)`](#fn-withdisableresolvemessage)
 * [`fn withEndpointUrl(value)`](#fn-withendpointurl)
 * [`fn withIconEmoji(value)`](#fn-withiconemoji)
@@ -32,6 +33,18 @@
 
 ## Fields
 
+### fn withColor
+
+```jsonnet
+withColor(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Templated color of the slack message.
+Templated color of the slack message.
 ### fn withDisableResolveMessage
 
 ```jsonnet

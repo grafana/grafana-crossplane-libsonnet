@@ -29,6 +29,9 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.disableBrowserChecks
+                toFieldPath: spec.forProvider.disableBrowserChecks
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.disableScriptedChecks
                 toFieldPath: spec.forProvider.disableScriptedChecks
                 type: FromCompositeFieldPath
@@ -49,6 +52,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.region
                 toFieldPath: spec.forProvider.region
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.disableBrowserChecks
+                toFieldPath: spec.initProvider.disableBrowserChecks
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.disableScriptedChecks
                 toFieldPath: spec.initProvider.disableScriptedChecks

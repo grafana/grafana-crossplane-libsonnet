@@ -82,6 +82,7 @@
       * [`fn withOrganizationRefMixin(value)`](#fn-specparametersforproviderwithorganizationrefmixin)
       * [`fn withOrganizationSelector(value)`](#fn-specparametersforproviderwithorganizationselector)
       * [`fn withOrganizationSelectorMixin(value)`](#fn-specparametersforproviderwithorganizationselectormixin)
+      * [`fn withPrivateDataSourceConnectNetworkId(value)`](#fn-specparametersforproviderwithprivatedatasourceconnectnetworkid)
       * [`fn withSecureJsonDataEncodedSecretRef(value)`](#fn-specparametersforproviderwithsecurejsondataencodedsecretref)
       * [`fn withSecureJsonDataEncodedSecretRefMixin(value)`](#fn-specparametersforproviderwithsecurejsondataencodedsecretrefmixin)
       * [`fn withType(value)`](#fn-specparametersforproviderwithtype)
@@ -126,6 +127,7 @@
       * [`fn withOrganizationRefMixin(value)`](#fn-specparametersinitproviderwithorganizationrefmixin)
       * [`fn withOrganizationSelector(value)`](#fn-specparametersinitproviderwithorganizationselector)
       * [`fn withOrganizationSelectorMixin(value)`](#fn-specparametersinitproviderwithorganizationselectormixin)
+      * [`fn withPrivateDataSourceConnectNetworkId(value)`](#fn-specparametersinitproviderwithprivatedatasourceconnectnetworkid)
       * [`fn withSecureJsonDataEncodedSecretRef(value)`](#fn-specparametersinitproviderwithsecurejsondataencodedsecretref)
       * [`fn withSecureJsonDataEncodedSecretRefMixin(value)`](#fn-specparametersinitproviderwithsecurejsondataencodedsecretrefmixin)
       * [`fn withType(value)`](#fn-specparametersinitproviderwithtype)
@@ -1090,6 +1092,18 @@ PARAMETERS:
 * **value** (`object`)
 
 Selector for a Organization in oss to populate orgId.
+###### fn spec.parameters.forProvider.withPrivateDataSourceConnectNetworkId
+
+```jsonnet
+spec.parameters.forProvider.withPrivateDataSourceConnectNetworkId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) (Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.
+(Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.
 ###### fn spec.parameters.forProvider.withSecureJsonDataEncodedSecretRef
 
 ```jsonnet
@@ -1554,6 +1568,18 @@ PARAMETERS:
 * **value** (`object`)
 
 Selector for a Organization in oss to populate orgId.
+###### fn spec.parameters.initProvider.withPrivateDataSourceConnectNetworkId
+
+```jsonnet
+spec.parameters.initProvider.withPrivateDataSourceConnectNetworkId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) (Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.
+(Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.
 ###### fn spec.parameters.initProvider.withSecureJsonDataEncodedSecretRef
 
 ```jsonnet

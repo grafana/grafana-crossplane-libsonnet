@@ -68,11 +68,13 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withName(value)`](#fn-specparametersforproviderwithname)
       * [`fn withRegions(value)`](#fn-specparametersforproviderwithregions)
       * [`fn withRegionsMixin(value)`](#fn-specparametersforproviderwithregionsmixin)
       * [`fn withRoleArn(value)`](#fn-specparametersforproviderwithrolearn)
       * [`fn withStackId(value)`](#fn-specparametersforproviderwithstackid)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
       * [`fn withRegions(value)`](#fn-specparametersinitproviderwithregions)
       * [`fn withRegionsMixin(value)`](#fn-specparametersinitproviderwithregionsmixin)
       * [`fn withRoleArn(value)`](#fn-specparametersinitproviderwithrolearn)
@@ -849,6 +851,18 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withName
+
+```jsonnet
+spec.parameters.forProvider.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+readable name for this AWS Account resource.
+An optional human-readable name for this AWS Account resource.
 ###### fn spec.parameters.forProvider.withRegions
 
 ```jsonnet
@@ -900,6 +914,18 @@ The StackID of the Grafana Cloud instance.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withName
+
+```jsonnet
+spec.parameters.initProvider.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+readable name for this AWS Account resource.
+An optional human-readable name for this AWS Account resource.
 ###### fn spec.parameters.initProvider.withRegions
 
 ```jsonnet

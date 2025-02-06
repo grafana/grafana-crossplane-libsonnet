@@ -33,6 +33,16 @@
   },
   forProvider+:
     {
+      '#withDisableBrowserChecks': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Disables browser checks for this probe. Defaults to false.\nDisables browser checks for this probe. Defaults to `false`.' } },
+      withDisableBrowserChecks(value=true): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              disableBrowserChecks: value,
+            },
+          },
+        },
+      },
       '#withDisableScriptedChecks': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Disables scripted checks for this probe. Defaults to false.\nDisables scripted checks for this probe. Defaults to `false`.' } },
       withDisableScriptedChecks(value=true): {
         spec+: {
@@ -132,6 +142,16 @@
   },
   initProvider+:
     {
+      '#withDisableBrowserChecks': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Disables browser checks for this probe. Defaults to false.\nDisables browser checks for this probe. Defaults to `false`.' } },
+      withDisableBrowserChecks(value=true): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              disableBrowserChecks: value,
+            },
+          },
+        },
+      },
       '#withDisableScriptedChecks': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Disables scripted checks for this probe. Defaults to false.\nDisables scripted checks for this probe. Defaults to `false`.' } },
       withDisableScriptedChecks(value=true): {
         spec+: {

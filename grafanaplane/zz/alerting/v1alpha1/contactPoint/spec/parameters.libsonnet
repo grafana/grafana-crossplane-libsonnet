@@ -1657,6 +1657,10 @@
       slack+:
         {
           '#': { help: '', name: 'slack' },
+          '#withColor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templated color of the slack message.\nTemplated color of the slack message.' } },
+          withColor(value): {
+            color: value,
+          },
           '#withDisableResolveMessage': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to disable sending resolve messages. Defaults to false.\nWhether to disable sending resolve messages. Defaults to `false`.' } },
           withDisableResolveMessage(value=true): {
             disableResolveMessage: value,
@@ -4156,6 +4160,10 @@
       slack+:
         {
           '#': { help: '', name: 'slack' },
+          '#withColor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templated color of the slack message.\nTemplated color of the slack message.' } },
+          withColor(value): {
+            color: value,
+          },
           '#withDisableResolveMessage': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to disable sending resolve messages. Defaults to false.\nWhether to disable sending resolve messages. Defaults to `false`.' } },
           withDisableResolveMessage(value=true): {
             disableResolveMessage: value,

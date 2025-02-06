@@ -1077,6 +1077,11 @@ spec:
                             A contact point that sends notifications to Slack.
                           items:
                             properties:
+                              color:
+                                description: |-
+                                  (String) Templated color of the slack message.
+                                  Templated color of the slack message.
+                                type: string
                               disableResolveMessage:
                                 description: |-
                                   (Boolean) Whether to disable sending resolve messages. Defaults to false.
@@ -2724,6 +2729,11 @@ spec:
                             A contact point that sends notifications to Slack.
                           items:
                             properties:
+                              color:
+                                description: |-
+                                  (String) Templated color of the slack message.
+                                  Templated color of the slack message.
+                                type: string
                               disableResolveMessage:
                                 description: |-
                                   (Boolean) Whether to disable sending resolve messages. Defaults to false.
