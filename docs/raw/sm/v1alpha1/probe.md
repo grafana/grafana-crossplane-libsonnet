@@ -68,6 +68,7 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withDisableBrowserChecks(value=true)`](#fn-specparametersforproviderwithdisablebrowserchecks)
       * [`fn withDisableScriptedChecks(value=true)`](#fn-specparametersforproviderwithdisablescriptedchecks)
       * [`fn withLabels(value)`](#fn-specparametersforproviderwithlabels)
       * [`fn withLabelsMixin(value)`](#fn-specparametersforproviderwithlabelsmixin)
@@ -77,6 +78,7 @@
       * [`fn withPublic(value=true)`](#fn-specparametersforproviderwithpublic)
       * [`fn withRegion(value)`](#fn-specparametersforproviderwithregion)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withDisableBrowserChecks(value=true)`](#fn-specparametersinitproviderwithdisablebrowserchecks)
       * [`fn withDisableScriptedChecks(value=true)`](#fn-specparametersinitproviderwithdisablescriptedchecks)
       * [`fn withLabels(value)`](#fn-specparametersinitproviderwithlabels)
       * [`fn withLabelsMixin(value)`](#fn-specparametersinitproviderwithlabelsmixin)
@@ -857,6 +859,19 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withDisableBrowserChecks
+
+```jsonnet
+spec.parameters.forProvider.withDisableBrowserChecks(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Disables browser checks for this probe. Defaults to false.
+Disables browser checks for this probe. Defaults to `false`.
 ###### fn spec.parameters.forProvider.withDisableScriptedChecks
 
 ```jsonnet
@@ -958,6 +973,19 @@ Region of the probe.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withDisableBrowserChecks
+
+```jsonnet
+spec.parameters.initProvider.withDisableBrowserChecks(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Disables browser checks for this probe. Defaults to false.
+Disables browser checks for this probe. Defaults to `false`.
 ###### fn spec.parameters.initProvider.withDisableScriptedChecks
 
 ```jsonnet

@@ -80,6 +80,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.organizationSelector.policy.resolve
                 toFieldPath: spec.forProvider.organizationSelector.policy.resolve
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.privateDataSourceConnectNetworkId
+                toFieldPath: spec.forProvider.privateDataSourceConnectNetworkId
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.secureJsonDataEncodedSecretRef.key
                 toFieldPath: spec.forProvider.secureJsonDataEncodedSecretRef.key
                 type: FromCompositeFieldPath
@@ -148,6 +151,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.organizationSelector.policy.resolve
                 toFieldPath: spec.initProvider.organizationSelector.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.privateDataSourceConnectNetworkId
+                toFieldPath: spec.initProvider.privateDataSourceConnectNetworkId
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.secureJsonDataEncodedSecretRef.key
                 toFieldPath: spec.initProvider.secureJsonDataEncodedSecretRef.key

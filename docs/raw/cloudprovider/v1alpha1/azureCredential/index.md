@@ -4,7 +4,9 @@
 
 ## Subpackages
 
+* [spec.parameters.forProvider.autoDiscoveryConfiguration](spec/parameters/forProvider/autoDiscoveryConfiguration/index.md)
 * [spec.parameters.forProvider.resourceDiscoveryTagFilter](spec/parameters/forProvider/resourceDiscoveryTagFilter.md)
+* [spec.parameters.initProvider.autoDiscoveryConfiguration](spec/parameters/initProvider/autoDiscoveryConfiguration/index.md)
 * [spec.parameters.initProvider.resourceDiscoveryTagFilter](spec/parameters/initProvider/resourceDiscoveryTagFilter.md)
 
 ## Index
@@ -73,6 +75,8 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withAutoDiscoveryConfiguration(value)`](#fn-specparametersforproviderwithautodiscoveryconfiguration)
+      * [`fn withAutoDiscoveryConfigurationMixin(value)`](#fn-specparametersforproviderwithautodiscoveryconfigurationmixin)
       * [`fn withClientId(value)`](#fn-specparametersforproviderwithclientid)
       * [`fn withClientSecretSecretRef(value)`](#fn-specparametersforproviderwithclientsecretsecretref)
       * [`fn withClientSecretSecretRefMixin(value)`](#fn-specparametersforproviderwithclientsecretsecretrefmixin)
@@ -86,6 +90,8 @@
         * [`fn withName(value)`](#fn-specparametersforproviderclientsecretsecretrefwithname)
         * [`fn withNamespace(value)`](#fn-specparametersforproviderclientsecretsecretrefwithnamespace)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withAutoDiscoveryConfiguration(value)`](#fn-specparametersinitproviderwithautodiscoveryconfiguration)
+      * [`fn withAutoDiscoveryConfigurationMixin(value)`](#fn-specparametersinitproviderwithautodiscoveryconfigurationmixin)
       * [`fn withClientId(value)`](#fn-specparametersinitproviderwithclientid)
       * [`fn withClientSecretSecretRef(value)`](#fn-specparametersinitproviderwithclientsecretsecretref)
       * [`fn withClientSecretSecretRefMixin(value)`](#fn-specparametersinitproviderwithclientsecretsecretrefmixin)
@@ -870,6 +876,30 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withAutoDiscoveryConfiguration
+
+```jsonnet
+spec.parameters.forProvider.withAutoDiscoveryConfiguration(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) The list of auto discovery configurations. (see below for nested schema)
+The list of auto discovery configurations.
+###### fn spec.parameters.forProvider.withAutoDiscoveryConfigurationMixin
+
+```jsonnet
+spec.parameters.forProvider.withAutoDiscoveryConfigurationMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) The list of auto discovery configurations. (see below for nested schema)
+The list of auto discovery configurations.
 ###### fn spec.parameters.forProvider.withClientId
 
 ```jsonnet
@@ -1005,6 +1035,30 @@ Namespace of the secret.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withAutoDiscoveryConfiguration
+
+```jsonnet
+spec.parameters.initProvider.withAutoDiscoveryConfiguration(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) The list of auto discovery configurations. (see below for nested schema)
+The list of auto discovery configurations.
+###### fn spec.parameters.initProvider.withAutoDiscoveryConfigurationMixin
+
+```jsonnet
+spec.parameters.initProvider.withAutoDiscoveryConfigurationMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) The list of auto discovery configurations. (see below for nested schema)
+The list of auto discovery configurations.
 ###### fn spec.parameters.initProvider.withClientId
 
 ```jsonnet

@@ -364,6 +364,16 @@
               },
             },
         },
+      '#withPrivateDataSourceConnectNetworkId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) (Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.\n(Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.' } },
+      withPrivateDataSourceConnectNetworkId(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              privateDataSourceConnectNetworkId: value,
+            },
+          },
+        },
+      },
       '#withSecureJsonDataEncodedSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Serialized JSON string containing the secure json data. This attribute can be used to pass secure configuration options to the data source. To figure out what options a datasource has available, see its docs or inspect the network data when saving it from the Grafana UI. Note that keys in this map are usually camelCased.\nSerialized JSON string containing the secure json data. This attribute can be used to pass secure configuration options to the data source. To figure out what options a datasource has available, see its docs or inspect the network data when saving it from the Grafana UI. Note that keys in this map are usually camelCased.' } },
       withSecureJsonDataEncodedSecretRef(value): {
         spec+: {
@@ -786,6 +796,16 @@
               },
             },
         },
+      '#withPrivateDataSourceConnectNetworkId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) (Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.\n(Can only be used with data sources in Grafana Cloud) The ID of the Private Data source Connect network to use with this data source. Defaults to “.' } },
+      withPrivateDataSourceConnectNetworkId(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              privateDataSourceConnectNetworkId: value,
+            },
+          },
+        },
+      },
       '#withSecureJsonDataEncodedSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Serialized JSON string containing the secure json data. This attribute can be used to pass secure configuration options to the data source. To figure out what options a datasource has available, see its docs or inspect the network data when saving it from the Grafana UI. Note that keys in this map are usually camelCased.\nSerialized JSON string containing the secure json data. This attribute can be used to pass secure configuration options to the data source. To figure out what options a datasource has available, see its docs or inspect the network data when saving it from the Grafana UI. Note that keys in this map are usually camelCased.' } },
       withSecureJsonDataEncodedSecretRef(value): {
         spec+: {

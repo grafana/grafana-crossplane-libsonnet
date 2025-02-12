@@ -54,6 +54,11 @@ spec:
                       type: string
                     forProvider:
                       properties:
+                        name:
+                          description: |-
+                            readable name for this AWS Account resource.
+                            An optional human-readable name for this AWS Account resource.
+                          type: string
                         regions:
                           description: |-
                             (Set of String) A set of regions that this AWS Account resource applies to.
@@ -86,6 +91,11 @@ spec:
                         for example because of an external controller is managing them, like an
                         autoscaler.
                       properties:
+                        name:
+                          description: |-
+                            readable name for this AWS Account resource.
+                            An optional human-readable name for this AWS Account resource.
+                          type: string
                         regions:
                           description: |-
                             (Set of String) A set of regions that this AWS Account resource applies to.
