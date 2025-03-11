@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: setup Crossplane cli
-        uses: crossplane-contrib/setup-crossplane-action@b40ed901610103a85d38c838a1e00fc54eb8d4c5 # v0.1.0
+        uses: crossplane-contrib/setup-crossplane-action@cb8aac3f1246b19f101e7f85fd0a38623b4d5ad3 # v0.1.1
 
       - name: setup go-jsonnet
         uses: zendesk/setup-jsonnet@f683a0d16f479db69751bd8d3a49a09e22b45b39 # v12
