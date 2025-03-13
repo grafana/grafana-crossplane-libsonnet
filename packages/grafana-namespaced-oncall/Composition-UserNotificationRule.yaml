@@ -26,6 +26,9 @@ spec:
               - fromFieldPath: spec.parameters.externalName
                 toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.selectorLabel
+                toFieldPath: "metadata.labels[\"selector\"]"
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath

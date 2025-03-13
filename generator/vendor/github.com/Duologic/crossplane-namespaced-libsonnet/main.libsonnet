@@ -57,6 +57,10 @@ local resource = crossplane.util.resource;
                       Docs: https://docs.crossplane.io/latest/concepts/managed-resources/#naming-external-resources
                     |||,
                   },
+                  selectorLabel: {
+                    type: 'string',
+                    description: 'Configure a custom label for use with selector.matchLabels.',
+                  },
                 },
               },
           },
@@ -86,6 +90,12 @@ local resource = crossplane.util.resource;
           self.fakeInstance,
         )
         + resource.withExternalNamePatch()
+        + resource.withPatchesMixin([
+          crossplane.util.patch.fromCompositeFieldPath(
+            'spec.parameters.selectorLabel',
+            'metadata.labels["selector"]',
+          ),
+        ])
         + resource.withPatchesMixin(
           root.createPatches(spec.properties)
         ),
