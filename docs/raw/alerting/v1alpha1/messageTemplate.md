@@ -911,8 +911,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the message template.
-The name of the message template.
+(String) The name of the notification template group.
+The name of the notification template group.
 ###### fn spec.parameters.forProvider.withOrgId
 
 ```jsonnet
@@ -979,8 +979,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The content of the message template.
-The content of the message template.
+(String) The content of the notification template group.
+The content of the notification template group.
 ###### obj spec.parameters.forProvider.organizationRef
 
 
@@ -1170,8 +1170,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the message template.
-The name of the message template.
+(String) The name of the notification template group.
+The name of the notification template group.
 ###### fn spec.parameters.initProvider.withOrgId
 
 ```jsonnet
@@ -1238,8 +1238,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The content of the message template.
-The content of the message template.
+(String) The content of the notification template group.
+The content of the notification template group.
 ###### obj spec.parameters.initProvider.organizationRef
 
 

@@ -59,8 +59,8 @@ spec:
                           type: boolean
                         name:
                           description: |-
-                            (String) The name of the message template.
-                            The name of the message template.
+                            (String) The name of the notification template group.
+                            The name of the notification template group.
                           type: string
                         orgId:
                           description: |-
@@ -142,8 +142,8 @@ spec:
                           type: object
                         template:
                           description: |-
-                            (String) The content of the message template.
-                            The content of the message template.
+                            (String) The content of the notification template group.
+                            The content of the notification template group.
                           type: string
                       type: object
                     initProvider:
@@ -164,8 +164,8 @@ spec:
                           type: boolean
                         name:
                           description: |-
-                            (String) The name of the message template.
-                            The name of the message template.
+                            (String) The name of the notification template group.
+                            The name of the notification template group.
                           type: string
                         orgId:
                           description: |-
@@ -247,8 +247,8 @@ spec:
                           type: object
                         template:
                           description: |-
-                            (String) The content of the message template.
-                            The content of the message template.
+                            (String) The content of the notification template group.
+                            The content of the notification template group.
                           type: string
                       type: object
                     managementPolicies:

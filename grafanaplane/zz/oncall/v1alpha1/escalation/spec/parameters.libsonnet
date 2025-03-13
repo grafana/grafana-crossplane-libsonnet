@@ -481,7 +481,7 @@
           },
         },
       },
-      '#withImportant': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members\nWill activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members' } },
+      '#withImportant': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members\nWill activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members' } },
       withImportant(value=true): {
         spec+: {
           parameters+: {
@@ -1284,7 +1284,7 @@
           },
         },
       },
-      '#withImportant': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members\nWill activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members' } },
+      '#withImportant': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members\nWill activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members' } },
       withImportant(value=true): {
         spec+: {
           parameters+: {

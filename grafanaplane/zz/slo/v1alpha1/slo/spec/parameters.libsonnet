@@ -571,9 +571,31 @@
           freeform+:
             {
               '#': { help: '', name: 'freeform' },
-              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field' } },
+              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field - valid promQl' } },
               withQuery(value): {
                 query: value,
+              },
+            },
+          '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          withGrafanaQueries(value): {
+            grafanaQueries:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withGrafanaQueriesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          withGrafanaQueriesMixin(value): {
+            grafanaQueries+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          grafanaQueries+:
+            {
+              '#': { help: '', name: 'grafanaQueries' },
+              '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nQuery Object - Array of Grafana Query JSON objects' } },
+              withGrafanaQueries(value): {
+                grafanaQueries: value,
               },
             },
           '#withRatio': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
@@ -616,7 +638,7 @@
                 totalMetric: value,
               },
             },
-          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Query type must be one of: "freeform", "query", "ratio", or "threshold"\nQuery type must be one of: "freeform", "query", "ratio", or "threshold"' } },
+          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"\nQuery type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"' } },
           withType(value): {
             type: value,
           },
@@ -1188,9 +1210,31 @@
           freeform+:
             {
               '#': { help: '', name: 'freeform' },
-              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field' } },
+              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field - valid promQl' } },
               withQuery(value): {
                 query: value,
+              },
+            },
+          '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          withGrafanaQueries(value): {
+            grafanaQueries:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withGrafanaQueriesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          withGrafanaQueriesMixin(value): {
+            grafanaQueries+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          grafanaQueries+:
+            {
+              '#': { help: '', name: 'grafanaQueries' },
+              '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nQuery Object - Array of Grafana Query JSON objects' } },
+              withGrafanaQueries(value): {
+                grafanaQueries: value,
               },
             },
           '#withRatio': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
@@ -1233,7 +1277,7 @@
                 totalMetric: value,
               },
             },
-          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Query type must be one of: "freeform", "query", "ratio", or "threshold"\nQuery type must be one of: "freeform", "query", "ratio", or "threshold"' } },
+          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"\nQuery type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"' } },
           withType(value): {
             type: value,
           },

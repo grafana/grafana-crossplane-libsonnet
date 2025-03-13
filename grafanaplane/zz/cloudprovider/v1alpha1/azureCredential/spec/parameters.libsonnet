@@ -256,6 +256,32 @@
             value: value,
           },
         },
+      '#withResourceTagsToAddToMetrics': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) The list of resource tags to add to metrics.\nThe list of resource tags to add to metrics.' } },
+      withResourceTagsToAddToMetrics(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              resourceTagsToAddToMetrics:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withResourceTagsToAddToMetricsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) The list of resource tags to add to metrics.\nThe list of resource tags to add to metrics.' } },
+      withResourceTagsToAddToMetricsMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              resourceTagsToAddToMetrics+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
       '#withStackId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The StackID of the Grafana Cloud instance.\nThe StackID of the Grafana Cloud instance.' } },
       withStackId(value): {
         spec+: {
@@ -518,6 +544,32 @@
             value: value,
           },
         },
+      '#withResourceTagsToAddToMetrics': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) The list of resource tags to add to metrics.\nThe list of resource tags to add to metrics.' } },
+      withResourceTagsToAddToMetrics(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              resourceTagsToAddToMetrics:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withResourceTagsToAddToMetricsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) The list of resource tags to add to metrics.\nThe list of resource tags to add to metrics.' } },
+      withResourceTagsToAddToMetricsMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              resourceTagsToAddToMetrics+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
       '#withStackId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The StackID of the Grafana Cloud instance.\nThe StackID of the Grafana Cloud instance.' } },
       withStackId(value): {
         spec+: {

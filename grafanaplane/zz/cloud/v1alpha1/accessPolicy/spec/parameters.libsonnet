@@ -33,6 +33,50 @@
   },
   forProvider+:
     {
+      '#withConditions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Conditions for the access policy. (see below for nested schema)\nConditions for the access policy.' } },
+      withConditions(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              conditions:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withConditionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Conditions for the access policy. (see below for nested schema)\nConditions for the access policy.' } },
+      withConditionsMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              conditions+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      conditions+:
+        {
+          '#': { help: '', name: 'conditions' },
+          '#withAllowedSubnets': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) Conditions that apply to the access policy,such as IP Allow lists.\nConditions that apply to the access policy,such as IP Allow lists.' } },
+          withAllowedSubnets(value): {
+            allowedSubnets:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withAllowedSubnetsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) Conditions that apply to the access policy,such as IP Allow lists.\nConditions that apply to the access policy,such as IP Allow lists.' } },
+          withAllowedSubnetsMixin(value): {
+            allowedSubnets+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
       '#withDisplayName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Display name of the access policy. Defaults to the name.\nDisplay name of the access policy. Defaults to the name.' } },
       withDisplayName(value): {
         spec+: {
@@ -231,7 +275,7 @@
           },
         },
       },
-      '#withScopes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
+      '#withScopes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
       withScopes(value): {
         spec+: {
           parameters+: {
@@ -244,7 +288,7 @@
           },
         },
       },
-      '#withScopesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
+      '#withScopesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
       withScopesMixin(value): {
         spec+: {
           parameters+: {
@@ -276,6 +320,50 @@
   },
   initProvider+:
     {
+      '#withConditions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Conditions for the access policy. (see below for nested schema)\nConditions for the access policy.' } },
+      withConditions(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              conditions:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withConditionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Conditions for the access policy. (see below for nested schema)\nConditions for the access policy.' } },
+      withConditionsMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              conditions+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      conditions+:
+        {
+          '#': { help: '', name: 'conditions' },
+          '#withAllowedSubnets': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) Conditions that apply to the access policy,such as IP Allow lists.\nConditions that apply to the access policy,such as IP Allow lists.' } },
+          withAllowedSubnets(value): {
+            allowedSubnets:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withAllowedSubnetsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) Conditions that apply to the access policy,such as IP Allow lists.\nConditions that apply to the access policy,such as IP Allow lists.' } },
+          withAllowedSubnetsMixin(value): {
+            allowedSubnets+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
       '#withDisplayName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Display name of the access policy. Defaults to the name.\nDisplay name of the access policy. Defaults to the name.' } },
       withDisplayName(value): {
         spec+: {
@@ -474,7 +562,7 @@
           },
         },
       },
-      '#withScopes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
+      '#withScopes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
       withScopes(value): {
         spec+: {
           parameters+: {
@@ -487,7 +575,7 @@
           },
         },
       },
-      '#withScopesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
+      '#withScopesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.\nScopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.' } },
       withScopesMixin(value): {
         spec+: {
           parameters+: {

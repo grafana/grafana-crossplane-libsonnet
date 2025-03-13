@@ -43,7 +43,7 @@
           },
         },
       },
-      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the message template.\nThe name of the message template.' } },
+      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the notification template group.\nThe name of the notification template group.' } },
       withName(value): {
         spec+: {
           parameters+: {
@@ -267,7 +267,7 @@
               },
             },
         },
-      '#withTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The content of the message template.\nThe content of the message template.' } },
+      '#withTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The content of the notification template group.\nThe content of the notification template group.' } },
       withTemplate(value): {
         spec+: {
           parameters+: {
@@ -306,7 +306,7 @@
           },
         },
       },
-      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the message template.\nThe name of the message template.' } },
+      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the notification template group.\nThe name of the notification template group.' } },
       withName(value): {
         spec+: {
           parameters+: {
@@ -530,7 +530,7 @@
               },
             },
         },
-      '#withTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The content of the message template.\nThe content of the message template.' } },
+      '#withTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The content of the notification template group.\nThe content of the notification template group.' } },
       withTemplate(value): {
         spec+: {
           parameters+: {

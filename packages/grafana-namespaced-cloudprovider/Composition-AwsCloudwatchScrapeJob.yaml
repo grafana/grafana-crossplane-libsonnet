@@ -53,6 +53,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.stackId
                 toFieldPath: spec.forProvider.stackId
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.staticLabels
+                toFieldPath: spec.forProvider.staticLabels
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.awsAccountResourceId
                 toFieldPath: spec.initProvider.awsAccountResourceId
                 type: FromCompositeFieldPath
@@ -76,6 +79,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.stackId
                 toFieldPath: spec.initProvider.stackId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.staticLabels
+                toFieldPath: spec.initProvider.staticLabels
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

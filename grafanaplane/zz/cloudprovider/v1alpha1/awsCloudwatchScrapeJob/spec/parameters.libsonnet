@@ -238,7 +238,7 @@
                    else [value]),
               },
             },
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported services.' } },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.' } },
           withName(value): {
             name: value,
           },
@@ -268,7 +268,7 @@
                 value: value,
               },
             },
-          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported scrape intervals.' } },
+          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.' } },
           withScrapeIntervalSeconds(value): {
             scrapeIntervalSeconds: value,
           },
@@ -293,6 +293,26 @@
           parameters+: {
             forProvider+: {
               stackId: value,
+            },
+          },
+        },
+      },
+      '#withStaticLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A set of static labels to add to all metrics exported by this scrape job.\nA set of static labels to add to all metrics exported by this scrape job.' } },
+      withStaticLabels(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              staticLabels: value,
+            },
+          },
+        },
+      },
+      '#withStaticLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A set of static labels to add to all metrics exported by this scrape job.\nA set of static labels to add to all metrics exported by this scrape job.' } },
+      withStaticLabelsMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              staticLabels+: value,
             },
           },
         },
@@ -521,7 +541,7 @@
                    else [value]),
               },
             },
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported services.' } },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.' } },
           withName(value): {
             name: value,
           },
@@ -551,7 +571,7 @@
                 value: value,
               },
             },
-          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported scrape intervals.' } },
+          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.' } },
           withScrapeIntervalSeconds(value): {
             scrapeIntervalSeconds: value,
           },
@@ -576,6 +596,26 @@
           parameters+: {
             initProvider+: {
               stackId: value,
+            },
+          },
+        },
+      },
+      '#withStaticLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A set of static labels to add to all metrics exported by this scrape job.\nA set of static labels to add to all metrics exported by this scrape job.' } },
+      withStaticLabels(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              staticLabels: value,
+            },
+          },
+        },
+      },
+      '#withStaticLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A set of static labels to add to all metrics exported by this scrape job.\nA set of static labels to add to all metrics exported by this scrape job.' } },
+      withStaticLabelsMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              staticLabels+: value,
             },
           },
         },
