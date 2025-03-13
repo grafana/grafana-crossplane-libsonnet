@@ -4666,7 +4666,8 @@ spec:
     schema:
       openAPIV3Schema:
         description: MessageTemplate is the Schema for the MessageTemplates API. Manages
-          Grafana Alerting message templates. Official documentation https://grafana.com/docs/grafana/latest/developers/http_api/alerting_provisioning/#templates
+          Grafana Alerting notification template groups, including notification templates.
+          Official documentation https://grafana.com/docs/grafana/latest/developers/http_api/alerting_provisioning/#notification-template-groups
           This resource requires Grafana 9.1.0 or later.
         properties:
           apiVersion:
@@ -4710,8 +4711,8 @@ spec:
                     type: boolean
                   name:
                     description: |-
-                      (String) The name of the message template.
-                      The name of the message template.
+                      (String) The name of the notification template group.
+                      The name of the notification template group.
                     type: string
                   orgId:
                     description: |-
@@ -4794,8 +4795,8 @@ spec:
                     type: object
                   template:
                     description: |-
-                      (String) The content of the message template.
-                      The content of the message template.
+                      (String) The content of the notification template group.
+                      The content of the notification template group.
                     type: string
                 type: object
               initProvider:
@@ -4816,8 +4817,8 @@ spec:
                     type: boolean
                   name:
                     description: |-
-                      (String) The name of the message template.
-                      The name of the message template.
+                      (String) The name of the notification template group.
+                      The name of the notification template group.
                     type: string
                   orgId:
                     description: |-
@@ -4900,8 +4901,8 @@ spec:
                     type: object
                   template:
                     description: |-
-                      (String) The content of the message template.
-                      The content of the message template.
+                      (String) The content of the notification template group.
+                      The content of the notification template group.
                     type: string
                 type: object
               managementPolicies:
@@ -5093,8 +5094,8 @@ spec:
                     type: string
                   name:
                     description: |-
-                      (String) The name of the message template.
-                      The name of the message template.
+                      (String) The name of the notification template group.
+                      The name of the notification template group.
                     type: string
                   orgId:
                     description: |-
@@ -5103,8 +5104,8 @@ spec:
                     type: string
                   template:
                     description: |-
-                      (String) The content of the message template.
-                      The content of the message template.
+                      (String) The content of the notification template group.
+                      The content of the notification template group.
                     type: string
                 type: object
               conditions:
@@ -9005,8 +9006,8 @@ spec:
                           type: array
                         execErrState:
                           description: |-
-                            (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.
-                            Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`.
+                            (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
+                            Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
                           type: string
                         for:
                           description: |-
@@ -9033,8 +9034,8 @@ spec:
                           type: string
                         noDataState:
                           description: |-
-                            (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.
-                            Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`.
+                            (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
+                            Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
                           type: string
                         notificationSettings:
                           description: |-
@@ -9172,6 +9173,11 @@ spec:
                                 type: string
                             type: object
                           type: array
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the alert rule.
+                            The unique identifier of the alert rule.
+                          type: string
                       type: object
                     type: array
                 type: object
@@ -9426,8 +9432,8 @@ spec:
                           type: array
                         execErrState:
                           description: |-
-                            (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.
-                            Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`.
+                            (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
+                            Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
                           type: string
                         for:
                           description: |-
@@ -9454,8 +9460,8 @@ spec:
                           type: string
                         noDataState:
                           description: |-
-                            (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.
-                            Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`.
+                            (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
+                            Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
                           type: string
                         notificationSettings:
                           description: |-
@@ -9593,6 +9599,11 @@ spec:
                                 type: string
                             type: object
                           type: array
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the alert rule.
+                            The unique identifier of the alert rule.
+                          type: string
                       type: object
                     type: array
                 type: object
@@ -9874,8 +9885,8 @@ spec:
                           type: array
                         execErrState:
                           description: |-
-                            (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.
-                            Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`.
+                            (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
+                            Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
                           type: string
                         for:
                           description: |-
@@ -9902,8 +9913,8 @@ spec:
                           type: string
                         noDataState:
                           description: |-
-                            (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.
-                            Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`.
+                            (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
+                            Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
                           type: string
                         notificationSettings:
                           description: |-
@@ -10071,7 +10082,7 @@ spec:
     schema:
       openAPIV3Schema:
         description: 'AccessPolicy is the Schema for the AccessPolicys API. Official
-          documentation https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/API
+          documentation https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/API
           documentation https://grafana.com/docs/grafana-cloud/developer-resources/api-reference/cloud-api/#create-an-access-policy
           Required access policy scopes: accesspolicies:readaccesspolicies:writeaccesspolicies:delete'
         properties:
@@ -10111,6 +10122,22 @@ spec:
                 type: string
               forProvider:
                 properties:
+                  conditions:
+                    description: |-
+                      (Block Set) Conditions for the access policy. (see below for nested schema)
+                      Conditions for the access policy.
+                    items:
+                      properties:
+                        allowedSubnets:
+                          description: |-
+                            (Set of String) Conditions that apply to the access policy,such as IP Allow lists.
+                            Conditions that apply to the access policy,such as IP Allow lists.
+                          items:
+                            type: string
+                          type: array
+                          x-kubernetes-list-type: set
+                      type: object
+                    type: array
                   displayName:
                     description: |-
                       (String) Display name of the access policy. Defaults to the name.
@@ -10229,8 +10256,8 @@ spec:
                     type: string
                   scopes:
                     description: |-
-                      cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
-                      Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+                      cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+                      Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
                     items:
                       type: string
                     type: array
@@ -10249,6 +10276,22 @@ spec:
                   for example because of an external controller is managing them, like an
                   autoscaler.
                 properties:
+                  conditions:
+                    description: |-
+                      (Block Set) Conditions for the access policy. (see below for nested schema)
+                      Conditions for the access policy.
+                    items:
+                      properties:
+                        allowedSubnets:
+                          description: |-
+                            (Set of String) Conditions that apply to the access policy,such as IP Allow lists.
+                            Conditions that apply to the access policy,such as IP Allow lists.
+                          items:
+                            type: string
+                          type: array
+                          x-kubernetes-list-type: set
+                      type: object
+                    type: array
                   displayName:
                     description: |-
                       (String) Display name of the access policy. Defaults to the name.
@@ -10367,8 +10410,8 @@ spec:
                     type: string
                   scopes:
                     description: |-
-                      cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
-                      Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+                      cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+                      Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
                     items:
                       type: string
                     type: array
@@ -10563,6 +10606,22 @@ spec:
             properties:
               atProvider:
                 properties:
+                  conditions:
+                    description: |-
+                      (Block Set) Conditions for the access policy. (see below for nested schema)
+                      Conditions for the access policy.
+                    items:
+                      properties:
+                        allowedSubnets:
+                          description: |-
+                            (Set of String) Conditions that apply to the access policy,such as IP Allow lists.
+                            Conditions that apply to the access policy,such as IP Allow lists.
+                          items:
+                            type: string
+                          type: array
+                          x-kubernetes-list-type: set
+                      type: object
+                    type: array
                   createdAt:
                     description: |-
                       (String) Creation date of the access policy.
@@ -10620,8 +10679,8 @@ spec:
                     type: string
                   scopes:
                     description: |-
-                      cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
-                      Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+                      cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+                      Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
                     items:
                       type: string
                     type: array
@@ -10730,7 +10789,7 @@ spec:
     schema:
       openAPIV3Schema:
         description: 'AccessPolicyToken is the Schema for the AccessPolicyTokens API.
-          Official documentation https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/API
+          Official documentation https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/API
           documentation https://grafana.com/docs/grafana-cloud/developer-resources/api-reference/cloud-api/#create-a-token
           Required access policy scopes: accesspolicies:readaccesspolicies:writeaccesspolicies:delete'
         properties:
@@ -12530,6 +12589,11 @@ spec:
             properties:
               atProvider:
                 properties:
+                  alertmanagerIpAllowListCname:
+                    description: |-
+                      separated list of CNAMEs that can be whitelisted to access the Alertmanager instances
+                      Comma-separated list of CNAMEs that can be whitelisted to access the Alertmanager instances (Optional)
+                    type: string
                   alertmanagerName:
                     description: |-
                       (String) Name of the Alertmanager instance configured for this stack.
@@ -12560,8 +12624,48 @@ spec:
                       (String) Description of stack.
                       Description of stack.
                     type: string
+                  fleetManagementName:
+                    description: |-
+                      (String) Name of the Fleet Management instance configured for this stack.
+                      Name of the Fleet Management instance configured for this stack.
+                    type: string
+                  fleetManagementStatus:
+                    description: |-
+                      (String) Status of the Fleet Management instance configured for this stack.
+                      Status of the Fleet Management instance configured for this stack.
+                    type: string
+                  fleetManagementUrl:
+                    description: |-
+                      (String) Base URL of the Fleet Management instance configured for this stack.
+                      Base URL of the Fleet Management instance configured for this stack.
+                    type: string
+                  fleetManagementUserId:
+                    description: |-
+                      (Number) User ID of the Fleet Management instance configured for this stack.
+                      User ID of the Fleet Management instance configured for this stack.
+                    type: number
+                  grafanasIpAllowListCname:
+                    description: |-
+                      separated list of CNAMEs that can be whitelisted to access the grafana instance
+                      Comma-separated list of CNAMEs that can be whitelisted to access the grafana instance (Optional)
+                    type: string
+                  graphiteIpAllowListCname:
+                    description: |-
+                      separated list of CNAMEs that can be whitelisted to access the Graphite instance
+                      Comma-separated list of CNAMEs that can be whitelisted to access the Graphite instance (Optional)
+                    type: string
                   graphiteName:
                     description: (String)
+                    type: string
+                  graphitePrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for Graphite when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for Graphite when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  graphitePrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for Graphite when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for Graphite when using AWS PrivateLink (only for AWS stacks)
                     type: string
                   graphiteStatus:
                     description: (String)
@@ -12588,8 +12692,23 @@ spec:
                       A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
                     type: object
                     x-kubernetes-map-type: granular
+                  logsIpAllowListCname:
+                    description: |-
+                      separated list of CNAMEs that can be whitelisted to access the Logs instance
+                      Comma-separated list of CNAMEs that can be whitelisted to access the Logs instance (Optional)
+                    type: string
                   logsName:
                     description: (String)
+                    type: string
+                  logsPrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for Logs when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for Logs when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  logsPrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for Logs when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for Logs when using AWS PrivateLink (only for AWS stacks)
                     type: string
                   logsStatus:
                     description: (String)
@@ -12620,13 +12739,58 @@ spec:
                       (String) Organization slug to assign to this stack.
                       Organization slug to assign to this stack.
                     type: string
+                  otlpPrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for OTLP when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for OTLP when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  otlpPrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for OTLP when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for OTLP when using AWS PrivateLink (only for AWS stacks)
+                    type: string
                   otlpUrl:
                     description: |-
                       cloud/send-data/otlp/send-data-otlp/ for docs on how to use this.
                       Base URL of the OTLP instance configured for this stack. The username is the stack's ID (`id` attribute of this resource). See https://grafana.com/docs/grafana-cloud/send-data/otlp/send-data-otlp/ for docs on how to use this.
                     type: string
+                  pdcApiPrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for PDC's API when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for PDC's API when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  pdcApiPrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for PDC's API when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for PDC's API when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  pdcGatewayPrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for PDC's Gateway when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for PDC's Gateway when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  pdcGatewayPrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for PDC's Gateway when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for PDC's Gateway when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  profilesIpAllowListCname:
+                    description: |-
+                      separated list of CNAMEs that can be whitelisted to access the Profiles instance
+                      Comma-separated list of CNAMEs that can be whitelisted to access the Profiles instance (Optional)
+                    type: string
                   profilesName:
                     description: (String)
+                    type: string
+                  profilesPrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for Profiles when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for Profiles when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  profilesPrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for Profiles when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for Profiles when using AWS PrivateLink (only for AWS stacks)
                     type: string
                   profilesStatus:
                     description: (String)
@@ -12637,10 +12801,25 @@ spec:
                   profilesUserId:
                     description: (Number)
                     type: number
+                  prometheusIpAllowListCname:
+                    description: |-
+                      separated list of CNAMEs that can be whitelisted to access the Prometheus instance
+                      Comma-separated list of CNAMEs that can be whitelisted to access the Prometheus instance (Optional)
+                    type: string
                   prometheusName:
                     description: |-
                       (String) Prometheus name for this instance.
                       Prometheus name for this instance.
+                    type: string
+                  prometheusPrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for Prometheus when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for Prometheus when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  prometheusPrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for Prometheus when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for Prometheus when using AWS PrivateLink (only for AWS stacks)
                     type: string
                   prometheusRemoteEndpoint:
                     description: |-
@@ -12682,8 +12861,23 @@ spec:
                       (String) Status of the stack.
                       Status of the stack.
                     type: string
+                  tracesIpAllowListCname:
+                    description: |-
+                      separated list of CNAMEs that can be whitelisted to access the Traces instance
+                      Comma-separated list of CNAMEs that can be whitelisted to access the Traces instance (Optional)
+                    type: string
                   tracesName:
                     description: (String)
+                    type: string
+                  tracesPrivateConnectivityInfoPrivateDns:
+                    description: |-
+                      (String) Private DNS for Traces when using AWS PrivateLink (only for AWS stacks)
+                      Private DNS for Traces when using AWS PrivateLink (only for AWS stacks)
+                    type: string
+                  tracesPrivateConnectivityInfoServiceName:
+                    description: |-
+                      (String) Service Name for Traces when using AWS PrivateLink (only for AWS stacks)
+                      Service Name for Traces when using AWS PrivateLink (only for AWS stacks)
                     type: string
                   tracesStatus:
                     description: (String)
@@ -14581,7 +14775,7 @@ spec:
                         name:
                           description: |-
                             (String) The name of the CloudWatch Scrape Job.
-                            The name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported services.
+                            The name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.
                           type: string
                         resourceDiscoveryTagFilter:
                           description: |-
@@ -14604,7 +14798,7 @@ spec:
                         scrapeIntervalSeconds:
                           description: |-
                             (Number) The interval in seconds to scrape the custom namespace.
-                            The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported scrape intervals.
+                            The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.
                           type: number
                         tagsToAddToMetrics:
                           description: |-
@@ -14621,6 +14815,14 @@ spec:
                       (String) The Stack ID of the Grafana Cloud instance.
                       The Stack ID of the Grafana Cloud instance.
                     type: string
+                  staticLabels:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      (Map of String) A set of static labels to add to all metrics exported by this scrape job.
+                      A set of static labels to add to all metrics exported by this scrape job.
+                    type: object
+                    x-kubernetes-map-type: granular
                 type: object
               initProvider:
                 description: |-
@@ -14732,7 +14934,7 @@ spec:
                         name:
                           description: |-
                             (String) The name of the CloudWatch Scrape Job.
-                            The name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported services.
+                            The name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.
                           type: string
                         resourceDiscoveryTagFilter:
                           description: |-
@@ -14755,7 +14957,7 @@ spec:
                         scrapeIntervalSeconds:
                           description: |-
                             (Number) The interval in seconds to scrape the custom namespace.
-                            The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported scrape intervals.
+                            The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.
                           type: number
                         tagsToAddToMetrics:
                           description: |-
@@ -14772,6 +14974,14 @@ spec:
                       (String) The Stack ID of the Grafana Cloud instance.
                       The Stack ID of the Grafana Cloud instance.
                     type: string
+                  staticLabels:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      (Map of String) A set of static labels to add to all metrics exported by this scrape job.
+                      A set of static labels to add to all metrics exported by this scrape job.
+                    type: object
+                    x-kubernetes-map-type: granular
                 type: object
               managementPolicies:
                 default:
@@ -15064,7 +15274,7 @@ spec:
                         name:
                           description: |-
                             (String) The name of the CloudWatch Scrape Job.
-                            The name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported services.
+                            The name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.
                           type: string
                         resourceDiscoveryTagFilter:
                           description: |-
@@ -15087,7 +15297,7 @@ spec:
                         scrapeIntervalSeconds:
                           description: |-
                             (Number) The interval in seconds to scrape the custom namespace.
-                            The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/aws/cloudwatch-metrics/services/ for supported scrape intervals.
+                            The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.
                           type: number
                         tagsToAddToMetrics:
                           description: |-
@@ -15104,6 +15314,14 @@ spec:
                       (String) The Stack ID of the Grafana Cloud instance.
                       The Stack ID of the Grafana Cloud instance.
                     type: string
+                  staticLabels:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      (Map of String) A set of static labels to add to all metrics exported by this scrape job.
+                      A set of static labels to add to all metrics exported by this scrape job.
+                    type: object
+                    x-kubernetes-map-type: granular
                 type: object
               conditions:
                 description: Conditions of the resource.
@@ -15332,6 +15550,14 @@ spec:
                           type: string
                       type: object
                     type: array
+                  resourceTagsToAddToMetrics:
+                    description: |-
+                      (Set of String) The list of resource tags to add to metrics.
+                      The list of resource tags to add to metrics.
+                    items:
+                      type: string
+                    type: array
+                    x-kubernetes-list-type: set
                   stackId:
                     description: |-
                       (String) The StackID of the Grafana Cloud instance.
@@ -15448,6 +15674,14 @@ spec:
                           type: string
                       type: object
                     type: array
+                  resourceTagsToAddToMetrics:
+                    description: |-
+                      (Set of String) The list of resource tags to add to metrics.
+                      The list of resource tags to add to metrics.
+                    items:
+                      type: string
+                    type: array
+                    x-kubernetes-list-type: set
                   stackId:
                     description: |-
                       (String) The StackID of the Grafana Cloud instance.
@@ -15732,9 +15966,17 @@ spec:
                     type: array
                   resourceId:
                     description: |-
-                      (String) The ID given by the Grafana Cloud Provider API to this AWS Account resource.
-                      The ID given by the Grafana Cloud Provider API to this AWS Account resource.
+                      (String) The ID given by the Grafana Cloud Provider API to this Azure Credential resource.
+                      The ID given by the Grafana Cloud Provider API to this Azure Credential resource.
                     type: string
+                  resourceTagsToAddToMetrics:
+                    description: |-
+                      (Set of String) The list of resource tags to add to metrics.
+                      The list of resource tags to add to metrics.
+                    items:
+                      type: string
+                    type: array
+                    x-kubernetes-list-type: set
                   stackId:
                     description: |-
                       (String) The StackID of the Grafana Cloud instance.
@@ -25476,8 +25718,8 @@ spec:
                     type: string
                   important:
                     description: |-
-                      (Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members
-                      Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members
+                      (Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
+                      Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
                     type: boolean
                   notifyIfTimeFrom:
                     description: |-
@@ -25792,8 +26034,8 @@ spec:
                     type: string
                   important:
                     description: |-
-                      (Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members
-                      Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members
+                      (Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
+                      Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
                     type: boolean
                   notifyIfTimeFrom:
                     description: |-
@@ -26127,8 +26369,8 @@ spec:
                     type: string
                   important:
                     description: |-
-                      (Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members
-                      Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_on_call_from_schedule and notify_user_group,notify_team_members
+                      (Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
+                      Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
                     type: boolean
                   notifyIfTimeFrom:
                     description: |-
@@ -26656,8 +26898,8 @@ spec:
                     type: array
                   type:
                     description: |-
-                      (String) The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira.
-                      The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira.
+                      (String) The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira, zendesk.
+                      The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira, zendesk.
                     type: string
                 type: object
               initProvider:
@@ -27010,8 +27252,8 @@ spec:
                     type: array
                   type:
                     description: |-
-                      (String) The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira.
-                      The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira.
+                      (String) The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira, zendesk.
+                      The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira, zendesk.
                     type: string
                 type: object
               managementPolicies:
@@ -27471,8 +27713,8 @@ spec:
                     type: array
                   type:
                     description: |-
-                      (String) The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira.
-                      The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira.
+                      (String) The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira, zendesk.
+                      The type of integration. Can be grafana, grafana_alerting, webhook, alertmanager, kapacitor, fabric, newrelic, datadog, pagerduty, pingdom, elastalert, amazon_sns, curler, sentry, formatted_webhook, heartbeat, demo, manual, stackdriver, uptimerobot, sentry_platform, zabbix, prtg, slack_channel, inbound_email, direct_paging, jira, zendesk.
                     type: string
                 type: object
               conditions:
@@ -47319,7 +47561,20 @@ spec:
                               query:
                                 description: |-
                                   (Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
-                                  Freeform Query Field
+                                  Freeform Query Field - valid promQl
+                                type: string
+                            type: object
+                          type: array
+                        grafanaQueries:
+                          description: |-
+                            (Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+                            Array for holding a set of grafana queries
+                          items:
+                            properties:
+                              grafanaQueries:
+                                description: |-
+                                  (Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+                                  Query Object - Array of Grafana Query JSON objects
                                 type: string
                             type: object
                           type: array
@@ -47349,8 +47604,8 @@ spec:
                           type: array
                         type:
                           description: |-
-                            (String) Query type must be one of: "freeform", "query", "ratio", or "threshold"
-                            Query type must be one of: "freeform", "query", "ratio", or "threshold"
+                            (String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"
+                            Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"
                           type: string
                       type: object
                     type: array
@@ -47678,7 +47933,20 @@ spec:
                               query:
                                 description: |-
                                   (Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
-                                  Freeform Query Field
+                                  Freeform Query Field - valid promQl
+                                type: string
+                            type: object
+                          type: array
+                        grafanaQueries:
+                          description: |-
+                            (Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+                            Array for holding a set of grafana queries
+                          items:
+                            properties:
+                              grafanaQueries:
+                                description: |-
+                                  (Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+                                  Query Object - Array of Grafana Query JSON objects
                                 type: string
                             type: object
                           type: array
@@ -47708,8 +47976,8 @@ spec:
                           type: array
                         type:
                           description: |-
-                            (String) Query type must be one of: "freeform", "query", "ratio", or "threshold"
-                            Query type must be one of: "freeform", "query", "ratio", or "threshold"
+                            (String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"
+                            Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"
                           type: string
                       type: object
                     type: array
@@ -48144,7 +48412,20 @@ spec:
                               query:
                                 description: |-
                                   (Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
-                                  Freeform Query Field
+                                  Freeform Query Field - valid promQl
+                                type: string
+                            type: object
+                          type: array
+                        grafanaQueries:
+                          description: |-
+                            (Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+                            Array for holding a set of grafana queries
+                          items:
+                            properties:
+                              grafanaQueries:
+                                description: |-
+                                  (Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+                                  Query Object - Array of Grafana Query JSON objects
                                 type: string
                             type: object
                           type: array
@@ -48174,8 +48455,8 @@ spec:
                           type: array
                         type:
                           description: |-
-                            (String) Query type must be one of: "freeform", "query", "ratio", or "threshold"
-                            Query type must be one of: "freeform", "query", "ratio", or "threshold"
+                            (String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"
+                            Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"
                           type: string
                       type: object
                     type: array
@@ -51096,7 +51377,7 @@ spec:
                   metricsPublisherKeySecretRef:
                     description: |-
                       (String, Sensitive) The Grafana Cloud access policy with the following scopes: stacks:read, metrics:write, logs:write, traces:write. This is used to publish metrics and logs to Grafana Cloud stack.
-                      The [Grafana Cloud access policy](https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/) with the following scopes: `stacks:read`, `metrics:write`, `logs:write`, `traces:write`. This is used to publish metrics and logs to Grafana Cloud stack.
+                      The [Grafana Cloud access policy](https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/) with the following scopes: `stacks:read`, `metrics:write`, `logs:write`, `traces:write`. This is used to publish metrics and logs to Grafana Cloud stack.
                     properties:
                       key:
                         description: The key to select.
@@ -51213,7 +51494,7 @@ spec:
                   metricsPublisherKeySecretRef:
                     description: |-
                       (String, Sensitive) The Grafana Cloud access policy with the following scopes: stacks:read, metrics:write, logs:write, traces:write. This is used to publish metrics and logs to Grafana Cloud stack.
-                      The [Grafana Cloud access policy](https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/) with the following scopes: `stacks:read`, `metrics:write`, `logs:write`, `traces:write`. This is used to publish metrics and logs to Grafana Cloud stack.
+                      The [Grafana Cloud access policy](https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/) with the following scopes: `stacks:read`, `metrics:write`, `logs:write`, `traces:write`. This is used to publish metrics and logs to Grafana Cloud stack.
                     properties:
                       key:
                         description: The key to select.

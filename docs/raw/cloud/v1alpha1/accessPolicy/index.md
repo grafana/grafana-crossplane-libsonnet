@@ -4,7 +4,9 @@
 
 ## Subpackages
 
+* [spec.parameters.forProvider.conditions](spec/parameters/forProvider/conditions.md)
 * [spec.parameters.forProvider.realm](spec/parameters/forProvider/realm/index.md)
+* [spec.parameters.initProvider.conditions](spec/parameters/initProvider/conditions.md)
 * [spec.parameters.initProvider.realm](spec/parameters/initProvider/realm/index.md)
 
 ## Index
@@ -70,9 +72,12 @@
     * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
     * [`fn withPublishConnectionDetailsTo(value)`](#fn-specparameterswithpublishconnectiondetailsto)
     * [`fn withPublishConnectionDetailsToMixin(value)`](#fn-specparameterswithpublishconnectiondetailstomixin)
+    * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withConditions(value)`](#fn-specparametersforproviderwithconditions)
+      * [`fn withConditionsMixin(value)`](#fn-specparametersforproviderwithconditionsmixin)
       * [`fn withDisplayName(value)`](#fn-specparametersforproviderwithdisplayname)
       * [`fn withName(value)`](#fn-specparametersforproviderwithname)
       * [`fn withRealm(value)`](#fn-specparametersforproviderwithrealm)
@@ -81,6 +86,8 @@
       * [`fn withScopes(value)`](#fn-specparametersforproviderwithscopes)
       * [`fn withScopesMixin(value)`](#fn-specparametersforproviderwithscopesmixin)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withConditions(value)`](#fn-specparametersinitproviderwithconditions)
+      * [`fn withConditionsMixin(value)`](#fn-specparametersinitproviderwithconditionsmixin)
       * [`fn withDisplayName(value)`](#fn-specparametersinitproviderwithdisplayname)
       * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
       * [`fn withRealm(value)`](#fn-specparametersinitproviderwithrealm)
@@ -821,6 +828,17 @@ contains a name, metadata and a reference to secret store config to
 which any connection details for this managed resource should be written.
 Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
+##### fn spec.parameters.withSelectorLabel
+
+```jsonnet
+spec.parameters.withSelectorLabel(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Configure a custom label for use with selector.matchLabels.
 ##### fn spec.parameters.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -860,6 +878,30 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withConditions
+
+```jsonnet
+spec.parameters.forProvider.withConditions(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set) Conditions for the access policy. (see below for nested schema)
+Conditions for the access policy.
+###### fn spec.parameters.forProvider.withConditionsMixin
+
+```jsonnet
+spec.parameters.forProvider.withConditionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set) Conditions for the access policy. (see below for nested schema)
+Conditions for the access policy.
 ###### fn spec.parameters.forProvider.withDisplayName
 
 ```jsonnet
@@ -928,8 +970,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
-Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
 ###### fn spec.parameters.forProvider.withScopesMixin
 
 ```jsonnet
@@ -940,11 +982,35 @@ PARAMETERS:
 
 * **value** (`array`)
 
-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
-Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withConditions
+
+```jsonnet
+spec.parameters.initProvider.withConditions(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set) Conditions for the access policy. (see below for nested schema)
+Conditions for the access policy.
+###### fn spec.parameters.initProvider.withConditionsMixin
+
+```jsonnet
+spec.parameters.initProvider.withConditionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block Set) Conditions for the access policy. (see below for nested schema)
+Conditions for the access policy.
 ###### fn spec.parameters.initProvider.withDisplayName
 
 ```jsonnet
@@ -1013,8 +1079,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
-Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
 ###### fn spec.parameters.initProvider.withScopesMixin
 
 ```jsonnet
@@ -1025,8 +1091,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
-Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
+Scopes of the access policy. See https://grafana.com/docs/grafana-cloud/security-and-account-management/authentication-and-permissions/access-policies/#scopes for possible values.
 ##### obj spec.parameters.providerConfigRef
 
 

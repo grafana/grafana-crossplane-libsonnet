@@ -72,6 +72,7 @@
     * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
     * [`fn withPublishConnectionDetailsTo(value)`](#fn-specparameterswithpublishconnectiondetailsto)
     * [`fn withPublishConnectionDetailsToMixin(value)`](#fn-specparameterswithpublishconnectiondetailstomixin)
+    * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
@@ -83,6 +84,8 @@
       * [`fn withName(value)`](#fn-specparametersforproviderwithname)
       * [`fn withResourceDiscoveryTagFilter(value)`](#fn-specparametersforproviderwithresourcediscoverytagfilter)
       * [`fn withResourceDiscoveryTagFilterMixin(value)`](#fn-specparametersforproviderwithresourcediscoverytagfiltermixin)
+      * [`fn withResourceTagsToAddToMetrics(value)`](#fn-specparametersforproviderwithresourcetagstoaddtometrics)
+      * [`fn withResourceTagsToAddToMetricsMixin(value)`](#fn-specparametersforproviderwithresourcetagstoaddtometricsmixin)
       * [`fn withStackId(value)`](#fn-specparametersforproviderwithstackid)
       * [`fn withTenantId(value)`](#fn-specparametersforproviderwithtenantid)
       * [`obj clientSecretSecretRef`](#obj-specparametersforproviderclientsecretsecretref)
@@ -98,6 +101,8 @@
       * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
       * [`fn withResourceDiscoveryTagFilter(value)`](#fn-specparametersinitproviderwithresourcediscoverytagfilter)
       * [`fn withResourceDiscoveryTagFilterMixin(value)`](#fn-specparametersinitproviderwithresourcediscoverytagfiltermixin)
+      * [`fn withResourceTagsToAddToMetrics(value)`](#fn-specparametersinitproviderwithresourcetagstoaddtometrics)
+      * [`fn withResourceTagsToAddToMetricsMixin(value)`](#fn-specparametersinitproviderwithresourcetagstoaddtometricsmixin)
       * [`fn withStackId(value)`](#fn-specparametersinitproviderwithstackid)
       * [`fn withTenantId(value)`](#fn-specparametersinitproviderwithtenantid)
       * [`obj clientSecretSecretRef`](#obj-specparametersinitproviderclientsecretsecretref)
@@ -837,6 +842,17 @@ contains a name, metadata and a reference to secret store config to
 which any connection details for this managed resource should be written.
 Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
+##### fn spec.parameters.withSelectorLabel
+
+```jsonnet
+spec.parameters.withSelectorLabel(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Configure a custom label for use with selector.matchLabels.
 ##### fn spec.parameters.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -972,6 +988,30 @@ PARAMETERS:
 
 (Block List) The list of tag filters to apply to resources. (see below for nested schema)
 The list of tag filters to apply to resources.
+###### fn spec.parameters.forProvider.withResourceTagsToAddToMetrics
+
+```jsonnet
+spec.parameters.forProvider.withResourceTagsToAddToMetrics(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Set of String) The list of resource tags to add to metrics.
+The list of resource tags to add to metrics.
+###### fn spec.parameters.forProvider.withResourceTagsToAddToMetricsMixin
+
+```jsonnet
+spec.parameters.forProvider.withResourceTagsToAddToMetricsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Set of String) The list of resource tags to add to metrics.
+The list of resource tags to add to metrics.
 ###### fn spec.parameters.forProvider.withStackId
 
 ```jsonnet
@@ -1131,6 +1171,30 @@ PARAMETERS:
 
 (Block List) The list of tag filters to apply to resources. (see below for nested schema)
 The list of tag filters to apply to resources.
+###### fn spec.parameters.initProvider.withResourceTagsToAddToMetrics
+
+```jsonnet
+spec.parameters.initProvider.withResourceTagsToAddToMetrics(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Set of String) The list of resource tags to add to metrics.
+The list of resource tags to add to metrics.
+###### fn spec.parameters.initProvider.withResourceTagsToAddToMetricsMixin
+
+```jsonnet
+spec.parameters.initProvider.withResourceTagsToAddToMetricsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Set of String) The list of resource tags to add to metrics.
+The list of resource tags to add to metrics.
 ###### fn spec.parameters.initProvider.withStackId
 
 ```jsonnet

@@ -72,6 +72,7 @@
     * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
     * [`fn withPublishConnectionDetailsTo(value)`](#fn-specparameterswithpublishconnectiondetailsto)
     * [`fn withPublishConnectionDetailsToMixin(value)`](#fn-specparameterswithpublishconnectiondetailstomixin)
+    * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
@@ -86,6 +87,8 @@
       * [`fn withService(value)`](#fn-specparametersforproviderwithservice)
       * [`fn withServiceMixin(value)`](#fn-specparametersforproviderwithservicemixin)
       * [`fn withStackId(value)`](#fn-specparametersforproviderwithstackid)
+      * [`fn withStaticLabels(value)`](#fn-specparametersforproviderwithstaticlabels)
+      * [`fn withStaticLabelsMixin(value)`](#fn-specparametersforproviderwithstaticlabelsmixin)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withAwsAccountResourceId(value)`](#fn-specparametersinitproviderwithawsaccountresourceid)
       * [`fn withCustomNamespace(value)`](#fn-specparametersinitproviderwithcustomnamespace)
@@ -98,6 +101,8 @@
       * [`fn withService(value)`](#fn-specparametersinitproviderwithservice)
       * [`fn withServiceMixin(value)`](#fn-specparametersinitproviderwithservicemixin)
       * [`fn withStackId(value)`](#fn-specparametersinitproviderwithstackid)
+      * [`fn withStaticLabels(value)`](#fn-specparametersinitproviderwithstaticlabels)
+      * [`fn withStaticLabelsMixin(value)`](#fn-specparametersinitproviderwithstaticlabelsmixin)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -831,6 +836,17 @@ contains a name, metadata and a reference to secret store config to
 which any connection details for this managed resource should be written.
 Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
+##### fn spec.parameters.withSelectorLabel
+
+```jsonnet
+spec.parameters.withSelectorLabel(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Configure a custom label for use with selector.matchLabels.
 ##### fn spec.parameters.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -1004,6 +1020,30 @@ PARAMETERS:
 
 (String) The Stack ID of the Grafana Cloud instance.
 The Stack ID of the Grafana Cloud instance.
+###### fn spec.parameters.forProvider.withStaticLabels
+
+```jsonnet
+spec.parameters.forProvider.withStaticLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) A set of static labels to add to all metrics exported by this scrape job.
+A set of static labels to add to all metrics exported by this scrape job.
+###### fn spec.parameters.forProvider.withStaticLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.withStaticLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) A set of static labels to add to all metrics exported by this scrape job.
+A set of static labels to add to all metrics exported by this scrape job.
 ##### obj spec.parameters.initProvider
 
 
@@ -1141,6 +1181,30 @@ PARAMETERS:
 
 (String) The Stack ID of the Grafana Cloud instance.
 The Stack ID of the Grafana Cloud instance.
+###### fn spec.parameters.initProvider.withStaticLabels
+
+```jsonnet
+spec.parameters.initProvider.withStaticLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) A set of static labels to add to all metrics exported by this scrape job.
+A set of static labels to add to all metrics exported by this scrape job.
+###### fn spec.parameters.initProvider.withStaticLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.withStaticLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) A set of static labels to add to all metrics exported by this scrape job.
+A set of static labels to add to all metrics exported by this scrape job.
 ##### obj spec.parameters.providerConfigRef
 
 

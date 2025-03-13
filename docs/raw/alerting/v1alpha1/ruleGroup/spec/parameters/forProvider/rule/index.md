@@ -26,6 +26,7 @@
 * [`fn withNotificationSettingsMixin(value)`](#fn-withnotificationsettingsmixin)
 * [`fn withRecord(value)`](#fn-withrecord)
 * [`fn withRecordMixin(value)`](#fn-withrecordmixin)
+* [`fn withUid(value)`](#fn-withuid)
 
 ## Fields
 
@@ -99,8 +100,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.
-Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`.
+(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
+Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
 ### fn withFor
 
 ```jsonnet
@@ -172,8 +173,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.
-Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`.
+(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
+Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
 ### fn withNotificationSettings
 
 ```jsonnet
@@ -222,3 +223,15 @@ PARAMETERS:
 
 (Block List, Max: 1) Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled. (see below for nested schema)
 Settings for a recording rule. Available since Grafana 11.2, requires feature flag 'grafanaManagedRecordingRules' to be enabled.
+### fn withUid
+
+```jsonnet
+withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The unique identifier of the alert rule.
+The unique identifier of the alert rule.

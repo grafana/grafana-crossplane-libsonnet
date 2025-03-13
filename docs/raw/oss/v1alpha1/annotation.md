@@ -65,6 +65,7 @@
     * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
     * [`fn withPublishConnectionDetailsTo(value)`](#fn-specparameterswithpublishconnectiondetailsto)
     * [`fn withPublishConnectionDetailsToMixin(value)`](#fn-specparameterswithpublishconnectiondetailstomixin)
+    * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
@@ -898,6 +899,17 @@ contains a name, metadata and a reference to secret store config to
 which any connection details for this managed resource should be written.
 Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
+##### fn spec.parameters.withSelectorLabel
+
+```jsonnet
+spec.parameters.withSelectorLabel(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Configure a custom label for use with selector.matchLabels.
 ##### fn spec.parameters.withWriteConnectionSecretToRef
 
 ```jsonnet

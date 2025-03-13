@@ -65,6 +65,7 @@
     * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
     * [`fn withPublishConnectionDetailsTo(value)`](#fn-specparameterswithpublishconnectiondetailsto)
     * [`fn withPublishConnectionDetailsToMixin(value)`](#fn-specparameterswithpublishconnectiondetailstomixin)
+    * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
@@ -850,6 +851,17 @@ contains a name, metadata and a reference to secret store config to
 which any connection details for this managed resource should be written.
 Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
+##### fn spec.parameters.withSelectorLabel
+
+```jsonnet
+spec.parameters.withSelectorLabel(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Configure a custom label for use with selector.matchLabels.
 ##### fn spec.parameters.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -911,8 +923,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the message template.
-The name of the message template.
+(String) The name of the notification template group.
+The name of the notification template group.
 ###### fn spec.parameters.forProvider.withOrgId
 
 ```jsonnet
@@ -979,8 +991,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The content of the message template.
-The content of the message template.
+(String) The content of the notification template group.
+The content of the notification template group.
 ###### obj spec.parameters.forProvider.organizationRef
 
 
@@ -1170,8 +1182,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the message template.
-The name of the message template.
+(String) The name of the notification template group.
+The name of the notification template group.
 ###### fn spec.parameters.initProvider.withOrgId
 
 ```jsonnet
@@ -1238,8 +1250,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The content of the message template.
-The content of the message template.
+(String) The content of the notification template group.
+The content of the notification template group.
 ###### obj spec.parameters.initProvider.organizationRef
 
 
