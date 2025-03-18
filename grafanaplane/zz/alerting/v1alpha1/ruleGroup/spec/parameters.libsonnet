@@ -592,7 +592,7 @@
                   },
                 },
             },
-          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.\nDescribes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`." } },
+          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.\nDescribes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set." } },
           withExecErrState(value): {
             execErrState: value,
           },
@@ -616,7 +616,7 @@
           withName(value): {
             name: value,
           },
-          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.\nDescribes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`." } },
+          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.\nDescribes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set." } },
           withNoDataState(value): {
             noDataState: value,
           },
@@ -816,6 +816,10 @@
                 metric: value,
               },
             },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the alert rule.\nThe unique identifier of the alert rule.' } },
+          withUid(value): {
+            uid: value,
+          },
         },
     },
   '#withInitProvider': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.' } },
@@ -1395,7 +1399,7 @@
                   },
                 },
             },
-          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.\nDescribes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`." } },
+          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.\nDescribes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set." } },
           withExecErrState(value): {
             execErrState: value,
           },
@@ -1419,7 +1423,7 @@
           withName(value): {
             name: value,
           },
-          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.\nDescribes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`." } },
+          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.\nDescribes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set." } },
           withNoDataState(value): {
             noDataState: value,
           },
@@ -1619,6 +1623,10 @@
                 metric: value,
               },
             },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the alert rule.\nThe unique identifier of the alert rule.' } },
+          withUid(value): {
+            uid: value,
+          },
         },
     },
   '#withManagementPolicies': { 'function': { args: [{ default: ['*'], enums: null, name: 'value', type: ['array'] }], help: 'THIS IS A BETA FIELD. It is on by default but can be opted out\nthrough a Crossplane feature flag.\nManagementPolicies specify the array of actions Crossplane is allowed to\ntake on the managed and external resources.\nThis field is planned to replace the DeletionPolicy field in a future\nrelease. Currently, both could be set independently and non-default\nvalues would be honored if the feature flag is enabled. If both are\ncustom, the DeletionPolicy field will be ignored.\nSee the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223\nand this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md' } },
@@ -1921,6 +1929,14 @@
         },
       },
     },
+  '#withSelectorLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Configure a custom label for use with selector.matchLabels.' } },
+  withSelectorLabel(value): {
+    spec+: {
+      parameters+: {
+        selectorLabel: value,
+      },
+    },
+  },
   '#withWriteConnectionSecretToRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.\nThis field is planned to be replaced in a future release in favor of\nPublishConnectionDetailsTo. Currently, both could be set independently\nand connection details would be published to both without affecting\neach other.' } },
   withWriteConnectionSecretToRef(value): {
     spec+: {

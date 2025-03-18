@@ -290,8 +290,8 @@ spec:
                                 type: array
                               execErrState:
                                 description: |-
-                                  (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.
-                                  Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`.
+                                  (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
+                                  Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
                                 type: string
                               for:
                                 description: |-
@@ -318,8 +318,8 @@ spec:
                                 type: string
                               noDataState:
                                 description: |-
-                                  (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.
-                                  Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`.
+                                  (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
+                                  Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
                                 type: string
                               notificationSettings:
                                 description: |-
@@ -454,6 +454,11 @@ spec:
                                       type: string
                                   type: object
                                 type: array
+                              uid:
+                                description: |-
+                                  (String) The unique identifier of the alert rule.
+                                  The unique identifier of the alert rule.
+                                type: string
                             type: object
                           type: array
                       type: object
@@ -706,8 +711,8 @@ spec:
                                 type: array
                               execErrState:
                                 description: |-
-                                  (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to Alerting.
-                                  Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting. Defaults to `Alerting`.
+                                  (String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
+                                  Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.  Defaults to Alerting if not set.
                                 type: string
                               for:
                                 description: |-
@@ -734,8 +739,8 @@ spec:
                                 type: string
                               noDataState:
                                 description: |-
-                                  (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData.
-                                  Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to `NoData`.
+                                  (String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
+                                  Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting. Defaults to NoData if not set.
                                 type: string
                               notificationSettings:
                                 description: |-
@@ -870,6 +875,11 @@ spec:
                                       type: string
                                   type: object
                                 type: array
+                              uid:
+                                description: |-
+                                  (String) The unique identifier of the alert rule.
+                                  The unique identifier of the alert rule.
+                                type: string
                             type: object
                           type: array
                       type: object
@@ -1016,6 +1026,9 @@ spec:
                       required:
                         - name
                       type: object
+                    selectorLabel:
+                      description: Configure a custom label for use with selector.matchLabels.
+                      type: string
                     writeConnectionSecretToRef:
                       description: |-
                         WriteConnectionSecretToReference specifies the namespace and name of a
