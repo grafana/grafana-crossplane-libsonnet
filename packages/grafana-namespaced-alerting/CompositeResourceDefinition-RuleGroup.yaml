@@ -233,8 +233,8 @@ spec:
                                 additionalProperties:
                                   type: string
                                 description: |-
-                                  value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].
-                                  Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
+                                  value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].
+                                  Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
                                 type: object
                                 x-kubernetes-map-type: granular
                               condition:
@@ -303,6 +303,11 @@ spec:
                                   (Boolean) Sets whether the alert should be paused or not. Defaults to false.
                                   Sets whether the alert should be paused or not. Defaults to `false`.
                                 type: boolean
+                              keepFiringFor:
+                                description: |-
+                                  (String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
+                                  The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
+                                type: string
                               labels:
                                 additionalProperties:
                                   type: string
@@ -311,6 +316,11 @@ spec:
                                   Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to `map[]`.
                                 type: object
                                 x-kubernetes-map-type: granular
+                              missingSeriesEvalsToResolve:
+                                description: |-
+                                  (Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.
+                                  The number of missing series evaluations that must occur before the rule is considered to be resolved.
+                                type: number
                               name:
                                 description: |-
                                   (String) The name of the rule group.
@@ -451,6 +461,11 @@ spec:
                                       description: |-
                                         (String) The name of the metric to write to.
                                         The name of the metric to write to.
+                                      type: string
+                                    targetDatasourceUid:
+                                      description: |-
+                                        (String) The UID of the datasource to write the metric to.
+                                        The UID of the datasource to write the metric to.
                                       type: string
                                   type: object
                                 type: array
@@ -654,8 +669,8 @@ spec:
                                 additionalProperties:
                                   type: string
                                 description: |-
-                                  value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].
-                                  Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
+                                  value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].
+                                  Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
                                 type: object
                                 x-kubernetes-map-type: granular
                               condition:
@@ -724,6 +739,11 @@ spec:
                                   (Boolean) Sets whether the alert should be paused or not. Defaults to false.
                                   Sets whether the alert should be paused or not. Defaults to `false`.
                                 type: boolean
+                              keepFiringFor:
+                                description: |-
+                                  (String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
+                                  The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
+                                type: string
                               labels:
                                 additionalProperties:
                                   type: string
@@ -732,6 +752,11 @@ spec:
                                   Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to `map[]`.
                                 type: object
                                 x-kubernetes-map-type: granular
+                              missingSeriesEvalsToResolve:
+                                description: |-
+                                  (Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.
+                                  The number of missing series evaluations that must occur before the rule is considered to be resolved.
+                                type: number
                               name:
                                 description: |-
                                   (String) The name of the rule group.
@@ -872,6 +897,11 @@ spec:
                                       description: |-
                                         (String) The name of the metric to write to.
                                         The name of the metric to write to.
+                                      type: string
+                                    targetDatasourceUid:
+                                      description: |-
+                                        (String) The UID of the datasource to write the metric to.
+                                        The UID of the datasource to write the metric to.
                                       type: string
                                   type: object
                                 type: array

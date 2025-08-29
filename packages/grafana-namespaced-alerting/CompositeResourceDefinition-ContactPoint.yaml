@@ -1541,11 +1541,25 @@ spec:
                                   (String) The templated title of the message.
                                   Templated title to display.
                                 type: string
-                              url:
+                              urlSecretRef:
                                 description: |-
                                   (String) The URL of the Alertmanager instance.
                                   The VictorOps webhook URL.
-                                type: string
+                                properties:
+                                  key:
+                                    description: The key to select.
+                                    type: string
+                                  name:
+                                    description: Name of the secret.
+                                    type: string
+                                  namespace:
+                                    description: Namespace of the secret.
+                                    type: string
+                                required:
+                                  - key
+                                  - name
+                                  - namespace
+                                type: object
                             type: object
                           type: array
                         webex:
@@ -1704,6 +1718,21 @@ spec:
                                   (String) The templated title of the message.
                                   Templated title of the message.
                                 type: string
+                              tlsConfigSecretRef:
+                                description: |-
+                                  (Map of String, Sensitive) Allows configuring TLS for the webhook notifier.
+                                  Allows configuring TLS for the webhook notifier.
+                                properties:
+                                  name:
+                                    description: Name of the secret.
+                                    type: string
+                                  namespace:
+                                    description: Namespace of the secret.
+                                    type: string
+                                required:
+                                  - name
+                                  - namespace
+                                type: object
                               url:
                                 description: |-
                                   (String) The URL of the Alertmanager instance.
@@ -3133,11 +3162,27 @@ spec:
                                   (String) The templated title of the message.
                                   Templated title to display.
                                 type: string
-                              url:
+                              urlSecretRef:
                                 description: |-
                                   (String) The URL of the Alertmanager instance.
                                   The VictorOps webhook URL.
-                                type: string
+                                properties:
+                                  key:
+                                    description: The key to select.
+                                    type: string
+                                  name:
+                                    description: Name of the secret.
+                                    type: string
+                                  namespace:
+                                    description: Namespace of the secret.
+                                    type: string
+                                required:
+                                  - key
+                                  - name
+                                  - namespace
+                                type: object
+                            required:
+                              - urlSecretRef
                             type: object
                           type: array
                         webex:
@@ -3274,6 +3319,10 @@ spec:
                                   (String) The templated title of the message.
                                   Templated title of the message.
                                 type: string
+                              tlsConfigSecretRef:
+                                additionalProperties:
+                                  type: string
+                                type: object
                               url:
                                 description: |-
                                   (String) The URL of the Alertmanager instance.

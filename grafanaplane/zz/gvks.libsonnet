@@ -93,6 +93,18 @@
       },
       {
         group: 'cloud.grafana.crossplane.io',
+        kind: 'PrivateDataSourceConnectNetwork',
+        plural: 'privatedatasourceconnectnetworks',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
+        kind: 'PrivateDataSourceConnectNetworkToken',
+        plural: 'privatedatasourceconnectnetworktokens',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
         kind: 'Stack',
         plural: 'stacks',
         version: 'v1alpha1',
@@ -137,6 +149,12 @@
       },
       {
         group: 'cloud.grafana.net.namespaced',
+        kind: 'PrivateDataSourceConnectNetwork',
+        plural: 'privatedatasourceconnectnetworks',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.net.namespaced',
         kind: 'Stack',
         plural: 'stacks',
         version: 'v1alpha1',
@@ -167,6 +185,12 @@
         group: 'cloudprovider.grafana.crossplane.io',
         kind: 'AwsCloudwatchScrapeJob',
         plural: 'awscloudwatchscrapejobs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloudprovider.grafana.crossplane.io',
+        kind: 'AwsResourceMetadataScrapeJob',
+        plural: 'awsresourcemetadatascrapejobs',
         version: 'v1alpha1',
       },
       {
@@ -313,6 +337,108 @@
         group: 'enterprise.grafana.net.namespaced',
         kind: 'TeamExternalGroup',
         plural: 'teamexternalgroups',
+        version: 'v1alpha1',
+      },
+    ],
+  },
+  fleetmanagement: {
+    crd: [
+      {
+        group: 'fleetmanagement.grafana.crossplane.io',
+        kind: 'Collector',
+        plural: 'collectors',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'fleetmanagement.grafana.crossplane.io',
+        kind: 'Pipeline',
+        plural: 'pipelines',
+        version: 'v1alpha1',
+      },
+    ],
+    xrd: [
+      {
+        group: 'fleetmanagement.grafana.net.namespaced',
+        kind: 'Collector',
+        plural: 'collectors',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'fleetmanagement.grafana.net.namespaced',
+        kind: 'Pipeline',
+        plural: 'pipelines',
+        version: 'v1alpha1',
+      },
+    ],
+  },
+  frontendobservability: {
+    crd: [
+      {
+        group: 'frontendobservability.grafana.crossplane.io',
+        kind: 'App',
+        plural: 'apps',
+        version: 'v1alpha1',
+      },
+    ],
+    xrd: [
+      {
+        group: 'frontendobservability.grafana.net.namespaced',
+        kind: 'App',
+        plural: 'apps',
+        version: 'v1alpha1',
+      },
+    ],
+  },
+  k6: {
+    crd: [
+      {
+        group: 'k6.grafana.crossplane.io',
+        kind: 'Installation',
+        plural: 'installations',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.crossplane.io',
+        kind: 'LoadTest',
+        plural: 'loadtests',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.crossplane.io',
+        kind: 'ProjectLimits',
+        plural: 'projectlimits',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.crossplane.io',
+        kind: 'Project',
+        plural: 'projects',
+        version: 'v1alpha1',
+      },
+    ],
+    xrd: [
+      {
+        group: 'k6.grafana.net.namespaced',
+        kind: 'Installation',
+        plural: 'installations',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.net.namespaced',
+        kind: 'LoadTest',
+        plural: 'loadtests',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.net.namespaced',
+        kind: 'ProjectLimits',
+        plural: 'projectlimits',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.net.namespaced',
+        kind: 'Project',
+        plural: 'projects',
         version: 'v1alpha1',
       },
     ],
@@ -753,6 +879,12 @@
     crd: [
       {
         group: 'sm.grafana.crossplane.io',
+        kind: 'CheckAlerts',
+        plural: 'checkalerts',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'sm.grafana.crossplane.io',
         kind: 'Check',
         plural: 'checks',
         version: 'v1alpha1',
@@ -771,6 +903,12 @@
       },
     ],
     xrd: [
+      {
+        group: 'sm.grafana.net.namespaced',
+        kind: 'CheckAlerts',
+        plural: 'checkalerts',
+        version: 'v1alpha1',
+      },
       {
         group: 'sm.grafana.net.namespaced',
         kind: 'Check',

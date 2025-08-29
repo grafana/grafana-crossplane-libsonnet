@@ -2312,10 +2312,35 @@
           withTitle(value): {
             title: value,
           },
-          '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Alertmanager instance.\nThe VictorOps webhook URL.' } },
-          withUrl(value): {
-            url: value,
+          '#withUrlSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe VictorOps webhook URL.' } },
+          withUrlSecretRef(value): {
+            urlSecretRef: value,
           },
+          '#withUrlSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe VictorOps webhook URL.' } },
+          withUrlSecretRefMixin(value): {
+            urlSecretRef+: value,
+          },
+          urlSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                urlSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                urlSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                urlSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
         },
       '#withWebex': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to Cisco Webex. (see below for nested schema)\nA contact point that sends notifications to Cisco Webex.' } },
       withWebex(value): {
@@ -2553,6 +2578,29 @@
           withTitle(value): {
             title: value,
           },
+          '#withTlsConfigSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.\nAllows configuring TLS for the webhook notifier.' } },
+          withTlsConfigSecretRef(value): {
+            tlsConfigSecretRef: value,
+          },
+          '#withTlsConfigSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.\nAllows configuring TLS for the webhook notifier.' } },
+          withTlsConfigSecretRefMixin(value): {
+            tlsConfigSecretRef+: value,
+          },
+          tlsConfigSecretRef+:
+            {
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                tlsConfigSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                tlsConfigSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
           '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Alertmanager instance.\nThe URL to send webhook requests to.' } },
           withUrl(value): {
             url: value,
@@ -4725,10 +4773,35 @@
           withTitle(value): {
             title: value,
           },
-          '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Alertmanager instance.\nThe VictorOps webhook URL.' } },
-          withUrl(value): {
-            url: value,
+          '#withUrlSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe VictorOps webhook URL.' } },
+          withUrlSecretRef(value): {
+            urlSecretRef: value,
           },
+          '#withUrlSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe VictorOps webhook URL.' } },
+          withUrlSecretRefMixin(value): {
+            urlSecretRef+: value,
+          },
+          urlSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                urlSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                urlSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                urlSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
         },
       '#withWebex': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to Cisco Webex. (see below for nested schema)\nA contact point that sends notifications to Cisco Webex.' } },
       withWebex(value): {
@@ -4935,6 +5008,14 @@
           '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated title of the message.\nTemplated title of the message.' } },
           withTitle(value): {
             title: value,
+          },
+          '#withTlsConfigSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '' } },
+          withTlsConfigSecretRef(value): {
+            tlsConfigSecretRef: value,
+          },
+          '#withTlsConfigSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '' } },
+          withTlsConfigSecretRefMixin(value): {
+            tlsConfigSecretRef+: value,
           },
           '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Alertmanager instance.\nThe URL to send webhook requests to.' } },
           withUrl(value): {

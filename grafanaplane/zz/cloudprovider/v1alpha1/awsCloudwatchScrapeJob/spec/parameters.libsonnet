@@ -43,7 +43,7 @@
           },
         },
       },
-      '#withCustomNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withCustomNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withCustomNamespace(value): {
         spec+: {
           parameters+: {
@@ -56,7 +56,7 @@
           },
         },
       },
-      '#withCustomNamespaceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withCustomNamespaceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withCustomNamespaceMixin(value): {
         spec+: {
           parameters+: {
@@ -89,7 +89,7 @@
           metric+:
             {
               '#': { help: '', name: 'metric' },
-              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
               withName(value): {
                 name: value,
               },
@@ -108,16 +108,16 @@
                    else [value]),
               },
             },
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the custom namespace to scrape.' } },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the custom namespace to scrape.' } },
           withName(value): {
             name: value,
           },
-          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the custom namespace.' } },
+          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace. Defaults to 300.\nThe interval in seconds to scrape the custom namespace. Defaults to `300`.' } },
           withScrapeIntervalSeconds(value): {
             scrapeIntervalSeconds: value,
           },
         },
-      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the CloudWatch Scrape Job is enabled or not.\nWhether the CloudWatch Scrape Job is enabled or not.' } },
+      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the AWS CloudWatch Scrape Job is enabled or not. Defaults to true.\nWhether the AWS CloudWatch Scrape Job is enabled or not. Defaults to `true`.' } },
       withEnabled(value=true): {
         spec+: {
           parameters+: {
@@ -127,7 +127,7 @@
           },
         },
       },
-      '#withExportTags': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info.\nWhen enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`.' } },
+      '#withExportTags': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info. Defaults to true.\nWhen enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`. Defaults to `true`.' } },
       withExportTags(value=true): {
         spec+: {
           parameters+: {
@@ -137,7 +137,7 @@
           },
         },
       },
-      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the CloudWatch Scrape Job.' } },
+      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the AWS CloudWatch Scrape Job.' } },
       withName(value): {
         spec+: {
           parameters+: {
@@ -173,7 +173,7 @@
           },
         },
       },
-      '#withService': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withService': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withService(value): {
         spec+: {
           parameters+: {
@@ -186,7 +186,7 @@
           },
         },
       },
-      '#withServiceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withServiceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withServiceMixin(value): {
         spec+: {
           parameters+: {
@@ -219,7 +219,7 @@
           metric+:
             {
               '#': { help: '', name: 'metric' },
-              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
               withName(value): {
                 name: value,
               },
@@ -238,7 +238,7 @@
                    else [value]),
               },
             },
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.' } },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.' } },
           withName(value): {
             name: value,
           },
@@ -268,7 +268,7 @@
                 value: value,
               },
             },
-          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.' } },
+          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace. Defaults to 300.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals. Defaults to `300`.' } },
           withScrapeIntervalSeconds(value): {
             scrapeIntervalSeconds: value,
           },
@@ -346,7 +346,7 @@
           },
         },
       },
-      '#withCustomNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withCustomNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withCustomNamespace(value): {
         spec+: {
           parameters+: {
@@ -359,7 +359,7 @@
           },
         },
       },
-      '#withCustomNamespaceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withCustomNamespaceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nZero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withCustomNamespaceMixin(value): {
         spec+: {
           parameters+: {
@@ -392,7 +392,7 @@
           metric+:
             {
               '#': { help: '', name: 'metric' },
-              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
               withName(value): {
                 name: value,
               },
@@ -411,16 +411,16 @@
                    else [value]),
               },
             },
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the custom namespace to scrape.' } },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the custom namespace to scrape.' } },
           withName(value): {
             name: value,
           },
-          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the custom namespace.' } },
+          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace. Defaults to 300.\nThe interval in seconds to scrape the custom namespace. Defaults to `300`.' } },
           withScrapeIntervalSeconds(value): {
             scrapeIntervalSeconds: value,
           },
         },
-      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the CloudWatch Scrape Job is enabled or not.\nWhether the CloudWatch Scrape Job is enabled or not.' } },
+      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the AWS CloudWatch Scrape Job is enabled or not. Defaults to true.\nWhether the AWS CloudWatch Scrape Job is enabled or not. Defaults to `true`.' } },
       withEnabled(value=true): {
         spec+: {
           parameters+: {
@@ -430,7 +430,7 @@
           },
         },
       },
-      '#withExportTags': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info.\nWhen enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`.' } },
+      '#withExportTags': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info. Defaults to true.\nWhen enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`. Defaults to `true`.' } },
       withExportTags(value=true): {
         spec+: {
           parameters+: {
@@ -440,7 +440,7 @@
           },
         },
       },
-      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the CloudWatch Scrape Job.' } },
+      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the AWS CloudWatch Scrape Job.' } },
       withName(value): {
         spec+: {
           parameters+: {
@@ -476,7 +476,7 @@
           },
         },
       },
-      '#withService': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withService': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withService(value): {
         spec+: {
           parameters+: {
@@ -489,7 +489,7 @@
           },
         },
       },
-      '#withServiceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
+      '#withServiceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)\nOne or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.' } },
       withServiceMixin(value): {
         spec+: {
           parameters+: {
@@ -522,7 +522,7 @@
           metric+:
             {
               '#': { help: '', name: 'metric' },
-              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the metric to scrape.' } },
               withName(value): {
                 name: value,
               },
@@ -541,7 +541,7 @@
                    else [value]),
               },
             },
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.' } },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the AWS CloudWatch Scrape Job.\nThe name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.' } },
           withName(value): {
             name: value,
           },
@@ -571,7 +571,7 @@
                 value: value,
               },
             },
-          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.' } },
+          '#withScrapeIntervalSeconds': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The interval in seconds to scrape the custom namespace. Defaults to 300.\nThe interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals. Defaults to `300`.' } },
           withScrapeIntervalSeconds(value): {
             scrapeIntervalSeconds: value,
           },

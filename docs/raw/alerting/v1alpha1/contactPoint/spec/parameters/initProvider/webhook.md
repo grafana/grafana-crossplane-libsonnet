@@ -17,6 +17,8 @@
 * [`fn withSettingsSecretRef(value)`](#fn-withsettingssecretref)
 * [`fn withSettingsSecretRefMixin(value)`](#fn-withsettingssecretrefmixin)
 * [`fn withTitle(value)`](#fn-withtitle)
+* [`fn withTlsConfigSecretRef(value)`](#fn-withtlsconfigsecretref)
+* [`fn withTlsConfigSecretRefMixin(value)`](#fn-withtlsconfigsecretrefmixin)
 * [`fn withUrl(value)`](#fn-withurl)
 * [`obj authorizationCredentialsSecretRef`](#obj-authorizationcredentialssecretref)
   * [`fn withKey(value)`](#fn-authorizationcredentialssecretrefwithkey)
@@ -184,6 +186,28 @@ PARAMETERS:
 
 (String) The templated title of the message.
 Templated title of the message.
+### fn withTlsConfigSecretRef
+
+```jsonnet
+withTlsConfigSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+### fn withTlsConfigSecretRefMixin
+
+```jsonnet
+withTlsConfigSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
 ### fn withUrl
 
 ```jsonnet

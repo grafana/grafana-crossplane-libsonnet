@@ -1087,8 +1087,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.
-The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.
+(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
+The ID of the OnCall team (using the `grafana_oncall_team` datasource).
 ###### fn spec.parameters.forProvider.withTimeZone
 
 ```jsonnet
@@ -1354,8 +1354,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.
-The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.
+(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
+The ID of the OnCall team (using the `grafana_oncall_team` datasource).
 ###### fn spec.parameters.initProvider.withTimeZone
 
 ```jsonnet

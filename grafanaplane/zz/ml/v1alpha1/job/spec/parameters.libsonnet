@@ -257,7 +257,7 @@
               },
             },
         },
-      '#withDatasourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The type of datasource being queried. Currently allowed values are prometheus, graphite, loki, postgres, and datadog.' } },
+      '#withDatasourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The type of datasource being queried. Currently allowed values are prometheus, grafana-prometheus-datasource, grafana-amazonprometheus-datasource, loki, grafana-loki-datasource, graphite, grafana-graphite-datasource, grafana-datadog-datasource, postgres, grafana-postgresql-datasource, doitintl-bigquery-datasource, grafana-bigquery-datasource, grafana-snowflake-datasource, influxdb, grafana-influxdb-datasource, grafana-splunk-datasource, elasticsearch, grafana-elasticsearch-datasource, and grafana-mongodb-datasource.' } },
       withDatasourceType(value): {
         spec+: {
           parameters+: {
@@ -636,7 +636,7 @@
               },
             },
         },
-      '#withDatasourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The type of datasource being queried. Currently allowed values are prometheus, graphite, loki, postgres, and datadog.' } },
+      '#withDatasourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The type of datasource being queried. Currently allowed values are prometheus, grafana-prometheus-datasource, grafana-amazonprometheus-datasource, loki, grafana-loki-datasource, graphite, grafana-graphite-datasource, grafana-datadog-datasource, postgres, grafana-postgresql-datasource, doitintl-bigquery-datasource, grafana-bigquery-datasource, grafana-snowflake-datasource, influxdb, grafana-influxdb-datasource, grafana-splunk-datasource, elasticsearch, grafana-elasticsearch-datasource, and grafana-mongodb-datasource.' } },
       withDatasourceType(value): {
         spec+: {
           parameters+: {

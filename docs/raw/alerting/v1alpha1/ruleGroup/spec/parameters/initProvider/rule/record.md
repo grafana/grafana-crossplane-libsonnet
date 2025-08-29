@@ -6,6 +6,7 @@
 
 * [`fn withFrom(value)`](#fn-withfrom)
 * [`fn withMetric(value)`](#fn-withmetric)
+* [`fn withTargetDatasourceUid(value)`](#fn-withtargetdatasourceuid)
 
 ## Fields
 
@@ -33,3 +34,15 @@ PARAMETERS:
 
 (String) The name of the metric to write to.
 The name of the metric to write to.
+### fn withTargetDatasourceUid
+
+```jsonnet
+withTargetDatasourceUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The UID of the datasource to write the metric to.
+The UID of the datasource to write the metric to.

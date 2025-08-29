@@ -35,6 +35,12 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.defaultRoute
                 toFieldPath: spec.forProvider.defaultRoute
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dynamicLabels
+                toFieldPath: spec.forProvider.dynamicLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.labels
+                toFieldPath: spec.forProvider.labels
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.name
                 toFieldPath: spec.forProvider.name
                 type: FromCompositeFieldPath
@@ -49,6 +55,12 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.defaultRoute
                 toFieldPath: spec.initProvider.defaultRoute
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dynamicLabels
+                toFieldPath: spec.initProvider.dynamicLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.labels
+                toFieldPath: spec.initProvider.labels
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.name
                 toFieldPath: spec.initProvider.name

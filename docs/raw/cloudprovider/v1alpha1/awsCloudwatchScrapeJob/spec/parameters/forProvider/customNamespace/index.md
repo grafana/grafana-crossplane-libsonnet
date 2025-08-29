@@ -49,7 +49,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the CloudWatch Scrape Job.
+(String) The name of the AWS CloudWatch Scrape Job.
 The name of the custom namespace to scrape.
 ### fn withScrapeIntervalSeconds
 
@@ -61,5 +61,5 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) The interval in seconds to scrape the custom namespace.
-The interval in seconds to scrape the custom namespace.
+(Number) The interval in seconds to scrape the custom namespace. Defaults to 300.
+The interval in seconds to scrape the custom namespace. Defaults to `300`.

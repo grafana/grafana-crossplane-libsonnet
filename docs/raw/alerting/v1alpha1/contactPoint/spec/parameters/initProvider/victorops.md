@@ -10,7 +10,12 @@
 * [`fn withSettingsSecretRef(value)`](#fn-withsettingssecretref)
 * [`fn withSettingsSecretRefMixin(value)`](#fn-withsettingssecretrefmixin)
 * [`fn withTitle(value)`](#fn-withtitle)
-* [`fn withUrl(value)`](#fn-withurl)
+* [`fn withUrlSecretRef(value)`](#fn-withurlsecretref)
+* [`fn withUrlSecretRefMixin(value)`](#fn-withurlsecretrefmixin)
+* [`obj urlSecretRef`](#obj-urlsecretref)
+  * [`fn withKey(value)`](#fn-urlsecretrefwithkey)
+  * [`fn withName(value)`](#fn-urlsecretrefwithname)
+  * [`fn withNamespace(value)`](#fn-urlsecretrefwithnamespace)
 
 ## Fields
 
@@ -85,15 +90,63 @@ PARAMETERS:
 
 (String) The templated title of the message.
 Templated title to display.
-### fn withUrl
+### fn withUrlSecretRef
 
 ```jsonnet
-withUrl(value)
+withUrlSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String) The URL of the Alertmanager instance.
+The VictorOps webhook URL.
+### fn withUrlSecretRefMixin
+
+```jsonnet
+withUrlSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String) The URL of the Alertmanager instance.
+The VictorOps webhook URL.
+### obj urlSecretRef
+
+
+#### fn urlSecretRef.withKey
+
+```jsonnet
+urlSecretRef.withKey(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The URL of the Alertmanager instance.
-The VictorOps webhook URL.
+The key to select.
+#### fn urlSecretRef.withName
+
+```jsonnet
+urlSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+#### fn urlSecretRef.withNamespace
+
+```jsonnet
+urlSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
