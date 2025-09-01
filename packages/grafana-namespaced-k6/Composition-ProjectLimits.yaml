@@ -1,0 +1,146 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xprojectlimits.k6.grafana.net.namespaced
+  name: projectlimits-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: k6.grafana.net.namespaced/v1alpha1
+    kind: XProjectLimits
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: k6.grafana.crossplane.io/v1alpha1
+              kind: ProjectLimits
+            name: projectlimits
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.selectorLabel
+                toFieldPath: "metadata.labels[\"selector\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.durationMaxPerTest
+                toFieldPath: spec.forProvider.durationMaxPerTest
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectId
+                toFieldPath: spec.forProvider.projectId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectRef.name
+                toFieldPath: spec.forProvider.projectRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectRef.policy.resolution
+                toFieldPath: spec.forProvider.projectRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectRef.policy.resolve
+                toFieldPath: spec.forProvider.projectRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectSelector.matchControllerRef
+                toFieldPath: spec.forProvider.projectSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectSelector.matchLabels
+                toFieldPath: spec.forProvider.projectSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectSelector.policy.resolution
+                toFieldPath: spec.forProvider.projectSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.projectSelector.policy.resolve
+                toFieldPath: spec.forProvider.projectSelector.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.vuBrowserMaxPerTest
+                toFieldPath: spec.forProvider.vuBrowserMaxPerTest
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.vuMaxPerTest
+                toFieldPath: spec.forProvider.vuMaxPerTest
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.vuhMaxPerMonth
+                toFieldPath: spec.forProvider.vuhMaxPerMonth
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.durationMaxPerTest
+                toFieldPath: spec.initProvider.durationMaxPerTest
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectId
+                toFieldPath: spec.initProvider.projectId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectRef.name
+                toFieldPath: spec.initProvider.projectRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectRef.policy.resolution
+                toFieldPath: spec.initProvider.projectRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectRef.policy.resolve
+                toFieldPath: spec.initProvider.projectRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectSelector.matchControllerRef
+                toFieldPath: spec.initProvider.projectSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectSelector.matchLabels
+                toFieldPath: spec.initProvider.projectSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectSelector.policy.resolution
+                toFieldPath: spec.initProvider.projectSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.projectSelector.policy.resolve
+                toFieldPath: spec.initProvider.projectSelector.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.vuBrowserMaxPerTest
+                toFieldPath: spec.initProvider.vuBrowserMaxPerTest
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.vuMaxPerTest
+                toFieldPath: spec.initProvider.vuMaxPerTest
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.vuhMaxPerMonth
+                toFieldPath: spec.initProvider.vuhMaxPerMonth
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
+                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
+                toFieldPath: spec.publishConnectionDetailsTo.metadata.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
+                toFieldPath: spec.publishConnectionDetailsTo.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform

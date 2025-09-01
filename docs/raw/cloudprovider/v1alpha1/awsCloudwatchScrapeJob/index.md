@@ -908,8 +908,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.forProvider.withCustomNamespaceMixin
 
 ```jsonnet
@@ -920,8 +920,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.forProvider.withEnabled
 
 ```jsonnet
@@ -933,8 +933,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether the CloudWatch Scrape Job is enabled or not.
-Whether the CloudWatch Scrape Job is enabled or not.
+(Boolean) Whether the AWS CloudWatch Scrape Job is enabled or not. Defaults to true.
+Whether the AWS CloudWatch Scrape Job is enabled or not. Defaults to `true`.
 ###### fn spec.parameters.forProvider.withExportTags
 
 ```jsonnet
@@ -946,8 +946,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info.
-When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`.
+(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info. Defaults to true.
+When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`. Defaults to `true`.
 ###### fn spec.parameters.forProvider.withName
 
 ```jsonnet
@@ -958,8 +958,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the CloudWatch Scrape Job.
-The name of the CloudWatch Scrape Job.
+(String) The name of the AWS CloudWatch Scrape Job.
+The name of the AWS CloudWatch Scrape Job.
 ###### fn spec.parameters.forProvider.withRegionsSubsetOverride
 
 ```jsonnet
@@ -994,8 +994,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.forProvider.withServiceMixin
 
 ```jsonnet
@@ -1006,8 +1006,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.forProvider.withStackId
 
 ```jsonnet
@@ -1069,8 +1069,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.initProvider.withCustomNamespaceMixin
 
 ```jsonnet
@@ -1081,8 +1081,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-Zero or more configuration blocks to configure custom namespaces for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+Zero or more configuration blocks to configure custom namespaces for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.initProvider.withEnabled
 
 ```jsonnet
@@ -1094,8 +1094,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether the CloudWatch Scrape Job is enabled or not.
-Whether the CloudWatch Scrape Job is enabled or not.
+(Boolean) Whether the AWS CloudWatch Scrape Job is enabled or not. Defaults to true.
+Whether the AWS CloudWatch Scrape Job is enabled or not. Defaults to `true`.
 ###### fn spec.parameters.initProvider.withExportTags
 
 ```jsonnet
@@ -1107,8 +1107,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info.
-When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`.
+(Boolean) When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as aws_<service_name>_info. Defaults to true.
+When enabled, AWS resource tags are exported as Prometheus labels to metrics formatted as `aws_<service_name>_info`. Defaults to `true`.
 ###### fn spec.parameters.initProvider.withName
 
 ```jsonnet
@@ -1119,8 +1119,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the CloudWatch Scrape Job.
-The name of the CloudWatch Scrape Job.
+(String) The name of the AWS CloudWatch Scrape Job.
+The name of the AWS CloudWatch Scrape Job.
 ###### fn spec.parameters.initProvider.withRegionsSubsetOverride
 
 ```jsonnet
@@ -1155,8 +1155,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.initProvider.withServiceMixin
 
 ```jsonnet
@@ -1167,8 +1167,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List) One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
-One or more configuration blocks to configure AWS services for the CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
+(Block List) One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct name attribute. When accessing this as an attribute reference, it is a list of objects. (see below for nested schema)
+One or more configuration blocks to configure AWS services for the AWS CloudWatch Scrape Job to scrape. Each block must have a distinct `name` attribute. When accessing this as an attribute reference, it is a list of objects.
 ###### fn spec.parameters.initProvider.withStackId
 
 ```jsonnet

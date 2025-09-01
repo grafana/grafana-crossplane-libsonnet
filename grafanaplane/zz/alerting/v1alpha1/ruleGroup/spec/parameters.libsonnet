@@ -520,11 +520,11 @@
       rule+:
         {
           '#': { help: '', name: 'rule' },
-          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
+          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
           withAnnotations(value): {
             annotations: value,
           },
-          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
+          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
           withAnnotationsMixin(value): {
             annotations+: value,
           },
@@ -604,6 +604,10 @@
           withIsPaused(value=true): {
             isPaused: value,
           },
+          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.\nThe amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
+          withKeepFiringFor(value): {
+            keepFiringFor: value,
+          },
           '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to map[].\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to `map[]`.' } },
           withLabels(value): {
             labels: value,
@@ -611,6 +615,10 @@
           '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to map[].\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to `map[]`.' } },
           withLabelsMixin(value): {
             labels+: value,
+          },
+          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.\nThe number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
+          withMissingSeriesEvalsToResolve(value): {
+            missingSeriesEvalsToResolve: value,
           },
           '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the rule group.\nThe name of the alert rule.' } },
           withName(value): {
@@ -814,6 +822,10 @@
               '#withMetric': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the metric to write to.\nThe name of the metric to write to.' } },
               withMetric(value): {
                 metric: value,
+              },
+              '#withTargetDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the datasource to write the metric to.\nThe UID of the datasource to write the metric to.' } },
+              withTargetDatasourceUid(value): {
+                targetDatasourceUid: value,
               },
             },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the alert rule.\nThe unique identifier of the alert rule.' } },
@@ -1327,11 +1339,11 @@
       rule+:
         {
           '#': { help: '', name: 'rule' },
-          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
+          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
           withAnnotations(value): {
             annotations: value,
           },
-          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
+          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.' } },
           withAnnotationsMixin(value): {
             annotations+: value,
           },
@@ -1411,6 +1423,10 @@
           withIsPaused(value=true): {
             isPaused: value,
           },
+          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.\nThe amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
+          withKeepFiringFor(value): {
+            keepFiringFor: value,
+          },
           '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to map[].\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to `map[]`.' } },
           withLabels(value): {
             labels: value,
@@ -1418,6 +1434,10 @@
           '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to map[].\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to `map[]`.' } },
           withLabelsMixin(value): {
             labels+: value,
+          },
+          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.\nThe number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
+          withMissingSeriesEvalsToResolve(value): {
+            missingSeriesEvalsToResolve: value,
           },
           '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the rule group.\nThe name of the alert rule.' } },
           withName(value): {
@@ -1621,6 +1641,10 @@
               '#withMetric': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the metric to write to.\nThe name of the metric to write to.' } },
               withMetric(value): {
                 metric: value,
+              },
+              '#withTargetDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the datasource to write the metric to.\nThe UID of the datasource to write the metric to.' } },
+              withTargetDatasourceUid(value): {
+                targetDatasourceUid: value,
               },
             },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the alert rule.\nThe unique identifier of the alert rule.' } },

@@ -41,8 +41,11 @@
   * [`fn withUid(value)`](#fn-metadatawithuid)
 * [`obj spec`](#obj-spec)
   * [`fn withCloudApiUrl(value)`](#fn-specwithcloudapiurl)
+  * [`fn withCloudProviderUrl(value)`](#fn-specwithcloudproviderurl)
+  * [`fn withConnectionsApiUrl(value)`](#fn-specwithconnectionsapiurl)
   * [`fn withCredentials(value)`](#fn-specwithcredentials)
   * [`fn withCredentialsMixin(value)`](#fn-specwithcredentialsmixin)
+  * [`fn withFleetManagementUrl(value)`](#fn-specwithfleetmanagementurl)
   * [`fn withOncallUrl(value)`](#fn-specwithoncallurl)
   * [`fn withSmUrl(value)`](#fn-specwithsmurl)
   * [`fn withUrl(value)`](#fn-specwithurl)
@@ -433,6 +436,28 @@ PARAMETERS:
 * **value** (`string`)
 
 Override the Grafana Cloud API URL from the credentials reference attribute.
+#### fn spec.withCloudProviderUrl
+
+```jsonnet
+spec.withCloudProviderUrl(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Override the Cloud Provider API from the credentials reference attribute.
+#### fn spec.withConnectionsApiUrl
+
+```jsonnet
+spec.withConnectionsApiUrl(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Override the Connections API from the credentials reference attribute.
 #### fn spec.withCredentials
 
 ```jsonnet
@@ -455,6 +480,17 @@ PARAMETERS:
 * **value** (`object`)
 
 Credentials required to authenticate to this provider.
+#### fn spec.withFleetManagementUrl
+
+```jsonnet
+spec.withFleetManagementUrl(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Override the FleetManagement API from the credentials reference attribute.
 #### fn spec.withOncallUrl
 
 ```jsonnet

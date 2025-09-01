@@ -43,7 +43,7 @@
           },
         },
       },
-      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.\nThe ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.' } },
+      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team (using the grafana_oncall_team datasource).\nThe ID of the OnCall team (using the `grafana_oncall_team` datasource).' } },
       withTeamId(value): {
         spec+: {
           parameters+: {
@@ -82,7 +82,7 @@
           },
         },
       },
-      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.\nThe ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.' } },
+      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team (using the grafana_oncall_team datasource).\nThe ID of the OnCall team (using the `grafana_oncall_team` datasource).' } },
       withTeamId(value): {
         spec+: {
           parameters+: {

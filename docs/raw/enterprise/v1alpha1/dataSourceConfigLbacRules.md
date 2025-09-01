@@ -867,6 +867,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The UID of the datasource.
 The UID of the datasource.
 ###### fn spec.parameters.forProvider.withRules
 
@@ -878,6 +879,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
 JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
 ##### obj spec.parameters.initProvider
 
@@ -892,6 +894,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The UID of the datasource.
 The UID of the datasource.
 ###### fn spec.parameters.initProvider.withRules
 
@@ -903,6 +906,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
 JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
 ##### obj spec.parameters.providerConfigRef
 

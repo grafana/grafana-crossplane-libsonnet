@@ -54,7 +54,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the CloudWatch Scrape Job.
+(String) The name of the AWS CloudWatch Scrape Job.
 The name of the service to scrape. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported services.
 ### fn withResourceDiscoveryTagFilter
 
@@ -90,8 +90,8 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) The interval in seconds to scrape the custom namespace.
-The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals.
+(Number) The interval in seconds to scrape the custom namespace. Defaults to 300.
+The interval in seconds to scrape the service. See https://grafana.com/docs/grafana-cloud/monitor-infrastructure/monitor-cloud-provider/aws/cloudwatch-metrics/services/ for supported scrape intervals. Defaults to `300`.
 ### fn withTagsToAddToMetrics
 
 ```jsonnet

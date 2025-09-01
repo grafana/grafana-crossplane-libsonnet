@@ -18,8 +18,10 @@
 * [`fn withExecErrState(value)`](#fn-withexecerrstate)
 * [`fn withFor(value)`](#fn-withfor)
 * [`fn withIsPaused(value=true)`](#fn-withispaused)
+* [`fn withKeepFiringFor(value)`](#fn-withkeepfiringfor)
 * [`fn withLabels(value)`](#fn-withlabels)
 * [`fn withLabelsMixin(value)`](#fn-withlabelsmixin)
+* [`fn withMissingSeriesEvalsToResolve(value)`](#fn-withmissingseriesevalstoresolve)
 * [`fn withName(value)`](#fn-withname)
 * [`fn withNoDataState(value)`](#fn-withnodatastate)
 * [`fn withNotificationSettings(value)`](#fn-withnotificationsettings)
@@ -40,8 +42,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].
-Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
+value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].
+Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
 ### fn withAnnotationsMixin
 
 ```jsonnet
@@ -52,8 +54,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The dashboardUId and panelId annotations, which link alerts to a panel, must be set together. Defaults to map[].
-Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `dashboardUId` and `panelId` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
+value pairs of metadata to attach to the alert rule. They add additional information, such as a summary or runbook_url, to help identify and investigate alerts. The __dashboardUid__ and __panelId__ annotations, which link alerts to a panel, must be set together. Defaults to map[].
+Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts. The `__dashboardUid__` and `__panelId__` annotations, which link alerts to a panel, must be set together. Defaults to `map[]`.
 ### fn withCondition
 
 ```jsonnet
@@ -127,6 +129,18 @@ PARAMETERS:
 
 (Boolean) Sets whether the alert should be paused or not. Defaults to false.
 Sets whether the alert should be paused or not. Defaults to `false`.
+### fn withKeepFiringFor
+
+```jsonnet
+withKeepFiringFor(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
+The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
 ### fn withLabels
 
 ```jsonnet
@@ -151,6 +165,18 @@ PARAMETERS:
 
 value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to map[].
 Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing. Defaults to `map[]`.
+### fn withMissingSeriesEvalsToResolve
+
+```jsonnet
+withMissingSeriesEvalsToResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.
+The number of missing series evaluations that must occur before the rule is considered to be resolved.
 ### fn withName
 
 ```jsonnet

@@ -20,7 +20,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the CloudWatch Scrape Job.
+(String) The name of the AWS CloudWatch Scrape Job.
 The name of the metric to scrape.
 ### fn withStatistics
 

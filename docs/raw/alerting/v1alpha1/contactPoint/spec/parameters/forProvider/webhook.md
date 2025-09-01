@@ -17,6 +17,8 @@
 * [`fn withSettingsSecretRef(value)`](#fn-withsettingssecretref)
 * [`fn withSettingsSecretRefMixin(value)`](#fn-withsettingssecretrefmixin)
 * [`fn withTitle(value)`](#fn-withtitle)
+* [`fn withTlsConfigSecretRef(value)`](#fn-withtlsconfigsecretref)
+* [`fn withTlsConfigSecretRefMixin(value)`](#fn-withtlsconfigsecretrefmixin)
 * [`fn withUrl(value)`](#fn-withurl)
 * [`obj authorizationCredentialsSecretRef`](#obj-authorizationcredentialssecretref)
   * [`fn withKey(value)`](#fn-authorizationcredentialssecretrefwithkey)
@@ -29,6 +31,9 @@
 * [`obj settingsSecretRef`](#obj-settingssecretref)
   * [`fn withName(value)`](#fn-settingssecretrefwithname)
   * [`fn withNamespace(value)`](#fn-settingssecretrefwithnamespace)
+* [`obj tlsConfigSecretRef`](#obj-tlsconfigsecretref)
+  * [`fn withName(value)`](#fn-tlsconfigsecretrefwithname)
+  * [`fn withNamespace(value)`](#fn-tlsconfigsecretrefwithnamespace)
 
 ## Fields
 
@@ -189,6 +194,30 @@ PARAMETERS:
 
 (String) The templated title of the message.
 Templated title of the message.
+### fn withTlsConfigSecretRef
+
+```jsonnet
+withTlsConfigSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.
+Allows configuring TLS for the webhook notifier.
+### fn withTlsConfigSecretRefMixin
+
+```jsonnet
+withTlsConfigSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.
+Allows configuring TLS for the webhook notifier.
 ### fn withUrl
 
 ```jsonnet
@@ -291,6 +320,31 @@ Name of the secret.
 
 ```jsonnet
 settingsSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
+### obj tlsConfigSecretRef
+
+
+#### fn tlsConfigSecretRef.withName
+
+```jsonnet
+tlsConfigSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+#### fn tlsConfigSecretRef.withNamespace
+
+```jsonnet
+tlsConfigSecretRef.withNamespace(value)
 ```
 
 PARAMETERS:

@@ -78,6 +78,10 @@
     * [`obj forProvider`](#obj-specparametersforprovider)
       * [`fn withDefaultRoute(value)`](#fn-specparametersforproviderwithdefaultroute)
       * [`fn withDefaultRouteMixin(value)`](#fn-specparametersforproviderwithdefaultroutemixin)
+      * [`fn withDynamicLabels(value)`](#fn-specparametersforproviderwithdynamiclabels)
+      * [`fn withDynamicLabelsMixin(value)`](#fn-specparametersforproviderwithdynamiclabelsmixin)
+      * [`fn withLabels(value)`](#fn-specparametersforproviderwithlabels)
+      * [`fn withLabelsMixin(value)`](#fn-specparametersforproviderwithlabelsmixin)
       * [`fn withName(value)`](#fn-specparametersforproviderwithname)
       * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
       * [`fn withTemplates(value)`](#fn-specparametersforproviderwithtemplates)
@@ -86,6 +90,10 @@
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withDefaultRoute(value)`](#fn-specparametersinitproviderwithdefaultroute)
       * [`fn withDefaultRouteMixin(value)`](#fn-specparametersinitproviderwithdefaultroutemixin)
+      * [`fn withDynamicLabels(value)`](#fn-specparametersinitproviderwithdynamiclabels)
+      * [`fn withDynamicLabelsMixin(value)`](#fn-specparametersinitproviderwithdynamiclabelsmixin)
+      * [`fn withLabels(value)`](#fn-specparametersinitproviderwithlabels)
+      * [`fn withLabelsMixin(value)`](#fn-specparametersinitproviderwithlabelsmixin)
       * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
       * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
       * [`fn withTemplates(value)`](#fn-specparametersinitproviderwithtemplates)
@@ -898,6 +906,54 @@ PARAMETERS:
 
 (Block List, Min: 1, Max: 1) The Default route for all alerts from the given integration (see below for nested schema)
 The Default route for all alerts from the given integration
+###### fn spec.parameters.forProvider.withDynamicLabels
+
+```jsonnet
+spec.parameters.forProvider.withDynamicLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
+###### fn spec.parameters.forProvider.withDynamicLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.withDynamicLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
+###### fn spec.parameters.forProvider.withLabels
+
+```jsonnet
+spec.parameters.forProvider.withLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
+###### fn spec.parameters.forProvider.withLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.withLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
 ###### fn spec.parameters.forProvider.withName
 
 ```jsonnet
@@ -920,8 +976,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.
-The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.
+(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
+The ID of the OnCall team (using the `grafana_oncall_team` datasource).
 ###### fn spec.parameters.forProvider.withTemplates
 
 ```jsonnet
@@ -985,6 +1041,54 @@ PARAMETERS:
 
 (Block List, Min: 1, Max: 1) The Default route for all alerts from the given integration (see below for nested schema)
 The Default route for all alerts from the given integration
+###### fn spec.parameters.initProvider.withDynamicLabels
+
+```jsonnet
+spec.parameters.initProvider.withDynamicLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
+###### fn spec.parameters.initProvider.withDynamicLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.withDynamicLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
+###### fn spec.parameters.initProvider.withLabels
+
+```jsonnet
+spec.parameters.initProvider.withLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
+###### fn spec.parameters.initProvider.withLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.withLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).
+A list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).
 ###### fn spec.parameters.initProvider.withName
 
 ```jsonnet
@@ -1007,8 +1111,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.
-The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.
+(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
+The ID of the OnCall team (using the `grafana_oncall_team` datasource).
 ###### fn spec.parameters.initProvider.withTemplates
 
 ```jsonnet

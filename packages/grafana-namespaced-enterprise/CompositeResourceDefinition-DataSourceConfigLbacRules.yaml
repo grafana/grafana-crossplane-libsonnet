@@ -55,10 +55,14 @@ spec:
                     forProvider:
                       properties:
                         datasourceUid:
-                          description: The UID of the datasource.
+                          description: |-
+                            (String) The UID of the datasource.
+                            The UID of the datasource.
                           type: string
                         rules:
-                          description: JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
+                          description: |-
+                            encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
+                            JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
                           type: string
                       type: object
                     initProvider:
@@ -75,10 +79,14 @@ spec:
                         autoscaler.
                       properties:
                         datasourceUid:
-                          description: The UID of the datasource.
+                          description: |-
+                            (String) The UID of the datasource.
+                            The UID of the datasource.
                           type: string
                         rules:
-                          description: JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
+                          description: |-
+                            encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
+                            JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.
                           type: string
                       type: object
                     managementPolicies:

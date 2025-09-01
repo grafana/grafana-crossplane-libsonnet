@@ -33,7 +33,7 @@
   },
   forProvider+:
     {
-      '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the datasource.' } },
+      '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the datasource.\nThe UID of the datasource.' } },
       withDatasourceUid(value): {
         spec+: {
           parameters+: {
@@ -43,7 +43,7 @@
           },
         },
       },
-      '#withRules': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.' } },
+      '#withRules': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.\nJSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.' } },
       withRules(value): {
         spec+: {
           parameters+: {
@@ -72,7 +72,7 @@
   },
   initProvider+:
     {
-      '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the datasource.' } },
+      '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the datasource.\nThe UID of the datasource.' } },
       withDatasourceUid(value): {
         spec+: {
           parameters+: {
@@ -82,7 +82,7 @@
           },
         },
       },
-      '#withRules': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'JSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.' } },
+      '#withRules': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.\nJSON-encoded LBAC rules for the data source. Map of team UIDs to lists of rule strings.' } },
       withRules(value): {
         spec+: {
           parameters+: {

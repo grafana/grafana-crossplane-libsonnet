@@ -253,6 +253,58 @@
               },
             },
         },
+      '#withDynamicLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withDynamicLabels(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              dynamicLabels:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withDynamicLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withDynamicLabelsMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              dynamicLabels+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withLabels(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              labels:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withLabelsMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              labels+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
       '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the service integration.\nThe name of the service integration.' } },
       withName(value): {
         spec+: {
@@ -263,7 +315,7 @@
           },
         },
       },
-      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.\nThe ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.' } },
+      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team (using the grafana_oncall_team datasource).\nThe ID of the OnCall team (using the `grafana_oncall_team` datasource).' } },
       withTeamId(value): {
         spec+: {
           parameters+: {
@@ -784,6 +836,58 @@
               },
             },
         },
+      '#withDynamicLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withDynamicLabels(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              dynamicLabels:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withDynamicLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for dynamic labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withDynamicLabelsMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              dynamicLabels+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withLabels(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              labels:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the grafana_oncall_label datasource).\nA list of string-to-string mappings for static labels. Each map must include one key named "key" and one key named "value" (using the `grafana_oncall_label` datasource).' } },
+      withLabelsMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              labels+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
       '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the service integration.\nThe name of the service integration.' } },
       withName(value): {
         spec+: {
@@ -794,7 +898,7 @@
           },
         },
       },
-      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the grafana_oncall_team datasource.\nThe ID of the OnCall team. To get one, create a team in Grafana, and navigate to the OnCall plugin (to sync the team with OnCall). You can then get the ID using the `grafana_oncall_team` datasource.' } },
+      '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team (using the grafana_oncall_team datasource).\nThe ID of the OnCall team (using the `grafana_oncall_team` datasource).' } },
       withTeamId(value): {
         spec+: {
           parameters+: {

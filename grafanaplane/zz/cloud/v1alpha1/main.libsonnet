@@ -3,6 +3,7 @@
   accessPolicyToken+: import './accessPolicyToken/main.libsonnet',
   orgMember+: import './orgMember/main.libsonnet',
   pluginInstallation+: import './pluginInstallation/main.libsonnet',
+  privateDataSourceConnectNetwork+: import './privateDataSourceConnectNetwork/main.libsonnet',
   stack+: import './stack/main.libsonnet',
   stackServiceAccount+: import './stackServiceAccount/main.libsonnet',
   stackServiceAccountToken+: import './stackServiceAccountToken/main.libsonnet',
