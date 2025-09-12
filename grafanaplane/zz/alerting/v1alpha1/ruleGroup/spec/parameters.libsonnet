@@ -645,6 +645,20 @@
           notificationSettings+:
             {
               '#': { help: '', name: 'notificationSettings' },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimings(value): {
+                activeTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimingsMixin(value): {
+                activeTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
               '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The contact point to route notifications that match this rule to.\nThe contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
                 contactPoint: value,
@@ -1464,6 +1478,20 @@
           notificationSettings+:
             {
               '#': { help: '', name: 'notificationSettings' },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimings(value): {
+                activeTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimingsMixin(value): {
+                activeTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
               '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The contact point to route notifications that match this rule to.\nThe contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
                 contactPoint: value,

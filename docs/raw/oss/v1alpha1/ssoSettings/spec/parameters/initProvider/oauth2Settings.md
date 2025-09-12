@@ -27,6 +27,7 @@
 * [`fn withGroupsAttributePath(value)`](#fn-withgroupsattributepath)
 * [`fn withIdTokenAttributeName(value)`](#fn-withidtokenattributename)
 * [`fn withLoginAttributePath(value)`](#fn-withloginattributepath)
+* [`fn withLoginPrompt(value)`](#fn-withloginprompt)
 * [`fn withName(value)`](#fn-withname)
 * [`fn withNameAttributePath(value)`](#fn-withnameattributepath)
 * [`fn withOrgAttributePath(value)`](#fn-withorgattributepath)
@@ -336,6 +337,18 @@ PARAMETERS:
 
 (String) JMESPath expression to use for user login lookup from the user ID token. Only applicable to Generic OAuth.
 JMESPath expression to use for user login lookup from the user ID token. Only applicable to Generic OAuth.
+### fn withLoginPrompt
+
+```jsonnet
+withLoginPrompt(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Indicates the type of user interaction when the user logs in with the IdP. Available values are login, consent and select_account.
+Indicates the type of user interaction when the user logs in with the IdP. Available values are `login`, `consent` and `select_account`.
 ### fn withName
 
 ```jsonnet

@@ -71,6 +71,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.passwordSecretRef.namespace
                 toFieldPath: spec.forProvider.passwordSecretRef.namespace
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.preset
+                toFieldPath: spec.forProvider.preset
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.teamId
                 toFieldPath: spec.forProvider.teamId
                 type: FromCompositeFieldPath
@@ -124,6 +127,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.passwordSecretRef.namespace
                 toFieldPath: spec.initProvider.passwordSecretRef.namespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.preset
+                toFieldPath: spec.initProvider.preset
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.teamId
                 toFieldPath: spec.initProvider.teamId

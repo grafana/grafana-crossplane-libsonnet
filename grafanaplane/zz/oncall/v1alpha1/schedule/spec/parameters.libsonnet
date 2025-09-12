@@ -328,7 +328,7 @@
           },
         },
       },
-      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The schedule's type. Valid values are ical, calendar.\nThe schedule's type. Valid values are `ical`, `calendar`." } },
+      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The schedule's type. Valid values are ical, calendar, web.\nThe schedule's type. Valid values are `ical`, `calendar`, `web`." } },
       withType(value): {
         spec+: {
           parameters+: {
@@ -652,7 +652,7 @@
           },
         },
       },
-      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The schedule's type. Valid values are ical, calendar.\nThe schedule's type. Valid values are `ical`, `calendar`." } },
+      '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The schedule's type. Valid values are ical, calendar, web.\nThe schedule's type. Valid values are `ical`, `calendar`, `web`." } },
       withType(value): {
         spec+: {
           parameters+: {

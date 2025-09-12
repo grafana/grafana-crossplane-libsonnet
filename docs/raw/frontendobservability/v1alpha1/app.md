@@ -939,8 +939,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}
-The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`
+value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}
+The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`
 ###### fn spec.parameters.forProvider.withSettingsMixin
 
 ```jsonnet
@@ -951,8 +951,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}
-The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`
+value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}
+The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`
 ###### fn spec.parameters.forProvider.withStackId
 
 ```jsonnet
@@ -1038,8 +1038,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}
-The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`
+value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}
+The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`
 ###### fn spec.parameters.initProvider.withSettingsMixin
 
 ```jsonnet
@@ -1050,8 +1050,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}
-The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`
+value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}
+The key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`
 ###### fn spec.parameters.initProvider.withStackId
 
 ```jsonnet

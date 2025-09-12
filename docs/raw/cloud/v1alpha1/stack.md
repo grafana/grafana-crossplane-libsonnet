@@ -69,6 +69,7 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withDeleteProtection(value=true)`](#fn-specparametersforproviderwithdeleteprotection)
       * [`fn withDescription(value)`](#fn-specparametersforproviderwithdescription)
       * [`fn withLabels(value)`](#fn-specparametersforproviderwithlabels)
       * [`fn withLabelsMixin(value)`](#fn-specparametersforproviderwithlabelsmixin)
@@ -79,6 +80,7 @@
       * [`fn withWaitForReadiness(value=true)`](#fn-specparametersforproviderwithwaitforreadiness)
       * [`fn withWaitForReadinessTimeout(value)`](#fn-specparametersforproviderwithwaitforreadinesstimeout)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withDeleteProtection(value=true)`](#fn-specparametersinitproviderwithdeleteprotection)
       * [`fn withDescription(value)`](#fn-specparametersinitproviderwithdescription)
       * [`fn withLabels(value)`](#fn-specparametersinitproviderwithlabels)
       * [`fn withLabelsMixin(value)`](#fn-specparametersinitproviderwithlabelsmixin)
@@ -871,6 +873,19 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withDeleteProtection
+
+```jsonnet
+spec.parameters.forProvider.withDeleteProtection(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Whether to enable delete protection for the stack, preventing accidental deletion. Defaults to true.
+Whether to enable delete protection for the stack, preventing accidental deletion. Defaults to `true`.
 ###### fn spec.parameters.forProvider.withDescription
 
 ```jsonnet
@@ -983,6 +998,19 @@ How long to wait for readiness (if enabled). Defaults to `5m0s`.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withDeleteProtection
+
+```jsonnet
+spec.parameters.initProvider.withDeleteProtection(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Whether to enable delete protection for the stack, preventing accidental deletion. Defaults to true.
+Whether to enable delete protection for the stack, preventing accidental deletion. Defaults to `true`.
 ###### fn spec.parameters.initProvider.withDescription
 
 ```jsonnet

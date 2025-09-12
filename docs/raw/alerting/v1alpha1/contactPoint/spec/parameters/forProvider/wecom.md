@@ -102,7 +102,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.
+(String, Sensitive) The secret key used to generate the HMAC signature.
 The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.
 ### fn withSecretSecretRefMixin
 
@@ -114,7 +114,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.
+(String, Sensitive) The secret key used to generate the HMAC signature.
 The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.
 ### fn withSettingsSecretRef
 

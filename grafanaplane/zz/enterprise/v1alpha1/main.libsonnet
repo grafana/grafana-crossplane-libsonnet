@@ -6,5 +6,6 @@
   roleAssignmentItem+: import './roleAssignmentItem/main.libsonnet',
   roleAssignment+: import './roleAssignment/main.libsonnet',
   role+: import './role/main.libsonnet',
+  scimConfig+: import './scimConfig/main.libsonnet',
   teamExternalGroup+: import './teamExternalGroup/main.libsonnet',
 }
