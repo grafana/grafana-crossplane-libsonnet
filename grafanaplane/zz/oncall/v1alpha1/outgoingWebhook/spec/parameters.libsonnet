@@ -237,6 +237,16 @@
             },
           },
         },
+      '#withPreset': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.\nThe preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.' } },
+      withPreset(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              preset: value,
+            },
+          },
+        },
+      },
       '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team (using the grafana_oncall_team datasource).\nThe ID of the OnCall team (using the `grafana_oncall_team` datasource).' } },
       withTeamId(value): {
         spec+: {
@@ -257,7 +267,7 @@
           },
         },
       },
-      '#withTriggerType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of event that will cause this outgoing webhook to execute. The types of triggers are: escalation, alert group created, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge. Defaults to escalation.\nThe type of event that will cause this outgoing webhook to execute. The types of triggers are: `escalation`, `alert group created`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`. Defaults to `escalation`.' } },
+      '#withTriggerType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.\nThe type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.' } },
       withTriggerType(value): {
         spec+: {
           parameters+: {
@@ -267,7 +277,7 @@
           },
         },
       },
-      '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The webhook URL.\nThe webhook URL.' } },
+      '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The webhook URL. Required when not using a preset that controls this field.\nThe webhook URL. Required when not using a preset that controls this field.' } },
       withUrl(value): {
         spec+: {
           parameters+: {
@@ -510,6 +520,16 @@
             },
           },
         },
+      '#withPreset': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.\nThe preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.' } },
+      withPreset(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              preset: value,
+            },
+          },
+        },
+      },
       '#withTeamId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The ID of the OnCall team (using the grafana_oncall_team datasource).\nThe ID of the OnCall team (using the `grafana_oncall_team` datasource).' } },
       withTeamId(value): {
         spec+: {
@@ -530,7 +550,7 @@
           },
         },
       },
-      '#withTriggerType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of event that will cause this outgoing webhook to execute. The types of triggers are: escalation, alert group created, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge. Defaults to escalation.\nThe type of event that will cause this outgoing webhook to execute. The types of triggers are: `escalation`, `alert group created`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`. Defaults to `escalation`.' } },
+      '#withTriggerType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.\nThe type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.' } },
       withTriggerType(value): {
         spec+: {
           parameters+: {
@@ -540,7 +560,7 @@
           },
         },
       },
-      '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The webhook URL.\nThe webhook URL.' } },
+      '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The webhook URL. Required when not using a preset that controls this field.\nThe webhook URL. Required when not using a preset that controls this field.' } },
       withUrl(value): {
         spec+: {
           parameters+: {

@@ -11,7 +11,7 @@ Most of this library is generated: the Compositions/XRDs packages, Configuration
 ## Install
 
 ```
-jb install github.com/grafana/grafana-crossplane-libsonnet/grafanaplane@0.7.0-0.30.0
+jb install github.com/grafana/grafana-crossplane-libsonnet/grafanaplane@0.8.0-0.34.0
 ```
 
 ## Usage

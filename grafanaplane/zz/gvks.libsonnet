@@ -3,6 +3,12 @@
     crd: [
       {
         group: 'alerting.grafana.crossplane.io',
+        kind: 'AlertenrichmentV1Beta1',
+        plural: 'alertenrichmentv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.crossplane.io',
         kind: 'ContactPoint',
         plural: 'contactpoints',
         version: 'v1alpha1',
@@ -35,6 +41,12 @@
     xrd: [
       {
         group: 'alerting.grafana.net.namespaced',
+        kind: 'AlertenrichmentV1Beta1',
+        plural: 'alertenrichmentv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.net.namespaced',
         kind: 'ContactPoint',
         plural: 'contactpoints',
         version: 'v1alpha1',
@@ -61,6 +73,36 @@
         group: 'alerting.grafana.net.namespaced',
         kind: 'RuleGroup',
         plural: 'rulegroups',
+        version: 'v1alpha1',
+      },
+    ],
+  },
+  asserts: {
+    crd: [
+      {
+        group: 'asserts.grafana.crossplane.io',
+        kind: 'NotificationAlertsConfig',
+        plural: 'notificationalertsconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.crossplane.io',
+        kind: 'SuppressedAssertionsConfig',
+        plural: 'suppressedassertionsconfigs',
+        version: 'v1alpha1',
+      },
+    ],
+    xrd: [
+      {
+        group: 'asserts.grafana.net.namespaced',
+        kind: 'NotificationAlertsConfig',
+        plural: 'notificationalertsconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.net.namespaced',
+        kind: 'SuppressedAssertionsConfig',
+        plural: 'suppressedassertionsconfigs',
         version: 'v1alpha1',
       },
     ],
@@ -285,6 +327,12 @@
       },
       {
         group: 'enterprise.grafana.crossplane.io',
+        kind: 'ScimConfig',
+        plural: 'scimconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.crossplane.io',
         kind: 'TeamExternalGroup',
         plural: 'teamexternalgroups',
         version: 'v1alpha1',
@@ -331,6 +379,12 @@
         group: 'enterprise.grafana.net.namespaced',
         kind: 'Role',
         plural: 'roles',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
+        kind: 'ScimConfig',
+        plural: 'scimconfigs',
         version: 'v1alpha1',
       },
       {
@@ -405,6 +459,12 @@
       },
       {
         group: 'k6.grafana.crossplane.io',
+        kind: 'ProjectAllowedLoadZones',
+        plural: 'projectallowedloadzones',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.crossplane.io',
         kind: 'ProjectLimits',
         plural: 'projectlimits',
         version: 'v1alpha1',
@@ -413,6 +473,12 @@
         group: 'k6.grafana.crossplane.io',
         kind: 'Project',
         plural: 'projects',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.crossplane.io',
+        kind: 'Schedule',
+        plural: 'schedules',
         version: 'v1alpha1',
       },
     ],
@@ -431,6 +497,12 @@
       },
       {
         group: 'k6.grafana.net.namespaced',
+        kind: 'ProjectAllowedLoadZones',
+        plural: 'projectallowedloadzones',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.net.namespaced',
         kind: 'ProjectLimits',
         plural: 'projectlimits',
         version: 'v1alpha1',
@@ -439,6 +511,12 @@
         group: 'k6.grafana.net.namespaced',
         kind: 'Project',
         plural: 'projects',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'k6.grafana.net.namespaced',
+        kind: 'Schedule',
+        plural: 'schedules',
         version: 'v1alpha1',
       },
     ],

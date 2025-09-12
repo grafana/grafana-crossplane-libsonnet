@@ -23,7 +23,7 @@
 * [spec.parameters.forProvider.threema](spec/parameters/forProvider/threema.md)
 * [spec.parameters.forProvider.victorops](spec/parameters/forProvider/victorops.md)
 * [spec.parameters.forProvider.webex](spec/parameters/forProvider/webex.md)
-* [spec.parameters.forProvider.webhook](spec/parameters/forProvider/webhook.md)
+* [spec.parameters.forProvider.webhook](spec/parameters/forProvider/webhook/index.md)
 * [spec.parameters.forProvider.wecom](spec/parameters/forProvider/wecom.md)
 * [spec.parameters.initProvider.alertmanager](spec/parameters/initProvider/alertmanager.md)
 * [spec.parameters.initProvider.dingding](spec/parameters/initProvider/dingding.md)
@@ -44,7 +44,7 @@
 * [spec.parameters.initProvider.threema](spec/parameters/initProvider/threema.md)
 * [spec.parameters.initProvider.victorops](spec/parameters/initProvider/victorops.md)
 * [spec.parameters.initProvider.webex](spec/parameters/initProvider/webex.md)
-* [spec.parameters.initProvider.webhook](spec/parameters/initProvider/webhook.md)
+* [spec.parameters.initProvider.webhook](spec/parameters/initProvider/webhook/index.md)
 * [spec.parameters.initProvider.wecom](spec/parameters/initProvider/wecom.md)
 
 ## Index

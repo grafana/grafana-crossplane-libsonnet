@@ -1040,8 +1040,8 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 10 seconds (10000 ms). Defaults to 3000.
-Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 10 seconds (10000 ms). Defaults to `3000`.
+(Number) Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 180 seconds (180000 ms). Defaults to 3000.
+Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 180 seconds (180000 ms). Defaults to `3000`.
 ##### obj spec.parameters.initProvider
 
 
@@ -1201,8 +1201,8 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 10 seconds (10000 ms). Defaults to 3000.
-Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 10 seconds (10000 ms). Defaults to `3000`.
+(Number) Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 180 seconds (180000 ms). Defaults to 3000.
+Specifies the maximum running time for the check in milliseconds. The minimum acceptable value is 1 second (1000 ms), and the maximum 180 seconds (180000 ms). Defaults to `3000`.
 ##### obj spec.parameters.providerConfigRef
 
 

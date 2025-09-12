@@ -546,6 +546,20 @@
       policy+:
         {
           '#': { help: '', name: 'policy' },
+          '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+          withActiveTimings(value): {
+            activeTimings:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+          withActiveTimingsMixin(value): {
+            activeTimings+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
           '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
           withContactPoint(value): {
             contactPoint: value,
@@ -819,14 +833,14 @@
                   },
                 },
             },
-          '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+          '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
           withMuteTimings(value): {
             muteTimings:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+          '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
           withMuteTimingsMixin(value): {
             muteTimings+:
               (if std.isArray(value)
@@ -850,6 +864,20 @@
           policy+:
             {
               '#': { help: '', name: 'policy' },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimings(value): {
+                activeTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimingsMixin(value): {
+                activeTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
               '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
                 contactPoint: value,
@@ -1123,14 +1151,14 @@
                       },
                     },
                 },
-              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
               withMuteTimings(value): {
                 muteTimings:
                   (if std.isArray(value)
                    then value
                    else [value]),
               },
-              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
               withMuteTimingsMixin(value): {
                 muteTimings+:
                   (if std.isArray(value)
@@ -1154,6 +1182,20 @@
               policy+:
                 {
                   '#': { help: '', name: 'policy' },
+                  '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                  withActiveTimings(value): {
+                    activeTimings:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                  withActiveTimingsMixin(value): {
+                    activeTimings+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
                   '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
                   withContactPoint(value): {
                     contactPoint: value,
@@ -1427,14 +1469,14 @@
                           },
                         },
                     },
-                  '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                   withMuteTimings(value): {
                     muteTimings:
                       (if std.isArray(value)
                        then value
                        else [value]),
                   },
-                  '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                   withMuteTimingsMixin(value): {
                     muteTimings+:
                       (if std.isArray(value)
@@ -1458,6 +1500,20 @@
                   policy+:
                     {
                       '#': { help: '', name: 'policy' },
+                      '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                      withActiveTimings(value): {
+                        activeTimings:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
+                      '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                      withActiveTimingsMixin(value): {
+                        activeTimings+:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
                       '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
                       withContactPoint(value): {
                         contactPoint: value,
@@ -1731,14 +1787,14 @@
                               },
                             },
                         },
-                      '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                      '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                       withMuteTimings(value): {
                         muteTimings:
                           (if std.isArray(value)
                            then value
                            else [value]),
                       },
-                      '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                      '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                       withMuteTimingsMixin(value): {
                         muteTimings+:
                           (if std.isArray(value)
@@ -2307,6 +2363,20 @@
       policy+:
         {
           '#': { help: '', name: 'policy' },
+          '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+          withActiveTimings(value): {
+            activeTimings:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+          withActiveTimingsMixin(value): {
+            activeTimings+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
           '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
           withContactPoint(value): {
             contactPoint: value,
@@ -2580,14 +2650,14 @@
                   },
                 },
             },
-          '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+          '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
           withMuteTimings(value): {
             muteTimings:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+          '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
           withMuteTimingsMixin(value): {
             muteTimings+:
               (if std.isArray(value)
@@ -2611,6 +2681,20 @@
           policy+:
             {
               '#': { help: '', name: 'policy' },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimings(value): {
+                activeTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+              withActiveTimingsMixin(value): {
+                activeTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
               '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
                 contactPoint: value,
@@ -2884,14 +2968,14 @@
                       },
                     },
                 },
-              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
               withMuteTimings(value): {
                 muteTimings:
                   (if std.isArray(value)
                    then value
                    else [value]),
               },
-              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
               withMuteTimingsMixin(value): {
                 muteTimings+:
                   (if std.isArray(value)
@@ -2915,6 +2999,20 @@
               policy+:
                 {
                   '#': { help: '', name: 'policy' },
+                  '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                  withActiveTimings(value): {
+                    activeTimings:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                  withActiveTimingsMixin(value): {
+                    activeTimings+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
                   '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
                   withContactPoint(value): {
                     contactPoint: value,
@@ -3188,14 +3286,14 @@
                           },
                         },
                     },
-                  '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                   withMuteTimings(value): {
                     muteTimings:
                       (if std.isArray(value)
                        then value
                        else [value]),
                   },
-                  '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                   withMuteTimingsMixin(value): {
                     muteTimings+:
                       (if std.isArray(value)
@@ -3219,6 +3317,20 @@
                   policy+:
                     {
                       '#': { help: '', name: 'policy' },
+                      '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                      withActiveTimings(value): {
+                        activeTimings:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
+                      '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                      withActiveTimingsMixin(value): {
+                        activeTimings+:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
                       '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
                       withContactPoint(value): {
                         contactPoint: value,
@@ -3492,14 +3604,14 @@
                               },
                             },
                         },
-                      '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                      '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                       withMuteTimings(value): {
                         muteTimings:
                           (if std.isArray(value)
                            then value
                            else [value]),
                       },
-                      '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                      '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
                       withMuteTimingsMixin(value): {
                         muteTimings+:
                           (if std.isArray(value)

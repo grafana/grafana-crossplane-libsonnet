@@ -977,8 +977,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Version of the plugin to be installed.
-Version of the plugin to be installed.
+(String) Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to latest.
+Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to `latest`.
 ###### obj spec.parameters.forProvider.cloudStackRef
 
 
@@ -1224,8 +1224,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Version of the plugin to be installed.
-Version of the plugin to be installed.
+(String) Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to latest.
+Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to `latest`.
 ###### obj spec.parameters.initProvider.cloudStackRef
 
 

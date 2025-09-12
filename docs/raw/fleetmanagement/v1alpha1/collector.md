@@ -870,8 +870,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether the collector is enabled or not
-Whether the collector is enabled or not
+(Boolean) Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service
+Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service
 ###### fn spec.parameters.forProvider.withRemoteAttributes
 
 ```jsonnet
@@ -910,8 +910,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether the collector is enabled or not
-Whether the collector is enabled or not
+(Boolean) Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service
+Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service
 ###### fn spec.parameters.initProvider.withRemoteAttributes
 
 ```jsonnet

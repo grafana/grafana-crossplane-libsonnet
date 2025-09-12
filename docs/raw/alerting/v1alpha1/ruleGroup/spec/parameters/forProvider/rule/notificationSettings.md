@@ -4,6 +4,8 @@
 
 ## Index
 
+* [`fn withActiveTimings(value)`](#fn-withactivetimings)
+* [`fn withActiveTimingsMixin(value)`](#fn-withactivetimingsmixin)
 * [`fn withContactPoint(value)`](#fn-withcontactpoint)
 * [`fn withContactPointRef(value)`](#fn-withcontactpointref)
 * [`fn withContactPointRefMixin(value)`](#fn-withcontactpointrefmixin)
@@ -35,6 +37,30 @@
 
 ## Fields
 
+### fn withActiveTimings
+
+```jsonnet
+withActiveTimings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+### fn withActiveTimingsMixin
+
+```jsonnet
+withActiveTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
 ### fn withContactPoint
 
 ```jsonnet

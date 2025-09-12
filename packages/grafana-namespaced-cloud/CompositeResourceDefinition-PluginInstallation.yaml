@@ -139,8 +139,8 @@ spec:
                           type: string
                         version:
                           description: |-
-                            (String) Version of the plugin to be installed.
-                            Version of the plugin to be installed.
+                            (String) Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to latest.
+                            Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to `latest`.
                           type: string
                       type: object
                     initProvider:
@@ -241,8 +241,8 @@ spec:
                           type: string
                         version:
                           description: |-
-                            (String) Version of the plugin to be installed.
-                            Version of the plugin to be installed.
+                            (String) Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to latest.
+                            Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to `latest`.
                           type: string
                       type: object
                     managementPolicies:
@@ -418,8 +418,6 @@ spec:
                   x-kubernetes-validations:
                     - message: spec.forProvider.slug is a required parameter
                       rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.slug) || (has(self.initProvider) && has(self.initProvider.slug))"
-                    - message: spec.forProvider.version is a required parameter
-                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.version) || (has(self.initProvider) && has(self.initProvider.version))"
               type: object
           type: object
       served: true

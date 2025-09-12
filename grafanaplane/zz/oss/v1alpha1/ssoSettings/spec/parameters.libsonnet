@@ -494,6 +494,10 @@
           withLoginAttributePath(value): {
             loginAttributePath: value,
           },
+          '#withLoginPrompt': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Indicates the type of user interaction when the user logs in with the IdP. Available values are login, consent and select_account.\nIndicates the type of user interaction when the user logs in with the IdP. Available values are `login`, `consent` and `select_account`.' } },
+          withLoginPrompt(value): {
+            loginPrompt: value,
+          },
           '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Helpful if you use more than one identity providers or SSO protocols.\nHelpful if you use more than one identity providers or SSO protocols.' } },
           withName(value): {
             name: value,
@@ -1288,6 +1292,10 @@
           '#withLoginAttributePath': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) JMESPath expression to use for user login lookup from the user ID token. Only applicable to Generic OAuth.\nJMESPath expression to use for user login lookup from the user ID token. Only applicable to Generic OAuth.' } },
           withLoginAttributePath(value): {
             loginAttributePath: value,
+          },
+          '#withLoginPrompt': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Indicates the type of user interaction when the user logs in with the IdP. Available values are login, consent and select_account.\nIndicates the type of user interaction when the user logs in with the IdP. Available values are `login`, `consent` and `select_account`.' } },
+          withLoginPrompt(value): {
+            loginPrompt: value,
           },
           '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Helpful if you use more than one identity providers or SSO protocols.\nHelpful if you use more than one identity providers or SSO protocols.' } },
           withName(value): {

@@ -89,7 +89,7 @@
           },
         },
       },
-      '#withSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`' } },
+      '#withSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`' } },
       withSettings(value): {
         spec+: {
           parameters+: {
@@ -99,7 +99,7 @@
           },
         },
       },
-      '#withSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`' } },
+      '#withSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`' } },
       withSettingsMixin(value): {
         spec+: {
           parameters+: {
@@ -194,7 +194,7 @@
           },
         },
       },
-      '#withSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`' } },
+      '#withSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`' } },
       withSettings(value): {
         spec+: {
           parameters+: {
@@ -204,7 +204,7 @@
           },
         },
       },
-      '#withSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1)}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1)}`' } },
+      '#withSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value settings of the Frontend Observability app. Available Settings: {combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}\nThe key-value settings of the Frontend Observability app. Available Settings: `{combineLabData=(0|1),geolocation.level=(0|1),geolocation.level=0-4,geolocation.country_denylist=<comma-separated-list-of-country-codes>}`' } },
       withSettingsMixin(value): {
         spec+: {
           parameters+: {
