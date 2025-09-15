@@ -1083,8 +1083,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The schedule's type. Valid values are ical, calendar.
-The schedule's type. Valid values are `ical`, `calendar`.
+(String) The schedule's type. Valid values are ical, calendar, web.
+The schedule's type. Valid values are `ical`, `calendar`, `web`.
 ###### obj spec.parameters.forProvider.shiftsSelector
 
 
@@ -1357,8 +1357,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The schedule's type. Valid values are ical, calendar.
-The schedule's type. Valid values are `ical`, `calendar`.
+(String) The schedule's type. Valid values are ical, calendar, web.
+The schedule's type. Valid values are `ical`, `calendar`, `web`.
 ###### obj spec.parameters.initProvider.shiftsSelector
 
 

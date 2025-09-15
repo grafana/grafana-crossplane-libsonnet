@@ -32,6 +32,9 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.deleteProtection
+                toFieldPath: spec.forProvider.deleteProtection
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.description
                 toFieldPath: spec.forProvider.description
                 type: FromCompositeFieldPath
@@ -55,6 +58,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.waitForReadinessTimeout
                 toFieldPath: spec.forProvider.waitForReadinessTimeout
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.deleteProtection
+                toFieldPath: spec.initProvider.deleteProtection
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.description
                 toFieldPath: spec.initProvider.description

@@ -5,6 +5,7 @@ Generated libraries for all the compositions in case the manually curated functi
 ## Subpackages
 
 * [alerting](alerting/index.md)
+* [asserts](asserts/index.md)
 * [cloud](cloud/index.md)
 * [cloudprovider](cloudprovider/index.md)
 * [connections](connections/index.md)

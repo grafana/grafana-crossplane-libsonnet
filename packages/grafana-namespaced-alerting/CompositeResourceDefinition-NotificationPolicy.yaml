@@ -236,6 +236,13 @@ spec:
                             Routing rules for specific label sets.
                           items:
                             properties:
+                              activeTimings:
+                                description: |-
+                                  (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                  A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                items:
+                                  type: string
+                                type: array
                               contactPoint:
                                 description: |-
                                   (String) The default contact point to route all unmatched notifications to.
@@ -437,8 +444,8 @@ spec:
                                 type: object
                               muteTimings:
                                 description: |-
-                                  (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                  A list of mute timing names to apply to alerts that match this policy.
+                                  (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                  A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                 items:
                                   type: string
                                 type: array
@@ -448,6 +455,13 @@ spec:
                                   Routing rules for specific label sets.
                                 items:
                                   properties:
+                                    activeTimings:
+                                      description: |-
+                                        (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                        A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                      items:
+                                        type: string
+                                      type: array
                                     contactPoint:
                                       description: |-
                                         (String) The default contact point to route all unmatched notifications to.
@@ -649,8 +663,8 @@ spec:
                                       type: object
                                     muteTimings:
                                       description: |-
-                                        (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                        A list of mute timing names to apply to alerts that match this policy.
+                                        (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                        A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                       items:
                                         type: string
                                       type: array
@@ -660,6 +674,13 @@ spec:
                                         Routing rules for specific label sets.
                                       items:
                                         properties:
+                                          activeTimings:
+                                            description: |-
+                                              (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                              A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                            items:
+                                              type: string
+                                            type: array
                                           contactPoint:
                                             description: |-
                                               (String) The default contact point to route all unmatched notifications to.
@@ -861,8 +882,8 @@ spec:
                                             type: object
                                           muteTimings:
                                             description: |-
-                                              (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                              A list of mute timing names to apply to alerts that match this policy.
+                                              (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                              A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                             items:
                                               type: string
                                             type: array
@@ -872,6 +893,13 @@ spec:
                                               Routing rules for specific label sets.
                                             items:
                                               properties:
+                                                activeTimings:
+                                                  description: |-
+                                                    (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                                    A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                                  items:
+                                                    type: string
+                                                  type: array
                                                 contactPoint:
                                                   description: |-
                                                     (String) The default contact point to route all unmatched notifications to.
@@ -1073,8 +1101,8 @@ spec:
                                                   type: object
                                                 muteTimings:
                                                   description: |-
-                                                    (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                                    A list of mute timing names to apply to alerts that match this policy.
+                                                    (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                                    A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                                   items:
                                                     type: string
                                                   type: array
@@ -1307,6 +1335,13 @@ spec:
                             Routing rules for specific label sets.
                           items:
                             properties:
+                              activeTimings:
+                                description: |-
+                                  (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                  A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                items:
+                                  type: string
+                                type: array
                               contactPoint:
                                 description: |-
                                   (String) The default contact point to route all unmatched notifications to.
@@ -1508,8 +1543,8 @@ spec:
                                 type: object
                               muteTimings:
                                 description: |-
-                                  (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                  A list of mute timing names to apply to alerts that match this policy.
+                                  (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                  A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                 items:
                                   type: string
                                 type: array
@@ -1519,6 +1554,13 @@ spec:
                                   Routing rules for specific label sets.
                                 items:
                                   properties:
+                                    activeTimings:
+                                      description: |-
+                                        (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                        A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                      items:
+                                        type: string
+                                      type: array
                                     contactPoint:
                                       description: |-
                                         (String) The default contact point to route all unmatched notifications to.
@@ -1720,8 +1762,8 @@ spec:
                                       type: object
                                     muteTimings:
                                       description: |-
-                                        (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                        A list of mute timing names to apply to alerts that match this policy.
+                                        (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                        A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                       items:
                                         type: string
                                       type: array
@@ -1731,6 +1773,13 @@ spec:
                                         Routing rules for specific label sets.
                                       items:
                                         properties:
+                                          activeTimings:
+                                            description: |-
+                                              (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                              A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                            items:
+                                              type: string
+                                            type: array
                                           contactPoint:
                                             description: |-
                                               (String) The default contact point to route all unmatched notifications to.
@@ -1932,8 +1981,8 @@ spec:
                                             type: object
                                           muteTimings:
                                             description: |-
-                                              (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                              A list of mute timing names to apply to alerts that match this policy.
+                                              (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                              A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                             items:
                                               type: string
                                             type: array
@@ -1943,6 +1992,13 @@ spec:
                                               Routing rules for specific label sets.
                                             items:
                                               properties:
+                                                activeTimings:
+                                                  description: |-
+                                                    (List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                                    A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later
+                                                  items:
+                                                    type: string
+                                                  type: array
                                                 contactPoint:
                                                   description: |-
                                                     (String) The default contact point to route all unmatched notifications to.
@@ -2144,8 +2200,8 @@ spec:
                                                   type: object
                                                 muteTimings:
                                                   description: |-
-                                                    (List of String) A list of mute timing names to apply to alerts that match this policy.
-                                                    A list of mute timing names to apply to alerts that match this policy.
+                                                    (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+                                                    A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
                                                   items:
                                                     type: string
                                                   type: array

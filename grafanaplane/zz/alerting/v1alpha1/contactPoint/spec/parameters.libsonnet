@@ -195,10 +195,35 @@
           withTitle(value): {
             title: value,
           },
-          '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Alertmanager instance.\nThe DingDing webhook URL.' } },
-          withUrl(value): {
-            url: value,
+          '#withUrlSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe DingDing webhook URL.' } },
+          withUrlSecretRef(value): {
+            urlSecretRef: value,
           },
+          '#withUrlSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe DingDing webhook URL.' } },
+          withUrlSecretRefMixin(value): {
+            urlSecretRef+: value,
+          },
+          urlSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                urlSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                urlSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                urlSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
         },
       '#withDisableProvenance': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Defaults to false. Defaults to `false`.' } },
       withDisableProvenance(value=true): {
@@ -2539,6 +2564,311 @@
           withDisableResolveMessage(value=true): {
             disableResolveMessage: value,
           },
+          '#withHeaders': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom headers to attach to the request.\nCustom headers to attach to the request.' } },
+          withHeaders(value): {
+            headers: value,
+          },
+          '#withHeadersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom headers to attach to the request.\nCustom headers to attach to the request.' } },
+          withHeadersMixin(value): {
+            headers+: value,
+          },
+          '#withHmacConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) HMAC signature configuration options. (see below for nested schema)\nHMAC signature configuration options.' } },
+          withHmacConfig(value): {
+            hmacConfig:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withHmacConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) HMAC signature configuration options. (see below for nested schema)\nHMAC signature configuration options.' } },
+          withHmacConfigMixin(value): {
+            hmacConfig+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          hmacConfig+:
+            {
+              '#': { help: '', name: 'hmacConfig' },
+              '#withHeader': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Grafana-Alerting-Signature.\nThe header in which the HMAC signature will be included. Defaults to `X-Grafana-Alerting-Signature`.' } },
+              withHeader(value): {
+                header: value,
+              },
+              '#withSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key used to generate the HMAC signature.' } },
+              withSecretSecretRef(value): {
+                secretSecretRef: value,
+              },
+              '#withSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key used to generate the HMAC signature.' } },
+              withSecretSecretRefMixin(value): {
+                secretSecretRef+: value,
+              },
+              secretSecretRef+:
+                {
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                  withKey(value): {
+                    secretSecretRef+: {
+                      key: value,
+                    },
+                  },
+                  '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                  withName(value): {
+                    secretSecretRef+: {
+                      name: value,
+                    },
+                  },
+                  '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                  withNamespace(value): {
+                    secretSecretRef+: {
+                      namespace: value,
+                    },
+                  },
+                },
+              '#withTimestampHeader': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) If set, the timestamp will be included in the HMAC signature. The value should be the name of the header to use.\nIf set, the timestamp will be included in the HMAC signature. The value should be the name of the header to use.' } },
+              withTimestampHeader(value): {
+                timestampHeader: value,
+              },
+            },
+          '#withHttpConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Common HTTP client options. (see below for nested schema)\nCommon HTTP client options.' } },
+          withHttpConfig(value): {
+            httpConfig:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withHttpConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Common HTTP client options. (see below for nested schema)\nCommon HTTP client options.' } },
+          withHttpConfigMixin(value): {
+            httpConfig+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          httpConfig+:
+            {
+              '#': { help: '', name: 'httpConfig' },
+              '#withOauth2': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) OAuth2 configuration options. (see below for nested schema)\nOAuth2 configuration options.' } },
+              withOauth2(value): {
+                oauth2:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withOauth2Mixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) OAuth2 configuration options. (see below for nested schema)\nOAuth2 configuration options.' } },
+              withOauth2Mixin(value): {
+                oauth2+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              oauth2+:
+                {
+                  '#': { help: '', name: 'oauth2' },
+                  '#withClientId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Client ID to use when authenticating.\nClient ID to use when authenticating.' } },
+                  withClientId(value): {
+                    clientId: value,
+                  },
+                  '#withClientSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client secret to use when authenticating.\nClient secret to use when authenticating.' } },
+                  withClientSecretSecretRef(value): {
+                    clientSecretSecretRef: value,
+                  },
+                  '#withClientSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client secret to use when authenticating.\nClient secret to use when authenticating.' } },
+                  withClientSecretSecretRefMixin(value): {
+                    clientSecretSecretRef+: value,
+                  },
+                  clientSecretSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        clientSecretSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        clientSecretSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        clientSecretSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withEndpointParams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional parameters to append to the access token request.\nOptional parameters to append to the access token request.' } },
+                  withEndpointParams(value): {
+                    endpointParams: value,
+                  },
+                  '#withEndpointParamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional parameters to append to the access token request.\nOptional parameters to append to the access token request.' } },
+                  withEndpointParamsMixin(value): {
+                    endpointParams+: value,
+                  },
+                  '#withProxyConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Optional proxy configuration for OAuth2 requests. (see below for nested schema)\nOptional proxy configuration for OAuth2 requests.' } },
+                  withProxyConfig(value): {
+                    proxyConfig:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withProxyConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Optional proxy configuration for OAuth2 requests. (see below for nested schema)\nOptional proxy configuration for OAuth2 requests.' } },
+                  withProxyConfigMixin(value): {
+                    proxyConfig+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  proxyConfig+:
+                    {
+                      '#': { help: '', name: 'proxyConfig' },
+                      '#withNoProxy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'separated list of addresses that should not use a proxy.\nComma-separated list of addresses that should not use a proxy.' } },
+                      withNoProxy(value): {
+                        noProxy: value,
+                      },
+                      '#withProxyConnectHeader': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional headers to send to proxies during CONNECT requests.\nOptional headers to send to proxies during CONNECT requests.' } },
+                      withProxyConnectHeader(value): {
+                        proxyConnectHeader: value,
+                      },
+                      '#withProxyConnectHeaderMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional headers to send to proxies during CONNECT requests.\nOptional headers to send to proxies during CONNECT requests.' } },
+                      withProxyConnectHeaderMixin(value): {
+                        proxyConnectHeader+: value,
+                      },
+                      '#withProxyFromEnvironment': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Use environment HTTP_PROXY, HTTPS_PROXY and NO_PROXY to determine proxies. Defaults to false.\nUse environment HTTP_PROXY, HTTPS_PROXY and NO_PROXY to determine proxies. Defaults to `false`.' } },
+                      withProxyFromEnvironment(value=true): {
+                        proxyFromEnvironment: value,
+                      },
+                      '#withProxyUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) HTTP proxy server to use to connect to the targets.\nHTTP proxy server to use to connect to the targets.' } },
+                      withProxyUrl(value): {
+                        proxyUrl: value,
+                      },
+                    },
+                  '#withScopes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Optional scopes to request when obtaining an access token.\nOptional scopes to request when obtaining an access token.' } },
+                  withScopes(value): {
+                    scopes:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withScopesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Optional scopes to request when obtaining an access token.\nOptional scopes to request when obtaining an access token.' } },
+                  withScopesMixin(value): {
+                    scopes+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withTlsConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.\nOptional TLS configuration options for OAuth2 requests.' } },
+                  withTlsConfig(value): {
+                    tlsConfig:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withTlsConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.\nOptional TLS configuration options for OAuth2 requests.' } },
+                  withTlsConfigMixin(value): {
+                    tlsConfig+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  tlsConfig+:
+                    {
+                      '#': { help: '', name: 'tlsConfig' },
+                      '#withCaCertificateSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(String, Sensitive) Certificate in PEM format to use when verifying the server's certificate chain.\nCertificate in PEM format to use when verifying the server's certificate chain." } },
+                      withCaCertificateSecretRef(value): {
+                        caCertificateSecretRef: value,
+                      },
+                      '#withCaCertificateSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(String, Sensitive) Certificate in PEM format to use when verifying the server's certificate chain.\nCertificate in PEM format to use when verifying the server's certificate chain." } },
+                      withCaCertificateSecretRefMixin(value): {
+                        caCertificateSecretRef+: value,
+                      },
+                      caCertificateSecretRef+:
+                        {
+                          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                          withKey(value): {
+                            caCertificateSecretRef+: {
+                              key: value,
+                            },
+                          },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                          withName(value): {
+                            caCertificateSecretRef+: {
+                              name: value,
+                            },
+                          },
+                          '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                          withNamespace(value): {
+                            caCertificateSecretRef+: {
+                              namespace: value,
+                            },
+                          },
+                        },
+                      '#withClientCertificateSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client certificate in PEM format to use when connecting to the server.\nClient certificate in PEM format to use when connecting to the server.' } },
+                      withClientCertificateSecretRef(value): {
+                        clientCertificateSecretRef: value,
+                      },
+                      '#withClientCertificateSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client certificate in PEM format to use when connecting to the server.\nClient certificate in PEM format to use when connecting to the server.' } },
+                      withClientCertificateSecretRefMixin(value): {
+                        clientCertificateSecretRef+: value,
+                      },
+                      clientCertificateSecretRef+:
+                        {
+                          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                          withKey(value): {
+                            clientCertificateSecretRef+: {
+                              key: value,
+                            },
+                          },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                          withName(value): {
+                            clientCertificateSecretRef+: {
+                              name: value,
+                            },
+                          },
+                          '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                          withNamespace(value): {
+                            clientCertificateSecretRef+: {
+                              namespace: value,
+                            },
+                          },
+                        },
+                      '#withClientKeySecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client key in PEM format to use when connecting to the server.\nClient key in PEM format to use when connecting to the server.' } },
+                      withClientKeySecretRef(value): {
+                        clientKeySecretRef: value,
+                      },
+                      '#withClientKeySecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client key in PEM format to use when connecting to the server.\nClient key in PEM format to use when connecting to the server.' } },
+                      withClientKeySecretRefMixin(value): {
+                        clientKeySecretRef+: value,
+                      },
+                      clientKeySecretRef+:
+                        {
+                          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                          withKey(value): {
+                            clientKeySecretRef+: {
+                              key: value,
+                            },
+                          },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                          withName(value): {
+                            clientKeySecretRef+: {
+                              name: value,
+                            },
+                          },
+                          '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                          withNamespace(value): {
+                            clientKeySecretRef+: {
+                              namespace: value,
+                            },
+                          },
+                        },
+                      '#withInsecureSkipVerify': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: "(Boolean) Do not verify the server's certificate chain and host name. Defaults to false.\nDo not verify the server's certificate chain and host name. Defaults to `false`." } },
+                      withInsecureSkipVerify(value=true): {
+                        insecureSkipVerify: value,
+                      },
+                    },
+                  '#withTokenUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) URL for the access token endpoint.\nURL for the access token endpoint.' } },
+                  withTokenUrl(value): {
+                    tokenUrl: value,
+                  },
+                },
+            },
           '#withHttpMethod': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The HTTP method to use in the request. Defaults to POST.\nThe HTTP method to use in the request. Defaults to `POST`.' } },
           withHttpMethod(value): {
             httpMethod: value,
@@ -2551,6 +2881,36 @@
           withMessage(value): {
             message: value,
           },
+          '#withPayload': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block Set, Max: 1) Optionally provide a templated payload. Overrides 'Message' and 'Title' field. (see below for nested schema)\nOptionally provide a templated payload. Overrides 'Message' and 'Title' field." } },
+          withPayload(value): {
+            payload:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withPayloadMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block Set, Max: 1) Optionally provide a templated payload. Overrides 'Message' and 'Title' field. (see below for nested schema)\nOptionally provide a templated payload. Overrides 'Message' and 'Title' field." } },
+          withPayloadMixin(value): {
+            payload+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          payload+:
+            {
+              '#': { help: '', name: 'payload' },
+              '#withTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Custom payload template.\nCustom payload template.' } },
+              withTemplate(value): {
+                template: value,
+              },
+              '#withVars': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optionally provide a variables to be used in the payload template. They will be available in the template as .Vars.<variable_name>.\nOptionally provide a variables to be used in the payload template. They will be available in the template as `.Vars.<variable_name>`.' } },
+              withVars(value): {
+                vars: value,
+              },
+              '#withVarsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optionally provide a variables to be used in the payload template. They will be available in the template as .Vars.<variable_name>.\nOptionally provide a variables to be used in the payload template. They will be available in the template as `.Vars.<variable_name>`.' } },
+              withVarsMixin(value): {
+                vars+: value,
+              },
+            },
           '#withSettingsSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String, Sensitive) Additional custom properties to attach to the notifier. Defaults to map[].\nAdditional custom properties to attach to the notifier. Defaults to `map[]`.' } },
           withSettingsSecretRef(value): {
             settingsSecretRef: value,
@@ -2655,11 +3015,11 @@
           withMsgType(value): {
             msgType: value,
           },
-          '#withSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
+          '#withSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
           withSecretSecretRef(value): {
             secretSecretRef: value,
           },
-          '#withSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
+          '#withSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
           withSecretSecretRefMixin(value): {
             secretSecretRef+: value,
           },
@@ -2896,10 +3256,35 @@
           withTitle(value): {
             title: value,
           },
-          '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Alertmanager instance.\nThe DingDing webhook URL.' } },
-          withUrl(value): {
-            url: value,
+          '#withUrlSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe DingDing webhook URL.' } },
+          withUrlSecretRef(value): {
+            urlSecretRef: value,
           },
+          '#withUrlSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String) The URL of the Alertmanager instance.\nThe DingDing webhook URL.' } },
+          withUrlSecretRefMixin(value): {
+            urlSecretRef+: value,
+          },
+          urlSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                urlSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                urlSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                urlSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
         },
       '#withDisableProvenance': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Defaults to false. Defaults to `false`.' } },
       withDisableProvenance(value=true): {
@@ -4985,6 +5370,311 @@
           withDisableResolveMessage(value=true): {
             disableResolveMessage: value,
           },
+          '#withHeaders': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom headers to attach to the request.\nCustom headers to attach to the request.' } },
+          withHeaders(value): {
+            headers: value,
+          },
+          '#withHeadersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom headers to attach to the request.\nCustom headers to attach to the request.' } },
+          withHeadersMixin(value): {
+            headers+: value,
+          },
+          '#withHmacConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) HMAC signature configuration options. (see below for nested schema)\nHMAC signature configuration options.' } },
+          withHmacConfig(value): {
+            hmacConfig:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withHmacConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) HMAC signature configuration options. (see below for nested schema)\nHMAC signature configuration options.' } },
+          withHmacConfigMixin(value): {
+            hmacConfig+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          hmacConfig+:
+            {
+              '#': { help: '', name: 'hmacConfig' },
+              '#withHeader': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Grafana-Alerting-Signature.\nThe header in which the HMAC signature will be included. Defaults to `X-Grafana-Alerting-Signature`.' } },
+              withHeader(value): {
+                header: value,
+              },
+              '#withSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key used to generate the HMAC signature.' } },
+              withSecretSecretRef(value): {
+                secretSecretRef: value,
+              },
+              '#withSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key used to generate the HMAC signature.' } },
+              withSecretSecretRefMixin(value): {
+                secretSecretRef+: value,
+              },
+              secretSecretRef+:
+                {
+                  '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                  withKey(value): {
+                    secretSecretRef+: {
+                      key: value,
+                    },
+                  },
+                  '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                  withName(value): {
+                    secretSecretRef+: {
+                      name: value,
+                    },
+                  },
+                  '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                  withNamespace(value): {
+                    secretSecretRef+: {
+                      namespace: value,
+                    },
+                  },
+                },
+              '#withTimestampHeader': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) If set, the timestamp will be included in the HMAC signature. The value should be the name of the header to use.\nIf set, the timestamp will be included in the HMAC signature. The value should be the name of the header to use.' } },
+              withTimestampHeader(value): {
+                timestampHeader: value,
+              },
+            },
+          '#withHttpConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Common HTTP client options. (see below for nested schema)\nCommon HTTP client options.' } },
+          withHttpConfig(value): {
+            httpConfig:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withHttpConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Common HTTP client options. (see below for nested schema)\nCommon HTTP client options.' } },
+          withHttpConfigMixin(value): {
+            httpConfig+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          httpConfig+:
+            {
+              '#': { help: '', name: 'httpConfig' },
+              '#withOauth2': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) OAuth2 configuration options. (see below for nested schema)\nOAuth2 configuration options.' } },
+              withOauth2(value): {
+                oauth2:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withOauth2Mixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) OAuth2 configuration options. (see below for nested schema)\nOAuth2 configuration options.' } },
+              withOauth2Mixin(value): {
+                oauth2+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              oauth2+:
+                {
+                  '#': { help: '', name: 'oauth2' },
+                  '#withClientId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Client ID to use when authenticating.\nClient ID to use when authenticating.' } },
+                  withClientId(value): {
+                    clientId: value,
+                  },
+                  '#withClientSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client secret to use when authenticating.\nClient secret to use when authenticating.' } },
+                  withClientSecretSecretRef(value): {
+                    clientSecretSecretRef: value,
+                  },
+                  '#withClientSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client secret to use when authenticating.\nClient secret to use when authenticating.' } },
+                  withClientSecretSecretRefMixin(value): {
+                    clientSecretSecretRef+: value,
+                  },
+                  clientSecretSecretRef+:
+                    {
+                      '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                      withKey(value): {
+                        clientSecretSecretRef+: {
+                          key: value,
+                        },
+                      },
+                      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                      withName(value): {
+                        clientSecretSecretRef+: {
+                          name: value,
+                        },
+                      },
+                      '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                      withNamespace(value): {
+                        clientSecretSecretRef+: {
+                          namespace: value,
+                        },
+                      },
+                    },
+                  '#withEndpointParams': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional parameters to append to the access token request.\nOptional parameters to append to the access token request.' } },
+                  withEndpointParams(value): {
+                    endpointParams: value,
+                  },
+                  '#withEndpointParamsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional parameters to append to the access token request.\nOptional parameters to append to the access token request.' } },
+                  withEndpointParamsMixin(value): {
+                    endpointParams+: value,
+                  },
+                  '#withProxyConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Optional proxy configuration for OAuth2 requests. (see below for nested schema)\nOptional proxy configuration for OAuth2 requests.' } },
+                  withProxyConfig(value): {
+                    proxyConfig:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withProxyConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Max: 1) Optional proxy configuration for OAuth2 requests. (see below for nested schema)\nOptional proxy configuration for OAuth2 requests.' } },
+                  withProxyConfigMixin(value): {
+                    proxyConfig+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  proxyConfig+:
+                    {
+                      '#': { help: '', name: 'proxyConfig' },
+                      '#withNoProxy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'separated list of addresses that should not use a proxy.\nComma-separated list of addresses that should not use a proxy.' } },
+                      withNoProxy(value): {
+                        noProxy: value,
+                      },
+                      '#withProxyConnectHeader': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional headers to send to proxies during CONNECT requests.\nOptional headers to send to proxies during CONNECT requests.' } },
+                      withProxyConnectHeader(value): {
+                        proxyConnectHeader: value,
+                      },
+                      '#withProxyConnectHeaderMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optional headers to send to proxies during CONNECT requests.\nOptional headers to send to proxies during CONNECT requests.' } },
+                      withProxyConnectHeaderMixin(value): {
+                        proxyConnectHeader+: value,
+                      },
+                      '#withProxyFromEnvironment': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Use environment HTTP_PROXY, HTTPS_PROXY and NO_PROXY to determine proxies. Defaults to false.\nUse environment HTTP_PROXY, HTTPS_PROXY and NO_PROXY to determine proxies. Defaults to `false`.' } },
+                      withProxyFromEnvironment(value=true): {
+                        proxyFromEnvironment: value,
+                      },
+                      '#withProxyUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) HTTP proxy server to use to connect to the targets.\nHTTP proxy server to use to connect to the targets.' } },
+                      withProxyUrl(value): {
+                        proxyUrl: value,
+                      },
+                    },
+                  '#withScopes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Optional scopes to request when obtaining an access token.\nOptional scopes to request when obtaining an access token.' } },
+                  withScopes(value): {
+                    scopes:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withScopesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Optional scopes to request when obtaining an access token.\nOptional scopes to request when obtaining an access token.' } },
+                  withScopesMixin(value): {
+                    scopes+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withTlsConfig': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.\nOptional TLS configuration options for OAuth2 requests.' } },
+                  withTlsConfig(value): {
+                    tlsConfig:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  '#withTlsConfigMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Map of String, Sensitive) Allows configuring TLS for the webhook notifier.\nOptional TLS configuration options for OAuth2 requests.' } },
+                  withTlsConfigMixin(value): {
+                    tlsConfig+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                  tlsConfig+:
+                    {
+                      '#': { help: '', name: 'tlsConfig' },
+                      '#withCaCertificateSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(String, Sensitive) Certificate in PEM format to use when verifying the server's certificate chain.\nCertificate in PEM format to use when verifying the server's certificate chain." } },
+                      withCaCertificateSecretRef(value): {
+                        caCertificateSecretRef: value,
+                      },
+                      '#withCaCertificateSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(String, Sensitive) Certificate in PEM format to use when verifying the server's certificate chain.\nCertificate in PEM format to use when verifying the server's certificate chain." } },
+                      withCaCertificateSecretRefMixin(value): {
+                        caCertificateSecretRef+: value,
+                      },
+                      caCertificateSecretRef+:
+                        {
+                          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                          withKey(value): {
+                            caCertificateSecretRef+: {
+                              key: value,
+                            },
+                          },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                          withName(value): {
+                            caCertificateSecretRef+: {
+                              name: value,
+                            },
+                          },
+                          '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                          withNamespace(value): {
+                            caCertificateSecretRef+: {
+                              namespace: value,
+                            },
+                          },
+                        },
+                      '#withClientCertificateSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client certificate in PEM format to use when connecting to the server.\nClient certificate in PEM format to use when connecting to the server.' } },
+                      withClientCertificateSecretRef(value): {
+                        clientCertificateSecretRef: value,
+                      },
+                      '#withClientCertificateSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client certificate in PEM format to use when connecting to the server.\nClient certificate in PEM format to use when connecting to the server.' } },
+                      withClientCertificateSecretRefMixin(value): {
+                        clientCertificateSecretRef+: value,
+                      },
+                      clientCertificateSecretRef+:
+                        {
+                          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                          withKey(value): {
+                            clientCertificateSecretRef+: {
+                              key: value,
+                            },
+                          },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                          withName(value): {
+                            clientCertificateSecretRef+: {
+                              name: value,
+                            },
+                          },
+                          '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                          withNamespace(value): {
+                            clientCertificateSecretRef+: {
+                              namespace: value,
+                            },
+                          },
+                        },
+                      '#withClientKeySecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client key in PEM format to use when connecting to the server.\nClient key in PEM format to use when connecting to the server.' } },
+                      withClientKeySecretRef(value): {
+                        clientKeySecretRef: value,
+                      },
+                      '#withClientKeySecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Client key in PEM format to use when connecting to the server.\nClient key in PEM format to use when connecting to the server.' } },
+                      withClientKeySecretRefMixin(value): {
+                        clientKeySecretRef+: value,
+                      },
+                      clientKeySecretRef+:
+                        {
+                          '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+                          withKey(value): {
+                            clientKeySecretRef+: {
+                              key: value,
+                            },
+                          },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+                          withName(value): {
+                            clientKeySecretRef+: {
+                              name: value,
+                            },
+                          },
+                          '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+                          withNamespace(value): {
+                            clientKeySecretRef+: {
+                              namespace: value,
+                            },
+                          },
+                        },
+                      '#withInsecureSkipVerify': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: "(Boolean) Do not verify the server's certificate chain and host name. Defaults to false.\nDo not verify the server's certificate chain and host name. Defaults to `false`." } },
+                      withInsecureSkipVerify(value=true): {
+                        insecureSkipVerify: value,
+                      },
+                    },
+                  '#withTokenUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) URL for the access token endpoint.\nURL for the access token endpoint.' } },
+                  withTokenUrl(value): {
+                    tokenUrl: value,
+                  },
+                },
+            },
           '#withHttpMethod': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The HTTP method to use in the request. Defaults to POST.\nThe HTTP method to use in the request. Defaults to `POST`.' } },
           withHttpMethod(value): {
             httpMethod: value,
@@ -4997,6 +5687,36 @@
           withMessage(value): {
             message: value,
           },
+          '#withPayload': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block Set, Max: 1) Optionally provide a templated payload. Overrides 'Message' and 'Title' field. (see below for nested schema)\nOptionally provide a templated payload. Overrides 'Message' and 'Title' field." } },
+          withPayload(value): {
+            payload:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withPayloadMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block Set, Max: 1) Optionally provide a templated payload. Overrides 'Message' and 'Title' field. (see below for nested schema)\nOptionally provide a templated payload. Overrides 'Message' and 'Title' field." } },
+          withPayloadMixin(value): {
+            payload+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          payload+:
+            {
+              '#': { help: '', name: 'payload' },
+              '#withTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Custom payload template.\nCustom payload template.' } },
+              withTemplate(value): {
+                template: value,
+              },
+              '#withVars': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optionally provide a variables to be used in the payload template. They will be available in the template as .Vars.<variable_name>.\nOptionally provide a variables to be used in the payload template. They will be available in the template as `.Vars.<variable_name>`.' } },
+              withVars(value): {
+                vars: value,
+              },
+              '#withVarsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Optionally provide a variables to be used in the payload template. They will be available in the template as .Vars.<variable_name>.\nOptionally provide a variables to be used in the payload template. They will be available in the template as `.Vars.<variable_name>`.' } },
+              withVarsMixin(value): {
+                vars+: value,
+              },
+            },
           '#withSettingsSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '' } },
           withSettingsSecretRef(value): {
             settingsSecretRef: value,
@@ -5071,11 +5791,11 @@
           withMsgType(value): {
             msgType: value,
           },
-          '#withSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
+          '#withSecretSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
           withSecretSecretRef(value): {
             secretSecretRef: value,
           },
-          '#withSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
+          '#withSecretSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The secret key used to generate the HMAC signature.\nThe secret key required to obtain access token when using APIAPP. See https://work.weixin.qq.com/wework_admin/frame#apps to create APIAPP.' } },
           withSecretSecretRefMixin(value): {
             secretSecretRef+: value,
           },

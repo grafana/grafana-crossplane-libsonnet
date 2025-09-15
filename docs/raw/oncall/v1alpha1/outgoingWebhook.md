@@ -81,6 +81,7 @@
       * [`fn withName(value)`](#fn-specparametersforproviderwithname)
       * [`fn withPasswordSecretRef(value)`](#fn-specparametersforproviderwithpasswordsecretref)
       * [`fn withPasswordSecretRefMixin(value)`](#fn-specparametersforproviderwithpasswordsecretrefmixin)
+      * [`fn withPreset(value)`](#fn-specparametersforproviderwithpreset)
       * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
       * [`fn withTriggerTemplate(value)`](#fn-specparametersforproviderwithtriggertemplate)
       * [`fn withTriggerType(value)`](#fn-specparametersforproviderwithtriggertype)
@@ -107,6 +108,7 @@
       * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
       * [`fn withPasswordSecretRef(value)`](#fn-specparametersinitproviderwithpasswordsecretref)
       * [`fn withPasswordSecretRefMixin(value)`](#fn-specparametersinitproviderwithpasswordsecretrefmixin)
+      * [`fn withPreset(value)`](#fn-specparametersinitproviderwithpreset)
       * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
       * [`fn withTriggerTemplate(value)`](#fn-specparametersinitproviderwithtriggertemplate)
       * [`fn withTriggerType(value)`](#fn-specparametersinitproviderwithtriggertype)
@@ -1049,6 +1051,18 @@ PARAMETERS:
 
 (String, Sensitive) The auth data of the webhook. Used for Basic authentication
 The auth data of the webhook. Used for Basic authentication
+###### fn spec.parameters.forProvider.withPreset
+
+```jsonnet
+spec.parameters.forProvider.withPreset(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.
+The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
 ###### fn spec.parameters.forProvider.withTeamId
 
 ```jsonnet
@@ -1083,8 +1097,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of event that will cause this outgoing webhook to execute. The types of triggers are: escalation, alert group created, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge. Defaults to escalation.
-The type of event that will cause this outgoing webhook to execute. The types of triggers are: `escalation`, `alert group created`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`. Defaults to `escalation`.
+(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.
+The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.
 ###### fn spec.parameters.forProvider.withUrl
 
 ```jsonnet
@@ -1095,8 +1109,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The webhook URL.
-The webhook URL.
+(String) The webhook URL. Required when not using a preset that controls this field.
+The webhook URL. Required when not using a preset that controls this field.
 ###### fn spec.parameters.forProvider.withUser
 
 ```jsonnet
@@ -1330,6 +1344,18 @@ PARAMETERS:
 
 (String, Sensitive) The auth data of the webhook. Used for Basic authentication
 The auth data of the webhook. Used for Basic authentication
+###### fn spec.parameters.initProvider.withPreset
+
+```jsonnet
+spec.parameters.initProvider.withPreset(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.
+The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
 ###### fn spec.parameters.initProvider.withTeamId
 
 ```jsonnet
@@ -1364,8 +1390,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of event that will cause this outgoing webhook to execute. The types of triggers are: escalation, alert group created, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge. Defaults to escalation.
-The type of event that will cause this outgoing webhook to execute. The types of triggers are: `escalation`, `alert group created`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`. Defaults to `escalation`.
+(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.
+The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.
 ###### fn spec.parameters.initProvider.withUrl
 
 ```jsonnet
@@ -1376,8 +1402,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The webhook URL.
-The webhook URL.
+(String) The webhook URL. Required when not using a preset that controls this field.
+The webhook URL. Required when not using a preset that controls this field.
 ###### fn spec.parameters.initProvider.withUser
 
 ```jsonnet

@@ -257,7 +257,7 @@
           },
         },
       },
-      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Version of the plugin to be installed.\nVersion of the plugin to be installed.' } },
+      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to latest.\nVersion of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to `latest`." } },
       withVersion(value): {
         spec+: {
           parameters+: {
@@ -510,7 +510,7 @@
           },
         },
       },
-      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Version of the plugin to be installed.\nVersion of the plugin to be installed.' } },
+      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Version of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to latest.\nVersion of the plugin to be installed. Defaults to 'latest' and installs the most recent version. Defaults to `latest`." } },
       withVersion(value): {
         spec+: {
           parameters+: {

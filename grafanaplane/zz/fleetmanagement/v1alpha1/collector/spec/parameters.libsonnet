@@ -33,7 +33,7 @@
   },
   forProvider+:
     {
-      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the collector is enabled or not\nWhether the collector is enabled or not' } },
+      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service\nWhether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service' } },
       withEnabled(value=true): {
         spec+: {
           parameters+: {
@@ -82,7 +82,7 @@
   },
   initProvider+:
     {
-      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the collector is enabled or not\nWhether the collector is enabled or not' } },
+      '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service\nWhether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service' } },
       withEnabled(value=true): {
         spec+: {
           parameters+: {

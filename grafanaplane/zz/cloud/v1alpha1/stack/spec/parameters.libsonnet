@@ -33,6 +33,16 @@
   },
   forProvider+:
     {
+      '#withDeleteProtection': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to enable delete protection for the stack, preventing accidental deletion. Defaults to true.\nWhether to enable delete protection for the stack, preventing accidental deletion. Defaults to `true`.' } },
+      withDeleteProtection(value=true): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              deleteProtection: value,
+            },
+          },
+        },
+      },
       '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Description of stack.\nDescription of stack.' } },
       withDescription(value): {
         spec+: {
@@ -142,6 +152,16 @@
   },
   initProvider+:
     {
+      '#withDeleteProtection': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to enable delete protection for the stack, preventing accidental deletion. Defaults to true.\nWhether to enable delete protection for the stack, preventing accidental deletion. Defaults to `true`.' } },
+      withDeleteProtection(value=true): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              deleteProtection: value,
+            },
+          },
+        },
+      },
       '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Description of stack.\nDescription of stack.' } },
       withDescription(value): {
         spec+: {
