@@ -33,130 +33,165 @@
   },
   forProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           forProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           forProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withAlertRuleUids': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.' } },
           withAlertRuleUids(value): {
-            alertRuleUids:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    alertRuleUids:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withAlertRuleUidsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.' } },
           withAlertRuleUidsMixin(value): {
-            alertRuleUids+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    alertRuleUids+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withAnnotationMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators)." } },
           withAnnotationMatchers(value): {
-            annotationMatchers:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    annotationMatchers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withAnnotationMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators)." } },
           withAnnotationMatchersMixin(value): {
-            annotationMatchers+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    annotationMatchers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           annotationMatchers+:
             {
@@ -176,21 +211,45 @@
             },
           '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Description of the alert enrichment.' } },
           withDescription(value): {
-            description: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    description: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabelMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators)." } },
           withLabelMatchers(value): {
-            labelMatchers:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    labelMatchers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withLabelMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators)." } },
           withLabelMatchersMixin(value): {
-            labelMatchers+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    labelMatchers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           labelMatchers+:
             {
@@ -210,269 +269,961 @@
             },
           '#withReceivers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Receiver names to match. If empty, applies to all receivers.' } },
           withReceivers(value): {
-            receivers:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    receivers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withReceiversMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Receiver names to match. If empty, applies to all receivers.' } },
           withReceiversMixin(value): {
-            receivers+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    receivers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withStep': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.' } },
           withStep(value): {
-            step:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    step:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withStepMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.' } },
           withStepMixin(value): {
-            step+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    step+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           step+:
             {
               '#': { help: '', name: 'step' },
-              '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+              '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
               withAsserts(value): {
-                asserts:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                asserts: value,
               },
-              '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+              '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
               withAssertsMixin(value): {
-                asserts+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                asserts+: value,
               },
               asserts+:
                 {
-                  '#': { help: '', name: 'asserts' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    asserts+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Assign annotations to an alert.' } },
+              '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
               withAssign(value): {
-                assign:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assign: value,
               },
-              '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Assign annotations to an alert.' } },
+              '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
               withAssignMixin(value): {
-                assign+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assign+: value,
               },
               assign+:
                 {
-                  '#': { help: '', name: 'assign' },
                   '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
                   withAnnotations(value): {
-                    annotations: value,
+                    assign+: {
+                      annotations: value,
+                    },
                   },
                   '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
                   withAnnotationsMixin(value): {
-                    annotations+: value,
+                    assign+: {
+                      annotations+: value,
+                    },
                   },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    assign+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+              '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
               withAssistantInvestigations(value): {
-                assistantInvestigations:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assistantInvestigations: value,
               },
-              '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+              '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
               withAssistantInvestigationsMixin(value): {
-                assistantInvestigations+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assistantInvestigations+: value,
               },
               assistantInvestigations+:
                 {
-                  '#': { help: '', name: 'assistantInvestigations' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    assistantInvestigations+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Query Grafana data sources and add results to alerts.' } },
-              withDataSource(value): {
-                dataSource:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+              '#withConditional': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Conditional step with if/then/else.' } },
+              withConditional(value): {
+                conditional: value,
               },
-              '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+              '#withConditionalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Conditional step with if/then/else.' } },
+              withConditionalMixin(value): {
+                conditional+: value,
+              },
+              conditional+:
+                {
+                  '#withElse': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is false.' } },
+                  withElse(value): {
+                    conditional+: {
+                      'else': value,
+                    },
+                  },
+                  '#withElseMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is false.' } },
+                  withElseMixin(value): {
+                    conditional+: {
+                      'else'+: value,
+                    },
+                  },
+                  'else'+:
+                    {
+                      '#withStep': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStep(value): {
+                        conditional+: {
+                          'else'+: {
+                            step:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withStepMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStepMixin(value): {
+                        conditional+: {
+                          'else'+: {
+                            step+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      step+:
+                        {
+                          '#': { help: '', name: 'step' },
+                          '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAsserts(value): {
+                            asserts: value,
+                          },
+                          '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAssertsMixin(value): {
+                            asserts+: value,
+                          },
+                          asserts+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                asserts+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssign(value): {
+                            assign: value,
+                          },
+                          '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssignMixin(value): {
+                            assign+: value,
+                          },
+                          assign+:
+                            {
+                              '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotations(value): {
+                                assign+: {
+                                  annotations: value,
+                                },
+                              },
+                              '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotationsMixin(value): {
+                                assign+: {
+                                  annotations+: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assign+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigations(value): {
+                            assistantInvestigations: value,
+                          },
+                          '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigationsMixin(value): {
+                            assistantInvestigations+: value,
+                          },
+                          assistantInvestigations+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assistantInvestigations+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSource(value): {
+                            dataSource: value,
+                          },
+                          '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSourceMixin(value): {
+                            dataSource+: value,
+                          },
+                          dataSource+:
+                            {
+                              '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQuery(value): {
+                                dataSource+: {
+                                  logsQuery: value,
+                                },
+                              },
+                              '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQueryMixin(value): {
+                                dataSource+: {
+                                  logsQuery+: value,
+                                },
+                              },
+                              logsQuery+:
+                                {
+                                  '#withDataSourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Data source type (e.g., 'loki')." } },
+                                  withDataSourceType(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceType: value,
+                                      },
+                                    },
+                                  },
+                                  '#withDataSourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'UID of the data source to query.' } },
+                                  withDataSourceUid(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceUid: value,
+                                      },
+                                    },
+                                  },
+                                  '#withExpr': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Log query expression to execute.' } },
+                                  withExpr(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        expr: value,
+                                      },
+                                    },
+                                  },
+                                  '#withMaxLines': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'Maximum number of log lines to include. Defaults to 3.' } },
+                                  withMaxLines(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        maxLines: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQuery(value): {
+                                dataSource+: {
+                                  rawQuery: value,
+                                },
+                              },
+                              '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQueryMixin(value): {
+                                dataSource+: {
+                                  rawQuery+: value,
+                                },
+                              },
+                              rawQuery+:
+                                {
+                                  '#withRefId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Reference ID for correlating queries.' } },
+                                  withRefId(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        refId: value,
+                                      },
+                                    },
+                                  },
+                                  '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Raw request payload for the data source query.' } },
+                                  withRequest(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        request: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                dataSource+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplain(value): {
+                            explain: value,
+                          },
+                          '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplainMixin(value): {
+                            explain+: value,
+                          },
+                          explain+:
+                            {
+                              '#withAnnotation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Annotation name to set the explanation in. Defaults to 'ai_explanation'." } },
+                              withAnnotation(value): {
+                                explain+: {
+                                  annotation: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                explain+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternal(value): {
+                            external: value,
+                          },
+                          '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternalMixin(value): {
+                            external+: value,
+                          },
+                          external+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                external+: {
+                                  timeout: value,
+                                },
+                              },
+                              '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'HTTP endpoint URL to call for enrichment' } },
+                              withUrl(value): {
+                                external+: {
+                                  url: value,
+                                },
+                              },
+                            },
+                          '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSift(value): {
+                            sift: value,
+                          },
+                          '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSiftMixin(value): {
+                            sift+: value,
+                          },
+                          sift+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                sift+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                        },
+                    },
+                  '#withIf': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Condition to evaluate.' } },
+                  withIf(value): {
+                    conditional+: {
+                      'if': value,
+                    },
+                  },
+                  '#withIfMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Condition to evaluate.' } },
+                  withIfMixin(value): {
+                    conditional+: {
+                      'if'+: value,
+                    },
+                  },
+                  'if'+:
+                    {
+                      '#withAnnotationMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Annotation matchers for the condition.' } },
+                      withAnnotationMatchers(value): {
+                        conditional+: {
+                          'if'+: {
+                            annotationMatchers:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withAnnotationMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Annotation matchers for the condition.' } },
+                      withAnnotationMatchersMixin(value): {
+                        conditional+: {
+                          'if'+: {
+                            annotationMatchers+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      annotationMatchers+:
+                        {
+                          '#': { help: '', name: 'annotationMatchers' },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withName(value): {
+                            name: value,
+                          },
+                          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withType(value): {
+                            type: value,
+                          },
+                          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withValue(value): {
+                            value: value,
+                          },
+                        },
+                      '#withDataSourceCondition': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Data source condition.' } },
+                      withDataSourceCondition(value): {
+                        conditional+: {
+                          'if'+: {
+                            dataSourceCondition: value,
+                          },
+                        },
+                      },
+                      '#withDataSourceConditionMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Data source condition.' } },
+                      withDataSourceConditionMixin(value): {
+                        conditional+: {
+                          'if'+: {
+                            dataSourceCondition+: value,
+                          },
+                        },
+                      },
+                      dataSourceCondition+:
+                        {
+                          '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Data source request payload.' } },
+                          withRequest(value): {
+                            conditional+: {
+                              'if'+: {
+                                dataSourceCondition+: {
+                                  request: value,
+                                },
+                              },
+                            },
+                          },
+                        },
+                      '#withLabelMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Label matchers for the condition.' } },
+                      withLabelMatchers(value): {
+                        conditional+: {
+                          'if'+: {
+                            labelMatchers:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withLabelMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Label matchers for the condition.' } },
+                      withLabelMatchersMixin(value): {
+                        conditional+: {
+                          'if'+: {
+                            labelMatchers+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      labelMatchers+:
+                        {
+                          '#': { help: '', name: 'labelMatchers' },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withName(value): {
+                            name: value,
+                          },
+                          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withType(value): {
+                            type: value,
+                          },
+                          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withValue(value): {
+                            value: value,
+                          },
+                        },
+                    },
+                  '#withThen': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is true.' } },
+                  withThen(value): {
+                    conditional+: {
+                      'then': value,
+                    },
+                  },
+                  '#withThenMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is true.' } },
+                  withThenMixin(value): {
+                    conditional+: {
+                      'then'+: value,
+                    },
+                  },
+                  'then'+:
+                    {
+                      '#withStep': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStep(value): {
+                        conditional+: {
+                          'then'+: {
+                            step:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withStepMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStepMixin(value): {
+                        conditional+: {
+                          'then'+: {
+                            step+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      step+:
+                        {
+                          '#': { help: '', name: 'step' },
+                          '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAsserts(value): {
+                            asserts: value,
+                          },
+                          '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAssertsMixin(value): {
+                            asserts+: value,
+                          },
+                          asserts+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                asserts+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssign(value): {
+                            assign: value,
+                          },
+                          '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssignMixin(value): {
+                            assign+: value,
+                          },
+                          assign+:
+                            {
+                              '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotations(value): {
+                                assign+: {
+                                  annotations: value,
+                                },
+                              },
+                              '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotationsMixin(value): {
+                                assign+: {
+                                  annotations+: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assign+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigations(value): {
+                            assistantInvestigations: value,
+                          },
+                          '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigationsMixin(value): {
+                            assistantInvestigations+: value,
+                          },
+                          assistantInvestigations+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assistantInvestigations+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSource(value): {
+                            dataSource: value,
+                          },
+                          '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSourceMixin(value): {
+                            dataSource+: value,
+                          },
+                          dataSource+:
+                            {
+                              '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQuery(value): {
+                                dataSource+: {
+                                  logsQuery: value,
+                                },
+                              },
+                              '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQueryMixin(value): {
+                                dataSource+: {
+                                  logsQuery+: value,
+                                },
+                              },
+                              logsQuery+:
+                                {
+                                  '#withDataSourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Data source type (e.g., 'loki')." } },
+                                  withDataSourceType(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceType: value,
+                                      },
+                                    },
+                                  },
+                                  '#withDataSourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'UID of the data source to query.' } },
+                                  withDataSourceUid(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceUid: value,
+                                      },
+                                    },
+                                  },
+                                  '#withExpr': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Log query expression to execute.' } },
+                                  withExpr(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        expr: value,
+                                      },
+                                    },
+                                  },
+                                  '#withMaxLines': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'Maximum number of log lines to include. Defaults to 3.' } },
+                                  withMaxLines(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        maxLines: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQuery(value): {
+                                dataSource+: {
+                                  rawQuery: value,
+                                },
+                              },
+                              '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQueryMixin(value): {
+                                dataSource+: {
+                                  rawQuery+: value,
+                                },
+                              },
+                              rawQuery+:
+                                {
+                                  '#withRefId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Reference ID for correlating queries.' } },
+                                  withRefId(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        refId: value,
+                                      },
+                                    },
+                                  },
+                                  '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Raw request payload for the data source query.' } },
+                                  withRequest(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        request: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                dataSource+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplain(value): {
+                            explain: value,
+                          },
+                          '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplainMixin(value): {
+                            explain+: value,
+                          },
+                          explain+:
+                            {
+                              '#withAnnotation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Annotation name to set the explanation in. Defaults to 'ai_explanation'." } },
+                              withAnnotation(value): {
+                                explain+: {
+                                  annotation: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                explain+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternal(value): {
+                            external: value,
+                          },
+                          '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternalMixin(value): {
+                            external+: value,
+                          },
+                          external+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                external+: {
+                                  timeout: value,
+                                },
+                              },
+                              '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'HTTP endpoint URL to call for enrichment' } },
+                              withUrl(value): {
+                                external+: {
+                                  url: value,
+                                },
+                              },
+                            },
+                          '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSift(value): {
+                            sift: value,
+                          },
+                          '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSiftMixin(value): {
+                            sift+: value,
+                          },
+                          sift+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                sift+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                        },
+                    },
+                  '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                  withTimeout(value): {
+                    conditional+: {
+                      timeout: value,
+                    },
+                  },
+                },
+              '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+              withDataSource(value): {
+                dataSource: value,
+              },
+              '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
               withDataSourceMixin(value): {
-                dataSource+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                dataSource+: value,
               },
               dataSource+:
                 {
-                  '#': { help: '', name: 'dataSource' },
-                  '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Logs query configuration for querying log data sources.' } },
+                  '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
                   withLogsQuery(value): {
-                    logsQuery:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      logsQuery: value,
+                    },
                   },
-                  '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Logs query configuration for querying log data sources.' } },
+                  '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
                   withLogsQueryMixin(value): {
-                    logsQuery+:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      logsQuery+: value,
+                    },
                   },
                   logsQuery+:
                     {
-                      '#': { help: '', name: 'logsQuery' },
                       '#withDataSourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Data source type (e.g., 'loki')." } },
                       withDataSourceType(value): {
-                        dataSourceType: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            dataSourceType: value,
+                          },
+                        },
                       },
                       '#withDataSourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'UID of the data source to query.' } },
                       withDataSourceUid(value): {
-                        dataSourceUid: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            dataSourceUid: value,
+                          },
+                        },
                       },
                       '#withExpr': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Log query expression to execute.' } },
                       withExpr(value): {
-                        expr: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            expr: value,
+                          },
+                        },
                       },
                       '#withMaxLines': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'Maximum number of log lines to include. Defaults to 3.' } },
                       withMaxLines(value): {
-                        maxLines: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            maxLines: value,
+                          },
+                        },
                       },
                     },
-                  '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                  '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
                   withRawQuery(value): {
-                    rawQuery:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      rawQuery: value,
+                    },
                   },
-                  '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                  '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
                   withRawQueryMixin(value): {
-                    rawQuery+:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      rawQuery+: value,
+                    },
                   },
                   rawQuery+:
                     {
-                      '#': { help: '', name: 'rawQuery' },
                       '#withRefId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Reference ID for correlating queries.' } },
                       withRefId(value): {
-                        refId: value,
+                        dataSource+: {
+                          rawQuery+: {
+                            refId: value,
+                          },
+                        },
                       },
                       '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Raw request payload for the data source query.' } },
                       withRequest(value): {
-                        request: value,
+                        dataSource+: {
+                          rawQuery+: {
+                            request: value,
+                          },
+                        },
                       },
                     },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    dataSource+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Generate AI explanation and store in an annotation.' } },
+              '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
               withExplain(value): {
-                explain:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                explain: value,
               },
-              '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Generate AI explanation and store in an annotation.' } },
+              '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
               withExplainMixin(value): {
-                explain+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                explain+: value,
               },
               explain+:
                 {
-                  '#': { help: '', name: 'explain' },
                   '#withAnnotation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Annotation name to set the explanation in. Defaults to 'ai_explanation'." } },
                   withAnnotation(value): {
-                    annotation: value,
+                    explain+: {
+                      annotation: value,
+                    },
                   },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    explain+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Call an external HTTP service for enrichment.' } },
+              '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
               withExternal(value): {
-                external:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                external: value,
               },
-              '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Call an external HTTP service for enrichment.' } },
+              '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
               withExternalMixin(value): {
-                external+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                external+: value,
               },
               external+:
                 {
-                  '#': { help: '', name: 'external' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    external+: {
+                      timeout: value,
+                    },
                   },
                   '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'HTTP endpoint URL to call for enrichment' } },
                   withUrl(value): {
-                    url: value,
+                    external+: {
+                      url: value,
+                    },
                   },
                 },
-              '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Analyze alerts for patterns and insights.' } },
+              '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
               withSift(value): {
-                sift:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                sift: value,
               },
-              '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Analyze alerts for patterns and insights.' } },
+              '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
               withSiftMixin(value): {
-                sift+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                sift+: value,
               },
               sift+:
                 {
-                  '#': { help: '', name: 'sift' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    sift+: {
+                      timeout: value,
+                    },
                   },
                 },
             },
           '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert enrichment.' } },
           withTitle(value): {
-            title: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    title: value,
+                  },
+                },
+              },
+            },
           },
         },
     },
@@ -494,130 +1245,165 @@
   },
   initProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           initProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           initProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withAlertRuleUids': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.' } },
           withAlertRuleUids(value): {
-            alertRuleUids:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    alertRuleUids:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withAlertRuleUidsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.' } },
           withAlertRuleUidsMixin(value): {
-            alertRuleUids+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    alertRuleUids+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withAnnotationMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators)." } },
           withAnnotationMatchers(value): {
-            annotationMatchers:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    annotationMatchers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withAnnotationMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators)." } },
           withAnnotationMatchersMixin(value): {
-            annotationMatchers+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    annotationMatchers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           annotationMatchers+:
             {
@@ -637,21 +1423,45 @@
             },
           '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Description of the alert enrichment.' } },
           withDescription(value): {
-            description: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    description: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabelMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators)." } },
           withLabelMatchers(value): {
-            labelMatchers:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    labelMatchers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withLabelMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators)." } },
           withLabelMatchersMixin(value): {
-            labelMatchers+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    labelMatchers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           labelMatchers+:
             {
@@ -671,269 +1481,961 @@
             },
           '#withReceivers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Receiver names to match. If empty, applies to all receivers.' } },
           withReceivers(value): {
-            receivers:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    receivers:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withReceiversMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Receiver names to match. If empty, applies to all receivers.' } },
           withReceiversMixin(value): {
-            receivers+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    receivers+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withStep': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.' } },
           withStep(value): {
-            step:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    step:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           '#withStepMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.' } },
           withStepMixin(value): {
-            step+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    step+:
+                      (if std.isArray(value)
+                       then value
+                       else [value]),
+                  },
+                },
+              },
+            },
           },
           step+:
             {
               '#': { help: '', name: 'step' },
-              '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+              '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
               withAsserts(value): {
-                asserts:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                asserts: value,
               },
-              '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+              '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
               withAssertsMixin(value): {
-                asserts+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                asserts+: value,
               },
               asserts+:
                 {
-                  '#': { help: '', name: 'asserts' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    asserts+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Assign annotations to an alert.' } },
+              '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
               withAssign(value): {
-                assign:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assign: value,
               },
-              '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Assign annotations to an alert.' } },
+              '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
               withAssignMixin(value): {
-                assign+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assign+: value,
               },
               assign+:
                 {
-                  '#': { help: '', name: 'assign' },
                   '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
                   withAnnotations(value): {
-                    annotations: value,
+                    assign+: {
+                      annotations: value,
+                    },
                   },
                   '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
                   withAnnotationsMixin(value): {
-                    annotations+: value,
+                    assign+: {
+                      annotations+: value,
+                    },
                   },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    assign+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+              '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
               withAssistantInvestigations(value): {
-                assistantInvestigations:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assistantInvestigations: value,
               },
-              '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+              '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
               withAssistantInvestigationsMixin(value): {
-                assistantInvestigations+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                assistantInvestigations+: value,
               },
               assistantInvestigations+:
                 {
-                  '#': { help: '', name: 'assistantInvestigations' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    assistantInvestigations+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Query Grafana data sources and add results to alerts.' } },
-              withDataSource(value): {
-                dataSource:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+              '#withConditional': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Conditional step with if/then/else.' } },
+              withConditional(value): {
+                conditional: value,
               },
-              '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+              '#withConditionalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Conditional step with if/then/else.' } },
+              withConditionalMixin(value): {
+                conditional+: value,
+              },
+              conditional+:
+                {
+                  '#withElse': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is false.' } },
+                  withElse(value): {
+                    conditional+: {
+                      'else': value,
+                    },
+                  },
+                  '#withElseMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is false.' } },
+                  withElseMixin(value): {
+                    conditional+: {
+                      'else'+: value,
+                    },
+                  },
+                  'else'+:
+                    {
+                      '#withStep': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStep(value): {
+                        conditional+: {
+                          'else'+: {
+                            step:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withStepMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStepMixin(value): {
+                        conditional+: {
+                          'else'+: {
+                            step+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      step+:
+                        {
+                          '#': { help: '', name: 'step' },
+                          '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAsserts(value): {
+                            asserts: value,
+                          },
+                          '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAssertsMixin(value): {
+                            asserts+: value,
+                          },
+                          asserts+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                asserts+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssign(value): {
+                            assign: value,
+                          },
+                          '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssignMixin(value): {
+                            assign+: value,
+                          },
+                          assign+:
+                            {
+                              '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotations(value): {
+                                assign+: {
+                                  annotations: value,
+                                },
+                              },
+                              '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotationsMixin(value): {
+                                assign+: {
+                                  annotations+: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assign+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigations(value): {
+                            assistantInvestigations: value,
+                          },
+                          '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigationsMixin(value): {
+                            assistantInvestigations+: value,
+                          },
+                          assistantInvestigations+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assistantInvestigations+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSource(value): {
+                            dataSource: value,
+                          },
+                          '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSourceMixin(value): {
+                            dataSource+: value,
+                          },
+                          dataSource+:
+                            {
+                              '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQuery(value): {
+                                dataSource+: {
+                                  logsQuery: value,
+                                },
+                              },
+                              '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQueryMixin(value): {
+                                dataSource+: {
+                                  logsQuery+: value,
+                                },
+                              },
+                              logsQuery+:
+                                {
+                                  '#withDataSourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Data source type (e.g., 'loki')." } },
+                                  withDataSourceType(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceType: value,
+                                      },
+                                    },
+                                  },
+                                  '#withDataSourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'UID of the data source to query.' } },
+                                  withDataSourceUid(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceUid: value,
+                                      },
+                                    },
+                                  },
+                                  '#withExpr': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Log query expression to execute.' } },
+                                  withExpr(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        expr: value,
+                                      },
+                                    },
+                                  },
+                                  '#withMaxLines': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'Maximum number of log lines to include. Defaults to 3.' } },
+                                  withMaxLines(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        maxLines: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQuery(value): {
+                                dataSource+: {
+                                  rawQuery: value,
+                                },
+                              },
+                              '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQueryMixin(value): {
+                                dataSource+: {
+                                  rawQuery+: value,
+                                },
+                              },
+                              rawQuery+:
+                                {
+                                  '#withRefId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Reference ID for correlating queries.' } },
+                                  withRefId(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        refId: value,
+                                      },
+                                    },
+                                  },
+                                  '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Raw request payload for the data source query.' } },
+                                  withRequest(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        request: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                dataSource+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplain(value): {
+                            explain: value,
+                          },
+                          '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplainMixin(value): {
+                            explain+: value,
+                          },
+                          explain+:
+                            {
+                              '#withAnnotation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Annotation name to set the explanation in. Defaults to 'ai_explanation'." } },
+                              withAnnotation(value): {
+                                explain+: {
+                                  annotation: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                explain+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternal(value): {
+                            external: value,
+                          },
+                          '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternalMixin(value): {
+                            external+: value,
+                          },
+                          external+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                external+: {
+                                  timeout: value,
+                                },
+                              },
+                              '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'HTTP endpoint URL to call for enrichment' } },
+                              withUrl(value): {
+                                external+: {
+                                  url: value,
+                                },
+                              },
+                            },
+                          '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSift(value): {
+                            sift: value,
+                          },
+                          '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSiftMixin(value): {
+                            sift+: value,
+                          },
+                          sift+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                sift+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                        },
+                    },
+                  '#withIf': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Condition to evaluate.' } },
+                  withIf(value): {
+                    conditional+: {
+                      'if': value,
+                    },
+                  },
+                  '#withIfMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Condition to evaluate.' } },
+                  withIfMixin(value): {
+                    conditional+: {
+                      'if'+: value,
+                    },
+                  },
+                  'if'+:
+                    {
+                      '#withAnnotationMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Annotation matchers for the condition.' } },
+                      withAnnotationMatchers(value): {
+                        conditional+: {
+                          'if'+: {
+                            annotationMatchers:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withAnnotationMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Annotation matchers for the condition.' } },
+                      withAnnotationMatchersMixin(value): {
+                        conditional+: {
+                          'if'+: {
+                            annotationMatchers+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      annotationMatchers+:
+                        {
+                          '#': { help: '', name: 'annotationMatchers' },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withName(value): {
+                            name: value,
+                          },
+                          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withType(value): {
+                            type: value,
+                          },
+                          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withValue(value): {
+                            value: value,
+                          },
+                        },
+                      '#withDataSourceCondition': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Data source condition.' } },
+                      withDataSourceCondition(value): {
+                        conditional+: {
+                          'if'+: {
+                            dataSourceCondition: value,
+                          },
+                        },
+                      },
+                      '#withDataSourceConditionMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Data source condition.' } },
+                      withDataSourceConditionMixin(value): {
+                        conditional+: {
+                          'if'+: {
+                            dataSourceCondition+: value,
+                          },
+                        },
+                      },
+                      dataSourceCondition+:
+                        {
+                          '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Data source request payload.' } },
+                          withRequest(value): {
+                            conditional+: {
+                              'if'+: {
+                                dataSourceCondition+: {
+                                  request: value,
+                                },
+                              },
+                            },
+                          },
+                        },
+                      '#withLabelMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Label matchers for the condition.' } },
+                      withLabelMatchers(value): {
+                        conditional+: {
+                          'if'+: {
+                            labelMatchers:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withLabelMatchersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Label matchers for the condition.' } },
+                      withLabelMatchersMixin(value): {
+                        conditional+: {
+                          'if'+: {
+                            labelMatchers+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      labelMatchers+:
+                        {
+                          '#': { help: '', name: 'labelMatchers' },
+                          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withName(value): {
+                            name: value,
+                          },
+                          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withType(value): {
+                            type: value,
+                          },
+                          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '' } },
+                          withValue(value): {
+                            value: value,
+                          },
+                        },
+                    },
+                  '#withThen': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is true.' } },
+                  withThen(value): {
+                    conditional+: {
+                      'then': value,
+                    },
+                  },
+                  '#withThenMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Steps when condition is true.' } },
+                  withThenMixin(value): {
+                    conditional+: {
+                      'then'+: value,
+                    },
+                  },
+                  'then'+:
+                    {
+                      '#withStep': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStep(value): {
+                        conditional+: {
+                          'then'+: {
+                            step:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      '#withStepMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '' } },
+                      withStepMixin(value): {
+                        conditional+: {
+                          'then'+: {
+                            step+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                        },
+                      },
+                      step+:
+                        {
+                          '#': { help: '', name: 'step' },
+                          '#withAsserts': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAsserts(value): {
+                            asserts: value,
+                          },
+                          '#withAssertsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Integrate with Grafana Asserts for enrichment.' } },
+                          withAssertsMixin(value): {
+                            asserts+: value,
+                          },
+                          asserts+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                asserts+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssign': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssign(value): {
+                            assign: value,
+                          },
+                          '#withAssignMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Assign annotations to an alert.' } },
+                          withAssignMixin(value): {
+                            assign+: value,
+                          },
+                          assign+:
+                            {
+                              '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotations(value): {
+                                assign+: {
+                                  annotations: value,
+                                },
+                              },
+                              '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Map of annotation names to values to set on matching alerts.' } },
+                              withAnnotationsMixin(value): {
+                                assign+: {
+                                  annotations+: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assign+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withAssistantInvestigations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigations(value): {
+                            assistantInvestigations: value,
+                          },
+                          '#withAssistantInvestigationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Use AI assistant to investigate alerts and add insights.' } },
+                          withAssistantInvestigationsMixin(value): {
+                            assistantInvestigations+: value,
+                          },
+                          assistantInvestigations+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                assistantInvestigations+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSource(value): {
+                            dataSource: value,
+                          },
+                          '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+                          withDataSourceMixin(value): {
+                            dataSource+: value,
+                          },
+                          dataSource+:
+                            {
+                              '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQuery(value): {
+                                dataSource+: {
+                                  logsQuery: value,
+                                },
+                              },
+                              '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
+                              withLogsQueryMixin(value): {
+                                dataSource+: {
+                                  logsQuery+: value,
+                                },
+                              },
+                              logsQuery+:
+                                {
+                                  '#withDataSourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Data source type (e.g., 'loki')." } },
+                                  withDataSourceType(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceType: value,
+                                      },
+                                    },
+                                  },
+                                  '#withDataSourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'UID of the data source to query.' } },
+                                  withDataSourceUid(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        dataSourceUid: value,
+                                      },
+                                    },
+                                  },
+                                  '#withExpr': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Log query expression to execute.' } },
+                                  withExpr(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        expr: value,
+                                      },
+                                    },
+                                  },
+                                  '#withMaxLines': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'Maximum number of log lines to include. Defaults to 3.' } },
+                                  withMaxLines(value): {
+                                    dataSource+: {
+                                      logsQuery+: {
+                                        maxLines: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQuery(value): {
+                                dataSource+: {
+                                  rawQuery: value,
+                                },
+                              },
+                              '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                              withRawQueryMixin(value): {
+                                dataSource+: {
+                                  rawQuery+: value,
+                                },
+                              },
+                              rawQuery+:
+                                {
+                                  '#withRefId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Reference ID for correlating queries.' } },
+                                  withRefId(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        refId: value,
+                                      },
+                                    },
+                                  },
+                                  '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Raw request payload for the data source query.' } },
+                                  withRequest(value): {
+                                    dataSource+: {
+                                      rawQuery+: {
+                                        request: value,
+                                      },
+                                    },
+                                  },
+                                },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                dataSource+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplain(value): {
+                            explain: value,
+                          },
+                          '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
+                          withExplainMixin(value): {
+                            explain+: value,
+                          },
+                          explain+:
+                            {
+                              '#withAnnotation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Annotation name to set the explanation in. Defaults to 'ai_explanation'." } },
+                              withAnnotation(value): {
+                                explain+: {
+                                  annotation: value,
+                                },
+                              },
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                explain+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                          '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternal(value): {
+                            external: value,
+                          },
+                          '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
+                          withExternalMixin(value): {
+                            external+: value,
+                          },
+                          external+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                external+: {
+                                  timeout: value,
+                                },
+                              },
+                              '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'HTTP endpoint URL to call for enrichment' } },
+                              withUrl(value): {
+                                external+: {
+                                  url: value,
+                                },
+                              },
+                            },
+                          '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSift(value): {
+                            sift: value,
+                          },
+                          '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
+                          withSiftMixin(value): {
+                            sift+: value,
+                          },
+                          sift+:
+                            {
+                              '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                              withTimeout(value): {
+                                sift+: {
+                                  timeout: value,
+                                },
+                              },
+                            },
+                        },
+                    },
+                  '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
+                  withTimeout(value): {
+                    conditional+: {
+                      timeout: value,
+                    },
+                  },
+                },
+              '#withDataSource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
+              withDataSource(value): {
+                dataSource: value,
+              },
+              '#withDataSourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Query Grafana data sources and add results to alerts.' } },
               withDataSourceMixin(value): {
-                dataSource+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                dataSource+: value,
               },
               dataSource+:
                 {
-                  '#': { help: '', name: 'dataSource' },
-                  '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Logs query configuration for querying log data sources.' } },
+                  '#withLogsQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
                   withLogsQuery(value): {
-                    logsQuery:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      logsQuery: value,
+                    },
                   },
-                  '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Logs query configuration for querying log data sources.' } },
+                  '#withLogsQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Logs query configuration for querying log data sources.' } },
                   withLogsQueryMixin(value): {
-                    logsQuery+:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      logsQuery+: value,
+                    },
                   },
                   logsQuery+:
                     {
-                      '#': { help: '', name: 'logsQuery' },
                       '#withDataSourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Data source type (e.g., 'loki')." } },
                       withDataSourceType(value): {
-                        dataSourceType: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            dataSourceType: value,
+                          },
+                        },
                       },
                       '#withDataSourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'UID of the data source to query.' } },
                       withDataSourceUid(value): {
-                        dataSourceUid: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            dataSourceUid: value,
+                          },
+                        },
                       },
                       '#withExpr': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Log query expression to execute.' } },
                       withExpr(value): {
-                        expr: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            expr: value,
+                          },
+                        },
                       },
                       '#withMaxLines': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'Maximum number of log lines to include. Defaults to 3.' } },
                       withMaxLines(value): {
-                        maxLines: value,
+                        dataSource+: {
+                          logsQuery+: {
+                            maxLines: value,
+                          },
+                        },
                       },
                     },
-                  '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                  '#withRawQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
                   withRawQuery(value): {
-                    rawQuery:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      rawQuery: value,
+                    },
                   },
-                  '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Raw query configuration for advanced data source queries.' } },
+                  '#withRawQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Raw query configuration for advanced data source queries.' } },
                   withRawQueryMixin(value): {
-                    rawQuery+:
-                      (if std.isArray(value)
-                       then value
-                       else [value]),
+                    dataSource+: {
+                      rawQuery+: value,
+                    },
                   },
                   rawQuery+:
                     {
-                      '#': { help: '', name: 'rawQuery' },
                       '#withRefId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Reference ID for correlating queries.' } },
                       withRefId(value): {
-                        refId: value,
+                        dataSource+: {
+                          rawQuery+: {
+                            refId: value,
+                          },
+                        },
                       },
                       '#withRequest': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Raw request payload for the data source query.' } },
                       withRequest(value): {
-                        request: value,
+                        dataSource+: {
+                          rawQuery+: {
+                            request: value,
+                          },
+                        },
                       },
                     },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    dataSource+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Generate AI explanation and store in an annotation.' } },
+              '#withExplain': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
               withExplain(value): {
-                explain:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                explain: value,
               },
-              '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Generate AI explanation and store in an annotation.' } },
+              '#withExplainMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Generate AI explanation and store in an annotation.' } },
               withExplainMixin(value): {
-                explain+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                explain+: value,
               },
               explain+:
                 {
-                  '#': { help: '', name: 'explain' },
                   '#withAnnotation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Annotation name to set the explanation in. Defaults to 'ai_explanation'." } },
                   withAnnotation(value): {
-                    annotation: value,
+                    explain+: {
+                      annotation: value,
+                    },
                   },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    explain+: {
+                      timeout: value,
+                    },
                   },
                 },
-              '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Call an external HTTP service for enrichment.' } },
+              '#withExternal': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
               withExternal(value): {
-                external:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                external: value,
               },
-              '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Call an external HTTP service for enrichment.' } },
+              '#withExternalMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Call an external HTTP service for enrichment.' } },
               withExternalMixin(value): {
-                external+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                external+: value,
               },
               external+:
                 {
-                  '#': { help: '', name: 'external' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    external+: {
+                      timeout: value,
+                    },
                   },
                   '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'HTTP endpoint URL to call for enrichment' } },
                   withUrl(value): {
-                    url: value,
+                    external+: {
+                      url: value,
+                    },
                   },
                 },
-              '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Analyze alerts for patterns and insights.' } },
+              '#withSift': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
               withSift(value): {
-                sift:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                sift: value,
               },
-              '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Analyze alerts for patterns and insights.' } },
+              '#withSiftMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Analyze alerts for patterns and insights.' } },
               withSiftMixin(value): {
-                sift+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                sift+: value,
               },
               sift+:
                 {
-                  '#': { help: '', name: 'sift' },
                   '#withTimeout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Maximum execution time (e.g., '30s', '1m')" } },
                   withTimeout(value): {
-                    timeout: value,
+                    sift+: {
+                      timeout: value,
+                    },
                   },
                 },
             },
           '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert enrichment.' } },
           withTitle(value): {
-            title: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    title: value,
+                  },
+                },
+              },
+            },
           },
         },
     },
