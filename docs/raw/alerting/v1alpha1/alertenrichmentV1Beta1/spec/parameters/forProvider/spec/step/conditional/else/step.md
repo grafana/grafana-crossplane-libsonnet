@@ -2,13 +2,6 @@
 
 
 
-## Subpackages
-
-* [conditional.else.step](conditional/else/step.md)
-* [conditional.if.annotationMatchers](conditional/if/annotationMatchers.md)
-* [conditional.if.labelMatchers](conditional/if/labelMatchers.md)
-* [conditional.then.step](conditional/then/step.md)
-
 ## Index
 
 * [`fn withAsserts(value)`](#fn-withasserts)
@@ -17,8 +10,6 @@
 * [`fn withAssignMixin(value)`](#fn-withassignmixin)
 * [`fn withAssistantInvestigations(value)`](#fn-withassistantinvestigations)
 * [`fn withAssistantInvestigationsMixin(value)`](#fn-withassistantinvestigationsmixin)
-* [`fn withConditional(value)`](#fn-withconditional)
-* [`fn withConditionalMixin(value)`](#fn-withconditionalmixin)
 * [`fn withDataSource(value)`](#fn-withdatasource)
 * [`fn withDataSourceMixin(value)`](#fn-withdatasourcemixin)
 * [`fn withExplain(value)`](#fn-withexplain)
@@ -35,29 +26,6 @@
   * [`fn withTimeout(value)`](#fn-assignwithtimeout)
 * [`obj assistantInvestigations`](#obj-assistantinvestigations)
   * [`fn withTimeout(value)`](#fn-assistantinvestigationswithtimeout)
-* [`obj conditional`](#obj-conditional)
-  * [`fn withElse(value)`](#fn-conditionalwithelse)
-  * [`fn withElseMixin(value)`](#fn-conditionalwithelsemixin)
-  * [`fn withIf(value)`](#fn-conditionalwithif)
-  * [`fn withIfMixin(value)`](#fn-conditionalwithifmixin)
-  * [`fn withThen(value)`](#fn-conditionalwiththen)
-  * [`fn withThenMixin(value)`](#fn-conditionalwiththenmixin)
-  * [`fn withTimeout(value)`](#fn-conditionalwithtimeout)
-  * [`obj else`](#obj-conditionalelse)
-    * [`fn withStep(value)`](#fn-conditionalelsewithstep)
-    * [`fn withStepMixin(value)`](#fn-conditionalelsewithstepmixin)
-  * [`obj if`](#obj-conditionalif)
-    * [`fn withAnnotationMatchers(value)`](#fn-conditionalifwithannotationmatchers)
-    * [`fn withAnnotationMatchersMixin(value)`](#fn-conditionalifwithannotationmatchersmixin)
-    * [`fn withDataSourceCondition(value)`](#fn-conditionalifwithdatasourcecondition)
-    * [`fn withDataSourceConditionMixin(value)`](#fn-conditionalifwithdatasourceconditionmixin)
-    * [`fn withLabelMatchers(value)`](#fn-conditionalifwithlabelmatchers)
-    * [`fn withLabelMatchersMixin(value)`](#fn-conditionalifwithlabelmatchersmixin)
-    * [`obj dataSourceCondition`](#obj-conditionalifdatasourcecondition)
-      * [`fn withRequest(value)`](#fn-conditionalifdatasourceconditionwithrequest)
-  * [`obj then`](#obj-conditionalthen)
-    * [`fn withStep(value)`](#fn-conditionalthenwithstep)
-    * [`fn withStepMixin(value)`](#fn-conditionalthenwithstepmixin)
 * [`obj dataSource`](#obj-datasource)
   * [`fn withLogsQuery(value)`](#fn-datasourcewithlogsquery)
   * [`fn withLogsQueryMixin(value)`](#fn-datasourcewithlogsquerymixin)
@@ -149,28 +117,6 @@ PARAMETERS:
 * **value** (`object`)
 
 Use AI assistant to investigate alerts and add insights.
-### fn withConditional
-
-```jsonnet
-withConditional(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Conditional step with if/then/else.
-### fn withConditionalMixin
-
-```jsonnet
-withConditionalMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Conditional step with if/then/else.
 ### fn withDataSource
 
 ```jsonnet
@@ -323,219 +269,6 @@ PARAMETERS:
 * **value** (`string`)
 
 Maximum execution time (e.g., '30s', '1m')
-### obj conditional
-
-
-#### fn conditional.withElse
-
-```jsonnet
-conditional.withElse(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Steps when condition is false.
-#### fn conditional.withElseMixin
-
-```jsonnet
-conditional.withElseMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Steps when condition is false.
-#### fn conditional.withIf
-
-```jsonnet
-conditional.withIf(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Condition to evaluate.
-#### fn conditional.withIfMixin
-
-```jsonnet
-conditional.withIfMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Condition to evaluate.
-#### fn conditional.withThen
-
-```jsonnet
-conditional.withThen(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Steps when condition is true.
-#### fn conditional.withThenMixin
-
-```jsonnet
-conditional.withThenMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Steps when condition is true.
-#### fn conditional.withTimeout
-
-```jsonnet
-conditional.withTimeout(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Maximum execution time (e.g., '30s', '1m')
-#### obj conditional.else
-
-
-##### fn conditional.else.withStep
-
-```jsonnet
-conditional.else.withStep(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-
-##### fn conditional.else.withStepMixin
-
-```jsonnet
-conditional.else.withStepMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-
-#### obj conditional.if
-
-
-##### fn conditional.if.withAnnotationMatchers
-
-```jsonnet
-conditional.if.withAnnotationMatchers(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-Annotation matchers for the condition.
-##### fn conditional.if.withAnnotationMatchersMixin
-
-```jsonnet
-conditional.if.withAnnotationMatchersMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-Annotation matchers for the condition.
-##### fn conditional.if.withDataSourceCondition
-
-```jsonnet
-conditional.if.withDataSourceCondition(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Data source condition.
-##### fn conditional.if.withDataSourceConditionMixin
-
-```jsonnet
-conditional.if.withDataSourceConditionMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Data source condition.
-##### fn conditional.if.withLabelMatchers
-
-```jsonnet
-conditional.if.withLabelMatchers(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-Label matchers for the condition.
-##### fn conditional.if.withLabelMatchersMixin
-
-```jsonnet
-conditional.if.withLabelMatchersMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-Label matchers for the condition.
-##### obj conditional.if.dataSourceCondition
-
-
-###### fn conditional.if.dataSourceCondition.withRequest
-
-```jsonnet
-conditional.if.dataSourceCondition.withRequest(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Data source request payload.
-#### obj conditional.then
-
-
-##### fn conditional.then.withStep
-
-```jsonnet
-conditional.then.withStep(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-
-##### fn conditional.then.withStepMixin
-
-```jsonnet
-conditional.then.withStepMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-
 ### obj dataSource
 
 

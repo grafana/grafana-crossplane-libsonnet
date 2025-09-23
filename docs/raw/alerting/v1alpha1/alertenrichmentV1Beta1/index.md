@@ -4,12 +4,12 @@
 
 ## Subpackages
 
-* [spec.parameters.forProvider.metadata](spec/parameters/forProvider/metadata.md)
-* [spec.parameters.forProvider.options](spec/parameters/forProvider/options.md)
-* [spec.parameters.forProvider.spec](spec/parameters/forProvider/spec/index.md)
-* [spec.parameters.initProvider.metadata](spec/parameters/initProvider/metadata.md)
-* [spec.parameters.initProvider.options](spec/parameters/initProvider/options.md)
-* [spec.parameters.initProvider.spec](spec/parameters/initProvider/spec/index.md)
+* [spec.parameters.forProvider.spec.annotationMatchers](spec/parameters/forProvider/spec/annotationMatchers.md)
+* [spec.parameters.forProvider.spec.labelMatchers](spec/parameters/forProvider/spec/labelMatchers.md)
+* [spec.parameters.forProvider.spec.step](spec/parameters/forProvider/spec/step/index.md)
+* [spec.parameters.initProvider.spec.annotationMatchers](spec/parameters/initProvider/spec/annotationMatchers.md)
+* [spec.parameters.initProvider.spec.labelMatchers](spec/parameters/initProvider/spec/labelMatchers.md)
+* [spec.parameters.initProvider.spec.step](spec/parameters/initProvider/spec/step/index.md)
 
 ## Index
 
@@ -84,6 +84,24 @@
       * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
       * [`fn withSpec(value)`](#fn-specparametersforproviderwithspec)
       * [`fn withSpecMixin(value)`](#fn-specparametersforproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersforprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersforprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersforproviderspec)
+        * [`fn withAlertRuleUids(value)`](#fn-specparametersforproviderspecwithalertruleuids)
+        * [`fn withAlertRuleUidsMixin(value)`](#fn-specparametersforproviderspecwithalertruleuidsmixin)
+        * [`fn withAnnotationMatchers(value)`](#fn-specparametersforproviderspecwithannotationmatchers)
+        * [`fn withAnnotationMatchersMixin(value)`](#fn-specparametersforproviderspecwithannotationmatchersmixin)
+        * [`fn withDescription(value)`](#fn-specparametersforproviderspecwithdescription)
+        * [`fn withLabelMatchers(value)`](#fn-specparametersforproviderspecwithlabelmatchers)
+        * [`fn withLabelMatchersMixin(value)`](#fn-specparametersforproviderspecwithlabelmatchersmixin)
+        * [`fn withReceivers(value)`](#fn-specparametersforproviderspecwithreceivers)
+        * [`fn withReceiversMixin(value)`](#fn-specparametersforproviderspecwithreceiversmixin)
+        * [`fn withStep(value)`](#fn-specparametersforproviderspecwithstep)
+        * [`fn withStepMixin(value)`](#fn-specparametersforproviderspecwithstepmixin)
+        * [`fn withTitle(value)`](#fn-specparametersforproviderspecwithtitle)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
       * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
@@ -91,6 +109,24 @@
       * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
       * [`fn withSpec(value)`](#fn-specparametersinitproviderwithspec)
       * [`fn withSpecMixin(value)`](#fn-specparametersinitproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersinitprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersinitprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersinitproviderspec)
+        * [`fn withAlertRuleUids(value)`](#fn-specparametersinitproviderspecwithalertruleuids)
+        * [`fn withAlertRuleUidsMixin(value)`](#fn-specparametersinitproviderspecwithalertruleuidsmixin)
+        * [`fn withAnnotationMatchers(value)`](#fn-specparametersinitproviderspecwithannotationmatchers)
+        * [`fn withAnnotationMatchersMixin(value)`](#fn-specparametersinitproviderspecwithannotationmatchersmixin)
+        * [`fn withDescription(value)`](#fn-specparametersinitproviderspecwithdescription)
+        * [`fn withLabelMatchers(value)`](#fn-specparametersinitproviderspecwithlabelmatchers)
+        * [`fn withLabelMatchersMixin(value)`](#fn-specparametersinitproviderspecwithlabelmatchersmixin)
+        * [`fn withReceivers(value)`](#fn-specparametersinitproviderspecwithreceivers)
+        * [`fn withReceiversMixin(value)`](#fn-specparametersinitproviderspecwithreceiversmixin)
+        * [`fn withStep(value)`](#fn-specparametersinitproviderspecwithstep)
+        * [`fn withStepMixin(value)`](#fn-specparametersinitproviderspecwithstepmixin)
+        * [`fn withTitle(value)`](#fn-specparametersinitproviderspecwithtitle)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -882,7 +918,7 @@ spec.parameters.forProvider.withMetadata(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The metadata of the resource.
 ###### fn spec.parameters.forProvider.withMetadataMixin
@@ -893,7 +929,7 @@ spec.parameters.forProvider.withMetadataMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The metadata of the resource.
 ###### fn spec.parameters.forProvider.withOptions
@@ -904,7 +940,7 @@ spec.parameters.forProvider.withOptions(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 Options for applying the resource.
 ###### fn spec.parameters.forProvider.withOptionsMixin
@@ -915,7 +951,7 @@ spec.parameters.forProvider.withOptionsMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 Options for applying the resource.
 ###### fn spec.parameters.forProvider.withSpec
@@ -926,7 +962,7 @@ spec.parameters.forProvider.withSpec(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The spec of the resource.
 ###### fn spec.parameters.forProvider.withSpecMixin
@@ -937,9 +973,184 @@ spec.parameters.forProvider.withSpecMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The spec of the resource.
+###### obj spec.parameters.forProvider.metadata
+
+
+####### fn spec.parameters.forProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The UID of the folder to save the resource in.
+####### fn spec.parameters.forProvider.metadata.withUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The unique identifier of the resource.
+###### obj spec.parameters.forProvider.options
+
+
+####### fn spec.parameters.forProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.forProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.forProvider.spec
+
+
+####### fn spec.parameters.forProvider.spec.withAlertRuleUids
+
+```jsonnet
+spec.parameters.forProvider.spec.withAlertRuleUids(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.
+####### fn spec.parameters.forProvider.spec.withAlertRuleUidsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withAlertRuleUidsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.
+####### fn spec.parameters.forProvider.spec.withAnnotationMatchers
+
+```jsonnet
+spec.parameters.forProvider.spec.withAnnotationMatchers(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.forProvider.spec.withAnnotationMatchersMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withAnnotationMatchersMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.forProvider.spec.withDescription
+
+```jsonnet
+spec.parameters.forProvider.spec.withDescription(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Description of the alert enrichment.
+####### fn spec.parameters.forProvider.spec.withLabelMatchers
+
+```jsonnet
+spec.parameters.forProvider.spec.withLabelMatchers(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.forProvider.spec.withLabelMatchersMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withLabelMatchersMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.forProvider.spec.withReceivers
+
+```jsonnet
+spec.parameters.forProvider.spec.withReceivers(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Receiver names to match. If empty, applies to all receivers.
+####### fn spec.parameters.forProvider.spec.withReceiversMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withReceiversMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Receiver names to match. If empty, applies to all receivers.
+####### fn spec.parameters.forProvider.spec.withStep
+
+```jsonnet
+spec.parameters.forProvider.spec.withStep(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.
+####### fn spec.parameters.forProvider.spec.withStepMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withStepMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.
+####### fn spec.parameters.forProvider.spec.withTitle
+
+```jsonnet
+spec.parameters.forProvider.spec.withTitle(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The title of the alert enrichment.
 ##### obj spec.parameters.initProvider
 
 
@@ -951,7 +1162,7 @@ spec.parameters.initProvider.withMetadata(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The metadata of the resource.
 ###### fn spec.parameters.initProvider.withMetadataMixin
@@ -962,7 +1173,7 @@ spec.parameters.initProvider.withMetadataMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The metadata of the resource.
 ###### fn spec.parameters.initProvider.withOptions
@@ -973,7 +1184,7 @@ spec.parameters.initProvider.withOptions(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 Options for applying the resource.
 ###### fn spec.parameters.initProvider.withOptionsMixin
@@ -984,7 +1195,7 @@ spec.parameters.initProvider.withOptionsMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 Options for applying the resource.
 ###### fn spec.parameters.initProvider.withSpec
@@ -995,7 +1206,7 @@ spec.parameters.initProvider.withSpec(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The spec of the resource.
 ###### fn spec.parameters.initProvider.withSpecMixin
@@ -1006,9 +1217,184 @@ spec.parameters.initProvider.withSpecMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 The spec of the resource.
+###### obj spec.parameters.initProvider.metadata
+
+
+####### fn spec.parameters.initProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The UID of the folder to save the resource in.
+####### fn spec.parameters.initProvider.metadata.withUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The unique identifier of the resource.
+###### obj spec.parameters.initProvider.options
+
+
+####### fn spec.parameters.initProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.initProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.initProvider.spec
+
+
+####### fn spec.parameters.initProvider.spec.withAlertRuleUids
+
+```jsonnet
+spec.parameters.initProvider.spec.withAlertRuleUids(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.
+####### fn spec.parameters.initProvider.spec.withAlertRuleUidsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withAlertRuleUidsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+UIDs of alert rules this enrichment applies to. If empty, applies to all alert rules.
+####### fn spec.parameters.initProvider.spec.withAnnotationMatchers
+
+```jsonnet
+spec.parameters.initProvider.spec.withAnnotationMatchers(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.initProvider.spec.withAnnotationMatchersMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withAnnotationMatchersMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Annotation matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, annotation key to match), 'value' (string, annotation value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.initProvider.spec.withDescription
+
+```jsonnet
+spec.parameters.initProvider.spec.withDescription(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Description of the alert enrichment.
+####### fn spec.parameters.initProvider.spec.withLabelMatchers
+
+```jsonnet
+spec.parameters.initProvider.spec.withLabelMatchers(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.initProvider.spec.withLabelMatchersMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withLabelMatchersMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators).
+####### fn spec.parameters.initProvider.spec.withReceivers
+
+```jsonnet
+spec.parameters.initProvider.spec.withReceivers(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Receiver names to match. If empty, applies to all receivers.
+####### fn spec.parameters.initProvider.spec.withReceiversMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withReceiversMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Receiver names to match. If empty, applies to all receivers.
+####### fn spec.parameters.initProvider.spec.withStep
+
+```jsonnet
+spec.parameters.initProvider.spec.withStep(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.
+####### fn spec.parameters.initProvider.spec.withStepMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withStepMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Enrichment step. Can be repeated multiple times to define a sequence of steps. Each step must contain exactly one enrichment block.
+####### fn spec.parameters.initProvider.spec.withTitle
+
+```jsonnet
+spec.parameters.initProvider.spec.withTitle(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The title of the alert enrichment.
 ##### obj spec.parameters.providerConfigRef
 
 
