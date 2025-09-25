@@ -50,6 +50,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.spec.description
                 toFieldPath: spec.forProvider.spec.description
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.disableProvenance
+                toFieldPath: spec.forProvider.spec.disableProvenance
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.spec.labelMatchers
                 toFieldPath: spec.forProvider.spec.labelMatchers
                 type: FromCompositeFieldPath
@@ -79,6 +82,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.spec.description
                 toFieldPath: spec.initProvider.spec.description
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.disableProvenance
+                toFieldPath: spec.initProvider.spec.disableProvenance
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.spec.labelMatchers
                 toFieldPath: spec.initProvider.spec.labelMatchers

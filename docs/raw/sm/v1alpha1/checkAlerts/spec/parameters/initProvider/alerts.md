@@ -6,6 +6,7 @@
 
 * [`fn withName(value)`](#fn-withname)
 * [`fn withPeriod(value)`](#fn-withperiod)
+* [`fn withRunbookUrl(value)`](#fn-withrunbookurl)
 * [`fn withThreshold(value)`](#fn-withthreshold)
 
 ## Fields
@@ -25,6 +26,17 @@ PARAMETERS:
 
 ```jsonnet
 withPeriod(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String)
+### fn withRunbookUrl
+
+```jsonnet
+withRunbookUrl(value)
 ```
 
 PARAMETERS:

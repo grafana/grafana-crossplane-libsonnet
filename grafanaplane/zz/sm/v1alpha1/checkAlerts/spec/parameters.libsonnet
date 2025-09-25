@@ -70,6 +70,10 @@
           withPeriod(value): {
             period: value,
           },
+          '#withRunbookUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+          withRunbookUrl(value): {
+            runbookUrl: value,
+          },
           '#withThreshold': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number)' } },
           withThreshold(value): {
             threshold: value,
@@ -140,6 +144,10 @@
           '#withPeriod': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
           withPeriod(value): {
             period: value,
+          },
+          '#withRunbookUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
+          withRunbookUrl(value): {
+            runbookUrl: value,
           },
           '#withThreshold': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number)' } },
           withThreshold(value): {

@@ -95,6 +95,7 @@
         * [`fn withAnnotationMatchers(value)`](#fn-specparametersforproviderspecwithannotationmatchers)
         * [`fn withAnnotationMatchersMixin(value)`](#fn-specparametersforproviderspecwithannotationmatchersmixin)
         * [`fn withDescription(value)`](#fn-specparametersforproviderspecwithdescription)
+        * [`fn withDisableProvenance(value=true)`](#fn-specparametersforproviderspecwithdisableprovenance)
         * [`fn withLabelMatchers(value)`](#fn-specparametersforproviderspecwithlabelmatchers)
         * [`fn withLabelMatchersMixin(value)`](#fn-specparametersforproviderspecwithlabelmatchersmixin)
         * [`fn withReceivers(value)`](#fn-specparametersforproviderspecwithreceivers)
@@ -120,6 +121,7 @@
         * [`fn withAnnotationMatchers(value)`](#fn-specparametersinitproviderspecwithannotationmatchers)
         * [`fn withAnnotationMatchersMixin(value)`](#fn-specparametersinitproviderspecwithannotationmatchersmixin)
         * [`fn withDescription(value)`](#fn-specparametersinitproviderspecwithdescription)
+        * [`fn withDisableProvenance(value=true)`](#fn-specparametersinitproviderspecwithdisableprovenance)
         * [`fn withLabelMatchers(value)`](#fn-specparametersinitproviderspecwithlabelmatchers)
         * [`fn withLabelMatchersMixin(value)`](#fn-specparametersinitproviderspecwithlabelmatchersmixin)
         * [`fn withReceivers(value)`](#fn-specparametersinitproviderspecwithreceivers)
@@ -1074,6 +1076,18 @@ PARAMETERS:
 * **value** (`string`)
 
 Description of the alert enrichment.
+####### fn spec.parameters.forProvider.spec.withDisableProvenance
+
+```jsonnet
+spec.parameters.forProvider.spec.withDisableProvenance(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+allow modifying alert enrichment outside of provider
 ####### fn spec.parameters.forProvider.spec.withLabelMatchers
 
 ```jsonnet
@@ -1318,6 +1332,18 @@ PARAMETERS:
 * **value** (`string`)
 
 Description of the alert enrichment.
+####### fn spec.parameters.initProvider.spec.withDisableProvenance
+
+```jsonnet
+spec.parameters.initProvider.spec.withDisableProvenance(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+allow modifying alert enrichment outside of provider
 ####### fn spec.parameters.initProvider.spec.withLabelMatchers
 
 ```jsonnet

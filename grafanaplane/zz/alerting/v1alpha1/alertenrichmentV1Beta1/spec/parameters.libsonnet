@@ -221,6 +221,18 @@
               },
             },
           },
+          '#withDisableProvenance': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'allow modifying alert enrichment outside of provider' } },
+          withDisableProvenance(value=true): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    disableProvenance: value,
+                  },
+                },
+              },
+            },
+          },
           '#withLabelMatchers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "Label matchers that an alert must satisfy for this enrichment to apply. Each matcher is an object with: 'type' (string, one of: =, !=, =~, !~), 'name' (string, label key to match), 'value' (string, label value to compare against, supports regex for =~/!~ operators)." } },
           withLabelMatchers(value): {
             spec+: {
@@ -1428,6 +1440,18 @@
                 initProvider+: {
                   spec+: {
                     description: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withDisableProvenance': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'allow modifying alert enrichment outside of provider' } },
+          withDisableProvenance(value=true): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    disableProvenance: value,
                   },
                 },
               },
