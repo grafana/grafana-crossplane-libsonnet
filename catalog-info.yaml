@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: grafana-crossplane-libsonnet
+  title: grafana-crossplane-libsonnet
+  description: Crossplane Configuration packages and Jsonnet library for managing Grafana Crossplane resources.
+  tags:
+    - gitops
+  links:
+    - title: "Internal Slack Channel #crossplane"
+      type: slack
+      url: https://grafanalabs.enterprise.slack.com/archives/C03A2L4R9U1
+  annotations:
+    github.com/project-slug: grafana/grafana-crossplane-libsonnet
+spec:
+  type: library
+  owner: group:default/platform-monitoring
+  lifecycle: experimental
