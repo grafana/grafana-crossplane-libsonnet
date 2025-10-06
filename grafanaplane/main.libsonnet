@@ -61,4 +61,5 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
   oss: import './oss.libsonnet',
   oncall: import './oncall/main.libsonnet',
   sm: import './sm.libsonnet',
+  alerting: import './alerting/main.libsonnet',
 }
