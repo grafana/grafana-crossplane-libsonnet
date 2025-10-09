@@ -27,7 +27,7 @@ local grafanaplane = import 'github.com/grafana/grafana-crossplane-libsonnet/gra
 * [cloud](cloud.md)
 * [configurations](configurations.md)
 * [global](global.md)
-* [oncall](oncall.md)
+* [oncall](oncall/index.md)
 * [oss](oss/index.md)
 * [raw](raw/index.md)
 * [sm](sm/index.md)
