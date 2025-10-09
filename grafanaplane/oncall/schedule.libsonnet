@@ -6,67 +6,85 @@ local schedule = raw.oncall.v1alpha1.schedule;
 local forProvider = schedule.spec.parameters.forProvider;
 
 {
+  '#': d.package.newSub('oncall.schedule', ''),
+
   calendar: {
     '#new':: d.func.new(
       |||
         `new` creates a Schedule with type `calendar`. It automatically
-        includes references to Shift objects which are members of its `shifts`
-        field. `shifts` is an object representing zero or more shifts.
+        includes references to Shift objects which are members of its shifts
+        field.
 
-        Shifts are unordered, and so are supplied as an object to allow for
-        reuse. For example, a Primary/Secondary pair of Schedules could be
-        declared like:
+        Shifts are unordered, so they can be reused. For example,
+        a Primary/Secondary pair of Schedules could be declared like:
 
         ```jsonnet
-        local calendar = grafanaplane.oncall.schedule.calendar,
-        local onCallUsers = [['bob@example.com'], ['alice@example.com']],
-        primary: calendar.new('Primary', [
-          // 24 hour daily shift
-          calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
-          + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
-          + calendar.shift.withRollingUsers('daily', onCallUsers),
-          // 72 hour weekend shift
-          calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
-          + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
-          + calendar.shift.withRollingUsers('weekly', onCallUsers),
-        ]),
+        {
+          local calendar = grafanaplane.oncall.schedule.calendar,
+          local onCallUsers = [['<OncallUserId1>'], ['<OncallUserId2>']],
 
-        // same as the primary shift, but shifted one person
-        secondary: calendar.new('Secondary', [
-          shift
-          // replace the resource ID
-          + calendar.shift.withId('secondary-' + shift.metadata.name)
-          // start rotating from the second person
-          + calendar.shift.withStartRotationFromUserIndex(1)
-          for shift in self.primary.shifts
-        ]),
+          primary:
+            calendar.new('Primary', 'my-namespace')
+            + calendar.withShifts([
+              // 24 hour daily shift
+              calendar.shift.new('Weekday', '2025-01-01T12:00:00', 24 * 60 * 60)
+              + calendar.shift.withByDay(['MO', 'TU', 'WE', 'TH', 'FR'])
+              + calendar.shift.withRollingUsers('daily', onCallUsers),
+              // 72 hour weekend shift
+              calendar.shift.new('Weekend', '2025-01-01T12:00:00', 72 * 60 * 60)
+              + calendar.shift.withByDay(['FR', 'SA', 'SU', 'MO'])
+              + calendar.shift.withRollingUsers('weekly', onCallUsers),
+            ]),
+
+          // same as the primary shift, but shifted one person
+          secondary:
+            calendar.new('Secondary', 'my-namespace')
+            + calendar.withShifts([
+              shift
+              // replace the resource ID
+              + calendar.shift.withClaimName('secondary-' + shift.metadata.name)
+              // start rotating from the second person
+              + calendar.shift.withStartRotationFromUserIndex(1)
+              for shift in self.primary.shifts
+            ]),
+        }
         ```
       |||,
       [
         d.argument.new('name', d.T.string),
-        d.argument.new('shifts', d.T.object, default='{}'),
+        d.argument.new('namespace', d.T.string),
       ]
     ),
-    new(name, shifts={}): {
-      scheduleName:: xtd.ascii.stringToRFC1123(name),
+    new(name, namespace): {
+      local this = self,
+      claimName:: xtd.ascii.stringToRFC1123(name),
+
       schedule:
-        schedule.new(self.scheduleName)
+        schedule.new(self.claimName)
         + forProvider.withName(name)
         + forProvider.withType('calendar')
-        + forProvider.withShiftsRef([
-          forProvider.shiftsRef.withName(shift.metadata.name)
-          for shift in self.shifts
-        ]),
-      shifts: shifts,
+        + forProvider.withTimeZone('UTC')
+        + forProvider.shiftsSelector.withMatchLabels({
+          selector: 'schedule-%s' % this.claimName,
+          'crossplane.io/claim-namespace': namespace,
+        })
+        + forProvider.shiftsSelector.policy.withResolve('Always'),
+
+      shifts:: [],
+      shiftResources: [
+        shift
+        // Inject matching labels to identify Shifts as belonging to this Schedule.
+        + raw.oncall.v1alpha1.onCallShift.spec.parameters.withSelectorLabel('schedule-%s' % self.claimName)
+        for shift in self.shifts
+      ],
     },
 
-    '#withId':: d.func.new(
-      '`withId` sets the resource name for a Schedule',
-      [d.argument.new('id', d.T.string)]
+    '#withClaimName':: d.func.new(
+      '`withClaimName` sets the resource name for a Schedule',
+      [d.argument.new('claimName', d.T.string)]
     ),
-    withId(id):: {
-      scheduleName:: id,
-      schedule+: schedule.metadata.withName(id),
+    withClaimName(claimName):: {
+      claimName:: claimName,
     },
 
     '#withShifts':: d.func.new(
@@ -78,6 +96,9 @@ local forProvider = schedule.spec.parameters.forProvider;
     withShifts(shifts):: {
       shifts: shifts,
     },
+
+    '#withTimeZone':: forProvider['#withTimeZone'],
+    withTimeZone(tz): { schedule+: forProvider.withTimeZone(tz) },
 
     shift: import './shift.libsonnet',
   },

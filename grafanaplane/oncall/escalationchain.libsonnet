@@ -6,44 +6,58 @@ local escalationChain = raw.oncall.v1alpha1.escalationChain;
 local escalation = raw.oncall.v1alpha1.escalation;
 
 {
+  '#': d.package.newSub('oncall.escalationChain', ''),
+
   '#new':: d.func.new(
-    '`new` creates an Escalation Chain. The `name` is a display-friendly string.',
-    [d.argument.new('name', d.T.string)]
+    |||
+      `new` creates an Escalation Chain.
+
+      Parameters:
+        - `name` is a display-friendly string.
+        - `namespace` is the namespace in which chain will be created.
+    |||,
+    [
+      d.argument.new('name', d.T.string),
+      d.argument.new('namespace', d.T.string),
+    ]
   ),
-  new(name):: {
-    chainName:: xtd.ascii.stringToRFC1123(name),
+  new(name, namespace):: {
+    claimName:: xtd.ascii.stringToRFC1123(name),
+    claimNamespace:: namespace,
     chain:
-      escalationChain.new(self.chainName)
+      escalationChain.new(self.claimName)
       + escalationChain.spec.parameters.forProvider.withName(name),
   },
 
-  '#withId':: d.func.new(
-    '`withId` sets the resource name for an Escalation Chain',
-    [d.argument.new('id', d.T.string)]
+  '#withClaimName':: d.func.new(
+    '`withClaimName` sets the resource name for an Escalation Chain',
+    [d.argument.new('claimName', d.T.string)]
   ),
-  withId(id):: {
-    chainName:: id,
-    chain+: escalationChain.metadata.withName(id),
+  withClaimName(claimName):: {
+    claimName:: claimName,
   },
 
   '#withSteps':: d.func.new(
     |||
-      `withSteps` configures one or more Escalation resources as steps within
-      the calling Escalation Chain.
+      `withSteps` configures one or more Escalation steps within the calling Escalation Chain.
     |||,
     [
       d.argument.new('steps', d.T.array),
     ]
   ),
   withSteps(steps):: {
+    local this = self,
     steps:
       std.mapWithIndex(
         function(position, step)
-          local id = '%s-%d' % [self.chainName, position];
+          local id = '%s-%d' % [self.claimName, position];
           escalation.new(id)
-          + escalation.spec.parameters.forProvider.escalationChainRef.withName(self.chainName)
-          + escalation.spec.parameters.forProvider.withPosition(position)
           + step
+          + escalation.spec.parameters.forProvider.escalationChainSelector.withMatchLabels({
+            'crossplane.io/claim-name': this.claimName,
+            'crossplane.io/claim-namespace': this.claimNamespace,
+          })
+          + escalation.spec.parameters.forProvider.withPosition(position)
         ,
         steps
       ),
@@ -51,8 +65,10 @@ local escalation = raw.oncall.v1alpha1.escalation;
 
   '#withTeamId':: d.func.new(
     |||
-      `withTeamId` configures the Team ID on the Escalation Chain. `teamId`
-      should be the ID of the team as a string.
+      `withTeamId` configures the Team ID on the Escalation Chain.
+
+      Parameters:
+        - `teamId` should be the ID of the team as a string.
     |||,
     [
       d.argument.new('teamId', d.T.string),
@@ -69,20 +85,27 @@ local escalation = raw.oncall.v1alpha1.escalation;
 
     '#notifyOnCallFromSchedule':: d.func.new(
       |||
-        `notifyOnCallFromSchedule` configures an Escalation step to notify
-        on-call persons from the given Schedule. `scheduleName` must be the
-        Schedule resource name.
+        `notifyOnCallFromSchedule` configures an Escalation step to notify on-call persons from the given Schedule.
+
+        Parameters:
+          - `scheduleName` must be the Schedule resource name
+          - `scheduleNamespace` must be its namespace.
       |||,
-      [d.argument.new('schedule', 'string')]
+      [
+        d.argument.new('scheduleName', 'string'),
+        d.argument.new('scheduleNamespace', 'string'),
+      ]
     ),
-    notifyOnCallFromSchedule(scheduleName)::
+    notifyOnCallFromSchedule(scheduleName, scheduleNamespace)::
       forProvider.withType('notify_on_call_from_schedule')
-      + forProvider.notifyOnCallFromScheduleRef.withName(scheduleName),
+      + forProvider.notifyOnCallFromScheduleSelector.withMatchLabels({
+        'crossplane.io/claim-name': scheduleName,
+        'crossplane.io/claim-namespace': scheduleNamespace,
+      }),
 
     '#notifyPersons':: d.func.new(
       |||
-        `notifyPersons` configures an Escalation step to notify a list of
-        persons.
+        `notifyPersons` configures an Escalation step to notify a list of person IDs.
       |||,
       [d.argument.new('persons', d.T.array)]
     ),
@@ -92,8 +115,7 @@ local escalation = raw.oncall.v1alpha1.escalation;
 
     '#wait':: d.func.new(
       |||
-        `wait` configures an Escalation step to wait for acknowledgement for
-        the given number of seconds before proceeding.
+        `wait` configures an Escalation step to wait for acknowledgement for the given number of seconds before proceeding.
       |||,
       [d.argument.new('seconds', d.T.number)]
     ),
