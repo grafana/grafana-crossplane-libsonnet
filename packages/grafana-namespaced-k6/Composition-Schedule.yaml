@@ -32,6 +32,9 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.cron
+                toFieldPath: spec.forProvider.cron
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.loadTestId
                 toFieldPath: spec.forProvider.loadTestId
                 type: FromCompositeFieldPath
@@ -40,6 +43,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.starts
                 toFieldPath: spec.forProvider.starts
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.cron
+                toFieldPath: spec.initProvider.cron
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.loadTestId
                 toFieldPath: spec.initProvider.loadTestId

@@ -81,6 +81,18 @@
     crd: [
       {
         group: 'asserts.grafana.crossplane.io',
+        kind: 'CustomModelRules',
+        plural: 'custommodelrules',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.crossplane.io',
+        kind: 'LogConfig',
+        plural: 'logconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.crossplane.io',
         kind: 'NotificationAlertsConfig',
         plural: 'notificationalertsconfigs',
         version: 'v1alpha1',
@@ -93,6 +105,18 @@
       },
     ],
     xrd: [
+      {
+        group: 'asserts.grafana.net.namespaced',
+        kind: 'CustomModelRules',
+        plural: 'custommodelrules',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.net.namespaced',
+        kind: 'LogConfig',
+        plural: 'logconfigs',
+        version: 'v1alpha1',
+      },
       {
         group: 'asserts.grafana.net.namespaced',
         kind: 'NotificationAlertsConfig',
@@ -119,6 +143,18 @@
         group: 'cloud.grafana.crossplane.io',
         kind: 'AccessPolicyToken',
         plural: 'accesspolicytokens',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
+        kind: 'Appo11YconfigV1Alpha1',
+        plural: 'appo11yconfigv1alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
+        kind: 'K8So11YconfigV1Alpha1',
+        plural: 'k8so11yconfigv1alpha1s',
         version: 'v1alpha1',
       },
       {
@@ -175,6 +211,18 @@
         group: 'cloud.grafana.net.namespaced',
         kind: 'AccessPolicyToken',
         plural: 'accesspolicytokens',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.net.namespaced',
+        kind: 'Appo11YconfigV1Alpha1',
+        plural: 'appo11yconfigv1alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.net.namespaced',
+        kind: 'K8So11YconfigV1Alpha1',
+        plural: 'k8so11yconfigv1alpha1s',
         version: 'v1alpha1',
       },
       {
@@ -711,6 +759,12 @@
       },
       {
         group: 'oss.grafana.crossplane.io',
+        kind: 'DashboardV1Beta1',
+        plural: 'dashboardv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
         kind: 'DataSourceConfig',
         plural: 'datasourceconfigs',
         version: 'v1alpha1',
@@ -761,6 +815,12 @@
         group: 'oss.grafana.crossplane.io',
         kind: 'Playlist',
         plural: 'playlists',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'PlaylistV0Alpha1',
+        plural: 'playlistv0alpha1s',
         version: 'v1alpha1',
       },
       {
@@ -839,6 +899,12 @@
       },
       {
         group: 'oss.grafana.net.namespaced',
+        kind: 'DashboardV1Beta1',
+        plural: 'dashboardv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
         kind: 'DataSourceConfig',
         plural: 'datasourceconfigs',
         version: 'v1alpha1',
@@ -889,6 +955,12 @@
         group: 'oss.grafana.net.namespaced',
         kind: 'Playlist',
         plural: 'playlists',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'PlaylistV0Alpha1',
+        plural: 'playlistv0alpha1s',
         version: 'v1alpha1',
       },
       {

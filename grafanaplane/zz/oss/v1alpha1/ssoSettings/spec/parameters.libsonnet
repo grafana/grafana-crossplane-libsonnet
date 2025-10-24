@@ -630,6 +630,10 @@
           withAssertionAttributeEmail(value): {
             assertionAttributeEmail: value,
           },
+          '#withAssertionAttributeExternalUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.\nFriendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.' } },
+          withAssertionAttributeExternalUid(value): {
+            assertionAttributeExternalUid: value,
+          },
           '#withAssertionAttributeGroups': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Friendly name or name of the attribute within the SAML assertion to use as the user groups.\nFriendly name or name of the attribute within the SAML assertion to use as the user groups.' } },
           withAssertionAttributeGroups(value): {
             assertionAttributeGroups: value,
@@ -1428,6 +1432,10 @@
           '#withAssertionAttributeEmail': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Friendly name or name of the attribute within the SAML assertion to use as the user email.\nFriendly name or name of the attribute within the SAML assertion to use as the user email.' } },
           withAssertionAttributeEmail(value): {
             assertionAttributeEmail: value,
+          },
+          '#withAssertionAttributeExternalUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.\nFriendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.' } },
+          withAssertionAttributeExternalUid(value): {
+            assertionAttributeExternalUid: value,
           },
           '#withAssertionAttributeGroups': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Friendly name or name of the attribute within the SAML assertion to use as the user groups.\nFriendly name or name of the attribute within the SAML assertion to use as the user groups.' } },
           withAssertionAttributeGroups(value): {

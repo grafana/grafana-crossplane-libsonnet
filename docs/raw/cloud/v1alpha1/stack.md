@@ -908,8 +908,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-zA-Z0-9/\-.]+$" and stacks cannot have more than 10 labels.
-A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
+zA-Z0-9/\-._]+$" and stacks cannot have more than 10 labels.
+A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.
 ###### fn spec.parameters.forProvider.withLabelsMixin
 
 ```jsonnet
@@ -920,8 +920,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-zA-Z0-9/\-.]+$" and stacks cannot have more than 10 labels.
-A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
+zA-Z0-9/\-._]+$" and stacks cannot have more than 10 labels.
+A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.
 ###### fn spec.parameters.forProvider.withName
 
 ```jsonnet
@@ -1033,8 +1033,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-zA-Z0-9/\-.]+$" and stacks cannot have more than 10 labels.
-A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
+zA-Z0-9/\-._]+$" and stacks cannot have more than 10 labels.
+A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.
 ###### fn spec.parameters.initProvider.withLabelsMixin
 
 ```jsonnet
@@ -1045,8 +1045,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-zA-Z0-9/\-.]+$" and stacks cannot have more than 10 labels.
-A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
+zA-Z0-9/\-._]+$" and stacks cannot have more than 10 labels.
+A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.
 ###### fn spec.parameters.initProvider.withName
 
 ```jsonnet

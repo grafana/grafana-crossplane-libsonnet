@@ -76,10 +76,6 @@
           withOrder(value): {
             order: value,
           },
-          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
-          withTitle(value): {
-            title: value,
-          },
           '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
           withType(value): {
             type: value,
@@ -374,10 +370,6 @@
           '#withOrder': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number)' } },
           withOrder(value): {
             order: value,
-          },
-          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
-          withTitle(value): {
-            title: value,
           },
           '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String)' } },
           withType(value): {

@@ -53,7 +53,7 @@
           },
         },
       },
-      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-.]+$" and stacks cannot have more than 10 labels.' } },
+      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-._]+$" and stacks cannot have more than 10 labels.' } },
       withLabels(value): {
         spec+: {
           parameters+: {
@@ -63,7 +63,7 @@
           },
         },
       },
-      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-.]+$" and stacks cannot have more than 10 labels.' } },
+      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-._]+$" and stacks cannot have more than 10 labels.' } },
       withLabelsMixin(value): {
         spec+: {
           parameters+: {
@@ -172,7 +172,7 @@
           },
         },
       },
-      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-.]+$" and stacks cannot have more than 10 labels.' } },
+      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-._]+$" and stacks cannot have more than 10 labels.' } },
       withLabels(value): {
         spec+: {
           parameters+: {
@@ -182,7 +182,7 @@
           },
         },
       },
-      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-.]+$" and stacks cannot have more than 10 labels.' } },
+      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.\nA map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\\\-._]+$" and stacks cannot have more than 10 labels.' } },
       withLabelsMixin(value): {
         spec+: {
           parameters+: {

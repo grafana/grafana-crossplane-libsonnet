@@ -5,7 +5,6 @@
 ## Index
 
 * [`fn withOrder(value)`](#fn-withorder)
-* [`fn withTitle(value)`](#fn-withtitle)
 * [`fn withType(value)`](#fn-withtype)
 * [`fn withValue(value)`](#fn-withvalue)
 
@@ -22,17 +21,6 @@ PARAMETERS:
 * **value** (`number`)
 
 (Number)
-### fn withTitle
-
-```jsonnet
-withTitle(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String)
 ### fn withType
 
 ```jsonnet
