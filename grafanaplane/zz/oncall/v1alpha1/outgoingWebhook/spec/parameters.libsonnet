@@ -237,7 +237,7 @@
             },
           },
         },
-      '#withPreset': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.\nThe preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.' } },
+      '#withPreset': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.\nThe preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.' } },
       withPreset(value): {
         spec+: {
           parameters+: {
@@ -520,7 +520,7 @@
             },
           },
         },
-      '#withPreset': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.\nThe preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.' } },
+      '#withPreset': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.\nThe preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.' } },
       withPreset(value): {
         spec+: {
           parameters+: {

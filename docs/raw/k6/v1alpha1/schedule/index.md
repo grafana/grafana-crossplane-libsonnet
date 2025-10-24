@@ -4,7 +4,9 @@
 
 ## Subpackages
 
+* [spec.parameters.forProvider.cron](spec/parameters/forProvider/cron.md)
 * [spec.parameters.forProvider.recurrenceRule](spec/parameters/forProvider/recurrenceRule.md)
+* [spec.parameters.initProvider.cron](spec/parameters/initProvider/cron.md)
 * [spec.parameters.initProvider.recurrenceRule](spec/parameters/initProvider/recurrenceRule.md)
 
 ## Index
@@ -74,11 +76,15 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withCron(value)`](#fn-specparametersforproviderwithcron)
+      * [`fn withCronMixin(value)`](#fn-specparametersforproviderwithcronmixin)
       * [`fn withLoadTestId(value)`](#fn-specparametersforproviderwithloadtestid)
       * [`fn withRecurrenceRule(value)`](#fn-specparametersforproviderwithrecurrencerule)
       * [`fn withRecurrenceRuleMixin(value)`](#fn-specparametersforproviderwithrecurrencerulemixin)
       * [`fn withStarts(value)`](#fn-specparametersforproviderwithstarts)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withCron(value)`](#fn-specparametersinitproviderwithcron)
+      * [`fn withCronMixin(value)`](#fn-specparametersinitproviderwithcronmixin)
       * [`fn withLoadTestId(value)`](#fn-specparametersinitproviderwithloadtestid)
       * [`fn withRecurrenceRule(value)`](#fn-specparametersinitproviderwithrecurrencerule)
       * [`fn withRecurrenceRuleMixin(value)`](#fn-specparametersinitproviderwithrecurrencerulemixin)
@@ -866,6 +872,30 @@ each other.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withCron
+
+```jsonnet
+spec.parameters.forProvider.withCron(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.forProvider.withCronMixin
+
+```jsonnet
+spec.parameters.forProvider.withCronMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
 ###### fn spec.parameters.forProvider.withLoadTestId
 
 ```jsonnet
@@ -888,8 +918,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date.
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
 ###### fn spec.parameters.forProvider.withRecurrenceRuleMixin
 
 ```jsonnet
@@ -900,8 +930,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date.
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
 ###### fn spec.parameters.forProvider.withStarts
 
 ```jsonnet
@@ -917,6 +947,30 @@ The start time for the schedule (RFC3339 format).
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withCron
+
+```jsonnet
+spec.parameters.initProvider.withCron(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.initProvider.withCronMixin
+
+```jsonnet
+spec.parameters.initProvider.withCronMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
 ###### fn spec.parameters.initProvider.withLoadTestId
 
 ```jsonnet
@@ -939,8 +993,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date.
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
 ###### fn spec.parameters.initProvider.withRecurrenceRuleMixin
 
 ```jsonnet
@@ -951,8 +1005,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date.
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
 ###### fn spec.parameters.initProvider.withStarts
 
 ```jsonnet
