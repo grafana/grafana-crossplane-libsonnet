@@ -47,7 +47,9 @@
   * [`fn withCredentialsMixin(value)`](#fn-specwithcredentialsmixin)
   * [`fn withFleetManagementUrl(value)`](#fn-specwithfleetmanagementurl)
   * [`fn withOncallUrl(value)`](#fn-specwithoncallurl)
+  * [`fn withOrgId(value)`](#fn-specwithorgid)
   * [`fn withSmUrl(value)`](#fn-specwithsmurl)
+  * [`fn withStackId(value)`](#fn-specwithstackid)
   * [`fn withUrl(value)`](#fn-specwithurl)
   * [`obj credentials`](#obj-speccredentials)
     * [`fn withEnv(value)`](#fn-speccredentialswithenv)
@@ -502,6 +504,17 @@ PARAMETERS:
 * **value** (`string`)
 
 Override the OnCall API URL from the credentials reference attribute.
+#### fn spec.withOrgId
+
+```jsonnet
+spec.withOrgId(value)
+```
+
+PARAMETERS:
+
+* **value** (`integer`)
+
+Override the Grafana org ID from the credentials reference attribute.
 #### fn spec.withSmUrl
 
 ```jsonnet
@@ -513,6 +526,17 @@ PARAMETERS:
 * **value** (`string`)
 
 Override the Synthetic Monitoring API URL from the credentials reference attribute.
+#### fn spec.withStackId
+
+```jsonnet
+spec.withStackId(value)
+```
+
+PARAMETERS:
+
+* **value** (`integer`)
+
+Override the Grafana stack ID from the credentials reference attribute.
 #### fn spec.withUrl
 
 ```jsonnet

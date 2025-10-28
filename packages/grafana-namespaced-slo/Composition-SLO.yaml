@@ -59,6 +59,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.searchExpression
                 toFieldPath: spec.forProvider.searchExpression
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.uuid
+                toFieldPath: spec.forProvider.uuid
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.alerting
                 toFieldPath: spec.initProvider.alerting
                 type: FromCompositeFieldPath
@@ -85,6 +88,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.searchExpression
                 toFieldPath: spec.initProvider.searchExpression
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.uuid
+                toFieldPath: spec.initProvider.uuid
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

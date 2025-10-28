@@ -8,6 +8,7 @@
 * [`fn withAllowSignUp(value=true)`](#fn-withallowsignup)
 * [`fn withAllowedOrganizations(value)`](#fn-withallowedorganizations)
 * [`fn withAssertionAttributeEmail(value)`](#fn-withassertionattributeemail)
+* [`fn withAssertionAttributeExternalUid(value)`](#fn-withassertionattributeexternaluid)
 * [`fn withAssertionAttributeGroups(value)`](#fn-withassertionattributegroups)
 * [`fn withAssertionAttributeLogin(value)`](#fn-withassertionattributelogin)
 * [`fn withAssertionAttributeName(value)`](#fn-withassertionattributename)
@@ -104,6 +105,18 @@ PARAMETERS:
 
 (String) Friendly name or name of the attribute within the SAML assertion to use as the user email.
 Friendly name or name of the attribute within the SAML assertion to use as the user email.
+### fn withAssertionAttributeExternalUid
+
+```jsonnet
+withAssertionAttributeExternalUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
+Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
 ### fn withAssertionAttributeGroups
 
 ```jsonnet

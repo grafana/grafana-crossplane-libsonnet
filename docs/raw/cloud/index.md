@@ -6,6 +6,8 @@
 
 * [v1alpha1.accessPolicy](v1alpha1/accessPolicy/index.md)
 * [v1alpha1.accessPolicyToken](v1alpha1/accessPolicyToken.md)
+* [v1alpha1.appo11YconfigV1Alpha1](v1alpha1/appo11YconfigV1Alpha1/index.md)
+* [v1alpha1.k8So11YconfigV1Alpha1](v1alpha1/k8So11YconfigV1Alpha1/index.md)
 * [v1alpha1.orgMember](v1alpha1/orgMember.md)
 * [v1alpha1.pluginInstallation](v1alpha1/pluginInstallation.md)
 * [v1alpha1.privateDataSourceConnectNetwork](v1alpha1/privateDataSourceConnectNetwork.md)

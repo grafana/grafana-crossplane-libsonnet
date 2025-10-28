@@ -42,10 +42,22 @@
       oncallUrl: value,
     },
   },
+  '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['integer'] }], help: 'Override the Grafana org ID from the credentials reference attribute.' } },
+  withOrgId(value): {
+    spec+: {
+      orgId: value,
+    },
+  },
   '#withSmUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Override the Synthetic Monitoring API URL from the credentials reference attribute.' } },
   withSmUrl(value): {
     spec+: {
       smUrl: value,
+    },
+  },
+  '#withStackId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['integer'] }], help: 'Override the Grafana stack ID from the credentials reference attribute.' } },
+  withStackId(value): {
+    spec+: {
+      stackId: value,
     },
   },
   '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Override the Grafana URL from the credentials reference attribute.' } },

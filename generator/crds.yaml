@@ -12643,6 +12643,1184 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.16.5
+  name: custommodelrules.asserts.grafana.crossplane.io
+spec:
+  group: asserts.grafana.crossplane.io
+  names:
+    categories:
+    - crossplane
+    - managed
+    - grafana
+    kind: CustomModelRules
+    listKind: CustomModelRulesList
+    plural: custommodelrules
+    singular: custommodelrules
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=='Synced')].status
+      name: SYNCED
+      type: string
+    - jsonPath: .status.conditions[?(@.type=='Ready')].status
+      name: READY
+      type: string
+    - jsonPath: .metadata.annotations.crossplane\.io/external-name
+      name: EXTERNAL-NAME
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: CustomModelRules is the Schema for the CustomModelRuless API.
+          Manages Asserts Custom Model Rules through the Grafana API.
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: CustomModelRulesSpec defines the desired state of CustomModelRules
+            properties:
+              deletionPolicy:
+                default: Delete
+                description: |-
+                  DeletionPolicy specifies what will happen to the underlying external
+                  when this managed resource is deleted - either "Delete" or "Orphan" the
+                  external resource.
+                  This field is planned to be deprecated in favor of the ManagementPolicies
+                  field in a future release. Currently, both could be set independently and
+                  non-default values would be honored if the feature flag is enabled.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                enum:
+                - Orphan
+                - Delete
+                type: string
+              forProvider:
+                properties:
+                  name:
+                    description: |-
+                      (String) The name of the custom model rules.
+                      The name of the custom model rules.
+                    type: string
+                  rules:
+                    description: |-
+                      (Block List, Min: 1, Max: 1) The rules configuration for the custom model rules. (see below for nested schema)
+                      The rules configuration for the custom model rules.
+                    items:
+                      properties:
+                        entity:
+                          description: |-
+                            (Block List, Min: 1) List of entities to define in the custom model rules. (see below for nested schema)
+                            List of entities to define in the custom model rules.
+                          items:
+                            properties:
+                              definedBy:
+                                description: |-
+                                  (Block List, Min: 1) List of queries that define this entity. (see below for nested schema)
+                                  List of queries that define this entity.
+                                items:
+                                  properties:
+                                    disabled:
+                                      description: |-
+                                        (Boolean) Whether this entity is disabled.
+                                        Whether this rule is disabled. When true, only the 'query' field is used to match an existing rule to disable; other fields are ignored.
+                                      type: boolean
+                                    labelValues:
+                                      additionalProperties:
+                                        type: string
+                                      description: |-
+                                        (Map of String) Label value mappings for the query.
+                                        Label value mappings for the query.
+                                      type: object
+                                      x-kubernetes-map-type: granular
+                                    literals:
+                                      additionalProperties:
+                                        type: string
+                                      description: |-
+                                        (Map of String) Literal value mappings for the query.
+                                        Literal value mappings for the query.
+                                      type: object
+                                      x-kubernetes-map-type: granular
+                                    metricValue:
+                                      description: |-
+                                        (String) Metric value for the query.
+                                        Metric value for the query.
+                                      type: string
+                                    query:
+                                      description: |-
+                                        (String) The Prometheus query that defines this entity.
+                                        The Prometheus query that defines this entity.
+                                      type: string
+                                  type: object
+                                type: array
+                              disabled:
+                                description: |-
+                                  (Boolean) Whether this entity is disabled.
+                                  Whether this entity is disabled.
+                                type: boolean
+                              enrichedBy:
+                                description: |-
+                                  (List of String) List of enrichment sources for the entity.
+                                  List of enrichment sources for the entity.
+                                items:
+                                  type: string
+                                type: array
+                              lookup:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Lookup mappings for the entity.
+                                  Lookup mappings for the entity.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              name:
+                                description: |-
+                                  (String) The name of the custom model rules.
+                                  The name of the entity.
+                                type: string
+                              scope:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Scope labels for the entity.
+                                  Scope labels for the entity.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              type:
+                                description: |-
+                                  (String) The type of the entity (e.g., Service, Pod, Namespace).
+                                  The type of the entity (e.g., Service, Pod, Namespace).
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    type: array
+                type: object
+              initProvider:
+                description: |-
+                  THIS IS A BETA FIELD. It will be honored
+                  unless the Management Policies feature flag is disabled.
+                  InitProvider holds the same fields as ForProvider, with the exception
+                  of Identifier and other resource reference fields. The fields that are
+                  in InitProvider are merged into ForProvider when the resource is created.
+                  The same fields are also added to the terraform ignore_changes hook, to
+                  avoid updating them after creation. This is useful for fields that are
+                  required on creation, but we do not desire to update them after creation,
+                  for example because of an external controller is managing them, like an
+                  autoscaler.
+                properties:
+                  name:
+                    description: |-
+                      (String) The name of the custom model rules.
+                      The name of the custom model rules.
+                    type: string
+                  rules:
+                    description: |-
+                      (Block List, Min: 1, Max: 1) The rules configuration for the custom model rules. (see below for nested schema)
+                      The rules configuration for the custom model rules.
+                    items:
+                      properties:
+                        entity:
+                          description: |-
+                            (Block List, Min: 1) List of entities to define in the custom model rules. (see below for nested schema)
+                            List of entities to define in the custom model rules.
+                          items:
+                            properties:
+                              definedBy:
+                                description: |-
+                                  (Block List, Min: 1) List of queries that define this entity. (see below for nested schema)
+                                  List of queries that define this entity.
+                                items:
+                                  properties:
+                                    disabled:
+                                      description: |-
+                                        (Boolean) Whether this entity is disabled.
+                                        Whether this rule is disabled. When true, only the 'query' field is used to match an existing rule to disable; other fields are ignored.
+                                      type: boolean
+                                    labelValues:
+                                      additionalProperties:
+                                        type: string
+                                      description: |-
+                                        (Map of String) Label value mappings for the query.
+                                        Label value mappings for the query.
+                                      type: object
+                                      x-kubernetes-map-type: granular
+                                    literals:
+                                      additionalProperties:
+                                        type: string
+                                      description: |-
+                                        (Map of String) Literal value mappings for the query.
+                                        Literal value mappings for the query.
+                                      type: object
+                                      x-kubernetes-map-type: granular
+                                    metricValue:
+                                      description: |-
+                                        (String) Metric value for the query.
+                                        Metric value for the query.
+                                      type: string
+                                    query:
+                                      description: |-
+                                        (String) The Prometheus query that defines this entity.
+                                        The Prometheus query that defines this entity.
+                                      type: string
+                                  type: object
+                                type: array
+                              disabled:
+                                description: |-
+                                  (Boolean) Whether this entity is disabled.
+                                  Whether this entity is disabled.
+                                type: boolean
+                              enrichedBy:
+                                description: |-
+                                  (List of String) List of enrichment sources for the entity.
+                                  List of enrichment sources for the entity.
+                                items:
+                                  type: string
+                                type: array
+                              lookup:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Lookup mappings for the entity.
+                                  Lookup mappings for the entity.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              name:
+                                description: |-
+                                  (String) The name of the custom model rules.
+                                  The name of the entity.
+                                type: string
+                              scope:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Scope labels for the entity.
+                                  Scope labels for the entity.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              type:
+                                description: |-
+                                  (String) The type of the entity (e.g., Service, Pod, Namespace).
+                                  The type of the entity (e.g., Service, Pod, Namespace).
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    type: array
+                type: object
+              managementPolicies:
+                default:
+                - '*'
+                description: |-
+                  THIS IS A BETA FIELD. It is on by default but can be opted out
+                  through a Crossplane feature flag.
+                  ManagementPolicies specify the array of actions Crossplane is allowed to
+                  take on the managed and external resources.
+                  This field is planned to replace the DeletionPolicy field in a future
+                  release. Currently, both could be set independently and non-default
+                  values would be honored if the feature flag is enabled. If both are
+                  custom, the DeletionPolicy field will be ignored.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                  and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                items:
+                  description: |-
+                    A ManagementAction represents an action that the Crossplane controllers
+                    can take on an external resource.
+                  enum:
+                  - Observe
+                  - Create
+                  - Update
+                  - Delete
+                  - LateInitialize
+                  - '*'
+                  type: string
+                type: array
+              providerConfigRef:
+                default:
+                  name: default
+                description: |-
+                  ProviderConfigReference specifies how the provider that will be used to
+                  create, observe, update, and delete this managed resource should be
+                  configured.
+                properties:
+                  name:
+                    description: Name of the referenced object.
+                    type: string
+                  policy:
+                    description: Policies for referencing.
+                    properties:
+                      resolution:
+                        default: Required
+                        description: |-
+                          Resolution specifies whether resolution of this reference is required.
+                          The default is 'Required', which means the reconcile will fail if the
+                          reference cannot be resolved. 'Optional' means this reference will be
+                          a no-op if it cannot be resolved.
+                        enum:
+                        - Required
+                        - Optional
+                        type: string
+                      resolve:
+                        description: |-
+                          Resolve specifies when this reference should be resolved. The default
+                          is 'IfNotPresent', which will attempt to resolve the reference only when
+                          the corresponding field is not present. Use 'Always' to resolve the
+                          reference on every reconcile.
+                        enum:
+                        - Always
+                        - IfNotPresent
+                        type: string
+                    type: object
+                required:
+                - name
+                type: object
+              publishConnectionDetailsTo:
+                description: |-
+                  PublishConnectionDetailsTo specifies the connection secret config which
+                  contains a name, metadata and a reference to secret store config to
+                  which any connection details for this managed resource should be written.
+                  Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                properties:
+                  configRef:
+                    default:
+                      name: default
+                    description: |-
+                      SecretStoreConfigRef specifies which secret store config should be used
+                      for this ConnectionSecret.
+                    properties:
+                      name:
+                        description: Name of the referenced object.
+                        type: string
+                      policy:
+                        description: Policies for referencing.
+                        properties:
+                          resolution:
+                            default: Required
+                            description: |-
+                              Resolution specifies whether resolution of this reference is required.
+                              The default is 'Required', which means the reconcile will fail if the
+                              reference cannot be resolved. 'Optional' means this reference will be
+                              a no-op if it cannot be resolved.
+                            enum:
+                            - Required
+                            - Optional
+                            type: string
+                          resolve:
+                            description: |-
+                              Resolve specifies when this reference should be resolved. The default
+                              is 'IfNotPresent', which will attempt to resolve the reference only when
+                              the corresponding field is not present. Use 'Always' to resolve the
+                              reference on every reconcile.
+                            enum:
+                            - Always
+                            - IfNotPresent
+                            type: string
+                        type: object
+                    required:
+                    - name
+                    type: object
+                  metadata:
+                    description: Metadata is the metadata for connection secret.
+                    properties:
+                      annotations:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Annotations are the annotations to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.annotations".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      labels:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Labels are the labels/tags to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.labels".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      type:
+                        description: |-
+                          Type is the SecretType for the connection secret.
+                          - Only valid for Kubernetes Secret Stores.
+                        type: string
+                    type: object
+                  name:
+                    description: Name is the name of the connection secret.
+                    type: string
+                required:
+                - name
+                type: object
+              writeConnectionSecretToRef:
+                description: |-
+                  WriteConnectionSecretToReference specifies the namespace and name of a
+                  Secret to which any connection details for this managed resource should
+                  be written. Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                  This field is planned to be replaced in a future release in favor of
+                  PublishConnectionDetailsTo. Currently, both could be set independently
+                  and connection details would be published to both without affecting
+                  each other.
+                properties:
+                  name:
+                    description: Name of the secret.
+                    type: string
+                  namespace:
+                    description: Namespace of the secret.
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
+            required:
+            - forProvider
+            type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.name is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.name)
+                || (has(self.initProvider) && has(self.initProvider.name))'
+            - message: spec.forProvider.rules is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.rules)
+                || (has(self.initProvider) && has(self.initProvider.rules))'
+          status:
+            description: CustomModelRulesStatus defines the observed state of CustomModelRules.
+            properties:
+              atProvider:
+                properties:
+                  id:
+                    description: (String) The ID of this resource.
+                    type: string
+                  name:
+                    description: |-
+                      (String) The name of the custom model rules.
+                      The name of the custom model rules.
+                    type: string
+                  rules:
+                    description: |-
+                      (Block List, Min: 1, Max: 1) The rules configuration for the custom model rules. (see below for nested schema)
+                      The rules configuration for the custom model rules.
+                    items:
+                      properties:
+                        entity:
+                          description: |-
+                            (Block List, Min: 1) List of entities to define in the custom model rules. (see below for nested schema)
+                            List of entities to define in the custom model rules.
+                          items:
+                            properties:
+                              definedBy:
+                                description: |-
+                                  (Block List, Min: 1) List of queries that define this entity. (see below for nested schema)
+                                  List of queries that define this entity.
+                                items:
+                                  properties:
+                                    disabled:
+                                      description: |-
+                                        (Boolean) Whether this entity is disabled.
+                                        Whether this rule is disabled. When true, only the 'query' field is used to match an existing rule to disable; other fields are ignored.
+                                      type: boolean
+                                    labelValues:
+                                      additionalProperties:
+                                        type: string
+                                      description: |-
+                                        (Map of String) Label value mappings for the query.
+                                        Label value mappings for the query.
+                                      type: object
+                                      x-kubernetes-map-type: granular
+                                    literals:
+                                      additionalProperties:
+                                        type: string
+                                      description: |-
+                                        (Map of String) Literal value mappings for the query.
+                                        Literal value mappings for the query.
+                                      type: object
+                                      x-kubernetes-map-type: granular
+                                    metricValue:
+                                      description: |-
+                                        (String) Metric value for the query.
+                                        Metric value for the query.
+                                      type: string
+                                    query:
+                                      description: |-
+                                        (String) The Prometheus query that defines this entity.
+                                        The Prometheus query that defines this entity.
+                                      type: string
+                                  type: object
+                                type: array
+                              disabled:
+                                description: |-
+                                  (Boolean) Whether this entity is disabled.
+                                  Whether this entity is disabled.
+                                type: boolean
+                              enrichedBy:
+                                description: |-
+                                  (List of String) List of enrichment sources for the entity.
+                                  List of enrichment sources for the entity.
+                                items:
+                                  type: string
+                                type: array
+                              lookup:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Lookup mappings for the entity.
+                                  Lookup mappings for the entity.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              name:
+                                description: |-
+                                  (String) The name of the custom model rules.
+                                  The name of the entity.
+                                type: string
+                              scope:
+                                additionalProperties:
+                                  type: string
+                                description: |-
+                                  (Map of String) Scope labels for the entity.
+                                  Scope labels for the entity.
+                                type: object
+                                x-kubernetes-map-type: granular
+                              type:
+                                description: |-
+                                  (String) The type of the entity (e.g., Service, Pod, Namespace).
+                                  The type of the entity (e.g., Service, Pod, Namespace).
+                                type: string
+                            type: object
+                          type: array
+                      type: object
+                    type: array
+                type: object
+              conditions:
+                description: Conditions of the resource.
+                items:
+                  description: A Condition that may apply to a resource.
+                  properties:
+                    lastTransitionTime:
+                      description: |-
+                        LastTransitionTime is the last time this condition transitioned from one
+                        status to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: |-
+                        A Message containing details about this condition's last transition from
+                        one status to another, if any.
+                      type: string
+                    observedGeneration:
+                      description: |-
+                        ObservedGeneration represents the .metadata.generation that the condition was set based upon.
+                        For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+                        with respect to the current state of the instance.
+                      format: int64
+                      type: integer
+                    reason:
+                      description: A Reason for this condition's last transition from
+                        one status to another.
+                      type: string
+                    status:
+                      description: Status of this condition; is it currently True,
+                        False, or Unknown?
+                      type: string
+                    type:
+                      description: |-
+                        Type of this condition. At most one of each condition type may apply to
+                        a resource at any point in time.
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
+              observedGeneration:
+                description: |-
+                  ObservedGeneration is the latest metadata.generation
+                  which resulted in either a ready state, or stalled due to error
+                  it can not recover from without human intervention.
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.5
+  name: logconfigs.asserts.grafana.crossplane.io
+spec:
+  group: asserts.grafana.crossplane.io
+  names:
+    categories:
+    - crossplane
+    - managed
+    - grafana
+    kind: LogConfig
+    listKind: LogConfigList
+    plural: logconfigs
+    singular: logconfig
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=='Synced')].status
+      name: SYNCED
+      type: string
+    - jsonPath: .status.conditions[?(@.type=='Ready')].status
+      name: READY
+      type: string
+    - jsonPath: .metadata.annotations.crossplane\.io/external-name
+      name: EXTERNAL-NAME
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: LogConfig is the Schema for the LogConfigs API. Manages Asserts
+          Log Configuration through Grafana API.
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: LogConfigSpec defines the desired state of LogConfig
+            properties:
+              deletionPolicy:
+                default: Delete
+                description: |-
+                  DeletionPolicy specifies what will happen to the underlying external
+                  when this managed resource is deleted - either "Delete" or "Orphan" the
+                  external resource.
+                  This field is planned to be deprecated in favor of the ManagementPolicies
+                  field in a future release. Currently, both could be set independently and
+                  non-default values would be honored if the feature flag is enabled.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                enum:
+                - Orphan
+                - Delete
+                type: string
+              forProvider:
+                properties:
+                  dataSourceUid:
+                    description: |-
+                      (String) DataSource to be queried (e.g., a Loki instance).
+                      DataSource to be queried (e.g., a Loki instance).
+                    type: string
+                  defaultConfig:
+                    description: |-
+                      (Boolean) Is it the default config, therefore undeletable?
+                      Is it the default config, therefore undeletable?
+                    type: boolean
+                  entityPropertyToLogLabelMapping:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      (Map of String) Mapping of entity properties to log labels.
+                      Mapping of entity properties to log labels.
+                    type: object
+                    x-kubernetes-map-type: granular
+                  errorLabel:
+                    description: |-
+                      (String) Error label to filter logs.
+                      Error label to filter logs.
+                    type: string
+                  filterBySpanId:
+                    description: |-
+                      (Boolean) Filter logs by span ID.
+                      Filter logs by span ID.
+                    type: boolean
+                  filterByTraceId:
+                    description: |-
+                      (Boolean) Filter logs by trace ID.
+                      Filter logs by trace ID.
+                    type: boolean
+                  match:
+                    description: |-
+                      (Block List) List of match rules for entity properties. (see below for nested schema)
+                      List of match rules for entity properties.
+                    items:
+                      properties:
+                        op:
+                          description: |-
+                            (String) Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
+                            Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
+                          type: string
+                        property:
+                          description: |-
+                            (String) Entity property to match.
+                            Entity property to match.
+                          type: string
+                        values:
+                          description: |-
+                            (List of String) Values to match against.
+                            Values to match against.
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
+                  name:
+                    description: |-
+                      (String) The name of the log configuration.
+                      The name of the log configuration.
+                    type: string
+                  priority:
+                    description: |-
+                      (Number) Priority of the log configuration. A lower number means a higher priority.
+                      Priority of the log configuration. A lower number means a higher priority.
+                    type: number
+                type: object
+              initProvider:
+                description: |-
+                  THIS IS A BETA FIELD. It will be honored
+                  unless the Management Policies feature flag is disabled.
+                  InitProvider holds the same fields as ForProvider, with the exception
+                  of Identifier and other resource reference fields. The fields that are
+                  in InitProvider are merged into ForProvider when the resource is created.
+                  The same fields are also added to the terraform ignore_changes hook, to
+                  avoid updating them after creation. This is useful for fields that are
+                  required on creation, but we do not desire to update them after creation,
+                  for example because of an external controller is managing them, like an
+                  autoscaler.
+                properties:
+                  dataSourceUid:
+                    description: |-
+                      (String) DataSource to be queried (e.g., a Loki instance).
+                      DataSource to be queried (e.g., a Loki instance).
+                    type: string
+                  defaultConfig:
+                    description: |-
+                      (Boolean) Is it the default config, therefore undeletable?
+                      Is it the default config, therefore undeletable?
+                    type: boolean
+                  entityPropertyToLogLabelMapping:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      (Map of String) Mapping of entity properties to log labels.
+                      Mapping of entity properties to log labels.
+                    type: object
+                    x-kubernetes-map-type: granular
+                  errorLabel:
+                    description: |-
+                      (String) Error label to filter logs.
+                      Error label to filter logs.
+                    type: string
+                  filterBySpanId:
+                    description: |-
+                      (Boolean) Filter logs by span ID.
+                      Filter logs by span ID.
+                    type: boolean
+                  filterByTraceId:
+                    description: |-
+                      (Boolean) Filter logs by trace ID.
+                      Filter logs by trace ID.
+                    type: boolean
+                  match:
+                    description: |-
+                      (Block List) List of match rules for entity properties. (see below for nested schema)
+                      List of match rules for entity properties.
+                    items:
+                      properties:
+                        op:
+                          description: |-
+                            (String) Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
+                            Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
+                          type: string
+                        property:
+                          description: |-
+                            (String) Entity property to match.
+                            Entity property to match.
+                          type: string
+                        values:
+                          description: |-
+                            (List of String) Values to match against.
+                            Values to match against.
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
+                  name:
+                    description: |-
+                      (String) The name of the log configuration.
+                      The name of the log configuration.
+                    type: string
+                  priority:
+                    description: |-
+                      (Number) Priority of the log configuration. A lower number means a higher priority.
+                      Priority of the log configuration. A lower number means a higher priority.
+                    type: number
+                type: object
+              managementPolicies:
+                default:
+                - '*'
+                description: |-
+                  THIS IS A BETA FIELD. It is on by default but can be opted out
+                  through a Crossplane feature flag.
+                  ManagementPolicies specify the array of actions Crossplane is allowed to
+                  take on the managed and external resources.
+                  This field is planned to replace the DeletionPolicy field in a future
+                  release. Currently, both could be set independently and non-default
+                  values would be honored if the feature flag is enabled. If both are
+                  custom, the DeletionPolicy field will be ignored.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                  and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                items:
+                  description: |-
+                    A ManagementAction represents an action that the Crossplane controllers
+                    can take on an external resource.
+                  enum:
+                  - Observe
+                  - Create
+                  - Update
+                  - Delete
+                  - LateInitialize
+                  - '*'
+                  type: string
+                type: array
+              providerConfigRef:
+                default:
+                  name: default
+                description: |-
+                  ProviderConfigReference specifies how the provider that will be used to
+                  create, observe, update, and delete this managed resource should be
+                  configured.
+                properties:
+                  name:
+                    description: Name of the referenced object.
+                    type: string
+                  policy:
+                    description: Policies for referencing.
+                    properties:
+                      resolution:
+                        default: Required
+                        description: |-
+                          Resolution specifies whether resolution of this reference is required.
+                          The default is 'Required', which means the reconcile will fail if the
+                          reference cannot be resolved. 'Optional' means this reference will be
+                          a no-op if it cannot be resolved.
+                        enum:
+                        - Required
+                        - Optional
+                        type: string
+                      resolve:
+                        description: |-
+                          Resolve specifies when this reference should be resolved. The default
+                          is 'IfNotPresent', which will attempt to resolve the reference only when
+                          the corresponding field is not present. Use 'Always' to resolve the
+                          reference on every reconcile.
+                        enum:
+                        - Always
+                        - IfNotPresent
+                        type: string
+                    type: object
+                required:
+                - name
+                type: object
+              publishConnectionDetailsTo:
+                description: |-
+                  PublishConnectionDetailsTo specifies the connection secret config which
+                  contains a name, metadata and a reference to secret store config to
+                  which any connection details for this managed resource should be written.
+                  Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                properties:
+                  configRef:
+                    default:
+                      name: default
+                    description: |-
+                      SecretStoreConfigRef specifies which secret store config should be used
+                      for this ConnectionSecret.
+                    properties:
+                      name:
+                        description: Name of the referenced object.
+                        type: string
+                      policy:
+                        description: Policies for referencing.
+                        properties:
+                          resolution:
+                            default: Required
+                            description: |-
+                              Resolution specifies whether resolution of this reference is required.
+                              The default is 'Required', which means the reconcile will fail if the
+                              reference cannot be resolved. 'Optional' means this reference will be
+                              a no-op if it cannot be resolved.
+                            enum:
+                            - Required
+                            - Optional
+                            type: string
+                          resolve:
+                            description: |-
+                              Resolve specifies when this reference should be resolved. The default
+                              is 'IfNotPresent', which will attempt to resolve the reference only when
+                              the corresponding field is not present. Use 'Always' to resolve the
+                              reference on every reconcile.
+                            enum:
+                            - Always
+                            - IfNotPresent
+                            type: string
+                        type: object
+                    required:
+                    - name
+                    type: object
+                  metadata:
+                    description: Metadata is the metadata for connection secret.
+                    properties:
+                      annotations:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Annotations are the annotations to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.annotations".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      labels:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Labels are the labels/tags to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.labels".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      type:
+                        description: |-
+                          Type is the SecretType for the connection secret.
+                          - Only valid for Kubernetes Secret Stores.
+                        type: string
+                    type: object
+                  name:
+                    description: Name is the name of the connection secret.
+                    type: string
+                required:
+                - name
+                type: object
+              writeConnectionSecretToRef:
+                description: |-
+                  WriteConnectionSecretToReference specifies the namespace and name of a
+                  Secret to which any connection details for this managed resource should
+                  be written. Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                  This field is planned to be replaced in a future release in favor of
+                  PublishConnectionDetailsTo. Currently, both could be set independently
+                  and connection details would be published to both without affecting
+                  each other.
+                properties:
+                  name:
+                    description: Name of the secret.
+                    type: string
+                  namespace:
+                    description: Namespace of the secret.
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
+            required:
+            - forProvider
+            type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.dataSourceUid is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.dataSourceUid)
+                || (has(self.initProvider) && has(self.initProvider.dataSourceUid))'
+            - message: spec.forProvider.defaultConfig is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.defaultConfig)
+                || (has(self.initProvider) && has(self.initProvider.defaultConfig))'
+            - message: spec.forProvider.name is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.name)
+                || (has(self.initProvider) && has(self.initProvider.name))'
+            - message: spec.forProvider.priority is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.priority)
+                || (has(self.initProvider) && has(self.initProvider.priority))'
+          status:
+            description: LogConfigStatus defines the observed state of LogConfig.
+            properties:
+              atProvider:
+                properties:
+                  dataSourceUid:
+                    description: |-
+                      (String) DataSource to be queried (e.g., a Loki instance).
+                      DataSource to be queried (e.g., a Loki instance).
+                    type: string
+                  defaultConfig:
+                    description: |-
+                      (Boolean) Is it the default config, therefore undeletable?
+                      Is it the default config, therefore undeletable?
+                    type: boolean
+                  entityPropertyToLogLabelMapping:
+                    additionalProperties:
+                      type: string
+                    description: |-
+                      (Map of String) Mapping of entity properties to log labels.
+                      Mapping of entity properties to log labels.
+                    type: object
+                    x-kubernetes-map-type: granular
+                  errorLabel:
+                    description: |-
+                      (String) Error label to filter logs.
+                      Error label to filter logs.
+                    type: string
+                  filterBySpanId:
+                    description: |-
+                      (Boolean) Filter logs by span ID.
+                      Filter logs by span ID.
+                    type: boolean
+                  filterByTraceId:
+                    description: |-
+                      (Boolean) Filter logs by trace ID.
+                      Filter logs by trace ID.
+                    type: boolean
+                  id:
+                    description: (String) The ID of this resource.
+                    type: string
+                  match:
+                    description: |-
+                      (Block List) List of match rules for entity properties. (see below for nested schema)
+                      List of match rules for entity properties.
+                    items:
+                      properties:
+                        op:
+                          description: |-
+                            (String) Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
+                            Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
+                          type: string
+                        property:
+                          description: |-
+                            (String) Entity property to match.
+                            Entity property to match.
+                          type: string
+                        values:
+                          description: |-
+                            (List of String) Values to match against.
+                            Values to match against.
+                          items:
+                            type: string
+                          type: array
+                      type: object
+                    type: array
+                  name:
+                    description: |-
+                      (String) The name of the log configuration.
+                      The name of the log configuration.
+                    type: string
+                  priority:
+                    description: |-
+                      (Number) Priority of the log configuration. A lower number means a higher priority.
+                      Priority of the log configuration. A lower number means a higher priority.
+                    type: number
+                type: object
+              conditions:
+                description: Conditions of the resource.
+                items:
+                  description: A Condition that may apply to a resource.
+                  properties:
+                    lastTransitionTime:
+                      description: |-
+                        LastTransitionTime is the last time this condition transitioned from one
+                        status to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: |-
+                        A Message containing details about this condition's last transition from
+                        one status to another, if any.
+                      type: string
+                    observedGeneration:
+                      description: |-
+                        ObservedGeneration represents the .metadata.generation that the condition was set based upon.
+                        For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+                        with respect to the current state of the instance.
+                      format: int64
+                      type: integer
+                    reason:
+                      description: A Reason for this condition's last transition from
+                        one status to another.
+                      type: string
+                    status:
+                      description: Status of this condition; is it currently True,
+                        False, or Unknown?
+                      type: string
+                    type:
+                      description: |-
+                        Type of this condition. At most one of each condition type may apply to
+                        a resource at any point in time.
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
+              observedGeneration:
+                description: |-
+                  ObservedGeneration is the latest metadata.generation
+                  which resulted in either a ready state, or stalled due to error
+                  it can not recover from without human intervention.
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.5
   name: notificationalertsconfigs.asserts.grafana.crossplane.io
 spec:
   group: asserts.grafana.crossplane.io
@@ -14725,6 +15903,996 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.16.5
+  name: appo11yconfigv1alpha1s.cloud.grafana.crossplane.io
+spec:
+  group: cloud.grafana.crossplane.io
+  names:
+    categories:
+    - crossplane
+    - managed
+    - grafana
+    kind: Appo11YconfigV1Alpha1
+    listKind: Appo11YconfigV1Alpha1List
+    plural: appo11yconfigv1alpha1s
+    singular: appo11yconfigv1alpha1
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=='Synced')].status
+      name: SYNCED
+      type: string
+    - jsonPath: .status.conditions[?(@.type=='Ready')].status
+      name: READY
+      type: string
+    - jsonPath: .metadata.annotations.crossplane\.io/external-name
+      name: EXTERNAL-NAME
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: 'Appo11YconfigV1Alpha1 is the Schema for the Appo11YconfigV1Alpha1s
+          API. Manages Grafana Application Observability configurations using the
+          Grafana APIs. This resource allows you to enable or disable application
+          observability features. Note: This is a singleton resource. The UID is automatically
+          set to "global" and there can only be one per namespace.'
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: Appo11YconfigV1Alpha1Spec defines the desired state of Appo11YconfigV1Alpha1
+            properties:
+              deletionPolicy:
+                default: Delete
+                description: |-
+                  DeletionPolicy specifies what will happen to the underlying external
+                  when this managed resource is deleted - either "Delete" or "Orphan" the
+                  external resource.
+                  This field is planned to be deprecated in favor of the ManagementPolicies
+                  field in a future release. Currently, both could be set independently and
+                  non-default values would be honored if the feature flag is enabled.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                enum:
+                - Orphan
+                - Delete
+                type: string
+              forProvider:
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        enabled:
+                          description: |-
+                            (Boolean) Whether application observability is enabled.
+                            Whether application observability is enabled.
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
+              initProvider:
+                description: |-
+                  THIS IS A BETA FIELD. It will be honored
+                  unless the Management Policies feature flag is disabled.
+                  InitProvider holds the same fields as ForProvider, with the exception
+                  of Identifier and other resource reference fields. The fields that are
+                  in InitProvider are merged into ForProvider when the resource is created.
+                  The same fields are also added to the terraform ignore_changes hook, to
+                  avoid updating them after creation. This is useful for fields that are
+                  required on creation, but we do not desire to update them after creation,
+                  for example because of an external controller is managing them, like an
+                  autoscaler.
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        enabled:
+                          description: |-
+                            (Boolean) Whether application observability is enabled.
+                            Whether application observability is enabled.
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
+              managementPolicies:
+                default:
+                - '*'
+                description: |-
+                  THIS IS A BETA FIELD. It is on by default but can be opted out
+                  through a Crossplane feature flag.
+                  ManagementPolicies specify the array of actions Crossplane is allowed to
+                  take on the managed and external resources.
+                  This field is planned to replace the DeletionPolicy field in a future
+                  release. Currently, both could be set independently and non-default
+                  values would be honored if the feature flag is enabled. If both are
+                  custom, the DeletionPolicy field will be ignored.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                  and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                items:
+                  description: |-
+                    A ManagementAction represents an action that the Crossplane controllers
+                    can take on an external resource.
+                  enum:
+                  - Observe
+                  - Create
+                  - Update
+                  - Delete
+                  - LateInitialize
+                  - '*'
+                  type: string
+                type: array
+              providerConfigRef:
+                default:
+                  name: default
+                description: |-
+                  ProviderConfigReference specifies how the provider that will be used to
+                  create, observe, update, and delete this managed resource should be
+                  configured.
+                properties:
+                  name:
+                    description: Name of the referenced object.
+                    type: string
+                  policy:
+                    description: Policies for referencing.
+                    properties:
+                      resolution:
+                        default: Required
+                        description: |-
+                          Resolution specifies whether resolution of this reference is required.
+                          The default is 'Required', which means the reconcile will fail if the
+                          reference cannot be resolved. 'Optional' means this reference will be
+                          a no-op if it cannot be resolved.
+                        enum:
+                        - Required
+                        - Optional
+                        type: string
+                      resolve:
+                        description: |-
+                          Resolve specifies when this reference should be resolved. The default
+                          is 'IfNotPresent', which will attempt to resolve the reference only when
+                          the corresponding field is not present. Use 'Always' to resolve the
+                          reference on every reconcile.
+                        enum:
+                        - Always
+                        - IfNotPresent
+                        type: string
+                    type: object
+                required:
+                - name
+                type: object
+              publishConnectionDetailsTo:
+                description: |-
+                  PublishConnectionDetailsTo specifies the connection secret config which
+                  contains a name, metadata and a reference to secret store config to
+                  which any connection details for this managed resource should be written.
+                  Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                properties:
+                  configRef:
+                    default:
+                      name: default
+                    description: |-
+                      SecretStoreConfigRef specifies which secret store config should be used
+                      for this ConnectionSecret.
+                    properties:
+                      name:
+                        description: Name of the referenced object.
+                        type: string
+                      policy:
+                        description: Policies for referencing.
+                        properties:
+                          resolution:
+                            default: Required
+                            description: |-
+                              Resolution specifies whether resolution of this reference is required.
+                              The default is 'Required', which means the reconcile will fail if the
+                              reference cannot be resolved. 'Optional' means this reference will be
+                              a no-op if it cannot be resolved.
+                            enum:
+                            - Required
+                            - Optional
+                            type: string
+                          resolve:
+                            description: |-
+                              Resolve specifies when this reference should be resolved. The default
+                              is 'IfNotPresent', which will attempt to resolve the reference only when
+                              the corresponding field is not present. Use 'Always' to resolve the
+                              reference on every reconcile.
+                            enum:
+                            - Always
+                            - IfNotPresent
+                            type: string
+                        type: object
+                    required:
+                    - name
+                    type: object
+                  metadata:
+                    description: Metadata is the metadata for connection secret.
+                    properties:
+                      annotations:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Annotations are the annotations to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.annotations".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      labels:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Labels are the labels/tags to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.labels".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      type:
+                        description: |-
+                          Type is the SecretType for the connection secret.
+                          - Only valid for Kubernetes Secret Stores.
+                        type: string
+                    type: object
+                  name:
+                    description: Name is the name of the connection secret.
+                    type: string
+                required:
+                - name
+                type: object
+              writeConnectionSecretToRef:
+                description: |-
+                  WriteConnectionSecretToReference specifies the namespace and name of a
+                  Secret to which any connection details for this managed resource should
+                  be written. Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                  This field is planned to be replaced in a future release in favor of
+                  PublishConnectionDetailsTo. Currently, both could be set independently
+                  and connection details would be published to both without affecting
+                  each other.
+                properties:
+                  name:
+                    description: Name of the secret.
+                    type: string
+                  namespace:
+                    description: Namespace of the secret.
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
+            required:
+            - forProvider
+            type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.metadata is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.metadata)
+                || (has(self.initProvider) && has(self.initProvider.metadata))'
+            - message: spec.forProvider.spec is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.spec)
+                || (has(self.initProvider) && has(self.initProvider.spec))'
+          status:
+            description: Appo11YconfigV1Alpha1Status defines the observed state of
+              Appo11YconfigV1Alpha1.
+            properties:
+              atProvider:
+                properties:
+                  id:
+                    description: (String) The ID of the resource derived from UUID.
+                    type: string
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        annotations:
+                          additionalProperties:
+                            type: string
+                          description: |-
+                            (Map of String) Annotations of the resource.
+                            Annotations of the resource.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                        url:
+                          description: |-
+                            (String) The full URL of the resource.
+                            The full URL of the resource.
+                          type: string
+                        uuid:
+                          description: |-
+                            (String) The globally unique identifier of a resource, used by the API for tracking.
+                            The globally unique identifier of a resource, used by the API for tracking.
+                          type: string
+                        version:
+                          description: |-
+                            (String) The version of the resource.
+                            The version of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        enabled:
+                          description: |-
+                            (Boolean) Whether application observability is enabled.
+                            Whether application observability is enabled.
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
+              conditions:
+                description: Conditions of the resource.
+                items:
+                  description: A Condition that may apply to a resource.
+                  properties:
+                    lastTransitionTime:
+                      description: |-
+                        LastTransitionTime is the last time this condition transitioned from one
+                        status to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: |-
+                        A Message containing details about this condition's last transition from
+                        one status to another, if any.
+                      type: string
+                    observedGeneration:
+                      description: |-
+                        ObservedGeneration represents the .metadata.generation that the condition was set based upon.
+                        For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+                        with respect to the current state of the instance.
+                      format: int64
+                      type: integer
+                    reason:
+                      description: A Reason for this condition's last transition from
+                        one status to another.
+                      type: string
+                    status:
+                      description: Status of this condition; is it currently True,
+                        False, or Unknown?
+                      type: string
+                    type:
+                      description: |-
+                        Type of this condition. At most one of each condition type may apply to
+                        a resource at any point in time.
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
+              observedGeneration:
+                description: |-
+                  ObservedGeneration is the latest metadata.generation
+                  which resulted in either a ready state, or stalled due to error
+                  it can not recover from without human intervention.
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.5
+  name: k8so11yconfigv1alpha1s.cloud.grafana.crossplane.io
+spec:
+  group: cloud.grafana.crossplane.io
+  names:
+    categories:
+    - crossplane
+    - managed
+    - grafana
+    kind: K8So11YconfigV1Alpha1
+    listKind: K8So11YconfigV1Alpha1List
+    plural: k8so11yconfigv1alpha1s
+    singular: k8so11yconfigv1alpha1
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=='Synced')].status
+      name: SYNCED
+      type: string
+    - jsonPath: .status.conditions[?(@.type=='Ready')].status
+      name: READY
+      type: string
+    - jsonPath: .metadata.annotations.crossplane\.io/external-name
+      name: EXTERNAL-NAME
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: 'K8So11YconfigV1Alpha1 is the Schema for the K8So11YconfigV1Alpha1s
+          API. Manages Grafana Kubernetes Observability configurations using the Grafana
+          APIs. This resource allows you to enable or disable Kubernetes observability
+          features. Note: This is a singleton resource. The UID is automatically set
+          to "global" and there can only be one per namespace.'
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: K8So11YconfigV1Alpha1Spec defines the desired state of K8So11YconfigV1Alpha1
+            properties:
+              deletionPolicy:
+                default: Delete
+                description: |-
+                  DeletionPolicy specifies what will happen to the underlying external
+                  when this managed resource is deleted - either "Delete" or "Orphan" the
+                  external resource.
+                  This field is planned to be deprecated in favor of the ManagementPolicies
+                  field in a future release. Currently, both could be set independently and
+                  non-default values would be honored if the feature flag is enabled.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                enum:
+                - Orphan
+                - Delete
+                type: string
+              forProvider:
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        enabled:
+                          description: |-
+                            (Boolean) Whether Kubernetes observability is enabled.
+                            Whether Kubernetes observability is enabled.
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
+              initProvider:
+                description: |-
+                  THIS IS A BETA FIELD. It will be honored
+                  unless the Management Policies feature flag is disabled.
+                  InitProvider holds the same fields as ForProvider, with the exception
+                  of Identifier and other resource reference fields. The fields that are
+                  in InitProvider are merged into ForProvider when the resource is created.
+                  The same fields are also added to the terraform ignore_changes hook, to
+                  avoid updating them after creation. This is useful for fields that are
+                  required on creation, but we do not desire to update them after creation,
+                  for example because of an external controller is managing them, like an
+                  autoscaler.
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        enabled:
+                          description: |-
+                            (Boolean) Whether Kubernetes observability is enabled.
+                            Whether Kubernetes observability is enabled.
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
+              managementPolicies:
+                default:
+                - '*'
+                description: |-
+                  THIS IS A BETA FIELD. It is on by default but can be opted out
+                  through a Crossplane feature flag.
+                  ManagementPolicies specify the array of actions Crossplane is allowed to
+                  take on the managed and external resources.
+                  This field is planned to replace the DeletionPolicy field in a future
+                  release. Currently, both could be set independently and non-default
+                  values would be honored if the feature flag is enabled. If both are
+                  custom, the DeletionPolicy field will be ignored.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                  and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                items:
+                  description: |-
+                    A ManagementAction represents an action that the Crossplane controllers
+                    can take on an external resource.
+                  enum:
+                  - Observe
+                  - Create
+                  - Update
+                  - Delete
+                  - LateInitialize
+                  - '*'
+                  type: string
+                type: array
+              providerConfigRef:
+                default:
+                  name: default
+                description: |-
+                  ProviderConfigReference specifies how the provider that will be used to
+                  create, observe, update, and delete this managed resource should be
+                  configured.
+                properties:
+                  name:
+                    description: Name of the referenced object.
+                    type: string
+                  policy:
+                    description: Policies for referencing.
+                    properties:
+                      resolution:
+                        default: Required
+                        description: |-
+                          Resolution specifies whether resolution of this reference is required.
+                          The default is 'Required', which means the reconcile will fail if the
+                          reference cannot be resolved. 'Optional' means this reference will be
+                          a no-op if it cannot be resolved.
+                        enum:
+                        - Required
+                        - Optional
+                        type: string
+                      resolve:
+                        description: |-
+                          Resolve specifies when this reference should be resolved. The default
+                          is 'IfNotPresent', which will attempt to resolve the reference only when
+                          the corresponding field is not present. Use 'Always' to resolve the
+                          reference on every reconcile.
+                        enum:
+                        - Always
+                        - IfNotPresent
+                        type: string
+                    type: object
+                required:
+                - name
+                type: object
+              publishConnectionDetailsTo:
+                description: |-
+                  PublishConnectionDetailsTo specifies the connection secret config which
+                  contains a name, metadata and a reference to secret store config to
+                  which any connection details for this managed resource should be written.
+                  Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                properties:
+                  configRef:
+                    default:
+                      name: default
+                    description: |-
+                      SecretStoreConfigRef specifies which secret store config should be used
+                      for this ConnectionSecret.
+                    properties:
+                      name:
+                        description: Name of the referenced object.
+                        type: string
+                      policy:
+                        description: Policies for referencing.
+                        properties:
+                          resolution:
+                            default: Required
+                            description: |-
+                              Resolution specifies whether resolution of this reference is required.
+                              The default is 'Required', which means the reconcile will fail if the
+                              reference cannot be resolved. 'Optional' means this reference will be
+                              a no-op if it cannot be resolved.
+                            enum:
+                            - Required
+                            - Optional
+                            type: string
+                          resolve:
+                            description: |-
+                              Resolve specifies when this reference should be resolved. The default
+                              is 'IfNotPresent', which will attempt to resolve the reference only when
+                              the corresponding field is not present. Use 'Always' to resolve the
+                              reference on every reconcile.
+                            enum:
+                            - Always
+                            - IfNotPresent
+                            type: string
+                        type: object
+                    required:
+                    - name
+                    type: object
+                  metadata:
+                    description: Metadata is the metadata for connection secret.
+                    properties:
+                      annotations:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Annotations are the annotations to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.annotations".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      labels:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Labels are the labels/tags to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.labels".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      type:
+                        description: |-
+                          Type is the SecretType for the connection secret.
+                          - Only valid for Kubernetes Secret Stores.
+                        type: string
+                    type: object
+                  name:
+                    description: Name is the name of the connection secret.
+                    type: string
+                required:
+                - name
+                type: object
+              writeConnectionSecretToRef:
+                description: |-
+                  WriteConnectionSecretToReference specifies the namespace and name of a
+                  Secret to which any connection details for this managed resource should
+                  be written. Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                  This field is planned to be replaced in a future release in favor of
+                  PublishConnectionDetailsTo. Currently, both could be set independently
+                  and connection details would be published to both without affecting
+                  each other.
+                properties:
+                  name:
+                    description: Name of the secret.
+                    type: string
+                  namespace:
+                    description: Namespace of the secret.
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
+            required:
+            - forProvider
+            type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.metadata is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.metadata)
+                || (has(self.initProvider) && has(self.initProvider.metadata))'
+            - message: spec.forProvider.spec is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.spec)
+                || (has(self.initProvider) && has(self.initProvider.spec))'
+          status:
+            description: K8So11YconfigV1Alpha1Status defines the observed state of
+              K8So11YconfigV1Alpha1.
+            properties:
+              atProvider:
+                properties:
+                  id:
+                    description: (String) The ID of the resource derived from UUID.
+                    type: string
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        annotations:
+                          additionalProperties:
+                            type: string
+                          description: |-
+                            (Map of String) Annotations of the resource.
+                            Annotations of the resource.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                        url:
+                          description: |-
+                            (String) The full URL of the resource.
+                            The full URL of the resource.
+                          type: string
+                        uuid:
+                          description: |-
+                            (String) The globally unique identifier of a resource, used by the API for tracking.
+                            The globally unique identifier of a resource, used by the API for tracking.
+                          type: string
+                        version:
+                          description: |-
+                            (String) The version of the resource.
+                            The version of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        enabled:
+                          description: |-
+                            (Boolean) Whether Kubernetes observability is enabled.
+                            Whether Kubernetes observability is enabled.
+                          type: boolean
+                      type: object
+                    type: array
+                type: object
+              conditions:
+                description: Conditions of the resource.
+                items:
+                  description: A Condition that may apply to a resource.
+                  properties:
+                    lastTransitionTime:
+                      description: |-
+                        LastTransitionTime is the last time this condition transitioned from one
+                        status to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: |-
+                        A Message containing details about this condition's last transition from
+                        one status to another, if any.
+                      type: string
+                    observedGeneration:
+                      description: |-
+                        ObservedGeneration represents the .metadata.generation that the condition was set based upon.
+                        For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+                        with respect to the current state of the instance.
+                      format: int64
+                      type: integer
+                    reason:
+                      description: A Reason for this condition's last transition from
+                        one status to another.
+                      type: string
+                    status:
+                      description: Status of this condition; is it currently True,
+                        False, or Unknown?
+                      type: string
+                    type:
+                      description: |-
+                        Type of this condition. At most one of each condition type may apply to
+                        a resource at any point in time.
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
+              observedGeneration:
+                description: |-
+                  ObservedGeneration is the latest metadata.generation
+                  which resulted in either a ready state, or stalled due to error
+                  it can not recover from without human intervention.
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.5
   name: orgmembers.cloud.grafana.crossplane.io
 spec:
   group: cloud.grafana.crossplane.io
@@ -16557,8 +18725,8 @@ spec:
                     additionalProperties:
                       type: string
                     description: |-
-                      zA-Z0-9/\-.]+$" and stacks cannot have more than 10 labels.
-                      A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
+                      zA-Z0-9/\-._]+$" and stacks cannot have more than 10 labels.
+                      A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.
                     type: object
                     x-kubernetes-map-type: granular
                   name:
@@ -16619,8 +18787,8 @@ spec:
                     additionalProperties:
                       type: string
                     description: |-
-                      zA-Z0-9/\-.]+$" and stacks cannot have more than 10 labels.
-                      A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
+                      zA-Z0-9/\-._]+$" and stacks cannot have more than 10 labels.
+                      A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.
                     type: object
                     x-kubernetes-map-type: granular
                   name:
@@ -16949,8 +19117,8 @@ spec:
                     additionalProperties:
                       type: string
                     description: |-
-                      zA-Z0-9/\-.]+$" and stacks cannot have more than 10 labels.
-                      A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-.]+$" and stacks cannot have more than 10 labels.
+                      zA-Z0-9/\-._]+$" and stacks cannot have more than 10 labels.
+                      A map of labels to assign to the stack. Label keys and values must match the following regexp: "^[a-zA-Z0-9/\\-._]+$" and stacks cannot have more than 10 labels.
                     type: object
                     x-kubernetes-map-type: granular
                   logsIpAllowListCname:
@@ -29151,10 +31319,18 @@ spec:
                 description: Override the OnCall API URL from the credentials reference
                   attribute.
                 type: string
+              orgId:
+                description: Override the Grafana org ID from the credentials reference
+                  attribute.
+                type: integer
               smUrl:
                 description: Override the Synthetic Monitoring API URL from the credentials
                   reference attribute.
                 type: string
+              stackId:
+                description: Override the Grafana stack ID from the credentials reference
+                  attribute.
+                type: integer
               url:
                 description: Override the Grafana URL from the credentials reference
                   attribute.
@@ -29606,7 +31782,7 @@ spec:
           an existing k6 App installation without issues. Note that this resource
           must be used on a provider configured with Grafana Cloud credentials. Official
           documentation https://grafana.com/docs/grafana-cloud/testing/k6/ Required
-          access policy scopes: stacks:readstacks:writesubscriptions:readorgs:read'
+          access policy scopes: stacks:readstacks:writesubscriptions:readorgs:readstack-service-accounts:write'
         properties:
           apiVersion:
             description: |-
@@ -31947,6 +34123,24 @@ spec:
                 type: string
               forProvider:
                 properties:
+                  cron:
+                    description: |-
+                      (Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+                      The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+                    items:
+                      properties:
+                        schedule:
+                          description: |-
+                            (String) A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+                            A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+                          type: string
+                        timezone:
+                          description: |-
+                            (String) The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.
+                            The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.
+                          type: string
+                      type: object
+                    type: array
                   loadTestId:
                     description: |-
                       (String) The identifier of the load test to schedule.
@@ -31954,8 +34148,8 @@ spec:
                     type: string
                   recurrenceRule:
                     description: |-
-                      (Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)
-                      The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date.
+                      (Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+                      The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
                     items:
                       properties:
                         byday:
@@ -32006,6 +34200,24 @@ spec:
                   for example because of an external controller is managing them, like an
                   autoscaler.
                 properties:
+                  cron:
+                    description: |-
+                      (Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+                      The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+                    items:
+                      properties:
+                        schedule:
+                          description: |-
+                            (String) A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+                            A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+                          type: string
+                        timezone:
+                          description: |-
+                            (String) The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.
+                            The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.
+                          type: string
+                      type: object
+                    type: array
                   loadTestId:
                     description: |-
                       (String) The identifier of the load test to schedule.
@@ -32013,8 +34225,8 @@ spec:
                     type: string
                   recurrenceRule:
                     description: |-
-                      (Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)
-                      The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date.
+                      (Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+                      The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
                     items:
                       properties:
                         byday:
@@ -32238,6 +34450,24 @@ spec:
                       (String) The email of the user who created the schedule.
                       The email of the user who created the schedule.
                     type: string
+                  cron:
+                    description: |-
+                      (Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+                      The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+                    items:
+                      properties:
+                        schedule:
+                          description: |-
+                            (String) A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+                            A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+                          type: string
+                        timezone:
+                          description: |-
+                            (String) The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.
+                            The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.
+                          type: string
+                      type: object
+                    type: array
                   deactivated:
                     description: |-
                       (Boolean) Whether the schedule is deactivated.
@@ -32258,8 +34488,8 @@ spec:
                     type: string
                   recurrenceRule:
                     description: |-
-                      (Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)
-                      The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date.
+                      (Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+                      The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
                     items:
                       properties:
                         byday:
@@ -38083,8 +40313,8 @@ spec:
                     type: object
                   preset:
                     description: |-
-                      (String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.
-                      The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
+                      (String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.
+                      The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
                     type: string
                   teamId:
                     description: |-
@@ -38202,8 +40432,8 @@ spec:
                     type: object
                   preset:
                     description: |-
-                      (String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.
-                      The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
+                      (String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.
+                      The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
                     type: string
                   teamId:
                     description: |-
@@ -38450,8 +40680,8 @@ spec:
                     type: string
                   preset:
                     description: |-
-                      (String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, incident_webhook. If no preset is set, the default preset is advanced_webhook.
-                      The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
+                      (String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.
+                      The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
                     type: string
                   teamId:
                     description: |-
@@ -44335,6 +46565,534 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.16.5
+  name: dashboardv1beta1s.oss.grafana.crossplane.io
+spec:
+  group: oss.grafana.crossplane.io
+  names:
+    categories:
+    - crossplane
+    - managed
+    - grafana
+    kind: DashboardV1Beta1
+    listKind: DashboardV1Beta1List
+    plural: dashboardv1beta1s
+    singular: dashboardv1beta1
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=='Synced')].status
+      name: SYNCED
+      type: string
+    - jsonPath: .status.conditions[?(@.type=='Ready')].status
+      name: READY
+      type: string
+    - jsonPath: .metadata.annotations.crossplane\.io/external-name
+      name: EXTERNAL-NAME
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: DashboardV1Beta1 is the Schema for the DashboardV1Beta1s API.
+          Manages Grafana dashboards using the new Grafana APIs. Official documentation
+          https://grafana.com/docs/grafana/latest/dashboards/HTTP API https://grafana.com/docs/grafana/latest/developers/http_api/dashboard/#new-dashboard-apis
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: DashboardV1Beta1Spec defines the desired state of DashboardV1Beta1
+            properties:
+              deletionPolicy:
+                default: Delete
+                description: |-
+                  DeletionPolicy specifies what will happen to the underlying external
+                  when this managed resource is deleted - either "Delete" or "Orphan" the
+                  external resource.
+                  This field is planned to be deprecated in favor of the ManagementPolicies
+                  field in a future release. Currently, both could be set independently and
+                  non-default values would be honored if the feature flag is enabled.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                enum:
+                - Orphan
+                - Delete
+                type: string
+              forProvider:
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        json:
+                          description: |-
+                            (String) The JSON representation of the dashboard spec.
+                            The JSON representation of the dashboard spec.
+                          type: string
+                        tags:
+                          description: |-
+                            (List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+                            The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+                          items:
+                            type: string
+                          type: array
+                        title:
+                          description: |-
+                            (String) The title of the dashboard. If not set, the title will be derived from the JSON spec.
+                            The title of the dashboard. If not set, the title will be derived from the JSON spec.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              initProvider:
+                description: |-
+                  THIS IS A BETA FIELD. It will be honored
+                  unless the Management Policies feature flag is disabled.
+                  InitProvider holds the same fields as ForProvider, with the exception
+                  of Identifier and other resource reference fields. The fields that are
+                  in InitProvider are merged into ForProvider when the resource is created.
+                  The same fields are also added to the terraform ignore_changes hook, to
+                  avoid updating them after creation. This is useful for fields that are
+                  required on creation, but we do not desire to update them after creation,
+                  for example because of an external controller is managing them, like an
+                  autoscaler.
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        json:
+                          description: |-
+                            (String) The JSON representation of the dashboard spec.
+                            The JSON representation of the dashboard spec.
+                          type: string
+                        tags:
+                          description: |-
+                            (List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+                            The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+                          items:
+                            type: string
+                          type: array
+                        title:
+                          description: |-
+                            (String) The title of the dashboard. If not set, the title will be derived from the JSON spec.
+                            The title of the dashboard. If not set, the title will be derived from the JSON spec.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              managementPolicies:
+                default:
+                - '*'
+                description: |-
+                  THIS IS A BETA FIELD. It is on by default but can be opted out
+                  through a Crossplane feature flag.
+                  ManagementPolicies specify the array of actions Crossplane is allowed to
+                  take on the managed and external resources.
+                  This field is planned to replace the DeletionPolicy field in a future
+                  release. Currently, both could be set independently and non-default
+                  values would be honored if the feature flag is enabled. If both are
+                  custom, the DeletionPolicy field will be ignored.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                  and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                items:
+                  description: |-
+                    A ManagementAction represents an action that the Crossplane controllers
+                    can take on an external resource.
+                  enum:
+                  - Observe
+                  - Create
+                  - Update
+                  - Delete
+                  - LateInitialize
+                  - '*'
+                  type: string
+                type: array
+              providerConfigRef:
+                default:
+                  name: default
+                description: |-
+                  ProviderConfigReference specifies how the provider that will be used to
+                  create, observe, update, and delete this managed resource should be
+                  configured.
+                properties:
+                  name:
+                    description: Name of the referenced object.
+                    type: string
+                  policy:
+                    description: Policies for referencing.
+                    properties:
+                      resolution:
+                        default: Required
+                        description: |-
+                          Resolution specifies whether resolution of this reference is required.
+                          The default is 'Required', which means the reconcile will fail if the
+                          reference cannot be resolved. 'Optional' means this reference will be
+                          a no-op if it cannot be resolved.
+                        enum:
+                        - Required
+                        - Optional
+                        type: string
+                      resolve:
+                        description: |-
+                          Resolve specifies when this reference should be resolved. The default
+                          is 'IfNotPresent', which will attempt to resolve the reference only when
+                          the corresponding field is not present. Use 'Always' to resolve the
+                          reference on every reconcile.
+                        enum:
+                        - Always
+                        - IfNotPresent
+                        type: string
+                    type: object
+                required:
+                - name
+                type: object
+              publishConnectionDetailsTo:
+                description: |-
+                  PublishConnectionDetailsTo specifies the connection secret config which
+                  contains a name, metadata and a reference to secret store config to
+                  which any connection details for this managed resource should be written.
+                  Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                properties:
+                  configRef:
+                    default:
+                      name: default
+                    description: |-
+                      SecretStoreConfigRef specifies which secret store config should be used
+                      for this ConnectionSecret.
+                    properties:
+                      name:
+                        description: Name of the referenced object.
+                        type: string
+                      policy:
+                        description: Policies for referencing.
+                        properties:
+                          resolution:
+                            default: Required
+                            description: |-
+                              Resolution specifies whether resolution of this reference is required.
+                              The default is 'Required', which means the reconcile will fail if the
+                              reference cannot be resolved. 'Optional' means this reference will be
+                              a no-op if it cannot be resolved.
+                            enum:
+                            - Required
+                            - Optional
+                            type: string
+                          resolve:
+                            description: |-
+                              Resolve specifies when this reference should be resolved. The default
+                              is 'IfNotPresent', which will attempt to resolve the reference only when
+                              the corresponding field is not present. Use 'Always' to resolve the
+                              reference on every reconcile.
+                            enum:
+                            - Always
+                            - IfNotPresent
+                            type: string
+                        type: object
+                    required:
+                    - name
+                    type: object
+                  metadata:
+                    description: Metadata is the metadata for connection secret.
+                    properties:
+                      annotations:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Annotations are the annotations to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.annotations".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      labels:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Labels are the labels/tags to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.labels".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      type:
+                        description: |-
+                          Type is the SecretType for the connection secret.
+                          - Only valid for Kubernetes Secret Stores.
+                        type: string
+                    type: object
+                  name:
+                    description: Name is the name of the connection secret.
+                    type: string
+                required:
+                - name
+                type: object
+              writeConnectionSecretToRef:
+                description: |-
+                  WriteConnectionSecretToReference specifies the namespace and name of a
+                  Secret to which any connection details for this managed resource should
+                  be written. Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                  This field is planned to be replaced in a future release in favor of
+                  PublishConnectionDetailsTo. Currently, both could be set independently
+                  and connection details would be published to both without affecting
+                  each other.
+                properties:
+                  name:
+                    description: Name of the secret.
+                    type: string
+                  namespace:
+                    description: Namespace of the secret.
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
+            required:
+            - forProvider
+            type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.metadata is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.metadata)
+                || (has(self.initProvider) && has(self.initProvider.metadata))'
+            - message: spec.forProvider.spec is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.spec)
+                || (has(self.initProvider) && has(self.initProvider.spec))'
+          status:
+            description: DashboardV1Beta1Status defines the observed state of DashboardV1Beta1.
+            properties:
+              atProvider:
+                properties:
+                  id:
+                    description: (String) The ID of the resource derived from UUID.
+                    type: string
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        annotations:
+                          additionalProperties:
+                            type: string
+                          description: |-
+                            (Map of String) Annotations of the resource.
+                            Annotations of the resource.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                        url:
+                          description: |-
+                            (String) The full URL of the resource.
+                            The full URL of the resource.
+                          type: string
+                        uuid:
+                          description: |-
+                            (String) The globally unique identifier of a resource, used by the API for tracking.
+                            The globally unique identifier of a resource, used by the API for tracking.
+                          type: string
+                        version:
+                          description: |-
+                            (String) The version of the resource.
+                            The version of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        json:
+                          description: |-
+                            (String) The JSON representation of the dashboard spec.
+                            The JSON representation of the dashboard spec.
+                          type: string
+                        tags:
+                          description: |-
+                            (List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+                            The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+                          items:
+                            type: string
+                          type: array
+                        title:
+                          description: |-
+                            (String) The title of the dashboard. If not set, the title will be derived from the JSON spec.
+                            The title of the dashboard. If not set, the title will be derived from the JSON spec.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              conditions:
+                description: Conditions of the resource.
+                items:
+                  description: A Condition that may apply to a resource.
+                  properties:
+                    lastTransitionTime:
+                      description: |-
+                        LastTransitionTime is the last time this condition transitioned from one
+                        status to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: |-
+                        A Message containing details about this condition's last transition from
+                        one status to another, if any.
+                      type: string
+                    observedGeneration:
+                      description: |-
+                        ObservedGeneration represents the .metadata.generation that the condition was set based upon.
+                        For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+                        with respect to the current state of the instance.
+                      format: int64
+                      type: integer
+                    reason:
+                      description: A Reason for this condition's last transition from
+                        one status to another.
+                      type: string
+                    status:
+                      description: Status of this condition; is it currently True,
+                        False, or Unknown?
+                      type: string
+                    type:
+                      description: |-
+                        Type of this condition. At most one of each condition type may apply to
+                        a resource at any point in time.
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
+              observedGeneration:
+                description: |-
+                  ObservedGeneration is the latest metadata.generation
+                  which resulted in either a ready state, or stalled due to error
+                  it can not recover from without human intervention.
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.5
   name: datasourceconfigs.oss.grafana.crossplane.io
 spec:
   group: oss.grafana.crossplane.io
@@ -49938,9 +52696,6 @@ spec:
                         order:
                           description: (Number)
                           type: number
-                        title:
-                          description: (String)
-                          type: string
                         type:
                           description: (String)
                           type: string
@@ -50057,9 +52812,6 @@ spec:
                         order:
                           description: (Number)
                           type: number
-                        title:
-                          description: (String)
-                          type: string
                         type:
                           description: (String)
                           type: string
@@ -50354,9 +53106,6 @@ spec:
                         order:
                           description: (Number)
                           type: number
-                        title:
-                          description: (String)
-                          type: string
                         type:
                           description: (String)
                           type: string
@@ -50375,6 +53124,556 @@ spec:
                       (String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
                       The Organization ID. If not set, the Org ID defined in the provider block will be used.
                     type: string
+                type: object
+              conditions:
+                description: Conditions of the resource.
+                items:
+                  description: A Condition that may apply to a resource.
+                  properties:
+                    lastTransitionTime:
+                      description: |-
+                        LastTransitionTime is the last time this condition transitioned from one
+                        status to another.
+                      format: date-time
+                      type: string
+                    message:
+                      description: |-
+                        A Message containing details about this condition's last transition from
+                        one status to another, if any.
+                      type: string
+                    observedGeneration:
+                      description: |-
+                        ObservedGeneration represents the .metadata.generation that the condition was set based upon.
+                        For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+                        with respect to the current state of the instance.
+                      format: int64
+                      type: integer
+                    reason:
+                      description: A Reason for this condition's last transition from
+                        one status to another.
+                      type: string
+                    status:
+                      description: Status of this condition; is it currently True,
+                        False, or Unknown?
+                      type: string
+                    type:
+                      description: |-
+                        Type of this condition. At most one of each condition type may apply to
+                        a resource at any point in time.
+                      type: string
+                  required:
+                  - lastTransitionTime
+                  - reason
+                  - status
+                  - type
+                  type: object
+                type: array
+                x-kubernetes-list-map-keys:
+                - type
+                x-kubernetes-list-type: map
+              observedGeneration:
+                description: |-
+                  ObservedGeneration is the latest metadata.generation
+                  which resulted in either a ready state, or stalled due to error
+                  it can not recover from without human intervention.
+                format: int64
+                type: integer
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.5
+  name: playlistv0alpha1s.oss.grafana.crossplane.io
+spec:
+  group: oss.grafana.crossplane.io
+  names:
+    categories:
+    - crossplane
+    - managed
+    - grafana
+    kind: PlaylistV0Alpha1
+    listKind: PlaylistV0Alpha1List
+    plural: playlistv0alpha1s
+    singular: playlistv0alpha1
+  scope: Cluster
+  versions:
+  - additionalPrinterColumns:
+    - jsonPath: .status.conditions[?(@.type=='Synced')].status
+      name: SYNCED
+      type: string
+    - jsonPath: .status.conditions[?(@.type=='Ready')].status
+      name: READY
+      type: string
+    - jsonPath: .metadata.annotations.crossplane\.io/external-name
+      name: EXTERNAL-NAME
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: AGE
+      type: date
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PlaylistV0Alpha1 is the Schema for the PlaylistV0Alpha1s API.
+          Manages Grafana playlists using the new Grafana APIs. Official documentation
+          https://grafana.com/docs/grafana/latest/dashboards/create-manage-playlists/HTTP
+          API https://grafana.com/docs/grafana/latest/developers/http_api/apis/
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: PlaylistV0Alpha1Spec defines the desired state of PlaylistV0Alpha1
+            properties:
+              deletionPolicy:
+                default: Delete
+                description: |-
+                  DeletionPolicy specifies what will happen to the underlying external
+                  when this managed resource is deleted - either "Delete" or "Orphan" the
+                  external resource.
+                  This field is planned to be deprecated in favor of the ManagementPolicies
+                  field in a future release. Currently, both could be set independently and
+                  non-default values would be honored if the feature flag is enabled.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                enum:
+                - Orphan
+                - Delete
+                type: string
+              forProvider:
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        interval:
+                          description: |-
+                            (String) The interval of the playlist.
+                            The interval of the playlist.
+                          type: string
+                        items:
+                          description: |-
+                            (List of Object) The items of the playlist. (see below for nested schema)
+                            The items of the playlist.
+                          items:
+                            properties:
+                              type:
+                                description: (String)
+                                type: string
+                              value:
+                                description: (String)
+                                type: string
+                            type: object
+                          type: array
+                        title:
+                          description: |-
+                            (String) The title of the playlist.
+                            The title of the playlist.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              initProvider:
+                description: |-
+                  THIS IS A BETA FIELD. It will be honored
+                  unless the Management Policies feature flag is disabled.
+                  InitProvider holds the same fields as ForProvider, with the exception
+                  of Identifier and other resource reference fields. The fields that are
+                  in InitProvider are merged into ForProvider when the resource is created.
+                  The same fields are also added to the terraform ignore_changes hook, to
+                  avoid updating them after creation. This is useful for fields that are
+                  required on creation, but we do not desire to update them after creation,
+                  for example because of an external controller is managing them, like an
+                  autoscaler.
+                properties:
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        interval:
+                          description: |-
+                            (String) The interval of the playlist.
+                            The interval of the playlist.
+                          type: string
+                        items:
+                          description: |-
+                            (List of Object) The items of the playlist. (see below for nested schema)
+                            The items of the playlist.
+                          items:
+                            properties:
+                              type:
+                                description: (String)
+                                type: string
+                              value:
+                                description: (String)
+                                type: string
+                            type: object
+                          type: array
+                        title:
+                          description: |-
+                            (String) The title of the playlist.
+                            The title of the playlist.
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              managementPolicies:
+                default:
+                - '*'
+                description: |-
+                  THIS IS A BETA FIELD. It is on by default but can be opted out
+                  through a Crossplane feature flag.
+                  ManagementPolicies specify the array of actions Crossplane is allowed to
+                  take on the managed and external resources.
+                  This field is planned to replace the DeletionPolicy field in a future
+                  release. Currently, both could be set independently and non-default
+                  values would be honored if the feature flag is enabled. If both are
+                  custom, the DeletionPolicy field will be ignored.
+                  See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                  and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                items:
+                  description: |-
+                    A ManagementAction represents an action that the Crossplane controllers
+                    can take on an external resource.
+                  enum:
+                  - Observe
+                  - Create
+                  - Update
+                  - Delete
+                  - LateInitialize
+                  - '*'
+                  type: string
+                type: array
+              providerConfigRef:
+                default:
+                  name: default
+                description: |-
+                  ProviderConfigReference specifies how the provider that will be used to
+                  create, observe, update, and delete this managed resource should be
+                  configured.
+                properties:
+                  name:
+                    description: Name of the referenced object.
+                    type: string
+                  policy:
+                    description: Policies for referencing.
+                    properties:
+                      resolution:
+                        default: Required
+                        description: |-
+                          Resolution specifies whether resolution of this reference is required.
+                          The default is 'Required', which means the reconcile will fail if the
+                          reference cannot be resolved. 'Optional' means this reference will be
+                          a no-op if it cannot be resolved.
+                        enum:
+                        - Required
+                        - Optional
+                        type: string
+                      resolve:
+                        description: |-
+                          Resolve specifies when this reference should be resolved. The default
+                          is 'IfNotPresent', which will attempt to resolve the reference only when
+                          the corresponding field is not present. Use 'Always' to resolve the
+                          reference on every reconcile.
+                        enum:
+                        - Always
+                        - IfNotPresent
+                        type: string
+                    type: object
+                required:
+                - name
+                type: object
+              publishConnectionDetailsTo:
+                description: |-
+                  PublishConnectionDetailsTo specifies the connection secret config which
+                  contains a name, metadata and a reference to secret store config to
+                  which any connection details for this managed resource should be written.
+                  Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                properties:
+                  configRef:
+                    default:
+                      name: default
+                    description: |-
+                      SecretStoreConfigRef specifies which secret store config should be used
+                      for this ConnectionSecret.
+                    properties:
+                      name:
+                        description: Name of the referenced object.
+                        type: string
+                      policy:
+                        description: Policies for referencing.
+                        properties:
+                          resolution:
+                            default: Required
+                            description: |-
+                              Resolution specifies whether resolution of this reference is required.
+                              The default is 'Required', which means the reconcile will fail if the
+                              reference cannot be resolved. 'Optional' means this reference will be
+                              a no-op if it cannot be resolved.
+                            enum:
+                            - Required
+                            - Optional
+                            type: string
+                          resolve:
+                            description: |-
+                              Resolve specifies when this reference should be resolved. The default
+                              is 'IfNotPresent', which will attempt to resolve the reference only when
+                              the corresponding field is not present. Use 'Always' to resolve the
+                              reference on every reconcile.
+                            enum:
+                            - Always
+                            - IfNotPresent
+                            type: string
+                        type: object
+                    required:
+                    - name
+                    type: object
+                  metadata:
+                    description: Metadata is the metadata for connection secret.
+                    properties:
+                      annotations:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Annotations are the annotations to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.annotations".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      labels:
+                        additionalProperties:
+                          type: string
+                        description: |-
+                          Labels are the labels/tags to be added to connection secret.
+                          - For Kubernetes secrets, this will be used as "metadata.labels".
+                          - It is up to Secret Store implementation for others store types.
+                        type: object
+                      type:
+                        description: |-
+                          Type is the SecretType for the connection secret.
+                          - Only valid for Kubernetes Secret Stores.
+                        type: string
+                    type: object
+                  name:
+                    description: Name is the name of the connection secret.
+                    type: string
+                required:
+                - name
+                type: object
+              writeConnectionSecretToRef:
+                description: |-
+                  WriteConnectionSecretToReference specifies the namespace and name of a
+                  Secret to which any connection details for this managed resource should
+                  be written. Connection details frequently include the endpoint, username,
+                  and password required to connect to the managed resource.
+                  This field is planned to be replaced in a future release in favor of
+                  PublishConnectionDetailsTo. Currently, both could be set independently
+                  and connection details would be published to both without affecting
+                  each other.
+                properties:
+                  name:
+                    description: Name of the secret.
+                    type: string
+                  namespace:
+                    description: Namespace of the secret.
+                    type: string
+                required:
+                - name
+                - namespace
+                type: object
+            required:
+            - forProvider
+            type: object
+            x-kubernetes-validations:
+            - message: spec.forProvider.metadata is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.metadata)
+                || (has(self.initProvider) && has(self.initProvider.metadata))'
+            - message: spec.forProvider.spec is a required parameter
+              rule: '!(''*'' in self.managementPolicies || ''Create'' in self.managementPolicies
+                || ''Update'' in self.managementPolicies) || has(self.forProvider.spec)
+                || (has(self.initProvider) && has(self.initProvider.spec))'
+          status:
+            description: PlaylistV0Alpha1Status defines the observed state of PlaylistV0Alpha1.
+            properties:
+              atProvider:
+                properties:
+                  id:
+                    description: (String) The ID of the resource derived from UUID.
+                    type: string
+                  metadata:
+                    description: |-
+                      (Block, Optional) The metadata of the resource. (see below for nested schema)
+                      The metadata of the resource.
+                    items:
+                      properties:
+                        annotations:
+                          additionalProperties:
+                            type: string
+                          description: |-
+                            (Map of String) Annotations of the resource.
+                            Annotations of the resource.
+                          type: object
+                          x-kubernetes-map-type: granular
+                        folderUid:
+                          description: |-
+                            (String) The UID of the folder to save the resource in.
+                            The UID of the folder to save the resource in.
+                          type: string
+                        uid:
+                          description: |-
+                            (String) The unique identifier of the resource.
+                            The unique identifier of the resource.
+                          type: string
+                        url:
+                          description: |-
+                            (String) The full URL of the resource.
+                            The full URL of the resource.
+                          type: string
+                        uuid:
+                          description: |-
+                            (String) The globally unique identifier of a resource, used by the API for tracking.
+                            The globally unique identifier of a resource, used by the API for tracking.
+                          type: string
+                        version:
+                          description: |-
+                            (String) The version of the resource.
+                            The version of the resource.
+                          type: string
+                      type: object
+                    type: array
+                  options:
+                    description: |-
+                      (Block, Optional) Options for applying the resource. (see below for nested schema)
+                      Options for applying the resource.
+                    items:
+                      properties:
+                        overwrite:
+                          description: |-
+                            (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                            Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                          type: boolean
+                      type: object
+                    type: array
+                  spec:
+                    description: |-
+                      (Block, Optional) The spec of the resource. (see below for nested schema)
+                      The spec of the resource.
+                    items:
+                      properties:
+                        interval:
+                          description: |-
+                            (String) The interval of the playlist.
+                            The interval of the playlist.
+                          type: string
+                        items:
+                          description: |-
+                            (List of Object) The items of the playlist. (see below for nested schema)
+                            The items of the playlist.
+                          items:
+                            properties:
+                              type:
+                                description: (String)
+                                type: string
+                              value:
+                                description: (String)
+                                type: string
+                            type: object
+                          type: array
+                        title:
+                          description: |-
+                            (String) The title of the playlist.
+                            The title of the playlist.
+                          type: string
+                      type: object
+                    type: array
                 type: object
               conditions:
                 description: Conditions of the resource.
@@ -53683,6 +56982,11 @@ spec:
                             (String) Friendly name or name of the attribute within the SAML assertion to use as the user email.
                             Friendly name or name of the attribute within the SAML assertion to use as the user email.
                           type: string
+                        assertionAttributeExternalUid:
+                          description: |-
+                            (String) Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
+                            Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
+                          type: string
                         assertionAttributeGroups:
                           description: |-
                             (String) Friendly name or name of the attribute within the SAML assertion to use as the user groups.
@@ -54382,6 +57686,11 @@ spec:
                           description: |-
                             (String) Friendly name or name of the attribute within the SAML assertion to use as the user email.
                             Friendly name or name of the attribute within the SAML assertion to use as the user email.
+                          type: string
+                        assertionAttributeExternalUid:
+                          description: |-
+                            (String) Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
+                            Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
                           type: string
                         assertionAttributeGroups:
                           description: |-
@@ -55173,6 +58482,11 @@ spec:
                           description: |-
                             (String) Friendly name or name of the attribute within the SAML assertion to use as the user email.
                             Friendly name or name of the attribute within the SAML assertion to use as the user email.
+                          type: string
+                        assertionAttributeExternalUid:
+                          description: |-
+                            (String) Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
+                            Friendly name of the attribute within the SAML assertion to use as the external user ID. Only used for SCIM provisioned users.
                           type: string
                         assertionAttributeGroups:
                           description: |-
@@ -57146,6 +60460,11 @@ spec:
                       (String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
                       The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
                     type: string
+                  uuid:
+                    description: |-
+                      (String) UUID for the SLO. Custom UUIDs can be set. If not provided, a random UUID will be generated by the API.
+                      UUID for the SLO. Custom UUIDs can be set. If not provided, a random UUID will be generated by the API.
+                    type: string
                 type: object
               initProvider:
                 description: |-
@@ -57517,6 +60836,11 @@ spec:
                     description: |-
                       (String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
                       The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+                    type: string
+                  uuid:
+                    description: |-
+                      (String) UUID for the SLO. Custom UUIDs can be set. If not provided, a random UUID will be generated by the API.
+                      UUID for the SLO. Custom UUIDs can be set. If not provided, a random UUID will be generated by the API.
                     type: string
                 type: object
               managementPolicies:
@@ -57996,6 +61320,11 @@ spec:
                     description: |-
                       (String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
                       The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+                    type: string
+                  uuid:
+                    description: |-
+                      (String) UUID for the SLO. Custom UUIDs can be set. If not provided, a random UUID will be generated by the API.
+                      UUID for the SLO. Custom UUIDs can be set. If not provided, a random UUID will be generated by the API.
                     type: string
                 type: object
               conditions:

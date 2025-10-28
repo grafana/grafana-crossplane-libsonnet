@@ -33,6 +33,44 @@
   },
   forProvider+:
     {
+      '#withCron': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
+      withCron(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              cron:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withCronMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
+      withCronMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              cron+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      cron+:
+        {
+          '#': { help: '', name: 'cron' },
+          '#withSchedule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.\nA cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.' } },
+          withSchedule(value): {
+            schedule: value,
+          },
+          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.\nThe timezone of the cron expression. For example, 'UTC' or 'Europe/London'." } },
+          withTimezone(value): {
+            timezone: value,
+          },
+        },
       '#withLoadTestId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The identifier of the load test to schedule.\nThe identifier of the load test to schedule.' } },
       withLoadTestId(value): {
         spec+: {
@@ -43,7 +81,7 @@
           },
         },
       },
-      '#withRecurrenceRule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date." } },
+      '#withRecurrenceRule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
       withRecurrenceRule(value): {
         spec+: {
           parameters+: {
@@ -56,7 +94,7 @@
           },
         },
       },
-      '#withRecurrenceRuleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date." } },
+      '#withRecurrenceRuleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
       withRecurrenceRuleMixin(value): {
         spec+: {
           parameters+: {
@@ -132,6 +170,44 @@
   },
   initProvider+:
     {
+      '#withCron': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
+      withCron(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              cron:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withCronMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
+      withCronMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              cron+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      cron+:
+        {
+          '#': { help: '', name: 'cron' },
+          '#withSchedule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.\nA cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.' } },
+          withSchedule(value): {
+            schedule: value,
+          },
+          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The timezone of the cron expression. For example, 'UTC' or 'Europe/London'.\nThe timezone of the cron expression. For example, 'UTC' or 'Europe/London'." } },
+          withTimezone(value): {
+            timezone: value,
+          },
+        },
       '#withLoadTestId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The identifier of the load test to schedule.\nThe identifier of the load test to schedule.' } },
       withLoadTestId(value): {
         spec+: {
@@ -142,7 +218,7 @@
           },
         },
       },
-      '#withRecurrenceRule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date." } },
+      '#withRecurrenceRule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
       withRecurrenceRule(value): {
         spec+: {
           parameters+: {
@@ -155,7 +231,7 @@
           },
         },
       },
-      '#withRecurrenceRuleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date." } },
+      '#withRecurrenceRuleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: "(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)\nThe schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set." } },
       withRecurrenceRuleMixin(value): {
         spec+: {
           parameters+: {
