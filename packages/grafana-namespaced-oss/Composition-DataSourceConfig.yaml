@@ -159,6 +159,3 @@ spec:
                 toFieldPath: spec.writeConnectionSecretToRef.namespace
                 type: FromCompositeFieldPath
       step: patch-and-transform
-    - functionRef:
-        name: function-grafana-data
-      step: grafana-data

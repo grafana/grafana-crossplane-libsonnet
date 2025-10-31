@@ -16,8 +16,8 @@ local package(key) =
     [
       metaConf.spec.dependsOn.withProvider('xpkg.upbound.io/grafana/provider-grafana')
       + metaConf.spec.dependsOn.withVersion('>=v0.21.0'),
-      metaConf.spec.dependsOn.withProvider('ghcr.io/grafana/crossplane-function-grafana-data')
-      + metaConf.spec.dependsOn.withVersion('>=v0.0.1'),
+      //metaConf.spec.dependsOn.withProvider('ghcr.io/grafana/crossplane-function-grafana-data')
+      //+ metaConf.spec.dependsOn.withVersion('>=v0.0.1'),
     ]
   );
 
@@ -29,11 +29,11 @@ std.foldl(
     local configurationName = 'grafana-namespaced-' + std.splitLimit(group, '.', 1)[0];
     local kind = item.definition.spec.claimNames.kind;
     local comp =
-      item.composition
-      + composition.spec.withPipelineMixin([
-        composition.spec.pipeline.functionRef.withName('function-grafana-data')
-        + composition.spec.pipeline.withStep('grafana-data'),
-      ]);
+      item.composition;
+    //+ composition.spec.withPipelineMixin([
+    //  composition.spec.pipeline.functionRef.withName('function-grafana-data')
+    //  + composition.spec.pipeline.withStep('grafana-data'),
+    //]);
     acc
     + {
       [configurationName + '/package.yaml']: manifest(package(configurationName)),
