@@ -1,5 +1,6 @@
 LIBRARY_VERSION:=0.13.0
 PROVIDER_VERSION:=0.40.0
+XPKG_VERSION?=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crossplane
 REGISTRY?=ghcr.io
@@ -37,7 +38,7 @@ packages=$(wildcard packages/*)
 push_packages: packages $(packages)
 	rm -rf output && mkdir -p output/
 	$(foreach pkg,$(packages),$(CROSSPLANE) xpkg build --package-root=$(pkg) --package-file=output/$(patsubst packages/%,%,$(pkg)).xpkg;)
-	$(foreach pkg,$(packages),$(CROSSPLANE) xpkg push -f output/$(patsubst packages/%,%,$(pkg)).xpkg $(REGISTRY)/grafana/crossplane/$(patsubst packages/%,%,$(pkg)):$(LIBRARY_VERSION)-$(PROVIDER_VERSION);)
+	$(foreach pkg,$(packages),$(CROSSPLANE) xpkg push -f output/$(patsubst packages/%,%,$(pkg)).xpkg $(REGISTRY)/grafana/crossplane/$(patsubst packages/%,%,$(pkg)):$(XPKG_VERSION);)
 
 docs: $(shell find grafanaplane/ -type f)
 	rm -rf docs/
