@@ -1,7 +1,7 @@
 local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
 local xtd = import 'github.com/jsonnet-libs/xtd/main.libsonnet';
 
-local raw = import './zz/main.libsonnet',
+local raw = import '../zz/main.libsonnet',
       ruleGroup = raw.alerting.v1alpha1.ruleGroup,
       forProvider = ruleGroup.spec.parameters.forProvider,
       rule = forProvider.rule;
