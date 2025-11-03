@@ -23,7 +23,7 @@ jobs:
           version: v0.20.0
 
       - name: setup jrsonnet
-        uses: grafana/shared-workflows/actions/setup-jrsonnet@fdb6afaadd82c078cd2b29a3476b4c1365244cea
+        uses: grafana/shared-workflows/actions/setup-jrsonnet@fb5afafb017999e08d103b0f79fc97d70b411058
 
       - name: Build xpkg
         run: "make -B build"
