@@ -18,12 +18,12 @@ jobs:
         uses: crossplane-contrib/setup-crossplane-action@cb8aac3f1246b19f101e7f85fd0a38623b4d5ad3 # v0.1.1
 
       - name: setup go-jsonnet
-        uses: zendesk/setup-jsonnet@f683a0d16f479db69751bd8d3a49a09e22b45b39 # v12
+        uses: zendesk/setup-jsonnet@6bf925d7ac431780351b933de0a70f592930f9ba # v13
         with:
           version: v0.20.0
 
       - name: setup jrsonnet
-        uses: grafana/shared-workflows/actions/setup-jrsonnet@fdb6afaadd82c078cd2b29a3476b4c1365244cea
+        uses: grafana/shared-workflows/actions/setup-jrsonnet@ae92934a14a48b94494dbc06d74a81d47fe08a40
 
       - name: Build xpkg
         run: "make -B build"
