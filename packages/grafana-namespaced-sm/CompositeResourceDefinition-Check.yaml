@@ -92,7 +92,9 @@ spec:
                             (Set of Number) List of probe location IDs where this target will be checked from.
                             List of probe location IDs where this target will be checked from.
                           items:
-                            type: number
+                            type:
+                              - number
+                              - string
                           type: array
                           x-kubernetes-list-type: set
                         settings:
