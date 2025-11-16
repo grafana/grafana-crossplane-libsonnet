@@ -54,6 +54,22 @@ local raw = import '../zz/main.libsonnet',
     claimName:: claimName,
   },
 
+  '#withSlackChannelId': forProvider.defaultRoute.slack['#withChannelId'],
+  withSlackChannelId(id): {
+    integration+:
+      forProvider.withDefaultRouteMixin(
+        forProvider.defaultRoute.withSlack(
+          forProvider.defaultRoute.slack.withChannelId(id),
+        ),
+      ),
+  },
+
+  '#withTeamId':: forProvider['#withTeamId'],
+  withTeamId(id): {
+    integration+:
+      forProvider.withTeamId(id),
+  },
+
   '#withRoutes':: d.func.new(
     |||
       `withRoute` configures Route resources connecting this Integration with Escalation Chains.

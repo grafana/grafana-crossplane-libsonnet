@@ -122,5 +122,8 @@ local escalation = raw.oncall.v1alpha1.escalation;
     wait(seconds)::
       forProvider.withType('wait')
       + forProvider.withDuration(seconds),
+
+    '#withImportant': forProvider['#withImportant'],
+    withImportant: forProvider.withImportant,
   },
 }
