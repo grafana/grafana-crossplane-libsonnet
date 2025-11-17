@@ -12,6 +12,7 @@
   * [`fn notifyOnCallFromSchedule(scheduleName, scheduleNamespace)`](#fn-stepnotifyoncallfromschedule)
   * [`fn notifyPersons(persons)`](#fn-stepnotifypersons)
   * [`fn wait(seconds)`](#fn-stepwait)
+  * [`fn withImportant(value=true)`](#fn-stepwithimportant)
 
 ## Fields
 
@@ -113,3 +114,17 @@ PARAMETERS:
 * **seconds** (`number`)
 
 `wait` configures an Escalation step to wait for acknowledgement for the given number of seconds before proceeding.
+
+#### fn step.withImportant
+
+```jsonnet
+step.withImportant(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
+Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members

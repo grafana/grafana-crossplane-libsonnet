@@ -11,7 +11,10 @@
 * [`obj calendar`](#obj-calendar)
   * [`fn new(name, namespace)`](#fn-calendarnew)
   * [`fn withClaimName(claimName)`](#fn-calendarwithclaimname)
+  * [`fn withOverridesCalendar(value)`](#fn-calendarwithoverridescalendar)
   * [`fn withShifts(shifts)`](#fn-calendarwithshifts)
+  * [`fn withSlackChannelId(value)`](#fn-calendarwithslackchannelid)
+  * [`fn withSlackUserGroup(value)`](#fn-calendarwithslackusergroup)
   * [`fn withTimeZone(value)`](#fn-calendarwithtimezone)
 
 ## Fields
@@ -80,6 +83,18 @@ PARAMETERS:
 * **claimName** (`string`)
 
 `withClaimName` sets the resource name for a Schedule
+#### fn calendar.withOverridesCalendar
+
+```jsonnet
+calendar.withOverridesCalendar(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The URL of external iCal calendar which override primary events.
+The URL of external iCal calendar which override primary events.
 #### fn calendar.withShifts
 
 ```jsonnet
@@ -92,6 +107,30 @@ PARAMETERS:
 
 `withShifts` sets an array of Shifts on a calendar-type Schedule.
 
+#### fn calendar.withSlackChannelId
+
+```jsonnet
+calendar.withSlackChannelId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Slack channel id. Reminder about schedule shifts will be directed to this channel in Slack.
+Slack channel id. Reminder about schedule shifts will be directed to this channel in Slack.
+#### fn calendar.withSlackUserGroup
+
+```jsonnet
+calendar.withSlackUserGroup(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+call users change.
+Slack user group id. Members of user group will be updated when on-call users change.
 #### fn calendar.withTimeZone
 
 ```jsonnet

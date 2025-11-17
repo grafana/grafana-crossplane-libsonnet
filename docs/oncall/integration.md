@@ -7,6 +7,8 @@
 * [`fn new(name, namespace, type, defaultChain)`](#fn-new)
 * [`fn withClaimName(claimName)`](#fn-withclaimname)
 * [`fn withRoutes(routes)`](#fn-withroutes)
+* [`fn withSlackChannelId(value)`](#fn-withslackchannelid)
+* [`fn withTeamId(value)`](#fn-withteamid)
 * [`obj route`](#obj-route)
   * [`fn new(routingRegex)`](#fn-routenew)
   * [`fn withEscalationChain(name, namespace)`](#fn-routewithescalationchain)
@@ -62,6 +64,30 @@ Parameters:
 
 If routes do not specify an Escalation Chain to route to, the default chain for this Integration will be used.
 
+### fn withSlackChannelId
+
+```jsonnet
+withSlackChannelId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Slack channel id. Alerts will be directed to this channel in Slack.
+Slack channel id. Alerts will be directed to this channel in Slack.
+### fn withTeamId
+
+```jsonnet
+withTeamId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
+The ID of the OnCall team (using the `grafana_oncall_team` datasource).
 ### obj route
 
 

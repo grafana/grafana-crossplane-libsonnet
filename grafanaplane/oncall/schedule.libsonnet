@@ -64,11 +64,17 @@ local forProvider = schedule.spec.parameters.forProvider;
         + forProvider.withName(name)
         + forProvider.withType('calendar')
         + forProvider.withTimeZone('UTC')
-        + forProvider.shiftsSelector.withMatchLabels({
-          selector: 'schedule-%s' % this.claimName,
-          'crossplane.io/claim-namespace': namespace,
-        })
-        + forProvider.shiftsSelector.policy.withResolve('Always'),
+        + (
+          // Only add shiftsSelector if shifts are defined
+          if std.length(self.shifts) > 0
+          then
+            forProvider.shiftsSelector.withMatchLabels({
+              selector: 'schedule-%s' % this.claimName,
+              'crossplane.io/claim-namespace': namespace,
+            })
+            + forProvider.shiftsSelector.policy.withResolve('Always')
+          else {}
+        ),
 
       shifts:: [],
       shiftResources: [
@@ -101,5 +107,27 @@ local forProvider = schedule.spec.parameters.forProvider;
     withTimeZone(tz): { schedule+: forProvider.withTimeZone(tz) },
 
     shift: import './shift.libsonnet',
+
+    '#withSlackUserGroup': forProvider.slack['#withUserGroupId'],
+    withSlackUserGroup(id): {
+      schedule+:
+        forProvider.withSlackMixin(
+          forProvider.slack.withUserGroupId(id)
+        ),
+    },
+
+    '#withSlackChannelId': forProvider.slack['#withChannelId'],
+    withSlackChannelId(id): {
+      schedule+:
+        forProvider.withSlackMixin(
+          forProvider.slack.withChannelId(id)
+        ),
+    },
+
+    '#withOverridesCalendar': forProvider['#withIcalUrlOverrides'],
+    withOverridesCalendar(url): {
+      schedule+:
+        forProvider.withIcalUrlOverrides(url),
+    },
   },
 }
