@@ -28,9 +28,51 @@ local renameGroup(obj) =
     },
   };
 
+local addProbeNamesToSMCheck(obj) =
+  if obj.definition.metadata.name == 'xchecks.sm.grafana.net.namespaced'
+  then obj + {
+    definition+: {
+      local versions = super.spec.versions,
+      spec+: {
+        versions:
+          std.map(
+            function(version)
+              version + {
+                schema+: {
+                  openAPIV3Schema+: {
+                    properties+: {
+                      spec+: {
+                        properties+: {
+                          parameters+: {
+                            properties+: {
+                              forProvider+: {
+                                properties+: {
+                                  probes+: {
+                                    items+: {
+                                      type: ['number', 'string'],
+                                    },
+                                  },
+                                },
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            versions,
+          ),
+      },
+    },
+  }
+  else obj;
+
 std.foldr(
   std.map,
   [
+    addProbeNamesToSMCheck,
     renameGroup,
     cngen.fromCRD,
   ],
