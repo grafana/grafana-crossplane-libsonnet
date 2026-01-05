@@ -32,7 +32,12 @@ grafanaplane/zz: $(GENERATOR_DEPTHS)
 
 packages: $(GENERATOR_DEPTHS)
 	rm -rf packages && \
-	$(JSONNET_BIN) -S -m packages -c -J generator/vendor generator/packages.libsonnet
+	$(JSONNET_BIN) \
+		-S \
+		-c -m packages \
+		-J generator/vendor \
+		-A 'providerVersion=$(PROVIDER_VERSION)' \
+		generator/packages.libsonnet
 
 packages=$(wildcard packages/*)
 push_packages: packages $(packages)
