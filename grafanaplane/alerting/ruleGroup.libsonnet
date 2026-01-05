@@ -185,9 +185,11 @@ local raw = import '../zz/main.libsonnet',
         + (if std.objectHas(recordingRule, 'labels')
            then rule.withLabels(recordingRule.labels)
            else {})
-        + rule.record.withFrom('query')
-        + rule.record.withTargetDatasourceUid(datasourceUid)
-        + rule.record.withMetric(recordingRule.record)
+        + rule.withRecord([
+          rule.record.withFrom('query')
+          + rule.record.withTargetDatasourceUid(datasourceUid)
+          + rule.record.withMetric(recordingRule.record),
+        ])
         + rule.withData([
           rule.data.withRefId('query')
           + rule.data.withQueryType('prometheus')
