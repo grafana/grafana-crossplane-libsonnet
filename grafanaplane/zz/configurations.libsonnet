@@ -12,6 +12,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-alerting:%s' % version,
     },
   },
+
   asserts(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -25,6 +26,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-asserts:%s' % version,
     },
   },
+
   cloud(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -38,6 +40,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloud:%s' % version,
     },
   },
+
   cloudprovider(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -51,6 +54,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloudprovider:%s' % version,
     },
   },
+
   connections(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -64,6 +68,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-connections:%s' % version,
     },
   },
+
   enterprise(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -77,6 +82,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-enterprise:%s' % version,
     },
   },
+
   fleetmanagement(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -90,6 +96,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-fleetmanagement:%s' % version,
     },
   },
+
   frontendobservability(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -103,6 +110,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-frontendobservability:%s' % version,
     },
   },
+
   k6(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -116,6 +124,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-k6:%s' % version,
     },
   },
+
   ml(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -129,6 +138,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-ml:%s' % version,
     },
   },
+
   oncall(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -142,6 +152,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oncall:%s' % version,
     },
   },
+
   oss(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -155,6 +166,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-oss:%s' % version,
     },
   },
+
   slo(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -168,6 +180,7 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-slo:%s' % version,
     },
   },
+
   sm(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',
@@ -181,4 +194,5 @@
       package: 'ghcr.io/grafana/crossplane/grafana-namespaced-sm:%s' % version,
     },
   },
+
 }

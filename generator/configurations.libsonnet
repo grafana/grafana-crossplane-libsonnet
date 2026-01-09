@@ -66,7 +66,7 @@ local gvkByGroup(name, gvks) = {
 };
 
 local configuration(group) =
-  |||-
+  |||
     %(key)s(version): {
       apiVersion: 'pkg.crossplane.io/v1',
       kind: 'Configuration',
