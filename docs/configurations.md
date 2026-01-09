@@ -9,20 +9,20 @@ local grafanaplane = import 'github.com/grafana/grafana-crossplane-libsonnet/gra
 local configurations = grafanaplane.configurations;
 
 [
-  configuration.alerting,
-  configuration.asserts,
-  configuration.cloud,
-  configuration.cloudprovider,
-  configuration.connections,
-  configuration.enterprise,
-  configuration.fleetmanagement,
-  configuration.frontendobservability,
-  configuration.k6,
-  configuration.ml,
-  configuration.oncall,
-  configuration.oss,
-  configuration.slo,
-  configuration.sm
+  configuration.alerting(version),
+  configuration.asserts(version),
+  configuration.cloud(version),
+  configuration.cloudprovider(version),
+  configuration.connections(version),
+  configuration.enterprise(version),
+  configuration.fleetmanagement(version),
+  configuration.frontendobservability(version),
+  configuration.k6(version),
+  configuration.ml(version),
+  configuration.oncall(version),
+  configuration.oss(version),
+  configuration.slo(version),
+  configuration.sm(version)
 ]
 ```
 

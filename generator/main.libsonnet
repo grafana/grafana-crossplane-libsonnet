@@ -54,15 +54,13 @@ local global =
 
 local ast = autils.deepMergeObjects([compositions, global]);
 
-function(version='main')
-  local files = utils.splitIntoFiles(ast, 'zz');
-  {
-    [file.key]: file.value.toString()
-    for file in std.objectKeysValues(files)
-  }
-  + {
-    local conf = configurations(version),
-    'zz/configurations.libsonnet': std.manifestJson(conf.configurations),
-    'zz/version.libsonnet': std.manifestJson(version),
-    'zz/gvks.libsonnet': std.manifestJson(conf.gvks),
-  }
+local files = utils.splitIntoFiles(ast, 'zz');
+{
+  [file.key]: file.value.toString()
+  for file in std.objectKeysValues(files)
+}
++ {
+  local conf = configurations,
+  'zz/configurations.libsonnet': conf.configurations,
+  'zz/gvks.libsonnet': std.manifestJson(conf.gvks),
+}

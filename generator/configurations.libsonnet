@@ -1,10 +1,5 @@
 local crossplane = import 'github.com/jsonnet-libs/crossplane-libsonnet/crossplane/1.17/main.libsonnet';
 
-local configuration(key, version) =
-  local conf = crossplane.pkg.v1.configuration;
-  conf.new(key)
-  + conf.spec.withPackage('ghcr.io/grafana/crossplane/' + key + ':' + version);
-
 local xrds =
   std.map(
     function(o) o.definition,
@@ -70,11 +65,36 @@ local gvkByGroup(name, gvks) = {
   for group in groupSet(gvks)
 };
 
-function(version='main') {
-  configurations: {
-    [shortGroupName(group)]: configuration('grafana-namespaced-' + shortGroupName(group), version)
-    for group in groupSet(gvkXRDs)
-  },
+local configuration(group) =
+  |||-
+    %(key)s(version): {
+      apiVersion: 'pkg.crossplane.io/v1',
+      kind: 'Configuration',
+      metadata: {
+        annotations: {
+          'tanka.dev/namespaced': 'false',
+        },
+        name: '%(name)s',
+      },
+      spec: {
+        package: 'ghcr.io/grafana/crossplane/%(name)s:%%s' %% version,
+      },
+    },
+  ||| % {
+    key: shortGroupName(group),
+    name: 'grafana-namespaced-' + shortGroupName(group),
+  };
+
+{
+  configurations:
+    std.lines(
+      ['{']
+      + std.map(
+        configuration,
+        groupSet(gvkXRDs)
+      )
+      + ['}']
+    ),
 
   gvks:
     gvkByGroup('xrd', gvkXRDs)
