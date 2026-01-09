@@ -11,9 +11,6 @@ on:
 env:
   REGISTRY: ghcr.io
 
-  # The package version to push. The default is 0.0.0-gitsha.
-  XPKG_VERSION: ${{ inputs.version }}
-
 jobs:
   build:
     runs-on: ubuntu-24.04
