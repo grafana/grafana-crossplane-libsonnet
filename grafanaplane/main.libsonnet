@@ -15,7 +15,7 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
         Most of this library is generated: the Compositions/XRDs packages, Configurations and the library in `zz/`.
       |||,
       'main.libsonnet',
-      import 'zz/version.libsonnet',
+      'main',
     )
     + d.package.withUsageTemplate(
       @"local %(name)s = import '%(import)s';"
@@ -49,7 +49,7 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
           % std.join(
             ',\n',
             std.map(
-              function(item) '  configuration.' + item,
+              function(item) '  configuration.%s(version)' % item,
               std.objectFields(configurations)
             )
           )
