@@ -9,7 +9,9 @@ metadata:
   name: grafana-namespaced-slo
 spec:
   crossplane:
-    version: ">=v1.17"
+    version: ">=v2.0"
   dependsOn:
     - provider: xpkg.upbound.io/grafana/provider-grafana
-      version: ">=v0.21.0"
+      version: ">=v0.40.0"
+    - provider: ghcr.io/grafana/crossplane-function-grafana-data
+      version: ">=v0.0.4"
