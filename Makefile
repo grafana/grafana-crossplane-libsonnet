@@ -26,7 +26,6 @@ grafanaplane/zz: $(GENERATOR_DEPTHS)
 		  -s  1000 \
 		  -S -c -m grafanaplane \
 		  -J generator/vendor \
-		  -A 'version=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)' \
 		  generator/main.libsonnet) && \
 	xargs -n1 jsonnetfmt --no-use-implicit-plus -i <<< "$${FILES}"
 
