@@ -1,10 +1,10 @@
-LIBRARY_VERSION:=0.16.0
 PROVIDER_VERSION:=0.40.0
-XPKG_VERSION?=$(LIBRARY_VERSION)-$(PROVIDER_VERSION)
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crossplane
 REGISTRY?=ghcr.io
 SHELL:=/bin/bash
+
+XPKG_VERSION?=$(shell git describe --tags)
 
 GENERATOR_DEPTHS:=$(shell find generator -type f)
 
@@ -50,10 +50,6 @@ docs: $(shell find grafanaplane/ -type f)
 		-J generator/vendor \
 		-S -c -m docs \
 		-e '(import "github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet").render(import "grafanaplane/main.libsonnet")'
-
-.PHONY: tag
-tag:
-	git tag $(LIBRARY_VERSION)-$(PROVIDER_VERSION)
 
 .PHONY: fmt
 fmt:
