@@ -4,15 +4,9 @@ on:
   push:
     branches:
       - main
-      - release-*
     tags:
       - 'v*'
   pull_request: {}
-  workflow_dispatch:
-    inputs:
-      version:
-        description: Package version (e.g. v0.1.0)
-        required: false
 
 env:
   REGISTRY: ghcr.io
@@ -42,13 +36,6 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Extract version
-        if: startsWith(github.ref, 'refs/tags/v')
-        id: version
-        run: |
-          VERSION="${GITHUB_REF#refs/tags/}"
-          echo "XPKG_VERSION=${VERSION}" >> $GITHUB_ENV
 
       - name: Push xpkg
         run: make push
