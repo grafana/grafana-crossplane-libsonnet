@@ -14,4 +14,4 @@ spec:
     - provider: xpkg.upbound.io/grafana/provider-grafana
       version: ">=v0.40.0"
     - provider: ghcr.io/grafana/crossplane-function-grafana-data
-      version: ">=v0.0.2"
+      version: ">=v0.0.4"
