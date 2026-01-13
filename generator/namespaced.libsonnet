@@ -28,9 +28,58 @@ local renameGroup(obj) =
     },
   };
 
+local addProbeNamesToSMCheck(obj) =
+  if obj.definition.metadata.name == 'xchecks.sm.grafana.net.namespaced'
+  then obj + {
+    definition+: {
+      local versions = super.spec.versions,
+      spec+: {
+        versions:
+          local patch = {
+            properties+: {
+              probes+: {
+                items: {
+                  // ref: https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#intorstring
+                  'x-kubernetes-int-or-string': true,
+                  anyOf: [
+                    { type: 'integer' },
+                    { type: 'string' },
+                  ],
+                },
+              },
+            },
+          };
+          std.map(
+            function(version)
+              version + {
+                schema+: {
+                  openAPIV3Schema+: {
+                    properties+: {
+                      spec+: {
+                        properties+: {
+                          parameters+: {
+                            properties+: {
+                              forProvider+: patch,
+                              initProvider+: patch,
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            versions,
+          ),
+      },
+    },
+  }
+  else obj;
+
 std.foldr(
   std.map,
   [
+    addProbeNamesToSMCheck,
     renameGroup,
     cngen.fromCRD,
   ],
