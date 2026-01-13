@@ -24,6 +24,8 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
           persist-credentials: false
+          fetch-depth: 0
+
       - name: setup Crossplane cli
         uses: crossplane-contrib/setup-crossplane-action@cb8aac3f1246b19f101e7f85fd0a38623b4d5ad3 # v0.1.1
 
