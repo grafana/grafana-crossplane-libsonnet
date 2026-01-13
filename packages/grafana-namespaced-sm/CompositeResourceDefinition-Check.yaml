@@ -93,7 +93,7 @@ spec:
                             List of probe location IDs where this target will be checked from.
                           items:
                             anyOf:
-                              - type: number
+                              - type: integer
                               - type: string
                             x-kubernetes-int-or-string: true
                           type: array
@@ -920,7 +920,7 @@ spec:
                             List of probe location IDs where this target will be checked from.
                           items:
                             anyOf:
-                              - type: number
+                              - type: integer
                               - type: string
                             x-kubernetes-int-or-string: true
                           type: array

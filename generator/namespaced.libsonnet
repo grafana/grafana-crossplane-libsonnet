@@ -42,7 +42,7 @@ local addProbeNamesToSMCheck(obj) =
                   // ref: https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#intorstring
                   'x-kubernetes-int-or-string': true,
                   anyOf: [
-                    { type: 'number' },
+                    { type: 'integer' },
                     { type: 'string' },
                   ],
                 },
