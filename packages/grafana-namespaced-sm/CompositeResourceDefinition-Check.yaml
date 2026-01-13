@@ -92,7 +92,7 @@ spec:
                             (Set of Number) List of probe location IDs where this target will be checked from.
                             List of probe location IDs where this target will be checked from.
                           items:
-                            oneOf:
+                            anyOf:
                               - type: number
                               - type: string
                             type: number
