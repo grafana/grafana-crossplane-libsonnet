@@ -11,6 +11,7 @@
 * [`fn withInterval(value)`](#fn-withinterval)
 * [`fn withRollingUsers(frequency, users)`](#fn-withrollingusers)
 * [`fn withStartRotationFromUserIndex(value)`](#fn-withstartrotationfromuserindex)
+* [`fn withUntil(value)`](#fn-withuntil)
 * [`fn withWeekStart(value)`](#fn-withweekstart)
 
 ## Fields
@@ -134,6 +135,18 @@ PARAMETERS:
 
 call rotation starts.
 The index of the list of users in rolling_users, from which on-call rotation starts.
+### fn withUntil
+
+```jsonnet
+withUntil(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
+The end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
 ### fn withWeekStart
 
 ```jsonnet

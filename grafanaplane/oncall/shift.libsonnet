@@ -94,4 +94,6 @@ local forProvider = shift.spec.parameters.forProvider;
   withFrequency:: forProvider.withFrequency,
   '#withWeekStart':: forProvider['#withWeekStart'],
   withWeekStart:: forProvider.withWeekStart,
+  '#withUntil':: forProvider['#withUntil'],
+  withUntil:: forProvider.withUntil,
 }
