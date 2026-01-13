@@ -35,6 +35,20 @@ local addProbeNamesToSMCheck(obj) =
       local versions = super.spec.versions,
       spec+: {
         versions:
+          local patch = {
+            properties+: {
+              probes+: {
+                items: {
+                  // ref: https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#intorstring
+                  'x-kubernetes-int-or-string': true,
+                  anyOf: [
+                    { type: 'number' },
+                    { type: 'string' },
+                  ],
+                },
+              },
+            },
+          };
           std.map(
             function(version)
               version + {
@@ -45,20 +59,8 @@ local addProbeNamesToSMCheck(obj) =
                         properties+: {
                           parameters+: {
                             properties+: {
-                              forProvider+: {
-                                properties+: {
-                                  probes+: {
-                                    items+: {
-                                      // ref: https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#intorstring
-                                      'x-kubernetes-int-or-string': true,
-                                      anyOf: [
-                                        { type: 'number' },
-                                        { type: 'string' },
-                                      ],
-                                    },
-                                  },
-                                },
-                              },
+                              forProvider+: patch,
+                              initProvider+: patch,
                             },
                           },
                         },
