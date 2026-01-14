@@ -68,6 +68,44 @@ local raw = import '../zz/main.libsonnet',
         Provides functions to set up common rules.
       |||
     ),
+
+    // Private helper function for creating recording rules
+    local fromRecordingRuleBase(recordingRule, datasourceType, queryDatasourceUid, targetDatasourceUid) =
+      local modelBase = {
+        datasource: {
+          type: datasourceType,
+          uid: queryDatasourceUid,
+        },
+        expr: recordingRule.expr,
+        intervalMs: 1000,
+        maxDataPoints: 43200,
+        refId: 'query',
+      };
+      local modelWithType = (
+        if datasourceType == 'loki'
+        then modelBase + { queryType: 'instant' }
+        else modelBase + { instant: true, range: false }
+      );
+      rule.withName(recordingRule.record)
+      + (if std.objectHas(recordingRule, 'labels')
+         then rule.withLabels(recordingRule.labels)
+         else {})
+      + rule.withRecord([
+        rule.record.withFrom('query')
+        + rule.record.withTargetDatasourceUid(targetDatasourceUid)
+        + rule.record.withMetric(recordingRule.record),
+      ])
+      + rule.withData([
+        rule.data.withRefId('query')
+        + rule.data.withQueryType(if datasourceType == 'loki' then 'instant' else datasourceType)
+        + rule.data.withDatasourceUid(queryDatasourceUid)
+        + rule.data.withRelativeTimeRange([
+          rule.data.relativeTimeRange.withFrom(600)
+          + rule.data.relativeTimeRange.withTo(0),
+        ])
+        + rule.data.withModel(std.manifestJson(modelWithType)),
+      ]),
+
     prometheus: {
       '#fromAlertingRule': d.func.new(
         |||
@@ -181,38 +219,25 @@ local raw = import '../zz/main.libsonnet',
         ]
       ),
       fromRecordingRule(recordingRule, datasourceUid='grafanacloud-prom'):
-        rule.withName(recordingRule.record)
-        + (if std.objectHas(recordingRule, 'labels')
-           then rule.withLabels(recordingRule.labels)
-           else {})
-        + rule.withRecord([
-          rule.record.withFrom('query')
-          + rule.record.withTargetDatasourceUid(datasourceUid)
-          + rule.record.withMetric(recordingRule.record),
-        ])
-        + rule.withData([
-          rule.data.withRefId('query')
-          + rule.data.withQueryType('prometheus')
-          + rule.data.withDatasourceUid(datasourceUid)
-          + rule.data.withRelativeTimeRange([
-            rule.data.relativeTimeRange.withFrom(600)
-            + rule.data.relativeTimeRange.withTo(0),
-          ])
-          + rule.data.withModel(
-            std.manifestJson({
-              datasource: {
-                type: 'prometheus',
-                uid: datasourceUid,
-              },
-              expr: recordingRule.expr,
-              instant: true,
-              intervalMs: 1000,
-              maxDataPoints: 43200,
-              range: false,
-              refId: 'query',
-            })
-          ),
-        ]),
+        fromRecordingRuleBase(recordingRule, 'prometheus', datasourceUid, datasourceUid),
+    },
+    loki: {
+      '#fromRecordingRule': d.func.new(
+        |||
+          `fromRecordingRule` creates a Grafana Managed Alerting recording rule that queries from Loki.
+
+          This allows creating metrics from LogQL queries, with the metric written to a Prometheus datasource.
+
+          ref: https://grafana.com/docs/loki/latest/alert/#recording-rules
+        |||,
+        [
+          d.arg('recordingRule', d.T.object),
+          d.arg('lokiDatasourceUid', d.T.string, default='grafanacloud-logs'),
+          d.arg('targetDatasourceUid', d.T.string, default='grafanacloud-prom'),
+        ]
+      ),
+      fromRecordingRule(recordingRule, lokiDatasourceUid='grafanacloud-logs', targetDatasourceUid='grafanacloud-prom'):
+        fromRecordingRuleBase(recordingRule, 'loki', lokiDatasourceUid, targetDatasourceUid),
     },
   },
 }
