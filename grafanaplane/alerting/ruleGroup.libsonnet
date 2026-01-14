@@ -71,6 +71,21 @@ local raw = import '../zz/main.libsonnet',
 
     // Private helper function for creating recording rules
     local fromRecordingRuleBase(recordingRule, datasourceType, queryDatasourceUid, targetDatasourceUid) =
+      local modelBase = {
+        datasource: {
+          type: datasourceType,
+          uid: queryDatasourceUid,
+        },
+        expr: recordingRule.expr,
+        intervalMs: 1000,
+        maxDataPoints: 43200,
+        refId: 'query',
+      };
+      local modelWithType = (
+        if datasourceType == 'loki'
+        then modelBase + { queryType: 'instant' }
+        else modelBase + { instant: true, range: false }
+      );
       rule.withName(recordingRule.record)
       + (if std.objectHas(recordingRule, 'labels')
          then rule.withLabels(recordingRule.labels)
@@ -82,26 +97,13 @@ local raw = import '../zz/main.libsonnet',
       ])
       + rule.withData([
         rule.data.withRefId('query')
-        + rule.data.withQueryType(datasourceType)
+        + rule.data.withQueryType(if datasourceType == 'loki' then 'instant' else datasourceType)
         + rule.data.withDatasourceUid(queryDatasourceUid)
         + rule.data.withRelativeTimeRange([
           rule.data.relativeTimeRange.withFrom(600)
           + rule.data.relativeTimeRange.withTo(0),
         ])
-        + rule.data.withModel(
-          std.manifestJson({
-            datasource: {
-              type: datasourceType,
-              uid: queryDatasourceUid,
-            },
-            expr: recordingRule.expr,
-            instant: true,
-            intervalMs: 1000,
-            maxDataPoints: 43200,
-            range: false,
-            refId: 'query',
-          })
-        ),
+        + rule.data.withModel(std.manifestJson(modelWithType)),
       ]),
 
     prometheus: {
