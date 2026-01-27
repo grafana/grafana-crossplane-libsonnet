@@ -53,6 +53,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.grafanaUser
                 toFieldPath: spec.forProvider.grafanaUser
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.k6ApiUrl
+                toFieldPath: spec.forProvider.k6ApiUrl
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.stackId
                 toFieldPath: spec.forProvider.stackId
                 type: FromCompositeFieldPath
@@ -77,6 +80,9 @@ spec:
               - fromFieldPath: spec.parameters.initProvider.grafanaUser
                 toFieldPath: spec.initProvider.grafanaUser
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.k6ApiUrl
+                toFieldPath: spec.initProvider.k6ApiUrl
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.stackId
                 toFieldPath: spec.initProvider.stackId
                 type: FromCompositeFieldPath
@@ -91,27 +97,6 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
                 toFieldPath: spec.providerConfigRef.policy.resolve
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
-                toFieldPath: spec.publishConnectionDetailsTo.configRef.name
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
-                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
-                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
-                toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
-                toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
-                toFieldPath: spec.publishConnectionDetailsTo.metadata.type
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
-                toFieldPath: spec.publishConnectionDetailsTo.name
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
                 toFieldPath: spec.writeConnectionSecretToRef.name

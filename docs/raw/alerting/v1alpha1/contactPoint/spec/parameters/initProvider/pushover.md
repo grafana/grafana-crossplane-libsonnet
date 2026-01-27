@@ -42,7 +42,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The Pushover API token.
+(String, Sensitive) Personal Access Token that is used as a bearer authorization header.
 The Pushover API token.
 ### fn withApiTokenSecretRefMixin
 
@@ -54,7 +54,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The Pushover API token.
+(String, Sensitive) Personal Access Token that is used as a bearer authorization header.
 The Pushover API token.
 ### fn withDevice
 
@@ -139,7 +139,7 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) The priority level of the event.
+(String) The priority level of the issue (e.g., High, Medium, Low).
 The priority level of the event.
 ### fn withRetry
 

@@ -315,208 +315,6 @@
           },
         },
     },
-  '#withPublishConnectionDetailsTo': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'PublishConnectionDetailsTo specifies the connection secret config which\ncontains a name, metadata and a reference to secret store config to\nwhich any connection details for this managed resource should be written.\nConnection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
-  withPublishConnectionDetailsTo(value): {
-    spec+: {
-      parameters+: {
-        publishConnectionDetailsTo: value,
-      },
-    },
-  },
-  '#withPublishConnectionDetailsToMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'PublishConnectionDetailsTo specifies the connection secret config which\ncontains a name, metadata and a reference to secret store config to\nwhich any connection details for this managed resource should be written.\nConnection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
-  withPublishConnectionDetailsToMixin(value): {
-    spec+: {
-      parameters+: {
-        publishConnectionDetailsTo+: value,
-      },
-    },
-  },
-  publishConnectionDetailsTo+:
-    {
-      '#withConfigRef': { 'function': { args: [{ default: { name: 'default' }, enums: null, name: 'value', type: ['object'] }], help: 'SecretStoreConfigRef specifies which secret store config should be used\nfor this ConnectionSecret.' } },
-      withConfigRef(value={ name: 'default' }): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              configRef: value,
-            },
-          },
-        },
-      },
-      '#withConfigRefMixin': { 'function': { args: [{ default: { name: 'default' }, enums: null, name: 'value', type: ['object'] }], help: 'SecretStoreConfigRef specifies which secret store config should be used\nfor this ConnectionSecret.' } },
-      withConfigRefMixin(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              configRef+: value,
-            },
-          },
-        },
-      },
-      configRef+:
-        {
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
-          withName(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    name: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
-          withPolicy(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    policy: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
-          withPolicyMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    policy+: value,
-                  },
-                },
-              },
-            },
-          },
-          policy+:
-            {
-              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
-              withResolution(value='Required'): {
-                spec+: {
-                  parameters+: {
-                    publishConnectionDetailsTo+: {
-                      configRef+: {
-                        policy+: {
-                          resolution: value,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
-              withResolve(value): {
-                spec+: {
-                  parameters+: {
-                    publishConnectionDetailsTo+: {
-                      configRef+: {
-                        policy+: {
-                          resolve: value,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-        },
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Metadata is the metadata for connection secret.' } },
-      withMetadata(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              metadata: value,
-            },
-          },
-        },
-      },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Metadata is the metadata for connection secret.' } },
-      withMetadataMixin(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              metadata+: value,
-            },
-          },
-        },
-      },
-      metadata+:
-        {
-          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Annotations are the annotations to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.annotations".\n- It is up to Secret Store implementation for others store types.' } },
-          withAnnotations(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    annotations: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Annotations are the annotations to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.annotations".\n- It is up to Secret Store implementation for others store types.' } },
-          withAnnotationsMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    annotations+: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Labels are the labels/tags to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.labels".\n- It is up to Secret Store implementation for others store types.' } },
-          withLabels(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    labels: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Labels are the labels/tags to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.labels".\n- It is up to Secret Store implementation for others store types.' } },
-          withLabelsMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    labels+: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Type is the SecretType for the connection secret.\n- Only valid for Kubernetes Secret Stores.' } },
-          withType(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    type: value,
-                  },
-                },
-              },
-            },
-          },
-        },
-      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name is the name of the connection secret.' } },
-      withName(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              name: value,
-            },
-          },
-        },
-      },
-    },
   '#withSelectorLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Configure a custom label for use with selector.matchLabels.' } },
   withSelectorLabel(value): {
     spec+: {
@@ -525,7 +323,7 @@
       },
     },
   },
-  '#withWriteConnectionSecretToRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.\nThis field is planned to be replaced in a future release in favor of\nPublishConnectionDetailsTo. Currently, both could be set independently\nand connection details would be published to both without affecting\neach other.' } },
+  '#withWriteConnectionSecretToRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
   withWriteConnectionSecretToRef(value): {
     spec+: {
       parameters+: {
@@ -533,7 +331,7 @@
       },
     },
   },
-  '#withWriteConnectionSecretToRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.\nThis field is planned to be replaced in a future release in favor of\nPublishConnectionDetailsTo. Currently, both could be set independently\nand connection details would be published to both without affecting\neach other.' } },
+  '#withWriteConnectionSecretToRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
   withWriteConnectionSecretToRefMixin(value): {
     spec+: {
       parameters+: {

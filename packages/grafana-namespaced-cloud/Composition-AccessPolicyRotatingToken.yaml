@@ -1,0 +1,98 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xaccesspolicyrotatingtokens.cloud.grafana.net.namespaced
+  name: accesspolicyrotatingtoken-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: cloud.grafana.net.namespaced/v1alpha1
+    kind: XAccessPolicyRotatingToken
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: cloud.grafana.crossplane.io/v1alpha1
+              kind: AccessPolicyRotatingToken
+            name: accesspolicyrotatingtoken
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.selectorLabel
+                toFieldPath: "metadata.labels[\"selector\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.accessPolicyId
+                toFieldPath: spec.forProvider.accessPolicyId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.deleteOnDestroy
+                toFieldPath: spec.forProvider.deleteOnDestroy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.displayName
+                toFieldPath: spec.forProvider.displayName
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.earlyRotationWindow
+                toFieldPath: spec.forProvider.earlyRotationWindow
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.expireAfter
+                toFieldPath: spec.forProvider.expireAfter
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.namePrefix
+                toFieldPath: spec.forProvider.namePrefix
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.region
+                toFieldPath: spec.forProvider.region
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.accessPolicyId
+                toFieldPath: spec.initProvider.accessPolicyId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.deleteOnDestroy
+                toFieldPath: spec.initProvider.deleteOnDestroy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.displayName
+                toFieldPath: spec.initProvider.displayName
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.earlyRotationWindow
+                toFieldPath: spec.initProvider.earlyRotationWindow
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.expireAfter
+                toFieldPath: spec.initProvider.expireAfter
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.namePrefix
+                toFieldPath: spec.initProvider.namePrefix
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.region
+                toFieldPath: spec.initProvider.region
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform
+    - functionRef:
+        name: function-grafana-data
+      step: grafana-data

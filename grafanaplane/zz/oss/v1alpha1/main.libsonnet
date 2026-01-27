@@ -17,6 +17,7 @@
   playlistV0Alpha1+: import './playlistV0Alpha1/main.libsonnet',
   serviceAccountPermissionItem+: import './serviceAccountPermissionItem/main.libsonnet',
   serviceAccountPermission+: import './serviceAccountPermission/main.libsonnet',
+  serviceAccountRotatingToken+: import './serviceAccountRotatingToken/main.libsonnet',
   serviceAccount+: import './serviceAccount/main.libsonnet',
   serviceAccountToken+: import './serviceAccountToken/main.libsonnet',
   ssoSettings+: import './ssoSettings/main.libsonnet',

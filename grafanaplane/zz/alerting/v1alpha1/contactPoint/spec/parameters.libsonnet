@@ -514,6 +514,216 @@
               },
             },
         },
+      '#withJira': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to Jira. (see below for nested schema)\nA contact point that sends notifications to Jira.' } },
+      withJira(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              jira:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withJiraMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to Jira. (see below for nested schema)\nA contact point that sends notifications to Jira.' } },
+      withJiraMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              jira+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      jira+:
+        {
+          '#': { help: '', name: 'jira' },
+          '#withApiTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nPersonal Access Token that is used as a bearer authorization header.' } },
+          withApiTokenSecretRef(value): {
+            apiTokenSecretRef: value,
+          },
+          '#withApiTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nPersonal Access Token that is used as a bearer authorization header.' } },
+          withApiTokenSecretRefMixin(value): {
+            apiTokenSecretRef+: value,
+          },
+          apiTokenSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                apiTokenSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                apiTokenSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                apiTokenSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
+          '#withApiUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Jira REST API (v2 or v3).\nThe URL of the Jira REST API (v2 or v3).' } },
+          withApiUrl(value): {
+            apiUrl: value,
+          },
+          '#withDedupKeyField': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Custom field ID for storing deduplication keys. Must be numeric.\nCustom field ID for storing deduplication keys. Must be numeric.' } },
+          withDedupKeyField(value): {
+            dedupKeyField: value,
+          },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the Jira issue. Maximum length is 32767 characters.' } },
+          withDescription(value): {
+            description: value,
+          },
+          '#withDisableResolveMessage': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to disable sending resolve messages. Defaults to false.\nWhether to disable sending resolve messages. Defaults to `false`.' } },
+          withDisableResolveMessage(value=true): {
+            disableResolveMessage: value,
+          },
+          '#withFields': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom Jira issue fields.\nCustom Jira issue fields.' } },
+          withFields(value): {
+            fields: value,
+          },
+          '#withFieldsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom Jira issue fields.\nCustom Jira issue fields.' } },
+          withFieldsMixin(value): {
+            fields+: value,
+          },
+          '#withIssueType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of issue to create (e.g., Bug, Task, Story).\nThe type of issue to create (e.g., Bug, Task, Story).' } },
+          withIssueType(value): {
+            issueType: value,
+          },
+          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Labels to assign to the Jira issue.\nLabels to assign to the Jira issue.' } },
+          withLabels(value): {
+            labels:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Labels to assign to the Jira issue.\nLabels to assign to the Jira issue.' } },
+          withLabelsMixin(value): {
+            labels+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nPassword to use for Jira authentication.' } },
+          withPasswordSecretRef(value): {
+            passwordSecretRef: value,
+          },
+          '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nPassword to use for Jira authentication.' } },
+          withPasswordSecretRefMixin(value): {
+            passwordSecretRef+: value,
+          },
+          passwordSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                passwordSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                passwordSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                passwordSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
+          '#withPriority': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The priority level of the issue (e.g., High, Medium, Low).\nThe priority level of the issue (e.g., High, Medium, Low).' } },
+          withPriority(value): {
+            priority: value,
+          },
+          '#withProject': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The project key in Jira.\nThe project key in Jira.' } },
+          withProject(value): {
+            project: value,
+          },
+          '#withReopenDuration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration to consider reopening issues (e.g., '10m').\nDuration to consider reopening issues (e.g., '10m')." } },
+          withReopenDuration(value): {
+            reopenDuration: value,
+          },
+          '#withReopenTransition': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the workflow transition to reopen an issue.\nThe name of the workflow transition to reopen an issue.' } },
+          withReopenTransition(value): {
+            reopenTransition: value,
+          },
+          '#withResolveTransition': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the workflow transition to resolve an issue.\nThe name of the workflow transition to resolve an issue.' } },
+          withResolveTransition(value): {
+            resolveTransition: value,
+          },
+          '#withSettingsSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String, Sensitive) Additional custom properties to attach to the notifier. Defaults to map[].\nAdditional custom properties to attach to the notifier. Defaults to `map[]`.' } },
+          withSettingsSecretRef(value): {
+            settingsSecretRef: value,
+          },
+          '#withSettingsSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String, Sensitive) Additional custom properties to attach to the notifier. Defaults to map[].\nAdditional custom properties to attach to the notifier. Defaults to `map[]`.' } },
+          withSettingsSecretRefMixin(value): {
+            settingsSecretRef+: value,
+          },
+          settingsSecretRef+:
+            {
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                settingsSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                settingsSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
+          '#withSummary': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated summary of the Jira issue. Maximum length is 255 characters.\nThe templated summary of the Jira issue. Maximum length is 255 characters.' } },
+          withSummary(value): {
+            summary: value,
+          },
+          '#withUserSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Username to use for Jira authentication.\nUsername to use for Jira authentication.' } },
+          withUserSecretRef(value): {
+            userSecretRef: value,
+          },
+          '#withUserSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Username to use for Jira authentication.\nUsername to use for Jira authentication.' } },
+          withUserSecretRefMixin(value): {
+            userSecretRef+: value,
+          },
+          userSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                userSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                userSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                userSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
+          '#withWontFixResolution': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Resolution status to exclude from reopening/updating.\nResolution status to exclude from reopening/updating.' } },
+          withWontFixResolution(value): {
+            wontFixResolution: value,
+          },
+        },
       '#withKafka': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that publishes notifications to Apache Kafka topics. (see below for nested schema)\nA contact point that publishes notifications to Apache Kafka topics.' } },
       withKafka(value): {
         spec+: {
@@ -551,7 +761,7 @@
           withClusterId(value): {
             clusterId: value,
           },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nThe templated description of the Kafka message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the Kafka message.' } },
           withDescription(value): {
             description: value,
           },
@@ -563,11 +773,11 @@
           withDisableResolveMessage(value=true): {
             disableResolveMessage: value,
           },
-          '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The password to use when making a call to the Kafka REST Proxy\nThe password to use when making a call to the Kafka REST Proxy' } },
+          '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nThe password to use when making a call to the Kafka REST Proxy' } },
           withPasswordSecretRef(value): {
             passwordSecretRef: value,
           },
-          '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The password to use when making a call to the Kafka REST Proxy\nThe password to use when making a call to the Kafka REST Proxy' } },
+          '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nThe password to use when making a call to the Kafka REST Proxy' } },
           withPasswordSecretRefMixin(value): {
             passwordSecretRef+: value,
           },
@@ -682,7 +892,7 @@
       line+:
         {
           '#': { help: '', name: 'line' },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nThe templated description of the message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the message.' } },
           withDescription(value): {
             description: value,
           },
@@ -962,7 +1172,7 @@
           withAutoClose(value=true): {
             autoClose: value,
           },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nA templated high-level description to use for the alert.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nA templated high-level description to use for the alert.' } },
           withDescription(value): {
             description: value,
           },
@@ -1379,7 +1589,7 @@
           withSource(value): {
             source: value,
           },
-          '#withSummary': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated summary message of the event.\nThe templated summary message of the event.' } },
+          '#withSummary': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated summary of the Jira issue. Maximum length is 255 characters.\nThe templated summary message of the event.' } },
           withSummary(value): {
             summary: value,
           },
@@ -1417,11 +1627,11 @@
       pushover+:
         {
           '#': { help: '', name: 'pushover' },
-          '#withApiTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Pushover API token.\nThe Pushover API token.' } },
+          '#withApiTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nThe Pushover API token.' } },
           withApiTokenSecretRef(value): {
             apiTokenSecretRef: value,
           },
-          '#withApiTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Pushover API token.\nThe Pushover API token.' } },
+          '#withApiTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nThe Pushover API token.' } },
           withApiTokenSecretRefMixin(value): {
             apiTokenSecretRef+: value,
           },
@@ -1470,7 +1680,7 @@
           withOkSound(value): {
             okSound: value,
           },
-          '#withPriority': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The priority level of the event.\nThe priority level of the event.' } },
+          '#withPriority': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(String) The priority level of the issue (e.g., High, Medium, Low).\nThe priority level of the event.' } },
           withPriority(value): {
             priority: value,
           },
@@ -2225,7 +2435,7 @@
                 },
               },
             },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nThe templated description of the message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the message.' } },
           withDescription(value): {
             description: value,
           },
@@ -2298,7 +2508,7 @@
       victorops+:
         {
           '#': { help: '', name: 'victorops' },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nTemplated description of the message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nTemplated description of the message.' } },
           withDescription(value): {
             description: value,
           },
@@ -2396,7 +2606,7 @@
       webex+:
         {
           '#': { help: '', name: 'webex' },
-          '#withApiUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL to send webhook requests to.\nThe URL to send webhook requests to.' } },
+          '#withApiUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Jira REST API (v2 or v3).\nThe URL to send webhook requests to.' } },
           withApiUrl(value): {
             apiUrl: value,
           },
@@ -3530,6 +3740,201 @@
               },
             },
         },
+      '#withJira': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to Jira. (see below for nested schema)\nA contact point that sends notifications to Jira.' } },
+      withJira(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              jira:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withJiraMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to Jira. (see below for nested schema)\nA contact point that sends notifications to Jira.' } },
+      withJiraMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              jira+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      jira+:
+        {
+          '#': { help: '', name: 'jira' },
+          '#withApiTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nPersonal Access Token that is used as a bearer authorization header.' } },
+          withApiTokenSecretRef(value): {
+            apiTokenSecretRef: value,
+          },
+          '#withApiTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nPersonal Access Token that is used as a bearer authorization header.' } },
+          withApiTokenSecretRefMixin(value): {
+            apiTokenSecretRef+: value,
+          },
+          apiTokenSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                apiTokenSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                apiTokenSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                apiTokenSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
+          '#withApiUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Jira REST API (v2 or v3).\nThe URL of the Jira REST API (v2 or v3).' } },
+          withApiUrl(value): {
+            apiUrl: value,
+          },
+          '#withDedupKeyField': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Custom field ID for storing deduplication keys. Must be numeric.\nCustom field ID for storing deduplication keys. Must be numeric.' } },
+          withDedupKeyField(value): {
+            dedupKeyField: value,
+          },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the Jira issue. Maximum length is 32767 characters.' } },
+          withDescription(value): {
+            description: value,
+          },
+          '#withDisableResolveMessage': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to disable sending resolve messages. Defaults to false.\nWhether to disable sending resolve messages. Defaults to `false`.' } },
+          withDisableResolveMessage(value=true): {
+            disableResolveMessage: value,
+          },
+          '#withFields': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom Jira issue fields.\nCustom Jira issue fields.' } },
+          withFields(value): {
+            fields: value,
+          },
+          '#withFieldsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom Jira issue fields.\nCustom Jira issue fields.' } },
+          withFieldsMixin(value): {
+            fields+: value,
+          },
+          '#withIssueType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The type of issue to create (e.g., Bug, Task, Story).\nThe type of issue to create (e.g., Bug, Task, Story).' } },
+          withIssueType(value): {
+            issueType: value,
+          },
+          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Labels to assign to the Jira issue.\nLabels to assign to the Jira issue.' } },
+          withLabels(value): {
+            labels:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) Labels to assign to the Jira issue.\nLabels to assign to the Jira issue.' } },
+          withLabelsMixin(value): {
+            labels+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nPassword to use for Jira authentication.' } },
+          withPasswordSecretRef(value): {
+            passwordSecretRef: value,
+          },
+          '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nPassword to use for Jira authentication.' } },
+          withPasswordSecretRefMixin(value): {
+            passwordSecretRef+: value,
+          },
+          passwordSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                passwordSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                passwordSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                passwordSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
+          '#withPriority': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The priority level of the issue (e.g., High, Medium, Low).\nThe priority level of the issue (e.g., High, Medium, Low).' } },
+          withPriority(value): {
+            priority: value,
+          },
+          '#withProject': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The project key in Jira.\nThe project key in Jira.' } },
+          withProject(value): {
+            project: value,
+          },
+          '#withReopenDuration': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration to consider reopening issues (e.g., '10m').\nDuration to consider reopening issues (e.g., '10m')." } },
+          withReopenDuration(value): {
+            reopenDuration: value,
+          },
+          '#withReopenTransition': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the workflow transition to reopen an issue.\nThe name of the workflow transition to reopen an issue.' } },
+          withReopenTransition(value): {
+            reopenTransition: value,
+          },
+          '#withResolveTransition': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the workflow transition to resolve an issue.\nThe name of the workflow transition to resolve an issue.' } },
+          withResolveTransition(value): {
+            resolveTransition: value,
+          },
+          '#withSettingsSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '' } },
+          withSettingsSecretRef(value): {
+            settingsSecretRef: value,
+          },
+          '#withSettingsSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '' } },
+          withSettingsSecretRefMixin(value): {
+            settingsSecretRef+: value,
+          },
+          '#withSummary': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated summary of the Jira issue. Maximum length is 255 characters.\nThe templated summary of the Jira issue. Maximum length is 255 characters.' } },
+          withSummary(value): {
+            summary: value,
+          },
+          '#withUserSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Username to use for Jira authentication.\nUsername to use for Jira authentication.' } },
+          withUserSecretRef(value): {
+            userSecretRef: value,
+          },
+          '#withUserSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Username to use for Jira authentication.\nUsername to use for Jira authentication.' } },
+          withUserSecretRefMixin(value): {
+            userSecretRef+: value,
+          },
+          userSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                userSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                userSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                userSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
+          '#withWontFixResolution': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Resolution status to exclude from reopening/updating.\nResolution status to exclude from reopening/updating.' } },
+          withWontFixResolution(value): {
+            wontFixResolution: value,
+          },
+        },
       '#withKafka': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that publishes notifications to Apache Kafka topics. (see below for nested schema)\nA contact point that publishes notifications to Apache Kafka topics.' } },
       withKafka(value): {
         spec+: {
@@ -3567,7 +3972,7 @@
           withClusterId(value): {
             clusterId: value,
           },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nThe templated description of the Kafka message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the Kafka message.' } },
           withDescription(value): {
             description: value,
           },
@@ -3579,11 +3984,11 @@
           withDisableResolveMessage(value=true): {
             disableResolveMessage: value,
           },
-          '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The password to use when making a call to the Kafka REST Proxy\nThe password to use when making a call to the Kafka REST Proxy' } },
+          '#withPasswordSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nThe password to use when making a call to the Kafka REST Proxy' } },
           withPasswordSecretRef(value): {
             passwordSecretRef: value,
           },
-          '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The password to use when making a call to the Kafka REST Proxy\nThe password to use when making a call to the Kafka REST Proxy' } },
+          '#withPasswordSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Password to use for Jira authentication.\nThe password to use when making a call to the Kafka REST Proxy' } },
           withPasswordSecretRefMixin(value): {
             passwordSecretRef+: value,
           },
@@ -3683,7 +4088,7 @@
       line+:
         {
           '#': { help: '', name: 'line' },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nThe templated description of the message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the message.' } },
           withDescription(value): {
             description: value,
           },
@@ -3933,7 +4338,7 @@
           withAutoClose(value=true): {
             autoClose: value,
           },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nA templated high-level description to use for the alert.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nA templated high-level description to use for the alert.' } },
           withDescription(value): {
             description: value,
           },
@@ -4320,7 +4725,7 @@
           withSource(value): {
             source: value,
           },
-          '#withSummary': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated summary message of the event.\nThe templated summary message of the event.' } },
+          '#withSummary': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated summary of the Jira issue. Maximum length is 255 characters.\nThe templated summary message of the event.' } },
           withSummary(value): {
             summary: value,
           },
@@ -4358,11 +4763,11 @@
       pushover+:
         {
           '#': { help: '', name: 'pushover' },
-          '#withApiTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Pushover API token.\nThe Pushover API token.' } },
+          '#withApiTokenSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nThe Pushover API token.' } },
           withApiTokenSecretRef(value): {
             apiTokenSecretRef: value,
           },
-          '#withApiTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) The Pushover API token.\nThe Pushover API token.' } },
+          '#withApiTokenSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(String, Sensitive) Personal Access Token that is used as a bearer authorization header.\nThe Pushover API token.' } },
           withApiTokenSecretRefMixin(value): {
             apiTokenSecretRef+: value,
           },
@@ -4411,7 +4816,7 @@
           withOkSound(value): {
             okSound: value,
           },
-          '#withPriority': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The priority level of the event.\nThe priority level of the event.' } },
+          '#withPriority': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(String) The priority level of the issue (e.g., High, Medium, Low).\nThe priority level of the event.' } },
           withPriority(value): {
             priority: value,
           },
@@ -5076,7 +5481,7 @@
                 },
               },
             },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nThe templated description of the message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nThe templated description of the message.' } },
           withDescription(value): {
             description: value,
           },
@@ -5134,7 +5539,7 @@
       victorops+:
         {
           '#': { help: '', name: 'victorops' },
-          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Kafka message.\nTemplated description of the message.' } },
+          '#withDescription': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The templated description of the Jira issue. Maximum length is 32767 characters.\nTemplated description of the message.' } },
           withDescription(value): {
             description: value,
           },
@@ -5217,7 +5622,7 @@
       webex+:
         {
           '#': { help: '', name: 'webex' },
-          '#withApiUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL to send webhook requests to.\nThe URL to send webhook requests to.' } },
+          '#withApiUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The URL of the Jira REST API (v2 or v3).\nThe URL to send webhook requests to.' } },
           withApiUrl(value): {
             apiUrl: value,
           },
@@ -5965,208 +6370,6 @@
           },
         },
     },
-  '#withPublishConnectionDetailsTo': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'PublishConnectionDetailsTo specifies the connection secret config which\ncontains a name, metadata and a reference to secret store config to\nwhich any connection details for this managed resource should be written.\nConnection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
-  withPublishConnectionDetailsTo(value): {
-    spec+: {
-      parameters+: {
-        publishConnectionDetailsTo: value,
-      },
-    },
-  },
-  '#withPublishConnectionDetailsToMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'PublishConnectionDetailsTo specifies the connection secret config which\ncontains a name, metadata and a reference to secret store config to\nwhich any connection details for this managed resource should be written.\nConnection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
-  withPublishConnectionDetailsToMixin(value): {
-    spec+: {
-      parameters+: {
-        publishConnectionDetailsTo+: value,
-      },
-    },
-  },
-  publishConnectionDetailsTo+:
-    {
-      '#withConfigRef': { 'function': { args: [{ default: { name: 'default' }, enums: null, name: 'value', type: ['object'] }], help: 'SecretStoreConfigRef specifies which secret store config should be used\nfor this ConnectionSecret.' } },
-      withConfigRef(value={ name: 'default' }): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              configRef: value,
-            },
-          },
-        },
-      },
-      '#withConfigRefMixin': { 'function': { args: [{ default: { name: 'default' }, enums: null, name: 'value', type: ['object'] }], help: 'SecretStoreConfigRef specifies which secret store config should be used\nfor this ConnectionSecret.' } },
-      withConfigRefMixin(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              configRef+: value,
-            },
-          },
-        },
-      },
-      configRef+:
-        {
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
-          withName(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    name: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
-          withPolicy(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    policy: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
-          withPolicyMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    policy+: value,
-                  },
-                },
-              },
-            },
-          },
-          policy+:
-            {
-              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
-              withResolution(value='Required'): {
-                spec+: {
-                  parameters+: {
-                    publishConnectionDetailsTo+: {
-                      configRef+: {
-                        policy+: {
-                          resolution: value,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
-              withResolve(value): {
-                spec+: {
-                  parameters+: {
-                    publishConnectionDetailsTo+: {
-                      configRef+: {
-                        policy+: {
-                          resolve: value,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-        },
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Metadata is the metadata for connection secret.' } },
-      withMetadata(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              metadata: value,
-            },
-          },
-        },
-      },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Metadata is the metadata for connection secret.' } },
-      withMetadataMixin(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              metadata+: value,
-            },
-          },
-        },
-      },
-      metadata+:
-        {
-          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Annotations are the annotations to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.annotations".\n- It is up to Secret Store implementation for others store types.' } },
-          withAnnotations(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    annotations: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Annotations are the annotations to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.annotations".\n- It is up to Secret Store implementation for others store types.' } },
-          withAnnotationsMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    annotations+: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Labels are the labels/tags to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.labels".\n- It is up to Secret Store implementation for others store types.' } },
-          withLabels(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    labels: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Labels are the labels/tags to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.labels".\n- It is up to Secret Store implementation for others store types.' } },
-          withLabelsMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    labels+: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Type is the SecretType for the connection secret.\n- Only valid for Kubernetes Secret Stores.' } },
-          withType(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    type: value,
-                  },
-                },
-              },
-            },
-          },
-        },
-      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name is the name of the connection secret.' } },
-      withName(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              name: value,
-            },
-          },
-        },
-      },
-    },
   '#withSelectorLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Configure a custom label for use with selector.matchLabels.' } },
   withSelectorLabel(value): {
     spec+: {
@@ -6175,7 +6378,7 @@
       },
     },
   },
-  '#withWriteConnectionSecretToRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.\nThis field is planned to be replaced in a future release in favor of\nPublishConnectionDetailsTo. Currently, both could be set independently\nand connection details would be published to both without affecting\neach other.' } },
+  '#withWriteConnectionSecretToRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
   withWriteConnectionSecretToRef(value): {
     spec+: {
       parameters+: {
@@ -6183,7 +6386,7 @@
       },
     },
   },
-  '#withWriteConnectionSecretToRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.\nThis field is planned to be replaced in a future release in favor of\nPublishConnectionDetailsTo. Currently, both could be set independently\nand connection details would be published to both without affecting\neach other.' } },
+  '#withWriteConnectionSecretToRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
   withWriteConnectionSecretToRefMixin(value): {
     spec+: {
       parameters+: {

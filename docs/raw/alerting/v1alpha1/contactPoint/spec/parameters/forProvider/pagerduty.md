@@ -209,7 +209,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The templated summary message of the event.
+(String) The templated summary of the Jira issue. Maximum length is 255 characters.
 The templated summary message of the event.
 ### fn withUrl
 

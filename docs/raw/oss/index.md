@@ -23,6 +23,7 @@
 * [v1alpha1.serviceAccount](v1alpha1/serviceAccount.md)
 * [v1alpha1.serviceAccountPermission](v1alpha1/serviceAccountPermission/index.md)
 * [v1alpha1.serviceAccountPermissionItem](v1alpha1/serviceAccountPermissionItem.md)
+* [v1alpha1.serviceAccountRotatingToken](v1alpha1/serviceAccountRotatingToken.md)
 * [v1alpha1.serviceAccountToken](v1alpha1/serviceAccountToken.md)
 * [v1alpha1.ssoSettings](v1alpha1/ssoSettings/index.md)
 * [v1alpha1.team](v1alpha1/team/index.md)

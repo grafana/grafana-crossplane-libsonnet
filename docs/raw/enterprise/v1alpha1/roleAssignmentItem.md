@@ -63,8 +63,6 @@
     * [`fn withManagementPoliciesMixin(value=["*"])`](#fn-specparameterswithmanagementpoliciesmixin)
     * [`fn withProviderConfigRef(value={"name": "default"})`](#fn-specparameterswithproviderconfigref)
     * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
-    * [`fn withPublishConnectionDetailsTo(value)`](#fn-specparameterswithpublishconnectiondetailsto)
-    * [`fn withPublishConnectionDetailsToMixin(value)`](#fn-specparameterswithpublishconnectiondetailstomixin)
     * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
@@ -74,10 +72,26 @@
       * [`fn withOrganizationRefMixin(value)`](#fn-specparametersforproviderwithorganizationrefmixin)
       * [`fn withOrganizationSelector(value)`](#fn-specparametersforproviderwithorganizationselector)
       * [`fn withOrganizationSelectorMixin(value)`](#fn-specparametersforproviderwithorganizationselectormixin)
+      * [`fn withRoleRef(value)`](#fn-specparametersforproviderwithroleref)
+      * [`fn withRoleRefMixin(value)`](#fn-specparametersforproviderwithrolerefmixin)
+      * [`fn withRoleSelector(value)`](#fn-specparametersforproviderwithroleselector)
+      * [`fn withRoleSelectorMixin(value)`](#fn-specparametersforproviderwithroleselectormixin)
       * [`fn withRoleUid(value)`](#fn-specparametersforproviderwithroleuid)
       * [`fn withServiceAccountId(value)`](#fn-specparametersforproviderwithserviceaccountid)
+      * [`fn withServiceAccountRef(value)`](#fn-specparametersforproviderwithserviceaccountref)
+      * [`fn withServiceAccountRefMixin(value)`](#fn-specparametersforproviderwithserviceaccountrefmixin)
+      * [`fn withServiceAccountSelector(value)`](#fn-specparametersforproviderwithserviceaccountselector)
+      * [`fn withServiceAccountSelectorMixin(value)`](#fn-specparametersforproviderwithserviceaccountselectormixin)
       * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
+      * [`fn withTeamRef(value)`](#fn-specparametersforproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersforproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersforproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersforproviderwithteamselectormixin)
       * [`fn withUserId(value)`](#fn-specparametersforproviderwithuserid)
+      * [`fn withUserRef(value)`](#fn-specparametersforproviderwithuserref)
+      * [`fn withUserRefMixin(value)`](#fn-specparametersforproviderwithuserrefmixin)
+      * [`fn withUserSelector(value)`](#fn-specparametersforproviderwithuserselector)
+      * [`fn withUserSelectorMixin(value)`](#fn-specparametersforproviderwithuserselectormixin)
       * [`obj organizationRef`](#obj-specparametersforproviderorganizationref)
         * [`fn withName(value)`](#fn-specparametersforproviderorganizationrefwithname)
         * [`fn withPolicy(value)`](#fn-specparametersforproviderorganizationrefwithpolicy)
@@ -94,16 +108,96 @@
         * [`obj policy`](#obj-specparametersforproviderorganizationselectorpolicy)
           * [`fn withResolution(value="Required")`](#fn-specparametersforproviderorganizationselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersforproviderorganizationselectorpolicywithresolve)
+      * [`obj roleRef`](#obj-specparametersforproviderroleref)
+        * [`fn withName(value)`](#fn-specparametersforproviderrolerefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderrolerefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderrolerefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderrolerefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderrolerefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderrolerefpolicywithresolve)
+      * [`obj roleSelector`](#obj-specparametersforproviderroleselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderroleselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderroleselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderroleselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderroleselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderroleselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderroleselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderroleselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderroleselectorpolicywithresolve)
+      * [`obj serviceAccountRef`](#obj-specparametersforproviderserviceaccountref)
+        * [`fn withName(value)`](#fn-specparametersforproviderserviceaccountrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderserviceaccountrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderserviceaccountrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderserviceaccountrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderserviceaccountrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderserviceaccountrefpolicywithresolve)
+      * [`obj serviceAccountSelector`](#obj-specparametersforproviderserviceaccountselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderserviceaccountselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderserviceaccountselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderserviceaccountselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderserviceaccountselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderserviceaccountselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderserviceaccountselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderserviceaccountselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderserviceaccountselectorpolicywithresolve)
+      * [`obj teamRef`](#obj-specparametersforproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersforproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersforproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamselectorpolicywithresolve)
+      * [`obj userRef`](#obj-specparametersforprovideruserref)
+        * [`fn withName(value)`](#fn-specparametersforprovideruserrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovideruserrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovideruserrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovideruserrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovideruserrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovideruserrefpolicywithresolve)
+      * [`obj userSelector`](#obj-specparametersforprovideruserselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforprovideruserselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforprovideruserselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforprovideruserselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovideruserselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovideruserselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovideruserselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovideruserselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovideruserselectorpolicywithresolve)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withOrgId(value)`](#fn-specparametersinitproviderwithorgid)
       * [`fn withOrganizationRef(value)`](#fn-specparametersinitproviderwithorganizationref)
       * [`fn withOrganizationRefMixin(value)`](#fn-specparametersinitproviderwithorganizationrefmixin)
       * [`fn withOrganizationSelector(value)`](#fn-specparametersinitproviderwithorganizationselector)
       * [`fn withOrganizationSelectorMixin(value)`](#fn-specparametersinitproviderwithorganizationselectormixin)
+      * [`fn withRoleRef(value)`](#fn-specparametersinitproviderwithroleref)
+      * [`fn withRoleRefMixin(value)`](#fn-specparametersinitproviderwithrolerefmixin)
+      * [`fn withRoleSelector(value)`](#fn-specparametersinitproviderwithroleselector)
+      * [`fn withRoleSelectorMixin(value)`](#fn-specparametersinitproviderwithroleselectormixin)
       * [`fn withRoleUid(value)`](#fn-specparametersinitproviderwithroleuid)
       * [`fn withServiceAccountId(value)`](#fn-specparametersinitproviderwithserviceaccountid)
+      * [`fn withServiceAccountRef(value)`](#fn-specparametersinitproviderwithserviceaccountref)
+      * [`fn withServiceAccountRefMixin(value)`](#fn-specparametersinitproviderwithserviceaccountrefmixin)
+      * [`fn withServiceAccountSelector(value)`](#fn-specparametersinitproviderwithserviceaccountselector)
+      * [`fn withServiceAccountSelectorMixin(value)`](#fn-specparametersinitproviderwithserviceaccountselectormixin)
       * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
+      * [`fn withTeamRef(value)`](#fn-specparametersinitproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersinitproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersinitproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersinitproviderwithteamselectormixin)
       * [`fn withUserId(value)`](#fn-specparametersinitproviderwithuserid)
+      * [`fn withUserRef(value)`](#fn-specparametersinitproviderwithuserref)
+      * [`fn withUserRefMixin(value)`](#fn-specparametersinitproviderwithuserrefmixin)
+      * [`fn withUserSelector(value)`](#fn-specparametersinitproviderwithuserselector)
+      * [`fn withUserSelectorMixin(value)`](#fn-specparametersinitproviderwithuserselectormixin)
       * [`obj organizationRef`](#obj-specparametersinitproviderorganizationref)
         * [`fn withName(value)`](#fn-specparametersinitproviderorganizationrefwithname)
         * [`fn withPolicy(value)`](#fn-specparametersinitproviderorganizationrefwithpolicy)
@@ -120,6 +214,70 @@
         * [`obj policy`](#obj-specparametersinitproviderorganizationselectorpolicy)
           * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderorganizationselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersinitproviderorganizationselectorpolicywithresolve)
+      * [`obj roleRef`](#obj-specparametersinitproviderroleref)
+        * [`fn withName(value)`](#fn-specparametersinitproviderrolerefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderrolerefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderrolerefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderrolerefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderrolerefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderrolerefpolicywithresolve)
+      * [`obj roleSelector`](#obj-specparametersinitproviderroleselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderroleselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderroleselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderroleselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderroleselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderroleselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderroleselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderroleselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderroleselectorpolicywithresolve)
+      * [`obj serviceAccountRef`](#obj-specparametersinitproviderserviceaccountref)
+        * [`fn withName(value)`](#fn-specparametersinitproviderserviceaccountrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderserviceaccountrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderserviceaccountrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderserviceaccountrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderserviceaccountrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderserviceaccountrefpolicywithresolve)
+      * [`obj serviceAccountSelector`](#obj-specparametersinitproviderserviceaccountselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderserviceaccountselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderserviceaccountselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderserviceaccountselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderserviceaccountselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderserviceaccountselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderserviceaccountselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderserviceaccountselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderserviceaccountselectorpolicywithresolve)
+      * [`obj teamRef`](#obj-specparametersinitproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersinitproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersinitproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamselectorpolicywithresolve)
+      * [`obj userRef`](#obj-specparametersinitprovideruserref)
+        * [`fn withName(value)`](#fn-specparametersinitprovideruserrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovideruserrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovideruserrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovideruserrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovideruserrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovideruserrefpolicywithresolve)
+      * [`obj userSelector`](#obj-specparametersinitprovideruserselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitprovideruserselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitprovideruserselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitprovideruserselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovideruserselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovideruserselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovideruserselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovideruserselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovideruserselectorpolicywithresolve)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -127,25 +285,6 @@
       * [`obj policy`](#obj-specparametersproviderconfigrefpolicy)
         * [`fn withResolution(value="Required")`](#fn-specparametersproviderconfigrefpolicywithresolution)
         * [`fn withResolve(value)`](#fn-specparametersproviderconfigrefpolicywithresolve)
-    * [`obj publishConnectionDetailsTo`](#obj-specparameterspublishconnectiondetailsto)
-      * [`fn withConfigRef(value={"name": "default"})`](#fn-specparameterspublishconnectiondetailstowithconfigref)
-      * [`fn withConfigRefMixin(value={"name": "default"})`](#fn-specparameterspublishconnectiondetailstowithconfigrefmixin)
-      * [`fn withMetadata(value)`](#fn-specparameterspublishconnectiondetailstowithmetadata)
-      * [`fn withMetadataMixin(value)`](#fn-specparameterspublishconnectiondetailstowithmetadatamixin)
-      * [`fn withName(value)`](#fn-specparameterspublishconnectiondetailstowithname)
-      * [`obj configRef`](#obj-specparameterspublishconnectiondetailstoconfigref)
-        * [`fn withName(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefwithname)
-        * [`fn withPolicy(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefwithpolicy)
-        * [`fn withPolicyMixin(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefwithpolicymixin)
-        * [`obj policy`](#obj-specparameterspublishconnectiondetailstoconfigrefpolicy)
-          * [`fn withResolution(value="Required")`](#fn-specparameterspublishconnectiondetailstoconfigrefpolicywithresolution)
-          * [`fn withResolve(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefpolicywithresolve)
-      * [`obj metadata`](#obj-specparameterspublishconnectiondetailstometadata)
-        * [`fn withAnnotations(value)`](#fn-specparameterspublishconnectiondetailstometadatawithannotations)
-        * [`fn withAnnotationsMixin(value)`](#fn-specparameterspublishconnectiondetailstometadatawithannotationsmixin)
-        * [`fn withLabels(value)`](#fn-specparameterspublishconnectiondetailstometadatawithlabels)
-        * [`fn withLabelsMixin(value)`](#fn-specparameterspublishconnectiondetailstometadatawithlabelsmixin)
-        * [`fn withType(value)`](#fn-specparameterspublishconnectiondetailstometadatawithtype)
     * [`obj writeConnectionSecretToRef`](#obj-specparameterswriteconnectionsecrettoref)
       * [`fn withName(value)`](#fn-specparameterswriteconnectionsecrettorefwithname)
       * [`fn withNamespace(value)`](#fn-specparameterswriteconnectionsecrettorefwithnamespace)
@@ -823,36 +962,6 @@ PARAMETERS:
 ProviderConfigReference specifies how the provider that will be used to
 create, observe, update, and delete this managed resource should be
 configured.
-##### fn spec.parameters.withPublishConnectionDetailsTo
-
-```jsonnet
-spec.parameters.withPublishConnectionDetailsTo(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-PublishConnectionDetailsTo specifies the connection secret config which
-contains a name, metadata and a reference to secret store config to
-which any connection details for this managed resource should be written.
-Connection details frequently include the endpoint, username,
-and password required to connect to the managed resource.
-##### fn spec.parameters.withPublishConnectionDetailsToMixin
-
-```jsonnet
-spec.parameters.withPublishConnectionDetailsToMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-PublishConnectionDetailsTo specifies the connection secret config which
-contains a name, metadata and a reference to secret store config to
-which any connection details for this managed resource should be written.
-Connection details frequently include the endpoint, username,
-and password required to connect to the managed resource.
 ##### fn spec.parameters.withSelectorLabel
 
 ```jsonnet
@@ -878,10 +987,6 @@ WriteConnectionSecretToReference specifies the namespace and name of a
 Secret to which any connection details for this managed resource should
 be written. Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
-This field is planned to be replaced in a future release in favor of
-PublishConnectionDetailsTo. Currently, both could be set independently
-and connection details would be published to both without affecting
-each other.
 ##### fn spec.parameters.withWriteConnectionSecretToRefMixin
 
 ```jsonnet
@@ -896,10 +1001,6 @@ WriteConnectionSecretToReference specifies the namespace and name of a
 Secret to which any connection details for this managed resource should
 be written. Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
-This field is planned to be replaced in a future release in favor of
-PublishConnectionDetailsTo. Currently, both could be set independently
-and connection details would be published to both without affecting
-each other.
 ##### obj spec.parameters.forProvider
 
 
@@ -959,6 +1060,50 @@ PARAMETERS:
 * **value** (`object`)
 
 Selector for a Organization in oss to populate orgId.
+###### fn spec.parameters.forProvider.withRoleRef
+
+```jsonnet
+spec.parameters.forProvider.withRoleRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Role in enterprise to populate roleUid.
+###### fn spec.parameters.forProvider.withRoleRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withRoleRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Role in enterprise to populate roleUid.
+###### fn spec.parameters.forProvider.withRoleSelector
+
+```jsonnet
+spec.parameters.forProvider.withRoleSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Role in enterprise to populate roleUid.
+###### fn spec.parameters.forProvider.withRoleSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withRoleSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Role in enterprise to populate roleUid.
 ###### fn spec.parameters.forProvider.withRoleUid
 
 ```jsonnet
@@ -983,6 +1128,50 @@ PARAMETERS:
 
 (String) the service account onto which the role is to be assigned
 the service account onto which the role is to be assigned
+###### fn spec.parameters.forProvider.withServiceAccountRef
+
+```jsonnet
+spec.parameters.forProvider.withServiceAccountRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a ServiceAccount in oss to populate serviceAccountId.
+###### fn spec.parameters.forProvider.withServiceAccountRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withServiceAccountRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a ServiceAccount in oss to populate serviceAccountId.
+###### fn spec.parameters.forProvider.withServiceAccountSelector
+
+```jsonnet
+spec.parameters.forProvider.withServiceAccountSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a ServiceAccount in oss to populate serviceAccountId.
+###### fn spec.parameters.forProvider.withServiceAccountSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withServiceAccountSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a ServiceAccount in oss to populate serviceAccountId.
 ###### fn spec.parameters.forProvider.withTeamId
 
 ```jsonnet
@@ -995,6 +1184,50 @@ PARAMETERS:
 
 (String) the team onto which the role is to be assigned
 the team onto which the role is to be assigned
+###### fn spec.parameters.forProvider.withTeamRef
+
+```jsonnet
+spec.parameters.forProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oss to populate teamId.
+###### fn spec.parameters.forProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oss to populate teamId.
+###### fn spec.parameters.forProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oss to populate teamId.
+###### fn spec.parameters.forProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oss to populate teamId.
 ###### fn spec.parameters.forProvider.withUserId
 
 ```jsonnet
@@ -1007,6 +1240,50 @@ PARAMETERS:
 
 (String) the user onto which the role is to be assigned
 the user onto which the role is to be assigned
+###### fn spec.parameters.forProvider.withUserRef
+
+```jsonnet
+spec.parameters.forProvider.withUserRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oss to populate userId.
+###### fn spec.parameters.forProvider.withUserRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withUserRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oss to populate userId.
+###### fn spec.parameters.forProvider.withUserSelector
+
+```jsonnet
+spec.parameters.forProvider.withUserSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oss to populate userId.
+###### fn spec.parameters.forProvider.withUserSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withUserSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oss to populate userId.
 ###### obj spec.parameters.forProvider.organizationRef
 
 
@@ -1171,6 +1448,662 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
+###### obj spec.parameters.forProvider.roleRef
+
+
+####### fn spec.parameters.forProvider.roleRef.withName
+
+```jsonnet
+spec.parameters.forProvider.roleRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.roleRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.roleRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.roleRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.roleRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.roleRef.policy
+
+
+######## fn spec.parameters.forProvider.roleRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.roleRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.roleRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.roleRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.roleSelector
+
+
+####### fn spec.parameters.forProvider.roleSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.roleSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.roleSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.roleSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.roleSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.roleSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.roleSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.roleSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.roleSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.roleSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.roleSelector.policy
+
+
+######## fn spec.parameters.forProvider.roleSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.roleSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.roleSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.roleSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.serviceAccountRef
+
+
+####### fn spec.parameters.forProvider.serviceAccountRef.withName
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.serviceAccountRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.serviceAccountRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.serviceAccountRef.policy
+
+
+######## fn spec.parameters.forProvider.serviceAccountRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.serviceAccountRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.serviceAccountSelector
+
+
+####### fn spec.parameters.forProvider.serviceAccountSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.serviceAccountSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.serviceAccountSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.serviceAccountSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.serviceAccountSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.serviceAccountSelector.policy
+
+
+######## fn spec.parameters.forProvider.serviceAccountSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.serviceAccountSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.serviceAccountSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.teamRef
+
+
+####### fn spec.parameters.forProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.teamRef.policy
+
+
+######## fn spec.parameters.forProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.teamSelector
+
+
+####### fn spec.parameters.forProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.teamSelector.policy
+
+
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.userRef
+
+
+####### fn spec.parameters.forProvider.userRef.withName
+
+```jsonnet
+spec.parameters.forProvider.userRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.userRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.userRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.userRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.userRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.userRef.policy
+
+
+######## fn spec.parameters.forProvider.userRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.userRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.userRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.userRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.userSelector
+
+
+####### fn spec.parameters.forProvider.userSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.userSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.userSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.userSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.userSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.userSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.userSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.userSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.userSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.userSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.userSelector.policy
+
+
+######## fn spec.parameters.forProvider.userSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.userSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.userSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.userSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.initProvider
 
 
@@ -1230,6 +2163,50 @@ PARAMETERS:
 * **value** (`object`)
 
 Selector for a Organization in oss to populate orgId.
+###### fn spec.parameters.initProvider.withRoleRef
+
+```jsonnet
+spec.parameters.initProvider.withRoleRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Role in enterprise to populate roleUid.
+###### fn spec.parameters.initProvider.withRoleRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withRoleRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Role in enterprise to populate roleUid.
+###### fn spec.parameters.initProvider.withRoleSelector
+
+```jsonnet
+spec.parameters.initProvider.withRoleSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Role in enterprise to populate roleUid.
+###### fn spec.parameters.initProvider.withRoleSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withRoleSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Role in enterprise to populate roleUid.
 ###### fn spec.parameters.initProvider.withRoleUid
 
 ```jsonnet
@@ -1254,6 +2231,50 @@ PARAMETERS:
 
 (String) the service account onto which the role is to be assigned
 the service account onto which the role is to be assigned
+###### fn spec.parameters.initProvider.withServiceAccountRef
+
+```jsonnet
+spec.parameters.initProvider.withServiceAccountRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a ServiceAccount in oss to populate serviceAccountId.
+###### fn spec.parameters.initProvider.withServiceAccountRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withServiceAccountRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a ServiceAccount in oss to populate serviceAccountId.
+###### fn spec.parameters.initProvider.withServiceAccountSelector
+
+```jsonnet
+spec.parameters.initProvider.withServiceAccountSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a ServiceAccount in oss to populate serviceAccountId.
+###### fn spec.parameters.initProvider.withServiceAccountSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withServiceAccountSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a ServiceAccount in oss to populate serviceAccountId.
 ###### fn spec.parameters.initProvider.withTeamId
 
 ```jsonnet
@@ -1266,6 +2287,50 @@ PARAMETERS:
 
 (String) the team onto which the role is to be assigned
 the team onto which the role is to be assigned
+###### fn spec.parameters.initProvider.withTeamRef
+
+```jsonnet
+spec.parameters.initProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oss to populate teamId.
+###### fn spec.parameters.initProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oss to populate teamId.
+###### fn spec.parameters.initProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oss to populate teamId.
+###### fn spec.parameters.initProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oss to populate teamId.
 ###### fn spec.parameters.initProvider.withUserId
 
 ```jsonnet
@@ -1278,6 +2343,50 @@ PARAMETERS:
 
 (String) the user onto which the role is to be assigned
 the user onto which the role is to be assigned
+###### fn spec.parameters.initProvider.withUserRef
+
+```jsonnet
+spec.parameters.initProvider.withUserRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oss to populate userId.
+###### fn spec.parameters.initProvider.withUserRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withUserRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oss to populate userId.
+###### fn spec.parameters.initProvider.withUserSelector
+
+```jsonnet
+spec.parameters.initProvider.withUserSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oss to populate userId.
+###### fn spec.parameters.initProvider.withUserSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withUserSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oss to populate userId.
 ###### obj spec.parameters.initProvider.organizationRef
 
 
@@ -1442,6 +2551,662 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
+###### obj spec.parameters.initProvider.roleRef
+
+
+####### fn spec.parameters.initProvider.roleRef.withName
+
+```jsonnet
+spec.parameters.initProvider.roleRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.roleRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.roleRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.roleRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.roleRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.roleRef.policy
+
+
+######## fn spec.parameters.initProvider.roleRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.roleRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.roleRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.roleRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.roleSelector
+
+
+####### fn spec.parameters.initProvider.roleSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.roleSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.roleSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.roleSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.roleSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.roleSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.roleSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.roleSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.roleSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.roleSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.roleSelector.policy
+
+
+######## fn spec.parameters.initProvider.roleSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.roleSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.roleSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.roleSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.serviceAccountRef
+
+
+####### fn spec.parameters.initProvider.serviceAccountRef.withName
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.serviceAccountRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.serviceAccountRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.serviceAccountRef.policy
+
+
+######## fn spec.parameters.initProvider.serviceAccountRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.serviceAccountRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.serviceAccountSelector
+
+
+####### fn spec.parameters.initProvider.serviceAccountSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.serviceAccountSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.serviceAccountSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.serviceAccountSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.serviceAccountSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.serviceAccountSelector.policy
+
+
+######## fn spec.parameters.initProvider.serviceAccountSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.serviceAccountSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.serviceAccountSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.teamRef
+
+
+####### fn spec.parameters.initProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.teamRef.policy
+
+
+######## fn spec.parameters.initProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.teamSelector
+
+
+####### fn spec.parameters.initProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.teamSelector.policy
+
+
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.userRef
+
+
+####### fn spec.parameters.initProvider.userRef.withName
+
+```jsonnet
+spec.parameters.initProvider.userRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.userRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.userRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.userRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.userRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.userRef.policy
+
+
+######## fn spec.parameters.initProvider.userRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.userRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.userRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.userRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.userSelector
+
+
+####### fn spec.parameters.initProvider.userSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.userSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.userSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.userSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.userSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.userSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.userSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.userSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.userSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.userSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.userSelector.policy
+
+
+######## fn spec.parameters.initProvider.userSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.userSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.userSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.userSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.providerConfigRef
 
 
@@ -1512,205 +3277,6 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
-##### obj spec.parameters.publishConnectionDetailsTo
-
-
-###### fn spec.parameters.publishConnectionDetailsTo.withConfigRef
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withConfigRef(value={"name": "default"})
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-   - default value: `{"name": "default"}`
-
-SecretStoreConfigRef specifies which secret store config should be used
-for this ConnectionSecret.
-###### fn spec.parameters.publishConnectionDetailsTo.withConfigRefMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withConfigRefMixin(value={"name": "default"})
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-   - default value: `{"name": "default"}`
-
-SecretStoreConfigRef specifies which secret store config should be used
-for this ConnectionSecret.
-###### fn spec.parameters.publishConnectionDetailsTo.withMetadata
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withMetadata(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Metadata is the metadata for connection secret.
-###### fn spec.parameters.publishConnectionDetailsTo.withMetadataMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withMetadataMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Metadata is the metadata for connection secret.
-###### fn spec.parameters.publishConnectionDetailsTo.withName
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name is the name of the connection secret.
-###### obj spec.parameters.publishConnectionDetailsTo.configRef
-
-
-####### fn spec.parameters.publishConnectionDetailsTo.configRef.withName
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name of the referenced object.
-####### fn spec.parameters.publishConnectionDetailsTo.configRef.withPolicy
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.withPolicy(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Policies for referencing.
-####### fn spec.parameters.publishConnectionDetailsTo.configRef.withPolicyMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.withPolicyMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Policies for referencing.
-####### obj spec.parameters.publishConnectionDetailsTo.configRef.policy
-
-
-######## fn spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolution
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolution(value="Required")
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-   - default value: `"Required"`
-   - valid values: `"Required"`, `"Optional"`
-
-Resolution specifies whether resolution of this reference is required.
-The default is 'Required', which means the reconcile will fail if the
-reference cannot be resolved. 'Optional' means this reference will be
-a no-op if it cannot be resolved.
-######## fn spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolve
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolve(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-   - valid values: `"Always"`, `"IfNotPresent"`
-
-Resolve specifies when this reference should be resolved. The default
-is 'IfNotPresent', which will attempt to resolve the reference only when
-the corresponding field is not present. Use 'Always' to resolve the
-reference on every reconcile.
-###### obj spec.parameters.publishConnectionDetailsTo.metadata
-
-
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withAnnotations
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withAnnotations(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Annotations are the annotations to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.annotations".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withAnnotationsMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withAnnotationsMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Annotations are the annotations to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.annotations".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withLabels
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withLabels(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Labels are the labels/tags to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.labels".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withLabelsMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withLabelsMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Labels are the labels/tags to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.labels".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withType
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withType(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Type is the SecretType for the connection secret.
-- Only valid for Kubernetes Secret Stores.
 ##### obj spec.parameters.writeConnectionSecretToRef
 
 

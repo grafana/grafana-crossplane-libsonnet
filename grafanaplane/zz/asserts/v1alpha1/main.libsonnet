@@ -3,4 +3,5 @@
   logConfig+: import './logConfig/main.libsonnet',
   notificationAlertsConfig+: import './notificationAlertsConfig/main.libsonnet',
   suppressedAssertionsConfig+: import './suppressedAssertionsConfig/main.libsonnet',
+  thresholds+: import './thresholds/main.libsonnet',
 }

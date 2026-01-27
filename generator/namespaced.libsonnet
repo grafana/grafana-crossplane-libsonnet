@@ -1,10 +1,6 @@
 local cngen = import 'github.com/Duologic/crossplane-namespaced-libsonnet/main.libsonnet';
 
-local crds =
-  std.filter(
-    function(crd) crd.spec.group != 'grafana.crossplane.io',
-    std.parseYaml(importstr './crds.yaml'),
-  );
+local crds = import './crds.libsonnet';
 
 // Exclude because resource name became too long, might not be needed as part of this library with the advent of namespaced MR in Crossplane v2
 local exclude = [

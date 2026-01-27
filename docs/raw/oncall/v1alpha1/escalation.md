@@ -63,8 +63,6 @@
     * [`fn withManagementPoliciesMixin(value=["*"])`](#fn-specparameterswithmanagementpoliciesmixin)
     * [`fn withProviderConfigRef(value={"name": "default"})`](#fn-specparameterswithproviderconfigref)
     * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
-    * [`fn withPublishConnectionDetailsTo(value)`](#fn-specparameterswithpublishconnectiondetailsto)
-    * [`fn withPublishConnectionDetailsToMixin(value)`](#fn-specparameterswithpublishconnectiondetailstomixin)
     * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
@@ -90,6 +88,8 @@
       * [`fn withNotifyOnCallFromScheduleSelector(value)`](#fn-specparametersforproviderwithnotifyoncallfromscheduleselector)
       * [`fn withNotifyOnCallFromScheduleSelectorMixin(value)`](#fn-specparametersforproviderwithnotifyoncallfromscheduleselectormixin)
       * [`fn withNotifyToTeamMembers(value)`](#fn-specparametersforproviderwithnotifytoteammembers)
+      * [`fn withNumAlertsInWindow(value)`](#fn-specparametersforproviderwithnumalertsinwindow)
+      * [`fn withNumMinutesInWindow(value)`](#fn-specparametersforproviderwithnumminutesinwindow)
       * [`fn withPersonsToNotify(value)`](#fn-specparametersforproviderwithpersonstonotify)
       * [`fn withPersonsToNotifyMixin(value)`](#fn-specparametersforproviderwithpersonstonotifymixin)
       * [`fn withPersonsToNotifyNextEachTime(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtime)
@@ -167,6 +167,8 @@
       * [`fn withNotifyOnCallFromScheduleSelector(value)`](#fn-specparametersinitproviderwithnotifyoncallfromscheduleselector)
       * [`fn withNotifyOnCallFromScheduleSelectorMixin(value)`](#fn-specparametersinitproviderwithnotifyoncallfromscheduleselectormixin)
       * [`fn withNotifyToTeamMembers(value)`](#fn-specparametersinitproviderwithnotifytoteammembers)
+      * [`fn withNumAlertsInWindow(value)`](#fn-specparametersinitproviderwithnumalertsinwindow)
+      * [`fn withNumMinutesInWindow(value)`](#fn-specparametersinitproviderwithnumminutesinwindow)
       * [`fn withPersonsToNotify(value)`](#fn-specparametersinitproviderwithpersonstonotify)
       * [`fn withPersonsToNotifyMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifymixin)
       * [`fn withPersonsToNotifyNextEachTime(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtime)
@@ -229,25 +231,6 @@
       * [`obj policy`](#obj-specparametersproviderconfigrefpolicy)
         * [`fn withResolution(value="Required")`](#fn-specparametersproviderconfigrefpolicywithresolution)
         * [`fn withResolve(value)`](#fn-specparametersproviderconfigrefpolicywithresolve)
-    * [`obj publishConnectionDetailsTo`](#obj-specparameterspublishconnectiondetailsto)
-      * [`fn withConfigRef(value={"name": "default"})`](#fn-specparameterspublishconnectiondetailstowithconfigref)
-      * [`fn withConfigRefMixin(value={"name": "default"})`](#fn-specparameterspublishconnectiondetailstowithconfigrefmixin)
-      * [`fn withMetadata(value)`](#fn-specparameterspublishconnectiondetailstowithmetadata)
-      * [`fn withMetadataMixin(value)`](#fn-specparameterspublishconnectiondetailstowithmetadatamixin)
-      * [`fn withName(value)`](#fn-specparameterspublishconnectiondetailstowithname)
-      * [`obj configRef`](#obj-specparameterspublishconnectiondetailstoconfigref)
-        * [`fn withName(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefwithname)
-        * [`fn withPolicy(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefwithpolicy)
-        * [`fn withPolicyMixin(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefwithpolicymixin)
-        * [`obj policy`](#obj-specparameterspublishconnectiondetailstoconfigrefpolicy)
-          * [`fn withResolution(value="Required")`](#fn-specparameterspublishconnectiondetailstoconfigrefpolicywithresolution)
-          * [`fn withResolve(value)`](#fn-specparameterspublishconnectiondetailstoconfigrefpolicywithresolve)
-      * [`obj metadata`](#obj-specparameterspublishconnectiondetailstometadata)
-        * [`fn withAnnotations(value)`](#fn-specparameterspublishconnectiondetailstometadatawithannotations)
-        * [`fn withAnnotationsMixin(value)`](#fn-specparameterspublishconnectiondetailstometadatawithannotationsmixin)
-        * [`fn withLabels(value)`](#fn-specparameterspublishconnectiondetailstometadatawithlabels)
-        * [`fn withLabelsMixin(value)`](#fn-specparameterspublishconnectiondetailstometadatawithlabelsmixin)
-        * [`fn withType(value)`](#fn-specparameterspublishconnectiondetailstometadatawithtype)
     * [`obj writeConnectionSecretToRef`](#obj-specparameterswriteconnectionsecrettoref)
       * [`fn withName(value)`](#fn-specparameterswriteconnectionsecrettorefwithname)
       * [`fn withNamespace(value)`](#fn-specparameterswriteconnectionsecrettorefwithnamespace)
@@ -925,36 +908,6 @@ PARAMETERS:
 ProviderConfigReference specifies how the provider that will be used to
 create, observe, update, and delete this managed resource should be
 configured.
-##### fn spec.parameters.withPublishConnectionDetailsTo
-
-```jsonnet
-spec.parameters.withPublishConnectionDetailsTo(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-PublishConnectionDetailsTo specifies the connection secret config which
-contains a name, metadata and a reference to secret store config to
-which any connection details for this managed resource should be written.
-Connection details frequently include the endpoint, username,
-and password required to connect to the managed resource.
-##### fn spec.parameters.withPublishConnectionDetailsToMixin
-
-```jsonnet
-spec.parameters.withPublishConnectionDetailsToMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-PublishConnectionDetailsTo specifies the connection secret config which
-contains a name, metadata and a reference to secret store config to
-which any connection details for this managed resource should be written.
-Connection details frequently include the endpoint, username,
-and password required to connect to the managed resource.
 ##### fn spec.parameters.withSelectorLabel
 
 ```jsonnet
@@ -980,10 +933,6 @@ WriteConnectionSecretToReference specifies the namespace and name of a
 Secret to which any connection details for this managed resource should
 be written. Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
-This field is planned to be replaced in a future release in favor of
-PublishConnectionDetailsTo. Currently, both could be set independently
-and connection details would be published to both without affecting
-each other.
 ##### fn spec.parameters.withWriteConnectionSecretToRefMixin
 
 ```jsonnet
@@ -998,10 +947,6 @@ WriteConnectionSecretToReference specifies the namespace and name of a
 Secret to which any connection details for this managed resource should
 be written. Connection details frequently include the endpoint, username,
 and password required to connect to the managed resource.
-This field is planned to be replaced in a future release in favor of
-PublishConnectionDetailsTo. Currently, both could be set independently
-and connection details would be published to both without affecting
-each other.
 ##### obj spec.parameters.forProvider
 
 
@@ -1246,6 +1191,30 @@ PARAMETERS:
 
 (String) The ID of a Team for a notify_team_members type step.
 The ID of a Team for a notify_team_members type step.
+###### fn spec.parameters.forProvider.withNumAlertsInWindow
+
+```jsonnet
+spec.parameters.forProvider.withNumAlertsInWindow(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) Number of alerts that must occur within the time window to continue escalation for notify_if_num_alerts_in_window type step.
+Number of alerts that must occur within the time window to continue escalation for notify_if_num_alerts_in_window type step.
+###### fn spec.parameters.forProvider.withNumMinutesInWindow
+
+```jsonnet
+spec.parameters.forProvider.withNumMinutesInWindow(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) Time window in minutes to count alerts for notify_if_num_alerts_in_window type step.
+Time window in minutes to count alerts for notify_if_num_alerts_in_window type step.
 ###### fn spec.parameters.forProvider.withPersonsToNotify
 
 ```jsonnet
@@ -1328,8 +1297,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
-The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
+(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
+The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
 ###### obj spec.parameters.forProvider.actionToTriggerRef
 
 
@@ -2066,6 +2035,30 @@ PARAMETERS:
 
 (String) The ID of a Team for a notify_team_members type step.
 The ID of a Team for a notify_team_members type step.
+###### fn spec.parameters.initProvider.withNumAlertsInWindow
+
+```jsonnet
+spec.parameters.initProvider.withNumAlertsInWindow(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) Number of alerts that must occur within the time window to continue escalation for notify_if_num_alerts_in_window type step.
+Number of alerts that must occur within the time window to continue escalation for notify_if_num_alerts_in_window type step.
+###### fn spec.parameters.initProvider.withNumMinutesInWindow
+
+```jsonnet
+spec.parameters.initProvider.withNumMinutesInWindow(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) Time window in minutes to count alerts for notify_if_num_alerts_in_window type step.
+Time window in minutes to count alerts for notify_if_num_alerts_in_window type step.
 ###### fn spec.parameters.initProvider.withPersonsToNotify
 
 ```jsonnet
@@ -2148,8 +2141,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
-The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, repeat_escalation, notify_team_members, declare_incident
+(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
+The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
 ###### obj spec.parameters.initProvider.actionToTriggerRef
 
 
@@ -2712,205 +2705,6 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
-##### obj spec.parameters.publishConnectionDetailsTo
-
-
-###### fn spec.parameters.publishConnectionDetailsTo.withConfigRef
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withConfigRef(value={"name": "default"})
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-   - default value: `{"name": "default"}`
-
-SecretStoreConfigRef specifies which secret store config should be used
-for this ConnectionSecret.
-###### fn spec.parameters.publishConnectionDetailsTo.withConfigRefMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withConfigRefMixin(value={"name": "default"})
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-   - default value: `{"name": "default"}`
-
-SecretStoreConfigRef specifies which secret store config should be used
-for this ConnectionSecret.
-###### fn spec.parameters.publishConnectionDetailsTo.withMetadata
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withMetadata(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Metadata is the metadata for connection secret.
-###### fn spec.parameters.publishConnectionDetailsTo.withMetadataMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withMetadataMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Metadata is the metadata for connection secret.
-###### fn spec.parameters.publishConnectionDetailsTo.withName
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name is the name of the connection secret.
-###### obj spec.parameters.publishConnectionDetailsTo.configRef
-
-
-####### fn spec.parameters.publishConnectionDetailsTo.configRef.withName
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name of the referenced object.
-####### fn spec.parameters.publishConnectionDetailsTo.configRef.withPolicy
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.withPolicy(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Policies for referencing.
-####### fn spec.parameters.publishConnectionDetailsTo.configRef.withPolicyMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.withPolicyMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Policies for referencing.
-####### obj spec.parameters.publishConnectionDetailsTo.configRef.policy
-
-
-######## fn spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolution
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolution(value="Required")
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-   - default value: `"Required"`
-   - valid values: `"Required"`, `"Optional"`
-
-Resolution specifies whether resolution of this reference is required.
-The default is 'Required', which means the reconcile will fail if the
-reference cannot be resolved. 'Optional' means this reference will be
-a no-op if it cannot be resolved.
-######## fn spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolve
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.configRef.policy.withResolve(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-   - valid values: `"Always"`, `"IfNotPresent"`
-
-Resolve specifies when this reference should be resolved. The default
-is 'IfNotPresent', which will attempt to resolve the reference only when
-the corresponding field is not present. Use 'Always' to resolve the
-reference on every reconcile.
-###### obj spec.parameters.publishConnectionDetailsTo.metadata
-
-
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withAnnotations
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withAnnotations(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Annotations are the annotations to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.annotations".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withAnnotationsMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withAnnotationsMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Annotations are the annotations to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.annotations".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withLabels
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withLabels(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Labels are the labels/tags to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.labels".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withLabelsMixin
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withLabelsMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-Labels are the labels/tags to be added to connection secret.
-- For Kubernetes secrets, this will be used as "metadata.labels".
-- It is up to Secret Store implementation for others store types.
-####### fn spec.parameters.publishConnectionDetailsTo.metadata.withType
-
-```jsonnet
-spec.parameters.publishConnectionDetailsTo.metadata.withType(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Type is the SecretType for the connection secret.
-- Only valid for Kubernetes Secret Stores.
 ##### obj spec.parameters.writeConnectionSecretToRef
 
 
