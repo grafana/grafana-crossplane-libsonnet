@@ -38,3 +38,31 @@ jobs:
 
       - name: Push xpkg
         run: make push
+
+  deploy:
+    name: Trigger Argo Workflow Deployment
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+
+    steps:
+      - name: Extract version
+        id: version
+        run: |
+          VERSION="${GITHUB_REF#refs/tags/}"
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
+          echo "Deploying version: ${VERSION}"
+
+      - name: Trigger Argo Workflow
+        id: trigger-argo-workflow
+        uses: grafana/shared-workflows/actions/trigger-argo-workflow@e100806688f1209051080dfea5719fbbd1d18cc0 # trigger-argo-workflow/v1.2.1
+        with:
+          namespace: platform-monitoring-cd
+          workflow_template: grafana-crossplane-libsonnet-packages
+          parameters: |
+            dockertag=${{ steps.version.outputs.version }}
+            prCommentContext= Triggered by release ${{ steps.version.outputs.version }} in crossplane/grafana-crossplane-libsonnet
+            commit_author=grafana-delivery-bot
