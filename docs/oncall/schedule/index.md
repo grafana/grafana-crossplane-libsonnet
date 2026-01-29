@@ -15,6 +15,7 @@
   * [`fn withShifts(shifts)`](#fn-calendarwithshifts)
   * [`fn withSlackChannelId(value)`](#fn-calendarwithslackchannelid)
   * [`fn withSlackUserGroup(value)`](#fn-calendarwithslackusergroup)
+  * [`fn withTeamId(teamId)`](#fn-calendarwithteamid)
   * [`fn withTimeZone(value)`](#fn-calendarwithtimezone)
 
 ## Fields
@@ -131,6 +132,21 @@ PARAMETERS:
 
 call users change.
 Slack user group id. Members of user group will be updated when on-call users change.
+#### fn calendar.withTeamId
+
+```jsonnet
+calendar.withTeamId(teamId)
+```
+
+PARAMETERS:
+
+* **teamId** (`string`)
+
+`withTeamId` configures the Team ID on the schedule and shifts.
+
+Parameters:
+  - `teamId` should be the ID of the team as a string.
+
 #### fn calendar.withTimeZone
 
 ```jsonnet
