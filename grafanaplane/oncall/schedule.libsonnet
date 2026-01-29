@@ -81,6 +81,9 @@ local forProvider = schedule.spec.parameters.forProvider;
         shift
         // Inject matching labels to identify Shifts as belonging to this Schedule.
         + raw.oncall.v1alpha1.onCallShift.spec.parameters.withSelectorLabel('schedule-%s' % self.claimName)
+        + (if std.objectHas(self.schedule.spec.parameters.forProvider, 'teamId')
+           then raw.oncall.v1alpha1.onCallShift.spec.parameters.forProvider.withTeamId(self.schedule.spec.parameters.forProvider.teamId)
+           else {})
         for shift in self.shifts
       ],
     },
@@ -91,6 +94,23 @@ local forProvider = schedule.spec.parameters.forProvider;
     ),
     withClaimName(claimName):: {
       claimName:: claimName,
+    },
+
+    '#withTeamId':: d.func.new(
+      |||
+        `withTeamId` configures the Team ID on the schedule and shifts.
+
+        Parameters:
+          - `teamId` should be the ID of the team as a string.
+      |||,
+      [
+        d.argument.new('teamId', d.T.string),
+      ]
+    ),
+    withTeamId(teamId):: {
+      // Constructor nests the resource beneath the `chain` key, so we wrap the
+      // raw function to do the same.
+      schedule+: forProvider.withTeamId(teamId),
     },
 
     '#withShifts':: d.func.new(
