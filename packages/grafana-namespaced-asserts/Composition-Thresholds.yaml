@@ -1,0 +1,74 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xthresholds.asserts.grafana.net.namespaced
+  name: thresholds-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: asserts.grafana.net.namespaced/v1alpha1
+    kind: XThresholds
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: asserts.grafana.crossplane.io/v1alpha1
+              kind: Thresholds
+            name: thresholds
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.selectorLabel
+                toFieldPath: "metadata.labels[\"selector\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.healthThresholds
+                toFieldPath: spec.forProvider.healthThresholds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.requestThresholds
+                toFieldPath: spec.forProvider.requestThresholds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.resourceThresholds
+                toFieldPath: spec.forProvider.resourceThresholds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.healthThresholds
+                toFieldPath: spec.initProvider.healthThresholds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.requestThresholds
+                toFieldPath: spec.initProvider.requestThresholds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.resourceThresholds
+                toFieldPath: spec.initProvider.resourceThresholds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform
+    - functionRef:
+        name: function-grafana-data
+      step: grafana-data

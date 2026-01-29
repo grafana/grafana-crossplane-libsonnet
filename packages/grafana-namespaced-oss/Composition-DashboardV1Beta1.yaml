@@ -32,23 +32,11 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.metadata
-                toFieldPath: spec.forProvider.metadata
-                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.options
                 toFieldPath: spec.forProvider.options
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.spec
-                toFieldPath: spec.forProvider.spec
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.metadata
-                toFieldPath: spec.initProvider.metadata
-                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.options
                 toFieldPath: spec.initProvider.options
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.spec
-                toFieldPath: spec.initProvider.spec
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies
@@ -61,27 +49,6 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
                 toFieldPath: spec.providerConfigRef.policy.resolve
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.name
-                toFieldPath: spec.publishConnectionDetailsTo.configRef.name
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolution
-                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolution
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.configRef.policy.resolve
-                toFieldPath: spec.publishConnectionDetailsTo.configRef.policy.resolve
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.annotations
-                toFieldPath: spec.publishConnectionDetailsTo.metadata.annotations
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.labels
-                toFieldPath: spec.publishConnectionDetailsTo.metadata.labels
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.metadata.type
-                toFieldPath: spec.publishConnectionDetailsTo.metadata.type
-                type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.publishConnectionDetailsTo.name
-                toFieldPath: spec.publishConnectionDetailsTo.name
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
                 toFieldPath: spec.writeConnectionSecretToRef.name

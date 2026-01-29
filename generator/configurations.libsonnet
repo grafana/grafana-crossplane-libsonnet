@@ -6,11 +6,7 @@ local xrds =
     (import './namespaced.libsonnet'),
   );
 
-local crds =
-  std.filter(
-    function(crd) crd.spec.group != 'grafana.crossplane.io',
-    std.parseYaml(importstr './crds.yaml'),
-  );
+local crds = import './crds.libsonnet';
 
 local gvkXRDs =
   std.flatMap(

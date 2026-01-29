@@ -75,7 +75,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The templated description of the Kafka message.
+(String) The templated description of the Jira issue. Maximum length is 32767 characters.
 A templated high-level description to use for the alert.
 ### fn withDisableResolveMessage
 

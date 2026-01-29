@@ -65,7 +65,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The templated description of the Kafka message.
+(String) The templated description of the Jira issue. Maximum length is 32767 characters.
 The templated description of the Kafka message.
 ### fn withDetails
 
@@ -102,7 +102,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The password to use when making a call to the Kafka REST Proxy
+(String, Sensitive) Password to use for Jira authentication.
 The password to use when making a call to the Kafka REST Proxy
 ### fn withPasswordSecretRefMixin
 
@@ -114,7 +114,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The password to use when making a call to the Kafka REST Proxy
+(String, Sensitive) Password to use for Jira authentication.
 The password to use when making a call to the Kafka REST Proxy
 ### fn withRestProxyUrlSecretRef
 

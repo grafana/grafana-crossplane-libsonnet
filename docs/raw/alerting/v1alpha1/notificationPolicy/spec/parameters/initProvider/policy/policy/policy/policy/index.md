@@ -6,6 +6,7 @@
 
 * [matcher](matcher.md)
 * [muteTimingRef](muteTimingRef.md)
+* [policy](policy/index.md)
 
 ## Index
 
@@ -29,6 +30,8 @@
 * [`fn withMuteTimingSelectorMixin(value)`](#fn-withmutetimingselectormixin)
 * [`fn withMuteTimings(value)`](#fn-withmutetimings)
 * [`fn withMuteTimingsMixin(value)`](#fn-withmutetimingsmixin)
+* [`fn withPolicy(value)`](#fn-withpolicy)
+* [`fn withPolicyMixin(value)`](#fn-withpolicymixin)
 * [`fn withRepeatInterval(value)`](#fn-withrepeatinterval)
 * [`obj contactPointRef`](#obj-contactpointref)
   * [`fn withName(value)`](#fn-contactpointrefwithname)
@@ -291,6 +294,30 @@ PARAMETERS:
 
 (List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
 A list of time intervals to apply to alerts that match this policy to mute them for the specified time.
+### fn withPolicy
+
+```jsonnet
+withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) Routing rules for specific label sets. (see below for nested schema)
+Routing rules for specific label sets.
+### fn withPolicyMixin
+
+```jsonnet
+withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) Routing rules for specific label sets. (see below for nested schema)
+Routing rules for specific label sets.
 ### fn withRepeatInterval
 
 ```jsonnet

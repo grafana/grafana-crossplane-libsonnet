@@ -1801,6 +1801,116 @@
                            then value
                            else [value]),
                       },
+                      '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Routing rules for specific label sets. (see below for nested schema)\nRouting rules for specific label sets.' } },
+                      withPolicy(value): {
+                        policy:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
+                      '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Routing rules for specific label sets. (see below for nested schema)\nRouting rules for specific label sets.' } },
+                      withPolicyMixin(value): {
+                        policy+:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
+                      policy+:
+                        {
+                          '#': { help: '', name: 'policy' },
+                          '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                          withActiveTimings(value): {
+                            activeTimings:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                          withActiveTimingsMixin(value): {
+                            activeTimings+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
+                          withContactPoint(value): {
+                            contactPoint: value,
+                          },
+                          '#withContinue': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: "(Boolean) Whether to continue matching subsequent rules if an alert matches the current rule. Otherwise, the rule will be 'consumed' by the first policy to match it.\nWhether to continue matching subsequent rules if an alert matches the current rule. Otherwise, the rule will be 'consumed' by the first policy to match it." } },
+                          withContinue(value=true): {
+                            continue: value,
+                          },
+                          '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of alert labels to group alerts into notifications by. Use the special label ... to group alerts by all labels, effectively disabling grouping.\nA list of alert labels to group alerts into notifications by. Use the special label `...` to group alerts by all labels, effectively disabling grouping. Required for root policy only. If empty, the parent grouping is used.' } },
+                          withGroupBy(value): {
+                            groupBy:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of alert labels to group alerts into notifications by. Use the special label ... to group alerts by all labels, effectively disabling grouping.\nA list of alert labels to group alerts into notifications by. Use the special label `...` to group alerts by all labels, effectively disabling grouping. Required for root policy only. If empty, the parent grouping is used.' } },
+                          withGroupByMixin(value): {
+                            groupBy+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Minimum time interval between two notifications for the same group. Default is 5 minutes.\nMinimum time interval between two notifications for the same group. Default is 5 minutes.' } },
+                          withGroupInterval(value): {
+                            groupInterval: value,
+                          },
+                          '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Time to wait to buffer alerts of the same group before sending a notification. Default is 30 seconds.\nTime to wait to buffer alerts of the same group before sending a notification. Default is 30 seconds.' } },
+                          withGroupWait(value): {
+                            groupWait: value,
+                          },
+                          '#withMatcher': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Describes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances. (see below for nested schema)\nDescribes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances.' } },
+                          withMatcher(value): {
+                            matcher:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withMatcherMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Describes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances. (see below for nested schema)\nDescribes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances.' } },
+                          withMatcherMixin(value): {
+                            matcher+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          matcher+:
+                            {
+                              '#': { help: '', name: 'matcher' },
+                              '#withLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the label to match against.\nThe name of the label to match against.' } },
+                              withLabel(value): {
+                                label: value,
+                              },
+                              '#withMatch': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The operator to apply when matching values of the given label. Allowed operators are = for equality, != for negated equality, =~ for regex equality, and !~ for negated regex equality.\nThe operator to apply when matching values of the given label. Allowed operators are `=` for equality, `!=` for negated equality, `=~` for regex equality, and `!~` for negated regex equality.' } },
+                              withMatch(value): {
+                                match: value,
+                              },
+                              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The label value to match against.\nThe label value to match against.' } },
+                              withValue(value): {
+                                value: value,
+                              },
+                            },
+                          '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
+                          withMuteTimings(value): {
+                            muteTimings:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
+                          withMuteTimingsMixin(value): {
+                            muteTimings+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing. Default is 4 hours.\nMinimum time interval for re-sending a notification if an alert is still firing. Default is 4 hours.' } },
+                          withRepeatInterval(value): {
+                            repeatInterval: value,
+                          },
+                        },
                       '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing. Default is 4 hours.\nMinimum time interval for re-sending a notification if an alert is still firing. Default is 4 hours.' } },
                       withRepeatInterval(value): {
                         repeatInterval: value,
@@ -3618,6 +3728,116 @@
                            then value
                            else [value]),
                       },
+                      '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Routing rules for specific label sets. (see below for nested schema)\nRouting rules for specific label sets.' } },
+                      withPolicy(value): {
+                        policy:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
+                      '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Routing rules for specific label sets. (see below for nested schema)\nRouting rules for specific label sets.' } },
+                      withPolicyMixin(value): {
+                        policy+:
+                          (if std.isArray(value)
+                           then value
+                           else [value]),
+                      },
+                      policy+:
+                        {
+                          '#': { help: '', name: 'policy' },
+                          '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                          withActiveTimings(value): {
+                            activeTimings:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time. Supported in Grafana 12.1.0 and later' } },
+                          withActiveTimingsMixin(value): {
+                            activeTimings+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default contact point to route all unmatched notifications to.\nThe contact point to route notifications that match this rule to.' } },
+                          withContactPoint(value): {
+                            contactPoint: value,
+                          },
+                          '#withContinue': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: "(Boolean) Whether to continue matching subsequent rules if an alert matches the current rule. Otherwise, the rule will be 'consumed' by the first policy to match it.\nWhether to continue matching subsequent rules if an alert matches the current rule. Otherwise, the rule will be 'consumed' by the first policy to match it." } },
+                          withContinue(value=true): {
+                            continue: value,
+                          },
+                          '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of alert labels to group alerts into notifications by. Use the special label ... to group alerts by all labels, effectively disabling grouping.\nA list of alert labels to group alerts into notifications by. Use the special label `...` to group alerts by all labels, effectively disabling grouping. Required for root policy only. If empty, the parent grouping is used.' } },
+                          withGroupBy(value): {
+                            groupBy:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of alert labels to group alerts into notifications by. Use the special label ... to group alerts by all labels, effectively disabling grouping.\nA list of alert labels to group alerts into notifications by. Use the special label `...` to group alerts by all labels, effectively disabling grouping. Required for root policy only. If empty, the parent grouping is used.' } },
+                          withGroupByMixin(value): {
+                            groupBy+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Minimum time interval between two notifications for the same group. Default is 5 minutes.\nMinimum time interval between two notifications for the same group. Default is 5 minutes.' } },
+                          withGroupInterval(value): {
+                            groupInterval: value,
+                          },
+                          '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Time to wait to buffer alerts of the same group before sending a notification. Default is 30 seconds.\nTime to wait to buffer alerts of the same group before sending a notification. Default is 30 seconds.' } },
+                          withGroupWait(value): {
+                            groupWait: value,
+                          },
+                          '#withMatcher': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Describes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances. (see below for nested schema)\nDescribes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances.' } },
+                          withMatcher(value): {
+                            matcher:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withMatcherMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) Describes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances. (see below for nested schema)\nDescribes which labels this rule should match. When multiple matchers are supplied, an alert must match ALL matchers to be accepted by this policy. When no matchers are supplied, the rule will match all alert instances.' } },
+                          withMatcherMixin(value): {
+                            matcher+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          matcher+:
+                            {
+                              '#': { help: '', name: 'matcher' },
+                              '#withLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the label to match against.\nThe name of the label to match against.' } },
+                              withLabel(value): {
+                                label: value,
+                              },
+                              '#withMatch': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The operator to apply when matching values of the given label. Allowed operators are = for equality, != for negated equality, =~ for regex equality, and !~ for negated regex equality.\nThe operator to apply when matching values of the given label. Allowed operators are `=` for equality, `!=` for negated equality, `=~` for regex equality, and `!~` for negated regex equality.' } },
+                              withMatch(value): {
+                                match: value,
+                              },
+                              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The label value to match against.\nThe label value to match against.' } },
+                              withValue(value): {
+                                value: value,
+                              },
+                            },
+                          '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
+                          withMuteTimings(value): {
+                            muteTimings:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) A list of time intervals to apply to alerts that match this policy to mute them for the specified time.\nA list of time intervals to apply to alerts that match this policy to mute them for the specified time.' } },
+                          withMuteTimingsMixin(value): {
+                            muteTimings+:
+                              (if std.isArray(value)
+                               then value
+                               else [value]),
+                          },
+                          '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing. Default is 4 hours.\nMinimum time interval for re-sending a notification if an alert is still firing. Default is 4 hours.' } },
+                          withRepeatInterval(value): {
+                            repeatInterval: value,
+                          },
+                        },
                       '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing. Default is 4 hours.\nMinimum time interval for re-sending a notification if an alert is still firing. Default is 4 hours.' } },
                       withRepeatInterval(value): {
                         repeatInterval: value,
@@ -3747,208 +3967,6 @@
           },
         },
     },
-  '#withPublishConnectionDetailsTo': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'PublishConnectionDetailsTo specifies the connection secret config which\ncontains a name, metadata and a reference to secret store config to\nwhich any connection details for this managed resource should be written.\nConnection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
-  withPublishConnectionDetailsTo(value): {
-    spec+: {
-      parameters+: {
-        publishConnectionDetailsTo: value,
-      },
-    },
-  },
-  '#withPublishConnectionDetailsToMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'PublishConnectionDetailsTo specifies the connection secret config which\ncontains a name, metadata and a reference to secret store config to\nwhich any connection details for this managed resource should be written.\nConnection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
-  withPublishConnectionDetailsToMixin(value): {
-    spec+: {
-      parameters+: {
-        publishConnectionDetailsTo+: value,
-      },
-    },
-  },
-  publishConnectionDetailsTo+:
-    {
-      '#withConfigRef': { 'function': { args: [{ default: { name: 'default' }, enums: null, name: 'value', type: ['object'] }], help: 'SecretStoreConfigRef specifies which secret store config should be used\nfor this ConnectionSecret.' } },
-      withConfigRef(value={ name: 'default' }): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              configRef: value,
-            },
-          },
-        },
-      },
-      '#withConfigRefMixin': { 'function': { args: [{ default: { name: 'default' }, enums: null, name: 'value', type: ['object'] }], help: 'SecretStoreConfigRef specifies which secret store config should be used\nfor this ConnectionSecret.' } },
-      withConfigRefMixin(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              configRef+: value,
-            },
-          },
-        },
-      },
-      configRef+:
-        {
-          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
-          withName(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    name: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
-          withPolicy(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    policy: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
-          withPolicyMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  configRef+: {
-                    policy+: value,
-                  },
-                },
-              },
-            },
-          },
-          policy+:
-            {
-              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
-              withResolution(value='Required'): {
-                spec+: {
-                  parameters+: {
-                    publishConnectionDetailsTo+: {
-                      configRef+: {
-                        policy+: {
-                          resolution: value,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
-              withResolve(value): {
-                spec+: {
-                  parameters+: {
-                    publishConnectionDetailsTo+: {
-                      configRef+: {
-                        policy+: {
-                          resolve: value,
-                        },
-                      },
-                    },
-                  },
-                },
-              },
-            },
-        },
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Metadata is the metadata for connection secret.' } },
-      withMetadata(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              metadata: value,
-            },
-          },
-        },
-      },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Metadata is the metadata for connection secret.' } },
-      withMetadataMixin(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              metadata+: value,
-            },
-          },
-        },
-      },
-      metadata+:
-        {
-          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Annotations are the annotations to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.annotations".\n- It is up to Secret Store implementation for others store types.' } },
-          withAnnotations(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    annotations: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Annotations are the annotations to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.annotations".\n- It is up to Secret Store implementation for others store types.' } },
-          withAnnotationsMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    annotations+: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Labels are the labels/tags to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.labels".\n- It is up to Secret Store implementation for others store types.' } },
-          withLabels(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    labels: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Labels are the labels/tags to be added to connection secret.\n- For Kubernetes secrets, this will be used as "metadata.labels".\n- It is up to Secret Store implementation for others store types.' } },
-          withLabelsMixin(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    labels+: value,
-                  },
-                },
-              },
-            },
-          },
-          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Type is the SecretType for the connection secret.\n- Only valid for Kubernetes Secret Stores.' } },
-          withType(value): {
-            spec+: {
-              parameters+: {
-                publishConnectionDetailsTo+: {
-                  metadata+: {
-                    type: value,
-                  },
-                },
-              },
-            },
-          },
-        },
-      '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name is the name of the connection secret.' } },
-      withName(value): {
-        spec+: {
-          parameters+: {
-            publishConnectionDetailsTo+: {
-              name: value,
-            },
-          },
-        },
-      },
-    },
   '#withSelectorLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Configure a custom label for use with selector.matchLabels.' } },
   withSelectorLabel(value): {
     spec+: {
@@ -3957,7 +3975,7 @@
       },
     },
   },
-  '#withWriteConnectionSecretToRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.\nThis field is planned to be replaced in a future release in favor of\nPublishConnectionDetailsTo. Currently, both could be set independently\nand connection details would be published to both without affecting\neach other.' } },
+  '#withWriteConnectionSecretToRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
   withWriteConnectionSecretToRef(value): {
     spec+: {
       parameters+: {
@@ -3965,7 +3983,7 @@
       },
     },
   },
-  '#withWriteConnectionSecretToRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.\nThis field is planned to be replaced in a future release in favor of\nPublishConnectionDetailsTo. Currently, both could be set independently\nand connection details would be published to both without affecting\neach other.' } },
+  '#withWriteConnectionSecretToRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'WriteConnectionSecretToReference specifies the namespace and name of a\nSecret to which any connection details for this managed resource should\nbe written. Connection details frequently include the endpoint, username,\nand password required to connect to the managed resource.' } },
   withWriteConnectionSecretToRefMixin(value): {
     spec+: {
       parameters+: {

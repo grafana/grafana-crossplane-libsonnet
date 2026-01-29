@@ -32,7 +32,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The URL to send webhook requests to.
+(String) The URL of the Jira REST API (v2 or v3).
 The URL to send webhook requests to.
 ### fn withDisableResolveMessage
 

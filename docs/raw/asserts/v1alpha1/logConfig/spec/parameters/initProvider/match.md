@@ -21,8 +21,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
-Operation to use for matching. One of: EQUALS, NOT_EQUALS, CONTAINS, DOES_NOT_CONTAIN, IS_NULL, IS_NOT_NULL.
+(String) Operation to use for matching. One of: =, <>, <, >, <=, >=, IS NULL, IS NOT NULL, STARTS WITH, CONTAINS.
+Operation to use for matching. One of: =, <>, <, >, <=, >=, IS NULL, IS NOT NULL, STARTS WITH, CONTAINS.
 ### fn withProperty
 
 ```jsonnet

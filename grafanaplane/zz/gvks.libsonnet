@@ -9,6 +9,12 @@
       },
       {
         group: 'alerting.grafana.crossplane.io',
+        kind: 'AlertruleV0Alpha1',
+        plural: 'alertrulev0alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.crossplane.io',
         kind: 'ContactPoint',
         plural: 'contactpoints',
         version: 'v1alpha1',
@@ -29,6 +35,12 @@
         group: 'alerting.grafana.crossplane.io',
         kind: 'NotificationPolicy',
         plural: 'notificationpolicies',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.crossplane.io',
+        kind: 'RecordingruleV0Alpha1',
+        plural: 'recordingrulev0alpha1s',
         version: 'v1alpha1',
       },
       {
@@ -47,6 +59,12 @@
       },
       {
         group: 'alerting.grafana.net.namespaced',
+        kind: 'AlertruleV0Alpha1',
+        plural: 'alertrulev0alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.net.namespaced',
         kind: 'ContactPoint',
         plural: 'contactpoints',
         version: 'v1alpha1',
@@ -67,6 +85,12 @@
         group: 'alerting.grafana.net.namespaced',
         kind: 'NotificationPolicy',
         plural: 'notificationpolicies',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.net.namespaced',
+        kind: 'RecordingruleV0Alpha1',
+        plural: 'recordingrulev0alpha1s',
         version: 'v1alpha1',
       },
       {
@@ -103,6 +127,12 @@
         plural: 'suppressedassertionsconfigs',
         version: 'v1alpha1',
       },
+      {
+        group: 'asserts.grafana.crossplane.io',
+        kind: 'Thresholds',
+        plural: 'thresholds',
+        version: 'v1alpha1',
+      },
     ],
     xrd: [
       {
@@ -129,6 +159,12 @@
         plural: 'suppressedassertionsconfigs',
         version: 'v1alpha1',
       },
+      {
+        group: 'asserts.grafana.net.namespaced',
+        kind: 'Thresholds',
+        plural: 'thresholds',
+        version: 'v1alpha1',
+      },
     ],
   },
   cloud: {
@@ -137,6 +173,12 @@
         group: 'cloud.grafana.crossplane.io',
         kind: 'AccessPolicy',
         plural: 'accesspolicies',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
+        kind: 'AccessPolicyRotatingToken',
+        plural: 'accesspolicyrotatingtokens',
         version: 'v1alpha1',
       },
       {
@@ -189,6 +231,12 @@
       },
       {
         group: 'cloud.grafana.crossplane.io',
+        kind: 'StackServiceAccountRotatingToken',
+        plural: 'stackserviceaccountrotatingtokens',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
         kind: 'StackServiceAccount',
         plural: 'stackserviceaccounts',
         version: 'v1alpha1',
@@ -205,6 +253,12 @@
         group: 'cloud.grafana.net.namespaced',
         kind: 'AccessPolicy',
         plural: 'accesspolicies',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.net.namespaced',
+        kind: 'AccessPolicyRotatingToken',
+        plural: 'accesspolicyrotatingtokens',
         version: 'v1alpha1',
       },
       {
@@ -247,6 +301,12 @@
         group: 'cloud.grafana.net.namespaced',
         kind: 'Stack',
         plural: 'stacks',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.net.namespaced',
+        kind: 'StackServiceAccountRotatingToken',
+        plural: 'stackserviceaccountrotatingtokens',
         version: 'v1alpha1',
       },
       {
@@ -837,6 +897,12 @@
       },
       {
         group: 'oss.grafana.crossplane.io',
+        kind: 'ServiceAccountRotatingToken',
+        plural: 'serviceaccountrotatingtokens',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
         kind: 'ServiceAccount',
         plural: 'serviceaccounts',
         version: 'v1alpha1',
@@ -973,6 +1039,12 @@
         group: 'oss.grafana.net.namespaced',
         kind: 'ServiceAccountPermission',
         plural: 'serviceaccountpermissions',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'ServiceAccountRotatingToken',
+        plural: 'serviceaccountrotatingtokens',
         version: 'v1alpha1',
       },
       {
