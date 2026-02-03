@@ -854,8 +854,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m').
-Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m').
+(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
+Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
 ###### fn spec.parameters.forProvider.withExpireAfter
 
 ```jsonnet
@@ -866,8 +866,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m').
-Duration after which the token will expire (e.g. '24h', '30m', '1h30m').
+(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
+Duration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
 ###### fn spec.parameters.forProvider.withNamePrefix
 
 ```jsonnet
@@ -941,8 +941,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m').
-Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m').
+(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
+Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
 ###### fn spec.parameters.initProvider.withExpireAfter
 
 ```jsonnet
@@ -953,8 +953,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m').
-Duration after which the token will expire (e.g. '24h', '30m', '1h30m').
+(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
+Duration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).
 ###### fn spec.parameters.initProvider.withNamePrefix
 
 ```jsonnet

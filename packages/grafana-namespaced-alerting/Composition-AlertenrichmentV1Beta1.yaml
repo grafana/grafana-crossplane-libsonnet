@@ -32,11 +32,71 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.metadata.folderUid
+                toFieldPath: spec.forProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.metadata.uid
+                toFieldPath: spec.forProvider.metadata.uid
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.options.overwrite
                 toFieldPath: spec.forProvider.options.overwrite
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.alertRuleUids
+                toFieldPath: spec.forProvider.spec.alertRuleUids
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.annotationMatchers
+                toFieldPath: spec.forProvider.spec.annotationMatchers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.description
+                toFieldPath: spec.forProvider.spec.description
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.disableProvenance
+                toFieldPath: spec.forProvider.spec.disableProvenance
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.labelMatchers
+                toFieldPath: spec.forProvider.spec.labelMatchers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.receivers
+                toFieldPath: spec.forProvider.spec.receivers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.step
+                toFieldPath: spec.forProvider.spec.step
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.title
+                toFieldPath: spec.forProvider.spec.title
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.folderUid
+                toFieldPath: spec.initProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.uid
+                toFieldPath: spec.initProvider.metadata.uid
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.options.overwrite
                 toFieldPath: spec.initProvider.options.overwrite
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.alertRuleUids
+                toFieldPath: spec.initProvider.spec.alertRuleUids
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.annotationMatchers
+                toFieldPath: spec.initProvider.spec.annotationMatchers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.description
+                toFieldPath: spec.initProvider.spec.description
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.disableProvenance
+                toFieldPath: spec.initProvider.spec.disableProvenance
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.labelMatchers
+                toFieldPath: spec.initProvider.spec.labelMatchers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.receivers
+                toFieldPath: spec.initProvider.spec.receivers
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.step
+                toFieldPath: spec.initProvider.spec.step
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.title
+                toFieldPath: spec.initProvider.spec.title
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

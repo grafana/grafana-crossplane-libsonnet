@@ -32,11 +32,23 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.metadata
+                toFieldPath: spec.forProvider.metadata
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.options
                 toFieldPath: spec.forProvider.options
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec
+                toFieldPath: spec.forProvider.spec
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata
+                toFieldPath: spec.initProvider.metadata
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.options
                 toFieldPath: spec.initProvider.options
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec
+                toFieldPath: spec.initProvider.spec
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

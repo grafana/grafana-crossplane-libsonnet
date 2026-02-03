@@ -123,6 +123,18 @@
       },
       {
         group: 'asserts.grafana.crossplane.io',
+        kind: 'ProfileConfig',
+        plural: 'profileconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.crossplane.io',
+        kind: 'PromRuleFile',
+        plural: 'promrulefiles',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.crossplane.io',
         kind: 'SuppressedAssertionsConfig',
         plural: 'suppressedassertionsconfigs',
         version: 'v1alpha1',
@@ -131,6 +143,12 @@
         group: 'asserts.grafana.crossplane.io',
         kind: 'Thresholds',
         plural: 'thresholds',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.crossplane.io',
+        kind: 'TraceConfig',
+        plural: 'traceconfigs',
         version: 'v1alpha1',
       },
     ],
@@ -155,6 +173,18 @@
       },
       {
         group: 'asserts.grafana.net.namespaced',
+        kind: 'ProfileConfig',
+        plural: 'profileconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.net.namespaced',
+        kind: 'PromRuleFile',
+        plural: 'promrulefiles',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.net.namespaced',
         kind: 'SuppressedAssertionsConfig',
         plural: 'suppressedassertionsconfigs',
         version: 'v1alpha1',
@@ -163,6 +193,12 @@
         group: 'asserts.grafana.net.namespaced',
         kind: 'Thresholds',
         plural: 'thresholds',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.net.namespaced',
+        kind: 'TraceConfig',
+        plural: 'traceconfigs',
         version: 'v1alpha1',
       },
     ],

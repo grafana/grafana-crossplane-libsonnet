@@ -1,0 +1,92 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xtraceconfigs.asserts.grafana.net.namespaced
+  name: traceconfig-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: asserts.grafana.net.namespaced/v1alpha1
+    kind: XTraceConfig
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: asserts.grafana.crossplane.io/v1alpha1
+              kind: TraceConfig
+            name: traceconfig
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.selectorLabel
+                toFieldPath: "metadata.labels[\"selector\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.dataSourceUid
+                toFieldPath: spec.forProvider.dataSourceUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.defaultConfig
+                toFieldPath: spec.forProvider.defaultConfig
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.entityPropertyToTraceLabelMapping
+                toFieldPath: spec.forProvider.entityPropertyToTraceLabelMapping
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.match
+                toFieldPath: spec.forProvider.match
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.name
+                toFieldPath: spec.forProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.priority
+                toFieldPath: spec.forProvider.priority
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.dataSourceUid
+                toFieldPath: spec.initProvider.dataSourceUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.defaultConfig
+                toFieldPath: spec.initProvider.defaultConfig
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.entityPropertyToTraceLabelMapping
+                toFieldPath: spec.initProvider.entityPropertyToTraceLabelMapping
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.match
+                toFieldPath: spec.initProvider.match
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.name
+                toFieldPath: spec.initProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.priority
+                toFieldPath: spec.initProvider.priority
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform
+    - functionRef:
+        name: function-grafana-data
+      step: grafana-data

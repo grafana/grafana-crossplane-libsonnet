@@ -33,7 +33,17 @@
   },
   forProvider+:
     {
-      '#withContents': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Configuration contents of the pipeline to be used by collectors\nConfiguration contents of the pipeline to be used by collectors' } },
+      '#withConfigType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.\nType of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.' } },
+      withConfigType(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              configType: value,
+            },
+          },
+        },
+      },
+      '#withContents': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)\nConfiguration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)' } },
       withContents(value): {
         spec+: {
           parameters+: {
@@ -108,7 +118,17 @@
   },
   initProvider+:
     {
-      '#withContents': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Configuration contents of the pipeline to be used by collectors\nConfiguration contents of the pipeline to be used by collectors' } },
+      '#withConfigType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.\nType of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.' } },
+      withConfigType(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              configType: value,
+            },
+          },
+        },
+      },
+      '#withContents': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)\nConfiguration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)' } },
       withContents(value): {
         spec+: {
           parameters+: {

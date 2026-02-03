@@ -63,7 +63,7 @@
           },
         },
       },
-      '#withEarlyRotationWindow': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m').\nDuration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m')." } },
+      '#withEarlyRotationWindow': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).\nDuration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours)." } },
       withEarlyRotationWindow(value): {
         spec+: {
           parameters+: {
@@ -73,7 +73,7 @@
           },
         },
       },
-      '#withExpireAfter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m').\nDuration after which the token will expire (e.g. '24h', '30m', '1h30m')." } },
+      '#withExpireAfter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).\nDuration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours)." } },
       withExpireAfter(value): {
         spec+: {
           parameters+: {
@@ -152,7 +152,7 @@
           },
         },
       },
-      '#withEarlyRotationWindow': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m').\nDuration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m')." } },
+      '#withEarlyRotationWindow': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).\nDuration of the window before expiring where the token can be rotated (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours)." } },
       withEarlyRotationWindow(value): {
         spec+: {
           parameters+: {
@@ -162,7 +162,7 @@
           },
         },
       },
-      '#withExpireAfter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m').\nDuration after which the token will expire (e.g. '24h', '30m', '1h30m')." } },
+      '#withExpireAfter': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Duration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours).\nDuration after which the token will expire (e.g. '24h', '30m', '1h30m'). Valid units are 's' (seconds), 'm' (minutes) and 'h' (hours)." } },
       withExpireAfter(value): {
         spec+: {
           parameters+: {
