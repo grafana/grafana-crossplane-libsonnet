@@ -67,10 +67,12 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withCollectorType(value)`](#fn-specparametersforproviderwithcollectortype)
       * [`fn withEnabled(value=true)`](#fn-specparametersforproviderwithenabled)
       * [`fn withRemoteAttributes(value)`](#fn-specparametersforproviderwithremoteattributes)
       * [`fn withRemoteAttributesMixin(value)`](#fn-specparametersforproviderwithremoteattributesmixin)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withCollectorType(value)`](#fn-specparametersinitproviderwithcollectortype)
       * [`fn withEnabled(value=true)`](#fn-specparametersinitproviderwithenabled)
       * [`fn withRemoteAttributes(value)`](#fn-specparametersinitproviderwithremoteattributes)
       * [`fn withRemoteAttributesMixin(value)`](#fn-specparametersinitproviderwithremoteattributesmixin)
@@ -800,6 +802,18 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withCollectorType
+
+```jsonnet
+spec.parameters.forProvider.withCollectorType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
 ###### fn spec.parameters.forProvider.withEnabled
 
 ```jsonnet
@@ -840,6 +854,18 @@ Remote attributes for the collector
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withCollectorType
+
+```jsonnet
+spec.parameters.initProvider.withCollectorType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
 ###### fn spec.parameters.initProvider.withEnabled
 
 ```jsonnet

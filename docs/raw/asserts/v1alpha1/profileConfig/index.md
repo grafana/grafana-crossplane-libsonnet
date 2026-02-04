@@ -1,6 +1,11 @@
-# alertenrichmentV1Beta1
+# profileConfig
 
 
+
+## Subpackages
+
+* [spec.parameters.forProvider.match](spec/parameters/forProvider/match.md)
+* [spec.parameters.initProvider.match](spec/parameters/initProvider/match.md)
 
 ## Index
 
@@ -67,15 +72,23 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
-      * [`fn withOptions(value)`](#fn-specparametersforproviderwithoptions)
-      * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
-      * [`obj options`](#obj-specparametersforprovideroptions)
-        * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
+      * [`fn withDataSourceUid(value)`](#fn-specparametersforproviderwithdatasourceuid)
+      * [`fn withDefaultConfig(value=true)`](#fn-specparametersforproviderwithdefaultconfig)
+      * [`fn withEntityPropertyToProfileLabelMapping(value)`](#fn-specparametersforproviderwithentitypropertytoprofilelabelmapping)
+      * [`fn withEntityPropertyToProfileLabelMappingMixin(value)`](#fn-specparametersforproviderwithentitypropertytoprofilelabelmappingmixin)
+      * [`fn withMatch(value)`](#fn-specparametersforproviderwithmatch)
+      * [`fn withMatchMixin(value)`](#fn-specparametersforproviderwithmatchmixin)
+      * [`fn withName(value)`](#fn-specparametersforproviderwithname)
+      * [`fn withPriority(value)`](#fn-specparametersforproviderwithpriority)
     * [`obj initProvider`](#obj-specparametersinitprovider)
-      * [`fn withOptions(value)`](#fn-specparametersinitproviderwithoptions)
-      * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
-      * [`obj options`](#obj-specparametersinitprovideroptions)
-        * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
+      * [`fn withDataSourceUid(value)`](#fn-specparametersinitproviderwithdatasourceuid)
+      * [`fn withDefaultConfig(value=true)`](#fn-specparametersinitproviderwithdefaultconfig)
+      * [`fn withEntityPropertyToProfileLabelMapping(value)`](#fn-specparametersinitproviderwithentitypropertytoprofilelabelmapping)
+      * [`fn withEntityPropertyToProfileLabelMappingMixin(value)`](#fn-specparametersinitproviderwithentitypropertytoprofilelabelmappingmixin)
+      * [`fn withMatch(value)`](#fn-specparametersinitproviderwithmatch)
+      * [`fn withMatchMixin(value)`](#fn-specparametersinitproviderwithmatchmixin)
+      * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
+      * [`fn withPriority(value)`](#fn-specparametersinitproviderwithpriority)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -504,7 +517,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-AlertenrichmentV1Beta1Spec defines the desired state of AlertenrichmentV1Beta1
+ProfileConfigSpec defines the desired state of ProfileConfig
 #### fn spec.withParametersMixin
 
 ```jsonnet
@@ -515,7 +528,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-AlertenrichmentV1Beta1Spec defines the desired state of AlertenrichmentV1Beta1
+ProfileConfigSpec defines the desired state of ProfileConfig
 #### fn spec.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -802,37 +815,22 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
-###### fn spec.parameters.forProvider.withOptions
+###### fn spec.parameters.forProvider.withDataSourceUid
 
 ```jsonnet
-spec.parameters.forProvider.withOptions(value)
+spec.parameters.forProvider.withDataSourceUid(value)
 ```
 
 PARAMETERS:
 
-* **value** (`object`)
+* **value** (`string`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### fn spec.parameters.forProvider.withOptionsMixin
-
-```jsonnet
-spec.parameters.forProvider.withOptionsMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### obj spec.parameters.forProvider.options
-
-
-####### fn spec.parameters.forProvider.options.withOverwrite
+(String) DataSource to be queried (e.g., a Pyroscope instance).
+DataSource to be queried (e.g., a Pyroscope instance).
+###### fn spec.parameters.forProvider.withDefaultConfig
 
 ```jsonnet
-spec.parameters.forProvider.options.withOverwrite(value=true)
+spec.parameters.forProvider.withDefaultConfig(value=true)
 ```
 
 PARAMETERS:
@@ -840,42 +838,99 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
-Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+(Boolean) Is it the default config, therefore undeletable?
+Is it the default config, therefore undeletable?
+###### fn spec.parameters.forProvider.withEntityPropertyToProfileLabelMapping
+
+```jsonnet
+spec.parameters.forProvider.withEntityPropertyToProfileLabelMapping(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) Mapping of entity properties to profile labels.
+Mapping of entity properties to profile labels.
+###### fn spec.parameters.forProvider.withEntityPropertyToProfileLabelMappingMixin
+
+```jsonnet
+spec.parameters.forProvider.withEntityPropertyToProfileLabelMappingMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) Mapping of entity properties to profile labels.
+Mapping of entity properties to profile labels.
+###### fn spec.parameters.forProvider.withMatch
+
+```jsonnet
+spec.parameters.forProvider.withMatch(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) List of match rules for entity properties. (see below for nested schema)
+List of match rules for entity properties.
+###### fn spec.parameters.forProvider.withMatchMixin
+
+```jsonnet
+spec.parameters.forProvider.withMatchMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) List of match rules for entity properties. (see below for nested schema)
+List of match rules for entity properties.
+###### fn spec.parameters.forProvider.withName
+
+```jsonnet
+spec.parameters.forProvider.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of the profile configuration.
+The name of the profile configuration.
+###### fn spec.parameters.forProvider.withPriority
+
+```jsonnet
+spec.parameters.forProvider.withPriority(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) Priority of the profile configuration. A lower number means a higher priority.
+Priority of the profile configuration. A lower number means a higher priority.
 ##### obj spec.parameters.initProvider
 
 
-###### fn spec.parameters.initProvider.withOptions
+###### fn spec.parameters.initProvider.withDataSourceUid
 
 ```jsonnet
-spec.parameters.initProvider.withOptions(value)
+spec.parameters.initProvider.withDataSourceUid(value)
 ```
 
 PARAMETERS:
 
-* **value** (`object`)
+* **value** (`string`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### fn spec.parameters.initProvider.withOptionsMixin
-
-```jsonnet
-spec.parameters.initProvider.withOptionsMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`object`)
-
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### obj spec.parameters.initProvider.options
-
-
-####### fn spec.parameters.initProvider.options.withOverwrite
+(String) DataSource to be queried (e.g., a Pyroscope instance).
+DataSource to be queried (e.g., a Pyroscope instance).
+###### fn spec.parameters.initProvider.withDefaultConfig
 
 ```jsonnet
-spec.parameters.initProvider.options.withOverwrite(value=true)
+spec.parameters.initProvider.withDefaultConfig(value=true)
 ```
 
 PARAMETERS:
@@ -883,8 +938,80 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
-Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+(Boolean) Is it the default config, therefore undeletable?
+Is it the default config, therefore undeletable?
+###### fn spec.parameters.initProvider.withEntityPropertyToProfileLabelMapping
+
+```jsonnet
+spec.parameters.initProvider.withEntityPropertyToProfileLabelMapping(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) Mapping of entity properties to profile labels.
+Mapping of entity properties to profile labels.
+###### fn spec.parameters.initProvider.withEntityPropertyToProfileLabelMappingMixin
+
+```jsonnet
+spec.parameters.initProvider.withEntityPropertyToProfileLabelMappingMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Map of String) Mapping of entity properties to profile labels.
+Mapping of entity properties to profile labels.
+###### fn spec.parameters.initProvider.withMatch
+
+```jsonnet
+spec.parameters.initProvider.withMatch(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) List of match rules for entity properties. (see below for nested schema)
+List of match rules for entity properties.
+###### fn spec.parameters.initProvider.withMatchMixin
+
+```jsonnet
+spec.parameters.initProvider.withMatchMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(Block List) List of match rules for entity properties. (see below for nested schema)
+List of match rules for entity properties.
+###### fn spec.parameters.initProvider.withName
+
+```jsonnet
+spec.parameters.initProvider.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of the profile configuration.
+The name of the profile configuration.
+###### fn spec.parameters.initProvider.withPriority
+
+```jsonnet
+spec.parameters.initProvider.withPriority(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+(Number) Priority of the profile configuration. A lower number means a higher priority.
+Priority of the profile configuration. A lower number means a higher priority.
 ##### obj spec.parameters.providerConfigRef
 
 

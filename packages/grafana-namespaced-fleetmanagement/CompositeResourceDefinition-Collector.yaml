@@ -54,6 +54,11 @@ spec:
                       type: string
                     forProvider:
                       properties:
+                        collectorType:
+                          description: |-
+                            (String) Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                            Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                          type: string
                         enabled:
                           description: |-
                             (Boolean) Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service
@@ -81,6 +86,11 @@ spec:
                         for example because of an external controller is managing them, like an
                         autoscaler.
                       properties:
+                        collectorType:
+                          description: |-
+                            (String) Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                            Type of the collector. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                          type: string
                         enabled:
                           description: |-
                             (Boolean) Whether remote configuration for the collector is enabled or not. If the collector is disabled, it will receive empty configurations from the Fleet Management service

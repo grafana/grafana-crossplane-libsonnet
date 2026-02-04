@@ -67,12 +67,14 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withConfigType(value)`](#fn-specparametersforproviderwithconfigtype)
       * [`fn withContents(value)`](#fn-specparametersforproviderwithcontents)
       * [`fn withEnabled(value=true)`](#fn-specparametersforproviderwithenabled)
       * [`fn withMatchers(value)`](#fn-specparametersforproviderwithmatchers)
       * [`fn withMatchersMixin(value)`](#fn-specparametersforproviderwithmatchersmixin)
       * [`fn withName(value)`](#fn-specparametersforproviderwithname)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withConfigType(value)`](#fn-specparametersinitproviderwithconfigtype)
       * [`fn withContents(value)`](#fn-specparametersinitproviderwithcontents)
       * [`fn withEnabled(value=true)`](#fn-specparametersinitproviderwithenabled)
       * [`fn withMatchers(value)`](#fn-specparametersinitproviderwithmatchers)
@@ -804,6 +806,18 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withConfigType
+
+```jsonnet
+spec.parameters.forProvider.withConfigType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
 ###### fn spec.parameters.forProvider.withContents
 
 ```jsonnet
@@ -814,8 +828,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Configuration contents of the pipeline to be used by collectors
-Configuration contents of the pipeline to be used by collectors
+(String) Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
+Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
 ###### fn spec.parameters.forProvider.withEnabled
 
 ```jsonnet
@@ -868,6 +882,18 @@ Name of the pipeline which is the unique identifier for the pipeline
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withConfigType
+
+```jsonnet
+spec.parameters.initProvider.withConfigType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
 ###### fn spec.parameters.initProvider.withContents
 
 ```jsonnet
@@ -878,8 +904,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Configuration contents of the pipeline to be used by collectors
-Configuration contents of the pipeline to be used by collectors
+(String) Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
+Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
 ###### fn spec.parameters.initProvider.withEnabled
 
 ```jsonnet

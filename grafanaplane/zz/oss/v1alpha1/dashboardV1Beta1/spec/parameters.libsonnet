@@ -33,6 +33,44 @@
   },
   forProvider+:
     {
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      withMetadata(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              metadata:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      withMetadataMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              metadata+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      metadata+:
+        {
+          '#': { help: '', name: 'metadata' },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
+          withFolderUid(value): {
+            folderUid: value,
+          },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
+          withUid(value): {
+            uid: value,
+          },
+        },
       '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
@@ -65,6 +103,54 @@
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
             overwrite: value,
+          },
+        },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      withSpec(value): {
+        parameters+: {
+          forProvider+: {
+            spec:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      withSpecMixin(value): {
+        parameters+: {
+          forProvider+: {
+            spec+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      spec+:
+        {
+          '#': { help: '', name: 'spec' },
+          '#withJson': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The JSON representation of the dashboard spec.\nThe JSON representation of the dashboard spec.' } },
+          withJson(value): {
+            json: value,
+          },
+          '#withTags': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.\nThe tags of the dashboard. If not set, the tags will be derived from the JSON spec.' } },
+          withTags(value): {
+            tags:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withTagsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.\nThe tags of the dashboard. If not set, the tags will be derived from the JSON spec.' } },
+          withTagsMixin(value): {
+            tags+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The title of the dashboard. If not set, the title will be derived from the JSON spec.\nThe title of the dashboard. If not set, the title will be derived from the JSON spec.' } },
+          withTitle(value): {
+            title: value,
           },
         },
     },
@@ -86,6 +172,44 @@
   },
   initProvider+:
     {
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      withMetadata(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              metadata:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      withMetadataMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              metadata+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      metadata+:
+        {
+          '#': { help: '', name: 'metadata' },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
+          withFolderUid(value): {
+            folderUid: value,
+          },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
+          withUid(value): {
+            uid: value,
+          },
+        },
       '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
@@ -118,6 +242,54 @@
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
             overwrite: value,
+          },
+        },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      withSpec(value): {
+        parameters+: {
+          initProvider+: {
+            spec:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      withSpecMixin(value): {
+        parameters+: {
+          initProvider+: {
+            spec+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      spec+:
+        {
+          '#': { help: '', name: 'spec' },
+          '#withJson': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The JSON representation of the dashboard spec.\nThe JSON representation of the dashboard spec.' } },
+          withJson(value): {
+            json: value,
+          },
+          '#withTags': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.\nThe tags of the dashboard. If not set, the tags will be derived from the JSON spec.' } },
+          withTags(value): {
+            tags:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withTagsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.\nThe tags of the dashboard. If not set, the tags will be derived from the JSON spec.' } },
+          withTagsMixin(value): {
+            tags+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The title of the dashboard. If not set, the title will be derived from the JSON spec.\nThe title of the dashboard. If not set, the title will be derived from the JSON spec.' } },
+          withTitle(value): {
+            title: value,
           },
         },
     },

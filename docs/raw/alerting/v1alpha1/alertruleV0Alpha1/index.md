@@ -4,8 +4,12 @@
 
 ## Subpackages
 
+* [spec.parameters.forProvider.metadata](spec/parameters/forProvider/metadata.md)
 * [spec.parameters.forProvider.options](spec/parameters/forProvider/options.md)
+* [spec.parameters.forProvider.spec](spec/parameters/forProvider/spec/index.md)
+* [spec.parameters.initProvider.metadata](spec/parameters/initProvider/metadata.md)
 * [spec.parameters.initProvider.options](spec/parameters/initProvider/options.md)
+* [spec.parameters.initProvider.spec](spec/parameters/initProvider/spec/index.md)
 
 ## Index
 
@@ -72,11 +76,19 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withMetadata(value)`](#fn-specparametersforproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersforproviderwithmetadatamixin)
       * [`fn withOptions(value)`](#fn-specparametersforproviderwithoptions)
       * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
+      * [`fn withSpec(value)`](#fn-specparametersforproviderwithspec)
+      * [`fn withSpecMixin(value)`](#fn-specparametersforproviderwithspecmixin)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
       * [`fn withOptions(value)`](#fn-specparametersinitproviderwithoptions)
       * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
+      * [`fn withSpec(value)`](#fn-specparametersinitproviderwithspec)
+      * [`fn withSpecMixin(value)`](#fn-specparametersinitproviderwithspecmixin)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -803,6 +815,28 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withMetadata
+
+```jsonnet
+spec.parameters.forProvider.withMetadata(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The metadata of the resource.
+###### fn spec.parameters.forProvider.withMetadataMixin
+
+```jsonnet
+spec.parameters.forProvider.withMetadataMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The metadata of the resource.
 ###### fn spec.parameters.forProvider.withOptions
 
 ```jsonnet
@@ -825,9 +859,53 @@ PARAMETERS:
 * **value** (`array`)
 
 Options for applying the resource.
+###### fn spec.parameters.forProvider.withSpec
+
+```jsonnet
+spec.parameters.forProvider.withSpec(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The spec of the resource.
+###### fn spec.parameters.forProvider.withSpecMixin
+
+```jsonnet
+spec.parameters.forProvider.withSpecMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The spec of the resource.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withMetadata
+
+```jsonnet
+spec.parameters.initProvider.withMetadata(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The metadata of the resource.
+###### fn spec.parameters.initProvider.withMetadataMixin
+
+```jsonnet
+spec.parameters.initProvider.withMetadataMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The metadata of the resource.
 ###### fn spec.parameters.initProvider.withOptions
 
 ```jsonnet
@@ -850,6 +928,28 @@ PARAMETERS:
 * **value** (`array`)
 
 Options for applying the resource.
+###### fn spec.parameters.initProvider.withSpec
+
+```jsonnet
+spec.parameters.initProvider.withSpec(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The spec of the resource.
+###### fn spec.parameters.initProvider.withSpecMixin
+
+```jsonnet
+spec.parameters.initProvider.withSpecMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+The spec of the resource.
 ##### obj spec.parameters.providerConfigRef
 
 

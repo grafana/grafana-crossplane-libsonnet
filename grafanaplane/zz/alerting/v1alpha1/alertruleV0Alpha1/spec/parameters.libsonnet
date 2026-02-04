@@ -33,6 +33,44 @@
   },
   forProvider+:
     {
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      withMetadata(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              metadata:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      withMetadataMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              metadata+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      metadata+:
+        {
+          '#': { help: '', name: 'metadata' },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
+          withFolderUid(value): {
+            folderUid: value,
+          },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
+          withUid(value): {
+            uid: value,
+          },
+        },
       '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
       withOptions(value): {
         spec+: {
@@ -66,6 +104,190 @@
           withOverwrite(value=true): {
             overwrite: value,
           },
+        },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      withSpec(value): {
+        parameters+: {
+          forProvider+: {
+            spec:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      withSpecMixin(value): {
+        parameters+: {
+          forProvider+: {
+            spec+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      spec+:
+        {
+          '#': { help: '', name: 'spec' },
+          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          withAnnotations(value): {
+            annotations: value,
+          },
+          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          withAnnotationsMixin(value): {
+            annotations+: value,
+          },
+          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
+          withExecErrState(value): {
+            execErrState: value,
+          },
+          '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          withExpressions(value): {
+            expressions: value,
+          },
+          '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          withExpressionsMixin(value): {
+            expressions+: value,
+          },
+          '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
+          withFor(value): {
+            'for': value,
+          },
+          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
+          withKeepFiringFor(value): {
+            keepFiringFor: value,
+          },
+          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          withLabels(value): {
+            labels: value,
+          },
+          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          withLabelsMixin(value): {
+            labels+: value,
+          },
+          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'The number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
+          withMissingSeriesEvalsToResolve(value): {
+            missingSeriesEvalsToResolve: value,
+          },
+          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
+          withNoDataState(value): {
+            noDataState: value,
+          },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          withNotificationSettings(value): {
+            notificationSettings:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          withNotificationSettingsMixin(value): {
+            notificationSettings+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          notificationSettings+:
+            {
+              '#': { help: '', name: 'notificationSettings' },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              withActiveTimings(value): {
+                activeTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              withActiveTimingsMixin(value): {
+                activeTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The contact point to route notifications that match this rule to.' } },
+              withContactPoint(value): {
+                contactPoint: value,
+              },
+              '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              withGroupBy(value): {
+                groupBy:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              withGroupByMixin(value): {
+                groupBy+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval between two notifications for the same group.' } },
+              withGroupInterval(value): {
+                groupInterval: value,
+              },
+              '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Time to wait to buffer alerts of the same group before sending a notification.' } },
+              withGroupWait(value): {
+                groupWait: value,
+              },
+              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              withMuteTimings(value): {
+                muteTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              withMuteTimingsMixin(value): {
+                muteTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval for re-sending a notification if an alert is still firing.' } },
+              withRepeatInterval(value): {
+                repeatInterval: value,
+              },
+            },
+          '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          withPanelRef(value): {
+            panelRef: value,
+          },
+          '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          withPanelRefMixin(value): {
+            panelRef+: value,
+          },
+          '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Sets whether the rule should be paused or not.' } },
+          withPaused(value=true): {
+            paused: value,
+          },
+          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert rule.' } },
+          withTitle(value): {
+            title: value,
+          },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          withTrigger(value): {
+            trigger:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          withTriggerMixin(value): {
+            trigger+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          trigger+:
+            {
+              '#': { help: '', name: 'trigger' },
+              '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The interval at which the alert rule should be evaluated.' } },
+              withInterval(value): {
+                interval: value,
+              },
+            },
         },
     },
   '#withInitProvider': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.' } },
@@ -86,6 +308,44 @@
   },
   initProvider+:
     {
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      withMetadata(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              metadata:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      withMetadataMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              metadata+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      metadata+:
+        {
+          '#': { help: '', name: 'metadata' },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
+          withFolderUid(value): {
+            folderUid: value,
+          },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
+          withUid(value): {
+            uid: value,
+          },
+        },
       '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
       withOptions(value): {
         spec+: {
@@ -119,6 +379,190 @@
           withOverwrite(value=true): {
             overwrite: value,
           },
+        },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      withSpec(value): {
+        parameters+: {
+          initProvider+: {
+            spec:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      withSpecMixin(value): {
+        parameters+: {
+          initProvider+: {
+            spec+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+        },
+      },
+      spec+:
+        {
+          '#': { help: '', name: 'spec' },
+          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          withAnnotations(value): {
+            annotations: value,
+          },
+          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          withAnnotationsMixin(value): {
+            annotations+: value,
+          },
+          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
+          withExecErrState(value): {
+            execErrState: value,
+          },
+          '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          withExpressions(value): {
+            expressions: value,
+          },
+          '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          withExpressionsMixin(value): {
+            expressions+: value,
+          },
+          '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
+          withFor(value): {
+            'for': value,
+          },
+          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
+          withKeepFiringFor(value): {
+            keepFiringFor: value,
+          },
+          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          withLabels(value): {
+            labels: value,
+          },
+          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          withLabelsMixin(value): {
+            labels+: value,
+          },
+          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'The number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
+          withMissingSeriesEvalsToResolve(value): {
+            missingSeriesEvalsToResolve: value,
+          },
+          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
+          withNoDataState(value): {
+            noDataState: value,
+          },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          withNotificationSettings(value): {
+            notificationSettings:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          withNotificationSettingsMixin(value): {
+            notificationSettings+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          notificationSettings+:
+            {
+              '#': { help: '', name: 'notificationSettings' },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              withActiveTimings(value): {
+                activeTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              withActiveTimingsMixin(value): {
+                activeTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The contact point to route notifications that match this rule to.' } },
+              withContactPoint(value): {
+                contactPoint: value,
+              },
+              '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              withGroupBy(value): {
+                groupBy:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              withGroupByMixin(value): {
+                groupBy+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval between two notifications for the same group.' } },
+              withGroupInterval(value): {
+                groupInterval: value,
+              },
+              '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Time to wait to buffer alerts of the same group before sending a notification.' } },
+              withGroupWait(value): {
+                groupWait: value,
+              },
+              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              withMuteTimings(value): {
+                muteTimings:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              withMuteTimingsMixin(value): {
+                muteTimings+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval for re-sending a notification if an alert is still firing.' } },
+              withRepeatInterval(value): {
+                repeatInterval: value,
+              },
+            },
+          '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          withPanelRef(value): {
+            panelRef: value,
+          },
+          '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          withPanelRefMixin(value): {
+            panelRef+: value,
+          },
+          '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Sets whether the rule should be paused or not.' } },
+          withPaused(value=true): {
+            paused: value,
+          },
+          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert rule.' } },
+          withTitle(value): {
+            title: value,
+          },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          withTrigger(value): {
+            trigger:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          withTriggerMixin(value): {
+            trigger+:
+              (if std.isArray(value)
+               then value
+               else [value]),
+          },
+          trigger+:
+            {
+              '#': { help: '', name: 'trigger' },
+              '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The interval at which the alert rule should be evaluated.' } },
+              withInterval(value): {
+                interval: value,
+              },
+            },
         },
     },
   '#withManagementPolicies': { 'function': { args: [{ default: ['*'], enums: null, name: 'value', type: ['array'] }], help: 'THIS IS A BETA FIELD. It is on by default but can be opted out\nthrough a Crossplane feature flag.\nManagementPolicies specify the array of actions Crossplane is allowed to\ntake on the managed and external resources.\nThis field is planned to replace the DeletionPolicy field in a future\nrelease. Currently, both could be set independently and non-default\nvalues would be honored if the feature flag is enabled. If both are\ncustom, the DeletionPolicy field will be ignored.\nSee the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223\nand this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md' } },

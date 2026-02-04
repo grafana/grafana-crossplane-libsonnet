@@ -4,7 +4,7 @@
 
 ## Subpackages
 
-* [v1alpha1.alertenrichmentV1Beta1](v1alpha1/alertenrichmentV1Beta1.md)
+* [v1alpha1.alertenrichmentV1Beta1](v1alpha1/alertenrichmentV1Beta1/index.md)
 * [v1alpha1.alertruleV0Alpha1](v1alpha1/alertruleV0Alpha1/index.md)
 * [v1alpha1.contactPoint](v1alpha1/contactPoint/index.md)
 * [v1alpha1.messageTemplate](v1alpha1/messageTemplate.md)

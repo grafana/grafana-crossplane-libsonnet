@@ -54,10 +54,15 @@ spec:
                       type: string
                     forProvider:
                       properties:
+                        configType:
+                          description: |-
+                            (String) Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                            Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                          type: string
                         contents:
                           description: |-
-                            (String) Configuration contents of the pipeline to be used by collectors
-                            Configuration contents of the pipeline to be used by collectors
+                            (String) Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
+                            Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
                           type: string
                         enabled:
                           description: |-
@@ -90,10 +95,15 @@ spec:
                         for example because of an external controller is managing them, like an
                         autoscaler.
                       properties:
+                        configType:
+                          description: |-
+                            (String) Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                            Type of the config. Must be one of: ALLOY, OTEL. Defaults to ALLOY if not specified.
+                          type: string
                         contents:
                           description: |-
-                            (String) Configuration contents of the pipeline to be used by collectors
-                            Configuration contents of the pipeline to be used by collectors
+                            (String) Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
+                            Configuration contents of the pipeline to be used by collectors (can be Alloy config syntax or OTel YAML)
                           type: string
                         enabled:
                           description: |-

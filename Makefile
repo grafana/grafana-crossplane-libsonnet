@@ -1,4 +1,4 @@
-PROVIDER_VERSION:=2.1.0
+PROVIDER_VERSION:=v2.2.0
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crossplane
 REGISTRY?=ghcr.io
@@ -18,7 +18,7 @@ grafanaplane: grafanaplane/zz
 
 generator/crds.yaml:
 	cd generator && \
-	curl -sLO https://github.com/grafana/crossplane-provider-grafana/releases/download/v$(PROVIDER_VERSION)/crds.yaml
+	curl -sLO https://github.com/grafana/crossplane-provider-grafana/releases/download/$(PROVIDER_VERSION)/crds.yaml
 
 grafanaplane/zz: $(GENERATOR_DEPTHS)
 	rm -rf grafanaplane/zz && \
