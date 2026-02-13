@@ -9,4 +9,4 @@
 * [v1alpha1.project](v1alpha1/project.md)
 * [v1alpha1.projectAllowedLoadZones](v1alpha1/projectAllowedLoadZones.md)
 * [v1alpha1.projectLimits](v1alpha1/projectLimits.md)
-* [v1alpha1.schedule](v1alpha1/schedule/index.md)
+* [v1alpha1.schedule](v1alpha1/schedule.md)

@@ -1,15 +1,6 @@
-# recordingruleV0Alpha1
+# dashboardV1Beta1
 
 
-
-## Subpackages
-
-* [spec.parameters.forProvider.metadata](spec/parameters/forProvider/metadata.md)
-* [spec.parameters.forProvider.options](spec/parameters/forProvider/options.md)
-* [spec.parameters.forProvider.spec](spec/parameters/forProvider/spec/index.md)
-* [spec.parameters.initProvider.metadata](spec/parameters/initProvider/metadata.md)
-* [spec.parameters.initProvider.options](spec/parameters/initProvider/options.md)
-* [spec.parameters.initProvider.spec](spec/parameters/initProvider/spec/index.md)
 
 ## Index
 
@@ -82,6 +73,16 @@
       * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
       * [`fn withSpec(value)`](#fn-specparametersforproviderwithspec)
       * [`fn withSpecMixin(value)`](#fn-specparametersforproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersforprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersforprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersforproviderspec)
+        * [`fn withJson(value)`](#fn-specparametersforproviderspecwithjson)
+        * [`fn withTags(value)`](#fn-specparametersforproviderspecwithtags)
+        * [`fn withTagsMixin(value)`](#fn-specparametersforproviderspecwithtagsmixin)
+        * [`fn withTitle(value)`](#fn-specparametersforproviderspecwithtitle)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
       * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
@@ -89,6 +90,16 @@
       * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
       * [`fn withSpec(value)`](#fn-specparametersinitproviderwithspec)
       * [`fn withSpecMixin(value)`](#fn-specparametersinitproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersinitprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersinitprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersinitproviderspec)
+        * [`fn withJson(value)`](#fn-specparametersinitproviderspecwithjson)
+        * [`fn withTags(value)`](#fn-specparametersinitproviderspecwithtags)
+        * [`fn withTagsMixin(value)`](#fn-specparametersinitproviderspecwithtagsmixin)
+        * [`fn withTitle(value)`](#fn-specparametersinitproviderspecwithtitle)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -517,7 +528,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-RecordingruleV0Alpha1Spec defines the desired state of RecordingruleV0Alpha1
+DashboardV1Beta1Spec defines the desired state of DashboardV1Beta1
 #### fn spec.withParametersMixin
 
 ```jsonnet
@@ -528,7 +539,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-RecordingruleV0Alpha1Spec defines the desired state of RecordingruleV0Alpha1
+DashboardV1Beta1Spec defines the desired state of DashboardV1Beta1
 #### fn spec.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -823,7 +834,7 @@ spec.parameters.forProvider.withMetadata(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
@@ -835,7 +846,7 @@ spec.parameters.forProvider.withMetadataMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
@@ -847,7 +858,7 @@ spec.parameters.forProvider.withOptions(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
@@ -859,7 +870,7 @@ spec.parameters.forProvider.withOptionsMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
@@ -871,7 +882,7 @@ spec.parameters.forProvider.withSpec(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
@@ -883,10 +894,104 @@ spec.parameters.forProvider.withSpecMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
+###### obj spec.parameters.forProvider.metadata
+
+
+####### fn spec.parameters.forProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The UID of the folder to save the resource in.
+The UID of the folder to save the resource in.
+####### fn spec.parameters.forProvider.metadata.withUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The unique identifier of the resource.
+The unique identifier of the resource.
+###### obj spec.parameters.forProvider.options
+
+
+####### fn spec.parameters.forProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.forProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.forProvider.spec
+
+
+####### fn spec.parameters.forProvider.spec.withJson
+
+```jsonnet
+spec.parameters.forProvider.spec.withJson(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The JSON representation of the dashboard spec.
+The JSON representation of the dashboard spec.
+####### fn spec.parameters.forProvider.spec.withTags
+
+```jsonnet
+spec.parameters.forProvider.spec.withTags(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.forProvider.spec.withTagsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withTagsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.forProvider.spec.withTitle
+
+```jsonnet
+spec.parameters.forProvider.spec.withTitle(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The title of the dashboard. If not set, the title will be derived from the JSON spec.
+The title of the dashboard. If not set, the title will be derived from the JSON spec.
 ##### obj spec.parameters.initProvider
 
 
@@ -898,7 +1003,7 @@ spec.parameters.initProvider.withMetadata(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
@@ -910,7 +1015,7 @@ spec.parameters.initProvider.withMetadataMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
@@ -922,7 +1027,7 @@ spec.parameters.initProvider.withOptions(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
@@ -934,7 +1039,7 @@ spec.parameters.initProvider.withOptionsMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
@@ -946,7 +1051,7 @@ spec.parameters.initProvider.withSpec(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
@@ -958,10 +1063,104 @@ spec.parameters.initProvider.withSpecMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
 (Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
+###### obj spec.parameters.initProvider.metadata
+
+
+####### fn spec.parameters.initProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The UID of the folder to save the resource in.
+The UID of the folder to save the resource in.
+####### fn spec.parameters.initProvider.metadata.withUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The unique identifier of the resource.
+The unique identifier of the resource.
+###### obj spec.parameters.initProvider.options
+
+
+####### fn spec.parameters.initProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.initProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.initProvider.spec
+
+
+####### fn spec.parameters.initProvider.spec.withJson
+
+```jsonnet
+spec.parameters.initProvider.spec.withJson(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The JSON representation of the dashboard spec.
+The JSON representation of the dashboard spec.
+####### fn spec.parameters.initProvider.spec.withTags
+
+```jsonnet
+spec.parameters.initProvider.spec.withTags(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.initProvider.spec.withTagsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withTagsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.initProvider.spec.withTitle
+
+```jsonnet
+spec.parameters.initProvider.spec.withTitle(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The title of the dashboard. If not set, the title will be derived from the JSON spec.
+The title of the dashboard. If not set, the title will be derived from the JSON spec.
 ##### obj spec.parameters.providerConfigRef
 
 

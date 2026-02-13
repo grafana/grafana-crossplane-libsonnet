@@ -9,7 +9,7 @@
 * [v1alpha1.dashboardPermission](v1alpha1/dashboardPermission/index.md)
 * [v1alpha1.dashboardPermissionItem](v1alpha1/dashboardPermissionItem.md)
 * [v1alpha1.dashboardPublic](v1alpha1/dashboardPublic.md)
-* [v1alpha1.dashboardV1Beta1](v1alpha1/dashboardV1Beta1/index.md)
+* [v1alpha1.dashboardV1Beta1](v1alpha1/dashboardV1Beta1.md)
 * [v1alpha1.dataSource](v1alpha1/dataSource.md)
 * [v1alpha1.dataSourceConfig](v1alpha1/dataSourceConfig.md)
 * [v1alpha1.folder](v1alpha1/folder.md)

@@ -33,155 +33,241 @@
   },
   forProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           forProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           forProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressions(value): {
-            expressions: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    expressions: value,
+                  },
+                },
+              },
+            },
           },
           '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressionsMixin(value): {
-            expressions+: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    expressions+: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the recorded metric.\nKey-value pairs to attach to the recorded metric.' } },
           withLabels(value): {
-            labels: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    labels: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the recorded metric.\nKey-value pairs to attach to the recorded metric.' } },
           withLabelsMixin(value): {
-            labels+: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    labels+: value,
+                  },
+                },
+              },
+            },
           },
           '#withMetric': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the metric to write to.\nThe name of the metric to write to.' } },
           withMetric(value): {
-            metric: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    metric: value,
+                  },
+                },
+              },
+            },
           },
           '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Sets whether the recording rule should be paused or not.\nSets whether the recording rule should be paused or not.' } },
           withPaused(value=true): {
-            paused: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    paused: value,
+                  },
+                },
+              },
+            },
           },
           '#withTargetDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the datasource to write the metric to.\nThe UID of the datasource to write the metric to.' } },
           withTargetDatasourceUid(value): {
-            targetDatasourceUid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    targetDatasourceUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The title of the recording rule.\nThe title of the recording rule.' } },
           withTitle(value): {
-            title: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    title: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
           withTrigger(value): {
-            trigger:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    trigger: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
           withTriggerMixin(value): {
-            trigger+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    trigger+: value,
+                  },
+                },
+              },
+            },
           },
           trigger+:
             {
-              '#': { help: '', name: 'trigger' },
               '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The interval at which the recording rule should be evaluated.\nThe interval at which the recording rule should be evaluated.' } },
               withInterval(value): {
-                interval: value,
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        trigger+: {
+                          interval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
         },
@@ -204,155 +290,241 @@
   },
   initProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           initProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           initProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressions(value): {
-            expressions: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    expressions: value,
+                  },
+                },
+              },
+            },
           },
           '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressionsMixin(value): {
-            expressions+: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    expressions+: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the recorded metric.\nKey-value pairs to attach to the recorded metric.' } },
           withLabels(value): {
-            labels: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    labels: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the recorded metric.\nKey-value pairs to attach to the recorded metric.' } },
           withLabelsMixin(value): {
-            labels+: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    labels+: value,
+                  },
+                },
+              },
+            },
           },
           '#withMetric': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the metric to write to.\nThe name of the metric to write to.' } },
           withMetric(value): {
-            metric: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    metric: value,
+                  },
+                },
+              },
+            },
           },
           '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Sets whether the recording rule should be paused or not.\nSets whether the recording rule should be paused or not.' } },
           withPaused(value=true): {
-            paused: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    paused: value,
+                  },
+                },
+              },
+            },
           },
           '#withTargetDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the datasource to write the metric to.\nThe UID of the datasource to write the metric to.' } },
           withTargetDatasourceUid(value): {
-            targetDatasourceUid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    targetDatasourceUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The title of the recording rule.\nThe title of the recording rule.' } },
           withTitle(value): {
-            title: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    title: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
           withTrigger(value): {
-            trigger:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    trigger: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the recording rule. (see below for nested schema)\nThe trigger configuration for the recording rule.' } },
           withTriggerMixin(value): {
-            trigger+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    trigger+: value,
+                  },
+                },
+              },
+            },
           },
           trigger+:
             {
-              '#': { help: '', name: 'trigger' },
               '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The interval at which the recording rule should be evaluated.\nThe interval at which the recording rule should be evaluated.' } },
               withInterval(value): {
-                interval: value,
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        trigger+: {
+                          interval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
         },

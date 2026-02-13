@@ -1078,6 +1078,114 @@
           withMessage(value): {
             message: value,
           },
+          '#withOncallIntegrationRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Integration in oncall to populate url.' } },
+          withOncallIntegrationRef(value): {
+            oncallIntegrationRef: value,
+          },
+          '#withOncallIntegrationRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Integration in oncall to populate url.' } },
+          withOncallIntegrationRefMixin(value): {
+            oncallIntegrationRef+: value,
+          },
+          oncallIntegrationRef+:
+            {
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+              withName(value): {
+                oncallIntegrationRef+: {
+                  name: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicy(value): {
+                oncallIntegrationRef+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicyMixin(value): {
+                oncallIntegrationRef+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    oncallIntegrationRef+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    oncallIntegrationRef+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
+          '#withOncallIntegrationSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Integration in oncall to populate url.' } },
+          withOncallIntegrationSelector(value): {
+            oncallIntegrationSelector: value,
+          },
+          '#withOncallIntegrationSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Integration in oncall to populate url.' } },
+          withOncallIntegrationSelectorMixin(value): {
+            oncallIntegrationSelector+: value,
+          },
+          oncallIntegrationSelector+:
+            {
+              '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+              withMatchControllerRef(value=true): {
+                oncallIntegrationSelector+: {
+                  matchControllerRef: value,
+                },
+              },
+              '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabels(value): {
+                oncallIntegrationSelector+: {
+                  matchLabels: value,
+                },
+              },
+              '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabelsMixin(value): {
+                oncallIntegrationSelector+: {
+                  matchLabels+: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicy(value): {
+                oncallIntegrationSelector+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicyMixin(value): {
+                oncallIntegrationSelector+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    oncallIntegrationSelector+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    oncallIntegrationSelector+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
           '#withSettingsSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String, Sensitive) Additional custom properties to attach to the notifier. Defaults to map[].\nAdditional custom properties to attach to the notifier. Defaults to `map[]`.' } },
           withSettingsSecretRef(value): {
             settingsSecretRef: value,
@@ -4259,6 +4367,114 @@
           withMessage(value): {
             message: value,
           },
+          '#withOncallIntegrationRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Integration in oncall to populate url.' } },
+          withOncallIntegrationRef(value): {
+            oncallIntegrationRef: value,
+          },
+          '#withOncallIntegrationRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Integration in oncall to populate url.' } },
+          withOncallIntegrationRefMixin(value): {
+            oncallIntegrationRef+: value,
+          },
+          oncallIntegrationRef+:
+            {
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+              withName(value): {
+                oncallIntegrationRef+: {
+                  name: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicy(value): {
+                oncallIntegrationRef+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicyMixin(value): {
+                oncallIntegrationRef+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    oncallIntegrationRef+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    oncallIntegrationRef+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
+          '#withOncallIntegrationSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Integration in oncall to populate url.' } },
+          withOncallIntegrationSelector(value): {
+            oncallIntegrationSelector: value,
+          },
+          '#withOncallIntegrationSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Integration in oncall to populate url.' } },
+          withOncallIntegrationSelectorMixin(value): {
+            oncallIntegrationSelector+: value,
+          },
+          oncallIntegrationSelector+:
+            {
+              '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+              withMatchControllerRef(value=true): {
+                oncallIntegrationSelector+: {
+                  matchControllerRef: value,
+                },
+              },
+              '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabels(value): {
+                oncallIntegrationSelector+: {
+                  matchLabels: value,
+                },
+              },
+              '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabelsMixin(value): {
+                oncallIntegrationSelector+: {
+                  matchLabels+: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicy(value): {
+                oncallIntegrationSelector+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicyMixin(value): {
+                oncallIntegrationSelector+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    oncallIntegrationSelector+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    oncallIntegrationSelector+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
           '#withSettingsSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '' } },
           withSettingsSecretRef(value): {
             settingsSecretRef: value,

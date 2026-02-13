@@ -33,259 +33,510 @@
   },
   forProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           forProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           forProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotations(value): {
-            annotations: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    annotations: value,
+                  },
+                },
+              },
+            },
           },
           '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotationsMixin(value): {
-            annotations+: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    annotations+: value,
+                  },
+                },
+              },
+            },
           },
           '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
           withExecErrState(value): {
-            execErrState: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    execErrState: value,
+                  },
+                },
+              },
+            },
           },
           '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressions(value): {
-            expressions: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    expressions: value,
+                  },
+                },
+              },
+            },
           },
           '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressionsMixin(value): {
-            expressions+: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    expressions+: value,
+                  },
+                },
+              },
+            },
           },
           '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
           withFor(value): {
-            'for': value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    'for': value,
+                  },
+                },
+              },
+            },
           },
           '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
           withKeepFiringFor(value): {
-            keepFiringFor: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    keepFiringFor: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabels(value): {
-            labels: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    labels: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabelsMixin(value): {
-            labels+: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    labels+: value,
+                  },
+                },
+              },
+            },
           },
           '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'The number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
           withMissingSeriesEvalsToResolve(value): {
-            missingSeriesEvalsToResolve: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    missingSeriesEvalsToResolve: value,
+                  },
+                },
+              },
+            },
           },
           '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
           withNoDataState(value): {
-            noDataState: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    noDataState: value,
+                  },
+                },
+              },
+            },
           },
-          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
           withNotificationSettings(value): {
-            notificationSettings:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    notificationSettings: value,
+                  },
+                },
+              },
+            },
           },
-          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
           withNotificationSettingsMixin(value): {
-            notificationSettings+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    notificationSettings+: value,
+                  },
+                },
+              },
+            },
           },
           notificationSettings+:
             {
-              '#': { help: '', name: 'notificationSettings' },
               '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
               withActiveTimings(value): {
-                activeTimings:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          activeTimings:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
               withActiveTimingsMixin(value): {
-                activeTimings+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          activeTimings+:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
-                contactPoint: value,
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          contactPoint: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
               withGroupBy(value): {
-                groupBy:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupBy:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
               withGroupByMixin(value): {
-                groupBy+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupBy+:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval between two notifications for the same group.' } },
               withGroupInterval(value): {
-                groupInterval: value,
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupInterval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Time to wait to buffer alerts of the same group before sending a notification.' } },
               withGroupWait(value): {
-                groupWait: value,
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupWait: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimings(value): {
-                muteTimings:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          muteTimings:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimingsMixin(value): {
-                muteTimings+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          muteTimings+:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval for re-sending a notification if an alert is still firing.' } },
               withRepeatInterval(value): {
-                repeatInterval: value,
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          repeatInterval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
           '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRef(value): {
-            panelRef: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    panelRef: value,
+                  },
+                },
+              },
+            },
           },
           '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRefMixin(value): {
-            panelRef+: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    panelRef+: value,
+                  },
+                },
+              },
+            },
           },
           '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Sets whether the rule should be paused or not.' } },
           withPaused(value=true): {
-            paused: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    paused: value,
+                  },
+                },
+              },
+            },
           },
           '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert rule.' } },
           withTitle(value): {
-            title: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    title: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
           withTrigger(value): {
-            trigger:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    trigger: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
           withTriggerMixin(value): {
-            trigger+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    trigger+: value,
+                  },
+                },
+              },
+            },
           },
           trigger+:
             {
-              '#': { help: '', name: 'trigger' },
               '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The interval at which the alert rule should be evaluated.' } },
               withInterval(value): {
-                interval: value,
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        trigger+: {
+                          interval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
         },
@@ -308,259 +559,510 @@
   },
   initProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Options for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           initProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           initProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotations(value): {
-            annotations: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    annotations: value,
+                  },
+                },
+              },
+            },
           },
           '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotationsMixin(value): {
-            annotations+: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    annotations+: value,
+                  },
+                },
+              },
+            },
           },
           '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
           withExecErrState(value): {
-            execErrState: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    execErrState: value,
+                  },
+                },
+              },
+            },
           },
           '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressions(value): {
-            expressions: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    expressions: value,
+                  },
+                },
+              },
+            },
           },
           '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressionsMixin(value): {
-            expressions+: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    expressions+: value,
+                  },
+                },
+              },
+            },
           },
           '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
           withFor(value): {
-            'for': value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    'for': value,
+                  },
+                },
+              },
+            },
           },
           '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
           withKeepFiringFor(value): {
-            keepFiringFor: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    keepFiringFor: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabels(value): {
-            labels: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    labels: value,
+                  },
+                },
+              },
+            },
           },
           '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabelsMixin(value): {
-            labels+: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    labels+: value,
+                  },
+                },
+              },
+            },
           },
           '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'The number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
           withMissingSeriesEvalsToResolve(value): {
-            missingSeriesEvalsToResolve: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    missingSeriesEvalsToResolve: value,
+                  },
+                },
+              },
+            },
           },
           '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
           withNoDataState(value): {
-            noDataState: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    noDataState: value,
+                  },
+                },
+              },
+            },
           },
-          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
           withNotificationSettings(value): {
-            notificationSettings:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    notificationSettings: value,
+                  },
+                },
+              },
+            },
           },
-          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
           withNotificationSettingsMixin(value): {
-            notificationSettings+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    notificationSettings+: value,
+                  },
+                },
+              },
+            },
           },
           notificationSettings+:
             {
-              '#': { help: '', name: 'notificationSettings' },
               '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
               withActiveTimings(value): {
-                activeTimings:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          activeTimings:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
               withActiveTimingsMixin(value): {
-                activeTimings+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          activeTimings+:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
-                contactPoint: value,
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          contactPoint: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
               withGroupBy(value): {
-                groupBy:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupBy:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
               withGroupByMixin(value): {
-                groupBy+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupBy+:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval between two notifications for the same group.' } },
               withGroupInterval(value): {
-                groupInterval: value,
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupInterval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Time to wait to buffer alerts of the same group before sending a notification.' } },
               withGroupWait(value): {
-                groupWait: value,
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          groupWait: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimings(value): {
-                muteTimings:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          muteTimings:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimingsMixin(value): {
-                muteTimings+:
-                  (if std.isArray(value)
-                   then value
-                   else [value]),
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          muteTimings+:
+                            (if std.isArray(value)
+                             then value
+                             else [value]),
+                        },
+                      },
+                    },
+                  },
+                },
               },
               '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval for re-sending a notification if an alert is still firing.' } },
               withRepeatInterval(value): {
-                repeatInterval: value,
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          repeatInterval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
           '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRef(value): {
-            panelRef: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    panelRef: value,
+                  },
+                },
+              },
+            },
           },
           '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRefMixin(value): {
-            panelRef+: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    panelRef+: value,
+                  },
+                },
+              },
+            },
           },
           '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Sets whether the rule should be paused or not.' } },
           withPaused(value=true): {
-            paused: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    paused: value,
+                  },
+                },
+              },
+            },
           },
           '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert rule.' } },
           withTitle(value): {
-            title: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    title: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
           withTrigger(value): {
-            trigger:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    trigger: value,
+                  },
+                },
+              },
+            },
           },
-          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
           withTriggerMixin(value): {
-            trigger+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    trigger+: value,
+                  },
+                },
+              },
+            },
           },
           trigger+:
             {
-              '#': { help: '', name: 'trigger' },
               '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The interval at which the alert rule should be evaluated.' } },
               withInterval(value): {
-                interval: value,
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        trigger+: {
+                          interval: value,
+                        },
+                      },
+                    },
+                  },
+                },
               },
             },
         },

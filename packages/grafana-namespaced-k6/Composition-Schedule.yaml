@@ -32,26 +32,56 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.cron
-                toFieldPath: spec.forProvider.cron
+              - fromFieldPath: spec.parameters.forProvider.cron.schedule
+                toFieldPath: spec.forProvider.cron.schedule
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.cron.timezone
+                toFieldPath: spec.forProvider.cron.timezone
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.loadTestId
                 toFieldPath: spec.forProvider.loadTestId
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.recurrenceRule
-                toFieldPath: spec.forProvider.recurrenceRule
+              - fromFieldPath: spec.parameters.forProvider.recurrenceRule.byday
+                toFieldPath: spec.forProvider.recurrenceRule.byday
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.recurrenceRule.count
+                toFieldPath: spec.forProvider.recurrenceRule.count
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.recurrenceRule.frequency
+                toFieldPath: spec.forProvider.recurrenceRule.frequency
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.recurrenceRule.interval
+                toFieldPath: spec.forProvider.recurrenceRule.interval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.recurrenceRule.until
+                toFieldPath: spec.forProvider.recurrenceRule.until
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.starts
                 toFieldPath: spec.forProvider.starts
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.cron
-                toFieldPath: spec.initProvider.cron
+              - fromFieldPath: spec.parameters.initProvider.cron.schedule
+                toFieldPath: spec.initProvider.cron.schedule
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.cron.timezone
+                toFieldPath: spec.initProvider.cron.timezone
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.loadTestId
                 toFieldPath: spec.initProvider.loadTestId
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.recurrenceRule
-                toFieldPath: spec.initProvider.recurrenceRule
+              - fromFieldPath: spec.parameters.initProvider.recurrenceRule.byday
+                toFieldPath: spec.initProvider.recurrenceRule.byday
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.recurrenceRule.count
+                toFieldPath: spec.initProvider.recurrenceRule.count
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.recurrenceRule.frequency
+                toFieldPath: spec.initProvider.recurrenceRule.frequency
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.recurrenceRule.interval
+                toFieldPath: spec.initProvider.recurrenceRule.interval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.recurrenceRule.until
+                toFieldPath: spec.initProvider.recurrenceRule.until
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.starts
                 toFieldPath: spec.initProvider.starts

@@ -14,6 +14,10 @@
 * [`fn withHttpMethod(value)`](#fn-withhttpmethod)
 * [`fn withMaxAlerts(value)`](#fn-withmaxalerts)
 * [`fn withMessage(value)`](#fn-withmessage)
+* [`fn withOncallIntegrationRef(value)`](#fn-withoncallintegrationref)
+* [`fn withOncallIntegrationRefMixin(value)`](#fn-withoncallintegrationrefmixin)
+* [`fn withOncallIntegrationSelector(value)`](#fn-withoncallintegrationselector)
+* [`fn withOncallIntegrationSelectorMixin(value)`](#fn-withoncallintegrationselectormixin)
 * [`fn withSettingsSecretRef(value)`](#fn-withsettingssecretref)
 * [`fn withSettingsSecretRefMixin(value)`](#fn-withsettingssecretrefmixin)
 * [`fn withTitle(value)`](#fn-withtitle)
@@ -26,6 +30,22 @@
   * [`fn withKey(value)`](#fn-basicauthpasswordsecretrefwithkey)
   * [`fn withName(value)`](#fn-basicauthpasswordsecretrefwithname)
   * [`fn withNamespace(value)`](#fn-basicauthpasswordsecretrefwithnamespace)
+* [`obj oncallIntegrationRef`](#obj-oncallintegrationref)
+  * [`fn withName(value)`](#fn-oncallintegrationrefwithname)
+  * [`fn withPolicy(value)`](#fn-oncallintegrationrefwithpolicy)
+  * [`fn withPolicyMixin(value)`](#fn-oncallintegrationrefwithpolicymixin)
+  * [`obj policy`](#obj-oncallintegrationrefpolicy)
+    * [`fn withResolution(value="Required")`](#fn-oncallintegrationrefpolicywithresolution)
+    * [`fn withResolve(value)`](#fn-oncallintegrationrefpolicywithresolve)
+* [`obj oncallIntegrationSelector`](#obj-oncallintegrationselector)
+  * [`fn withMatchControllerRef(value=true)`](#fn-oncallintegrationselectorwithmatchcontrollerref)
+  * [`fn withMatchLabels(value)`](#fn-oncallintegrationselectorwithmatchlabels)
+  * [`fn withMatchLabelsMixin(value)`](#fn-oncallintegrationselectorwithmatchlabelsmixin)
+  * [`fn withPolicy(value)`](#fn-oncallintegrationselectorwithpolicy)
+  * [`fn withPolicyMixin(value)`](#fn-oncallintegrationselectorwithpolicymixin)
+  * [`obj policy`](#obj-oncallintegrationselectorpolicy)
+    * [`fn withResolution(value="Required")`](#fn-oncallintegrationselectorpolicywithresolution)
+    * [`fn withResolve(value)`](#fn-oncallintegrationselectorpolicywithresolve)
 * [`obj settingsSecretRef`](#obj-settingssecretref)
   * [`fn withName(value)`](#fn-settingssecretrefwithname)
   * [`fn withNamespace(value)`](#fn-settingssecretrefwithnamespace)
@@ -153,6 +173,50 @@ PARAMETERS:
 
 (String) The templated content of the message.
 Custom message. You can use template variables.
+### fn withOncallIntegrationRef
+
+```jsonnet
+withOncallIntegrationRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Integration in oncall to populate url.
+### fn withOncallIntegrationRefMixin
+
+```jsonnet
+withOncallIntegrationRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Integration in oncall to populate url.
+### fn withOncallIntegrationSelector
+
+```jsonnet
+withOncallIntegrationSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Integration in oncall to populate url.
+### fn withOncallIntegrationSelectorMixin
+
+```jsonnet
+withOncallIntegrationSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Integration in oncall to populate url.
 ### fn withSettingsSecretRef
 
 ```jsonnet
@@ -273,6 +337,170 @@ PARAMETERS:
 * **value** (`string`)
 
 Namespace of the secret.
+### obj oncallIntegrationRef
+
+
+#### fn oncallIntegrationRef.withName
+
+```jsonnet
+oncallIntegrationRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+#### fn oncallIntegrationRef.withPolicy
+
+```jsonnet
+oncallIntegrationRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+#### fn oncallIntegrationRef.withPolicyMixin
+
+```jsonnet
+oncallIntegrationRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+#### obj oncallIntegrationRef.policy
+
+
+##### fn oncallIntegrationRef.policy.withResolution
+
+```jsonnet
+oncallIntegrationRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+##### fn oncallIntegrationRef.policy.withResolve
+
+```jsonnet
+oncallIntegrationRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+### obj oncallIntegrationSelector
+
+
+#### fn oncallIntegrationSelector.withMatchControllerRef
+
+```jsonnet
+oncallIntegrationSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+#### fn oncallIntegrationSelector.withMatchLabels
+
+```jsonnet
+oncallIntegrationSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+#### fn oncallIntegrationSelector.withMatchLabelsMixin
+
+```jsonnet
+oncallIntegrationSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+#### fn oncallIntegrationSelector.withPolicy
+
+```jsonnet
+oncallIntegrationSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+#### fn oncallIntegrationSelector.withPolicyMixin
+
+```jsonnet
+oncallIntegrationSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+#### obj oncallIntegrationSelector.policy
+
+
+##### fn oncallIntegrationSelector.policy.withResolution
+
+```jsonnet
+oncallIntegrationSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+##### fn oncallIntegrationSelector.policy.withResolve
+
+```jsonnet
+oncallIntegrationSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ### obj settingsSecretRef
 
 
