@@ -10,7 +10,7 @@
 * [`obj commonMatchers`](#obj-commonmatchers)
   * [`fn alert(alertname)`](#fn-commonmatchersalert)
   * [`fn cluster(cluster)`](#fn-commonmatcherscluster)
-  * [`fn exported_namespace(namespace)`](#fn-commonmatchersexported_namespace)
+  * [`fn exportedNamespace(namespace)`](#fn-commonmatchersexportednamespace)
   * [`fn job(job)`](#fn-commonmatchersjob)
   * [`fn namespace(namespace)`](#fn-commonmatchersnamespace)
   * [`fn severity(severity)`](#fn-commonmatchersseverity)
@@ -83,17 +83,17 @@ PARAMETERS:
 * **cluster** (`array`)
 
 `cluster` matches a cluster.
-#### fn commonMatchers.exported_namespace
+#### fn commonMatchers.exportedNamespace
 
 ```jsonnet
-commonMatchers.exported_namespace(namespace)
+commonMatchers.exportedNamespace(namespace)
 ```
 
 PARAMETERS:
 
 * **namespace** (`array`)
 
-`exported_namespace` matches one or more exported_namespaces.
+`exportedNamespace` matches one or more exported_namespaces.
 #### fn commonMatchers.job
 
 ```jsonnet

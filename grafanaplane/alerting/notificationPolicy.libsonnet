@@ -146,11 +146,11 @@ local raw = import '../zz/main.libsonnet',
         )
       ),
 
-      '#exported_namespace':: d.fn(
-        '`exported_namespace` matches one or more exported_namespaces.',
+      '#exportedNamespace':: d.fn(
+        '`exportedNamespace` matches one or more exported_namespaces.',
         args=[d.arg('namespace', d.T.array)]
       ),
-      exported_namespace(namespace): forProvider.policy.withMatcherMixin(
+      exportedNamespace(namespace): forProvider.policy.withMatcherMixin(
         root.util.matchArrayOrString(
           'exported_namespace',
           namespace
