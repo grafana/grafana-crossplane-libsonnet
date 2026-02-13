@@ -33,106 +33,117 @@
   },
   forProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             forProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           forProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           forProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether Kubernetes observability is enabled.\nWhether Kubernetes observability is enabled.' } },
           withEnabled(value=true): {
-            enabled: value,
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  spec+: {
+                    enabled: value,
+                  },
+                },
+              },
+            },
           },
         },
     },
@@ -154,106 +165,117 @@
   },
   initProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata: value,
             },
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              metadata+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              metadata+: value,
             },
           },
         },
       },
       metadata+:
         {
-          '#': { help: '', name: 'metadata' },
           '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
           withFolderUid(value): {
-            folderUid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    folderUid: value,
+                  },
+                },
+              },
+            },
           },
           '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
           withUid(value): {
-            uid: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  metadata+: {
+                    uid: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options: value,
             },
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
             initProvider+: {
-              options+:
-                (if std.isArray(value)
-                 then value
-                 else [value]),
+              options+: value,
             },
           },
         },
       },
       options+:
         {
-          '#': { help: '', name: 'options' },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
-            overwrite: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  options+: {
+                    overwrite: value,
+                  },
+                },
+              },
+            },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           initProvider+: {
-            spec:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec: value,
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           initProvider+: {
-            spec+:
-              (if std.isArray(value)
-               then value
-               else [value]),
+            spec+: value,
           },
         },
       },
       spec+:
         {
-          '#': { help: '', name: 'spec' },
           '#withEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether Kubernetes observability is enabled.\nWhether Kubernetes observability is enabled.' } },
           withEnabled(value=true): {
-            enabled: value,
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  spec+: {
+                    enabled: value,
+                  },
+                },
+              },
+            },
           },
         },
     },

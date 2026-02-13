@@ -32,23 +32,65 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.metadata
-                toFieldPath: spec.forProvider.metadata
+              - fromFieldPath: spec.parameters.forProvider.metadata.folderUid
+                toFieldPath: spec.forProvider.metadata.folderUid
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.options
-                toFieldPath: spec.forProvider.options
+              - fromFieldPath: spec.parameters.forProvider.metadata.uid
+                toFieldPath: spec.forProvider.metadata.uid
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.spec
-                toFieldPath: spec.forProvider.spec
+              - fromFieldPath: spec.parameters.forProvider.options.overwrite
+                toFieldPath: spec.forProvider.options.overwrite
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.metadata
-                toFieldPath: spec.initProvider.metadata
+              - fromFieldPath: spec.parameters.forProvider.spec.expressions
+                toFieldPath: spec.forProvider.spec.expressions
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.options
-                toFieldPath: spec.initProvider.options
+              - fromFieldPath: spec.parameters.forProvider.spec.labels
+                toFieldPath: spec.forProvider.spec.labels
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.spec
-                toFieldPath: spec.initProvider.spec
+              - fromFieldPath: spec.parameters.forProvider.spec.metric
+                toFieldPath: spec.forProvider.spec.metric
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.paused
+                toFieldPath: spec.forProvider.spec.paused
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.targetDatasourceUid
+                toFieldPath: spec.forProvider.spec.targetDatasourceUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.title
+                toFieldPath: spec.forProvider.spec.title
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.trigger.interval
+                toFieldPath: spec.forProvider.spec.trigger.interval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.folderUid
+                toFieldPath: spec.initProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.uid
+                toFieldPath: spec.initProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.overwrite
+                toFieldPath: spec.initProvider.options.overwrite
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.expressions
+                toFieldPath: spec.initProvider.spec.expressions
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.labels
+                toFieldPath: spec.initProvider.spec.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.metric
+                toFieldPath: spec.initProvider.spec.metric
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.paused
+                toFieldPath: spec.initProvider.spec.paused
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.targetDatasourceUid
+                toFieldPath: spec.initProvider.spec.targetDatasourceUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.title
+                toFieldPath: spec.initProvider.spec.title
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.trigger.interval
+                toFieldPath: spec.initProvider.spec.trigger.interval
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

@@ -1,13 +1,6 @@
-# schedule
+# k8So11YconfigV1Alpha1
 
 
-
-## Subpackages
-
-* [spec.parameters.forProvider.cron](spec/parameters/forProvider/cron.md)
-* [spec.parameters.forProvider.recurrenceRule](spec/parameters/forProvider/recurrenceRule.md)
-* [spec.parameters.initProvider.cron](spec/parameters/initProvider/cron.md)
-* [spec.parameters.initProvider.recurrenceRule](spec/parameters/initProvider/recurrenceRule.md)
 
 ## Index
 
@@ -74,19 +67,33 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
-      * [`fn withCron(value)`](#fn-specparametersforproviderwithcron)
-      * [`fn withCronMixin(value)`](#fn-specparametersforproviderwithcronmixin)
-      * [`fn withLoadTestId(value)`](#fn-specparametersforproviderwithloadtestid)
-      * [`fn withRecurrenceRule(value)`](#fn-specparametersforproviderwithrecurrencerule)
-      * [`fn withRecurrenceRuleMixin(value)`](#fn-specparametersforproviderwithrecurrencerulemixin)
-      * [`fn withStarts(value)`](#fn-specparametersforproviderwithstarts)
+      * [`fn withMetadata(value)`](#fn-specparametersforproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersforproviderwithmetadatamixin)
+      * [`fn withOptions(value)`](#fn-specparametersforproviderwithoptions)
+      * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
+      * [`fn withSpec(value)`](#fn-specparametersforproviderwithspec)
+      * [`fn withSpecMixin(value)`](#fn-specparametersforproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersforprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersforprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersforproviderspec)
+        * [`fn withEnabled(value=true)`](#fn-specparametersforproviderspecwithenabled)
     * [`obj initProvider`](#obj-specparametersinitprovider)
-      * [`fn withCron(value)`](#fn-specparametersinitproviderwithcron)
-      * [`fn withCronMixin(value)`](#fn-specparametersinitproviderwithcronmixin)
-      * [`fn withLoadTestId(value)`](#fn-specparametersinitproviderwithloadtestid)
-      * [`fn withRecurrenceRule(value)`](#fn-specparametersinitproviderwithrecurrencerule)
-      * [`fn withRecurrenceRuleMixin(value)`](#fn-specparametersinitproviderwithrecurrencerulemixin)
-      * [`fn withStarts(value)`](#fn-specparametersinitproviderwithstarts)
+      * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
+      * [`fn withOptions(value)`](#fn-specparametersinitproviderwithoptions)
+      * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
+      * [`fn withSpec(value)`](#fn-specparametersinitproviderwithspec)
+      * [`fn withSpecMixin(value)`](#fn-specparametersinitproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersinitprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersinitprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersinitproviderspec)
+        * [`fn withEnabled(value=true)`](#fn-specparametersinitproviderspecwithenabled)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -515,7 +522,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-ScheduleSpec defines the desired state of Schedule
+K8So11YconfigV1Alpha1Spec defines the desired state of K8So11YconfigV1Alpha1
 #### fn spec.withParametersMixin
 
 ```jsonnet
@@ -526,7 +533,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-ScheduleSpec defines the desired state of Schedule
+K8So11YconfigV1Alpha1Spec defines the desired state of K8So11YconfigV1Alpha1
 #### fn spec.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -813,153 +820,271 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
-###### fn spec.parameters.forProvider.withCron
+###### fn spec.parameters.forProvider.withMetadata
 
 ```jsonnet
-spec.parameters.forProvider.withCron(value)
+spec.parameters.forProvider.withMetadata(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.forProvider.withCronMixin
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.forProvider.withMetadataMixin
 
 ```jsonnet
-spec.parameters.forProvider.withCronMixin(value)
+spec.parameters.forProvider.withMetadataMixin(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.forProvider.withLoadTestId
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.forProvider.withOptions
 
 ```jsonnet
-spec.parameters.forProvider.withLoadTestId(value)
+spec.parameters.forProvider.withOptions(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.forProvider.withOptionsMixin
+
+```jsonnet
+spec.parameters.forProvider.withOptionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.forProvider.withSpec
+
+```jsonnet
+spec.parameters.forProvider.withSpec(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### fn spec.parameters.forProvider.withSpecMixin
+
+```jsonnet
+spec.parameters.forProvider.withSpecMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### obj spec.parameters.forProvider.metadata
+
+
+####### fn spec.parameters.forProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withFolderUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The identifier of the load test to schedule.
-The identifier of the load test to schedule.
-###### fn spec.parameters.forProvider.withRecurrenceRule
+(String) The UID of the folder to save the resource in.
+The UID of the folder to save the resource in.
+####### fn spec.parameters.forProvider.metadata.withUid
 
 ```jsonnet
-spec.parameters.forProvider.withRecurrenceRule(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.forProvider.withRecurrenceRuleMixin
-
-```jsonnet
-spec.parameters.forProvider.withRecurrenceRuleMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.forProvider.withStarts
-
-```jsonnet
-spec.parameters.forProvider.withStarts(value)
+spec.parameters.forProvider.metadata.withUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The start time for the schedule (RFC3339 format).
-The start time for the schedule (RFC3339 format).
+(String) The unique identifier of the resource.
+The unique identifier of the resource.
+###### obj spec.parameters.forProvider.options
+
+
+####### fn spec.parameters.forProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.forProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.forProvider.spec
+
+
+####### fn spec.parameters.forProvider.spec.withEnabled
+
+```jsonnet
+spec.parameters.forProvider.spec.withEnabled(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Whether Kubernetes observability is enabled.
+Whether Kubernetes observability is enabled.
 ##### obj spec.parameters.initProvider
 
 
-###### fn spec.parameters.initProvider.withCron
+###### fn spec.parameters.initProvider.withMetadata
 
 ```jsonnet
-spec.parameters.initProvider.withCron(value)
+spec.parameters.initProvider.withMetadata(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.initProvider.withCronMixin
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.initProvider.withMetadataMixin
 
 ```jsonnet
-spec.parameters.initProvider.withCronMixin(value)
+spec.parameters.initProvider.withMetadataMixin(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.initProvider.withLoadTestId
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.initProvider.withOptions
 
 ```jsonnet
-spec.parameters.initProvider.withLoadTestId(value)
+spec.parameters.initProvider.withOptions(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.initProvider.withOptionsMixin
+
+```jsonnet
+spec.parameters.initProvider.withOptionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.initProvider.withSpec
+
+```jsonnet
+spec.parameters.initProvider.withSpec(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### fn spec.parameters.initProvider.withSpecMixin
+
+```jsonnet
+spec.parameters.initProvider.withSpecMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### obj spec.parameters.initProvider.metadata
+
+
+####### fn spec.parameters.initProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withFolderUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The identifier of the load test to schedule.
-The identifier of the load test to schedule.
-###### fn spec.parameters.initProvider.withRecurrenceRule
+(String) The UID of the folder to save the resource in.
+The UID of the folder to save the resource in.
+####### fn spec.parameters.initProvider.metadata.withUid
 
 ```jsonnet
-spec.parameters.initProvider.withRecurrenceRule(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.initProvider.withRecurrenceRuleMixin
-
-```jsonnet
-spec.parameters.initProvider.withRecurrenceRuleMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
-The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
-###### fn spec.parameters.initProvider.withStarts
-
-```jsonnet
-spec.parameters.initProvider.withStarts(value)
+spec.parameters.initProvider.metadata.withUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The start time for the schedule (RFC3339 format).
-The start time for the schedule (RFC3339 format).
+(String) The unique identifier of the resource.
+The unique identifier of the resource.
+###### obj spec.parameters.initProvider.options
+
+
+####### fn spec.parameters.initProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.initProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.initProvider.spec
+
+
+####### fn spec.parameters.initProvider.spec.withEnabled
+
+```jsonnet
+spec.parameters.initProvider.spec.withEnabled(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Whether Kubernetes observability is enabled.
+Whether Kubernetes observability is enabled.
 ##### obj spec.parameters.providerConfigRef
 
 

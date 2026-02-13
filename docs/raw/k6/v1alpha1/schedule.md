@@ -1,15 +1,6 @@
-# k8So11YconfigV1Alpha1
+# schedule
 
 
-
-## Subpackages
-
-* [spec.parameters.forProvider.metadata](spec/parameters/forProvider/metadata.md)
-* [spec.parameters.forProvider.options](spec/parameters/forProvider/options.md)
-* [spec.parameters.forProvider.spec](spec/parameters/forProvider/spec.md)
-* [spec.parameters.initProvider.metadata](spec/parameters/initProvider/metadata.md)
-* [spec.parameters.initProvider.options](spec/parameters/initProvider/options.md)
-* [spec.parameters.initProvider.spec](spec/parameters/initProvider/spec.md)
 
 ## Index
 
@@ -76,19 +67,39 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
-      * [`fn withMetadata(value)`](#fn-specparametersforproviderwithmetadata)
-      * [`fn withMetadataMixin(value)`](#fn-specparametersforproviderwithmetadatamixin)
-      * [`fn withOptions(value)`](#fn-specparametersforproviderwithoptions)
-      * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
-      * [`fn withSpec(value)`](#fn-specparametersforproviderwithspec)
-      * [`fn withSpecMixin(value)`](#fn-specparametersforproviderwithspecmixin)
+      * [`fn withCron(value)`](#fn-specparametersforproviderwithcron)
+      * [`fn withCronMixin(value)`](#fn-specparametersforproviderwithcronmixin)
+      * [`fn withLoadTestId(value)`](#fn-specparametersforproviderwithloadtestid)
+      * [`fn withRecurrenceRule(value)`](#fn-specparametersforproviderwithrecurrencerule)
+      * [`fn withRecurrenceRuleMixin(value)`](#fn-specparametersforproviderwithrecurrencerulemixin)
+      * [`fn withStarts(value)`](#fn-specparametersforproviderwithstarts)
+      * [`obj cron`](#obj-specparametersforprovidercron)
+        * [`fn withSchedule(value)`](#fn-specparametersforprovidercronwithschedule)
+        * [`fn withTimezone(value)`](#fn-specparametersforprovidercronwithtimezone)
+      * [`obj recurrenceRule`](#obj-specparametersforproviderrecurrencerule)
+        * [`fn withByday(value)`](#fn-specparametersforproviderrecurrencerulewithbyday)
+        * [`fn withBydayMixin(value)`](#fn-specparametersforproviderrecurrencerulewithbydaymixin)
+        * [`fn withCount(value)`](#fn-specparametersforproviderrecurrencerulewithcount)
+        * [`fn withFrequency(value)`](#fn-specparametersforproviderrecurrencerulewithfrequency)
+        * [`fn withInterval(value)`](#fn-specparametersforproviderrecurrencerulewithinterval)
+        * [`fn withUntil(value)`](#fn-specparametersforproviderrecurrencerulewithuntil)
     * [`obj initProvider`](#obj-specparametersinitprovider)
-      * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
-      * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
-      * [`fn withOptions(value)`](#fn-specparametersinitproviderwithoptions)
-      * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
-      * [`fn withSpec(value)`](#fn-specparametersinitproviderwithspec)
-      * [`fn withSpecMixin(value)`](#fn-specparametersinitproviderwithspecmixin)
+      * [`fn withCron(value)`](#fn-specparametersinitproviderwithcron)
+      * [`fn withCronMixin(value)`](#fn-specparametersinitproviderwithcronmixin)
+      * [`fn withLoadTestId(value)`](#fn-specparametersinitproviderwithloadtestid)
+      * [`fn withRecurrenceRule(value)`](#fn-specparametersinitproviderwithrecurrencerule)
+      * [`fn withRecurrenceRuleMixin(value)`](#fn-specparametersinitproviderwithrecurrencerulemixin)
+      * [`fn withStarts(value)`](#fn-specparametersinitproviderwithstarts)
+      * [`obj cron`](#obj-specparametersinitprovidercron)
+        * [`fn withSchedule(value)`](#fn-specparametersinitprovidercronwithschedule)
+        * [`fn withTimezone(value)`](#fn-specparametersinitprovidercronwithtimezone)
+      * [`obj recurrenceRule`](#obj-specparametersinitproviderrecurrencerule)
+        * [`fn withByday(value)`](#fn-specparametersinitproviderrecurrencerulewithbyday)
+        * [`fn withBydayMixin(value)`](#fn-specparametersinitproviderrecurrencerulewithbydaymixin)
+        * [`fn withCount(value)`](#fn-specparametersinitproviderrecurrencerulewithcount)
+        * [`fn withFrequency(value)`](#fn-specparametersinitproviderrecurrencerulewithfrequency)
+        * [`fn withInterval(value)`](#fn-specparametersinitproviderrecurrencerulewithinterval)
+        * [`fn withUntil(value)`](#fn-specparametersinitproviderrecurrencerulewithuntil)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -517,7 +528,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-K8So11YconfigV1Alpha1Spec defines the desired state of K8So11YconfigV1Alpha1
+ScheduleSpec defines the desired state of Schedule
 #### fn spec.withParametersMixin
 
 ```jsonnet
@@ -528,7 +539,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-K8So11YconfigV1Alpha1Spec defines the desired state of K8So11YconfigV1Alpha1
+ScheduleSpec defines the desired state of Schedule
 #### fn spec.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -815,153 +826,357 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
-###### fn spec.parameters.forProvider.withMetadata
+###### fn spec.parameters.forProvider.withCron
 
 ```jsonnet
-spec.parameters.forProvider.withMetadata(value)
+spec.parameters.forProvider.withCron(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.forProvider.withCronMixin
+
+```jsonnet
+spec.parameters.forProvider.withCronMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.forProvider.withLoadTestId
+
+```jsonnet
+spec.parameters.forProvider.withLoadTestId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The identifier of the load test to schedule.
+The identifier of the load test to schedule.
+###### fn spec.parameters.forProvider.withRecurrenceRule
+
+```jsonnet
+spec.parameters.forProvider.withRecurrenceRule(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.forProvider.withRecurrenceRuleMixin
+
+```jsonnet
+spec.parameters.forProvider.withRecurrenceRuleMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.forProvider.withStarts
+
+```jsonnet
+spec.parameters.forProvider.withStarts(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The start time for the schedule (RFC3339 format).
+The start time for the schedule (RFC3339 format).
+###### obj spec.parameters.forProvider.cron
+
+
+####### fn spec.parameters.forProvider.cron.withSchedule
+
+```jsonnet
+spec.parameters.forProvider.cron.withSchedule(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+A cron expression with exactly 5 entries, or an alias. The allowed aliases are: `@yearly`, `@annually`, `@monthly`, `@weekly`, `@daily`, `@hourly`.
+####### fn spec.parameters.forProvider.cron.withTimezone
+
+```jsonnet
+spec.parameters.forProvider.cron.withTimezone(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The timezone of the cron expression. For example, UTC or Europe/London.
+The timezone of the cron expression. For example, `UTC` or `Europe/London`.
+###### obj spec.parameters.forProvider.recurrenceRule
+
+
+####### fn spec.parameters.forProvider.recurrenceRule.withByday
+
+```jsonnet
+spec.parameters.forProvider.recurrenceRule.withByday(value)
 ```
 
 PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
-The metadata of the resource.
-###### fn spec.parameters.forProvider.withMetadataMixin
+(List of String) The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+####### fn spec.parameters.forProvider.recurrenceRule.withBydayMixin
 
 ```jsonnet
-spec.parameters.forProvider.withMetadataMixin(value)
+spec.parameters.forProvider.recurrenceRule.withBydayMixin(value)
 ```
 
 PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
-The metadata of the resource.
-###### fn spec.parameters.forProvider.withOptions
+(List of String) The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+####### fn spec.parameters.forProvider.recurrenceRule.withCount
 
 ```jsonnet
-spec.parameters.forProvider.withOptions(value)
+spec.parameters.forProvider.recurrenceRule.withCount(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`number`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### fn spec.parameters.forProvider.withOptionsMixin
+(Number) How many times the recurrence will repeat.
+How many times the recurrence will repeat.
+####### fn spec.parameters.forProvider.recurrenceRule.withFrequency
 
 ```jsonnet
-spec.parameters.forProvider.withOptionsMixin(value)
+spec.parameters.forProvider.recurrenceRule.withFrequency(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`string`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### fn spec.parameters.forProvider.withSpec
+(String) The frequency of the schedule (HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY).
+The frequency of the schedule (HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY).
+####### fn spec.parameters.forProvider.recurrenceRule.withInterval
 
 ```jsonnet
-spec.parameters.forProvider.withSpec(value)
+spec.parameters.forProvider.recurrenceRule.withInterval(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`number`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
-The spec of the resource.
-###### fn spec.parameters.forProvider.withSpecMixin
+(Number) The interval between each frequency iteration (e.g., 2 = every 2 hours for HOURLY). Defaults to 1.
+The interval between each frequency iteration (e.g., 2 = every 2 hours for HOURLY). Defaults to 1.
+####### fn spec.parameters.forProvider.recurrenceRule.withUntil
 
 ```jsonnet
-spec.parameters.forProvider.withSpecMixin(value)
+spec.parameters.forProvider.recurrenceRule.withUntil(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`string`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
-The spec of the resource.
+(String) The end time for the recurrence (RFC3339 format).
+The end time for the recurrence (RFC3339 format).
 ##### obj spec.parameters.initProvider
 
 
-###### fn spec.parameters.initProvider.withMetadata
+###### fn spec.parameters.initProvider.withCron
 
 ```jsonnet
-spec.parameters.initProvider.withMetadata(value)
+spec.parameters.initProvider.withCron(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.initProvider.withCronMixin
+
+```jsonnet
+spec.parameters.initProvider.withCronMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The cron schedule to trigger the test periodically. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.initProvider.withLoadTestId
+
+```jsonnet
+spec.parameters.initProvider.withLoadTestId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The identifier of the load test to schedule.
+The identifier of the load test to schedule.
+###### fn spec.parameters.initProvider.withRecurrenceRule
+
+```jsonnet
+spec.parameters.initProvider.withRecurrenceRule(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.initProvider.withRecurrenceRuleMixin
+
+```jsonnet
+spec.parameters.initProvider.withRecurrenceRuleMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of recurrence_rule and cron can be set. (see below for nested schema)
+The schedule recurrence settings. If not specified, the test will run only once on the 'starts' date. Only one of `recurrence_rule` and `cron` can be set.
+###### fn spec.parameters.initProvider.withStarts
+
+```jsonnet
+spec.parameters.initProvider.withStarts(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The start time for the schedule (RFC3339 format).
+The start time for the schedule (RFC3339 format).
+###### obj spec.parameters.initProvider.cron
+
+
+####### fn spec.parameters.initProvider.cron.withSchedule
+
+```jsonnet
+spec.parameters.initProvider.cron.withSchedule(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) A cron expression with exactly 5 entries, or an alias. The allowed aliases are: @yearly, @annually, @monthly, @weekly, @daily, @hourly.
+A cron expression with exactly 5 entries, or an alias. The allowed aliases are: `@yearly`, `@annually`, `@monthly`, `@weekly`, `@daily`, `@hourly`.
+####### fn spec.parameters.initProvider.cron.withTimezone
+
+```jsonnet
+spec.parameters.initProvider.cron.withTimezone(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The timezone of the cron expression. For example, UTC or Europe/London.
+The timezone of the cron expression. For example, `UTC` or `Europe/London`.
+###### obj spec.parameters.initProvider.recurrenceRule
+
+
+####### fn spec.parameters.initProvider.recurrenceRule.withByday
+
+```jsonnet
+spec.parameters.initProvider.recurrenceRule.withByday(value)
 ```
 
 PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
-The metadata of the resource.
-###### fn spec.parameters.initProvider.withMetadataMixin
+(List of String) The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+####### fn spec.parameters.initProvider.recurrenceRule.withBydayMixin
 
 ```jsonnet
-spec.parameters.initProvider.withMetadataMixin(value)
+spec.parameters.initProvider.recurrenceRule.withBydayMixin(value)
 ```
 
 PARAMETERS:
 
 * **value** (`array`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
-The metadata of the resource.
-###### fn spec.parameters.initProvider.withOptions
+(List of String) The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+The weekdays when the 'WEEKLY' recurrence will be applied (e.g., ['MO', 'WE', 'FR']). Cannot be set for other frequencies.
+####### fn spec.parameters.initProvider.recurrenceRule.withCount
 
 ```jsonnet
-spec.parameters.initProvider.withOptions(value)
+spec.parameters.initProvider.recurrenceRule.withCount(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`number`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### fn spec.parameters.initProvider.withOptionsMixin
+(Number) How many times the recurrence will repeat.
+How many times the recurrence will repeat.
+####### fn spec.parameters.initProvider.recurrenceRule.withFrequency
 
 ```jsonnet
-spec.parameters.initProvider.withOptionsMixin(value)
+spec.parameters.initProvider.recurrenceRule.withFrequency(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`string`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
-Options for applying the resource.
-###### fn spec.parameters.initProvider.withSpec
+(String) The frequency of the schedule (HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY).
+The frequency of the schedule (HOURLY, DAILY, WEEKLY, MONTHLY, YEARLY).
+####### fn spec.parameters.initProvider.recurrenceRule.withInterval
 
 ```jsonnet
-spec.parameters.initProvider.withSpec(value)
+spec.parameters.initProvider.recurrenceRule.withInterval(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`number`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
-The spec of the resource.
-###### fn spec.parameters.initProvider.withSpecMixin
+(Number) The interval between each frequency iteration (e.g., 2 = every 2 hours for HOURLY). Defaults to 1.
+The interval between each frequency iteration (e.g., 2 = every 2 hours for HOURLY). Defaults to 1.
+####### fn spec.parameters.initProvider.recurrenceRule.withUntil
 
 ```jsonnet
-spec.parameters.initProvider.withSpecMixin(value)
+spec.parameters.initProvider.recurrenceRule.withUntil(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`string`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
-The spec of the resource.
+(String) The end time for the recurrence (RFC3339 format).
+The end time for the recurrence (RFC3339 format).
 ##### obj spec.parameters.providerConfigRef
 
 

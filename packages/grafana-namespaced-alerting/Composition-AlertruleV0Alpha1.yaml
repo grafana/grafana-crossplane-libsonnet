@@ -32,23 +32,137 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.metadata
-                toFieldPath: spec.forProvider.metadata
+              - fromFieldPath: spec.parameters.forProvider.metadata.folderUid
+                toFieldPath: spec.forProvider.metadata.folderUid
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.options
-                toFieldPath: spec.forProvider.options
+              - fromFieldPath: spec.parameters.forProvider.metadata.uid
+                toFieldPath: spec.forProvider.metadata.uid
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.forProvider.spec
-                toFieldPath: spec.forProvider.spec
+              - fromFieldPath: spec.parameters.forProvider.options.overwrite
+                toFieldPath: spec.forProvider.options.overwrite
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.metadata
-                toFieldPath: spec.initProvider.metadata
+              - fromFieldPath: spec.parameters.forProvider.spec.annotations
+                toFieldPath: spec.forProvider.spec.annotations
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.options
-                toFieldPath: spec.initProvider.options
+              - fromFieldPath: spec.parameters.forProvider.spec.execErrState
+                toFieldPath: spec.forProvider.spec.execErrState
                 type: FromCompositeFieldPath
-              - fromFieldPath: spec.parameters.initProvider.spec
-                toFieldPath: spec.initProvider.spec
+              - fromFieldPath: spec.parameters.forProvider.spec.expressions
+                toFieldPath: spec.forProvider.spec.expressions
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.for
+                toFieldPath: spec.forProvider.spec.for
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.keepFiringFor
+                toFieldPath: spec.forProvider.spec.keepFiringFor
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.labels
+                toFieldPath: spec.forProvider.spec.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.missingSeriesEvalsToResolve
+                toFieldPath: spec.forProvider.spec.missingSeriesEvalsToResolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.noDataState
+                toFieldPath: spec.forProvider.spec.noDataState
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.activeTimings
+                toFieldPath: spec.forProvider.spec.notificationSettings.activeTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.contactPoint
+                toFieldPath: spec.forProvider.spec.notificationSettings.contactPoint
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.groupBy
+                toFieldPath: spec.forProvider.spec.notificationSettings.groupBy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.groupInterval
+                toFieldPath: spec.forProvider.spec.notificationSettings.groupInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.groupWait
+                toFieldPath: spec.forProvider.spec.notificationSettings.groupWait
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.muteTimings
+                toFieldPath: spec.forProvider.spec.notificationSettings.muteTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.repeatInterval
+                toFieldPath: spec.forProvider.spec.notificationSettings.repeatInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.panelRef
+                toFieldPath: spec.forProvider.spec.panelRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.paused
+                toFieldPath: spec.forProvider.spec.paused
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.title
+                toFieldPath: spec.forProvider.spec.title
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.trigger.interval
+                toFieldPath: spec.forProvider.spec.trigger.interval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.folderUid
+                toFieldPath: spec.initProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.uid
+                toFieldPath: spec.initProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.overwrite
+                toFieldPath: spec.initProvider.options.overwrite
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.annotations
+                toFieldPath: spec.initProvider.spec.annotations
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.execErrState
+                toFieldPath: spec.initProvider.spec.execErrState
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.expressions
+                toFieldPath: spec.initProvider.spec.expressions
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.for
+                toFieldPath: spec.initProvider.spec.for
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.keepFiringFor
+                toFieldPath: spec.initProvider.spec.keepFiringFor
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.labels
+                toFieldPath: spec.initProvider.spec.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.missingSeriesEvalsToResolve
+                toFieldPath: spec.initProvider.spec.missingSeriesEvalsToResolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.noDataState
+                toFieldPath: spec.initProvider.spec.noDataState
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.activeTimings
+                toFieldPath: spec.initProvider.spec.notificationSettings.activeTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.contactPoint
+                toFieldPath: spec.initProvider.spec.notificationSettings.contactPoint
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.groupBy
+                toFieldPath: spec.initProvider.spec.notificationSettings.groupBy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.groupInterval
+                toFieldPath: spec.initProvider.spec.notificationSettings.groupInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.groupWait
+                toFieldPath: spec.initProvider.spec.notificationSettings.groupWait
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.muteTimings
+                toFieldPath: spec.initProvider.spec.notificationSettings.muteTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.repeatInterval
+                toFieldPath: spec.initProvider.spec.notificationSettings.repeatInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.panelRef
+                toFieldPath: spec.initProvider.spec.panelRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.paused
+                toFieldPath: spec.initProvider.spec.paused
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.title
+                toFieldPath: spec.initProvider.spec.title
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.trigger.interval
+                toFieldPath: spec.initProvider.spec.trigger.interval
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

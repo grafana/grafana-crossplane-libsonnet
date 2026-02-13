@@ -1,15 +1,6 @@
-# dashboardV1Beta1
+# alertruleV0Alpha1
 
 
-
-## Subpackages
-
-* [spec.parameters.forProvider.metadata](spec/parameters/forProvider/metadata.md)
-* [spec.parameters.forProvider.options](spec/parameters/forProvider/options.md)
-* [spec.parameters.forProvider.spec](spec/parameters/forProvider/spec.md)
-* [spec.parameters.initProvider.metadata](spec/parameters/initProvider/metadata.md)
-* [spec.parameters.initProvider.options](spec/parameters/initProvider/options.md)
-* [spec.parameters.initProvider.spec](spec/parameters/initProvider/spec.md)
 
 ## Index
 
@@ -82,6 +73,44 @@
       * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
       * [`fn withSpec(value)`](#fn-specparametersforproviderwithspec)
       * [`fn withSpecMixin(value)`](#fn-specparametersforproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersforprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersforprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersforproviderspec)
+        * [`fn withAnnotations(value)`](#fn-specparametersforproviderspecwithannotations)
+        * [`fn withAnnotationsMixin(value)`](#fn-specparametersforproviderspecwithannotationsmixin)
+        * [`fn withExecErrState(value)`](#fn-specparametersforproviderspecwithexecerrstate)
+        * [`fn withExpressions(value)`](#fn-specparametersforproviderspecwithexpressions)
+        * [`fn withExpressionsMixin(value)`](#fn-specparametersforproviderspecwithexpressionsmixin)
+        * [`fn withFor(value)`](#fn-specparametersforproviderspecwithfor)
+        * [`fn withKeepFiringFor(value)`](#fn-specparametersforproviderspecwithkeepfiringfor)
+        * [`fn withLabels(value)`](#fn-specparametersforproviderspecwithlabels)
+        * [`fn withLabelsMixin(value)`](#fn-specparametersforproviderspecwithlabelsmixin)
+        * [`fn withMissingSeriesEvalsToResolve(value)`](#fn-specparametersforproviderspecwithmissingseriesevalstoresolve)
+        * [`fn withNoDataState(value)`](#fn-specparametersforproviderspecwithnodatastate)
+        * [`fn withNotificationSettings(value)`](#fn-specparametersforproviderspecwithnotificationsettings)
+        * [`fn withNotificationSettingsMixin(value)`](#fn-specparametersforproviderspecwithnotificationsettingsmixin)
+        * [`fn withPanelRef(value)`](#fn-specparametersforproviderspecwithpanelref)
+        * [`fn withPanelRefMixin(value)`](#fn-specparametersforproviderspecwithpanelrefmixin)
+        * [`fn withPaused(value=true)`](#fn-specparametersforproviderspecwithpaused)
+        * [`fn withTitle(value)`](#fn-specparametersforproviderspecwithtitle)
+        * [`fn withTrigger(value)`](#fn-specparametersforproviderspecwithtrigger)
+        * [`fn withTriggerMixin(value)`](#fn-specparametersforproviderspecwithtriggermixin)
+        * [`obj notificationSettings`](#obj-specparametersforproviderspecnotificationsettings)
+          * [`fn withActiveTimings(value)`](#fn-specparametersforproviderspecnotificationsettingswithactivetimings)
+          * [`fn withActiveTimingsMixin(value)`](#fn-specparametersforproviderspecnotificationsettingswithactivetimingsmixin)
+          * [`fn withContactPoint(value)`](#fn-specparametersforproviderspecnotificationsettingswithcontactpoint)
+          * [`fn withGroupBy(value)`](#fn-specparametersforproviderspecnotificationsettingswithgroupby)
+          * [`fn withGroupByMixin(value)`](#fn-specparametersforproviderspecnotificationsettingswithgroupbymixin)
+          * [`fn withGroupInterval(value)`](#fn-specparametersforproviderspecnotificationsettingswithgroupinterval)
+          * [`fn withGroupWait(value)`](#fn-specparametersforproviderspecnotificationsettingswithgroupwait)
+          * [`fn withMuteTimings(value)`](#fn-specparametersforproviderspecnotificationsettingswithmutetimings)
+          * [`fn withMuteTimingsMixin(value)`](#fn-specparametersforproviderspecnotificationsettingswithmutetimingsmixin)
+          * [`fn withRepeatInterval(value)`](#fn-specparametersforproviderspecnotificationsettingswithrepeatinterval)
+        * [`obj trigger`](#obj-specparametersforproviderspectrigger)
+          * [`fn withInterval(value)`](#fn-specparametersforproviderspectriggerwithinterval)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
       * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
@@ -89,6 +118,44 @@
       * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
       * [`fn withSpec(value)`](#fn-specparametersinitproviderwithspec)
       * [`fn withSpecMixin(value)`](#fn-specparametersinitproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersinitprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersinitprovideroptions)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersinitproviderspec)
+        * [`fn withAnnotations(value)`](#fn-specparametersinitproviderspecwithannotations)
+        * [`fn withAnnotationsMixin(value)`](#fn-specparametersinitproviderspecwithannotationsmixin)
+        * [`fn withExecErrState(value)`](#fn-specparametersinitproviderspecwithexecerrstate)
+        * [`fn withExpressions(value)`](#fn-specparametersinitproviderspecwithexpressions)
+        * [`fn withExpressionsMixin(value)`](#fn-specparametersinitproviderspecwithexpressionsmixin)
+        * [`fn withFor(value)`](#fn-specparametersinitproviderspecwithfor)
+        * [`fn withKeepFiringFor(value)`](#fn-specparametersinitproviderspecwithkeepfiringfor)
+        * [`fn withLabels(value)`](#fn-specparametersinitproviderspecwithlabels)
+        * [`fn withLabelsMixin(value)`](#fn-specparametersinitproviderspecwithlabelsmixin)
+        * [`fn withMissingSeriesEvalsToResolve(value)`](#fn-specparametersinitproviderspecwithmissingseriesevalstoresolve)
+        * [`fn withNoDataState(value)`](#fn-specparametersinitproviderspecwithnodatastate)
+        * [`fn withNotificationSettings(value)`](#fn-specparametersinitproviderspecwithnotificationsettings)
+        * [`fn withNotificationSettingsMixin(value)`](#fn-specparametersinitproviderspecwithnotificationsettingsmixin)
+        * [`fn withPanelRef(value)`](#fn-specparametersinitproviderspecwithpanelref)
+        * [`fn withPanelRefMixin(value)`](#fn-specparametersinitproviderspecwithpanelrefmixin)
+        * [`fn withPaused(value=true)`](#fn-specparametersinitproviderspecwithpaused)
+        * [`fn withTitle(value)`](#fn-specparametersinitproviderspecwithtitle)
+        * [`fn withTrigger(value)`](#fn-specparametersinitproviderspecwithtrigger)
+        * [`fn withTriggerMixin(value)`](#fn-specparametersinitproviderspecwithtriggermixin)
+        * [`obj notificationSettings`](#obj-specparametersinitproviderspecnotificationsettings)
+          * [`fn withActiveTimings(value)`](#fn-specparametersinitproviderspecnotificationsettingswithactivetimings)
+          * [`fn withActiveTimingsMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingswithactivetimingsmixin)
+          * [`fn withContactPoint(value)`](#fn-specparametersinitproviderspecnotificationsettingswithcontactpoint)
+          * [`fn withGroupBy(value)`](#fn-specparametersinitproviderspecnotificationsettingswithgroupby)
+          * [`fn withGroupByMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingswithgroupbymixin)
+          * [`fn withGroupInterval(value)`](#fn-specparametersinitproviderspecnotificationsettingswithgroupinterval)
+          * [`fn withGroupWait(value)`](#fn-specparametersinitproviderspecnotificationsettingswithgroupwait)
+          * [`fn withMuteTimings(value)`](#fn-specparametersinitproviderspecnotificationsettingswithmutetimings)
+          * [`fn withMuteTimingsMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingswithmutetimingsmixin)
+          * [`fn withRepeatInterval(value)`](#fn-specparametersinitproviderspecnotificationsettingswithrepeatinterval)
+        * [`obj trigger`](#obj-specparametersinitproviderspectrigger)
+          * [`fn withInterval(value)`](#fn-specparametersinitproviderspectriggerwithinterval)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -517,7 +584,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-DashboardV1Beta1Spec defines the desired state of DashboardV1Beta1
+AlertruleV0Alpha1Spec defines the desired state of AlertruleV0Alpha1
 #### fn spec.withParametersMixin
 
 ```jsonnet
@@ -528,7 +595,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-DashboardV1Beta1Spec defines the desired state of DashboardV1Beta1
+AlertruleV0Alpha1Spec defines the desired state of AlertruleV0Alpha1
 #### fn spec.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -823,9 +890,8 @@ spec.parameters.forProvider.withMetadata(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.forProvider.withMetadataMixin
 
@@ -835,9 +901,8 @@ spec.parameters.forProvider.withMetadataMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.forProvider.withOptions
 
@@ -847,9 +912,8 @@ spec.parameters.forProvider.withOptions(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.forProvider.withOptionsMixin
 
@@ -859,9 +923,8 @@ spec.parameters.forProvider.withOptionsMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.forProvider.withSpec
 
@@ -871,9 +934,8 @@ spec.parameters.forProvider.withSpec(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
 ###### fn spec.parameters.forProvider.withSpecMixin
 
@@ -883,10 +945,389 @@ spec.parameters.forProvider.withSpecMixin(value)
 
 PARAMETERS:
 
+* **value** (`object`)
+
+The spec of the resource.
+###### obj spec.parameters.forProvider.metadata
+
+
+####### fn spec.parameters.forProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The UID of the folder to save the resource in.
+####### fn spec.parameters.forProvider.metadata.withUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The unique identifier of the resource.
+###### obj spec.parameters.forProvider.options
+
+
+####### fn spec.parameters.forProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.forProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.forProvider.spec
+
+
+####### fn spec.parameters.forProvider.spec.withAnnotations
+
+```jsonnet
+spec.parameters.forProvider.spec.withAnnotations(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
+####### fn spec.parameters.forProvider.spec.withAnnotationsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withAnnotationsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
+####### fn spec.parameters.forProvider.spec.withExecErrState
+
+```jsonnet
+spec.parameters.forProvider.spec.withExecErrState(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.
+####### fn spec.parameters.forProvider.spec.withExpressions
+
+```jsonnet
+spec.parameters.forProvider.spec.withExpressions(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
+####### fn spec.parameters.forProvider.spec.withExpressionsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withExpressionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
+####### fn spec.parameters.forProvider.spec.withFor
+
+```jsonnet
+spec.parameters.forProvider.spec.withFor(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.
+####### fn spec.parameters.forProvider.spec.withKeepFiringFor
+
+```jsonnet
+spec.parameters.forProvider.spec.withKeepFiringFor(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
+####### fn spec.parameters.forProvider.spec.withLabels
+
+```jsonnet
+spec.parameters.forProvider.spec.withLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
+####### fn spec.parameters.forProvider.spec.withLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
+####### fn spec.parameters.forProvider.spec.withMissingSeriesEvalsToResolve
+
+```jsonnet
+spec.parameters.forProvider.spec.withMissingSeriesEvalsToResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+The number of missing series evaluations that must occur before the rule is considered to be resolved.
+####### fn spec.parameters.forProvider.spec.withNoDataState
+
+```jsonnet
+spec.parameters.forProvider.spec.withNoDataState(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.
+####### fn spec.parameters.forProvider.spec.withNotificationSettings
+
+```jsonnet
+spec.parameters.forProvider.spec.withNotificationSettings(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Notification settings for the rule. If specified, it overrides the notification policies.
+####### fn spec.parameters.forProvider.spec.withNotificationSettingsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withNotificationSettingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Notification settings for the rule. If specified, it overrides the notification policies.
+####### fn spec.parameters.forProvider.spec.withPanelRef
+
+```jsonnet
+spec.parameters.forProvider.spec.withPanelRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
+####### fn spec.parameters.forProvider.spec.withPanelRefMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withPanelRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
+####### fn spec.parameters.forProvider.spec.withPaused
+
+```jsonnet
+spec.parameters.forProvider.spec.withPaused(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+Sets whether the rule should be paused or not.
+####### fn spec.parameters.forProvider.spec.withTitle
+
+```jsonnet
+spec.parameters.forProvider.spec.withTitle(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The title of the alert rule.
+####### fn spec.parameters.forProvider.spec.withTrigger
+
+```jsonnet
+spec.parameters.forProvider.spec.withTrigger(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+The trigger configuration for the alert rule.
+####### fn spec.parameters.forProvider.spec.withTriggerMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.withTriggerMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+The trigger configuration for the alert rule.
+####### obj spec.parameters.forProvider.spec.notificationSettings
+
+
+######## fn spec.parameters.forProvider.spec.notificationSettings.withActiveTimings
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withActiveTimings(value)
+```
+
+PARAMETERS:
+
 * **value** (`array`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
-The spec of the resource.
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withActiveTimingsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withActiveTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withContactPoint
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withContactPoint(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The contact point to route notifications that match this rule to.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupBy
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withGroupBy(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of alert labels to group alerts into notifications by.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupByMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withGroupByMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of alert labels to group alerts into notifications by.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupInterval
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withGroupInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Minimum time interval between two notifications for the same group.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupWait
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withGroupWait(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Time to wait to buffer alerts of the same group before sending a notification.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withMuteTimings
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withMuteTimings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of mute timing names to apply to alerts that match this policy.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withMuteTimingsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withMuteTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of mute timing names to apply to alerts that match this policy.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withRepeatInterval
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withRepeatInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Minimum time interval for re-sending a notification if an alert is still firing.
+####### obj spec.parameters.forProvider.spec.trigger
+
+
+######## fn spec.parameters.forProvider.spec.trigger.withInterval
+
+```jsonnet
+spec.parameters.forProvider.spec.trigger.withInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The interval at which the alert rule should be evaluated.
 ##### obj spec.parameters.initProvider
 
 
@@ -898,9 +1339,8 @@ spec.parameters.initProvider.withMetadata(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.initProvider.withMetadataMixin
 
@@ -910,9 +1350,8 @@ spec.parameters.initProvider.withMetadataMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.initProvider.withOptions
 
@@ -922,9 +1361,8 @@ spec.parameters.initProvider.withOptions(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.initProvider.withOptionsMixin
 
@@ -934,9 +1372,8 @@ spec.parameters.initProvider.withOptionsMixin(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.initProvider.withSpec
 
@@ -946,9 +1383,8 @@ spec.parameters.initProvider.withSpec(value)
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
 ###### fn spec.parameters.initProvider.withSpecMixin
 
@@ -958,10 +1394,389 @@ spec.parameters.initProvider.withSpecMixin(value)
 
 PARAMETERS:
 
+* **value** (`object`)
+
+The spec of the resource.
+###### obj spec.parameters.initProvider.metadata
+
+
+####### fn spec.parameters.initProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The UID of the folder to save the resource in.
+####### fn spec.parameters.initProvider.metadata.withUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The unique identifier of the resource.
+###### obj spec.parameters.initProvider.options
+
+
+####### fn spec.parameters.initProvider.options.withOverwrite
+
+```jsonnet
+spec.parameters.initProvider.options.withOverwrite(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.initProvider.spec
+
+
+####### fn spec.parameters.initProvider.spec.withAnnotations
+
+```jsonnet
+spec.parameters.initProvider.spec.withAnnotations(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
+####### fn spec.parameters.initProvider.spec.withAnnotationsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withAnnotationsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
+####### fn spec.parameters.initProvider.spec.withExecErrState
+
+```jsonnet
+spec.parameters.initProvider.spec.withExecErrState(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.
+####### fn spec.parameters.initProvider.spec.withExpressions
+
+```jsonnet
+spec.parameters.initProvider.spec.withExpressions(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
+####### fn spec.parameters.initProvider.spec.withExpressionsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withExpressionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
+####### fn spec.parameters.initProvider.spec.withFor
+
+```jsonnet
+spec.parameters.initProvider.spec.withFor(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.
+####### fn spec.parameters.initProvider.spec.withKeepFiringFor
+
+```jsonnet
+spec.parameters.initProvider.spec.withKeepFiringFor(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
+####### fn spec.parameters.initProvider.spec.withLabels
+
+```jsonnet
+spec.parameters.initProvider.spec.withLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
+####### fn spec.parameters.initProvider.spec.withLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
+####### fn spec.parameters.initProvider.spec.withMissingSeriesEvalsToResolve
+
+```jsonnet
+spec.parameters.initProvider.spec.withMissingSeriesEvalsToResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`number`)
+
+The number of missing series evaluations that must occur before the rule is considered to be resolved.
+####### fn spec.parameters.initProvider.spec.withNoDataState
+
+```jsonnet
+spec.parameters.initProvider.spec.withNoDataState(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.
+####### fn spec.parameters.initProvider.spec.withNotificationSettings
+
+```jsonnet
+spec.parameters.initProvider.spec.withNotificationSettings(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Notification settings for the rule. If specified, it overrides the notification policies.
+####### fn spec.parameters.initProvider.spec.withNotificationSettingsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withNotificationSettingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Notification settings for the rule. If specified, it overrides the notification policies.
+####### fn spec.parameters.initProvider.spec.withPanelRef
+
+```jsonnet
+spec.parameters.initProvider.spec.withPanelRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
+####### fn spec.parameters.initProvider.spec.withPanelRefMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withPanelRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
+####### fn spec.parameters.initProvider.spec.withPaused
+
+```jsonnet
+spec.parameters.initProvider.spec.withPaused(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+Sets whether the rule should be paused or not.
+####### fn spec.parameters.initProvider.spec.withTitle
+
+```jsonnet
+spec.parameters.initProvider.spec.withTitle(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The title of the alert rule.
+####### fn spec.parameters.initProvider.spec.withTrigger
+
+```jsonnet
+spec.parameters.initProvider.spec.withTrigger(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+The trigger configuration for the alert rule.
+####### fn spec.parameters.initProvider.spec.withTriggerMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.withTriggerMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+The trigger configuration for the alert rule.
+####### obj spec.parameters.initProvider.spec.notificationSettings
+
+
+######## fn spec.parameters.initProvider.spec.notificationSettings.withActiveTimings
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withActiveTimings(value)
+```
+
+PARAMETERS:
+
 * **value** (`array`)
 
-(Block, Optional) The spec of the resource. (see below for nested schema)
-The spec of the resource.
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withActiveTimingsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withActiveTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withContactPoint
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withContactPoint(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The contact point to route notifications that match this rule to.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupBy
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withGroupBy(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of alert labels to group alerts into notifications by.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupByMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withGroupByMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of alert labels to group alerts into notifications by.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupInterval
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withGroupInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Minimum time interval between two notifications for the same group.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupWait
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withGroupWait(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Time to wait to buffer alerts of the same group before sending a notification.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withMuteTimings
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withMuteTimings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of mute timing names to apply to alerts that match this policy.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withMuteTimingsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withMuteTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+A list of mute timing names to apply to alerts that match this policy.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withRepeatInterval
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withRepeatInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Minimum time interval for re-sending a notification if an alert is still firing.
+####### obj spec.parameters.initProvider.spec.trigger
+
+
+######## fn spec.parameters.initProvider.spec.trigger.withInterval
+
+```jsonnet
+spec.parameters.initProvider.spec.trigger.withInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The interval at which the alert rule should be evaluated.
 ##### obj spec.parameters.providerConfigRef
 
 
