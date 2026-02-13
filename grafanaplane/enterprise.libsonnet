@@ -69,6 +69,34 @@ local raw = import 'zz/main.libsonnet';
       roleAssignmentItem.new(resourceName)
       + roleAssignmentItemForProvider.withRoleUid(name),
 
+    '#newTeamAssignment': d.func.new(
+      |||
+        `newTeamAssignment` creates a new role assignment for a specific team.
+
+        It'll ensure the kubernetes metadata.name is a unique and valid name based on the team and role values.
+      |||,
+      [
+        d.argument.new('team', d.T.string),
+        d.argument.new('role', d.T.string),
+      ]
+    ),
+    newTeamAssignment(team, role):
+      local _team = xtd.ascii.stringToRFC1123(team);
+
+      local _role = xtd.ascii.stringToRFC1123(role);
+      local _rolemd5 = xtd.ascii.stringToRFC1123(std.md5(role));
+
+      local _name = _team + '-' + _role;
+      local _namemd5 = _team + '-' + _rolemd5;
+
+      self.new(
+        (if std.length(_name) < 63
+         then _name
+         else _namemd5),
+        role,
+      )
+      + self.withTeam(team),
+
     '#withTeam': d.func.new(
       'withTeam` assigns role to a team',
       [d.argument.new('value', d.T.string)]

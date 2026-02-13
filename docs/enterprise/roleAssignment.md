@@ -5,6 +5,7 @@
 ## Index
 
 * [`fn new(name, roleUid)`](#fn-new)
+* [`fn newTeamAssignment(team, role)`](#fn-newteamassignment)
 * [`fn withServiceAccount(value)`](#fn-withserviceaccount)
 * [`fn withTeam(value)`](#fn-withteam)
 * [`fn withUser(value)`](#fn-withuser)
@@ -29,6 +30,21 @@ PARAMETERS:
  roleAssignment.new('eng-custom_role', 'custom_role')
  + roleAssignment.withTeam('engineering')
  ```
+
+### fn newTeamAssignment
+
+```jsonnet
+newTeamAssignment(team, role)
+```
+
+PARAMETERS:
+
+* **team** (`string`)
+* **role** (`string`)
+
+`newTeamAssignment` creates a new role assignment for a specific team.
+
+It'll ensure the kubernetes metadata.name is a unique and valid name based on the team and role values.
 
 ### fn withServiceAccount
 
