@@ -201,8 +201,8 @@ local raw = import '../zz/main.libsonnet',
     transformAlertmanagerRoute(route):
       local infunc(route, depth=1) =
         assert depth < 5 : 'NotificationPolicy does not support nesting more than 5 policies';
-        assert std.objectHas(route, 'match') : 'Field "match" is not supported';
-        assert std.objectHas(route, 'match_re') : 'Field "match_re" is not supported';
+        assert !std.objectHas(route, 'match') : 'Field "match" is not supported';
+        assert !std.objectHas(route, 'match_re') : 'Field "match_re" is not supported';
         route
         + (if std.objectHas(route, 'mute_time_intervals')
            then {
@@ -231,7 +231,7 @@ local raw = import '../zz/main.libsonnet',
            then {
              routes:: route.routes,  // hide in favor of policy
              policy: std.map(
-               infunc(route, depth + 1),
+               function(route) infunc(route, depth + 1),
                route.routes
              ),
            }
