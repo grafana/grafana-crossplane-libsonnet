@@ -4,12 +4,14 @@
 
 ## Subpackages
 
+* [check.settings.grpc](check/settings/grpc/index.md)
 * [check.settings.http](check/settings/http/index.md)
 
 ## Index
 
 * [`obj check`](#obj-check)
   * [`fn new(name, job, url)`](#fn-checknew)
+  * [`fn withGrpcSettings(grpc)`](#fn-checkwithgrpcsettings)
   * [`fn withHttpSettings(http)`](#fn-checkwithhttpsettings)
   * [`fn withHttpStatusCheck(validStatusCodes=[200])`](#fn-checkwithhttpstatuscheck)
   * [`fn withLabels(labels)`](#fn-checkwithlabels)
@@ -38,6 +40,23 @@ Parameters:
 - `name`: Name of the check
 - `job`: Job identifier for the check
 - `url`: Target URL to monitor
+
+#### fn check.withGrpcSettings
+
+```jsonnet
+check.withGrpcSettings(grpc)
+```
+
+PARAMETERS:
+
+* **grpc** (`object`)
+
+`withGrpcSettings` configures the settings for a gRPC check. The target must be of the form `host:port`.
+
+The `grpc` object can be created with `check.settings.grpc.new()`.
+
+Parameters:
+- `grpc`: gRPC settings object to override defaults
 
 #### fn check.withHttpSettings
 
