@@ -79,6 +79,22 @@ local raw = import './zz/main.libsonnet';
         forProvider.settings.withHttp(http)
       ),
 
+    '#withGrpcSettings': d.func.new(
+      |||
+        `withGrpcSettings` configures the settings for a gRPC check. The target must be of the form `host:port`.
+
+        The `grpc` object can be created with `check.settings.grpc.new()`.
+
+        Parameters:
+        - `grpc`: gRPC settings object to override defaults
+      |||,
+      [d.argument.new('grpc', d.T.object)]
+    ),
+    withGrpcSettings(grpc):
+      forProvider.withSettings(
+        forProvider.settings.withGrpc(grpc)
+      ),
+
     '#withHttpStatusCheck': d.func.new(
       |||
         `withHttpStatusCheck` configures a simple HTTP status check for the target URL.
@@ -104,6 +120,24 @@ local raw = import './zz/main.libsonnet';
             + self.withFailIfNotSsl(true)
             + self.withNoFollowRedirects(true)
             + self.withMethod('GET'),
+        },
+
+      grpc:
+        forProvider.settings.grpc
+        + {
+          '#new': d.func.new(
+            |||
+              `new` provides the settings for a gRPC check.
+            |||,
+            [
+              d.argument.new('tls', d.T.bool, default=true),
+              d.argument.new('ipVersion', d.T.string, default='V4'),
+            ]
+          ),
+          new(tls=true, ipVersion='V4'):
+            self.withTls(tls)
+            + self.withIpVersion(ipVersion)
+            + self.withService(''),
         },
     },
   },
