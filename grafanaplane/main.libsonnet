@@ -56,7 +56,7 @@ local d = import 'github.com/jsonnet-libs/docsonnet/doc-util/main.libsonnet';
         ),
     },
 
-  global: import './global.libsonnet',
+  global: import './global/main.libsonnet',
   cloud: import './cloud/main.libsonnet',
   oss: import './oss/main.libsonnet',
   oncall: import './oncall/main.libsonnet',
