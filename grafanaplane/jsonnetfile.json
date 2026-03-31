@@ -4,6 +4,15 @@
     {
       "source": {
         "git": {
+          "remote": "https://github.com/jsonnet-libs/crossplane-provider-grafana-libsonnet.git",
+          "subdir": "crossplane-provider-grafana/namespaced"
+        }
+      },
+      "version": "main"
+    },
+    {
+      "source": {
+        "git": {
           "remote": "https://github.com/jsonnet-libs/docsonnet.git",
           "subdir": "doc-util"
         }
@@ -20,5 +29,5 @@
       "version": "master"
     }
   ],
-  "legacyImports": true
+  "legacyImports": false
 }
