@@ -23,7 +23,7 @@ generator/crds.yaml:
 grafanaplane/zz: $(GENERATOR_DEPTHS)
 	rm -rf grafanaplane/zz && \
 	FILES=$$($(JSONNET_BIN) \
-		  -s  1000 \
+		  -s  10000 \
 		  -S -c -m grafanaplane \
 		  -J generator/vendor \
 		  generator/main.libsonnet) && \
