@@ -6,6 +6,8 @@ local crds = import './crds.libsonnet';
 local exclude = [
   'awsresourcemetadatascrapejobs.cloudprovider.grafana.crossplane.io',
   'privatedatasourceconnectnetworktokens.cloud.grafana.crossplane.io',
+  // This doesn't currently work with code generation
+  'resources.oss.grafana.crossplane.io',
 ];
 
 // XRD metadata.name consists of `plural+group`, for some resources this became longer than 63 characters, which resulted in this error:
@@ -13,7 +15,7 @@ local exclude = [
 local renameGroup(obj) =
   local name = std.strReplace(obj.definition.metadata.name, 'crossplane.io', 'net');
   assert std.length(name) <= 63 : 'CompositeResourceDefinition names must be no more than 63 characters: ' + name;
-  obj + {
+  obj {
     definition+: {
       metadata+: {
         name: name,
@@ -26,7 +28,7 @@ local renameGroup(obj) =
 
 local addProbeNamesToSMCheck(obj) =
   if obj.definition.metadata.name == 'xchecks.sm.grafana.net.namespaced'
-  then obj + {
+  then obj {
     definition+: {
       local versions = super.spec.versions,
       spec+: {
@@ -47,7 +49,7 @@ local addProbeNamesToSMCheck(obj) =
           };
           std.map(
             function(version)
-              version + {
+              version {
                 schema+: {
                   openAPIV3Schema+: {
                     properties+: {
