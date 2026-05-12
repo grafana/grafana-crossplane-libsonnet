@@ -69,9 +69,49 @@
     * [`obj forProvider`](#obj-specparametersforprovider)
       * [`fn withName(value)`](#fn-specparametersforproviderwithname)
       * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
+      * [`fn withTeamRef(value)`](#fn-specparametersforproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersforproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersforproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersforproviderwithteamselectormixin)
+      * [`obj teamRef`](#obj-specparametersforproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersforproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersforproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamselectorpolicywithresolve)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
       * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
+      * [`fn withTeamRef(value)`](#fn-specparametersinitproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersinitproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersinitproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersinitproviderwithteamselectormixin)
+      * [`obj teamRef`](#obj-specparametersinitproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersinitproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersinitproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamselectorpolicywithresolve)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -822,6 +862,214 @@ PARAMETERS:
 
 (String) The ID of the OnCall team (using the grafana_oncall_team datasource).
 The ID of the OnCall team (using the `grafana_oncall_team` datasource).
+###### fn spec.parameters.forProvider.withTeamRef
+
+```jsonnet
+spec.parameters.forProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.forProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.forProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### fn spec.parameters.forProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### obj spec.parameters.forProvider.teamRef
+
+
+####### fn spec.parameters.forProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.teamRef.policy
+
+
+######## fn spec.parameters.forProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.teamSelector
+
+
+####### fn spec.parameters.forProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.teamSelector.policy
+
+
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.initProvider
 
 
@@ -849,6 +1097,214 @@ PARAMETERS:
 
 (String) The ID of the OnCall team (using the grafana_oncall_team datasource).
 The ID of the OnCall team (using the `grafana_oncall_team` datasource).
+###### fn spec.parameters.initProvider.withTeamRef
+
+```jsonnet
+spec.parameters.initProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.initProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.initProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### fn spec.parameters.initProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### obj spec.parameters.initProvider.teamRef
+
+
+####### fn spec.parameters.initProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.teamRef.policy
+
+
+######## fn spec.parameters.initProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.teamSelector
+
+
+####### fn spec.parameters.initProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.teamSelector.policy
+
+
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.providerConfigRef
 
 

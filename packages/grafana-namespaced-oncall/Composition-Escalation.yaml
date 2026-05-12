@@ -86,6 +86,27 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.groupToNotify
                 toFieldPath: spec.forProvider.groupToNotify
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.groupToNotifyRef.name
+                toFieldPath: spec.forProvider.groupToNotifyRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.groupToNotifyRef.policy.resolution
+                toFieldPath: spec.forProvider.groupToNotifyRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.groupToNotifyRef.policy.resolve
+                toFieldPath: spec.forProvider.groupToNotifyRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.groupToNotifySelector.matchControllerRef
+                toFieldPath: spec.forProvider.groupToNotifySelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.groupToNotifySelector.matchLabels
+                toFieldPath: spec.forProvider.groupToNotifySelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.groupToNotifySelector.policy.resolution
+                toFieldPath: spec.forProvider.groupToNotifySelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.groupToNotifySelector.policy.resolve
+                toFieldPath: spec.forProvider.groupToNotifySelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.important
                 toFieldPath: spec.forProvider.important
                 type: FromCompositeFieldPath
@@ -134,11 +155,62 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.personsToNotifyNextEachTime
                 toFieldPath: spec.forProvider.personsToNotifyNextEachTime
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifyNextEachTimeRef
+                toFieldPath: spec.forProvider.personsToNotifyNextEachTimeRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.matchControllerRef
+                toFieldPath: spec.forProvider.personsToNotifyNextEachTimeSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.matchLabels
+                toFieldPath: spec.forProvider.personsToNotifyNextEachTimeSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.policy.resolution
+                toFieldPath: spec.forProvider.personsToNotifyNextEachTimeSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.policy.resolve
+                toFieldPath: spec.forProvider.personsToNotifyNextEachTimeSelector.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifyRef
+                toFieldPath: spec.forProvider.personsToNotifyRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifySelector.matchControllerRef
+                toFieldPath: spec.forProvider.personsToNotifySelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifySelector.matchLabels
+                toFieldPath: spec.forProvider.personsToNotifySelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifySelector.policy.resolution
+                toFieldPath: spec.forProvider.personsToNotifySelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.personsToNotifySelector.policy.resolve
+                toFieldPath: spec.forProvider.personsToNotifySelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.position
                 toFieldPath: spec.forProvider.position
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.severity
                 toFieldPath: spec.forProvider.severity
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.name
+                toFieldPath: spec.forProvider.teamRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.policy.resolution
+                toFieldPath: spec.forProvider.teamRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.policy.resolve
+                toFieldPath: spec.forProvider.teamRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.matchControllerRef
+                toFieldPath: spec.forProvider.teamSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.matchLabels
+                toFieldPath: spec.forProvider.teamSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.policy.resolution
+                toFieldPath: spec.forProvider.teamSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.policy.resolve
+                toFieldPath: spec.forProvider.teamSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.type
                 toFieldPath: spec.forProvider.type
@@ -197,6 +269,27 @@ spec:
               - fromFieldPath: spec.parameters.initProvider.groupToNotify
                 toFieldPath: spec.initProvider.groupToNotify
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.groupToNotifyRef.name
+                toFieldPath: spec.initProvider.groupToNotifyRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.groupToNotifyRef.policy.resolution
+                toFieldPath: spec.initProvider.groupToNotifyRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.groupToNotifyRef.policy.resolve
+                toFieldPath: spec.initProvider.groupToNotifyRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.groupToNotifySelector.matchControllerRef
+                toFieldPath: spec.initProvider.groupToNotifySelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.groupToNotifySelector.matchLabels
+                toFieldPath: spec.initProvider.groupToNotifySelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.groupToNotifySelector.policy.resolution
+                toFieldPath: spec.initProvider.groupToNotifySelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.groupToNotifySelector.policy.resolve
+                toFieldPath: spec.initProvider.groupToNotifySelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.important
                 toFieldPath: spec.initProvider.important
                 type: FromCompositeFieldPath
@@ -245,11 +338,62 @@ spec:
               - fromFieldPath: spec.parameters.initProvider.personsToNotifyNextEachTime
                 toFieldPath: spec.initProvider.personsToNotifyNextEachTime
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifyNextEachTimeRef
+                toFieldPath: spec.initProvider.personsToNotifyNextEachTimeRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.matchControllerRef
+                toFieldPath: spec.initProvider.personsToNotifyNextEachTimeSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.matchLabels
+                toFieldPath: spec.initProvider.personsToNotifyNextEachTimeSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.policy.resolution
+                toFieldPath: spec.initProvider.personsToNotifyNextEachTimeSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.policy.resolve
+                toFieldPath: spec.initProvider.personsToNotifyNextEachTimeSelector.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifyRef
+                toFieldPath: spec.initProvider.personsToNotifyRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifySelector.matchControllerRef
+                toFieldPath: spec.initProvider.personsToNotifySelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifySelector.matchLabels
+                toFieldPath: spec.initProvider.personsToNotifySelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifySelector.policy.resolution
+                toFieldPath: spec.initProvider.personsToNotifySelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.personsToNotifySelector.policy.resolve
+                toFieldPath: spec.initProvider.personsToNotifySelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.position
                 toFieldPath: spec.initProvider.position
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.severity
                 toFieldPath: spec.initProvider.severity
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.name
+                toFieldPath: spec.initProvider.teamRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.policy.resolution
+                toFieldPath: spec.initProvider.teamRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.policy.resolve
+                toFieldPath: spec.initProvider.teamRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.matchControllerRef
+                toFieldPath: spec.initProvider.teamSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.matchLabels
+                toFieldPath: spec.initProvider.teamSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.policy.resolution
+                toFieldPath: spec.initProvider.teamSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.policy.resolve
+                toFieldPath: spec.initProvider.teamSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.type
                 toFieldPath: spec.initProvider.type

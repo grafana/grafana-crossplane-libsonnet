@@ -79,6 +79,8 @@
       * [`fn withJob(value)`](#fn-specparametersforproviderwithjob)
       * [`fn withLabels(value)`](#fn-specparametersforproviderwithlabels)
       * [`fn withLabelsMixin(value)`](#fn-specparametersforproviderwithlabelsmixin)
+      * [`fn withProbeNames(value)`](#fn-specparametersforproviderwithprobenames)
+      * [`fn withProbeNamesMixin(value)`](#fn-specparametersforproviderwithprobenamesmixin)
       * [`fn withProbes(value)`](#fn-specparametersforproviderwithprobes)
       * [`fn withProbesMixin(value)`](#fn-specparametersforproviderwithprobesmixin)
       * [`fn withSettings(value)`](#fn-specparametersforproviderwithsettings)
@@ -93,6 +95,8 @@
       * [`fn withJob(value)`](#fn-specparametersinitproviderwithjob)
       * [`fn withLabels(value)`](#fn-specparametersinitproviderwithlabels)
       * [`fn withLabelsMixin(value)`](#fn-specparametersinitproviderwithlabelsmixin)
+      * [`fn withProbeNames(value)`](#fn-specparametersinitproviderwithprobenames)
+      * [`fn withProbeNamesMixin(value)`](#fn-specparametersinitproviderwithprobenamesmixin)
       * [`fn withProbes(value)`](#fn-specparametersinitproviderwithprobes)
       * [`fn withProbesMixin(value)`](#fn-specparametersinitproviderwithprobesmixin)
       * [`fn withSettings(value)`](#fn-specparametersinitproviderwithsettings)
@@ -911,6 +915,32 @@ PARAMETERS:
 
 specific labels, to the outgoing metrics. The names and values of the labels cannot be empty, and the maximum length is 32 bytes.
 Custom labels to be included with collected metrics and logs. The maximum number of labels that can be specified per check is 5. These are applied, along with the probe-specific labels, to the outgoing metrics. The names and values of the labels cannot be empty, and the maximum length is 32 bytes.
+###### fn spec.parameters.forProvider.withProbeNames
+
+```jsonnet
+spec.parameters.forProvider.withProbeNames(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+CUSTOM FIELD: List of probe names to resolve to probe IDs.
+If set, this will override the Probes field with the resolved probe IDs on every reconciliation.
+This field is excluded from Terraform via tf:"-" tag.
+###### fn spec.parameters.forProvider.withProbeNamesMixin
+
+```jsonnet
+spec.parameters.forProvider.withProbeNamesMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+CUSTOM FIELD: List of probe names to resolve to probe IDs.
+If set, this will override the Probes field with the resolved probe IDs on every reconciliation.
+This field is excluded from Terraform via tf:"-" tag.
 ###### fn spec.parameters.forProvider.withProbes
 
 ```jsonnet
@@ -1072,6 +1102,32 @@ PARAMETERS:
 
 specific labels, to the outgoing metrics. The names and values of the labels cannot be empty, and the maximum length is 32 bytes.
 Custom labels to be included with collected metrics and logs. The maximum number of labels that can be specified per check is 5. These are applied, along with the probe-specific labels, to the outgoing metrics. The names and values of the labels cannot be empty, and the maximum length is 32 bytes.
+###### fn spec.parameters.initProvider.withProbeNames
+
+```jsonnet
+spec.parameters.initProvider.withProbeNames(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+CUSTOM FIELD: List of probe names to resolve to probe IDs.
+If set, this will override the Probes field with the resolved probe IDs on every reconciliation.
+This field is excluded from Terraform via tf:"-" tag.
+###### fn spec.parameters.initProvider.withProbeNamesMixin
+
+```jsonnet
+spec.parameters.initProvider.withProbeNamesMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+CUSTOM FIELD: List of probe names to resolve to probe IDs.
+If set, this will override the Probes field with the resolved probe IDs on every reconciliation.
+This field is excluded from Terraform via tf:"-" tag.
 ###### fn spec.parameters.initProvider.withProbes
 
 ```jsonnet

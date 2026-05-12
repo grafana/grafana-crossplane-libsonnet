@@ -3,6 +3,7 @@
   accessPolicyRotatingToken+: import './accessPolicyRotatingToken/main.libsonnet',
   accessPolicyToken+: import './accessPolicyToken/main.libsonnet',
   appo11YconfigV1Alpha1+: import './appo11YconfigV1Alpha1/main.libsonnet',
+  dbo11YconfigV1Alpha1+: import './dbo11YconfigV1Alpha1/main.libsonnet',
   k8So11YconfigV1Alpha1+: import './k8So11YconfigV1Alpha1/main.libsonnet',
   orgMember+: import './orgMember/main.libsonnet',
   pluginInstallation+: import './pluginInstallation/main.libsonnet',

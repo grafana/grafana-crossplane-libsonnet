@@ -566,6 +566,114 @@
           withEnabled(value=true): {
             enabled: value,
           },
+          '#withSlackChannelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelRef(value): {
+            slackChannelRef: value,
+          },
+          '#withSlackChannelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelRefMixin(value): {
+            slackChannelRef+: value,
+          },
+          slackChannelRef+:
+            {
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+              withName(value): {
+                slackChannelRef+: {
+                  name: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicy(value): {
+                slackChannelRef+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicyMixin(value): {
+                slackChannelRef+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    slackChannelRef+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    slackChannelRef+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
+          '#withSlackChannelSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelSelector(value): {
+            slackChannelSelector: value,
+          },
+          '#withSlackChannelSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelSelectorMixin(value): {
+            slackChannelSelector+: value,
+          },
+          slackChannelSelector+:
+            {
+              '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+              withMatchControllerRef(value=true): {
+                slackChannelSelector+: {
+                  matchControllerRef: value,
+                },
+              },
+              '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabels(value): {
+                slackChannelSelector+: {
+                  matchLabels: value,
+                },
+              },
+              '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabelsMixin(value): {
+                slackChannelSelector+: {
+                  matchLabels+: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicy(value): {
+                slackChannelSelector+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicyMixin(value): {
+                slackChannelSelector+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    slackChannelSelector+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    slackChannelSelector+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
         },
       '#withTelegram': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'specific settings for a route. (see below for nested schema)\nTelegram-specific settings for a route.' } },
       withTelegram(value): {
@@ -1157,6 +1265,114 @@
           withEnabled(value=true): {
             enabled: value,
           },
+          '#withSlackChannelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelRef(value): {
+            slackChannelRef: value,
+          },
+          '#withSlackChannelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelRefMixin(value): {
+            slackChannelRef+: value,
+          },
+          slackChannelRef+:
+            {
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+              withName(value): {
+                slackChannelRef+: {
+                  name: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicy(value): {
+                slackChannelRef+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+              withPolicyMixin(value): {
+                slackChannelRef+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    slackChannelRef+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    slackChannelRef+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
+          '#withSlackChannelSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelSelector(value): {
+            slackChannelSelector: value,
+          },
+          '#withSlackChannelSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a SlackChannel in oncall to populate channelId.' } },
+          withSlackChannelSelectorMixin(value): {
+            slackChannelSelector+: value,
+          },
+          slackChannelSelector+:
+            {
+              '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+              withMatchControllerRef(value=true): {
+                slackChannelSelector+: {
+                  matchControllerRef: value,
+                },
+              },
+              '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabels(value): {
+                slackChannelSelector+: {
+                  matchLabels: value,
+                },
+              },
+              '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+              withMatchLabelsMixin(value): {
+                slackChannelSelector+: {
+                  matchLabels+: value,
+                },
+              },
+              '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicy(value): {
+                slackChannelSelector+: {
+                  policy: value,
+                },
+              },
+              '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+              withPolicyMixin(value): {
+                slackChannelSelector+: {
+                  policy+: value,
+                },
+              },
+              policy+:
+                {
+                  '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+                  withResolution(value='Required'): {
+                    slackChannelSelector+: {
+                      policy+: {
+                        resolution: value,
+                      },
+                    },
+                  },
+                  '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+                  withResolve(value): {
+                    slackChannelSelector+: {
+                      policy+: {
+                        resolve: value,
+                      },
+                    },
+                  },
+                },
+            },
         },
       '#withTelegram': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'specific settings for a route. (see below for nested schema)\nTelegram-specific settings for a route.' } },
       withTelegram(value): {

@@ -912,12 +912,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Ignores team members that have been added to team by Team Sync.
-Team Sync can be provisioned using grafana_team_external_group resource.
-Defaults to true.
-Ignores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/).
-Team Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).
-Defaults to `true`.
+(Boolean) Ignores team members that have been added to team by Team Sync. Team Sync can be provisioned using grafana_team_external_group resource.
+Ignores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/). Team Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).
 ###### fn spec.parameters.forProvider.withMemberRefs
 
 ```jsonnet
@@ -972,10 +968,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Set of String) A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
-A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
+(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
+A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
 ###### fn spec.parameters.forProvider.withMembersMixin
 
 ```jsonnet
@@ -986,10 +980,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Set of String) A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
-A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
+(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
+A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
 ###### fn spec.parameters.forProvider.withName
 
 ```jsonnet
@@ -1012,8 +1004,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
-The Organization ID. If not set, the Org ID defined in the provider block will be used.
+(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
+The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
 ###### fn spec.parameters.forProvider.withOrganizationRef
 
 ```jsonnet
@@ -1068,7 +1060,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) (see below for nested schema)
 ###### fn spec.parameters.forProvider.withPreferencesMixin
 
 ```jsonnet
@@ -1079,7 +1071,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) (see below for nested schema)
 ###### fn spec.parameters.forProvider.withTeamSync
 
 ```jsonnet
@@ -1090,10 +1082,10 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
+(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 * [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)
-* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)
+* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)
 ###### fn spec.parameters.forProvider.withTeamSyncMixin
 
 ```jsonnet
@@ -1104,10 +1096,10 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
+(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 * [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)
-* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)
+* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)
 ###### obj spec.parameters.forProvider.memberSelector
 
 
@@ -1392,12 +1384,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Ignores team members that have been added to team by Team Sync.
-Team Sync can be provisioned using grafana_team_external_group resource.
-Defaults to true.
-Ignores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/).
-Team Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).
-Defaults to `true`.
+(Boolean) Ignores team members that have been added to team by Team Sync. Team Sync can be provisioned using grafana_team_external_group resource.
+Ignores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/). Team Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).
 ###### fn spec.parameters.initProvider.withMemberRefs
 
 ```jsonnet
@@ -1452,10 +1440,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Set of String) A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
-A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
+(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
+A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
 ###### fn spec.parameters.initProvider.withMembersMixin
 
 ```jsonnet
@@ -1466,10 +1452,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Set of String) A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
-A set of email addresses corresponding to users who should be given membership
-to the team. Note: users specified here must already exist in Grafana.
+(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
+A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.
 ###### fn spec.parameters.initProvider.withName
 
 ```jsonnet
@@ -1492,8 +1476,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
-The Organization ID. If not set, the Org ID defined in the provider block will be used.
+(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
+The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
 ###### fn spec.parameters.initProvider.withOrganizationRef
 
 ```jsonnet
@@ -1548,7 +1532,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) (see below for nested schema)
 ###### fn spec.parameters.initProvider.withPreferencesMixin
 
 ```jsonnet
@@ -1559,7 +1543,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) (see below for nested schema)
 ###### fn spec.parameters.initProvider.withTeamSync
 
 ```jsonnet
@@ -1570,10 +1554,10 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
+(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 * [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)
-* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)
+* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)
 ###### fn spec.parameters.initProvider.withTeamSyncMixin
 
 ```jsonnet
@@ -1584,10 +1568,10 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
+(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.
 * [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)
-* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)
+* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)
 ###### obj spec.parameters.initProvider.memberSelector
 
 

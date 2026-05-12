@@ -53,7 +53,7 @@
           },
         },
       },
-      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs.\nCustom labels to be included with collected metrics and logs.' } },
+      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.\nCustom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.' } },
       withLabels(value): {
         spec+: {
           parameters+: {
@@ -63,7 +63,7 @@
           },
         },
       },
-      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs.\nCustom labels to be included with collected metrics and logs.' } },
+      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.\nCustom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.' } },
       withLabelsMixin(value): {
         spec+: {
           parameters+: {
@@ -162,7 +162,7 @@
           },
         },
       },
-      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs.\nCustom labels to be included with collected metrics and logs.' } },
+      '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.\nCustom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.' } },
       withLabels(value): {
         spec+: {
           parameters+: {
@@ -172,7 +172,7 @@
           },
         },
       },
-      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs.\nCustom labels to be included with collected metrics and logs.' } },
+      '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.\nCustom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.' } },
       withLabelsMixin(value): {
         spec+: {
           parameters+: {

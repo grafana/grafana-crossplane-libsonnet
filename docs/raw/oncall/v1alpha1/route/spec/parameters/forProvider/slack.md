@@ -6,6 +6,26 @@
 
 * [`fn withChannelId(value)`](#fn-withchannelid)
 * [`fn withEnabled(value=true)`](#fn-withenabled)
+* [`fn withSlackChannelRef(value)`](#fn-withslackchannelref)
+* [`fn withSlackChannelRefMixin(value)`](#fn-withslackchannelrefmixin)
+* [`fn withSlackChannelSelector(value)`](#fn-withslackchannelselector)
+* [`fn withSlackChannelSelectorMixin(value)`](#fn-withslackchannelselectormixin)
+* [`obj slackChannelRef`](#obj-slackchannelref)
+  * [`fn withName(value)`](#fn-slackchannelrefwithname)
+  * [`fn withPolicy(value)`](#fn-slackchannelrefwithpolicy)
+  * [`fn withPolicyMixin(value)`](#fn-slackchannelrefwithpolicymixin)
+  * [`obj policy`](#obj-slackchannelrefpolicy)
+    * [`fn withResolution(value="Required")`](#fn-slackchannelrefpolicywithresolution)
+    * [`fn withResolve(value)`](#fn-slackchannelrefpolicywithresolve)
+* [`obj slackChannelSelector`](#obj-slackchannelselector)
+  * [`fn withMatchControllerRef(value=true)`](#fn-slackchannelselectorwithmatchcontrollerref)
+  * [`fn withMatchLabels(value)`](#fn-slackchannelselectorwithmatchlabels)
+  * [`fn withMatchLabelsMixin(value)`](#fn-slackchannelselectorwithmatchlabelsmixin)
+  * [`fn withPolicy(value)`](#fn-slackchannelselectorwithpolicy)
+  * [`fn withPolicyMixin(value)`](#fn-slackchannelselectorwithpolicymixin)
+  * [`obj policy`](#obj-slackchannelselectorpolicy)
+    * [`fn withResolution(value="Required")`](#fn-slackchannelselectorpolicywithresolution)
+    * [`fn withResolve(value)`](#fn-slackchannelselectorpolicywithresolve)
 
 ## Fields
 
@@ -34,3 +54,211 @@ PARAMETERS:
 
 (Boolean) Enable notification in MS teams. Defaults to true.
 Enable notification in Slack. Defaults to `true`.
+### fn withSlackChannelRef
+
+```jsonnet
+withSlackChannelRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a SlackChannel in oncall to populate channelId.
+### fn withSlackChannelRefMixin
+
+```jsonnet
+withSlackChannelRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a SlackChannel in oncall to populate channelId.
+### fn withSlackChannelSelector
+
+```jsonnet
+withSlackChannelSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a SlackChannel in oncall to populate channelId.
+### fn withSlackChannelSelectorMixin
+
+```jsonnet
+withSlackChannelSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a SlackChannel in oncall to populate channelId.
+### obj slackChannelRef
+
+
+#### fn slackChannelRef.withName
+
+```jsonnet
+slackChannelRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+#### fn slackChannelRef.withPolicy
+
+```jsonnet
+slackChannelRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+#### fn slackChannelRef.withPolicyMixin
+
+```jsonnet
+slackChannelRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+#### obj slackChannelRef.policy
+
+
+##### fn slackChannelRef.policy.withResolution
+
+```jsonnet
+slackChannelRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+##### fn slackChannelRef.policy.withResolve
+
+```jsonnet
+slackChannelRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+### obj slackChannelSelector
+
+
+#### fn slackChannelSelector.withMatchControllerRef
+
+```jsonnet
+slackChannelSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+#### fn slackChannelSelector.withMatchLabels
+
+```jsonnet
+slackChannelSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+#### fn slackChannelSelector.withMatchLabelsMixin
+
+```jsonnet
+slackChannelSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+#### fn slackChannelSelector.withPolicy
+
+```jsonnet
+slackChannelSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+#### fn slackChannelSelector.withPolicyMixin
+
+```jsonnet
+slackChannelSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+#### obj slackChannelSelector.policy
+
+
+##### fn slackChannelSelector.policy.withResolution
+
+```jsonnet
+slackChannelSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+##### fn slackChannelSelector.policy.withResolve
+
+```jsonnet
+slackChannelSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.

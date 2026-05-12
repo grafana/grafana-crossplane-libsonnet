@@ -33,7 +33,7 @@
   },
   forProvider+:
     {
-      '#withConfigJson': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The complete dashboard model JSON.\nThe complete dashboard model JSON.' } },
+      '#withConfigJson': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The complete dashboard model JSON.\nThe complete dashboard model JSON.\n\nStarting with Grafana v13, use the resource corresponding to your dashboard's API version for Kubernetes-style dashboards.\n\nIf you decide to use this legacy resource with a Kubernetes-style dashboard definition:\n- In Grafana v12, provide the \"spec\" field of the dashboard definition.\n- In Grafana v13 and later, provide the full Kubernetes-style dashboard JSON (including \"apiVersion\", \"kind\", \"metadata\", and \"spec\")." } },
       withConfigJson(value): {
         spec+: {
           parameters+: {
@@ -510,7 +510,7 @@
   },
   initProvider+:
     {
-      '#withConfigJson': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The complete dashboard model JSON.\nThe complete dashboard model JSON.' } },
+      '#withConfigJson': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The complete dashboard model JSON.\nThe complete dashboard model JSON.\n\nStarting with Grafana v13, use the resource corresponding to your dashboard's API version for Kubernetes-style dashboards.\n\nIf you decide to use this legacy resource with a Kubernetes-style dashboard definition:\n- In Grafana v12, provide the \"spec\" field of the dashboard definition.\n- In Grafana v13 and later, provide the full Kubernetes-style dashboard JSON (including \"apiVersion\", \"kind\", \"metadata\", and \"spec\")." } },
       withConfigJson(value): {
         spec+: {
           parameters+: {

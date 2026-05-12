@@ -2,6 +2,7 @@
   alerting+: import './alerting/main.libsonnet',
   asserts+: import './asserts/main.libsonnet',
   cloud+: import './cloud/main.libsonnet',
+  cloudintegrations+: import './cloudintegrations/main.libsonnet',
   cloudprovider+: import './cloudprovider/main.libsonnet',
   connections+: import './connections/main.libsonnet',
   enterprise+: import './enterprise/main.libsonnet',

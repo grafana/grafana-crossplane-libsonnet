@@ -56,6 +56,21 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.integrationFilter
                 toFieldPath: spec.forProvider.integrationFilter
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.integrationFilterRef
+                toFieldPath: spec.forProvider.integrationFilterRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.integrationFilterSelector.matchControllerRef
+                toFieldPath: spec.forProvider.integrationFilterSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.integrationFilterSelector.matchLabels
+                toFieldPath: spec.forProvider.integrationFilterSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.integrationFilterSelector.policy.resolution
+                toFieldPath: spec.forProvider.integrationFilterSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.integrationFilterSelector.policy.resolve
+                toFieldPath: spec.forProvider.integrationFilterSelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.isWebhookEnabled
                 toFieldPath: spec.forProvider.isWebhookEnabled
                 type: FromCompositeFieldPath
@@ -76,6 +91,27 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.teamId
                 toFieldPath: spec.forProvider.teamId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.name
+                toFieldPath: spec.forProvider.teamRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.policy.resolution
+                toFieldPath: spec.forProvider.teamRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.policy.resolve
+                toFieldPath: spec.forProvider.teamRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.matchControllerRef
+                toFieldPath: spec.forProvider.teamSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.matchLabels
+                toFieldPath: spec.forProvider.teamSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.policy.resolution
+                toFieldPath: spec.forProvider.teamSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.policy.resolve
+                toFieldPath: spec.forProvider.teamSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.triggerTemplate
                 toFieldPath: spec.forProvider.triggerTemplate
@@ -113,6 +149,21 @@ spec:
               - fromFieldPath: spec.parameters.initProvider.integrationFilter
                 toFieldPath: spec.initProvider.integrationFilter
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.integrationFilterRef
+                toFieldPath: spec.initProvider.integrationFilterRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.integrationFilterSelector.matchControllerRef
+                toFieldPath: spec.initProvider.integrationFilterSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.integrationFilterSelector.matchLabels
+                toFieldPath: spec.initProvider.integrationFilterSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.integrationFilterSelector.policy.resolution
+                toFieldPath: spec.initProvider.integrationFilterSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.integrationFilterSelector.policy.resolve
+                toFieldPath: spec.initProvider.integrationFilterSelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.isWebhookEnabled
                 toFieldPath: spec.initProvider.isWebhookEnabled
                 type: FromCompositeFieldPath
@@ -133,6 +184,27 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.teamId
                 toFieldPath: spec.initProvider.teamId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.name
+                toFieldPath: spec.initProvider.teamRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.policy.resolution
+                toFieldPath: spec.initProvider.teamRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.policy.resolve
+                toFieldPath: spec.initProvider.teamRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.matchControllerRef
+                toFieldPath: spec.initProvider.teamSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.matchLabels
+                toFieldPath: spec.initProvider.teamSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.policy.resolution
+                toFieldPath: spec.initProvider.teamSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.policy.resolve
+                toFieldPath: spec.initProvider.teamSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.triggerTemplate
                 toFieldPath: spec.initProvider.triggerTemplate

@@ -158,6 +158,177 @@
           },
         },
       },
+      '#withIntegrationFilterRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'References to Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterRef(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              integrationFilterRef:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withIntegrationFilterRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'References to Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterRefMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              integrationFilterRef+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      integrationFilterRef+:
+        {
+          '#': { help: '', name: 'integrationFilterRef' },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+          withName(value): {
+            name: value,
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicy(value): {
+            policy: value,
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicyMixin(value): {
+            policy+: value,
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                policy+: {
+                  resolution: value,
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                policy+: {
+                  resolve: value,
+                },
+              },
+            },
+        },
+      '#withIntegrationFilterSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a list of Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterSelector(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              integrationFilterSelector: value,
+            },
+          },
+        },
+      },
+      '#withIntegrationFilterSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a list of Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterSelectorMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              integrationFilterSelector+: value,
+            },
+          },
+        },
+      },
+      integrationFilterSelector+:
+        {
+          '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+          withMatchControllerRef(value=true): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  integrationFilterSelector+: {
+                    matchControllerRef: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabels(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  integrationFilterSelector+: {
+                    matchLabels: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabelsMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  integrationFilterSelector+: {
+                    matchLabels+: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  integrationFilterSelector+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  integrationFilterSelector+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      integrationFilterSelector+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      integrationFilterSelector+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
       '#withIsWebhookEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Controls whether the outgoing webhook will trigger or is ignored. Defaults to true.\nControls whether the outgoing webhook will trigger or is ignored. Defaults to `true`.' } },
       withIsWebhookEnabled(value=true): {
         spec+: {
@@ -257,6 +428,210 @@
           },
         },
       },
+      '#withTeamRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Team in oncall to populate teamId.' } },
+      withTeamRef(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              teamRef: value,
+            },
+          },
+        },
+      },
+      '#withTeamRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Team in oncall to populate teamId.' } },
+      withTeamRefMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              teamRef+: value,
+            },
+          },
+        },
+      },
+      teamRef+:
+        {
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+          withName(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamRef+: {
+                    name: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamRef+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamRef+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      teamRef+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      teamRef+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
+      '#withTeamSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Team in oncall to populate teamId.' } },
+      withTeamSelector(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              teamSelector: value,
+            },
+          },
+        },
+      },
+      '#withTeamSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Team in oncall to populate teamId.' } },
+      withTeamSelectorMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              teamSelector+: value,
+            },
+          },
+        },
+      },
+      teamSelector+:
+        {
+          '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+          withMatchControllerRef(value=true): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamSelector+: {
+                    matchControllerRef: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabels(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamSelector+: {
+                    matchLabels: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabelsMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamSelector+: {
+                    matchLabels+: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamSelector+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  teamSelector+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      teamSelector+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      teamSelector+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
       '#withTriggerTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) A template used to dynamically determine whether the webhook should execute based on the content of the payload.\nA template used to dynamically determine whether the webhook should execute based on the content of the payload.' } },
       withTriggerTemplate(value): {
         spec+: {
@@ -441,6 +816,177 @@
           },
         },
       },
+      '#withIntegrationFilterRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'References to Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterRef(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              integrationFilterRef:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withIntegrationFilterRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'References to Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterRefMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              integrationFilterRef+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      integrationFilterRef+:
+        {
+          '#': { help: '', name: 'integrationFilterRef' },
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+          withName(value): {
+            name: value,
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicy(value): {
+            policy: value,
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicyMixin(value): {
+            policy+: value,
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                policy+: {
+                  resolution: value,
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                policy+: {
+                  resolve: value,
+                },
+              },
+            },
+        },
+      '#withIntegrationFilterSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a list of Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterSelector(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              integrationFilterSelector: value,
+            },
+          },
+        },
+      },
+      '#withIntegrationFilterSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a list of Integration in oncall to populate integrationFilter.' } },
+      withIntegrationFilterSelectorMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              integrationFilterSelector+: value,
+            },
+          },
+        },
+      },
+      integrationFilterSelector+:
+        {
+          '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+          withMatchControllerRef(value=true): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  integrationFilterSelector+: {
+                    matchControllerRef: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabels(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  integrationFilterSelector+: {
+                    matchLabels: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabelsMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  integrationFilterSelector+: {
+                    matchLabels+: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  integrationFilterSelector+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  integrationFilterSelector+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      integrationFilterSelector+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      integrationFilterSelector+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
       '#withIsWebhookEnabled': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Controls whether the outgoing webhook will trigger or is ignored. Defaults to true.\nControls whether the outgoing webhook will trigger or is ignored. Defaults to `true`.' } },
       withIsWebhookEnabled(value=true): {
         spec+: {
@@ -540,6 +1086,210 @@
           },
         },
       },
+      '#withTeamRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Team in oncall to populate teamId.' } },
+      withTeamRef(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              teamRef: value,
+            },
+          },
+        },
+      },
+      '#withTeamRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Reference to a Team in oncall to populate teamId.' } },
+      withTeamRefMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              teamRef+: value,
+            },
+          },
+        },
+      },
+      teamRef+:
+        {
+          '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the referenced object.' } },
+          withName(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamRef+: {
+                    name: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamRef+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for referencing.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamRef+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      teamRef+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      teamRef+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
+      '#withTeamSelector': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Team in oncall to populate teamId.' } },
+      withTeamSelector(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              teamSelector: value,
+            },
+          },
+        },
+      },
+      '#withTeamSelectorMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Selector for a Team in oncall to populate teamId.' } },
+      withTeamSelectorMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              teamSelector+: value,
+            },
+          },
+        },
+      },
+      teamSelector+:
+        {
+          '#withMatchControllerRef': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'MatchControllerRef ensures an object with the same controller reference\nas the selecting object is selected.' } },
+          withMatchControllerRef(value=true): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamSelector+: {
+                    matchControllerRef: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabels(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamSelector+: {
+                    matchLabels: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withMatchLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'MatchLabels ensures an object with matching labels is selected.' } },
+          withMatchLabelsMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamSelector+: {
+                    matchLabels+: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicy(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamSelector+: {
+                    policy: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withPolicyMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Policies for selection.' } },
+          withPolicyMixin(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  teamSelector+: {
+                    policy+: value,
+                  },
+                },
+              },
+            },
+          },
+          policy+:
+            {
+              '#withResolution': { 'function': { args: [{ default: 'Required', enums: ['Required', 'Optional'], name: 'value', type: ['string'] }], help: "Resolution specifies whether resolution of this reference is required.\nThe default is 'Required', which means the reconcile will fail if the\nreference cannot be resolved. 'Optional' means this reference will be\na no-op if it cannot be resolved." } },
+              withResolution(value='Required'): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      teamSelector+: {
+                        policy+: {
+                          resolution: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withResolve': { 'function': { args: [{ default: null, enums: ['Always', 'IfNotPresent'], name: 'value', type: ['string'] }], help: "Resolve specifies when this reference should be resolved. The default\nis 'IfNotPresent', which will attempt to resolve the reference only when\nthe corresponding field is not present. Use 'Always' to resolve the\nreference on every reconcile." } },
+              withResolve(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      teamSelector+: {
+                        policy+: {
+                          resolve: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+        },
       '#withTriggerTemplate': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) A template used to dynamically determine whether the webhook should execute based on the content of the payload.\nA template used to dynamically determine whether the webhook should execute based on the content of the payload.' } },
       withTriggerTemplate(value): {
         spec+: {

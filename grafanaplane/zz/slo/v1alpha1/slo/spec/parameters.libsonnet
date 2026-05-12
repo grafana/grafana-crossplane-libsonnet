@@ -62,14 +62,14 @@
       alerting+:
         {
           '#': { help: '', name: 'alerting' },
-          '#withAdvancedOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
+          '#withAdvancedOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
           withAdvancedOptions(value): {
             advancedOptions:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withAdvancedOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
+          '#withAdvancedOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
           withAdvancedOptionsMixin(value): {
             advancedOptions+:
               (if std.isArray(value)
@@ -105,19 +105,19 @@
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
             },
-          '#withFastburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
+          '#withFastburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
           withFastburn(value): {
             fastburn:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withFastburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
+          '#withFastburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
           withFastburnMixin(value): {
             fastburn+:
               (if std.isArray(value)
@@ -148,9 +148,31 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
+                  },
+                },
+              '#withEnrichment': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Fast Burn alerts.' } },
+              withEnrichment(value): {
+                enrichment:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withEnrichmentMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Fast Burn alerts.' } },
+              withEnrichmentMixin(value): {
+                enrichment+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              enrichment+:
+                {
+                  '#': { help: '', name: 'enrichment' },
+                  '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the alert enrichment. Currently only "assistantInvestigation" is supported.\nType of the alert enrichment. Currently only "assistantInvestigation" is supported.' } },
+                  withType(value): {
+                    type: value,
                   },
                 },
               '#withLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '"^[a-zA-Z_][a-zA-Z0-9_]*$" (see below for nested schema)\nLabels to attach only to Fast Burn alerts.' } },
@@ -174,7 +196,7 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -201,19 +223,19 @@
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
             },
-          '#withSlowburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
+          '#withSlowburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
           withSlowburn(value): {
             slowburn:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withSlowburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
+          '#withSlowburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
           withSlowburnMixin(value): {
             slowburn+:
               (if std.isArray(value)
@@ -244,9 +266,31 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
+                  },
+                },
+              '#withEnrichment': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Slow Burn alerts.' } },
+              withEnrichment(value): {
+                enrichment:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withEnrichmentMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Slow Burn alerts.' } },
+              withEnrichmentMixin(value): {
+                enrichment+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              enrichment+:
+                {
+                  '#': { help: '', name: 'enrichment' },
+                  '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the alert enrichment. Currently only "assistantInvestigation" is supported.\nType of the alert enrichment. Currently only "assistantInvestigation" is supported.' } },
+                  withType(value): {
+                    type: value,
                   },
                 },
               '#withLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '"^[a-zA-Z_][a-zA-Z0-9_]*$" (see below for nested schema)\nLabels to attach only to Slow Burn alerts.' } },
@@ -270,7 +314,7 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -287,7 +331,7 @@
           },
         },
       },
-      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)\n**Required.** Destination Datasource sets the datasource defined for an SLO.' } },
       withDestinationDatasource(value): {
         spec+: {
           parameters+: {
@@ -300,7 +344,7 @@
           },
         },
       },
-      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)\n**Required.** Destination Datasource sets the datasource defined for an SLO.' } },
       withDestinationDatasourceMixin(value): {
         spec+: {
           parameters+: {
@@ -429,7 +473,7 @@
             uid: value,
           },
         },
-      '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID for the SLO folder\nUID for the SLO folder' } },
+      '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.\nUID for the SLO folder. Must be non-empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.' } },
       withFolderUid(value): {
         spec+: {
           parameters+: {
@@ -472,7 +516,7 @@
           withKey(value): {
             key: value,
           },
-          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
           withValue(value): {
             value: value,
           },
@@ -487,7 +531,7 @@
           },
         },
       },
-      '#withObjectives': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\nOver each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
+      '#withObjectives': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\n**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
       withObjectives(value): {
         spec+: {
           parameters+: {
@@ -500,7 +544,7 @@
           },
         },
       },
-      '#withObjectivesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\nOver each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
+      '#withObjectivesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\n**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
       withObjectivesMixin(value): {
         spec+: {
           parameters+: {
@@ -516,7 +560,7 @@
       objectives+:
         {
           '#': { help: '', name: 'objectives' },
-          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nValue between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(String) Templatable value\nValue between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
           withValue(value): {
             value: value,
           },
@@ -525,7 +569,7 @@
             window: value,
           },
         },
-      '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nQuery describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
+      '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\n**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
       withQuery(value): {
         spec+: {
           parameters+: {
@@ -538,7 +582,7 @@
           },
         },
       },
-      '#withQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nQuery describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
+      '#withQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\n**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
       withQueryMixin(value): {
         spec+: {
           parameters+: {
@@ -554,14 +598,14 @@
       query+:
         {
           '#': { help: '', name: 'query' },
-          '#withFreeform': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withFreeform': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Freeform query configuration. (see below for nested schema)\nFreeform query configuration.' } },
           withFreeform(value): {
             freeform:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withFreeformMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withFreeformMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Freeform query configuration. (see below for nested schema)\nFreeform query configuration.' } },
           withFreeformMixin(value): {
             freeform+:
               (if std.isArray(value)
@@ -571,19 +615,19 @@
           freeform+:
             {
               '#': { help: '', name: 'freeform' },
-              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field - valid promQl' } },
+              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field - valid promQl' } },
               withQuery(value): {
                 query: value,
               },
             },
-          '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
           withGrafanaQueries(value): {
             grafanaQueries:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withGrafanaQueriesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          '#withGrafanaQueriesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
           withGrafanaQueriesMixin(value): {
             grafanaQueries+:
               (if std.isArray(value)
@@ -593,19 +637,19 @@
           grafanaQueries+:
             {
               '#': { help: '', name: 'grafanaQueries' },
-              '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nQuery Object - Array of Grafana Query JSON objects' } },
+              '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List) Array for holding a set of grafana queries (see below for nested schema)\nQuery Object - Array of Grafana Query JSON objects' } },
               withGrafanaQueries(value): {
                 grafanaQueries: value,
               },
             },
-          '#withRatio': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withRatio': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Ratio query configuration. (see below for nested schema)\nRatio query configuration.' } },
           withRatio(value): {
             ratio:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withRatioMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withRatioMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Ratio query configuration. (see below for nested schema)\nRatio query configuration.' } },
           withRatioMixin(value): {
             ratio+:
               (if std.isArray(value)
@@ -638,12 +682,12 @@
                 totalMetric: value,
               },
             },
-          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"\nQuery type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"' } },
+          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the alert enrichment. Currently only "assistantInvestigation" is supported.\nQuery type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"' } },
           withType(value): {
             type: value,
           },
         },
-      '#withSearchExpression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.' } },
+      '#withSearchExpression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. Must be non-empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.' } },
       withSearchExpression(value): {
         spec+: {
           parameters+: {
@@ -711,14 +755,14 @@
       alerting+:
         {
           '#': { help: '', name: 'alerting' },
-          '#withAdvancedOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
+          '#withAdvancedOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
           withAdvancedOptions(value): {
             advancedOptions:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withAdvancedOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
+          '#withAdvancedOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Advanced Options for Alert Rules (see below for nested schema)\nAdvanced Options for Alert Rules' } },
           withAdvancedOptionsMixin(value): {
             advancedOptions+:
               (if std.isArray(value)
@@ -754,19 +798,19 @@
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
             },
-          '#withFastburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
+          '#withFastburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
           withFastburn(value): {
             fastburn:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withFastburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
+          '#withFastburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Fast Burn alerts (see below for nested schema)\nAlerting Rules generated for Fast Burn alerts' } },
           withFastburnMixin(value): {
             fastburn+:
               (if std.isArray(value)
@@ -797,9 +841,31 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
+                  },
+                },
+              '#withEnrichment': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Fast Burn alerts.' } },
+              withEnrichment(value): {
+                enrichment:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withEnrichmentMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Fast Burn alerts.' } },
+              withEnrichmentMixin(value): {
+                enrichment+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              enrichment+:
+                {
+                  '#': { help: '', name: 'enrichment' },
+                  '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the alert enrichment. Currently only "assistantInvestigation" is supported.\nType of the alert enrichment. Currently only "assistantInvestigation" is supported.' } },
+                  withType(value): {
+                    type: value,
                   },
                 },
               '#withLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '"^[a-zA-Z_][a-zA-Z0-9_]*$" (see below for nested schema)\nLabels to attach only to Fast Burn alerts.' } },
@@ -823,7 +889,7 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -850,19 +916,19 @@
               withKey(value): {
                 key: value,
               },
-              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+              '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
               withValue(value): {
                 value: value,
               },
             },
-          '#withSlowburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
+          '#withSlowburn': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
           withSlowburn(value): {
             slowburn:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withSlowburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
+          '#withSlowburnMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Alerting Rules generated for Slow Burn alerts (see below for nested schema)\nAlerting Rules generated for Slow Burn alerts' } },
           withSlowburnMixin(value): {
             slowburn+:
               (if std.isArray(value)
@@ -893,9 +959,31 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
+                  },
+                },
+              '#withEnrichment': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Slow Burn alerts.' } },
+              withEnrichment(value): {
+                enrichment:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              '#withEnrichmentMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Enrichments to attach only to Fast Burn alerts. (see below for nested schema)\nEnrichments to attach only to Slow Burn alerts.' } },
+              withEnrichmentMixin(value): {
+                enrichment+:
+                  (if std.isArray(value)
+                   then value
+                   else [value]),
+              },
+              enrichment+:
+                {
+                  '#': { help: '', name: 'enrichment' },
+                  '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the alert enrichment. Currently only "assistantInvestigation" is supported.\nType of the alert enrichment. Currently only "assistantInvestigation" is supported.' } },
+                  withType(value): {
+                    type: value,
                   },
                 },
               '#withLabel': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '"^[a-zA-Z_][a-zA-Z0-9_]*$" (see below for nested schema)\nLabels to attach only to Slow Burn alerts.' } },
@@ -919,7 +1007,7 @@
                   withKey(value): {
                     key: value,
                   },
-                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+                  '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
                   withValue(value): {
                     value: value,
                   },
@@ -936,7 +1024,7 @@
           },
         },
       },
-      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasource': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)\n**Required.** Destination Datasource sets the datasource defined for an SLO.' } },
       withDestinationDatasource(value): {
         spec+: {
           parameters+: {
@@ -949,7 +1037,7 @@
           },
         },
       },
-      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)\nDestination Datasource sets the datasource defined for an SLO' } },
+      '#withDestinationDatasourceMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)\n**Required.** Destination Datasource sets the datasource defined for an SLO.' } },
       withDestinationDatasourceMixin(value): {
         spec+: {
           parameters+: {
@@ -1078,7 +1166,7 @@
             uid: value,
           },
         },
-      '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID for the SLO folder\nUID for the SLO folder' } },
+      '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.\nUID for the SLO folder. Must be non-empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.' } },
       withFolderUid(value): {
         spec+: {
           parameters+: {
@@ -1121,7 +1209,7 @@
           withKey(value): {
             key: value,
           },
-          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nTemplatable value' } },
+          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Templatable value\nTemplatable value' } },
           withValue(value): {
             value: value,
           },
@@ -1136,7 +1224,7 @@
           },
         },
       },
-      '#withObjectives': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\nOver each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
+      '#withObjectives': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\n**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
       withObjectives(value): {
         spec+: {
           parameters+: {
@@ -1149,7 +1237,7 @@
           },
         },
       },
-      '#withObjectivesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\nOver each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
+      '#withObjectivesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)\n**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.' } },
       withObjectivesMixin(value): {
         spec+: {
           parameters+: {
@@ -1165,7 +1253,7 @@
       objectives+:
         {
           '#': { help: '', name: 'objectives' },
-          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.\nValue between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
+          '#withValue': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(String) Templatable value\nValue between 0 and 1. If the value of the query is above the objective, the SLO is met.' } },
           withValue(value): {
             value: value,
           },
@@ -1174,7 +1262,7 @@
             window: value,
           },
         },
-      '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nQuery describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
+      '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\n**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
       withQuery(value): {
         spec+: {
           parameters+: {
@@ -1187,7 +1275,7 @@
           },
         },
       },
-      '#withQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nQuery describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
+      '#withQueryMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\n**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.' } },
       withQueryMixin(value): {
         spec+: {
           parameters+: {
@@ -1203,14 +1291,14 @@
       query+:
         {
           '#': { help: '', name: 'query' },
-          '#withFreeform': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withFreeform': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Freeform query configuration. (see below for nested schema)\nFreeform query configuration.' } },
           withFreeform(value): {
             freeform:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withFreeformMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withFreeformMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Freeform query configuration. (see below for nested schema)\nFreeform query configuration.' } },
           withFreeformMixin(value): {
             freeform+:
               (if std.isArray(value)
@@ -1220,19 +1308,19 @@
           freeform+:
             {
               '#': { help: '', name: 'freeform' },
-              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field - valid promQl' } },
+              '#withQuery': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)\nFreeform Query Field - valid promQl' } },
               withQuery(value): {
                 query: value,
               },
             },
-          '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
           withGrafanaQueries(value): {
             grafanaQueries:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withGrafanaQueriesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
+          '#withGrafanaQueriesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Array for holding a set of grafana queries (see below for nested schema)\nArray for holding a set of grafana queries' } },
           withGrafanaQueriesMixin(value): {
             grafanaQueries+:
               (if std.isArray(value)
@@ -1242,19 +1330,19 @@
           grafanaQueries+:
             {
               '#': { help: '', name: 'grafanaQueries' },
-              '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)\nQuery Object - Array of Grafana Query JSON objects' } },
+              '#withGrafanaQueries': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(Block List) Array for holding a set of grafana queries (see below for nested schema)\nQuery Object - Array of Grafana Query JSON objects' } },
               withGrafanaQueries(value): {
                 grafanaQueries: value,
               },
             },
-          '#withRatio': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withRatio': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Ratio query configuration. (see below for nested schema)\nRatio query configuration.' } },
           withRatio(value): {
             ratio:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withRatioMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+          '#withRatioMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Ratio query configuration. (see below for nested schema)\nRatio query configuration.' } },
           withRatioMixin(value): {
             ratio+:
               (if std.isArray(value)
@@ -1287,12 +1375,12 @@
                 totalMetric: value,
               },
             },
-          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"\nQuery type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"' } },
+          '#withType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Type of the alert enrichment. Currently only "assistantInvestigation" is supported.\nQuery type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"' } },
           withType(value): {
             type: value,
           },
         },
-      '#withSearchExpression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.' } },
+      '#withSearchExpression': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.\nThe name of a search expression in Grafana Asserts. Must be non-empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.' } },
       withSearchExpression(value): {
         spec+: {
           parameters+: {

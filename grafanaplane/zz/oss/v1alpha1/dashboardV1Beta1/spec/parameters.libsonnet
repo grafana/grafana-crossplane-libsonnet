@@ -55,7 +55,7 @@
       },
       metadata+:
         {
-          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.\nThe UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation." } },
           withFolderUid(value): {
             spec+: {
               parameters+: {
@@ -102,6 +102,30 @@
       },
       options+:
         {
+          '#withAllowUiUpdates': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true to allow editing the resource from the Grafana UI.\nSet to true to allow editing the resource from the Grafana UI.' } },
+          withAllowUiUpdates(value=true): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  options+: {
+                    allowUiUpdates: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withManagerIdentity': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Override the identity stamped on this resource's manager metadata." } },
+          withManagerIdentity(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  options+: {
+                    managerIdentity: value,
+                  },
+                },
+              },
+            },
+          },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
             spec+: {
@@ -229,7 +253,7 @@
       },
       metadata+:
         {
-          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the folder to save the resource in.\nThe UID of the folder to save the resource in.' } },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.\nThe UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation." } },
           withFolderUid(value): {
             spec+: {
               parameters+: {
@@ -276,6 +300,30 @@
       },
       options+:
         {
+          '#withAllowUiUpdates': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true to allow editing the resource from the Grafana UI.\nSet to true to allow editing the resource from the Grafana UI.' } },
+          withAllowUiUpdates(value=true): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  options+: {
+                    allowUiUpdates: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withManagerIdentity': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Override the identity stamped on this resource's manager metadata." } },
+          withManagerIdentity(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  options+: {
+                    managerIdentity: value,
+                  },
+                },
+              },
+            },
+          },
           '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
             spec+: {

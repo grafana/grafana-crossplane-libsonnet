@@ -77,6 +77,8 @@
         * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
         * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
       * [`obj options`](#obj-specparametersforprovideroptions)
+        * [`fn withAllowUiUpdates(value=true)`](#fn-specparametersforprovideroptionswithallowuiupdates)
+        * [`fn withManagerIdentity(value)`](#fn-specparametersforprovideroptionswithmanageridentity)
         * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
       * [`obj spec`](#obj-specparametersforproviderspec)
         * [`fn withJson(value)`](#fn-specparametersforproviderspecwithjson)
@@ -94,6 +96,8 @@
         * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
         * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
       * [`obj options`](#obj-specparametersinitprovideroptions)
+        * [`fn withAllowUiUpdates(value=true)`](#fn-specparametersinitprovideroptionswithallowuiupdates)
+        * [`fn withManagerIdentity(value)`](#fn-specparametersinitprovideroptionswithmanageridentity)
         * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
       * [`obj spec`](#obj-specparametersinitproviderspec)
         * [`fn withJson(value)`](#fn-specparametersinitproviderspecwithjson)
@@ -911,8 +915,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The UID of the folder to save the resource in.
-The UID of the folder to save the resource in.
+(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
 ####### fn spec.parameters.forProvider.metadata.withUid
 
 ```jsonnet
@@ -928,6 +932,30 @@ The unique identifier of the resource.
 ###### obj spec.parameters.forProvider.options
 
 
+####### fn spec.parameters.forProvider.options.withAllowUiUpdates
+
+```jsonnet
+spec.parameters.forProvider.options.withAllowUiUpdates(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Set to true to allow editing the resource from the Grafana UI.
+Set to true to allow editing the resource from the Grafana UI.
+####### fn spec.parameters.forProvider.options.withManagerIdentity
+
+```jsonnet
+spec.parameters.forProvider.options.withManagerIdentity(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Override the identity stamped on this resource's manager metadata.
 ####### fn spec.parameters.forProvider.options.withOverwrite
 
 ```jsonnet
@@ -1080,8 +1108,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The UID of the folder to save the resource in.
-The UID of the folder to save the resource in.
+(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
 ####### fn spec.parameters.initProvider.metadata.withUid
 
 ```jsonnet
@@ -1097,6 +1125,30 @@ The unique identifier of the resource.
 ###### obj spec.parameters.initProvider.options
 
 
+####### fn spec.parameters.initProvider.options.withAllowUiUpdates
+
+```jsonnet
+spec.parameters.initProvider.options.withAllowUiUpdates(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Set to true to allow editing the resource from the Grafana UI.
+Set to true to allow editing the resource from the Grafana UI.
+####### fn spec.parameters.initProvider.options.withManagerIdentity
+
+```jsonnet
+spec.parameters.initProvider.options.withManagerIdentity(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Override the identity stamped on this resource's manager metadata.
 ####### fn spec.parameters.initProvider.options.withOverwrite
 
 ```jsonnet

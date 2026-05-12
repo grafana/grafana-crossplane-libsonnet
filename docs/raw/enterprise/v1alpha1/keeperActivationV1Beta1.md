@@ -1,4 +1,4 @@
-# onCallShift
+# keeperActivationV1Beta1
 
 
 
@@ -67,51 +67,17 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
-      * [`fn withByDay(value)`](#fn-specparametersforproviderwithbyday)
-      * [`fn withByDayMixin(value)`](#fn-specparametersforproviderwithbydaymixin)
-      * [`fn withByMonth(value)`](#fn-specparametersforproviderwithbymonth)
-      * [`fn withByMonthMixin(value)`](#fn-specparametersforproviderwithbymonthmixin)
-      * [`fn withByMonthday(value)`](#fn-specparametersforproviderwithbymonthday)
-      * [`fn withByMonthdayMixin(value)`](#fn-specparametersforproviderwithbymonthdaymixin)
-      * [`fn withDuration(value)`](#fn-specparametersforproviderwithduration)
-      * [`fn withFrequency(value)`](#fn-specparametersforproviderwithfrequency)
-      * [`fn withInterval(value)`](#fn-specparametersforproviderwithinterval)
-      * [`fn withLevel(value)`](#fn-specparametersforproviderwithlevel)
-      * [`fn withName(value)`](#fn-specparametersforproviderwithname)
-      * [`fn withRollingUsers(value)`](#fn-specparametersforproviderwithrollingusers)
-      * [`fn withRollingUsersMixin(value)`](#fn-specparametersforproviderwithrollingusersmixin)
-      * [`fn withStart(value)`](#fn-specparametersforproviderwithstart)
-      * [`fn withStartRotationFromUserIndex(value)`](#fn-specparametersforproviderwithstartrotationfromuserindex)
-      * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
-      * [`fn withTimeZone(value)`](#fn-specparametersforproviderwithtimezone)
-      * [`fn withType(value)`](#fn-specparametersforproviderwithtype)
-      * [`fn withUntil(value)`](#fn-specparametersforproviderwithuntil)
-      * [`fn withUsers(value)`](#fn-specparametersforproviderwithusers)
-      * [`fn withUsersMixin(value)`](#fn-specparametersforproviderwithusersmixin)
-      * [`fn withWeekStart(value)`](#fn-specparametersforproviderwithweekstart)
+      * [`fn withMetadata(value)`](#fn-specparametersforproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersforproviderwithmetadatamixin)
+      * [`obj metadata`](#obj-specparametersforprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
     * [`obj initProvider`](#obj-specparametersinitprovider)
-      * [`fn withByDay(value)`](#fn-specparametersinitproviderwithbyday)
-      * [`fn withByDayMixin(value)`](#fn-specparametersinitproviderwithbydaymixin)
-      * [`fn withByMonth(value)`](#fn-specparametersinitproviderwithbymonth)
-      * [`fn withByMonthMixin(value)`](#fn-specparametersinitproviderwithbymonthmixin)
-      * [`fn withByMonthday(value)`](#fn-specparametersinitproviderwithbymonthday)
-      * [`fn withByMonthdayMixin(value)`](#fn-specparametersinitproviderwithbymonthdaymixin)
-      * [`fn withDuration(value)`](#fn-specparametersinitproviderwithduration)
-      * [`fn withFrequency(value)`](#fn-specparametersinitproviderwithfrequency)
-      * [`fn withInterval(value)`](#fn-specparametersinitproviderwithinterval)
-      * [`fn withLevel(value)`](#fn-specparametersinitproviderwithlevel)
-      * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
-      * [`fn withRollingUsers(value)`](#fn-specparametersinitproviderwithrollingusers)
-      * [`fn withRollingUsersMixin(value)`](#fn-specparametersinitproviderwithrollingusersmixin)
-      * [`fn withStart(value)`](#fn-specparametersinitproviderwithstart)
-      * [`fn withStartRotationFromUserIndex(value)`](#fn-specparametersinitproviderwithstartrotationfromuserindex)
-      * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
-      * [`fn withTimeZone(value)`](#fn-specparametersinitproviderwithtimezone)
-      * [`fn withType(value)`](#fn-specparametersinitproviderwithtype)
-      * [`fn withUntil(value)`](#fn-specparametersinitproviderwithuntil)
-      * [`fn withUsers(value)`](#fn-specparametersinitproviderwithusers)
-      * [`fn withUsersMixin(value)`](#fn-specparametersinitproviderwithusersmixin)
-      * [`fn withWeekStart(value)`](#fn-specparametersinitproviderwithweekstart)
+      * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
+      * [`obj metadata`](#obj-specparametersinitprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -540,7 +506,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-OnCallShiftSpec defines the desired state of OnCallShift
+KeeperActivationV1Beta1Spec defines the desired state of KeeperActivationV1Beta1
 #### fn spec.withParametersMixin
 
 ```jsonnet
@@ -551,7 +517,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-OnCallShiftSpec defines the desired state of OnCallShift
+KeeperActivationV1Beta1Spec defines the desired state of KeeperActivationV1Beta1
 #### fn spec.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -838,537 +804,103 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
-###### fn spec.parameters.forProvider.withByDay
+###### fn spec.parameters.forProvider.withMetadata
 
 ```jsonnet
-spec.parameters.forProvider.withByDay(value)
+spec.parameters.forProvider.withMetadata(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Set of String) This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-###### fn spec.parameters.forProvider.withByDayMixin
+The metadata of the resource.
+###### fn spec.parameters.forProvider.withMetadataMixin
 
 ```jsonnet
-spec.parameters.forProvider.withByDayMixin(value)
+spec.parameters.forProvider.withMetadataMixin(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Set of String) This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-###### fn spec.parameters.forProvider.withByMonth
+The metadata of the resource.
+###### obj spec.parameters.forProvider.metadata
 
-```jsonnet
-spec.parameters.forProvider.withByMonth(value)
-```
 
-PARAMETERS:
-
-* **value** (`array`)
-
-(Set of Number) This parameter takes a list of months. Valid values are 1 to 12
-This parameter takes a list of months. Valid values are 1 to 12
-###### fn spec.parameters.forProvider.withByMonthMixin
+####### fn spec.parameters.forProvider.metadata.withFolderUid
 
 ```jsonnet
-spec.parameters.forProvider.withByMonthMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(Set of Number) This parameter takes a list of months. Valid values are 1 to 12
-This parameter takes a list of months. Valid values are 1 to 12
-###### fn spec.parameters.forProvider.withByMonthday
-
-```jsonnet
-spec.parameters.forProvider.withByMonthday(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-31 to -1
-This parameter takes a list of days of the month.  Valid values are 1 to 31 or -31 to -1
-###### fn spec.parameters.forProvider.withByMonthdayMixin
-
-```jsonnet
-spec.parameters.forProvider.withByMonthdayMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-31 to -1
-This parameter takes a list of days of the month.  Valid values are 1 to 31 or -31 to -1
-###### fn spec.parameters.forProvider.withDuration
-
-```jsonnet
-spec.parameters.forProvider.withDuration(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-(Number) The duration of the event.
-The duration of the event.
-###### fn spec.parameters.forProvider.withFrequency
-
-```jsonnet
-spec.parameters.forProvider.withFrequency(value)
+spec.parameters.forProvider.metadata.withFolderUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The frequency of the event. Can be hourly, daily, weekly, monthly
-The frequency of the event. Can be hourly, daily, weekly, monthly
-###### fn spec.parameters.forProvider.withInterval
+The UID of the folder to save the resource in.
+####### fn spec.parameters.forProvider.metadata.withUid
 
 ```jsonnet
-spec.parameters.forProvider.withInterval(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-(Number) The positive integer representing at which intervals the recurrence rule repeats.
-The positive integer representing at which intervals the recurrence rule repeats.
-###### fn spec.parameters.forProvider.withLevel
-
-```jsonnet
-spec.parameters.forProvider.withLevel(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-(Number) The priority level. The higher the value, the higher the priority.
-The priority level. The higher the value, the higher the priority.
-###### fn spec.parameters.forProvider.withName
-
-```jsonnet
-spec.parameters.forProvider.withName(value)
+spec.parameters.forProvider.metadata.withUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The shift's name.
-The shift's name.
-###### fn spec.parameters.forProvider.withRollingUsers
-
-```jsonnet
-spec.parameters.forProvider.withRollingUsers(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for rolling_users event type)
-The list of lists with on-call users (for rolling_users event type)
-###### fn spec.parameters.forProvider.withRollingUsersMixin
-
-```jsonnet
-spec.parameters.forProvider.withRollingUsersMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for rolling_users event type)
-The list of lists with on-call users (for rolling_users event type)
-###### fn spec.parameters.forProvider.withStart
-
-```jsonnet
-spec.parameters.forProvider.withStart(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-call shift. This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-The start time of the on-call shift. This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-###### fn spec.parameters.forProvider.withStartRotationFromUserIndex
-
-```jsonnet
-spec.parameters.forProvider.withStartRotationFromUserIndex(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-call rotation starts.
-The index of the list of users in rolling_users, from which on-call rotation starts.
-###### fn spec.parameters.forProvider.withTeamId
-
-```jsonnet
-spec.parameters.forProvider.withTeamId(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
-The ID of the OnCall team (using the `grafana_oncall_team` datasource).
-###### fn spec.parameters.forProvider.withTimeZone
-
-```jsonnet
-spec.parameters.forProvider.withTimeZone(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The shift's timezone.  Overrides schedule's timezone.
-The shift's timezone.  Overrides schedule's timezone.
-###### fn spec.parameters.forProvider.withType
-
-```jsonnet
-spec.parameters.forProvider.withType(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The shift's type. Can be rolling_users, recurrent_event, single_event
-The shift's type. Can be rolling_users, recurrent_event, single_event
-###### fn spec.parameters.forProvider.withUntil
-
-```jsonnet
-spec.parameters.forProvider.withUntil(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-The end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-###### fn spec.parameters.forProvider.withUsers
-
-```jsonnet
-spec.parameters.forProvider.withUsers(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for single_event and recurrent_event event type).
-The list of on-call users (for single_event and recurrent_event event type).
-###### fn spec.parameters.forProvider.withUsersMixin
-
-```jsonnet
-spec.parameters.forProvider.withUsersMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for single_event and recurrent_event event type).
-The list of on-call users (for single_event and recurrent_event event type).
-###### fn spec.parameters.forProvider.withWeekStart
-
-```jsonnet
-spec.parameters.forProvider.withWeekStart(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) Start day of the week in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-Start day of the week in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
+The unique identifier of the resource.
 ##### obj spec.parameters.initProvider
 
 
-###### fn spec.parameters.initProvider.withByDay
+###### fn spec.parameters.initProvider.withMetadata
 
 ```jsonnet
-spec.parameters.initProvider.withByDay(value)
+spec.parameters.initProvider.withMetadata(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Set of String) This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-###### fn spec.parameters.initProvider.withByDayMixin
+The metadata of the resource.
+###### fn spec.parameters.initProvider.withMetadataMixin
 
 ```jsonnet
-spec.parameters.initProvider.withByDayMixin(value)
+spec.parameters.initProvider.withMetadataMixin(value)
 ```
 
 PARAMETERS:
 
-* **value** (`array`)
+* **value** (`object`)
 
-(Set of String) This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-This parameter takes a list of days in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-###### fn spec.parameters.initProvider.withByMonth
+The metadata of the resource.
+###### obj spec.parameters.initProvider.metadata
 
-```jsonnet
-spec.parameters.initProvider.withByMonth(value)
-```
 
-PARAMETERS:
-
-* **value** (`array`)
-
-(Set of Number) This parameter takes a list of months. Valid values are 1 to 12
-This parameter takes a list of months. Valid values are 1 to 12
-###### fn spec.parameters.initProvider.withByMonthMixin
+####### fn spec.parameters.initProvider.metadata.withFolderUid
 
 ```jsonnet
-spec.parameters.initProvider.withByMonthMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(Set of Number) This parameter takes a list of months. Valid values are 1 to 12
-This parameter takes a list of months. Valid values are 1 to 12
-###### fn spec.parameters.initProvider.withByMonthday
-
-```jsonnet
-spec.parameters.initProvider.withByMonthday(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-31 to -1
-This parameter takes a list of days of the month.  Valid values are 1 to 31 or -31 to -1
-###### fn spec.parameters.initProvider.withByMonthdayMixin
-
-```jsonnet
-spec.parameters.initProvider.withByMonthdayMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-31 to -1
-This parameter takes a list of days of the month.  Valid values are 1 to 31 or -31 to -1
-###### fn spec.parameters.initProvider.withDuration
-
-```jsonnet
-spec.parameters.initProvider.withDuration(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-(Number) The duration of the event.
-The duration of the event.
-###### fn spec.parameters.initProvider.withFrequency
-
-```jsonnet
-spec.parameters.initProvider.withFrequency(value)
+spec.parameters.initProvider.metadata.withFolderUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The frequency of the event. Can be hourly, daily, weekly, monthly
-The frequency of the event. Can be hourly, daily, weekly, monthly
-###### fn spec.parameters.initProvider.withInterval
+The UID of the folder to save the resource in.
+####### fn spec.parameters.initProvider.metadata.withUid
 
 ```jsonnet
-spec.parameters.initProvider.withInterval(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-(Number) The positive integer representing at which intervals the recurrence rule repeats.
-The positive integer representing at which intervals the recurrence rule repeats.
-###### fn spec.parameters.initProvider.withLevel
-
-```jsonnet
-spec.parameters.initProvider.withLevel(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-(Number) The priority level. The higher the value, the higher the priority.
-The priority level. The higher the value, the higher the priority.
-###### fn spec.parameters.initProvider.withName
-
-```jsonnet
-spec.parameters.initProvider.withName(value)
+spec.parameters.initProvider.metadata.withUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The shift's name.
-The shift's name.
-###### fn spec.parameters.initProvider.withRollingUsers
-
-```jsonnet
-spec.parameters.initProvider.withRollingUsers(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for rolling_users event type)
-The list of lists with on-call users (for rolling_users event type)
-###### fn spec.parameters.initProvider.withRollingUsersMixin
-
-```jsonnet
-spec.parameters.initProvider.withRollingUsersMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for rolling_users event type)
-The list of lists with on-call users (for rolling_users event type)
-###### fn spec.parameters.initProvider.withStart
-
-```jsonnet
-spec.parameters.initProvider.withStart(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-call shift. This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-The start time of the on-call shift. This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-###### fn spec.parameters.initProvider.withStartRotationFromUserIndex
-
-```jsonnet
-spec.parameters.initProvider.withStartRotationFromUserIndex(value)
-```
-
-PARAMETERS:
-
-* **value** (`number`)
-
-call rotation starts.
-The index of the list of users in rolling_users, from which on-call rotation starts.
-###### fn spec.parameters.initProvider.withTeamId
-
-```jsonnet
-spec.parameters.initProvider.withTeamId(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
-The ID of the OnCall team (using the `grafana_oncall_team` datasource).
-###### fn spec.parameters.initProvider.withTimeZone
-
-```jsonnet
-spec.parameters.initProvider.withTimeZone(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The shift's timezone.  Overrides schedule's timezone.
-The shift's timezone.  Overrides schedule's timezone.
-###### fn spec.parameters.initProvider.withType
-
-```jsonnet
-spec.parameters.initProvider.withType(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The shift's type. Can be rolling_users, recurrent_event, single_event
-The shift's type. Can be rolling_users, recurrent_event, single_event
-###### fn spec.parameters.initProvider.withUntil
-
-```jsonnet
-spec.parameters.initProvider.withUntil(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-The end time of recurrent on-call shifts (endless if null). This parameter takes a date format as yyyy-MM-dd'T'HH:mm:ss (for example "2020-09-05T08:00:00")
-###### fn spec.parameters.initProvider.withUsers
-
-```jsonnet
-spec.parameters.initProvider.withUsers(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for single_event and recurrent_event event type).
-The list of on-call users (for single_event and recurrent_event event type).
-###### fn spec.parameters.initProvider.withUsersMixin
-
-```jsonnet
-spec.parameters.initProvider.withUsersMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-call users (for single_event and recurrent_event event type).
-The list of on-call users (for single_event and recurrent_event event type).
-###### fn spec.parameters.initProvider.withWeekStart
-
-```jsonnet
-spec.parameters.initProvider.withWeekStart(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) Start day of the week in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
-Start day of the week in iCal format. Can be MO, TU, WE, TH, FR, SA, SU
+The unique identifier of the resource.
 ##### obj spec.parameters.providerConfigRef
 
 

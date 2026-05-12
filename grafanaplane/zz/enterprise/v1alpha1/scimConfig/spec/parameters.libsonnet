@@ -53,7 +53,7 @@
           },
         },
       },
-      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.\nThe Organization ID. If not set, the Org ID defined in the provider block will be used.' } },
+      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.\nThe Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.' } },
       withOrgId(value): {
         spec+: {
           parameters+: {
@@ -316,7 +316,7 @@
           },
         },
       },
-      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.\nThe Organization ID. If not set, the Org ID defined in the provider block will be used.' } },
+      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.\nThe Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.' } },
       withOrgId(value): {
         spec+: {
           parameters+: {

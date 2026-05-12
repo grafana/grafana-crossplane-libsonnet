@@ -70,14 +70,14 @@
           withReportVariablesMixin(value): {
             reportVariables+: value,
           },
-          '#withTimeRange': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
+          '#withTimeRange': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
           withTimeRange(value): {
             timeRange:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withTimeRangeMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
+          '#withTimeRangeMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
           withTimeRangeMixin(value): {
             timeRange+:
               (if std.isArray(value)
@@ -127,7 +127,7 @@
           },
         },
       },
-      '#withIncludeDashboardLink': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a link to the dashboard in the report. Defaults to true.\nWhether to include a link to the dashboard in the report. Defaults to `true`.' } },
+      '#withIncludeDashboardLink': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a link to the dashboard in the report.\nWhether to include a link to the dashboard in the report.' } },
       withIncludeDashboardLink(value=true): {
         spec+: {
           parameters+: {
@@ -137,7 +137,7 @@
           },
         },
       },
-      '#withIncludeTableCsv': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a CSV file of table panel data. Defaults to false.\nWhether to include a CSV file of table panel data. Defaults to `false`.' } },
+      '#withIncludeTableCsv': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a CSV file of table panel data.\nWhether to include a CSV file of table panel data.' } },
       withIncludeTableCsv(value=true): {
         spec+: {
           parameters+: {
@@ -147,7 +147,7 @@
           },
         },
       },
-      '#withLayout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Layout of the report. Allowed values: simple, grid. Defaults to grid.\nLayout of the report. Allowed values: `simple`, `grid`. Defaults to `grid`.' } },
+      '#withLayout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Layout of the report. Allowed values: simple, grid.\nLayout of the report. Allowed values: `simple`, `grid`.' } },
       withLayout(value): {
         spec+: {
           parameters+: {
@@ -177,7 +177,7 @@
           },
         },
       },
-      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.\nThe Organization ID. If not set, the Org ID defined in the provider block will be used.' } },
+      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.\nThe Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.' } },
       withOrgId(value): {
         spec+: {
           parameters+: {
@@ -391,7 +391,7 @@
               },
             },
         },
-      '#withOrientation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Orientation of the report. Allowed values: landscape, portrait. Defaults to landscape.\nOrientation of the report. Allowed values: `landscape`, `portrait`. Defaults to `landscape`.' } },
+      '#withOrientation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Orientation of the report. Allowed values: landscape, portrait.\nOrientation of the report. Allowed values: `landscape`, `portrait`.' } },
       withOrientation(value): {
         spec+: {
           parameters+: {
@@ -437,7 +437,7 @@
           },
         },
       },
-      '#withSchedule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)\nSchedule of the report.' } },
+      '#withSchedule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List)  Schedule of the report. (see below for nested schema)\n(Required) Schedule of the report.' } },
       withSchedule(value): {
         spec+: {
           parameters+: {
@@ -450,7 +450,7 @@
           },
         },
       },
-      '#withScheduleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)\nSchedule of the report.' } },
+      '#withScheduleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List)  Schedule of the report. (see below for nested schema)\n(Required) Schedule of the report.' } },
       withScheduleMixin(value): {
         spec+: {
           parameters+: {
@@ -478,7 +478,7 @@
           withFrequency(value): {
             frequency: value,
           },
-          '#withLastDayOfMonth': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Send the report on the last day of the month Defaults to false.\nSend the report on the last day of the month Defaults to `false`.' } },
+          '#withLastDayOfMonth': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Send the report on the last day of the month\nSend the report on the last day of the month' } },
           withLastDayOfMonth(value=true): {
             lastDayOfMonth: value,
           },
@@ -486,11 +486,11 @@
           withStartTime(value): {
             startTime: value,
           },
-          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Set the report time zone. Defaults to GMT.\nSet the report time zone. Defaults to `GMT`.' } },
+          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Set the report time zone.\nSet the report time zone.' } },
           withTimezone(value): {
             timezone: value,
           },
-          '#withWorkdaysOnly': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to send the report only on work days. Defaults to false.\nWhether to send the report only on work days. Defaults to `false`.' } },
+          '#withWorkdaysOnly': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to send the report only on work days.\nWhether to send the report only on work days.' } },
           withWorkdaysOnly(value=true): {
             workdaysOnly: value,
           },
@@ -551,14 +551,14 @@
           withReportVariablesMixin(value): {
             reportVariables+: value,
           },
-          '#withTimeRange': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
+          '#withTimeRange': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
           withTimeRange(value): {
             timeRange:
               (if std.isArray(value)
                then value
                else [value]),
           },
-          '#withTimeRangeMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
+          '#withTimeRangeMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Time range of the report. (see below for nested schema)\nTime range of the report.' } },
           withTimeRangeMixin(value): {
             timeRange+:
               (if std.isArray(value)
@@ -608,7 +608,7 @@
           },
         },
       },
-      '#withIncludeDashboardLink': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a link to the dashboard in the report. Defaults to true.\nWhether to include a link to the dashboard in the report. Defaults to `true`.' } },
+      '#withIncludeDashboardLink': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a link to the dashboard in the report.\nWhether to include a link to the dashboard in the report.' } },
       withIncludeDashboardLink(value=true): {
         spec+: {
           parameters+: {
@@ -618,7 +618,7 @@
           },
         },
       },
-      '#withIncludeTableCsv': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a CSV file of table panel data. Defaults to false.\nWhether to include a CSV file of table panel data. Defaults to `false`.' } },
+      '#withIncludeTableCsv': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to include a CSV file of table panel data.\nWhether to include a CSV file of table panel data.' } },
       withIncludeTableCsv(value=true): {
         spec+: {
           parameters+: {
@@ -628,7 +628,7 @@
           },
         },
       },
-      '#withLayout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Layout of the report. Allowed values: simple, grid. Defaults to grid.\nLayout of the report. Allowed values: `simple`, `grid`. Defaults to `grid`.' } },
+      '#withLayout': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Layout of the report. Allowed values: simple, grid.\nLayout of the report. Allowed values: `simple`, `grid`.' } },
       withLayout(value): {
         spec+: {
           parameters+: {
@@ -658,7 +658,7 @@
           },
         },
       },
-      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.\nThe Organization ID. If not set, the Org ID defined in the provider block will be used.' } },
+      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.\nThe Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.' } },
       withOrgId(value): {
         spec+: {
           parameters+: {
@@ -872,7 +872,7 @@
               },
             },
         },
-      '#withOrientation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Orientation of the report. Allowed values: landscape, portrait. Defaults to landscape.\nOrientation of the report. Allowed values: `landscape`, `portrait`. Defaults to `landscape`.' } },
+      '#withOrientation': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Orientation of the report. Allowed values: landscape, portrait.\nOrientation of the report. Allowed values: `landscape`, `portrait`.' } },
       withOrientation(value): {
         spec+: {
           parameters+: {
@@ -918,7 +918,7 @@
           },
         },
       },
-      '#withSchedule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)\nSchedule of the report.' } },
+      '#withSchedule': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List)  Schedule of the report. (see below for nested schema)\n(Required) Schedule of the report.' } },
       withSchedule(value): {
         spec+: {
           parameters+: {
@@ -931,7 +931,7 @@
           },
         },
       },
-      '#withScheduleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)\nSchedule of the report.' } },
+      '#withScheduleMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List)  Schedule of the report. (see below for nested schema)\n(Required) Schedule of the report.' } },
       withScheduleMixin(value): {
         spec+: {
           parameters+: {
@@ -959,7 +959,7 @@
           withFrequency(value): {
             frequency: value,
           },
-          '#withLastDayOfMonth': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Send the report on the last day of the month Defaults to false.\nSend the report on the last day of the month Defaults to `false`.' } },
+          '#withLastDayOfMonth': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Send the report on the last day of the month\nSend the report on the last day of the month' } },
           withLastDayOfMonth(value=true): {
             lastDayOfMonth: value,
           },
@@ -967,11 +967,11 @@
           withStartTime(value): {
             startTime: value,
           },
-          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Set the report time zone. Defaults to GMT.\nSet the report time zone. Defaults to `GMT`.' } },
+          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) Set the report time zone.\nSet the report time zone.' } },
           withTimezone(value): {
             timezone: value,
           },
-          '#withWorkdaysOnly': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to send the report only on work days. Defaults to false.\nWhether to send the report only on work days. Defaults to `false`.' } },
+          '#withWorkdaysOnly': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether to send the report only on work days.\nWhether to send the report only on work days.' } },
           withWorkdaysOnly(value=true): {
             workdaysOnly: value,
           },

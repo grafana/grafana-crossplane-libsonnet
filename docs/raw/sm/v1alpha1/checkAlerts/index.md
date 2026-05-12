@@ -75,10 +75,50 @@
       * [`fn withAlerts(value)`](#fn-specparametersforproviderwithalerts)
       * [`fn withAlertsMixin(value)`](#fn-specparametersforproviderwithalertsmixin)
       * [`fn withCheckId(value)`](#fn-specparametersforproviderwithcheckid)
+      * [`fn withCheckRef(value)`](#fn-specparametersforproviderwithcheckref)
+      * [`fn withCheckRefMixin(value)`](#fn-specparametersforproviderwithcheckrefmixin)
+      * [`fn withCheckSelector(value)`](#fn-specparametersforproviderwithcheckselector)
+      * [`fn withCheckSelectorMixin(value)`](#fn-specparametersforproviderwithcheckselectormixin)
+      * [`obj checkRef`](#obj-specparametersforprovidercheckref)
+        * [`fn withName(value)`](#fn-specparametersforprovidercheckrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovidercheckrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovidercheckrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovidercheckrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovidercheckrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovidercheckrefpolicywithresolve)
+      * [`obj checkSelector`](#obj-specparametersforprovidercheckselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforprovidercheckselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforprovidercheckselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforprovidercheckselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovidercheckselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovidercheckselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovidercheckselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovidercheckselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovidercheckselectorpolicywithresolve)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withAlerts(value)`](#fn-specparametersinitproviderwithalerts)
       * [`fn withAlertsMixin(value)`](#fn-specparametersinitproviderwithalertsmixin)
       * [`fn withCheckId(value)`](#fn-specparametersinitproviderwithcheckid)
+      * [`fn withCheckRef(value)`](#fn-specparametersinitproviderwithcheckref)
+      * [`fn withCheckRefMixin(value)`](#fn-specparametersinitproviderwithcheckrefmixin)
+      * [`fn withCheckSelector(value)`](#fn-specparametersinitproviderwithcheckselector)
+      * [`fn withCheckSelectorMixin(value)`](#fn-specparametersinitproviderwithcheckselectormixin)
+      * [`obj checkRef`](#obj-specparametersinitprovidercheckref)
+        * [`fn withName(value)`](#fn-specparametersinitprovidercheckrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovidercheckrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovidercheckrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovidercheckrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovidercheckrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovidercheckrefpolicywithresolve)
+      * [`obj checkSelector`](#obj-specparametersinitprovidercheckselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitprovidercheckselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitprovidercheckselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitprovidercheckselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovidercheckselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovidercheckselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovidercheckselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovidercheckselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovidercheckselectorpolicywithresolve)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -841,6 +881,214 @@ PARAMETERS:
 
 (Number) The ID of the check to manage alerts for.
 The ID of the check to manage alerts for.
+###### fn spec.parameters.forProvider.withCheckRef
+
+```jsonnet
+spec.parameters.forProvider.withCheckRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Check in sm to populate checkId.
+###### fn spec.parameters.forProvider.withCheckRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withCheckRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Check in sm to populate checkId.
+###### fn spec.parameters.forProvider.withCheckSelector
+
+```jsonnet
+spec.parameters.forProvider.withCheckSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Check in sm to populate checkId.
+###### fn spec.parameters.forProvider.withCheckSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withCheckSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Check in sm to populate checkId.
+###### obj spec.parameters.forProvider.checkRef
+
+
+####### fn spec.parameters.forProvider.checkRef.withName
+
+```jsonnet
+spec.parameters.forProvider.checkRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.checkRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.checkRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.checkRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.checkRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.checkRef.policy
+
+
+######## fn spec.parameters.forProvider.checkRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.checkRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.checkRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.checkRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.checkSelector
+
+
+####### fn spec.parameters.forProvider.checkSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.checkSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.checkSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.checkSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.checkSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.checkSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.checkSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.checkSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.checkSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.checkSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.checkSelector.policy
+
+
+######## fn spec.parameters.forProvider.checkSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.checkSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.checkSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.checkSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.initProvider
 
 
@@ -880,6 +1128,214 @@ PARAMETERS:
 
 (Number) The ID of the check to manage alerts for.
 The ID of the check to manage alerts for.
+###### fn spec.parameters.initProvider.withCheckRef
+
+```jsonnet
+spec.parameters.initProvider.withCheckRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Check in sm to populate checkId.
+###### fn spec.parameters.initProvider.withCheckRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withCheckRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Check in sm to populate checkId.
+###### fn spec.parameters.initProvider.withCheckSelector
+
+```jsonnet
+spec.parameters.initProvider.withCheckSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Check in sm to populate checkId.
+###### fn spec.parameters.initProvider.withCheckSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withCheckSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Check in sm to populate checkId.
+###### obj spec.parameters.initProvider.checkRef
+
+
+####### fn spec.parameters.initProvider.checkRef.withName
+
+```jsonnet
+spec.parameters.initProvider.checkRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.checkRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.checkRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.checkRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.checkRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.checkRef.policy
+
+
+######## fn spec.parameters.initProvider.checkRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.checkRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.checkRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.checkRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.checkSelector
+
+
+####### fn spec.parameters.initProvider.checkSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.checkSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.checkSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.checkSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.checkSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.checkSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.checkSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.checkSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.checkSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.checkSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.checkSelector.policy
+
+
+######## fn spec.parameters.initProvider.checkSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.checkSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.checkSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.checkSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.providerConfigRef
 
 

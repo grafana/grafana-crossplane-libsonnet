@@ -103,6 +103,32 @@
           },
         },
       },
+      '#withProbeNames': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'CUSTOM FIELD: List of probe names to resolve to probe IDs.\nIf set, this will override the Probes field with the resolved probe IDs on every reconciliation.\nThis field is excluded from Terraform via tf:"-" tag.' } },
+      withProbeNames(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              probeNames:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withProbeNamesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'CUSTOM FIELD: List of probe names to resolve to probe IDs.\nIf set, this will override the Probes field with the resolved probe IDs on every reconciliation.\nThis field is excluded from Terraform via tf:"-" tag.' } },
+      withProbeNamesMixin(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              probeNames+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
       '#withProbes': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of Number) List of probe location IDs where this target will be checked from.\nList of probe location IDs where this target will be checked from.' } },
       withProbes(value): {
         spec+: {
@@ -1339,6 +1365,32 @@
           parameters+: {
             initProvider+: {
               labels+: value,
+            },
+          },
+        },
+      },
+      '#withProbeNames': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'CUSTOM FIELD: List of probe names to resolve to probe IDs.\nIf set, this will override the Probes field with the resolved probe IDs on every reconciliation.\nThis field is excluded from Terraform via tf:"-" tag.' } },
+      withProbeNames(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              probeNames:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
+            },
+          },
+        },
+      },
+      '#withProbeNamesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'CUSTOM FIELD: List of probe names to resolve to probe IDs.\nIf set, this will override the Probes field with the resolved probe IDs on every reconciliation.\nThis field is excluded from Terraform via tf:"-" tag.' } },
+      withProbeNamesMixin(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              probeNames+:
+                (if std.isArray(value)
+                 then value
+                 else [value]),
             },
           },
         },

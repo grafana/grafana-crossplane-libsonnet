@@ -58,7 +58,7 @@ spec:
                           description: (String)
                           type: string
                         item:
-                          description: "(Block Set, Min: 1) (see below for nested schema)"
+                          description: (Block Set) (see below for nested schema)
                           items:
                             properties:
                               order:
@@ -173,7 +173,7 @@ spec:
                           description: (String)
                           type: string
                         item:
-                          description: "(Block Set, Min: 1) (see below for nested schema)"
+                          description: (Block Set) (see below for nested schema)
                           items:
                             properties:
                               order:
@@ -363,8 +363,6 @@ spec:
                   x-kubernetes-validations:
                     - message: spec.forProvider.interval is a required parameter
                       rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.interval) || (has(self.initProvider) && has(self.initProvider.interval))"
-                    - message: spec.forProvider.item is a required parameter
-                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.item) || (has(self.initProvider) && has(self.initProvider.item))"
                     - message: spec.forProvider.name is a required parameter
                       rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.name) || (has(self.initProvider) && has(self.initProvider.name))"
               type: object

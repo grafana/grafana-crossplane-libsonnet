@@ -35,7 +35,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Advanced Options for Alert Rules (see below for nested schema)
+(Block List) Advanced Options for Alert Rules (see below for nested schema)
 Advanced Options for Alert Rules
 ### fn withAdvancedOptionsMixin
 
@@ -47,7 +47,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Advanced Options for Alert Rules (see below for nested schema)
+(Block List) Advanced Options for Alert Rules (see below for nested schema)
 Advanced Options for Alert Rules
 ### fn withAnnotation
 
@@ -83,7 +83,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Alerting Rules generated for Fast Burn alerts (see below for nested schema)
+(Block List) Alerting Rules generated for Fast Burn alerts (see below for nested schema)
 Alerting Rules generated for Fast Burn alerts
 ### fn withFastburnMixin
 
@@ -95,7 +95,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Alerting Rules generated for Fast Burn alerts (see below for nested schema)
+(Block List) Alerting Rules generated for Fast Burn alerts (see below for nested schema)
 Alerting Rules generated for Fast Burn alerts
 ### fn withLabel
 
@@ -131,7 +131,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Alerting Rules generated for Slow Burn alerts (see below for nested schema)
+(Block List) Alerting Rules generated for Slow Burn alerts (see below for nested schema)
 Alerting Rules generated for Slow Burn alerts
 ### fn withSlowburnMixin
 
@@ -143,5 +143,5 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Alerting Rules generated for Slow Burn alerts (see below for nested schema)
+(Block List) Alerting Rules generated for Slow Burn alerts (see below for nested schema)
 Alerting Rules generated for Slow Burn alerts

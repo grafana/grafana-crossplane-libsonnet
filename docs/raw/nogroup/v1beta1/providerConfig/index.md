@@ -50,6 +50,8 @@
   * [`fn withOrgId(value)`](#fn-specwithorgid)
   * [`fn withSmUrl(value)`](#fn-specwithsmurl)
   * [`fn withStackId(value)`](#fn-specwithstackid)
+  * [`fn withStackSecretRef(value)`](#fn-specwithstacksecretref)
+  * [`fn withStackSecretRefMixin(value)`](#fn-specwithstacksecretrefmixin)
   * [`fn withUrl(value)`](#fn-specwithurl)
   * [`obj credentials`](#obj-speccredentials)
     * [`fn withEnv(value)`](#fn-speccredentialswithenv)
@@ -67,6 +69,9 @@
       * [`fn withKey(value)`](#fn-speccredentialssecretrefwithkey)
       * [`fn withName(value)`](#fn-speccredentialssecretrefwithname)
       * [`fn withNamespace(value)`](#fn-speccredentialssecretrefwithnamespace)
+  * [`obj stackSecretRef`](#obj-specstacksecretref)
+    * [`fn withName(value)`](#fn-specstacksecretrefwithname)
+    * [`fn withNamespace(value)`](#fn-specstacksecretrefwithnamespace)
 * [`obj status`](#obj-status)
   * [`fn withConditions(value)`](#fn-statuswithconditions)
   * [`fn withConditionsMixin(value)`](#fn-statuswithconditionsmixin)
@@ -537,6 +542,40 @@ PARAMETERS:
 * **value** (`integer`)
 
 Override the Grafana stack ID from the credentials reference attribute.
+#### fn spec.withStackSecretRef
+
+```jsonnet
+spec.withStackSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+StackSecretRef is an optional reference to a Secret containing Stack
+connection details (e.g., from a grafana_cloud_stack resource's
+writeConnectionSecretToRef). All keys in the Secret are merged into
+the credential map. Key remapping is applied (e.g., oncall_api_url
+becomes oncall_url, id becomes stack_id). Values from this secret
+override the primary credentials secret and are in turn overridden by
+explicit spec fields (url, oncallUrl, etc.).
+#### fn spec.withStackSecretRefMixin
+
+```jsonnet
+spec.withStackSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+StackSecretRef is an optional reference to a Secret containing Stack
+connection details (e.g., from a grafana_cloud_stack resource's
+writeConnectionSecretToRef). All keys in the Secret are merged into
+the credential map. Key remapping is applied (e.g., oncall_api_url
+becomes oncall_url, id becomes stack_id). Values from this secret
+override the primary credentials secret and are in turn overridden by
+explicit spec fields (url, oncallUrl, etc.).
 #### fn spec.withUrl
 
 ```jsonnet
@@ -692,6 +731,31 @@ Name of the secret.
 
 ```jsonnet
 spec.credentials.secretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
+#### obj spec.stackSecretRef
+
+
+##### fn spec.stackSecretRef.withName
+
+```jsonnet
+spec.stackSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+##### fn spec.stackSecretRef.withNamespace
+
+```jsonnet
+spec.stackSecretRef.withNamespace(value)
 ```
 
 PARAMETERS:

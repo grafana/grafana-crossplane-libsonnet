@@ -12,6 +12,7 @@ local configurations = grafanaplane.configurations;
   configuration.alerting(version),
   configuration.asserts(version),
   configuration.cloud(version),
+  configuration.cloudintegrations(version),
   configuration.cloudprovider(version),
   configuration.connections(version),
   configuration.enterprise(version),

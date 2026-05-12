@@ -50,7 +50,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Time range of the report. (see below for nested schema)
+(Block List) Time range of the report. (see below for nested schema)
 Time range of the report.
 ### fn withTimeRangeMixin
 
@@ -62,7 +62,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Time range of the report. (see below for nested schema)
+(Block List) Time range of the report. (see below for nested schema)
 Time range of the report.
 ### fn withUid
 

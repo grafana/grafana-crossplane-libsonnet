@@ -38,6 +38,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.metadata.uid
                 toFieldPath: spec.forProvider.metadata.uid
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.options.managerIdentity
+                toFieldPath: spec.forProvider.options.managerIdentity
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.options.overwrite
                 toFieldPath: spec.forProvider.options.overwrite
                 type: FromCompositeFieldPath
@@ -83,8 +86,32 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.muteTimings
                 toFieldPath: spec.forProvider.spec.notificationSettings.muteTimings
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.namedRoutingTree.routingTree
+                toFieldPath: spec.forProvider.spec.notificationSettings.namedRoutingTree.routingTree
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.repeatInterval
                 toFieldPath: spec.forProvider.spec.notificationSettings.repeatInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.activeTimings
+                toFieldPath: spec.forProvider.spec.notificationSettings.simplifiedRouting.activeTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.contactPoint
+                toFieldPath: spec.forProvider.spec.notificationSettings.simplifiedRouting.contactPoint
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.groupBy
+                toFieldPath: spec.forProvider.spec.notificationSettings.simplifiedRouting.groupBy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.groupInterval
+                toFieldPath: spec.forProvider.spec.notificationSettings.simplifiedRouting.groupInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.groupWait
+                toFieldPath: spec.forProvider.spec.notificationSettings.simplifiedRouting.groupWait
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.muteTimings
+                toFieldPath: spec.forProvider.spec.notificationSettings.simplifiedRouting.muteTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.repeatInterval
+                toFieldPath: spec.forProvider.spec.notificationSettings.simplifiedRouting.repeatInterval
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.spec.panelRef
                 toFieldPath: spec.forProvider.spec.panelRef
@@ -103,6 +130,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.metadata.uid
                 toFieldPath: spec.initProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.managerIdentity
+                toFieldPath: spec.initProvider.options.managerIdentity
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.options.overwrite
                 toFieldPath: spec.initProvider.options.overwrite
@@ -149,8 +179,32 @@ spec:
               - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.muteTimings
                 toFieldPath: spec.initProvider.spec.notificationSettings.muteTimings
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.namedRoutingTree.routingTree
+                toFieldPath: spec.initProvider.spec.notificationSettings.namedRoutingTree.routingTree
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.repeatInterval
                 toFieldPath: spec.initProvider.spec.notificationSettings.repeatInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.activeTimings
+                toFieldPath: spec.initProvider.spec.notificationSettings.simplifiedRouting.activeTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.contactPoint
+                toFieldPath: spec.initProvider.spec.notificationSettings.simplifiedRouting.contactPoint
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.groupBy
+                toFieldPath: spec.initProvider.spec.notificationSettings.simplifiedRouting.groupBy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.groupInterval
+                toFieldPath: spec.initProvider.spec.notificationSettings.simplifiedRouting.groupInterval
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.groupWait
+                toFieldPath: spec.initProvider.spec.notificationSettings.simplifiedRouting.groupWait
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.muteTimings
+                toFieldPath: spec.initProvider.spec.notificationSettings.simplifiedRouting.muteTimings
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.repeatInterval
+                toFieldPath: spec.initProvider.spec.notificationSettings.simplifiedRouting.repeatInterval
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.spec.panelRef
                 toFieldPath: spec.initProvider.spec.panelRef

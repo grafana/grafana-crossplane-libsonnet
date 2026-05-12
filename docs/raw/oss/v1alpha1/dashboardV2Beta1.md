@@ -1,4 +1,4 @@
-# outgoingWebhook
+# dashboardV2Beta1
 
 
 
@@ -67,59 +67,43 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
-      * [`fn withAuthorizationHeaderSecretRef(value)`](#fn-specparametersforproviderwithauthorizationheadersecretref)
-      * [`fn withAuthorizationHeaderSecretRefMixin(value)`](#fn-specparametersforproviderwithauthorizationheadersecretrefmixin)
-      * [`fn withData(value)`](#fn-specparametersforproviderwithdata)
-      * [`fn withForwardWholePayload(value=true)`](#fn-specparametersforproviderwithforwardwholepayload)
-      * [`fn withHeaders(value)`](#fn-specparametersforproviderwithheaders)
-      * [`fn withHttpMethod(value)`](#fn-specparametersforproviderwithhttpmethod)
-      * [`fn withIntegrationFilter(value)`](#fn-specparametersforproviderwithintegrationfilter)
-      * [`fn withIntegrationFilterMixin(value)`](#fn-specparametersforproviderwithintegrationfiltermixin)
-      * [`fn withIsWebhookEnabled(value=true)`](#fn-specparametersforproviderwithiswebhookenabled)
-      * [`fn withName(value)`](#fn-specparametersforproviderwithname)
-      * [`fn withPasswordSecretRef(value)`](#fn-specparametersforproviderwithpasswordsecretref)
-      * [`fn withPasswordSecretRefMixin(value)`](#fn-specparametersforproviderwithpasswordsecretrefmixin)
-      * [`fn withPreset(value)`](#fn-specparametersforproviderwithpreset)
-      * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
-      * [`fn withTriggerTemplate(value)`](#fn-specparametersforproviderwithtriggertemplate)
-      * [`fn withTriggerType(value)`](#fn-specparametersforproviderwithtriggertype)
-      * [`fn withUrl(value)`](#fn-specparametersforproviderwithurl)
-      * [`fn withUser(value)`](#fn-specparametersforproviderwithuser)
-      * [`obj authorizationHeaderSecretRef`](#obj-specparametersforproviderauthorizationheadersecretref)
-        * [`fn withKey(value)`](#fn-specparametersforproviderauthorizationheadersecretrefwithkey)
-        * [`fn withName(value)`](#fn-specparametersforproviderauthorizationheadersecretrefwithname)
-        * [`fn withNamespace(value)`](#fn-specparametersforproviderauthorizationheadersecretrefwithnamespace)
-      * [`obj passwordSecretRef`](#obj-specparametersforproviderpasswordsecretref)
-        * [`fn withKey(value)`](#fn-specparametersforproviderpasswordsecretrefwithkey)
-        * [`fn withName(value)`](#fn-specparametersforproviderpasswordsecretrefwithname)
-        * [`fn withNamespace(value)`](#fn-specparametersforproviderpasswordsecretrefwithnamespace)
+      * [`fn withMetadata(value)`](#fn-specparametersforproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersforproviderwithmetadatamixin)
+      * [`fn withOptions(value)`](#fn-specparametersforproviderwithoptions)
+      * [`fn withOptionsMixin(value)`](#fn-specparametersforproviderwithoptionsmixin)
+      * [`fn withSpec(value)`](#fn-specparametersforproviderwithspec)
+      * [`fn withSpecMixin(value)`](#fn-specparametersforproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersforprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersforprovideroptions)
+        * [`fn withAllowUiUpdates(value=true)`](#fn-specparametersforprovideroptionswithallowuiupdates)
+        * [`fn withManagerIdentity(value)`](#fn-specparametersforprovideroptionswithmanageridentity)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersforproviderspec)
+        * [`fn withJson(value)`](#fn-specparametersforproviderspecwithjson)
+        * [`fn withTags(value)`](#fn-specparametersforproviderspecwithtags)
+        * [`fn withTagsMixin(value)`](#fn-specparametersforproviderspecwithtagsmixin)
+        * [`fn withTitle(value)`](#fn-specparametersforproviderspecwithtitle)
     * [`obj initProvider`](#obj-specparametersinitprovider)
-      * [`fn withAuthorizationHeaderSecretRef(value)`](#fn-specparametersinitproviderwithauthorizationheadersecretref)
-      * [`fn withAuthorizationHeaderSecretRefMixin(value)`](#fn-specparametersinitproviderwithauthorizationheadersecretrefmixin)
-      * [`fn withData(value)`](#fn-specparametersinitproviderwithdata)
-      * [`fn withForwardWholePayload(value=true)`](#fn-specparametersinitproviderwithforwardwholepayload)
-      * [`fn withHeaders(value)`](#fn-specparametersinitproviderwithheaders)
-      * [`fn withHttpMethod(value)`](#fn-specparametersinitproviderwithhttpmethod)
-      * [`fn withIntegrationFilter(value)`](#fn-specparametersinitproviderwithintegrationfilter)
-      * [`fn withIntegrationFilterMixin(value)`](#fn-specparametersinitproviderwithintegrationfiltermixin)
-      * [`fn withIsWebhookEnabled(value=true)`](#fn-specparametersinitproviderwithiswebhookenabled)
-      * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
-      * [`fn withPasswordSecretRef(value)`](#fn-specparametersinitproviderwithpasswordsecretref)
-      * [`fn withPasswordSecretRefMixin(value)`](#fn-specparametersinitproviderwithpasswordsecretrefmixin)
-      * [`fn withPreset(value)`](#fn-specparametersinitproviderwithpreset)
-      * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
-      * [`fn withTriggerTemplate(value)`](#fn-specparametersinitproviderwithtriggertemplate)
-      * [`fn withTriggerType(value)`](#fn-specparametersinitproviderwithtriggertype)
-      * [`fn withUrl(value)`](#fn-specparametersinitproviderwithurl)
-      * [`fn withUser(value)`](#fn-specparametersinitproviderwithuser)
-      * [`obj authorizationHeaderSecretRef`](#obj-specparametersinitproviderauthorizationheadersecretref)
-        * [`fn withKey(value)`](#fn-specparametersinitproviderauthorizationheadersecretrefwithkey)
-        * [`fn withName(value)`](#fn-specparametersinitproviderauthorizationheadersecretrefwithname)
-        * [`fn withNamespace(value)`](#fn-specparametersinitproviderauthorizationheadersecretrefwithnamespace)
-      * [`obj passwordSecretRef`](#obj-specparametersinitproviderpasswordsecretref)
-        * [`fn withKey(value)`](#fn-specparametersinitproviderpasswordsecretrefwithkey)
-        * [`fn withName(value)`](#fn-specparametersinitproviderpasswordsecretrefwithname)
-        * [`fn withNamespace(value)`](#fn-specparametersinitproviderpasswordsecretrefwithnamespace)
+      * [`fn withMetadata(value)`](#fn-specparametersinitproviderwithmetadata)
+      * [`fn withMetadataMixin(value)`](#fn-specparametersinitproviderwithmetadatamixin)
+      * [`fn withOptions(value)`](#fn-specparametersinitproviderwithoptions)
+      * [`fn withOptionsMixin(value)`](#fn-specparametersinitproviderwithoptionsmixin)
+      * [`fn withSpec(value)`](#fn-specparametersinitproviderwithspec)
+      * [`fn withSpecMixin(value)`](#fn-specparametersinitproviderwithspecmixin)
+      * [`obj metadata`](#obj-specparametersinitprovidermetadata)
+        * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
+        * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
+      * [`obj options`](#obj-specparametersinitprovideroptions)
+        * [`fn withAllowUiUpdates(value=true)`](#fn-specparametersinitprovideroptionswithallowuiupdates)
+        * [`fn withManagerIdentity(value)`](#fn-specparametersinitprovideroptionswithmanageridentity)
+        * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
+      * [`obj spec`](#obj-specparametersinitproviderspec)
+        * [`fn withJson(value)`](#fn-specparametersinitproviderspecwithjson)
+        * [`fn withTags(value)`](#fn-specparametersinitproviderspecwithtags)
+        * [`fn withTagsMixin(value)`](#fn-specparametersinitproviderspecwithtagsmixin)
+        * [`fn withTitle(value)`](#fn-specparametersinitproviderspecwithtitle)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -548,7 +532,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-OutgoingWebhookSpec defines the desired state of OutgoingWebhook
+DashboardV2Beta1Spec defines the desired state of DashboardV2Beta1
 #### fn spec.withParametersMixin
 
 ```jsonnet
@@ -559,7 +543,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
-OutgoingWebhookSpec defines the desired state of OutgoingWebhook
+DashboardV2Beta1Spec defines the desired state of DashboardV2Beta1
 #### fn spec.withWriteConnectionSecretToRef
 
 ```jsonnet
@@ -846,46 +830,112 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
-###### fn spec.parameters.forProvider.withAuthorizationHeaderSecretRef
+###### fn spec.parameters.forProvider.withMetadata
 
 ```jsonnet
-spec.parameters.forProvider.withAuthorizationHeaderSecretRef(value)
+spec.parameters.forProvider.withMetadata(value)
 ```
 
 PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
-The auth data of the webhook. Used in Authorization header instead of user/password auth.
-###### fn spec.parameters.forProvider.withAuthorizationHeaderSecretRefMixin
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.forProvider.withMetadataMixin
 
 ```jsonnet
-spec.parameters.forProvider.withAuthorizationHeaderSecretRefMixin(value)
+spec.parameters.forProvider.withMetadataMixin(value)
 ```
 
 PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
-The auth data of the webhook. Used in Authorization header instead of user/password auth.
-###### fn spec.parameters.forProvider.withData
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.forProvider.withOptions
 
 ```jsonnet
-spec.parameters.forProvider.withData(value)
+spec.parameters.forProvider.withOptions(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.forProvider.withOptionsMixin
+
+```jsonnet
+spec.parameters.forProvider.withOptionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.forProvider.withSpec
+
+```jsonnet
+spec.parameters.forProvider.withSpec(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### fn spec.parameters.forProvider.withSpecMixin
+
+```jsonnet
+spec.parameters.forProvider.withSpecMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### obj spec.parameters.forProvider.metadata
+
+
+####### fn spec.parameters.forProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.forProvider.metadata.withFolderUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The data of the webhook.
-The data of the webhook.
-###### fn spec.parameters.forProvider.withForwardWholePayload
+(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+####### fn spec.parameters.forProvider.metadata.withUid
 
 ```jsonnet
-spec.parameters.forProvider.withForwardWholePayload(value=true)
+spec.parameters.forProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The unique identifier of the resource.
+The unique identifier of the resource.
+###### obj spec.parameters.forProvider.options
+
+
+####### fn spec.parameters.forProvider.options.withAllowUiUpdates
+
+```jsonnet
+spec.parameters.forProvider.options.withAllowUiUpdates(value=true)
 ```
 
 PARAMETERS:
@@ -893,60 +943,23 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Toggle to send the entire webhook payload instead of using the values in the Data field.
-Toggle to send the entire webhook payload instead of using the values in the Data field.
-###### fn spec.parameters.forProvider.withHeaders
+(Boolean) Set to true to allow editing the resource from the Grafana UI.
+Set to true to allow editing the resource from the Grafana UI.
+####### fn spec.parameters.forProvider.options.withManagerIdentity
 
 ```jsonnet
-spec.parameters.forProvider.withHeaders(value)
+spec.parameters.forProvider.options.withManagerIdentity(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) Headers to add to the outgoing webhook request.
-Headers to add to the outgoing webhook request.
-###### fn spec.parameters.forProvider.withHttpMethod
+Override the identity stamped on this resource's manager metadata.
+####### fn spec.parameters.forProvider.options.withOverwrite
 
 ```jsonnet
-spec.parameters.forProvider.withHttpMethod(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The HTTP method used in the request made by the outgoing webhook. Defaults to POST.
-The HTTP method used in the request made by the outgoing webhook. Defaults to `POST`.
-###### fn spec.parameters.forProvider.withIntegrationFilter
-
-```jsonnet
-spec.parameters.forProvider.withIntegrationFilter(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-###### fn spec.parameters.forProvider.withIntegrationFilterMixin
-
-```jsonnet
-spec.parameters.forProvider.withIntegrationFilterMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-###### fn spec.parameters.forProvider.withIsWebhookEnabled
-
-```jsonnet
-spec.parameters.forProvider.withIsWebhookEnabled(value=true)
+spec.parameters.forProvider.options.withOverwrite(value=true)
 ```
 
 PARAMETERS:
@@ -954,231 +967,168 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Controls whether the outgoing webhook will trigger or is ignored. Defaults to true.
-Controls whether the outgoing webhook will trigger or is ignored. Defaults to `true`.
-###### fn spec.parameters.forProvider.withName
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.forProvider.spec
+
+
+####### fn spec.parameters.forProvider.spec.withJson
 
 ```jsonnet
-spec.parameters.forProvider.withName(value)
+spec.parameters.forProvider.spec.withJson(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the outgoing webhook.
-The name of the outgoing webhook.
-###### fn spec.parameters.forProvider.withPasswordSecretRef
+(String) The JSON representation of the dashboard v2beta1 spec. Must be the spec object only — not the full Kubernetes envelope. Use: json = jsonencode(jsondecode(file("dashboard.json")).spec)
+The JSON representation of the dashboard v2beta1 spec. Must be the spec object only — not the full Kubernetes envelope. Use: json = jsonencode(jsondecode(file("dashboard.json")).spec)
+####### fn spec.parameters.forProvider.spec.withTags
 
 ```jsonnet
-spec.parameters.forProvider.withPasswordSecretRef(value)
+spec.parameters.forProvider.spec.withTags(value)
 ```
 
 PARAMETERS:
 
-* **value** (`object`)
+* **value** (`array`)
 
-(String, Sensitive) The auth data of the webhook. Used for Basic authentication
-The auth data of the webhook. Used for Basic authentication
-###### fn spec.parameters.forProvider.withPasswordSecretRefMixin
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.forProvider.spec.withTagsMixin
 
 ```jsonnet
-spec.parameters.forProvider.withPasswordSecretRefMixin(value)
+spec.parameters.forProvider.spec.withTagsMixin(value)
 ```
 
 PARAMETERS:
 
-* **value** (`object`)
+* **value** (`array`)
 
-(String, Sensitive) The auth data of the webhook. Used for Basic authentication
-The auth data of the webhook. Used for Basic authentication
-###### fn spec.parameters.forProvider.withPreset
-
-```jsonnet
-spec.parameters.forProvider.withPreset(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.
-The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
-###### fn spec.parameters.forProvider.withTeamId
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.forProvider.spec.withTitle
 
 ```jsonnet
-spec.parameters.forProvider.withTeamId(value)
+spec.parameters.forProvider.spec.withTitle(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
-The ID of the OnCall team (using the `grafana_oncall_team` datasource).
-###### fn spec.parameters.forProvider.withTriggerTemplate
-
-```jsonnet
-spec.parameters.forProvider.withTriggerTemplate(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) A template used to dynamically determine whether the webhook should execute based on the content of the payload.
-A template used to dynamically determine whether the webhook should execute based on the content of the payload.
-###### fn spec.parameters.forProvider.withTriggerType
-
-```jsonnet
-spec.parameters.forProvider.withTriggerType(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.
-The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.
-###### fn spec.parameters.forProvider.withUrl
-
-```jsonnet
-spec.parameters.forProvider.withUrl(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The webhook URL. Required when not using a preset that controls this field.
-The webhook URL. Required when not using a preset that controls this field.
-###### fn spec.parameters.forProvider.withUser
-
-```jsonnet
-spec.parameters.forProvider.withUser(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) Username to use when making the outgoing webhook request.
-Username to use when making the outgoing webhook request.
-###### obj spec.parameters.forProvider.authorizationHeaderSecretRef
-
-
-####### fn spec.parameters.forProvider.authorizationHeaderSecretRef.withKey
-
-```jsonnet
-spec.parameters.forProvider.authorizationHeaderSecretRef.withKey(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-The key to select.
-####### fn spec.parameters.forProvider.authorizationHeaderSecretRef.withName
-
-```jsonnet
-spec.parameters.forProvider.authorizationHeaderSecretRef.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name of the secret.
-####### fn spec.parameters.forProvider.authorizationHeaderSecretRef.withNamespace
-
-```jsonnet
-spec.parameters.forProvider.authorizationHeaderSecretRef.withNamespace(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Namespace of the secret.
-###### obj spec.parameters.forProvider.passwordSecretRef
-
-
-####### fn spec.parameters.forProvider.passwordSecretRef.withKey
-
-```jsonnet
-spec.parameters.forProvider.passwordSecretRef.withKey(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-The key to select.
-####### fn spec.parameters.forProvider.passwordSecretRef.withName
-
-```jsonnet
-spec.parameters.forProvider.passwordSecretRef.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name of the secret.
-####### fn spec.parameters.forProvider.passwordSecretRef.withNamespace
-
-```jsonnet
-spec.parameters.forProvider.passwordSecretRef.withNamespace(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Namespace of the secret.
+(String) The title of the dashboard. If not set, the title will be derived from the JSON spec.
+The title of the dashboard. If not set, the title will be derived from the JSON spec.
 ##### obj spec.parameters.initProvider
 
 
-###### fn spec.parameters.initProvider.withAuthorizationHeaderSecretRef
+###### fn spec.parameters.initProvider.withMetadata
 
 ```jsonnet
-spec.parameters.initProvider.withAuthorizationHeaderSecretRef(value)
+spec.parameters.initProvider.withMetadata(value)
 ```
 
 PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
-The auth data of the webhook. Used in Authorization header instead of user/password auth.
-###### fn spec.parameters.initProvider.withAuthorizationHeaderSecretRefMixin
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.initProvider.withMetadataMixin
 
 ```jsonnet
-spec.parameters.initProvider.withAuthorizationHeaderSecretRefMixin(value)
+spec.parameters.initProvider.withMetadataMixin(value)
 ```
 
 PARAMETERS:
 
 * **value** (`object`)
 
-(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
-The auth data of the webhook. Used in Authorization header instead of user/password auth.
-###### fn spec.parameters.initProvider.withData
+(Block, Optional) The metadata of the resource. (see below for nested schema)
+The metadata of the resource.
+###### fn spec.parameters.initProvider.withOptions
 
 ```jsonnet
-spec.parameters.initProvider.withData(value)
+spec.parameters.initProvider.withOptions(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.initProvider.withOptionsMixin
+
+```jsonnet
+spec.parameters.initProvider.withOptionsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Options for applying the resource. (see below for nested schema)
+Options for applying the resource.
+###### fn spec.parameters.initProvider.withSpec
+
+```jsonnet
+spec.parameters.initProvider.withSpec(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### fn spec.parameters.initProvider.withSpecMixin
+
+```jsonnet
+spec.parameters.initProvider.withSpecMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) The spec of the resource. (see below for nested schema)
+The spec of the resource.
+###### obj spec.parameters.initProvider.metadata
+
+
+####### fn spec.parameters.initProvider.metadata.withFolderUid
+
+```jsonnet
+spec.parameters.initProvider.metadata.withFolderUid(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The data of the webhook.
-The data of the webhook.
-###### fn spec.parameters.initProvider.withForwardWholePayload
+(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+####### fn spec.parameters.initProvider.metadata.withUid
 
 ```jsonnet
-spec.parameters.initProvider.withForwardWholePayload(value=true)
+spec.parameters.initProvider.metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The unique identifier of the resource.
+The unique identifier of the resource.
+###### obj spec.parameters.initProvider.options
+
+
+####### fn spec.parameters.initProvider.options.withAllowUiUpdates
+
+```jsonnet
+spec.parameters.initProvider.options.withAllowUiUpdates(value=true)
 ```
 
 PARAMETERS:
@@ -1186,60 +1136,23 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Toggle to send the entire webhook payload instead of using the values in the Data field.
-Toggle to send the entire webhook payload instead of using the values in the Data field.
-###### fn spec.parameters.initProvider.withHeaders
+(Boolean) Set to true to allow editing the resource from the Grafana UI.
+Set to true to allow editing the resource from the Grafana UI.
+####### fn spec.parameters.initProvider.options.withManagerIdentity
 
 ```jsonnet
-spec.parameters.initProvider.withHeaders(value)
+spec.parameters.initProvider.options.withManagerIdentity(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) Headers to add to the outgoing webhook request.
-Headers to add to the outgoing webhook request.
-###### fn spec.parameters.initProvider.withHttpMethod
+Override the identity stamped on this resource's manager metadata.
+####### fn spec.parameters.initProvider.options.withOverwrite
 
 ```jsonnet
-spec.parameters.initProvider.withHttpMethod(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The HTTP method used in the request made by the outgoing webhook. Defaults to POST.
-The HTTP method used in the request made by the outgoing webhook. Defaults to `POST`.
-###### fn spec.parameters.initProvider.withIntegrationFilter
-
-```jsonnet
-spec.parameters.initProvider.withIntegrationFilter(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-###### fn spec.parameters.initProvider.withIntegrationFilterMixin
-
-```jsonnet
-spec.parameters.initProvider.withIntegrationFilterMixin(value)
-```
-
-PARAMETERS:
-
-* **value** (`array`)
-
-(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
-###### fn spec.parameters.initProvider.withIsWebhookEnabled
-
-```jsonnet
-spec.parameters.initProvider.withIsWebhookEnabled(value=true)
+spec.parameters.initProvider.options.withOverwrite(value=true)
 ```
 
 PARAMETERS:
@@ -1247,188 +1160,59 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Controls whether the outgoing webhook will trigger or is ignored. Defaults to true.
-Controls whether the outgoing webhook will trigger or is ignored. Defaults to `true`.
-###### fn spec.parameters.initProvider.withName
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+###### obj spec.parameters.initProvider.spec
+
+
+####### fn spec.parameters.initProvider.spec.withJson
 
 ```jsonnet
-spec.parameters.initProvider.withName(value)
+spec.parameters.initProvider.spec.withJson(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of the outgoing webhook.
-The name of the outgoing webhook.
-###### fn spec.parameters.initProvider.withPasswordSecretRef
+(String) The JSON representation of the dashboard v2beta1 spec. Must be the spec object only — not the full Kubernetes envelope. Use: json = jsonencode(jsondecode(file("dashboard.json")).spec)
+The JSON representation of the dashboard v2beta1 spec. Must be the spec object only — not the full Kubernetes envelope. Use: json = jsonencode(jsondecode(file("dashboard.json")).spec)
+####### fn spec.parameters.initProvider.spec.withTags
 
 ```jsonnet
-spec.parameters.initProvider.withPasswordSecretRef(value)
+spec.parameters.initProvider.spec.withTags(value)
 ```
 
 PARAMETERS:
 
-* **value** (`object`)
+* **value** (`array`)
 
-(String, Sensitive) The auth data of the webhook. Used for Basic authentication
-The auth data of the webhook. Used for Basic authentication
-###### fn spec.parameters.initProvider.withPasswordSecretRefMixin
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.initProvider.spec.withTagsMixin
 
 ```jsonnet
-spec.parameters.initProvider.withPasswordSecretRefMixin(value)
+spec.parameters.initProvider.spec.withTagsMixin(value)
 ```
 
 PARAMETERS:
 
-* **value** (`object`)
+* **value** (`array`)
 
-(String, Sensitive) The auth data of the webhook. Used for Basic authentication
-The auth data of the webhook. Used for Basic authentication
-###### fn spec.parameters.initProvider.withPreset
-
-```jsonnet
-spec.parameters.initProvider.withPreset(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.
-The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
-###### fn spec.parameters.initProvider.withTeamId
+(List of String) The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+The tags of the dashboard. If not set, the tags will be derived from the JSON spec.
+####### fn spec.parameters.initProvider.spec.withTitle
 
 ```jsonnet
-spec.parameters.initProvider.withTeamId(value)
+spec.parameters.initProvider.spec.withTitle(value)
 ```
 
 PARAMETERS:
 
 * **value** (`string`)
 
-(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
-The ID of the OnCall team (using the `grafana_oncall_team` datasource).
-###### fn spec.parameters.initProvider.withTriggerTemplate
-
-```jsonnet
-spec.parameters.initProvider.withTriggerTemplate(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) A template used to dynamically determine whether the webhook should execute based on the content of the payload.
-A template used to dynamically determine whether the webhook should execute based on the content of the payload.
-###### fn spec.parameters.initProvider.withTriggerType
-
-```jsonnet
-spec.parameters.initProvider.withTriggerType(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.
-The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.
-###### fn spec.parameters.initProvider.withUrl
-
-```jsonnet
-spec.parameters.initProvider.withUrl(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) The webhook URL. Required when not using a preset that controls this field.
-The webhook URL. Required when not using a preset that controls this field.
-###### fn spec.parameters.initProvider.withUser
-
-```jsonnet
-spec.parameters.initProvider.withUser(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-(String) Username to use when making the outgoing webhook request.
-Username to use when making the outgoing webhook request.
-###### obj spec.parameters.initProvider.authorizationHeaderSecretRef
-
-
-####### fn spec.parameters.initProvider.authorizationHeaderSecretRef.withKey
-
-```jsonnet
-spec.parameters.initProvider.authorizationHeaderSecretRef.withKey(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-The key to select.
-####### fn spec.parameters.initProvider.authorizationHeaderSecretRef.withName
-
-```jsonnet
-spec.parameters.initProvider.authorizationHeaderSecretRef.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name of the secret.
-####### fn spec.parameters.initProvider.authorizationHeaderSecretRef.withNamespace
-
-```jsonnet
-spec.parameters.initProvider.authorizationHeaderSecretRef.withNamespace(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Namespace of the secret.
-###### obj spec.parameters.initProvider.passwordSecretRef
-
-
-####### fn spec.parameters.initProvider.passwordSecretRef.withKey
-
-```jsonnet
-spec.parameters.initProvider.passwordSecretRef.withKey(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-The key to select.
-####### fn spec.parameters.initProvider.passwordSecretRef.withName
-
-```jsonnet
-spec.parameters.initProvider.passwordSecretRef.withName(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Name of the secret.
-####### fn spec.parameters.initProvider.passwordSecretRef.withNamespace
-
-```jsonnet
-spec.parameters.initProvider.passwordSecretRef.withNamespace(value)
-```
-
-PARAMETERS:
-
-* **value** (`string`)
-
-Namespace of the secret.
+(String) The title of the dashboard. If not set, the title will be derived from the JSON spec.
+The title of the dashboard. If not set, the title will be derived from the JSON spec.
 ##### obj spec.parameters.providerConfigRef
 
 

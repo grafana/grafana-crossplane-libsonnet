@@ -33,7 +33,7 @@
   },
   forProvider+:
     {
-      '#withAutoIncrementVersion': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or version should be set.\nWhether the role version should be incremented automatically on updates (and set to 1 on creation). This field or `version` should be set.' } },
+      '#withAutoIncrementVersion': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean, Deprecated) Whether the role version should be incremented automatically on updates (and set to 1 on creation).\nWhether the role version should be incremented automatically on updates (and set to 1 on creation).' } },
       withAutoIncrementVersion(value=true): {
         spec+: {
           parameters+: {
@@ -365,7 +365,7 @@
           },
         },
       },
-      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) Version of the role. A role is updated only on version increase. This field or auto_increment_version should be set.\nVersion of the role. A role is updated only on version increase. This field or `auto_increment_version` should be set.' } },
+      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number, Deprecated) Version of the role. The server manages this automatically.\nVersion of the role. The server manages this automatically.' } },
       withVersion(value): {
         spec+: {
           parameters+: {
@@ -394,7 +394,7 @@
   },
   initProvider+:
     {
-      '#withAutoIncrementVersion': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or version should be set.\nWhether the role version should be incremented automatically on updates (and set to 1 on creation). This field or `version` should be set.' } },
+      '#withAutoIncrementVersion': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean, Deprecated) Whether the role version should be incremented automatically on updates (and set to 1 on creation).\nWhether the role version should be incremented automatically on updates (and set to 1 on creation).' } },
       withAutoIncrementVersion(value=true): {
         spec+: {
           parameters+: {
@@ -726,7 +726,7 @@
           },
         },
       },
-      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) Version of the role. A role is updated only on version increase. This field or auto_increment_version should be set.\nVersion of the role. A role is updated only on version increase. This field or `auto_increment_version` should be set.' } },
+      '#withVersion': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number, Deprecated) Version of the role. The server manages this automatically.\nVersion of the role. The server manages this automatically.' } },
       withVersion(value): {
         spec+: {
           parameters+: {

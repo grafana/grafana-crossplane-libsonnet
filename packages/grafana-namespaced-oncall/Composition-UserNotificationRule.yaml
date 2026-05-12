@@ -38,6 +38,27 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.important
                 toFieldPath: spec.forProvider.important
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.onCallUserRef.name
+                toFieldPath: spec.forProvider.onCallUserRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.onCallUserRef.policy.resolution
+                toFieldPath: spec.forProvider.onCallUserRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.onCallUserRef.policy.resolve
+                toFieldPath: spec.forProvider.onCallUserRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.onCallUserSelector.matchControllerRef
+                toFieldPath: spec.forProvider.onCallUserSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.onCallUserSelector.matchLabels
+                toFieldPath: spec.forProvider.onCallUserSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.onCallUserSelector.policy.resolution
+                toFieldPath: spec.forProvider.onCallUserSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.onCallUserSelector.policy.resolve
+                toFieldPath: spec.forProvider.onCallUserSelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.position
                 toFieldPath: spec.forProvider.position
                 type: FromCompositeFieldPath
@@ -52,6 +73,27 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.important
                 toFieldPath: spec.initProvider.important
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.onCallUserRef.name
+                toFieldPath: spec.initProvider.onCallUserRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.onCallUserRef.policy.resolution
+                toFieldPath: spec.initProvider.onCallUserRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.onCallUserRef.policy.resolve
+                toFieldPath: spec.initProvider.onCallUserRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.onCallUserSelector.matchControllerRef
+                toFieldPath: spec.initProvider.onCallUserSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.onCallUserSelector.matchLabels
+                toFieldPath: spec.initProvider.onCallUserSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.onCallUserSelector.policy.resolution
+                toFieldPath: spec.initProvider.onCallUserSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.onCallUserSelector.policy.resolve
+                toFieldPath: spec.initProvider.onCallUserSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.position
                 toFieldPath: spec.initProvider.position

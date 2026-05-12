@@ -1,11 +1,15 @@
 {
+  dataSourceCacheConfig+: import './dataSourceCacheConfig/main.libsonnet',
   dataSourceConfigLbacRules+: import './dataSourceConfigLbacRules/main.libsonnet',
   dataSourcePermissionItem+: import './dataSourcePermissionItem/main.libsonnet',
   dataSourcePermission+: import './dataSourcePermission/main.libsonnet',
+  keeperActivationV1Beta1+: import './keeperActivationV1Beta1/main.libsonnet',
+  keeperV1Beta1+: import './keeperV1Beta1/main.libsonnet',
   report+: import './report/main.libsonnet',
   roleAssignmentItem+: import './roleAssignmentItem/main.libsonnet',
   roleAssignment+: import './roleAssignment/main.libsonnet',
   role+: import './role/main.libsonnet',
   scimConfig+: import './scimConfig/main.libsonnet',
+  securevalueV1Beta1+: import './securevalueV1Beta1/main.libsonnet',
   teamExternalGroup+: import './teamExternalGroup/main.libsonnet',
 }

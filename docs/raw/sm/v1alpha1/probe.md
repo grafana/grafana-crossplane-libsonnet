@@ -848,8 +848,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(Map of String) Custom labels to be included with collected metrics and logs.
-Custom labels to be included with collected metrics and logs.
+(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
+Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
 ###### fn spec.parameters.forProvider.withLabelsMixin
 
 ```jsonnet
@@ -860,8 +860,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(Map of String) Custom labels to be included with collected metrics and logs.
-Custom labels to be included with collected metrics and logs.
+(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
+Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
 ###### fn spec.parameters.forProvider.withLatitude
 
 ```jsonnet
@@ -962,8 +962,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(Map of String) Custom labels to be included with collected metrics and logs.
-Custom labels to be included with collected metrics and logs.
+(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
+Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
 ###### fn spec.parameters.initProvider.withLabelsMixin
 
 ```jsonnet
@@ -974,8 +974,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-(Map of String) Custom labels to be included with collected metrics and logs.
-Custom labels to be included with collected metrics and logs.
+(Map of String) Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
+Custom labels to be included with collected metrics and logs. The maximum number of labels for private probes is 3.
 ###### fn spec.parameters.initProvider.withLatitude
 
 ```jsonnet

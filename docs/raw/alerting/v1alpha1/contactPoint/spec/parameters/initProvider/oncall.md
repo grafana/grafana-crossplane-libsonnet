@@ -22,6 +22,8 @@
 * [`fn withSettingsSecretRefMixin(value)`](#fn-withsettingssecretrefmixin)
 * [`fn withTitle(value)`](#fn-withtitle)
 * [`fn withUrl(value)`](#fn-withurl)
+* [`fn withUrlSecretRef(value)`](#fn-withurlsecretref)
+* [`fn withUrlSecretRefMixin(value)`](#fn-withurlsecretrefmixin)
 * [`obj authorizationCredentialsSecretRef`](#obj-authorizationcredentialssecretref)
   * [`fn withKey(value)`](#fn-authorizationcredentialssecretrefwithkey)
   * [`fn withName(value)`](#fn-authorizationcredentialssecretrefwithname)
@@ -46,6 +48,10 @@
   * [`obj policy`](#obj-oncallintegrationselectorpolicy)
     * [`fn withResolution(value="Required")`](#fn-oncallintegrationselectorpolicywithresolution)
     * [`fn withResolve(value)`](#fn-oncallintegrationselectorpolicywithresolve)
+* [`obj urlSecretRef`](#obj-urlsecretref)
+  * [`fn withKey(value)`](#fn-urlsecretrefwithkey)
+  * [`fn withName(value)`](#fn-urlsecretrefwithname)
+  * [`fn withNamespace(value)`](#fn-urlsecretrefwithnamespace)
 
 ## Fields
 
@@ -260,6 +266,28 @@ PARAMETERS:
 
 (String) The URL of the Alertmanager instance.
 The URL to send webhook requests to.
+### fn withUrlSecretRef
+
+```jsonnet
+withUrlSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+The OnCall webhook URL (from secret).
+### fn withUrlSecretRefMixin
+
+```jsonnet
+withUrlSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+The OnCall webhook URL (from secret).
 ### obj authorizationCredentialsSecretRef
 
 
@@ -496,3 +524,39 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
+### obj urlSecretRef
+
+
+#### fn urlSecretRef.withKey
+
+```jsonnet
+urlSecretRef.withKey(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The key to select.
+#### fn urlSecretRef.withName
+
+```jsonnet
+urlSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+#### fn urlSecretRef.withNamespace
+
+```jsonnet
+urlSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.

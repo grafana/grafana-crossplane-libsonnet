@@ -43,7 +43,7 @@
           },
         },
       },
-      '#withIgnoreExternallySyncedMembers': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Ignores team members that have been added to team by Team Sync.\nTeam Sync can be provisioned using grafana_team_external_group resource.\nDefaults to true.\nIgnores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/).\nTeam Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).\nDefaults to `true`.' } },
+      '#withIgnoreExternallySyncedMembers': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Ignores team members that have been added to team by Team Sync. Team Sync can be provisioned using grafana_team_external_group resource.\nIgnores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/). Team Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).' } },
       withIgnoreExternallySyncedMembers(value=true): {
         spec+: {
           parameters+: {
@@ -224,7 +224,7 @@
               },
             },
         },
-      '#withMembers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.' } },
+      '#withMembers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.' } },
       withMembers(value): {
         spec+: {
           parameters+: {
@@ -237,7 +237,7 @@
           },
         },
       },
-      '#withMembersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.' } },
+      '#withMembersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.' } },
       withMembersMixin(value): {
         spec+: {
           parameters+: {
@@ -260,7 +260,7 @@
           },
         },
       },
-      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.\nThe Organization ID. If not set, the Org ID defined in the provider block will be used.' } },
+      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.\nThe Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.' } },
       withOrgId(value): {
         spec+: {
           parameters+: {
@@ -474,7 +474,7 @@
               },
             },
         },
-      '#withPreferences': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+      '#withPreferences': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) (see below for nested schema)' } },
       withPreferences(value): {
         spec+: {
           parameters+: {
@@ -487,7 +487,7 @@
           },
         },
       },
-      '#withPreferencesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+      '#withPreferencesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) (see below for nested schema)' } },
       withPreferencesMixin(value): {
         spec+: {
           parameters+: {
@@ -503,24 +503,24 @@
       preferences+:
         {
           '#': { help: '', name: 'preferences' },
-          '#withHomeDashboardUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the dashboard to display when a team member logs in. Defaults to “.\nThe UID of the dashboard to display when a team member logs in. Defaults to “.' } },
+          '#withHomeDashboardUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the dashboard to display when a team member logs in.\nThe UID of the dashboard to display when a team member logs in.' } },
           withHomeDashboardUid(value): {
             homeDashboardUid: value,
           },
-          '#withTheme': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default theme for this team. Available themes are light, dark, system, or an empty string for the default theme. Defaults to “.\nThe default theme for this team. Available themes are `light`, `dark`, `system`, or an empty string for the default theme. Defaults to “.' } },
+          '#withTheme': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default theme for this team. Available themes are light, dark, system, or an empty string for the default theme.\nThe default theme for this team. Available themes are `light`, `dark`, `system`, or an empty string for the default theme.' } },
           withTheme(value): {
             theme: value,
           },
-          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default timezone for this team. Available values are utc, browser, or an empty string for the default. Defaults to “.\nThe default timezone for this team. Available values are `utc`, `browser`, or an empty string for the default. Defaults to “.' } },
+          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default timezone for this team. Available values are utc, browser, or an empty string for the default.\nThe default timezone for this team. Available values are `utc`, `browser`, or an empty string for the default.' } },
           withTimezone(value): {
             timezone: value,
           },
-          '#withWeekStart': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default week start day for this team. Available values are sunday, monday, saturday, or an empty string for the default. Defaults to “.\nThe default week start day for this team. Available values are `sunday`, `monday`, `saturday`, or an empty string for the default. Defaults to “.' } },
+          '#withWeekStart': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default week start day for this team. Available values are sunday, monday, saturday, or an empty string for the default.\nThe default week start day for this team. Available values are `sunday`, `monday`, `saturday`, or an empty string for the default.' } },
           withWeekStart(value): {
             weekStart: value,
           },
         },
-      '#withTeamSync': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)' } },
+      '#withTeamSync': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)' } },
       withTeamSync(value): {
         spec+: {
           parameters+: {
@@ -533,7 +533,7 @@
           },
         },
       },
-      '#withTeamSyncMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)' } },
+      '#withTeamSyncMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)' } },
       withTeamSyncMixin(value): {
         spec+: {
           parameters+: {
@@ -593,7 +593,7 @@
           },
         },
       },
-      '#withIgnoreExternallySyncedMembers': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Ignores team members that have been added to team by Team Sync.\nTeam Sync can be provisioned using grafana_team_external_group resource.\nDefaults to true.\nIgnores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/).\nTeam Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).\nDefaults to `true`.' } },
+      '#withIgnoreExternallySyncedMembers': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Ignores team members that have been added to team by Team Sync. Team Sync can be provisioned using grafana_team_external_group resource.\nIgnores team members that have been added to team by [Team Sync](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/). Team Sync can be provisioned using [grafana_team_external_group resource](https://registry.io/providers/grafana/grafana/latest/docs/resources/team_external_group).' } },
       withIgnoreExternallySyncedMembers(value=true): {
         spec+: {
           parameters+: {
@@ -774,7 +774,7 @@
               },
             },
         },
-      '#withMembers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.' } },
+      '#withMembers': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.' } },
       withMembers(value): {
         spec+: {
           parameters+: {
@@ -787,7 +787,7 @@
           },
         },
       },
-      '#withMembersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership\nto the team. Note: users specified here must already exist in Grafana.' } },
+      '#withMembersMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Set of String) A set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.\nA set of email addresses corresponding to users who should be given membership to the team. Note: users specified here must already exist in Grafana.' } },
       withMembersMixin(value): {
         spec+: {
           parameters+: {
@@ -810,7 +810,7 @@
           },
         },
       },
-      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.\nThe Organization ID. If not set, the Org ID defined in the provider block will be used.' } },
+      '#withOrgId': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.\nThe Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.' } },
       withOrgId(value): {
         spec+: {
           parameters+: {
@@ -1024,7 +1024,7 @@
               },
             },
         },
-      '#withPreferences': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+      '#withPreferences': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) (see below for nested schema)' } },
       withPreferences(value): {
         spec+: {
           parameters+: {
@@ -1037,7 +1037,7 @@
           },
         },
       },
-      '#withPreferencesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) (see below for nested schema)' } },
+      '#withPreferencesMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) (see below for nested schema)' } },
       withPreferencesMixin(value): {
         spec+: {
           parameters+: {
@@ -1053,24 +1053,24 @@
       preferences+:
         {
           '#': { help: '', name: 'preferences' },
-          '#withHomeDashboardUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the dashboard to display when a team member logs in. Defaults to “.\nThe UID of the dashboard to display when a team member logs in. Defaults to “.' } },
+          '#withHomeDashboardUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The UID of the dashboard to display when a team member logs in.\nThe UID of the dashboard to display when a team member logs in.' } },
           withHomeDashboardUid(value): {
             homeDashboardUid: value,
           },
-          '#withTheme': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default theme for this team. Available themes are light, dark, system, or an empty string for the default theme. Defaults to “.\nThe default theme for this team. Available themes are `light`, `dark`, `system`, or an empty string for the default theme. Defaults to “.' } },
+          '#withTheme': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default theme for this team. Available themes are light, dark, system, or an empty string for the default theme.\nThe default theme for this team. Available themes are `light`, `dark`, `system`, or an empty string for the default theme.' } },
           withTheme(value): {
             theme: value,
           },
-          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default timezone for this team. Available values are utc, browser, or an empty string for the default. Defaults to “.\nThe default timezone for this team. Available values are `utc`, `browser`, or an empty string for the default. Defaults to “.' } },
+          '#withTimezone': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default timezone for this team. Available values are utc, browser, or an empty string for the default.\nThe default timezone for this team. Available values are `utc`, `browser`, or an empty string for the default.' } },
           withTimezone(value): {
             timezone: value,
           },
-          '#withWeekStart': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default week start day for this team. Available values are sunday, monday, saturday, or an empty string for the default. Defaults to “.\nThe default week start day for this team. Available values are `sunday`, `monday`, `saturday`, or an empty string for the default. Defaults to “.' } },
+          '#withWeekStart': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The default week start day for this team. Available values are sunday, monday, saturday, or an empty string for the default.\nThe default week start day for this team. Available values are `sunday`, `monday`, `saturday`, or an empty string for the default.' } },
           withWeekStart(value): {
             weekStart: value,
           },
         },
-      '#withTeamSync': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)' } },
+      '#withTeamSync': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)' } },
       withTeamSync(value): {
         spec+: {
           parameters+: {
@@ -1083,7 +1083,7 @@
           },
         },
       },
-      '#withTeamSyncMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List, Max: 1) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developers/http_api/team_sync/)' } },
+      '#withTeamSyncMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block List) Sync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\nSync external auth provider groups with this Grafana team. Only available in Grafana Enterprise.\n* [Official documentation](https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-team-sync/)\n* [HTTP API](https://grafana.com/docs/grafana/latest/developer-resources/api-reference/http-api/api-legacy/team_sync/)' } },
       withTeamSyncMixin(value): {
         spec+: {
           parameters+: {

@@ -895,8 +895,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
-Destination Datasource sets the datasource defined for an SLO
+(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)
+**Required.** Destination Datasource sets the datasource defined for an SLO.
 ###### fn spec.parameters.forProvider.withDestinationDatasourceMixin
 
 ```jsonnet
@@ -907,8 +907,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
-Destination Datasource sets the datasource defined for an SLO
+(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)
+**Required.** Destination Datasource sets the datasource defined for an SLO.
 ###### fn spec.parameters.forProvider.withFolderUid
 
 ```jsonnet
@@ -919,8 +919,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) UID for the SLO folder
-UID for the SLO folder
+empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.
+UID for the SLO folder. Must be non-empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.
 ###### fn spec.parameters.forProvider.withLabel
 
 ```jsonnet
@@ -967,8 +967,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
-Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
+(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
+**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
 ###### fn spec.parameters.forProvider.withObjectivesMixin
 
 ```jsonnet
@@ -979,8 +979,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
-Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
+(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
+**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
 ###### fn spec.parameters.forProvider.withQuery
 
 ```jsonnet
@@ -991,8 +991,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
-Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
+(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
+**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
 ###### fn spec.parameters.forProvider.withQueryMixin
 
 ```jsonnet
@@ -1003,8 +1003,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
-Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
+(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
+**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
 ###### fn spec.parameters.forProvider.withSearchExpression
 
 ```jsonnet
@@ -1015,8 +1015,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
-The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+The name of a search expression in Grafana Asserts. Must be non-empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
 ###### fn spec.parameters.forProvider.withUuid
 
 ```jsonnet
@@ -1090,8 +1090,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
-Destination Datasource sets the datasource defined for an SLO
+(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)
+**Required.** Destination Datasource sets the datasource defined for an SLO.
 ###### fn spec.parameters.initProvider.withDestinationDatasourceMixin
 
 ```jsonnet
@@ -1102,8 +1102,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Destination Datasource sets the datasource defined for an SLO (see below for nested schema)
-Destination Datasource sets the datasource defined for an SLO
+(Block List) Required. Destination Datasource sets the datasource defined for an SLO. (see below for nested schema)
+**Required.** Destination Datasource sets the datasource defined for an SLO.
 ###### fn spec.parameters.initProvider.withFolderUid
 
 ```jsonnet
@@ -1114,8 +1114,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) UID for the SLO folder
-UID for the SLO folder
+empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.
+UID for the SLO folder. Must be non-empty if set; omit the attribute entirely to associate the SLO with the default Grafana SLO folder.
 ###### fn spec.parameters.initProvider.withLabel
 
 ```jsonnet
@@ -1162,8 +1162,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
-Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
+(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
+**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
 ###### fn spec.parameters.initProvider.withObjectivesMixin
 
 ```jsonnet
@@ -1174,8 +1174,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
-Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
+(Block List) Required. Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget. (see below for nested schema)
+**Required.** Over each rolling time window, the remaining error budget will be calculated, and separate alerts can be generated for each time window based on the SLO burn rate or remaining error budget.
 ###### fn spec.parameters.initProvider.withQuery
 
 ```jsonnet
@@ -1186,8 +1186,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
-Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
+(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
+**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
 ###### fn spec.parameters.initProvider.withQueryMixin
 
 ```jsonnet
@@ -1198,8 +1198,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1) Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
-Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
+(Block List) Required. Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported. (see below for nested schema)
+**Required.** Query describes the indicator that will be measured against the objective. Freeform Query types are currently supported.
 ###### fn spec.parameters.initProvider.withSearchExpression
 
 ```jsonnet
@@ -1210,8 +1210,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
-The name of a search expression in Grafana Asserts. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
+The name of a search expression in Grafana Asserts. Must be non-empty if set; omit the attribute entirely to leave it unset. This is used in the SLO UI to open the Asserts RCA workbench and in alerts to link to the RCA workbench.
 ###### fn spec.parameters.initProvider.withUuid
 
 ```jsonnet
