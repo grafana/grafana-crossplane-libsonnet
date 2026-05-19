@@ -1,4 +1,4 @@
-PROVIDER_VERSION:=v2.4.0
+PROVIDER_VERSION:=v2.9.1
 JSONNET_BIN:=jrsonnet
 CROSSPLANE?=crossplane
 REGISTRY?=ghcr.io
@@ -23,7 +23,7 @@ generator/crds.yaml:
 grafanaplane/zz: $(GENERATOR_DEPTHS)
 	rm -rf grafanaplane/zz && \
 	FILES=$$($(JSONNET_BIN) \
-		  -s  1000 \
+		  -s  10000 \
 		  -S -c -m grafanaplane \
 		  -J generator/vendor \
 		  generator/main.libsonnet) && \

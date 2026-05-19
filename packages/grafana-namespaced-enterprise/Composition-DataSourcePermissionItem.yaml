@@ -32,6 +32,9 @@ spec:
               - fromFieldPath: spec.parameters.deletionPolicy
                 toFieldPath: spec.deletionPolicy
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.datasourceType
+                toFieldPath: spec.forProvider.datasourceType
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.datasourceUid
                 toFieldPath: spec.forProvider.datasourceUid
                 type: FromCompositeFieldPath
@@ -70,6 +73,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.user
                 toFieldPath: spec.forProvider.user
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.datasourceType
+                toFieldPath: spec.initProvider.datasourceType
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.datasourceUid
                 toFieldPath: spec.initProvider.datasourceUid

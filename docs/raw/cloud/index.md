@@ -8,6 +8,7 @@
 * [v1alpha1.accessPolicyRotatingToken](v1alpha1/accessPolicyRotatingToken.md)
 * [v1alpha1.accessPolicyToken](v1alpha1/accessPolicyToken.md)
 * [v1alpha1.appo11YconfigV1Alpha1](v1alpha1/appo11YconfigV1Alpha1.md)
+* [v1alpha1.dbo11YconfigV1Alpha1](v1alpha1/dbo11YconfigV1Alpha1.md)
 * [v1alpha1.k8So11YconfigV1Alpha1](v1alpha1/k8So11YconfigV1Alpha1.md)
 * [v1alpha1.orgMember](v1alpha1/orgMember.md)
 * [v1alpha1.pluginInstallation](v1alpha1/pluginInstallation.md)

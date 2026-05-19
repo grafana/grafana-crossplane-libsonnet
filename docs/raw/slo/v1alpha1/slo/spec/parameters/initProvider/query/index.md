@@ -30,7 +30,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) Freeform query configuration. (see below for nested schema)
+Freeform query configuration.
 ### fn withFreeformMixin
 
 ```jsonnet
@@ -41,7 +42,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) Freeform query configuration. (see below for nested schema)
+Freeform query configuration.
 ### fn withGrafanaQueries
 
 ```jsonnet
@@ -52,7 +54,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+(Block List) Array for holding a set of grafana queries (see below for nested schema)
 Array for holding a set of grafana queries
 ### fn withGrafanaQueriesMixin
 
@@ -64,7 +66,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) Array for holding a set of grafana queries (see below for nested schema)
+(Block List) Array for holding a set of grafana queries (see below for nested schema)
 Array for holding a set of grafana queries
 ### fn withRatio
 
@@ -76,7 +78,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) Ratio query configuration. (see below for nested schema)
+Ratio query configuration.
 ### fn withRatioMixin
 
 ```jsonnet
@@ -87,7 +90,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Max: 1) (see below for nested schema)
+(Block List) Ratio query configuration. (see below for nested schema)
+Ratio query configuration.
 ### fn withType
 
 ```jsonnet
@@ -98,5 +102,5 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"
+(String) Type of the alert enrichment. Currently only "assistantInvestigation" is supported.
 Query type must be one of: "freeform", "query", "ratio", "grafana_queries" or "threshold"

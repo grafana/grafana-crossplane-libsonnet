@@ -874,8 +874,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or version should be set.
-Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or `version` should be set.
+(Boolean, Deprecated) Whether the role version should be incremented automatically on updates (and set to 1 on creation).
+Whether the role version should be incremented automatically on updates (and set to 1 on creation).
 ###### fn spec.parameters.forProvider.withDescription
 
 ```jsonnet
@@ -1052,8 +1052,8 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) Version of the role. A role is updated only on version increase. This field or auto_increment_version should be set.
-Version of the role. A role is updated only on version increase. This field or `auto_increment_version` should be set.
+(Number, Deprecated) Version of the role. The server manages this automatically.
+Version of the role. The server manages this automatically.
 ###### obj spec.parameters.forProvider.organizationRef
 
 
@@ -1232,8 +1232,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or version should be set.
-Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or `version` should be set.
+(Boolean, Deprecated) Whether the role version should be incremented automatically on updates (and set to 1 on creation).
+Whether the role version should be incremented automatically on updates (and set to 1 on creation).
 ###### fn spec.parameters.initProvider.withDescription
 
 ```jsonnet
@@ -1410,8 +1410,8 @@ PARAMETERS:
 
 * **value** (`number`)
 
-(Number) Version of the role. A role is updated only on version increase. This field or auto_increment_version should be set.
-Version of the role. A role is updated only on version increase. This field or `auto_increment_version` should be set.
+(Number, Deprecated) Version of the role. The server manages this automatically.
+Version of the role. The server manages this automatically.
 ###### obj spec.parameters.initProvider.organizationRef
 
 

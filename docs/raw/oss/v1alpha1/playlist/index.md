@@ -870,7 +870,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block Set, Min: 1) (see below for nested schema)
+(Block Set) (see below for nested schema)
 ###### fn spec.parameters.forProvider.withItemMixin
 
 ```jsonnet
@@ -881,7 +881,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block Set, Min: 1) (see below for nested schema)
+(Block Set) (see below for nested schema)
 ###### fn spec.parameters.forProvider.withName
 
 ```jsonnet
@@ -1138,7 +1138,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block Set, Min: 1) (see below for nested schema)
+(Block Set) (see below for nested schema)
 ###### fn spec.parameters.initProvider.withItemMixin
 
 ```jsonnet
@@ -1149,7 +1149,7 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block Set, Min: 1) (see below for nested schema)
+(Block Set) (see below for nested schema)
 ###### fn spec.parameters.initProvider.withName
 
 ```jsonnet

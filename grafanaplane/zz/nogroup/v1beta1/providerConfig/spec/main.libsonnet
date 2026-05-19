@@ -60,6 +60,19 @@
       stackId: value,
     },
   },
+  '#withStackSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "StackSecretRef is an optional reference to a Secret containing Stack\nconnection details (e.g., from a grafana_cloud_stack resource's\nwriteConnectionSecretToRef). All keys in the Secret are merged into\nthe credential map. Key remapping is applied (e.g., oncall_api_url\nbecomes oncall_url, id becomes stack_id). Values from this secret\noverride the primary credentials secret and are in turn overridden by\nexplicit spec fields (url, oncallUrl, etc.)." } },
+  withStackSecretRef(value): {
+    spec+: {
+      stackSecretRef: value,
+    },
+  },
+  '#withStackSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "StackSecretRef is an optional reference to a Secret containing Stack\nconnection details (e.g., from a grafana_cloud_stack resource's\nwriteConnectionSecretToRef). All keys in the Secret are merged into\nthe credential map. Key remapping is applied (e.g., oncall_api_url\nbecomes oncall_url, id becomes stack_id). Values from this secret\noverride the primary credentials secret and are in turn overridden by\nexplicit spec fields (url, oncallUrl, etc.)." } },
+  withStackSecretRefMixin(value): {
+    spec+: {
+      stackSecretRef+: value,
+    },
+  },
+  stackSecretRef+: import './stackSecretRef.libsonnet',
   '#withUrl': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Override the Grafana URL from the credentials reference attribute.' } },
   withUrl(value): {
     spec+: {

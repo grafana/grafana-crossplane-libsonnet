@@ -73,6 +73,7 @@
       * [`fn withMatchers(value)`](#fn-specparametersforproviderwithmatchers)
       * [`fn withMatchersMixin(value)`](#fn-specparametersforproviderwithmatchersmixin)
       * [`fn withName(value)`](#fn-specparametersforproviderwithname)
+      * [`fn withTerraformSourceNamespace(value)`](#fn-specparametersforproviderwithterraformsourcenamespace)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withConfigType(value)`](#fn-specparametersinitproviderwithconfigtype)
       * [`fn withContents(value)`](#fn-specparametersinitproviderwithcontents)
@@ -80,6 +81,7 @@
       * [`fn withMatchers(value)`](#fn-specparametersinitproviderwithmatchers)
       * [`fn withMatchersMixin(value)`](#fn-specparametersinitproviderwithmatchersmixin)
       * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
+      * [`fn withTerraformSourceNamespace(value)`](#fn-specparametersinitproviderwithterraformsourcenamespace)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -879,6 +881,17 @@ PARAMETERS:
 
 (String) Name of the pipeline which is the unique identifier for the pipeline
 Name of the pipeline which is the unique identifier for the pipeline
+###### fn spec.parameters.forProvider.withTerraformSourceNamespace
+
+```jsonnet
+spec.parameters.forProvider.withTerraformSourceNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+If omitted, the namespace default is used. If omitted, the namespace `default` is used.
 ##### obj spec.parameters.initProvider
 
 
@@ -955,6 +968,17 @@ PARAMETERS:
 
 (String) Name of the pipeline which is the unique identifier for the pipeline
 Name of the pipeline which is the unique identifier for the pipeline
+###### fn spec.parameters.initProvider.withTerraformSourceNamespace
+
+```jsonnet
+spec.parameters.initProvider.withTerraformSourceNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+If omitted, the namespace default is used. If omitted, the namespace `default` is used.
 ##### obj spec.parameters.providerConfigRef
 
 

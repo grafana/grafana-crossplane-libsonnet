@@ -2,6 +2,13 @@
 
 
 
+## Subpackages
+
+* [spec.parameters.forProvider.personsToNotifyNextEachTimeRef](spec/parameters/forProvider/personsToNotifyNextEachTimeRef.md)
+* [spec.parameters.forProvider.personsToNotifyRef](spec/parameters/forProvider/personsToNotifyRef.md)
+* [spec.parameters.initProvider.personsToNotifyNextEachTimeRef](spec/parameters/initProvider/personsToNotifyNextEachTimeRef.md)
+* [spec.parameters.initProvider.personsToNotifyRef](spec/parameters/initProvider/personsToNotifyRef.md)
+
 ## Index
 
 * [`fn new(name)`](#fn-new)
@@ -79,6 +86,10 @@
       * [`fn withEscalationChainSelector(value)`](#fn-specparametersforproviderwithescalationchainselector)
       * [`fn withEscalationChainSelectorMixin(value)`](#fn-specparametersforproviderwithescalationchainselectormixin)
       * [`fn withGroupToNotify(value)`](#fn-specparametersforproviderwithgrouptonotify)
+      * [`fn withGroupToNotifyRef(value)`](#fn-specparametersforproviderwithgrouptonotifyref)
+      * [`fn withGroupToNotifyRefMixin(value)`](#fn-specparametersforproviderwithgrouptonotifyrefmixin)
+      * [`fn withGroupToNotifySelector(value)`](#fn-specparametersforproviderwithgrouptonotifyselector)
+      * [`fn withGroupToNotifySelectorMixin(value)`](#fn-specparametersforproviderwithgrouptonotifyselectormixin)
       * [`fn withImportant(value=true)`](#fn-specparametersforproviderwithimportant)
       * [`fn withNotifyIfTimeFrom(value)`](#fn-specparametersforproviderwithnotifyiftimefrom)
       * [`fn withNotifyIfTimeTo(value)`](#fn-specparametersforproviderwithnotifyiftimeto)
@@ -94,8 +105,20 @@
       * [`fn withPersonsToNotifyMixin(value)`](#fn-specparametersforproviderwithpersonstonotifymixin)
       * [`fn withPersonsToNotifyNextEachTime(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtime)
       * [`fn withPersonsToNotifyNextEachTimeMixin(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtimemixin)
+      * [`fn withPersonsToNotifyNextEachTimeRef(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtimeref)
+      * [`fn withPersonsToNotifyNextEachTimeRefMixin(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtimerefmixin)
+      * [`fn withPersonsToNotifyNextEachTimeSelector(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtimeselector)
+      * [`fn withPersonsToNotifyNextEachTimeSelectorMixin(value)`](#fn-specparametersforproviderwithpersonstonotifynexteachtimeselectormixin)
+      * [`fn withPersonsToNotifyRef(value)`](#fn-specparametersforproviderwithpersonstonotifyref)
+      * [`fn withPersonsToNotifyRefMixin(value)`](#fn-specparametersforproviderwithpersonstonotifyrefmixin)
+      * [`fn withPersonsToNotifySelector(value)`](#fn-specparametersforproviderwithpersonstonotifyselector)
+      * [`fn withPersonsToNotifySelectorMixin(value)`](#fn-specparametersforproviderwithpersonstonotifyselectormixin)
       * [`fn withPosition(value)`](#fn-specparametersforproviderwithposition)
       * [`fn withSeverity(value)`](#fn-specparametersforproviderwithseverity)
+      * [`fn withTeamRef(value)`](#fn-specparametersforproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersforproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersforproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersforproviderwithteamselectormixin)
       * [`fn withType(value)`](#fn-specparametersforproviderwithtype)
       * [`obj actionToTriggerRef`](#obj-specparametersforprovideractiontotriggerref)
         * [`fn withName(value)`](#fn-specparametersforprovideractiontotriggerrefwithname)
@@ -129,6 +152,22 @@
         * [`obj policy`](#obj-specparametersforproviderescalationchainselectorpolicy)
           * [`fn withResolution(value="Required")`](#fn-specparametersforproviderescalationchainselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersforproviderescalationchainselectorpolicywithresolve)
+      * [`obj groupToNotifyRef`](#obj-specparametersforprovidergrouptonotifyref)
+        * [`fn withName(value)`](#fn-specparametersforprovidergrouptonotifyrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovidergrouptonotifyrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovidergrouptonotifyrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovidergrouptonotifyrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovidergrouptonotifyrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovidergrouptonotifyrefpolicywithresolve)
+      * [`obj groupToNotifySelector`](#obj-specparametersforprovidergrouptonotifyselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforprovidergrouptonotifyselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforprovidergrouptonotifyselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforprovidergrouptonotifyselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovidergrouptonotifyselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovidergrouptonotifyselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovidergrouptonotifyselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovidergrouptonotifyselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovidergrouptonotifyselectorpolicywithresolve)
       * [`obj notifyOnCallFromScheduleRef`](#obj-specparametersforprovidernotifyoncallfromscheduleref)
         * [`fn withName(value)`](#fn-specparametersforprovidernotifyoncallfromschedulerefwithname)
         * [`fn withPolicy(value)`](#fn-specparametersforprovidernotifyoncallfromschedulerefwithpolicy)
@@ -145,6 +184,40 @@
         * [`obj policy`](#obj-specparametersforprovidernotifyoncallfromscheduleselectorpolicy)
           * [`fn withResolution(value="Required")`](#fn-specparametersforprovidernotifyoncallfromscheduleselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersforprovidernotifyoncallfromscheduleselectorpolicywithresolve)
+      * [`obj personsToNotifyNextEachTimeSelector`](#obj-specparametersforproviderpersonstonotifynexteachtimeselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderpersonstonotifynexteachtimeselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderpersonstonotifynexteachtimeselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderpersonstonotifynexteachtimeselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderpersonstonotifynexteachtimeselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderpersonstonotifynexteachtimeselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderpersonstonotifynexteachtimeselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderpersonstonotifynexteachtimeselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderpersonstonotifynexteachtimeselectorpolicywithresolve)
+      * [`obj personsToNotifySelector`](#obj-specparametersforproviderpersonstonotifyselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderpersonstonotifyselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderpersonstonotifyselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderpersonstonotifyselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderpersonstonotifyselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderpersonstonotifyselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderpersonstonotifyselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderpersonstonotifyselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderpersonstonotifyselectorpolicywithresolve)
+      * [`obj teamRef`](#obj-specparametersforproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersforproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersforproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamselectorpolicywithresolve)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withActionToTrigger(value)`](#fn-specparametersinitproviderwithactiontotrigger)
       * [`fn withActionToTriggerRef(value)`](#fn-specparametersinitproviderwithactiontotriggerref)
@@ -158,6 +231,10 @@
       * [`fn withEscalationChainSelector(value)`](#fn-specparametersinitproviderwithescalationchainselector)
       * [`fn withEscalationChainSelectorMixin(value)`](#fn-specparametersinitproviderwithescalationchainselectormixin)
       * [`fn withGroupToNotify(value)`](#fn-specparametersinitproviderwithgrouptonotify)
+      * [`fn withGroupToNotifyRef(value)`](#fn-specparametersinitproviderwithgrouptonotifyref)
+      * [`fn withGroupToNotifyRefMixin(value)`](#fn-specparametersinitproviderwithgrouptonotifyrefmixin)
+      * [`fn withGroupToNotifySelector(value)`](#fn-specparametersinitproviderwithgrouptonotifyselector)
+      * [`fn withGroupToNotifySelectorMixin(value)`](#fn-specparametersinitproviderwithgrouptonotifyselectormixin)
       * [`fn withImportant(value=true)`](#fn-specparametersinitproviderwithimportant)
       * [`fn withNotifyIfTimeFrom(value)`](#fn-specparametersinitproviderwithnotifyiftimefrom)
       * [`fn withNotifyIfTimeTo(value)`](#fn-specparametersinitproviderwithnotifyiftimeto)
@@ -173,8 +250,20 @@
       * [`fn withPersonsToNotifyMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifymixin)
       * [`fn withPersonsToNotifyNextEachTime(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtime)
       * [`fn withPersonsToNotifyNextEachTimeMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtimemixin)
+      * [`fn withPersonsToNotifyNextEachTimeRef(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtimeref)
+      * [`fn withPersonsToNotifyNextEachTimeRefMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtimerefmixin)
+      * [`fn withPersonsToNotifyNextEachTimeSelector(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtimeselector)
+      * [`fn withPersonsToNotifyNextEachTimeSelectorMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifynexteachtimeselectormixin)
+      * [`fn withPersonsToNotifyRef(value)`](#fn-specparametersinitproviderwithpersonstonotifyref)
+      * [`fn withPersonsToNotifyRefMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifyrefmixin)
+      * [`fn withPersonsToNotifySelector(value)`](#fn-specparametersinitproviderwithpersonstonotifyselector)
+      * [`fn withPersonsToNotifySelectorMixin(value)`](#fn-specparametersinitproviderwithpersonstonotifyselectormixin)
       * [`fn withPosition(value)`](#fn-specparametersinitproviderwithposition)
       * [`fn withSeverity(value)`](#fn-specparametersinitproviderwithseverity)
+      * [`fn withTeamRef(value)`](#fn-specparametersinitproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersinitproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersinitproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersinitproviderwithteamselectormixin)
       * [`fn withType(value)`](#fn-specparametersinitproviderwithtype)
       * [`obj actionToTriggerRef`](#obj-specparametersinitprovideractiontotriggerref)
         * [`fn withName(value)`](#fn-specparametersinitprovideractiontotriggerrefwithname)
@@ -208,6 +297,22 @@
         * [`obj policy`](#obj-specparametersinitproviderescalationchainselectorpolicy)
           * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderescalationchainselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersinitproviderescalationchainselectorpolicywithresolve)
+      * [`obj groupToNotifyRef`](#obj-specparametersinitprovidergrouptonotifyref)
+        * [`fn withName(value)`](#fn-specparametersinitprovidergrouptonotifyrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovidergrouptonotifyrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovidergrouptonotifyrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovidergrouptonotifyrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovidergrouptonotifyrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovidergrouptonotifyrefpolicywithresolve)
+      * [`obj groupToNotifySelector`](#obj-specparametersinitprovidergrouptonotifyselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitprovidergrouptonotifyselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitprovidergrouptonotifyselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitprovidergrouptonotifyselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovidergrouptonotifyselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovidergrouptonotifyselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovidergrouptonotifyselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovidergrouptonotifyselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovidergrouptonotifyselectorpolicywithresolve)
       * [`obj notifyOnCallFromScheduleRef`](#obj-specparametersinitprovidernotifyoncallfromscheduleref)
         * [`fn withName(value)`](#fn-specparametersinitprovidernotifyoncallfromschedulerefwithname)
         * [`fn withPolicy(value)`](#fn-specparametersinitprovidernotifyoncallfromschedulerefwithpolicy)
@@ -224,6 +329,40 @@
         * [`obj policy`](#obj-specparametersinitprovidernotifyoncallfromscheduleselectorpolicy)
           * [`fn withResolution(value="Required")`](#fn-specparametersinitprovidernotifyoncallfromscheduleselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersinitprovidernotifyoncallfromscheduleselectorpolicywithresolve)
+      * [`obj personsToNotifyNextEachTimeSelector`](#obj-specparametersinitproviderpersonstonotifynexteachtimeselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderpersonstonotifynexteachtimeselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderpersonstonotifynexteachtimeselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderpersonstonotifynexteachtimeselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderpersonstonotifynexteachtimeselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderpersonstonotifynexteachtimeselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderpersonstonotifynexteachtimeselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderpersonstonotifynexteachtimeselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderpersonstonotifynexteachtimeselectorpolicywithresolve)
+      * [`obj personsToNotifySelector`](#obj-specparametersinitproviderpersonstonotifyselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderpersonstonotifyselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderpersonstonotifyselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderpersonstonotifyselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderpersonstonotifyselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderpersonstonotifyselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderpersonstonotifyselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderpersonstonotifyselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderpersonstonotifyselectorpolicywithresolve)
+      * [`obj teamRef`](#obj-specparametersinitproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersinitproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersinitproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamselectorpolicywithresolve)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -1086,6 +1225,50 @@ PARAMETERS:
 
 (String) The ID of a User Group for notify_user_group type step.
 The ID of a User Group for notify_user_group type step.
+###### fn spec.parameters.forProvider.withGroupToNotifyRef
+
+```jsonnet
+spec.parameters.forProvider.withGroupToNotifyRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a UserGroup in oncall to populate groupToNotify.
+###### fn spec.parameters.forProvider.withGroupToNotifyRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withGroupToNotifyRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a UserGroup in oncall to populate groupToNotify.
+###### fn spec.parameters.forProvider.withGroupToNotifySelector
+
+```jsonnet
+spec.parameters.forProvider.withGroupToNotifySelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a UserGroup in oncall to populate groupToNotify.
+###### fn spec.parameters.forProvider.withGroupToNotifySelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withGroupToNotifySelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a UserGroup in oncall to populate groupToNotify.
 ###### fn spec.parameters.forProvider.withImportant
 
 ```jsonnet
@@ -1097,8 +1280,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
-Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
+(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, notify_user_group and notify_team_members
+Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, notify_user_group and notify_team_members
 ###### fn spec.parameters.forProvider.withNotifyIfTimeFrom
 
 ```jsonnet
@@ -1133,8 +1316,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) ID of a Schedule for notify_on_call_from_schedule type step.
-ID of a Schedule for notify_on_call_from_schedule type step.
+(String) ID of a Schedule for notify_on_call_from_schedule or notify_next_on_call_from_schedule type step.
+ID of a Schedule for notify_on_call_from_schedule or notify_next_on_call_from_schedule type step.
 ###### fn spec.parameters.forProvider.withNotifyOnCallFromScheduleRef
 
 ```jsonnet
@@ -1263,6 +1446,94 @@ PARAMETERS:
 
 (Set of String) The list of ID's of users for notify_person_next_each_time type step.
 The list of ID's of users for notify_person_next_each_time type step.
+###### fn spec.parameters.forProvider.withPersonsToNotifyNextEachTimeRef
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifyNextEachTimeRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.forProvider.withPersonsToNotifyNextEachTimeRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifyNextEachTimeRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.forProvider.withPersonsToNotifyNextEachTimeSelector
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifyNextEachTimeSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.forProvider.withPersonsToNotifyNextEachTimeSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifyNextEachTimeSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.forProvider.withPersonsToNotifyRef
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifyRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotify.
+###### fn spec.parameters.forProvider.withPersonsToNotifyRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifyRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotify.
+###### fn spec.parameters.forProvider.withPersonsToNotifySelector
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifySelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotify.
+###### fn spec.parameters.forProvider.withPersonsToNotifySelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withPersonsToNotifySelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotify.
 ###### fn spec.parameters.forProvider.withPosition
 
 ```jsonnet
@@ -1287,6 +1558,50 @@ PARAMETERS:
 
 (String) The severity of the incident for declare_incident type step.
 The severity of the incident for declare_incident type step.
+###### fn spec.parameters.forProvider.withTeamRef
+
+```jsonnet
+spec.parameters.forProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate notifyToTeamMembers.
+###### fn spec.parameters.forProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate notifyToTeamMembers.
+###### fn spec.parameters.forProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate notifyToTeamMembers.
+###### fn spec.parameters.forProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate notifyToTeamMembers.
 ###### fn spec.parameters.forProvider.withType
 
 ```jsonnet
@@ -1297,8 +1612,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
-The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
+(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
+The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
 ###### obj spec.parameters.forProvider.actionToTriggerRef
 
 
@@ -1627,6 +1942,170 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
+###### obj spec.parameters.forProvider.groupToNotifyRef
+
+
+####### fn spec.parameters.forProvider.groupToNotifyRef.withName
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifyRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.groupToNotifyRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifyRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.groupToNotifyRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifyRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.groupToNotifyRef.policy
+
+
+######## fn spec.parameters.forProvider.groupToNotifyRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifyRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.groupToNotifyRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifyRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.groupToNotifySelector
+
+
+####### fn spec.parameters.forProvider.groupToNotifySelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifySelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.groupToNotifySelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifySelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.groupToNotifySelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifySelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.groupToNotifySelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifySelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.groupToNotifySelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifySelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.groupToNotifySelector.policy
+
+
+######## fn spec.parameters.forProvider.groupToNotifySelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifySelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.groupToNotifySelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.groupToNotifySelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ###### obj spec.parameters.forProvider.notifyOnCallFromScheduleRef
 
 
@@ -1791,6 +2270,358 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
+###### obj spec.parameters.forProvider.personsToNotifyNextEachTimeSelector
+
+
+####### fn spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.policy
+
+
+######## fn spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifyNextEachTimeSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.personsToNotifySelector
+
+
+####### fn spec.parameters.forProvider.personsToNotifySelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifySelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.personsToNotifySelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifySelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.personsToNotifySelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifySelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.personsToNotifySelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifySelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.personsToNotifySelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifySelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.personsToNotifySelector.policy
+
+
+######## fn spec.parameters.forProvider.personsToNotifySelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifySelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.personsToNotifySelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.personsToNotifySelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.teamRef
+
+
+####### fn spec.parameters.forProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.teamRef.policy
+
+
+######## fn spec.parameters.forProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.teamSelector
+
+
+####### fn spec.parameters.forProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.teamSelector.policy
+
+
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.initProvider
 
 
@@ -1930,6 +2761,50 @@ PARAMETERS:
 
 (String) The ID of a User Group for notify_user_group type step.
 The ID of a User Group for notify_user_group type step.
+###### fn spec.parameters.initProvider.withGroupToNotifyRef
+
+```jsonnet
+spec.parameters.initProvider.withGroupToNotifyRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a UserGroup in oncall to populate groupToNotify.
+###### fn spec.parameters.initProvider.withGroupToNotifyRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withGroupToNotifyRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a UserGroup in oncall to populate groupToNotify.
+###### fn spec.parameters.initProvider.withGroupToNotifySelector
+
+```jsonnet
+spec.parameters.initProvider.withGroupToNotifySelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a UserGroup in oncall to populate groupToNotify.
+###### fn spec.parameters.initProvider.withGroupToNotifySelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withGroupToNotifySelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a UserGroup in oncall to populate groupToNotify.
 ###### fn spec.parameters.initProvider.withImportant
 
 ```jsonnet
@@ -1941,8 +2816,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
-Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_user_group and notify_team_members
+(Boolean) Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, notify_user_group and notify_team_members
+Will activate "important" personal notification rules. Actual for steps: notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, notify_user_group and notify_team_members
 ###### fn spec.parameters.initProvider.withNotifyIfTimeFrom
 
 ```jsonnet
@@ -1977,8 +2852,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) ID of a Schedule for notify_on_call_from_schedule type step.
-ID of a Schedule for notify_on_call_from_schedule type step.
+(String) ID of a Schedule for notify_on_call_from_schedule or notify_next_on_call_from_schedule type step.
+ID of a Schedule for notify_on_call_from_schedule or notify_next_on_call_from_schedule type step.
 ###### fn spec.parameters.initProvider.withNotifyOnCallFromScheduleRef
 
 ```jsonnet
@@ -2107,6 +2982,94 @@ PARAMETERS:
 
 (Set of String) The list of ID's of users for notify_person_next_each_time type step.
 The list of ID's of users for notify_person_next_each_time type step.
+###### fn spec.parameters.initProvider.withPersonsToNotifyNextEachTimeRef
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifyNextEachTimeRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.initProvider.withPersonsToNotifyNextEachTimeRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifyNextEachTimeRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.initProvider.withPersonsToNotifyNextEachTimeSelector
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifyNextEachTimeSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.initProvider.withPersonsToNotifyNextEachTimeSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifyNextEachTimeSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotifyNextEachTime.
+###### fn spec.parameters.initProvider.withPersonsToNotifyRef
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifyRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotify.
+###### fn spec.parameters.initProvider.withPersonsToNotifyRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifyRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to User in oncall to populate personsToNotify.
+###### fn spec.parameters.initProvider.withPersonsToNotifySelector
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifySelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotify.
+###### fn spec.parameters.initProvider.withPersonsToNotifySelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withPersonsToNotifySelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of User in oncall to populate personsToNotify.
 ###### fn spec.parameters.initProvider.withPosition
 
 ```jsonnet
@@ -2131,6 +3094,50 @@ PARAMETERS:
 
 (String) The severity of the incident for declare_incident type step.
 The severity of the incident for declare_incident type step.
+###### fn spec.parameters.initProvider.withTeamRef
+
+```jsonnet
+spec.parameters.initProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate notifyToTeamMembers.
+###### fn spec.parameters.initProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate notifyToTeamMembers.
+###### fn spec.parameters.initProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate notifyToTeamMembers.
+###### fn spec.parameters.initProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate notifyToTeamMembers.
 ###### fn spec.parameters.initProvider.withType
 
 ```jsonnet
@@ -2141,8 +3148,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
-The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
+(String) The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
+The type of escalation policy. Can be wait, notify_persons, notify_person_next_each_time, notify_on_call_from_schedule, notify_next_on_call_from_schedule, trigger_webhook, notify_user_group, resolve, notify_whole_channel, notify_if_time_from_to, notify_if_num_alerts_in_window, repeat_escalation, notify_team_members, declare_incident
 ###### obj spec.parameters.initProvider.actionToTriggerRef
 
 
@@ -2471,6 +3478,170 @@ Resolve specifies when this reference should be resolved. The default
 is 'IfNotPresent', which will attempt to resolve the reference only when
 the corresponding field is not present. Use 'Always' to resolve the
 reference on every reconcile.
+###### obj spec.parameters.initProvider.groupToNotifyRef
+
+
+####### fn spec.parameters.initProvider.groupToNotifyRef.withName
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifyRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.groupToNotifyRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifyRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.groupToNotifyRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifyRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.groupToNotifyRef.policy
+
+
+######## fn spec.parameters.initProvider.groupToNotifyRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifyRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.groupToNotifyRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifyRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.groupToNotifySelector
+
+
+####### fn spec.parameters.initProvider.groupToNotifySelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifySelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.groupToNotifySelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifySelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.groupToNotifySelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifySelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.groupToNotifySelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifySelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.groupToNotifySelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifySelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.groupToNotifySelector.policy
+
+
+######## fn spec.parameters.initProvider.groupToNotifySelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifySelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.groupToNotifySelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.groupToNotifySelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ###### obj spec.parameters.initProvider.notifyOnCallFromScheduleRef
 
 
@@ -2624,6 +3795,358 @@ a no-op if it cannot be resolved.
 
 ```jsonnet
 spec.parameters.initProvider.notifyOnCallFromScheduleSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.personsToNotifyNextEachTimeSelector
+
+
+####### fn spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.policy
+
+
+######## fn spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifyNextEachTimeSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.personsToNotifySelector
+
+
+####### fn spec.parameters.initProvider.personsToNotifySelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifySelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.personsToNotifySelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifySelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.personsToNotifySelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifySelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.personsToNotifySelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifySelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.personsToNotifySelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifySelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.personsToNotifySelector.policy
+
+
+######## fn spec.parameters.initProvider.personsToNotifySelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifySelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.personsToNotifySelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.personsToNotifySelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.teamRef
+
+
+####### fn spec.parameters.initProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.teamRef.policy
+
+
+######## fn spec.parameters.initProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.teamSelector
+
+
+####### fn spec.parameters.initProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.teamSelector.policy
+
+
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolve(value)
 ```
 
 PARAMETERS:

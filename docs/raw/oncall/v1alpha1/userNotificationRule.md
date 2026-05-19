@@ -69,15 +69,55 @@
     * [`obj forProvider`](#obj-specparametersforprovider)
       * [`fn withDuration(value)`](#fn-specparametersforproviderwithduration)
       * [`fn withImportant(value=true)`](#fn-specparametersforproviderwithimportant)
+      * [`fn withOnCallUserRef(value)`](#fn-specparametersforproviderwithoncalluserref)
+      * [`fn withOnCallUserRefMixin(value)`](#fn-specparametersforproviderwithoncalluserrefmixin)
+      * [`fn withOnCallUserSelector(value)`](#fn-specparametersforproviderwithoncalluserselector)
+      * [`fn withOnCallUserSelectorMixin(value)`](#fn-specparametersforproviderwithoncalluserselectormixin)
       * [`fn withPosition(value)`](#fn-specparametersforproviderwithposition)
       * [`fn withType(value)`](#fn-specparametersforproviderwithtype)
       * [`fn withUserId(value)`](#fn-specparametersforproviderwithuserid)
+      * [`obj onCallUserRef`](#obj-specparametersforprovideroncalluserref)
+        * [`fn withName(value)`](#fn-specparametersforprovideroncalluserrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovideroncalluserrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovideroncalluserrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovideroncalluserrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovideroncalluserrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovideroncalluserrefpolicywithresolve)
+      * [`obj onCallUserSelector`](#obj-specparametersforprovideroncalluserselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforprovideroncalluserselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforprovideroncalluserselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforprovideroncalluserselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforprovideroncalluserselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforprovideroncalluserselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforprovideroncalluserselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforprovideroncalluserselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforprovideroncalluserselectorpolicywithresolve)
     * [`obj initProvider`](#obj-specparametersinitprovider)
       * [`fn withDuration(value)`](#fn-specparametersinitproviderwithduration)
       * [`fn withImportant(value=true)`](#fn-specparametersinitproviderwithimportant)
+      * [`fn withOnCallUserRef(value)`](#fn-specparametersinitproviderwithoncalluserref)
+      * [`fn withOnCallUserRefMixin(value)`](#fn-specparametersinitproviderwithoncalluserrefmixin)
+      * [`fn withOnCallUserSelector(value)`](#fn-specparametersinitproviderwithoncalluserselector)
+      * [`fn withOnCallUserSelectorMixin(value)`](#fn-specparametersinitproviderwithoncalluserselectormixin)
       * [`fn withPosition(value)`](#fn-specparametersinitproviderwithposition)
       * [`fn withType(value)`](#fn-specparametersinitproviderwithtype)
       * [`fn withUserId(value)`](#fn-specparametersinitproviderwithuserid)
+      * [`obj onCallUserRef`](#obj-specparametersinitprovideroncalluserref)
+        * [`fn withName(value)`](#fn-specparametersinitprovideroncalluserrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovideroncalluserrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovideroncalluserrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovideroncalluserrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovideroncalluserrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovideroncalluserrefpolicywithresolve)
+      * [`obj onCallUserSelector`](#obj-specparametersinitprovideroncalluserselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitprovideroncalluserselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitprovideroncalluserselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitprovideroncalluserselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitprovideroncalluserselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitprovideroncalluserselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitprovideroncalluserselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitprovideroncalluserselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitprovideroncalluserselectorpolicywithresolve)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
       * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
       * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
@@ -829,6 +869,50 @@ PARAMETERS:
 
 (Boolean) Boolean value which indicates if a rule is “important”
 Boolean value which indicates if a rule is “important”
+###### fn spec.parameters.forProvider.withOnCallUserRef
+
+```jsonnet
+spec.parameters.forProvider.withOnCallUserRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oncall to populate userId.
+###### fn spec.parameters.forProvider.withOnCallUserRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withOnCallUserRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oncall to populate userId.
+###### fn spec.parameters.forProvider.withOnCallUserSelector
+
+```jsonnet
+spec.parameters.forProvider.withOnCallUserSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oncall to populate userId.
+###### fn spec.parameters.forProvider.withOnCallUserSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withOnCallUserSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oncall to populate userId.
 ###### fn spec.parameters.forProvider.withPosition
 
 ```jsonnet
@@ -865,6 +949,170 @@ PARAMETERS:
 
 (String) User ID
 User ID
+###### obj spec.parameters.forProvider.onCallUserRef
+
+
+####### fn spec.parameters.forProvider.onCallUserRef.withName
+
+```jsonnet
+spec.parameters.forProvider.onCallUserRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.onCallUserRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.onCallUserRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.onCallUserRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.onCallUserRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.onCallUserRef.policy
+
+
+######## fn spec.parameters.forProvider.onCallUserRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.onCallUserRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.onCallUserRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.onCallUserRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.onCallUserSelector
+
+
+####### fn spec.parameters.forProvider.onCallUserSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.onCallUserSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.onCallUserSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.onCallUserSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.onCallUserSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.onCallUserSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.onCallUserSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.onCallUserSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.onCallUserSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.onCallUserSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.onCallUserSelector.policy
+
+
+######## fn spec.parameters.forProvider.onCallUserSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.onCallUserSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.onCallUserSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.onCallUserSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.initProvider
 
 
@@ -893,6 +1141,50 @@ PARAMETERS:
 
 (Boolean) Boolean value which indicates if a rule is “important”
 Boolean value which indicates if a rule is “important”
+###### fn spec.parameters.initProvider.withOnCallUserRef
+
+```jsonnet
+spec.parameters.initProvider.withOnCallUserRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oncall to populate userId.
+###### fn spec.parameters.initProvider.withOnCallUserRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withOnCallUserRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a User in oncall to populate userId.
+###### fn spec.parameters.initProvider.withOnCallUserSelector
+
+```jsonnet
+spec.parameters.initProvider.withOnCallUserSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oncall to populate userId.
+###### fn spec.parameters.initProvider.withOnCallUserSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withOnCallUserSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a User in oncall to populate userId.
 ###### fn spec.parameters.initProvider.withPosition
 
 ```jsonnet
@@ -929,6 +1221,170 @@ PARAMETERS:
 
 (String) User ID
 User ID
+###### obj spec.parameters.initProvider.onCallUserRef
+
+
+####### fn spec.parameters.initProvider.onCallUserRef.withName
+
+```jsonnet
+spec.parameters.initProvider.onCallUserRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.onCallUserRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.onCallUserRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.onCallUserRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.onCallUserRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.onCallUserRef.policy
+
+
+######## fn spec.parameters.initProvider.onCallUserRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.onCallUserRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.onCallUserRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.onCallUserRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.onCallUserSelector
+
+
+####### fn spec.parameters.initProvider.onCallUserSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.onCallUserSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.onCallUserSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.onCallUserSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.onCallUserSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.onCallUserSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.onCallUserSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.onCallUserSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.onCallUserSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.onCallUserSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.onCallUserSelector.policy
+
+
+######## fn spec.parameters.initProvider.onCallUserSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.onCallUserSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.onCallUserSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.onCallUserSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
 ##### obj spec.parameters.providerConfigRef
 
 

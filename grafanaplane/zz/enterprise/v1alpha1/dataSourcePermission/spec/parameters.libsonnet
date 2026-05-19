@@ -237,6 +237,16 @@
               },
             },
         },
+      '#withDatasourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.\nThe plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.' } },
+      withDatasourceType(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              datasourceType: value,
+            },
+          },
+        },
+      },
       '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID of the datasource to apply permissions to.\nUID of the datasource to apply permissions to.' } },
       withDatasourceUid(value): {
         spec+: {
@@ -946,6 +956,16 @@
               },
             },
         },
+      '#withDatasourceType': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.\nThe plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.' } },
+      withDatasourceType(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              datasourceType: value,
+            },
+          },
+        },
+      },
       '#withDatasourceUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) UID of the datasource to apply permissions to.\nUID of the datasource to apply permissions to.' } },
       withDatasourceUid(value): {
         spec+: {

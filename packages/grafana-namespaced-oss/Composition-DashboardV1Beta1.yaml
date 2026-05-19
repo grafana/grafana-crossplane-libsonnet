@@ -38,6 +38,12 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.metadata.uid
                 toFieldPath: spec.forProvider.metadata.uid
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.options.allowUiUpdates
+                toFieldPath: spec.forProvider.options.allowUiUpdates
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.options.managerIdentity
+                toFieldPath: spec.forProvider.options.managerIdentity
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.options.overwrite
                 toFieldPath: spec.forProvider.options.overwrite
                 type: FromCompositeFieldPath
@@ -55,6 +61,12 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.metadata.uid
                 toFieldPath: spec.initProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.allowUiUpdates
+                toFieldPath: spec.initProvider.options.allowUiUpdates
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.managerIdentity
+                toFieldPath: spec.initProvider.options.managerIdentity
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.options.overwrite
                 toFieldPath: spec.initProvider.options.overwrite

@@ -33,7 +33,7 @@
   },
   forProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
@@ -43,7 +43,7 @@
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
@@ -55,7 +55,7 @@
       },
       metadata+:
         {
-          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.\nThe UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation." } },
           withFolderUid(value): {
             spec+: {
               parameters+: {
@@ -67,7 +67,7 @@
               },
             },
           },
-          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
           withUid(value): {
             spec+: {
               parameters+: {
@@ -80,7 +80,7 @@
             },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
@@ -90,7 +90,7 @@
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
@@ -102,7 +102,19 @@
       },
       options+:
         {
-          '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
+          '#withManagerIdentity': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Override the identity stamped on this resource's manager metadata." } },
+          withManagerIdentity(value): {
+            spec+: {
+              parameters+: {
+                forProvider+: {
+                  options+: {
+                    managerIdentity: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
             spec+: {
               parameters+: {
@@ -115,7 +127,7 @@
             },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           forProvider+: {
@@ -123,7 +135,7 @@
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           forProvider+: {
@@ -133,7 +145,7 @@
       },
       spec+:
         {
-          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Annotations of the resource.\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotations(value): {
             spec+: {
               parameters+: {
@@ -145,7 +157,7 @@
               },
             },
           },
-          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Annotations of the resource.\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotationsMixin(value): {
             spec+: {
               parameters+: {
@@ -157,7 +169,7 @@
               },
             },
           },
-          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
+          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.\nDescribes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
           withExecErrState(value): {
             spec+: {
               parameters+: {
@@ -169,7 +181,7 @@
               },
             },
           },
-          '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressions(value): {
             spec+: {
               parameters+: {
@@ -181,7 +193,7 @@
               },
             },
           },
-          '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressionsMixin(value): {
             spec+: {
               parameters+: {
@@ -193,7 +205,7 @@
               },
             },
           },
-          '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
+          '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.\nThe amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
           withFor(value): {
             spec+: {
               parameters+: {
@@ -205,7 +217,7 @@
               },
             },
           },
-          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
+          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.\nThe amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
           withKeepFiringFor(value): {
             spec+: {
               parameters+: {
@@ -217,7 +229,7 @@
               },
             },
           },
-          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing.\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabels(value): {
             spec+: {
               parameters+: {
@@ -229,7 +241,7 @@
               },
             },
           },
-          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing.\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabelsMixin(value): {
             spec+: {
               parameters+: {
@@ -241,7 +253,7 @@
               },
             },
           },
-          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'The number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
+          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.\nThe number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
           withMissingSeriesEvalsToResolve(value): {
             spec+: {
               parameters+: {
@@ -253,7 +265,7 @@
               },
             },
           },
-          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
+          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.\nDescribes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
           withNoDataState(value): {
             spec+: {
               parameters+: {
@@ -265,7 +277,7 @@
               },
             },
           },
-          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing' } },
           withNotificationSettings(value): {
             spec+: {
               parameters+: {
@@ -277,7 +289,7 @@
               },
             },
           },
-          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing' } },
           withNotificationSettingsMixin(value): {
             spec+: {
               parameters+: {
@@ -291,7 +303,7 @@
           },
           notificationSettings+:
             {
-              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nDeprecated. A list of time interval names to apply to alerts that match this policy.' } },
               withActiveTimings(value): {
                 spec+: {
                   parameters+: {
@@ -308,7 +320,7 @@
                   },
                 },
               },
-              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nDeprecated. A list of time interval names to apply to alerts that match this policy.' } },
               withActiveTimingsMixin(value): {
                 spec+: {
                   parameters+: {
@@ -325,7 +337,7 @@
                   },
                 },
               },
-              '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The contact point to route notifications that match this rule to.' } },
+              '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.\nDeprecated. The contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
                 spec+: {
                   parameters+: {
@@ -339,7 +351,7 @@
                   },
                 },
               },
-              '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nDeprecated. A list of alert labels to group alerts into notifications by.' } },
               withGroupBy(value): {
                 spec+: {
                   parameters+: {
@@ -356,7 +368,7 @@
                   },
                 },
               },
-              '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nDeprecated. A list of alert labels to group alerts into notifications by.' } },
               withGroupByMixin(value): {
                 spec+: {
                   parameters+: {
@@ -373,7 +385,7 @@
                   },
                 },
               },
-              '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval between two notifications for the same group.' } },
+              '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.\nDeprecated. Minimum time interval between two notifications for the same group.' } },
               withGroupInterval(value): {
                 spec+: {
                   parameters+: {
@@ -387,7 +399,7 @@
                   },
                 },
               },
-              '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Time to wait to buffer alerts of the same group before sending a notification.' } },
+              '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.\nDeprecated. Time to wait to buffer alerts of the same group before sending a notification.' } },
               withGroupWait(value): {
                 spec+: {
                   parameters+: {
@@ -401,7 +413,7 @@
                   },
                 },
               },
-              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nDeprecated. A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimings(value): {
                 spec+: {
                   parameters+: {
@@ -418,7 +430,7 @@
                   },
                 },
               },
-              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nDeprecated. A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimingsMixin(value): {
                 spec+: {
                   parameters+: {
@@ -435,7 +447,54 @@
                   },
                 },
               },
-              '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval for re-sending a notification if an alert is still firing.' } },
+              '#withNamedRoutingTree': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)\nRoute notifications to a specific routing tree.' } },
+              withNamedRoutingTree(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          namedRoutingTree: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withNamedRoutingTreeMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)\nRoute notifications to a specific routing tree.' } },
+              withNamedRoutingTreeMixin(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          namedRoutingTree+: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              namedRoutingTree+:
+                {
+                  '#withRoutingTree': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the routing tree to use.\nThe name of the routing tree to use.' } },
+                  withRoutingTree(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              namedRoutingTree+: {
+                                routingTree: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing.\nDeprecated. Minimum time interval for re-sending a notification if an alert is still firing.' } },
               withRepeatInterval(value): {
                 spec+: {
                   parameters+: {
@@ -449,8 +508,217 @@
                   },
                 },
               },
+              '#withSimplifiedRouting': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)\nSimplified routing to a contact point with optional grouping and timing overrides.' } },
+              withSimplifiedRouting(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          simplifiedRouting: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withSimplifiedRoutingMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)\nSimplified routing to a contact point with optional grouping and timing overrides.' } },
+              withSimplifiedRoutingMixin(value): {
+                spec+: {
+                  parameters+: {
+                    forProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          simplifiedRouting+: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              simplifiedRouting+:
+                {
+                  '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+                  withActiveTimings(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                activeTimings:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+                  withActiveTimingsMixin(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                activeTimings+:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.\nThe contact point to route notifications that match this rule to.' } },
+                  withContactPoint(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                contactPoint: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nA list of alert labels to group alerts into notifications by.' } },
+                  withGroupBy(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupBy:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nA list of alert labels to group alerts into notifications by.' } },
+                  withGroupByMixin(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupBy+:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.\nMinimum time interval between two notifications for the same group.' } },
+                  withGroupInterval(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupInterval: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.\nTime to wait to buffer alerts of the same group before sending a notification.' } },
+                  withGroupWait(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupWait: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  withMuteTimings(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                muteTimings:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  withMuteTimingsMixin(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                muteTimings+:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing.\nMinimum time interval for re-sending a notification if an alert is still firing.' } },
+                  withRepeatInterval(value): {
+                    spec+: {
+                      parameters+: {
+                        forProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                repeatInterval: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
             },
-          '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.\nReference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRef(value): {
             spec+: {
               parameters+: {
@@ -462,7 +730,7 @@
               },
             },
           },
-          '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.\nReference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRefMixin(value): {
             spec+: {
               parameters+: {
@@ -474,7 +742,7 @@
               },
             },
           },
-          '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Sets whether the rule should be paused or not.' } },
+          '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Sets whether the rule should be paused or not.\nSets whether the rule should be paused or not.' } },
           withPaused(value=true): {
             spec+: {
               parameters+: {
@@ -486,7 +754,7 @@
               },
             },
           },
-          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert rule.' } },
+          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The title of the alert rule.\nThe title of the alert rule.' } },
           withTitle(value): {
             spec+: {
               parameters+: {
@@ -498,7 +766,7 @@
               },
             },
           },
-          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)\nThe trigger configuration for the alert rule.' } },
           withTrigger(value): {
             spec+: {
               parameters+: {
@@ -510,7 +778,7 @@
               },
             },
           },
-          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)\nThe trigger configuration for the alert rule.' } },
           withTriggerMixin(value): {
             spec+: {
               parameters+: {
@@ -524,7 +792,7 @@
           },
           trigger+:
             {
-              '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The interval at which the alert rule should be evaluated.' } },
+              '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The interval at which the alert rule should be evaluated.\nThe interval at which the alert rule should be evaluated.' } },
               withInterval(value): {
                 spec+: {
                   parameters+: {
@@ -559,7 +827,7 @@
   },
   initProvider+:
     {
-      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
+      '#withMetadata': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadata(value): {
         spec+: {
           parameters+: {
@@ -569,7 +837,7 @@
           },
         },
       },
-      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The metadata of the resource.' } },
+      '#withMetadataMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The metadata of the resource. (see below for nested schema)\nThe metadata of the resource.' } },
       withMetadataMixin(value): {
         spec+: {
           parameters+: {
@@ -581,7 +849,7 @@
       },
       metadata+:
         {
-          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder to save the resource in.' } },
+          '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.\nThe UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation." } },
           withFolderUid(value): {
             spec+: {
               parameters+: {
@@ -593,7 +861,7 @@
               },
             },
           },
-          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The unique identifier of the resource.' } },
+          '#withUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The unique identifier of the resource.\nThe unique identifier of the resource.' } },
           withUid(value): {
             spec+: {
               parameters+: {
@@ -606,7 +874,7 @@
             },
           },
         },
-      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
+      '#withOptions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptions(value): {
         spec+: {
           parameters+: {
@@ -616,7 +884,7 @@
           },
         },
       },
-      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Options for applying the resource.' } },
+      '#withOptionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Options for applying the resource. (see below for nested schema)\nOptions for applying the resource.' } },
       withOptionsMixin(value): {
         spec+: {
           parameters+: {
@@ -628,7 +896,19 @@
       },
       options+:
         {
-          '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
+          '#withManagerIdentity': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Override the identity stamped on this resource's manager metadata." } },
+          withManagerIdentity(value): {
+            spec+: {
+              parameters+: {
+                initProvider+: {
+                  options+: {
+                    managerIdentity: value,
+                  },
+                },
+              },
+            },
+          },
+          '#withOverwrite': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.\nSet to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.' } },
           withOverwrite(value=true): {
             spec+: {
               parameters+: {
@@ -641,7 +921,7 @@
             },
           },
         },
-      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
+      '#withSpec': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpec(value): {
         parameters+: {
           initProvider+: {
@@ -649,7 +929,7 @@
           },
         },
       },
-      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The spec of the resource.' } },
+      '#withSpecMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The spec of the resource. (see below for nested schema)\nThe spec of the resource.' } },
       withSpecMixin(value): {
         parameters+: {
           initProvider+: {
@@ -659,7 +939,7 @@
       },
       spec+:
         {
-          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          '#withAnnotations': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Annotations of the resource.\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotations(value): {
             spec+: {
               parameters+: {
@@ -671,7 +951,7 @@
               },
             },
           },
-          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
+          '#withAnnotationsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) Annotations of the resource.\nKey-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.' } },
           withAnnotationsMixin(value): {
             spec+: {
               parameters+: {
@@ -683,7 +963,7 @@
               },
             },
           },
-          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
+          '#withExecErrState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.\nDescribes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting." } },
           withExecErrState(value): {
             spec+: {
               parameters+: {
@@ -695,7 +975,7 @@
               },
             },
           },
-          '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          '#withExpressions': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressions(value): {
             spec+: {
               parameters+: {
@@ -707,7 +987,7 @@
               },
             },
           },
-          '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
+          '#withExpressionsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.\nA sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.' } },
           withExpressionsMixin(value): {
             spec+: {
               parameters+: {
@@ -719,7 +999,7 @@
               },
             },
           },
-          '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
+          '#withFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.\nThe amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.' } },
           withFor(value): {
             spec+: {
               parameters+: {
@@ -731,7 +1011,7 @@
               },
             },
           },
-          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
+          '#withKeepFiringFor': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.\nThe amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered." } },
           withKeepFiringFor(value): {
             spec+: {
               parameters+: {
@@ -743,7 +1023,7 @@
               },
             },
           },
-          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          '#withLabels': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing.\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabels(value): {
             spec+: {
               parameters+: {
@@ -755,7 +1035,7 @@
               },
             },
           },
-          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
+          '#withLabelsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'value pairs to attach to the alert rule that can be used in matching, grouping, and routing.\nKey-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.' } },
           withLabelsMixin(value): {
             spec+: {
               parameters+: {
@@ -767,7 +1047,7 @@
               },
             },
           },
-          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: 'The number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
+          '#withMissingSeriesEvalsToResolve': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.\nThe number of missing series evaluations that must occur before the rule is considered to be resolved.' } },
           withMissingSeriesEvalsToResolve(value): {
             spec+: {
               parameters+: {
@@ -779,7 +1059,7 @@
               },
             },
           },
-          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
+          '#withNoDataState': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: "(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.\nDescribes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting." } },
           withNoDataState(value): {
             spec+: {
               parameters+: {
@@ -791,7 +1071,7 @@
               },
             },
           },
-          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing' } },
           withNotificationSettings(value): {
             spec+: {
               parameters+: {
@@ -803,7 +1083,7 @@
               },
             },
           },
-          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'Notification settings for the rule. If specified, it overrides the notification policies.' } },
+          '#withNotificationSettingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)\nNotification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing' } },
           withNotificationSettingsMixin(value): {
             spec+: {
               parameters+: {
@@ -817,7 +1097,7 @@
           },
           notificationSettings+:
             {
-              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nDeprecated. A list of time interval names to apply to alerts that match this policy.' } },
               withActiveTimings(value): {
                 spec+: {
                   parameters+: {
@@ -834,7 +1114,7 @@
                   },
                 },
               },
-              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+              '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nDeprecated. A list of time interval names to apply to alerts that match this policy.' } },
               withActiveTimingsMixin(value): {
                 spec+: {
                   parameters+: {
@@ -851,7 +1131,7 @@
                   },
                 },
               },
-              '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The contact point to route notifications that match this rule to.' } },
+              '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.\nDeprecated. The contact point to route notifications that match this rule to.' } },
               withContactPoint(value): {
                 spec+: {
                   parameters+: {
@@ -865,7 +1145,7 @@
                   },
                 },
               },
-              '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nDeprecated. A list of alert labels to group alerts into notifications by.' } },
               withGroupBy(value): {
                 spec+: {
                   parameters+: {
@@ -882,7 +1162,7 @@
                   },
                 },
               },
-              '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of alert labels to group alerts into notifications by.' } },
+              '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nDeprecated. A list of alert labels to group alerts into notifications by.' } },
               withGroupByMixin(value): {
                 spec+: {
                   parameters+: {
@@ -899,7 +1179,7 @@
                   },
                 },
               },
-              '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval between two notifications for the same group.' } },
+              '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.\nDeprecated. Minimum time interval between two notifications for the same group.' } },
               withGroupInterval(value): {
                 spec+: {
                   parameters+: {
@@ -913,7 +1193,7 @@
                   },
                 },
               },
-              '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Time to wait to buffer alerts of the same group before sending a notification.' } },
+              '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.\nDeprecated. Time to wait to buffer alerts of the same group before sending a notification.' } },
               withGroupWait(value): {
                 spec+: {
                   parameters+: {
@@ -927,7 +1207,7 @@
                   },
                 },
               },
-              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nDeprecated. A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimings(value): {
                 spec+: {
                   parameters+: {
@@ -944,7 +1224,7 @@
                   },
                 },
               },
-              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: 'A list of mute timing names to apply to alerts that match this policy.' } },
+              '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nDeprecated. A list of mute timing names to apply to alerts that match this policy.' } },
               withMuteTimingsMixin(value): {
                 spec+: {
                   parameters+: {
@@ -961,7 +1241,54 @@
                   },
                 },
               },
-              '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Minimum time interval for re-sending a notification if an alert is still firing.' } },
+              '#withNamedRoutingTree': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)\nRoute notifications to a specific routing tree.' } },
+              withNamedRoutingTree(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          namedRoutingTree: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withNamedRoutingTreeMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)\nRoute notifications to a specific routing tree.' } },
+              withNamedRoutingTreeMixin(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          namedRoutingTree+: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              namedRoutingTree+:
+                {
+                  '#withRoutingTree': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The name of the routing tree to use.\nThe name of the routing tree to use.' } },
+                  withRoutingTree(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              namedRoutingTree+: {
+                                routingTree: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing.\nDeprecated. Minimum time interval for re-sending a notification if an alert is still firing.' } },
               withRepeatInterval(value): {
                 spec+: {
                   parameters+: {
@@ -975,8 +1302,217 @@
                   },
                 },
               },
+              '#withSimplifiedRouting': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)\nSimplified routing to a contact point with optional grouping and timing overrides.' } },
+              withSimplifiedRouting(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          simplifiedRouting: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              '#withSimplifiedRoutingMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)\nSimplified routing to a contact point with optional grouping and timing overrides.' } },
+              withSimplifiedRoutingMixin(value): {
+                spec+: {
+                  parameters+: {
+                    initProvider+: {
+                      spec+: {
+                        notificationSettings+: {
+                          simplifiedRouting+: value,
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+              simplifiedRouting+:
+                {
+                  '#withActiveTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+                  withActiveTimings(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                activeTimings:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withActiveTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.\nA list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.' } },
+                  withActiveTimingsMixin(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                activeTimings+:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withContactPoint': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.\nThe contact point to route notifications that match this rule to.' } },
+                  withContactPoint(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                contactPoint: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupBy': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nA list of alert labels to group alerts into notifications by.' } },
+                  withGroupBy(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupBy:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupByMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.\nA list of alert labels to group alerts into notifications by.' } },
+                  withGroupByMixin(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupBy+:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.\nMinimum time interval between two notifications for the same group.' } },
+                  withGroupInterval(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupInterval: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withGroupWait': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.\nTime to wait to buffer alerts of the same group before sending a notification.' } },
+                  withGroupWait(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                groupWait: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withMuteTimings': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  withMuteTimings(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                muteTimings:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withMuteTimingsMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.\nA list of mute timing names to apply to alerts that match this policy.' } },
+                  withMuteTimingsMixin(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                muteTimings+:
+                                  (if std.isArray(value)
+                                   then value
+                                   else [value]),
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                  '#withRepeatInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'sending a notification if an alert is still firing.\nMinimum time interval for re-sending a notification if an alert is still firing.' } },
+                  withRepeatInterval(value): {
+                    spec+: {
+                      parameters+: {
+                        initProvider+: {
+                          spec+: {
+                            notificationSettings+: {
+                              simplifiedRouting+: {
+                                repeatInterval: value,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
             },
-          '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          '#withPanelRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.\nReference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRef(value): {
             spec+: {
               parameters+: {
@@ -988,7 +1524,7 @@
               },
             },
           },
-          '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
+          '#withPanelRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: "(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.\nReference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields." } },
           withPanelRefMixin(value): {
             spec+: {
               parameters+: {
@@ -1000,7 +1536,7 @@
               },
             },
           },
-          '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: 'Sets whether the rule should be paused or not.' } },
+          '#withPaused': { 'function': { args: [{ default: true, enums: null, name: 'value', type: ['boolean'] }], help: '(Boolean) Sets whether the rule should be paused or not.\nSets whether the rule should be paused or not.' } },
           withPaused(value=true): {
             spec+: {
               parameters+: {
@@ -1012,7 +1548,7 @@
               },
             },
           },
-          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The title of the alert rule.' } },
+          '#withTitle': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The title of the alert rule.\nThe title of the alert rule.' } },
           withTitle(value): {
             spec+: {
               parameters+: {
@@ -1024,7 +1560,7 @@
               },
             },
           },
-          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTrigger': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)\nThe trigger configuration for the alert rule.' } },
           withTrigger(value): {
             spec+: {
               parameters+: {
@@ -1036,7 +1572,7 @@
               },
             },
           },
-          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The trigger configuration for the alert rule.' } },
+          '#withTriggerMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: '(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)\nThe trigger configuration for the alert rule.' } },
           withTriggerMixin(value): {
             spec+: {
               parameters+: {
@@ -1050,7 +1586,7 @@
           },
           trigger+:
             {
-              '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The interval at which the alert rule should be evaluated.' } },
+              '#withInterval': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: '(String) The interval at which the alert rule should be evaluated.\nThe interval at which the alert rule should be evaluated.' } },
               withInterval(value): {
                 spec+: {
                   parameters+: {

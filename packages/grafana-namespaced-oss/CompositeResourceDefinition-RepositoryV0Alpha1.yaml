@@ -1,0 +1,644 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  name: xrepositoryv0alpha1s.oss.grafana.net.namespaced
+spec:
+  claimNames:
+    kind: RepositoryV0Alpha1
+    plural: repositoryv0alpha1s
+  defaultCompositionRef:
+    name: repositoryv0alpha1-namespaced
+  group: oss.grafana.net.namespaced
+  names:
+    kind: XRepositoryV0Alpha1
+    plural: xrepositoryv0alpha1s
+  versions:
+    - name: v1alpha1
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            metadata:
+              type: object
+            spec:
+              properties:
+                parameters:
+                  description: RepositoryV0Alpha1Spec defines the desired state of RepositoryV0Alpha1
+                  properties:
+                    deletionPolicy:
+                      default: Delete
+                      description: |-
+                        DeletionPolicy specifies what will happen to the underlying external
+                        when this managed resource is deleted - either "Delete" or "Orphan" the
+                        external resource.
+                        This field is planned to be deprecated in favor of the ManagementPolicies
+                        field in a future release. Currently, both could be set independently and
+                        non-default values would be honored if the feature flag is enabled.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                      enum:
+                        - Orphan
+                        - Delete
+                      type: string
+                    externalName:
+                      description: |
+                        The name of the managed resource inside the Provider.
+                        By default Providers give external resources the same name as the Kubernetes object. A provider uses the external name to lookup a managed resource in an external system. The provider looks up the resource in the external system to determine if it exists, and if it matches the managed resource’s desired state. If the provider can’t find the resource, it creates it.
+                        
+                        Docs: https://docs.crossplane.io/latest/concepts/managed-resources/#naming-external-resources
+                      type: string
+                    forProvider:
+                      properties:
+                        metadata:
+                          description: |-
+                            (Block, Optional) The metadata of the resource. (see below for nested schema)
+                            The metadata of the resource.
+                          properties:
+                            folderUid:
+                              description: |-
+                                (String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+                                The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+                              type: string
+                            uid:
+                              description: |-
+                                (String) The unique identifier of the resource.
+                                The unique identifier of the resource.
+                              type: string
+                          type: object
+                        options:
+                          description: |-
+                            (Block, Optional) Options for applying the resource. (see below for nested schema)
+                            Options for applying the resource.
+                          properties:
+                            managerIdentity:
+                              description: "Override the identity stamped on this resource's manager metadata."
+                              type: string
+                            overwrite:
+                              description: |-
+                                (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                                Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                              type: boolean
+                          type: object
+                        secure:
+                          description: |-
+                            (see below for nested schema)
+                            Sensitive credentials.
+                          properties:
+                            token:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                only) Token for repository authentication.
+                                Token for repository authentication.
+                              type: object
+                              x-kubernetes-map-type: granular
+                            webhookSecret:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                only) Webhook secret.
+                                Webhook secret.
+                              type: object
+                              x-kubernetes-map-type: granular
+                          type: object
+                        secureVersion:
+                          description: |-
+                            application of secure values.
+                            Set this to 1 when using `secure`, then increment it to trigger re-application of secure values.
+                          type: number
+                        spec:
+                          description: |-
+                            (Block, Optional) The spec of the resource. (see below for nested schema)
+                            The spec of the resource.
+                          properties:
+                            bitbucket:
+                              description: |-
+                                (Block, Optional) Bitbucket repository configuration. (see below for nested schema)
+                                Bitbucket repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                tokenUser:
+                                  description: |-
+                                    (String) Username for PAT auth.
+                                    Username for PAT auth.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            connection:
+                              description: |-
+                                (Block, Optional) Connection resource reference. (see below for nested schema)
+                                Connection resource reference.
+                              properties:
+                                name:
+                                  description: |-
+                                    (String) Connection resource name.
+                                    Connection resource name.
+                                  type: string
+                              type: object
+                            description:
+                              description: |-
+                                (String) Repository description.
+                                Repository description.
+                              type: string
+                            git:
+                              description: |-
+                                (Block, Optional) Generic git repository configuration. (see below for nested schema)
+                                Generic git repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                tokenUser:
+                                  description: |-
+                                    (String) Username for PAT auth.
+                                    Username for PAT auth.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            github:
+                              description: |-
+                                (Block, Optional) GitHub repository configuration. (see below for nested schema)
+                                GitHub repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                generateDashboardPreviews:
+                                  description: |-
+                                    (Boolean) Whether to generate dashboard previews.
+                                    Whether to generate dashboard previews.
+                                  type: boolean
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            gitlab:
+                              description: |-
+                                (Block, Optional) GitLab repository configuration. (see below for nested schema)
+                                GitLab repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            local:
+                              description: |-
+                                (Block, Optional) Local filesystem repository configuration. (see below for nested schema)
+                                Local filesystem repository configuration.
+                              properties:
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Filesystem path.
+                                  type: string
+                              type: object
+                            sync:
+                              description: |-
+                                (Block, Optional) Sync configuration. (see below for nested schema)
+                                Sync configuration.
+                              properties:
+                                enabled:
+                                  description: |-
+                                    (Boolean) Whether sync is enabled.
+                                    Whether sync is enabled.
+                                  type: boolean
+                                intervalSeconds:
+                                  description: |-
+                                    (Number) Sync interval in seconds.
+                                    Sync interval in seconds.
+                                  type: number
+                                target:
+                                  description: |-
+                                    (String) Sync target: instance or folder.
+                                    Sync target: instance or folder.
+                                  type: string
+                              type: object
+                            title:
+                              description: |-
+                                (String) Display name shown in the UI.
+                                Display name shown in the UI.
+                              type: string
+                            type:
+                              description: |-
+                                (String) Repository provider type: local, github, git, bitbucket, or gitlab.
+                                Repository provider type: local, github, git, bitbucket, or gitlab.
+                              type: string
+                            webhook:
+                              description: |-
+                                (Block, Optional) Webhook delivery configuration. (see below for nested schema)
+                                Webhook delivery configuration.
+                              properties:
+                                baseUrl:
+                                  description: |-
+                                    (String) Optional public webhook base URL override used when incoming webhook delivery must target a different host than the Grafana UI URL.
+                                    Optional public webhook base URL override used when incoming webhook delivery must target a different host than the Grafana UI URL.
+                                  type: string
+                              type: object
+                            workflows:
+                              description: |-
+                                (List of String) Allowed change workflows: write, branch.
+                                Allowed change workflows: write, branch.
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                      type: object
+                    initProvider:
+                      description: |-
+                        THIS IS A BETA FIELD. It will be honored
+                        unless the Management Policies feature flag is disabled.
+                        InitProvider holds the same fields as ForProvider, with the exception
+                        of Identifier and other resource reference fields. The fields that are
+                        in InitProvider are merged into ForProvider when the resource is created.
+                        The same fields are also added to the terraform ignore_changes hook, to
+                        avoid updating them after creation. This is useful for fields that are
+                        required on creation, but we do not desire to update them after creation,
+                        for example because of an external controller is managing them, like an
+                        autoscaler.
+                      properties:
+                        metadata:
+                          description: |-
+                            (Block, Optional) The metadata of the resource. (see below for nested schema)
+                            The metadata of the resource.
+                          properties:
+                            folderUid:
+                              description: |-
+                                (String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+                                The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+                              type: string
+                            uid:
+                              description: |-
+                                (String) The unique identifier of the resource.
+                                The unique identifier of the resource.
+                              type: string
+                          type: object
+                        options:
+                          description: |-
+                            (Block, Optional) Options for applying the resource. (see below for nested schema)
+                            Options for applying the resource.
+                          properties:
+                            managerIdentity:
+                              description: "Override the identity stamped on this resource's manager metadata."
+                              type: string
+                            overwrite:
+                              description: |-
+                                (Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                                Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
+                              type: boolean
+                          type: object
+                        secure:
+                          description: |-
+                            (see below for nested schema)
+                            Sensitive credentials.
+                          properties:
+                            token:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                only) Token for repository authentication.
+                                Token for repository authentication.
+                              type: object
+                              x-kubernetes-map-type: granular
+                            webhookSecret:
+                              additionalProperties:
+                                type: string
+                              description: |-
+                                only) Webhook secret.
+                                Webhook secret.
+                              type: object
+                              x-kubernetes-map-type: granular
+                          type: object
+                        secureVersion:
+                          description: |-
+                            application of secure values.
+                            Set this to 1 when using `secure`, then increment it to trigger re-application of secure values.
+                          type: number
+                        spec:
+                          description: |-
+                            (Block, Optional) The spec of the resource. (see below for nested schema)
+                            The spec of the resource.
+                          properties:
+                            bitbucket:
+                              description: |-
+                                (Block, Optional) Bitbucket repository configuration. (see below for nested schema)
+                                Bitbucket repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                tokenUser:
+                                  description: |-
+                                    (String) Username for PAT auth.
+                                    Username for PAT auth.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            connection:
+                              description: |-
+                                (Block, Optional) Connection resource reference. (see below for nested schema)
+                                Connection resource reference.
+                              properties:
+                                name:
+                                  description: |-
+                                    (String) Connection resource name.
+                                    Connection resource name.
+                                  type: string
+                              type: object
+                            description:
+                              description: |-
+                                (String) Repository description.
+                                Repository description.
+                              type: string
+                            git:
+                              description: |-
+                                (Block, Optional) Generic git repository configuration. (see below for nested schema)
+                                Generic git repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                tokenUser:
+                                  description: |-
+                                    (String) Username for PAT auth.
+                                    Username for PAT auth.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            github:
+                              description: |-
+                                (Block, Optional) GitHub repository configuration. (see below for nested schema)
+                                GitHub repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                generateDashboardPreviews:
+                                  description: |-
+                                    (Boolean) Whether to generate dashboard previews.
+                                    Whether to generate dashboard previews.
+                                  type: boolean
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            gitlab:
+                              description: |-
+                                (Block, Optional) GitLab repository configuration. (see below for nested schema)
+                                GitLab repository configuration.
+                              properties:
+                                branch:
+                                  description: |-
+                                    (String) Branch to sync.
+                                    Branch to sync.
+                                  type: string
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Optional subdirectory path.
+                                  type: string
+                                url:
+                                  description: |-
+                                    (String) The full URL of the resource.
+                                    Repository URL.
+                                  type: string
+                              type: object
+                            local:
+                              description: |-
+                                (Block, Optional) Local filesystem repository configuration. (see below for nested schema)
+                                Local filesystem repository configuration.
+                              properties:
+                                path:
+                                  description: |-
+                                    (String) Optional subdirectory path.
+                                    Filesystem path.
+                                  type: string
+                              type: object
+                            sync:
+                              description: |-
+                                (Block, Optional) Sync configuration. (see below for nested schema)
+                                Sync configuration.
+                              properties:
+                                enabled:
+                                  description: |-
+                                    (Boolean) Whether sync is enabled.
+                                    Whether sync is enabled.
+                                  type: boolean
+                                intervalSeconds:
+                                  description: |-
+                                    (Number) Sync interval in seconds.
+                                    Sync interval in seconds.
+                                  type: number
+                                target:
+                                  description: |-
+                                    (String) Sync target: instance or folder.
+                                    Sync target: instance or folder.
+                                  type: string
+                              type: object
+                            title:
+                              description: |-
+                                (String) Display name shown in the UI.
+                                Display name shown in the UI.
+                              type: string
+                            type:
+                              description: |-
+                                (String) Repository provider type: local, github, git, bitbucket, or gitlab.
+                                Repository provider type: local, github, git, bitbucket, or gitlab.
+                              type: string
+                            webhook:
+                              description: |-
+                                (Block, Optional) Webhook delivery configuration. (see below for nested schema)
+                                Webhook delivery configuration.
+                              properties:
+                                baseUrl:
+                                  description: |-
+                                    (String) Optional public webhook base URL override used when incoming webhook delivery must target a different host than the Grafana UI URL.
+                                    Optional public webhook base URL override used when incoming webhook delivery must target a different host than the Grafana UI URL.
+                                  type: string
+                              type: object
+                            workflows:
+                              description: |-
+                                (List of String) Allowed change workflows: write, branch.
+                                Allowed change workflows: write, branch.
+                              items:
+                                type: string
+                              type: array
+                          type: object
+                      type: object
+                    managementPolicies:
+                      default:
+                        - "*"
+                      description: |-
+                        THIS IS A BETA FIELD. It is on by default but can be opted out
+                        through a Crossplane feature flag.
+                        ManagementPolicies specify the array of actions Crossplane is allowed to
+                        take on the managed and external resources.
+                        This field is planned to replace the DeletionPolicy field in a future
+                        release. Currently, both could be set independently and non-default
+                        values would be honored if the feature flag is enabled. If both are
+                        custom, the DeletionPolicy field will be ignored.
+                        See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+                        and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+                      items:
+                        description: |-
+                          A ManagementAction represents an action that the Crossplane controllers
+                          can take on an external resource.
+                        enum:
+                          - Observe
+                          - Create
+                          - Update
+                          - Delete
+                          - LateInitialize
+                          - "*"
+                        type: string
+                      type: array
+                    providerConfigRef:
+                      default:
+                        name: default
+                      description: |-
+                        ProviderConfigReference specifies how the provider that will be used to
+                        create, observe, update, and delete this managed resource should be
+                        configured.
+                      properties:
+                        name:
+                          description: Name of the referenced object.
+                          type: string
+                        policy:
+                          description: Policies for referencing.
+                          properties:
+                            resolution:
+                              default: Required
+                              description: |-
+                                Resolution specifies whether resolution of this reference is required.
+                                The default is 'Required', which means the reconcile will fail if the
+                                reference cannot be resolved. 'Optional' means this reference will be
+                                a no-op if it cannot be resolved.
+                              enum:
+                                - Required
+                                - Optional
+                              type: string
+                            resolve:
+                              description: |-
+                                Resolve specifies when this reference should be resolved. The default
+                                is 'IfNotPresent', which will attempt to resolve the reference only when
+                                the corresponding field is not present. Use 'Always' to resolve the
+                                reference on every reconcile.
+                              enum:
+                                - Always
+                                - IfNotPresent
+                              type: string
+                          type: object
+                      required:
+                        - name
+                      type: object
+                    selectorLabel:
+                      description: Configure a custom label for use with selector.matchLabels.
+                      type: string
+                    writeConnectionSecretToRef:
+                      description: |-
+                        WriteConnectionSecretToReference specifies the namespace and name of a
+                        Secret to which any connection details for this managed resource should
+                        be written. Connection details frequently include the endpoint, username,
+                        and password required to connect to the managed resource.
+                      properties:
+                        name:
+                          description: Name of the secret.
+                          type: string
+                        namespace:
+                          description: Namespace of the secret.
+                          type: string
+                      required:
+                        - name
+                        - namespace
+                      type: object
+                  required:
+                    - forProvider
+                  type: object
+                  x-kubernetes-validations:
+                    - message: spec.forProvider.metadata is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.metadata) || (has(self.initProvider) && has(self.initProvider.metadata))"
+                    - message: spec.forProvider.spec is a required parameter
+                      rule: "!('*' in self.managementPolicies || 'Create' in self.managementPolicies || 'Update' in self.managementPolicies) || has(self.forProvider.spec) || (has(self.initProvider) && has(self.initProvider.spec))"
+              type: object
+          type: object
+      served: true

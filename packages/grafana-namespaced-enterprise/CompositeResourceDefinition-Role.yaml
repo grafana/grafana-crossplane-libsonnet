@@ -56,8 +56,8 @@ spec:
                       properties:
                         autoIncrementVersion:
                           description: |-
-                            (Boolean) Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or version should be set.
-                            Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or `version` should be set.
+                            (Boolean, Deprecated) Whether the role version should be incremented automatically on updates (and set to 1 on creation).
+                            Whether the role version should be incremented automatically on updates (and set to 1 on creation).
                           type: boolean
                         description:
                           description: |-
@@ -192,8 +192,8 @@ spec:
                           type: string
                         version:
                           description: |-
-                            (Number) Version of the role. A role is updated only on version increase. This field or auto_increment_version should be set.
-                            Version of the role. A role is updated only on version increase. This field or `auto_increment_version` should be set.
+                            (Number, Deprecated) Version of the role. The server manages this automatically.
+                            Version of the role. The server manages this automatically.
                           type: number
                       type: object
                     initProvider:
@@ -211,8 +211,8 @@ spec:
                       properties:
                         autoIncrementVersion:
                           description: |-
-                            (Boolean) Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or version should be set.
-                            Whether the role version should be incremented automatically on updates (and set to 1 on creation). This field or `version` should be set.
+                            (Boolean, Deprecated) Whether the role version should be incremented automatically on updates (and set to 1 on creation).
+                            Whether the role version should be incremented automatically on updates (and set to 1 on creation).
                           type: boolean
                         description:
                           description: |-
@@ -347,8 +347,8 @@ spec:
                           type: string
                         version:
                           description: |-
-                            (Number) Version of the role. A role is updated only on version increase. This field or auto_increment_version should be set.
-                            Version of the role. A role is updated only on version increase. This field or `auto_increment_version` should be set.
+                            (Number, Deprecated) Version of the role. The server manages this automatically.
+                            Version of the role. The server manages this automatically.
                           type: number
                       type: object
                     managementPolicies:

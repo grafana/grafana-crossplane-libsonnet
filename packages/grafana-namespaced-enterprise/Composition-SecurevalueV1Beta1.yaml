@@ -1,0 +1,116 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xsecurevaluev1beta1s.enterprise.grafana.net.namespaced
+  name: securevaluev1beta1-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: enterprise.grafana.net.namespaced/v1alpha1
+    kind: XSecurevalueV1Beta1
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: enterprise.grafana.crossplane.io/v1alpha1
+              kind: SecurevalueV1Beta1
+            name: securevaluev1beta1
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.selectorLabel
+                toFieldPath: "metadata.labels[\"selector\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.metadata.folderUid
+                toFieldPath: spec.forProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.metadata.uid
+                toFieldPath: spec.forProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.options.managerIdentity
+                toFieldPath: spec.forProvider.options.managerIdentity
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.options.overwrite
+                toFieldPath: spec.forProvider.options.overwrite
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.decrypters
+                toFieldPath: spec.forProvider.spec.decrypters
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.description
+                toFieldPath: spec.forProvider.spec.description
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.ref
+                toFieldPath: spec.forProvider.spec.ref
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.valueSecretRef.key
+                toFieldPath: spec.forProvider.spec.valueSecretRef.key
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.valueSecretRef.name
+                toFieldPath: spec.forProvider.spec.valueSecretRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.valueSecretRef.namespace
+                toFieldPath: spec.forProvider.spec.valueSecretRef.namespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.folderUid
+                toFieldPath: spec.initProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.uid
+                toFieldPath: spec.initProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.managerIdentity
+                toFieldPath: spec.initProvider.options.managerIdentity
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.overwrite
+                toFieldPath: spec.initProvider.options.overwrite
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.decrypters
+                toFieldPath: spec.initProvider.spec.decrypters
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.description
+                toFieldPath: spec.initProvider.spec.description
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.ref
+                toFieldPath: spec.initProvider.spec.ref
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.valueSecretRef.key
+                toFieldPath: spec.initProvider.spec.valueSecretRef.key
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.valueSecretRef.name
+                toFieldPath: spec.initProvider.spec.valueSecretRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.valueSecretRef.namespace
+                toFieldPath: spec.initProvider.spec.valueSecretRef.namespace
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform
+    - functionRef:
+        name: function-grafana-data
+      step: grafana-data

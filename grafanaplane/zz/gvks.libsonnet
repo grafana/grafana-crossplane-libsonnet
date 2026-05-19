@@ -21,6 +21,12 @@
       },
       {
         group: 'alerting.grafana.crossplane.io',
+        kind: 'InhibitionruleV1Beta1',
+        plural: 'inhibitionrulev1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.crossplane.io',
         kind: 'MessageTemplate',
         plural: 'messagetemplates',
         version: 'v1alpha1',
@@ -67,6 +73,12 @@
         group: 'alerting.grafana.net.namespaced',
         kind: 'ContactPoint',
         plural: 'contactpoints',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'alerting.grafana.net.namespaced',
+        kind: 'InhibitionruleV1Beta1',
+        plural: 'inhibitionrulev1beta1s',
         version: 'v1alpha1',
       },
       {
@@ -135,6 +147,12 @@
       },
       {
         group: 'asserts.grafana.crossplane.io',
+        kind: 'Stack',
+        plural: 'stacks',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.crossplane.io',
         kind: 'SuppressedAssertionsConfig',
         plural: 'suppressedassertionsconfigs',
         version: 'v1alpha1',
@@ -185,6 +203,12 @@
       },
       {
         group: 'asserts.grafana.net.namespaced',
+        kind: 'Stack',
+        plural: 'stacks',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'asserts.grafana.net.namespaced',
         kind: 'SuppressedAssertionsConfig',
         plural: 'suppressedassertionsconfigs',
         version: 'v1alpha1',
@@ -227,6 +251,12 @@
         group: 'cloud.grafana.crossplane.io',
         kind: 'Appo11YconfigV1Alpha1',
         plural: 'appo11yconfigv1alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.crossplane.io',
+        kind: 'Dbo11YconfigV1Alpha1',
+        plural: 'dbo11yconfigv1alpha1s',
         version: 'v1alpha1',
       },
       {
@@ -311,6 +341,12 @@
       },
       {
         group: 'cloud.grafana.net.namespaced',
+        kind: 'Dbo11YconfigV1Alpha1',
+        plural: 'dbo11yconfigv1alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'cloud.grafana.net.namespaced',
         kind: 'K8So11YconfigV1Alpha1',
         plural: 'k8so11yconfigv1alpha1s',
         version: 'v1alpha1',
@@ -355,6 +391,24 @@
         group: 'cloud.grafana.net.namespaced',
         kind: 'StackServiceAccountToken',
         plural: 'stackserviceaccounttokens',
+        version: 'v1alpha1',
+      },
+    ],
+  },
+  cloudintegrations: {
+    crd: [
+      {
+        group: 'cloudintegrations.grafana.crossplane.io',
+        kind: 'CloudIntegration',
+        plural: 'cloudintegrations',
+        version: 'v1alpha1',
+      },
+    ],
+    xrd: [
+      {
+        group: 'cloudintegrations.grafana.net.namespaced',
+        kind: 'CloudIntegration',
+        plural: 'cloudintegrations',
         version: 'v1alpha1',
       },
     ],
@@ -429,6 +483,12 @@
     crd: [
       {
         group: 'enterprise.grafana.crossplane.io',
+        kind: 'DataSourceCacheConfig',
+        plural: 'datasourcecacheconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.crossplane.io',
         kind: 'DataSourceConfigLbacRules',
         plural: 'datasourceconfiglbacrules',
         version: 'v1alpha1',
@@ -443,6 +503,18 @@
         group: 'enterprise.grafana.crossplane.io',
         kind: 'DataSourcePermission',
         plural: 'datasourcepermissions',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.crossplane.io',
+        kind: 'KeeperActivationV1Beta1',
+        plural: 'keeperactivationv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.crossplane.io',
+        kind: 'KeeperV1Beta1',
+        plural: 'keeperv1beta1s',
         version: 'v1alpha1',
       },
       {
@@ -473,6 +545,12 @@
         group: 'enterprise.grafana.crossplane.io',
         kind: 'ScimConfig',
         plural: 'scimconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.crossplane.io',
+        kind: 'SecurevalueV1Beta1',
+        plural: 'securevaluev1beta1s',
         version: 'v1alpha1',
       },
       {
@@ -485,6 +563,12 @@
     xrd: [
       {
         group: 'enterprise.grafana.net.namespaced',
+        kind: 'DataSourceCacheConfig',
+        plural: 'datasourcecacheconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
         kind: 'DataSourceConfigLbacRules',
         plural: 'datasourceconfiglbacrules',
         version: 'v1alpha1',
@@ -499,6 +583,18 @@
         group: 'enterprise.grafana.net.namespaced',
         kind: 'DataSourcePermission',
         plural: 'datasourcepermissions',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
+        kind: 'KeeperActivationV1Beta1',
+        plural: 'keeperactivationv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
+        kind: 'KeeperV1Beta1',
+        plural: 'keeperv1beta1s',
         version: 'v1alpha1',
       },
       {
@@ -529,6 +625,12 @@
         group: 'enterprise.grafana.net.namespaced',
         kind: 'ScimConfig',
         plural: 'scimconfigs',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'enterprise.grafana.net.namespaced',
+        kind: 'SecurevalueV1Beta1',
+        plural: 'securevaluev1beta1s',
         version: 'v1alpha1',
       },
       {
@@ -831,6 +933,12 @@
       },
       {
         group: 'oss.grafana.crossplane.io',
+        kind: 'ConnectionV0Alpha1',
+        plural: 'connectionv0alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
         kind: 'DashboardPermissionItem',
         plural: 'dashboardpermissionitems',
         version: 'v1alpha1',
@@ -857,6 +965,18 @@
         group: 'oss.grafana.crossplane.io',
         kind: 'DashboardV1Beta1',
         plural: 'dashboardv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'DashboardV2Beta1',
+        plural: 'dashboardv2beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'DashboardV2',
+        plural: 'dashboardv2s',
         version: 'v1alpha1',
       },
       {
@@ -917,6 +1037,24 @@
         group: 'oss.grafana.crossplane.io',
         kind: 'PlaylistV0Alpha1',
         plural: 'playlistv0alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'PlaylistV1',
+        plural: 'playlistv1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'RepositoryV0Alpha1',
+        plural: 'repositoryv0alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.crossplane.io',
+        kind: 'Resource',
+        plural: 'resources',
         version: 'v1alpha1',
       },
       {
@@ -977,6 +1115,12 @@
       },
       {
         group: 'oss.grafana.net.namespaced',
+        kind: 'ConnectionV0Alpha1',
+        plural: 'connectionv0alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
         kind: 'DashboardPermissionItem',
         plural: 'dashboardpermissionitems',
         version: 'v1alpha1',
@@ -1003,6 +1147,18 @@
         group: 'oss.grafana.net.namespaced',
         kind: 'DashboardV1Beta1',
         plural: 'dashboardv1beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'DashboardV2Beta1',
+        plural: 'dashboardv2beta1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'DashboardV2',
+        plural: 'dashboardv2s',
         version: 'v1alpha1',
       },
       {
@@ -1063,6 +1219,18 @@
         group: 'oss.grafana.net.namespaced',
         kind: 'PlaylistV0Alpha1',
         plural: 'playlistv0alpha1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'PlaylistV1',
+        plural: 'playlistv1s',
+        version: 'v1alpha1',
+      },
+      {
+        group: 'oss.grafana.net.namespaced',
+        kind: 'RepositoryV0Alpha1',
+        plural: 'repositoryv0alpha1s',
         version: 'v1alpha1',
       },
       {

@@ -9,6 +9,7 @@
 * [v1alpha1.notificationAlertsConfig](v1alpha1/notificationAlertsConfig.md)
 * [v1alpha1.profileConfig](v1alpha1/profileConfig/index.md)
 * [v1alpha1.promRuleFile](v1alpha1/promRuleFile/index.md)
+* [v1alpha1.stack](v1alpha1/stack/index.md)
 * [v1alpha1.suppressedAssertionsConfig](v1alpha1/suppressedAssertionsConfig.md)
 * [v1alpha1.thresholds](v1alpha1/thresholds/index.md)
 * [v1alpha1.traceConfig](v1alpha1/traceConfig/index.md)

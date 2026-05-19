@@ -67,6 +67,7 @@
     * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
     * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
     * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withDatasourceType(value)`](#fn-specparametersforproviderwithdatasourcetype)
       * [`fn withDatasourceUid(value)`](#fn-specparametersforproviderwithdatasourceuid)
       * [`fn withOrgId(value)`](#fn-specparametersforproviderwithorgid)
       * [`fn withOrganizationRef(value)`](#fn-specparametersforproviderwithorganizationref)
@@ -94,6 +95,7 @@
           * [`fn withResolution(value="Required")`](#fn-specparametersforproviderorganizationselectorpolicywithresolution)
           * [`fn withResolve(value)`](#fn-specparametersforproviderorganizationselectorpolicywithresolve)
     * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withDatasourceType(value)`](#fn-specparametersinitproviderwithdatasourcetype)
       * [`fn withDatasourceUid(value)`](#fn-specparametersinitproviderwithdatasourceuid)
       * [`fn withOrgId(value)`](#fn-specparametersinitproviderwithorgid)
       * [`fn withOrganizationRef(value)`](#fn-specparametersinitproviderwithorganizationref)
@@ -846,6 +848,18 @@ and password required to connect to the managed resource.
 ##### obj spec.parameters.forProvider
 
 
+###### fn spec.parameters.forProvider.withDatasourceType
+
+```jsonnet
+spec.parameters.forProvider.withDatasourceType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
+The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
 ###### fn spec.parameters.forProvider.withDatasourceUid
 
 ```jsonnet
@@ -1129,6 +1143,18 @@ reference on every reconcile.
 ##### obj spec.parameters.initProvider
 
 
+###### fn spec.parameters.initProvider.withDatasourceType
+
+```jsonnet
+spec.parameters.initProvider.withDatasourceType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
+The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
 ###### fn spec.parameters.initProvider.withDatasourceUid
 
 ```jsonnet

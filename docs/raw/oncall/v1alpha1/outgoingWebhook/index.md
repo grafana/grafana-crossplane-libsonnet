@@ -1,0 +1,2313 @@
+# outgoingWebhook
+
+
+
+## Subpackages
+
+* [spec.parameters.forProvider.integrationFilterRef](spec/parameters/forProvider/integrationFilterRef.md)
+* [spec.parameters.initProvider.integrationFilterRef](spec/parameters/initProvider/integrationFilterRef.md)
+
+## Index
+
+* [`fn new(name)`](#fn-new)
+* [`fn withApiVersion()`](#fn-withapiversion)
+* [`fn withKind()`](#fn-withkind)
+* [`fn withMetadata(value)`](#fn-withmetadata)
+* [`fn withMetadataMixin(value)`](#fn-withmetadatamixin)
+* [`fn withSpec(value)`](#fn-withspec)
+* [`fn withSpecMixin(value)`](#fn-withspecmixin)
+* [`obj metadata`](#obj-metadata)
+  * [`fn withAnnotations(value)`](#fn-metadatawithannotations)
+  * [`fn withAnnotationsMixin(value)`](#fn-metadatawithannotationsmixin)
+  * [`fn withClusterName(value)`](#fn-metadatawithclustername)
+  * [`fn withCreationTimestamp(value)`](#fn-metadatawithcreationtimestamp)
+  * [`fn withDeletionGracePeriodSeconds(value)`](#fn-metadatawithdeletiongraceperiodseconds)
+  * [`fn withDeletionTimestamp(value)`](#fn-metadatawithdeletiontimestamp)
+  * [`fn withFinalizers(value)`](#fn-metadatawithfinalizers)
+  * [`fn withFinalizersMixin(value)`](#fn-metadatawithfinalizersmixin)
+  * [`fn withGenerateName(value)`](#fn-metadatawithgeneratename)
+  * [`fn withGeneration(value)`](#fn-metadatawithgeneration)
+  * [`fn withLabels(value)`](#fn-metadatawithlabels)
+  * [`fn withLabelsMixin(value)`](#fn-metadatawithlabelsmixin)
+  * [`fn withManagedFields(value)`](#fn-metadatawithmanagedfields)
+  * [`fn withManagedFieldsMixin(value)`](#fn-metadatawithmanagedfieldsmixin)
+  * [`fn withName(value)`](#fn-metadatawithname)
+  * [`fn withNamespace(value)`](#fn-metadatawithnamespace)
+  * [`fn withOwnerReferences(value)`](#fn-metadatawithownerreferences)
+  * [`fn withOwnerReferencesMixin(value)`](#fn-metadatawithownerreferencesmixin)
+  * [`fn withResourceVersion(value)`](#fn-metadatawithresourceversion)
+  * [`fn withSelfLink(value)`](#fn-metadatawithselflink)
+  * [`fn withUid(value)`](#fn-metadatawithuid)
+* [`obj spec`](#obj-spec)
+  * [`fn withCompositionRef(value)`](#fn-specwithcompositionref)
+  * [`fn withCompositionRefMixin(value)`](#fn-specwithcompositionrefmixin)
+  * [`fn withCompositionRevisionRef(value)`](#fn-specwithcompositionrevisionref)
+  * [`fn withCompositionRevisionRefMixin(value)`](#fn-specwithcompositionrevisionrefmixin)
+  * [`fn withCompositionSelector(value)`](#fn-specwithcompositionselector)
+  * [`fn withCompositionSelectorMixin(value)`](#fn-specwithcompositionselectormixin)
+  * [`fn withCompositionUpdatePolicy(value)`](#fn-specwithcompositionupdatepolicy)
+  * [`fn withParameters(value)`](#fn-specwithparameters)
+  * [`fn withParametersMixin(value)`](#fn-specwithparametersmixin)
+  * [`fn withWriteConnectionSecretToRef(value)`](#fn-specwithwriteconnectionsecrettoref)
+  * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specwithwriteconnectionsecrettorefmixin)
+  * [`obj compositionRef`](#obj-speccompositionref)
+    * [`fn withName(value)`](#fn-speccompositionrefwithname)
+  * [`obj compositionRevisionRef`](#obj-speccompositionrevisionref)
+    * [`fn withName(value)`](#fn-speccompositionrevisionrefwithname)
+  * [`obj compositionSelector`](#obj-speccompositionselector)
+    * [`fn withMatchLabels(value)`](#fn-speccompositionselectorwithmatchlabels)
+    * [`fn withMatchLabelsMixin(value)`](#fn-speccompositionselectorwithmatchlabelsmixin)
+  * [`obj parameters`](#obj-specparameters)
+    * [`fn withDeletionPolicy(value="Delete")`](#fn-specparameterswithdeletionpolicy)
+    * [`fn withExternalName(value)`](#fn-specparameterswithexternalname)
+    * [`fn withForProvider(value)`](#fn-specparameterswithforprovider)
+    * [`fn withForProviderMixin(value)`](#fn-specparameterswithforprovidermixin)
+    * [`fn withInitProvider(value)`](#fn-specparameterswithinitprovider)
+    * [`fn withInitProviderMixin(value)`](#fn-specparameterswithinitprovidermixin)
+    * [`fn withManagementPolicies(value=["*"])`](#fn-specparameterswithmanagementpolicies)
+    * [`fn withManagementPoliciesMixin(value=["*"])`](#fn-specparameterswithmanagementpoliciesmixin)
+    * [`fn withProviderConfigRef(value={"name": "default"})`](#fn-specparameterswithproviderconfigref)
+    * [`fn withProviderConfigRefMixin(value={"name": "default"})`](#fn-specparameterswithproviderconfigrefmixin)
+    * [`fn withSelectorLabel(value)`](#fn-specparameterswithselectorlabel)
+    * [`fn withWriteConnectionSecretToRef(value)`](#fn-specparameterswithwriteconnectionsecrettoref)
+    * [`fn withWriteConnectionSecretToRefMixin(value)`](#fn-specparameterswithwriteconnectionsecrettorefmixin)
+    * [`obj forProvider`](#obj-specparametersforprovider)
+      * [`fn withAuthorizationHeaderSecretRef(value)`](#fn-specparametersforproviderwithauthorizationheadersecretref)
+      * [`fn withAuthorizationHeaderSecretRefMixin(value)`](#fn-specparametersforproviderwithauthorizationheadersecretrefmixin)
+      * [`fn withData(value)`](#fn-specparametersforproviderwithdata)
+      * [`fn withForwardWholePayload(value=true)`](#fn-specparametersforproviderwithforwardwholepayload)
+      * [`fn withHeaders(value)`](#fn-specparametersforproviderwithheaders)
+      * [`fn withHttpMethod(value)`](#fn-specparametersforproviderwithhttpmethod)
+      * [`fn withIntegrationFilter(value)`](#fn-specparametersforproviderwithintegrationfilter)
+      * [`fn withIntegrationFilterMixin(value)`](#fn-specparametersforproviderwithintegrationfiltermixin)
+      * [`fn withIntegrationFilterRef(value)`](#fn-specparametersforproviderwithintegrationfilterref)
+      * [`fn withIntegrationFilterRefMixin(value)`](#fn-specparametersforproviderwithintegrationfilterrefmixin)
+      * [`fn withIntegrationFilterSelector(value)`](#fn-specparametersforproviderwithintegrationfilterselector)
+      * [`fn withIntegrationFilterSelectorMixin(value)`](#fn-specparametersforproviderwithintegrationfilterselectormixin)
+      * [`fn withIsWebhookEnabled(value=true)`](#fn-specparametersforproviderwithiswebhookenabled)
+      * [`fn withName(value)`](#fn-specparametersforproviderwithname)
+      * [`fn withPasswordSecretRef(value)`](#fn-specparametersforproviderwithpasswordsecretref)
+      * [`fn withPasswordSecretRefMixin(value)`](#fn-specparametersforproviderwithpasswordsecretrefmixin)
+      * [`fn withPreset(value)`](#fn-specparametersforproviderwithpreset)
+      * [`fn withTeamId(value)`](#fn-specparametersforproviderwithteamid)
+      * [`fn withTeamRef(value)`](#fn-specparametersforproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersforproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersforproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersforproviderwithteamselectormixin)
+      * [`fn withTriggerTemplate(value)`](#fn-specparametersforproviderwithtriggertemplate)
+      * [`fn withTriggerType(value)`](#fn-specparametersforproviderwithtriggertype)
+      * [`fn withUrl(value)`](#fn-specparametersforproviderwithurl)
+      * [`fn withUser(value)`](#fn-specparametersforproviderwithuser)
+      * [`obj authorizationHeaderSecretRef`](#obj-specparametersforproviderauthorizationheadersecretref)
+        * [`fn withKey(value)`](#fn-specparametersforproviderauthorizationheadersecretrefwithkey)
+        * [`fn withName(value)`](#fn-specparametersforproviderauthorizationheadersecretrefwithname)
+        * [`fn withNamespace(value)`](#fn-specparametersforproviderauthorizationheadersecretrefwithnamespace)
+      * [`obj integrationFilterSelector`](#obj-specparametersforproviderintegrationfilterselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderintegrationfilterselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderintegrationfilterselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderintegrationfilterselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderintegrationfilterselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderintegrationfilterselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderintegrationfilterselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderintegrationfilterselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderintegrationfilterselectorpolicywithresolve)
+      * [`obj passwordSecretRef`](#obj-specparametersforproviderpasswordsecretref)
+        * [`fn withKey(value)`](#fn-specparametersforproviderpasswordsecretrefwithkey)
+        * [`fn withName(value)`](#fn-specparametersforproviderpasswordsecretrefwithname)
+        * [`fn withNamespace(value)`](#fn-specparametersforproviderpasswordsecretrefwithnamespace)
+      * [`obj teamRef`](#obj-specparametersforproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersforproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersforproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersforproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersforproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersforproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersforproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersforproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersforproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersforproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersforproviderteamselectorpolicywithresolve)
+    * [`obj initProvider`](#obj-specparametersinitprovider)
+      * [`fn withAuthorizationHeaderSecretRef(value)`](#fn-specparametersinitproviderwithauthorizationheadersecretref)
+      * [`fn withAuthorizationHeaderSecretRefMixin(value)`](#fn-specparametersinitproviderwithauthorizationheadersecretrefmixin)
+      * [`fn withData(value)`](#fn-specparametersinitproviderwithdata)
+      * [`fn withForwardWholePayload(value=true)`](#fn-specparametersinitproviderwithforwardwholepayload)
+      * [`fn withHeaders(value)`](#fn-specparametersinitproviderwithheaders)
+      * [`fn withHttpMethod(value)`](#fn-specparametersinitproviderwithhttpmethod)
+      * [`fn withIntegrationFilter(value)`](#fn-specparametersinitproviderwithintegrationfilter)
+      * [`fn withIntegrationFilterMixin(value)`](#fn-specparametersinitproviderwithintegrationfiltermixin)
+      * [`fn withIntegrationFilterRef(value)`](#fn-specparametersinitproviderwithintegrationfilterref)
+      * [`fn withIntegrationFilterRefMixin(value)`](#fn-specparametersinitproviderwithintegrationfilterrefmixin)
+      * [`fn withIntegrationFilterSelector(value)`](#fn-specparametersinitproviderwithintegrationfilterselector)
+      * [`fn withIntegrationFilterSelectorMixin(value)`](#fn-specparametersinitproviderwithintegrationfilterselectormixin)
+      * [`fn withIsWebhookEnabled(value=true)`](#fn-specparametersinitproviderwithiswebhookenabled)
+      * [`fn withName(value)`](#fn-specparametersinitproviderwithname)
+      * [`fn withPasswordSecretRef(value)`](#fn-specparametersinitproviderwithpasswordsecretref)
+      * [`fn withPasswordSecretRefMixin(value)`](#fn-specparametersinitproviderwithpasswordsecretrefmixin)
+      * [`fn withPreset(value)`](#fn-specparametersinitproviderwithpreset)
+      * [`fn withTeamId(value)`](#fn-specparametersinitproviderwithteamid)
+      * [`fn withTeamRef(value)`](#fn-specparametersinitproviderwithteamref)
+      * [`fn withTeamRefMixin(value)`](#fn-specparametersinitproviderwithteamrefmixin)
+      * [`fn withTeamSelector(value)`](#fn-specparametersinitproviderwithteamselector)
+      * [`fn withTeamSelectorMixin(value)`](#fn-specparametersinitproviderwithteamselectormixin)
+      * [`fn withTriggerTemplate(value)`](#fn-specparametersinitproviderwithtriggertemplate)
+      * [`fn withTriggerType(value)`](#fn-specparametersinitproviderwithtriggertype)
+      * [`fn withUrl(value)`](#fn-specparametersinitproviderwithurl)
+      * [`fn withUser(value)`](#fn-specparametersinitproviderwithuser)
+      * [`obj authorizationHeaderSecretRef`](#obj-specparametersinitproviderauthorizationheadersecretref)
+        * [`fn withKey(value)`](#fn-specparametersinitproviderauthorizationheadersecretrefwithkey)
+        * [`fn withName(value)`](#fn-specparametersinitproviderauthorizationheadersecretrefwithname)
+        * [`fn withNamespace(value)`](#fn-specparametersinitproviderauthorizationheadersecretrefwithnamespace)
+      * [`obj integrationFilterSelector`](#obj-specparametersinitproviderintegrationfilterselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderintegrationfilterselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderintegrationfilterselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderintegrationfilterselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderintegrationfilterselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderintegrationfilterselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderintegrationfilterselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderintegrationfilterselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderintegrationfilterselectorpolicywithresolve)
+      * [`obj passwordSecretRef`](#obj-specparametersinitproviderpasswordsecretref)
+        * [`fn withKey(value)`](#fn-specparametersinitproviderpasswordsecretrefwithkey)
+        * [`fn withName(value)`](#fn-specparametersinitproviderpasswordsecretrefwithname)
+        * [`fn withNamespace(value)`](#fn-specparametersinitproviderpasswordsecretrefwithnamespace)
+      * [`obj teamRef`](#obj-specparametersinitproviderteamref)
+        * [`fn withName(value)`](#fn-specparametersinitproviderteamrefwithname)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamrefwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamrefwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamrefpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamrefpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamrefpolicywithresolve)
+      * [`obj teamSelector`](#obj-specparametersinitproviderteamselector)
+        * [`fn withMatchControllerRef(value=true)`](#fn-specparametersinitproviderteamselectorwithmatchcontrollerref)
+        * [`fn withMatchLabels(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabels)
+        * [`fn withMatchLabelsMixin(value)`](#fn-specparametersinitproviderteamselectorwithmatchlabelsmixin)
+        * [`fn withPolicy(value)`](#fn-specparametersinitproviderteamselectorwithpolicy)
+        * [`fn withPolicyMixin(value)`](#fn-specparametersinitproviderteamselectorwithpolicymixin)
+        * [`obj policy`](#obj-specparametersinitproviderteamselectorpolicy)
+          * [`fn withResolution(value="Required")`](#fn-specparametersinitproviderteamselectorpolicywithresolution)
+          * [`fn withResolve(value)`](#fn-specparametersinitproviderteamselectorpolicywithresolve)
+    * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
+      * [`fn withName(value)`](#fn-specparametersproviderconfigrefwithname)
+      * [`fn withPolicy(value)`](#fn-specparametersproviderconfigrefwithpolicy)
+      * [`fn withPolicyMixin(value)`](#fn-specparametersproviderconfigrefwithpolicymixin)
+      * [`obj policy`](#obj-specparametersproviderconfigrefpolicy)
+        * [`fn withResolution(value="Required")`](#fn-specparametersproviderconfigrefpolicywithresolution)
+        * [`fn withResolve(value)`](#fn-specparametersproviderconfigrefpolicywithresolve)
+    * [`obj writeConnectionSecretToRef`](#obj-specparameterswriteconnectionsecrettoref)
+      * [`fn withName(value)`](#fn-specparameterswriteconnectionsecrettorefwithname)
+      * [`fn withNamespace(value)`](#fn-specparameterswriteconnectionsecrettorefwithnamespace)
+  * [`obj writeConnectionSecretToRef`](#obj-specwriteconnectionsecrettoref)
+    * [`fn withName(value)`](#fn-specwriteconnectionsecrettorefwithname)
+    * [`fn withNamespace(value)`](#fn-specwriteconnectionsecrettorefwithnamespace)
+
+## Fields
+
+### fn new
+
+```jsonnet
+new(name)
+```
+
+PARAMETERS:
+
+* **name** (`string`)
+
+`new` creates a new instance
+### fn withApiVersion
+
+```jsonnet
+withApiVersion()
+```
+
+
+
+### fn withKind
+
+```jsonnet
+withKind()
+```
+
+
+
+### fn withMetadata
+
+```jsonnet
+withMetadata(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+### fn withMetadataMixin
+
+```jsonnet
+withMetadataMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+ObjectMeta is metadata that all persisted resources must have, which includes all objects users must create.
+### fn withSpec
+
+```jsonnet
+withSpec(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+### fn withSpecMixin
+
+```jsonnet
+withSpecMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+### obj metadata
+
+
+#### fn metadata.withAnnotations
+
+```jsonnet
+metadata.withAnnotations(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+#### fn metadata.withAnnotationsMixin
+
+```jsonnet
+metadata.withAnnotationsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: http://kubernetes.io/docs/user-guide/annotations
+#### fn metadata.withClusterName
+
+```jsonnet
+metadata.withClusterName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The name of the cluster which the object belongs to. This is used to distinguish resources with same name and namespace in different clusters. This field is not set anywhere right now and apiserver is going to ignore it if set in create or update request.
+#### fn metadata.withCreationTimestamp
+
+```jsonnet
+metadata.withCreationTimestamp(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.
+
+Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+#### fn metadata.withDeletionGracePeriodSeconds
+
+```jsonnet
+metadata.withDeletionGracePeriodSeconds(value)
+```
+
+PARAMETERS:
+
+* **value** (`integer`)
+
+Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+#### fn metadata.withDeletionTimestamp
+
+```jsonnet
+metadata.withDeletionTimestamp(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not reachable by name) after the time in this field, once the finalizers list is empty. As long as the finalizers list contains items, deletion is blocked. Once the deletionTimestamp is set, this value may not be unset or be set further into the future, although it may be shortened or the resource may be deleted prior to this time. For example, a user may request that a pod is deleted in 30 seconds. The Kubelet will react by sending a graceful termination signal to the containers in the pod. After that 30 seconds, the Kubelet will send a hard termination signal (SIGKILL) to the container and after cleanup, remove the pod from the API. In the presence of network partitions, this object may still exist after this timestamp, until an administrator or automated process can determine the resource is fully terminated. If not set, graceful deletion of the object has not been requested.
+
+Populated by the system when a graceful deletion is requested. Read-only. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
+#### fn metadata.withFinalizers
+
+```jsonnet
+metadata.withFinalizers(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+#### fn metadata.withFinalizersMixin
+
+```jsonnet
+metadata.withFinalizersMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order.  Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.
+#### fn metadata.withGenerateName
+
+```jsonnet
+metadata.withGenerateName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.
+
+If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).
+
+Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#idempotency
+#### fn metadata.withGeneration
+
+```jsonnet
+metadata.withGeneration(value)
+```
+
+PARAMETERS:
+
+* **value** (`integer`)
+
+A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
+#### fn metadata.withLabels
+
+```jsonnet
+metadata.withLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+#### fn metadata.withLabelsMixin
+
+```jsonnet
+metadata.withLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services. More info: http://kubernetes.io/docs/user-guide/labels
+#### fn metadata.withManagedFields
+
+```jsonnet
+metadata.withManagedFields(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
+#### fn metadata.withManagedFieldsMixin
+
+```jsonnet
+metadata.withManagedFieldsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like "ci-cd". The set of fields is always in the version that the workflow used when modifying the object.
+#### fn metadata.withName
+
+```jsonnet
+metadata.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names
+#### fn metadata.withNamespace
+
+```jsonnet
+metadata.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.
+
+Must be a DNS_LABEL. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/namespaces
+#### fn metadata.withOwnerReferences
+
+```jsonnet
+metadata.withOwnerReferences(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+#### fn metadata.withOwnerReferencesMixin
+
+```jsonnet
+metadata.withOwnerReferencesMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.
+#### fn metadata.withResourceVersion
+
+```jsonnet
+metadata.withResourceVersion(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.
+
+Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#concurrency-control-and-consistency
+#### fn metadata.withSelfLink
+
+```jsonnet
+metadata.withSelfLink(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+SelfLink is a URL representing this object. Populated by the system. Read-only.
+
+DEPRECATED Kubernetes will stop propagating this field in 1.20 release and the field is planned to be removed in 1.21 release.
+#### fn metadata.withUid
+
+```jsonnet
+metadata.withUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.
+
+Populated by the system. Read-only. More info: http://kubernetes.io/docs/user-guide/identifiers#uids
+### obj spec
+
+
+#### fn spec.withCompositionRef
+
+```jsonnet
+spec.withCompositionRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### fn spec.withCompositionRefMixin
+
+```jsonnet
+spec.withCompositionRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### fn spec.withCompositionRevisionRef
+
+```jsonnet
+spec.withCompositionRevisionRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### fn spec.withCompositionRevisionRefMixin
+
+```jsonnet
+spec.withCompositionRevisionRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### fn spec.withCompositionSelector
+
+```jsonnet
+spec.withCompositionSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### fn spec.withCompositionSelectorMixin
+
+```jsonnet
+spec.withCompositionSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### fn spec.withCompositionUpdatePolicy
+
+```jsonnet
+spec.withCompositionUpdatePolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Automatic"`, `"Manual"`
+
+
+#### fn spec.withParameters
+
+```jsonnet
+spec.withParameters(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+OutgoingWebhookSpec defines the desired state of OutgoingWebhook
+#### fn spec.withParametersMixin
+
+```jsonnet
+spec.withParametersMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+OutgoingWebhookSpec defines the desired state of OutgoingWebhook
+#### fn spec.withWriteConnectionSecretToRef
+
+```jsonnet
+spec.withWriteConnectionSecretToRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### fn spec.withWriteConnectionSecretToRefMixin
+
+```jsonnet
+spec.withWriteConnectionSecretToRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### obj spec.compositionRef
+
+
+##### fn spec.compositionRef.withName
+
+```jsonnet
+spec.compositionRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+
+#### obj spec.compositionRevisionRef
+
+
+##### fn spec.compositionRevisionRef.withName
+
+```jsonnet
+spec.compositionRevisionRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+
+#### obj spec.compositionSelector
+
+
+##### fn spec.compositionSelector.withMatchLabels
+
+```jsonnet
+spec.compositionSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+##### fn spec.compositionSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.compositionSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+#### obj spec.parameters
+
+
+##### fn spec.parameters.withDeletionPolicy
+
+```jsonnet
+spec.parameters.withDeletionPolicy(value="Delete")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Delete"`
+   - valid values: `"Orphan"`, `"Delete"`
+
+DeletionPolicy specifies what will happen to the underlying external
+when this managed resource is deleted - either "Delete" or "Orphan" the
+external resource.
+This field is planned to be deprecated in favor of the ManagementPolicies
+field in a future release. Currently, both could be set independently and
+non-default values would be honored if the feature flag is enabled.
+See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+##### fn spec.parameters.withExternalName
+
+```jsonnet
+spec.parameters.withExternalName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The name of the managed resource inside the Provider.
+By default Providers give external resources the same name as the Kubernetes object. A provider uses the external name to lookup a managed resource in an external system. The provider looks up the resource in the external system to determine if it exists, and if it matches the managed resource’s desired state. If the provider can’t find the resource, it creates it.
+
+Docs: https://docs.crossplane.io/latest/concepts/managed-resources/#naming-external-resources
+
+##### fn spec.parameters.withForProvider
+
+```jsonnet
+spec.parameters.withForProvider(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+##### fn spec.parameters.withForProviderMixin
+
+```jsonnet
+spec.parameters.withForProviderMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+
+##### fn spec.parameters.withInitProvider
+
+```jsonnet
+spec.parameters.withInitProvider(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+THIS IS A BETA FIELD. It will be honored
+unless the Management Policies feature flag is disabled.
+InitProvider holds the same fields as ForProvider, with the exception
+of Identifier and other resource reference fields. The fields that are
+in InitProvider are merged into ForProvider when the resource is created.
+The same fields are also added to the terraform ignore_changes hook, to
+avoid updating them after creation. This is useful for fields that are
+required on creation, but we do not desire to update them after creation,
+for example because of an external controller is managing them, like an
+autoscaler.
+##### fn spec.parameters.withInitProviderMixin
+
+```jsonnet
+spec.parameters.withInitProviderMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+THIS IS A BETA FIELD. It will be honored
+unless the Management Policies feature flag is disabled.
+InitProvider holds the same fields as ForProvider, with the exception
+of Identifier and other resource reference fields. The fields that are
+in InitProvider are merged into ForProvider when the resource is created.
+The same fields are also added to the terraform ignore_changes hook, to
+avoid updating them after creation. This is useful for fields that are
+required on creation, but we do not desire to update them after creation,
+for example because of an external controller is managing them, like an
+autoscaler.
+##### fn spec.parameters.withManagementPolicies
+
+```jsonnet
+spec.parameters.withManagementPolicies(value=["*"])
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+   - default value: `["*"]`
+
+THIS IS A BETA FIELD. It is on by default but can be opted out
+through a Crossplane feature flag.
+ManagementPolicies specify the array of actions Crossplane is allowed to
+take on the managed and external resources.
+This field is planned to replace the DeletionPolicy field in a future
+release. Currently, both could be set independently and non-default
+values would be honored if the feature flag is enabled. If both are
+custom, the DeletionPolicy field will be ignored.
+See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+##### fn spec.parameters.withManagementPoliciesMixin
+
+```jsonnet
+spec.parameters.withManagementPoliciesMixin(value=["*"])
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+   - default value: `["*"]`
+
+THIS IS A BETA FIELD. It is on by default but can be opted out
+through a Crossplane feature flag.
+ManagementPolicies specify the array of actions Crossplane is allowed to
+take on the managed and external resources.
+This field is planned to replace the DeletionPolicy field in a future
+release. Currently, both could be set independently and non-default
+values would be honored if the feature flag is enabled. If both are
+custom, the DeletionPolicy field will be ignored.
+See the design doc for more information: https://github.com/crossplane/crossplane/blob/499895a25d1a1a0ba1604944ef98ac7a1a71f197/design/design-doc-observe-only-resources.md?plain=1#L223
+and this one: https://github.com/crossplane/crossplane/blob/444267e84783136daa93568b364a5f01228cacbe/design/one-pager-ignore-changes.md
+##### fn spec.parameters.withProviderConfigRef
+
+```jsonnet
+spec.parameters.withProviderConfigRef(value={"name": "default"})
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+   - default value: `{"name": "default"}`
+
+ProviderConfigReference specifies how the provider that will be used to
+create, observe, update, and delete this managed resource should be
+configured.
+##### fn spec.parameters.withProviderConfigRefMixin
+
+```jsonnet
+spec.parameters.withProviderConfigRefMixin(value={"name": "default"})
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+   - default value: `{"name": "default"}`
+
+ProviderConfigReference specifies how the provider that will be used to
+create, observe, update, and delete this managed resource should be
+configured.
+##### fn spec.parameters.withSelectorLabel
+
+```jsonnet
+spec.parameters.withSelectorLabel(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Configure a custom label for use with selector.matchLabels.
+##### fn spec.parameters.withWriteConnectionSecretToRef
+
+```jsonnet
+spec.parameters.withWriteConnectionSecretToRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+WriteConnectionSecretToReference specifies the namespace and name of a
+Secret to which any connection details for this managed resource should
+be written. Connection details frequently include the endpoint, username,
+and password required to connect to the managed resource.
+##### fn spec.parameters.withWriteConnectionSecretToRefMixin
+
+```jsonnet
+spec.parameters.withWriteConnectionSecretToRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+WriteConnectionSecretToReference specifies the namespace and name of a
+Secret to which any connection details for this managed resource should
+be written. Connection details frequently include the endpoint, username,
+and password required to connect to the managed resource.
+##### obj spec.parameters.forProvider
+
+
+###### fn spec.parameters.forProvider.withAuthorizationHeaderSecretRef
+
+```jsonnet
+spec.parameters.forProvider.withAuthorizationHeaderSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
+The auth data of the webhook. Used in Authorization header instead of user/password auth.
+###### fn spec.parameters.forProvider.withAuthorizationHeaderSecretRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withAuthorizationHeaderSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
+The auth data of the webhook. Used in Authorization header instead of user/password auth.
+###### fn spec.parameters.forProvider.withData
+
+```jsonnet
+spec.parameters.forProvider.withData(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The data of the webhook.
+The data of the webhook.
+###### fn spec.parameters.forProvider.withForwardWholePayload
+
+```jsonnet
+spec.parameters.forProvider.withForwardWholePayload(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Toggle to send the entire webhook payload instead of using the values in the Data field.
+Toggle to send the entire webhook payload instead of using the values in the Data field.
+###### fn spec.parameters.forProvider.withHeaders
+
+```jsonnet
+spec.parameters.forProvider.withHeaders(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Headers to add to the outgoing webhook request.
+Headers to add to the outgoing webhook request.
+###### fn spec.parameters.forProvider.withHttpMethod
+
+```jsonnet
+spec.parameters.forProvider.withHttpMethod(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The HTTP method used in the request made by the outgoing webhook. Defaults to POST.
+The HTTP method used in the request made by the outgoing webhook. Defaults to `POST`.
+###### fn spec.parameters.forProvider.withIntegrationFilter
+
+```jsonnet
+spec.parameters.forProvider.withIntegrationFilter(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+###### fn spec.parameters.forProvider.withIntegrationFilterMixin
+
+```jsonnet
+spec.parameters.forProvider.withIntegrationFilterMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+###### fn spec.parameters.forProvider.withIntegrationFilterRef
+
+```jsonnet
+spec.parameters.forProvider.withIntegrationFilterRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.forProvider.withIntegrationFilterRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withIntegrationFilterRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.forProvider.withIntegrationFilterSelector
+
+```jsonnet
+spec.parameters.forProvider.withIntegrationFilterSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.forProvider.withIntegrationFilterSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withIntegrationFilterSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.forProvider.withIsWebhookEnabled
+
+```jsonnet
+spec.parameters.forProvider.withIsWebhookEnabled(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Controls whether the outgoing webhook will trigger or is ignored. Defaults to true.
+Controls whether the outgoing webhook will trigger or is ignored. Defaults to `true`.
+###### fn spec.parameters.forProvider.withName
+
+```jsonnet
+spec.parameters.forProvider.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of the outgoing webhook.
+The name of the outgoing webhook.
+###### fn spec.parameters.forProvider.withPasswordSecretRef
+
+```jsonnet
+spec.parameters.forProvider.withPasswordSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used for Basic authentication
+The auth data of the webhook. Used for Basic authentication
+###### fn spec.parameters.forProvider.withPasswordSecretRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withPasswordSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used for Basic authentication
+The auth data of the webhook. Used for Basic authentication
+###### fn spec.parameters.forProvider.withPreset
+
+```jsonnet
+spec.parameters.forProvider.withPreset(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.
+The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
+###### fn spec.parameters.forProvider.withTeamId
+
+```jsonnet
+spec.parameters.forProvider.withTeamId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
+The ID of the OnCall team (using the `grafana_oncall_team` datasource).
+###### fn spec.parameters.forProvider.withTeamRef
+
+```jsonnet
+spec.parameters.forProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.forProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.forProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### fn spec.parameters.forProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.forProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### fn spec.parameters.forProvider.withTriggerTemplate
+
+```jsonnet
+spec.parameters.forProvider.withTriggerTemplate(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) A template used to dynamically determine whether the webhook should execute based on the content of the payload.
+A template used to dynamically determine whether the webhook should execute based on the content of the payload.
+###### fn spec.parameters.forProvider.withTriggerType
+
+```jsonnet
+spec.parameters.forProvider.withTriggerType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.
+The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.
+###### fn spec.parameters.forProvider.withUrl
+
+```jsonnet
+spec.parameters.forProvider.withUrl(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The webhook URL. Required when not using a preset that controls this field.
+The webhook URL. Required when not using a preset that controls this field.
+###### fn spec.parameters.forProvider.withUser
+
+```jsonnet
+spec.parameters.forProvider.withUser(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Username to use when making the outgoing webhook request.
+Username to use when making the outgoing webhook request.
+###### obj spec.parameters.forProvider.authorizationHeaderSecretRef
+
+
+####### fn spec.parameters.forProvider.authorizationHeaderSecretRef.withKey
+
+```jsonnet
+spec.parameters.forProvider.authorizationHeaderSecretRef.withKey(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The key to select.
+####### fn spec.parameters.forProvider.authorizationHeaderSecretRef.withName
+
+```jsonnet
+spec.parameters.forProvider.authorizationHeaderSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+####### fn spec.parameters.forProvider.authorizationHeaderSecretRef.withNamespace
+
+```jsonnet
+spec.parameters.forProvider.authorizationHeaderSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
+###### obj spec.parameters.forProvider.integrationFilterSelector
+
+
+####### fn spec.parameters.forProvider.integrationFilterSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.integrationFilterSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.integrationFilterSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.integrationFilterSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.integrationFilterSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.integrationFilterSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.integrationFilterSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.integrationFilterSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.integrationFilterSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.integrationFilterSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.integrationFilterSelector.policy
+
+
+######## fn spec.parameters.forProvider.integrationFilterSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.integrationFilterSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.integrationFilterSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.integrationFilterSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.passwordSecretRef
+
+
+####### fn spec.parameters.forProvider.passwordSecretRef.withKey
+
+```jsonnet
+spec.parameters.forProvider.passwordSecretRef.withKey(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The key to select.
+####### fn spec.parameters.forProvider.passwordSecretRef.withName
+
+```jsonnet
+spec.parameters.forProvider.passwordSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+####### fn spec.parameters.forProvider.passwordSecretRef.withNamespace
+
+```jsonnet
+spec.parameters.forProvider.passwordSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
+###### obj spec.parameters.forProvider.teamRef
+
+
+####### fn spec.parameters.forProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.forProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.forProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.forProvider.teamRef.policy
+
+
+######## fn spec.parameters.forProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.forProvider.teamSelector
+
+
+####### fn spec.parameters.forProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.forProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.forProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.forProvider.teamSelector.policy
+
+
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.forProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.forProvider.teamSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+##### obj spec.parameters.initProvider
+
+
+###### fn spec.parameters.initProvider.withAuthorizationHeaderSecretRef
+
+```jsonnet
+spec.parameters.initProvider.withAuthorizationHeaderSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
+The auth data of the webhook. Used in Authorization header instead of user/password auth.
+###### fn spec.parameters.initProvider.withAuthorizationHeaderSecretRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withAuthorizationHeaderSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used in Authorization header instead of user/password auth.
+The auth data of the webhook. Used in Authorization header instead of user/password auth.
+###### fn spec.parameters.initProvider.withData
+
+```jsonnet
+spec.parameters.initProvider.withData(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The data of the webhook.
+The data of the webhook.
+###### fn spec.parameters.initProvider.withForwardWholePayload
+
+```jsonnet
+spec.parameters.initProvider.withForwardWholePayload(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Toggle to send the entire webhook payload instead of using the values in the Data field.
+Toggle to send the entire webhook payload instead of using the values in the Data field.
+###### fn spec.parameters.initProvider.withHeaders
+
+```jsonnet
+spec.parameters.initProvider.withHeaders(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Headers to add to the outgoing webhook request.
+Headers to add to the outgoing webhook request.
+###### fn spec.parameters.initProvider.withHttpMethod
+
+```jsonnet
+spec.parameters.initProvider.withHttpMethod(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The HTTP method used in the request made by the outgoing webhook. Defaults to POST.
+The HTTP method used in the request made by the outgoing webhook. Defaults to `POST`.
+###### fn spec.parameters.initProvider.withIntegrationFilter
+
+```jsonnet
+spec.parameters.initProvider.withIntegrationFilter(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+###### fn spec.parameters.initProvider.withIntegrationFilterMixin
+
+```jsonnet
+spec.parameters.initProvider.withIntegrationFilterMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String) Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+Restricts the outgoing webhook to only trigger if the event came from a selected integration. If no integrations are selected the outgoing webhook will trigger for any integration.
+###### fn spec.parameters.initProvider.withIntegrationFilterRef
+
+```jsonnet
+spec.parameters.initProvider.withIntegrationFilterRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.initProvider.withIntegrationFilterRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withIntegrationFilterRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+References to Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.initProvider.withIntegrationFilterSelector
+
+```jsonnet
+spec.parameters.initProvider.withIntegrationFilterSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.initProvider.withIntegrationFilterSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withIntegrationFilterSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a list of Integration in oncall to populate integrationFilter.
+###### fn spec.parameters.initProvider.withIsWebhookEnabled
+
+```jsonnet
+spec.parameters.initProvider.withIsWebhookEnabled(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+(Boolean) Controls whether the outgoing webhook will trigger or is ignored. Defaults to true.
+Controls whether the outgoing webhook will trigger or is ignored. Defaults to `true`.
+###### fn spec.parameters.initProvider.withName
+
+```jsonnet
+spec.parameters.initProvider.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of the outgoing webhook.
+The name of the outgoing webhook.
+###### fn spec.parameters.initProvider.withPasswordSecretRef
+
+```jsonnet
+spec.parameters.initProvider.withPasswordSecretRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used for Basic authentication
+The auth data of the webhook. Used for Basic authentication
+###### fn spec.parameters.initProvider.withPasswordSecretRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withPasswordSecretRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(String, Sensitive) The auth data of the webhook. Used for Basic authentication
+The auth data of the webhook. Used for Basic authentication
+###### fn spec.parameters.initProvider.withPreset
+
+```jsonnet
+spec.parameters.initProvider.withPreset(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The preset of the outgoing webhook. Possible values are: simple_webhook, advanced_webhook, grafana_sift, grafana_assistant, incident_webhook. If no preset is set, the default preset is advanced_webhook.
+The preset of the outgoing webhook. Possible values are: `simple_webhook`, `advanced_webhook`, `grafana_sift`, `grafana_assistant`, `incident_webhook`. If no preset is set, the default preset is `advanced_webhook`.
+###### fn spec.parameters.initProvider.withTeamId
+
+```jsonnet
+spec.parameters.initProvider.withTeamId(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The ID of the OnCall team (using the grafana_oncall_team datasource).
+The ID of the OnCall team (using the `grafana_oncall_team` datasource).
+###### fn spec.parameters.initProvider.withTeamRef
+
+```jsonnet
+spec.parameters.initProvider.withTeamRef(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.initProvider.withTeamRefMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamRefMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Reference to a Team in oncall to populate teamId.
+###### fn spec.parameters.initProvider.withTeamSelector
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelector(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### fn spec.parameters.initProvider.withTeamSelectorMixin
+
+```jsonnet
+spec.parameters.initProvider.withTeamSelectorMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Selector for a Team in oncall to populate teamId.
+###### fn spec.parameters.initProvider.withTriggerTemplate
+
+```jsonnet
+spec.parameters.initProvider.withTriggerTemplate(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) A template used to dynamically determine whether the webhook should execute based on the content of the payload.
+A template used to dynamically determine whether the webhook should execute based on the content of the payload.
+###### fn spec.parameters.initProvider.withTriggerType
+
+```jsonnet
+spec.parameters.initProvider.withTriggerType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: escalation, alert group created, status change, acknowledge, resolve, silence, unsilence, unresolve, unacknowledge, resolution note added, personal notification; for incident webhooks: incident declared, incident changed, incident resolved. Defaults to escalation.
+The type of event that will cause this outgoing webhook to execute. The events available will depend on the preset used. For alert group webhooks, the possible triggers are: `escalation`, `alert group created`, `status change`, `acknowledge`, `resolve`, `silence`, `unsilence`, `unresolve`, `unacknowledge`, `resolution note added`, `personal notification`; for incident webhooks: `incident declared`, `incident changed`, `incident resolved`. Defaults to `escalation`.
+###### fn spec.parameters.initProvider.withUrl
+
+```jsonnet
+spec.parameters.initProvider.withUrl(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The webhook URL. Required when not using a preset that controls this field.
+The webhook URL. Required when not using a preset that controls this field.
+###### fn spec.parameters.initProvider.withUser
+
+```jsonnet
+spec.parameters.initProvider.withUser(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) Username to use when making the outgoing webhook request.
+Username to use when making the outgoing webhook request.
+###### obj spec.parameters.initProvider.authorizationHeaderSecretRef
+
+
+####### fn spec.parameters.initProvider.authorizationHeaderSecretRef.withKey
+
+```jsonnet
+spec.parameters.initProvider.authorizationHeaderSecretRef.withKey(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The key to select.
+####### fn spec.parameters.initProvider.authorizationHeaderSecretRef.withName
+
+```jsonnet
+spec.parameters.initProvider.authorizationHeaderSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+####### fn spec.parameters.initProvider.authorizationHeaderSecretRef.withNamespace
+
+```jsonnet
+spec.parameters.initProvider.authorizationHeaderSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
+###### obj spec.parameters.initProvider.integrationFilterSelector
+
+
+####### fn spec.parameters.initProvider.integrationFilterSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.integrationFilterSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.integrationFilterSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.integrationFilterSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.integrationFilterSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.integrationFilterSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.integrationFilterSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.integrationFilterSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.integrationFilterSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.integrationFilterSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.integrationFilterSelector.policy
+
+
+######## fn spec.parameters.initProvider.integrationFilterSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.integrationFilterSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.integrationFilterSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.integrationFilterSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.passwordSecretRef
+
+
+####### fn spec.parameters.initProvider.passwordSecretRef.withKey
+
+```jsonnet
+spec.parameters.initProvider.passwordSecretRef.withKey(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The key to select.
+####### fn spec.parameters.initProvider.passwordSecretRef.withName
+
+```jsonnet
+spec.parameters.initProvider.passwordSecretRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+####### fn spec.parameters.initProvider.passwordSecretRef.withNamespace
+
+```jsonnet
+spec.parameters.initProvider.passwordSecretRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
+###### obj spec.parameters.initProvider.teamRef
+
+
+####### fn spec.parameters.initProvider.teamRef.withName
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+####### fn spec.parameters.initProvider.teamRef.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### fn spec.parameters.initProvider.teamRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+####### obj spec.parameters.initProvider.teamRef.policy
+
+
+######## fn spec.parameters.initProvider.teamRef.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamRef.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+###### obj spec.parameters.initProvider.teamSelector
+
+
+####### fn spec.parameters.initProvider.teamSelector.withMatchControllerRef
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchControllerRef(value=true)
+```
+
+PARAMETERS:
+
+* **value** (`boolean`)
+   - default value: `true`
+
+MatchControllerRef ensures an object with the same controller reference
+as the selecting object is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabels
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabels(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withMatchLabelsMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withMatchLabelsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+MatchLabels ensures an object with matching labels is selected.
+####### fn spec.parameters.initProvider.teamSelector.withPolicy
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### fn spec.parameters.initProvider.teamSelector.withPolicyMixin
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for selection.
+####### obj spec.parameters.initProvider.teamSelector.policy
+
+
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolution
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+######## fn spec.parameters.initProvider.teamSelector.policy.withResolve
+
+```jsonnet
+spec.parameters.initProvider.teamSelector.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+##### obj spec.parameters.providerConfigRef
+
+
+###### fn spec.parameters.providerConfigRef.withName
+
+```jsonnet
+spec.parameters.providerConfigRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the referenced object.
+###### fn spec.parameters.providerConfigRef.withPolicy
+
+```jsonnet
+spec.parameters.providerConfigRef.withPolicy(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+###### fn spec.parameters.providerConfigRef.withPolicyMixin
+
+```jsonnet
+spec.parameters.providerConfigRef.withPolicyMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+Policies for referencing.
+###### obj spec.parameters.providerConfigRef.policy
+
+
+####### fn spec.parameters.providerConfigRef.policy.withResolution
+
+```jsonnet
+spec.parameters.providerConfigRef.policy.withResolution(value="Required")
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - default value: `"Required"`
+   - valid values: `"Required"`, `"Optional"`
+
+Resolution specifies whether resolution of this reference is required.
+The default is 'Required', which means the reconcile will fail if the
+reference cannot be resolved. 'Optional' means this reference will be
+a no-op if it cannot be resolved.
+####### fn spec.parameters.providerConfigRef.policy.withResolve
+
+```jsonnet
+spec.parameters.providerConfigRef.policy.withResolve(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+   - valid values: `"Always"`, `"IfNotPresent"`
+
+Resolve specifies when this reference should be resolved. The default
+is 'IfNotPresent', which will attempt to resolve the reference only when
+the corresponding field is not present. Use 'Always' to resolve the
+reference on every reconcile.
+##### obj spec.parameters.writeConnectionSecretToRef
+
+
+###### fn spec.parameters.writeConnectionSecretToRef.withName
+
+```jsonnet
+spec.parameters.writeConnectionSecretToRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Name of the secret.
+###### fn spec.parameters.writeConnectionSecretToRef.withNamespace
+
+```jsonnet
+spec.parameters.writeConnectionSecretToRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Namespace of the secret.
+#### obj spec.writeConnectionSecretToRef
+
+
+##### fn spec.writeConnectionSecretToRef.withName
+
+```jsonnet
+spec.writeConnectionSecretToRef.withName(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+
+##### fn spec.writeConnectionSecretToRef.withNamespace
+
+```jsonnet
+spec.writeConnectionSecretToRef.withNamespace(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+

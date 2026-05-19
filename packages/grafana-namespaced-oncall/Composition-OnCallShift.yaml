@@ -68,6 +68,27 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.teamId
                 toFieldPath: spec.forProvider.teamId
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.name
+                toFieldPath: spec.forProvider.teamRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.policy.resolution
+                toFieldPath: spec.forProvider.teamRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamRef.policy.resolve
+                toFieldPath: spec.forProvider.teamRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.matchControllerRef
+                toFieldPath: spec.forProvider.teamSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.matchLabels
+                toFieldPath: spec.forProvider.teamSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.policy.resolution
+                toFieldPath: spec.forProvider.teamSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.teamSelector.policy.resolve
+                toFieldPath: spec.forProvider.teamSelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.timeZone
                 toFieldPath: spec.forProvider.timeZone
                 type: FromCompositeFieldPath
@@ -79,6 +100,21 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.users
                 toFieldPath: spec.forProvider.users
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.usersRef
+                toFieldPath: spec.forProvider.usersRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.usersSelector.matchControllerRef
+                toFieldPath: spec.forProvider.usersSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.usersSelector.matchLabels
+                toFieldPath: spec.forProvider.usersSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.usersSelector.policy.resolution
+                toFieldPath: spec.forProvider.usersSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.usersSelector.policy.resolve
+                toFieldPath: spec.forProvider.usersSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.weekStart
                 toFieldPath: spec.forProvider.weekStart
@@ -119,6 +155,27 @@ spec:
               - fromFieldPath: spec.parameters.initProvider.teamId
                 toFieldPath: spec.initProvider.teamId
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.name
+                toFieldPath: spec.initProvider.teamRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.policy.resolution
+                toFieldPath: spec.initProvider.teamRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamRef.policy.resolve
+                toFieldPath: spec.initProvider.teamRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.matchControllerRef
+                toFieldPath: spec.initProvider.teamSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.matchLabels
+                toFieldPath: spec.initProvider.teamSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.policy.resolution
+                toFieldPath: spec.initProvider.teamSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.teamSelector.policy.resolve
+                toFieldPath: spec.initProvider.teamSelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.timeZone
                 toFieldPath: spec.initProvider.timeZone
                 type: FromCompositeFieldPath
@@ -130,6 +187,21 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.users
                 toFieldPath: spec.initProvider.users
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.usersRef
+                toFieldPath: spec.initProvider.usersRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.usersSelector.matchControllerRef
+                toFieldPath: spec.initProvider.usersSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.usersSelector.matchLabels
+                toFieldPath: spec.initProvider.usersSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.usersSelector.policy.resolution
+                toFieldPath: spec.initProvider.usersSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.usersSelector.policy.resolve
+                toFieldPath: spec.initProvider.usersSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.weekStart
                 toFieldPath: spec.initProvider.weekStart

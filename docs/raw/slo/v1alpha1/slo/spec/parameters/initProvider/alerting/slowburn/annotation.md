@@ -31,5 +31,5 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(Number) Value between 0 and 1. If the value of the query is above the objective, the SLO is met.
+(String) Templatable value
 Templatable value

@@ -932,8 +932,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether to include a link to the dashboard in the report. Defaults to true.
-Whether to include a link to the dashboard in the report. Defaults to `true`.
+(Boolean) Whether to include a link to the dashboard in the report.
+Whether to include a link to the dashboard in the report.
 ###### fn spec.parameters.forProvider.withIncludeTableCsv
 
 ```jsonnet
@@ -945,8 +945,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether to include a CSV file of table panel data. Defaults to false.
-Whether to include a CSV file of table panel data. Defaults to `false`.
+(Boolean) Whether to include a CSV file of table panel data.
+Whether to include a CSV file of table panel data.
 ###### fn spec.parameters.forProvider.withLayout
 
 ```jsonnet
@@ -957,8 +957,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Layout of the report. Allowed values: simple, grid. Defaults to grid.
-Layout of the report. Allowed values: `simple`, `grid`. Defaults to `grid`.
+(String) Layout of the report. Allowed values: simple, grid.
+Layout of the report. Allowed values: `simple`, `grid`.
 ###### fn spec.parameters.forProvider.withMessage
 
 ```jsonnet
@@ -993,8 +993,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
-The Organization ID. If not set, the Org ID defined in the provider block will be used.
+(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
+The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
 ###### fn spec.parameters.forProvider.withOrganizationRef
 
 ```jsonnet
@@ -1049,8 +1049,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Orientation of the report. Allowed values: landscape, portrait. Defaults to landscape.
-Orientation of the report. Allowed values: `landscape`, `portrait`. Defaults to `landscape`.
+(String) Orientation of the report. Allowed values: landscape, portrait.
+Orientation of the report. Allowed values: `landscape`, `portrait`.
 ###### fn spec.parameters.forProvider.withRecipients
 
 ```jsonnet
@@ -1097,8 +1097,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)
-Schedule of the report.
+(Block List)  Schedule of the report. (see below for nested schema)
+(Required) Schedule of the report.
 ###### fn spec.parameters.forProvider.withScheduleMixin
 
 ```jsonnet
@@ -1109,8 +1109,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)
-Schedule of the report.
+(Block List)  Schedule of the report. (see below for nested schema)
+(Required) Schedule of the report.
 ###### obj spec.parameters.forProvider.organizationRef
 
 
@@ -1337,8 +1337,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether to include a link to the dashboard in the report. Defaults to true.
-Whether to include a link to the dashboard in the report. Defaults to `true`.
+(Boolean) Whether to include a link to the dashboard in the report.
+Whether to include a link to the dashboard in the report.
 ###### fn spec.parameters.initProvider.withIncludeTableCsv
 
 ```jsonnet
@@ -1350,8 +1350,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether to include a CSV file of table panel data. Defaults to false.
-Whether to include a CSV file of table panel data. Defaults to `false`.
+(Boolean) Whether to include a CSV file of table panel data.
+Whether to include a CSV file of table panel data.
 ###### fn spec.parameters.initProvider.withLayout
 
 ```jsonnet
@@ -1362,8 +1362,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Layout of the report. Allowed values: simple, grid. Defaults to grid.
-Layout of the report. Allowed values: `simple`, `grid`. Defaults to `grid`.
+(String) Layout of the report. Allowed values: simple, grid.
+Layout of the report. Allowed values: `simple`, `grid`.
 ###### fn spec.parameters.initProvider.withMessage
 
 ```jsonnet
@@ -1398,8 +1398,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) The Organization ID. If not set, the Org ID defined in the provider block will be used.
-The Organization ID. If not set, the Org ID defined in the provider block will be used.
+(String) The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
+The Organization ID. If not set, the default organization is used for basic authentication, or the one that owns your service account for token authentication.
 ###### fn spec.parameters.initProvider.withOrganizationRef
 
 ```jsonnet
@@ -1454,8 +1454,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Orientation of the report. Allowed values: landscape, portrait. Defaults to landscape.
-Orientation of the report. Allowed values: `landscape`, `portrait`. Defaults to `landscape`.
+(String) Orientation of the report. Allowed values: landscape, portrait.
+Orientation of the report. Allowed values: `landscape`, `portrait`.
 ###### fn spec.parameters.initProvider.withRecipients
 
 ```jsonnet
@@ -1502,8 +1502,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)
-Schedule of the report.
+(Block List)  Schedule of the report. (see below for nested schema)
+(Required) Schedule of the report.
 ###### fn spec.parameters.initProvider.withScheduleMixin
 
 ```jsonnet
@@ -1514,8 +1514,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-(Block List, Min: 1, Max: 1) Schedule of the report. (see below for nested schema)
-Schedule of the report.
+(Block List)  Schedule of the report. (see below for nested schema)
+(Required) Schedule of the report.
 ###### obj spec.parameters.initProvider.organizationRef
 
 

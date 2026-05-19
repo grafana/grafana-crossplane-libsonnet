@@ -38,11 +38,53 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.checkId
                 toFieldPath: spec.forProvider.checkId
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.checkRef.name
+                toFieldPath: spec.forProvider.checkRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.checkRef.policy.resolution
+                toFieldPath: spec.forProvider.checkRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.checkRef.policy.resolve
+                toFieldPath: spec.forProvider.checkRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.checkSelector.matchControllerRef
+                toFieldPath: spec.forProvider.checkSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.checkSelector.matchLabels
+                toFieldPath: spec.forProvider.checkSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.checkSelector.policy.resolution
+                toFieldPath: spec.forProvider.checkSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.checkSelector.policy.resolve
+                toFieldPath: spec.forProvider.checkSelector.policy.resolve
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.alerts
                 toFieldPath: spec.initProvider.alerts
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.checkId
                 toFieldPath: spec.initProvider.checkId
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.checkRef.name
+                toFieldPath: spec.initProvider.checkRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.checkRef.policy.resolution
+                toFieldPath: spec.initProvider.checkRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.checkRef.policy.resolve
+                toFieldPath: spec.initProvider.checkRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.checkSelector.matchControllerRef
+                toFieldPath: spec.initProvider.checkSelector.matchControllerRef
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.checkSelector.matchLabels
+                toFieldPath: spec.initProvider.checkSelector.matchLabels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.checkSelector.policy.resolution
+                toFieldPath: spec.initProvider.checkSelector.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.checkSelector.policy.resolve
+                toFieldPath: spec.initProvider.checkSelector.policy.resolve
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

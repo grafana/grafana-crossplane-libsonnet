@@ -99,6 +99,16 @@
           },
         },
       },
+      '#withTerraformSourceNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'If omitted, the namespace default is used. If omitted, the namespace `default` is used.' } },
+      withTerraformSourceNamespace(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              terraformSourceNamespace: value,
+            },
+          },
+        },
+      },
     },
   '#withInitProvider': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'THIS IS A BETA FIELD. It will be honored\nunless the Management Policies feature flag is disabled.\nInitProvider holds the same fields as ForProvider, with the exception\nof Identifier and other resource reference fields. The fields that are\nin InitProvider are merged into ForProvider when the resource is created.\nThe same fields are also added to the terraform ignore_changes hook, to\navoid updating them after creation. This is useful for fields that are\nrequired on creation, but we do not desire to update them after creation,\nfor example because of an external controller is managing them, like an\nautoscaler.' } },
   withInitProvider(value): {
@@ -180,6 +190,16 @@
           parameters+: {
             initProvider+: {
               name: value,
+            },
+          },
+        },
+      },
+      '#withTerraformSourceNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'If omitted, the namespace default is used. If omitted, the namespace `default` is used.' } },
+      withTerraformSourceNamespace(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              terraformSourceNamespace: value,
             },
           },
         },

@@ -47,6 +47,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.name
                 toFieldPath: spec.forProvider.name
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.terraformSourceNamespace
+                toFieldPath: spec.forProvider.terraformSourceNamespace
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.configType
                 toFieldPath: spec.initProvider.configType
                 type: FromCompositeFieldPath
@@ -61,6 +64,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.name
                 toFieldPath: spec.initProvider.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.terraformSourceNamespace
+                toFieldPath: spec.initProvider.terraformSourceNamespace
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.managementPolicies
                 toFieldPath: spec.managementPolicies

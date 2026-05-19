@@ -1,0 +1,248 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  annotations:
+    tanka.dev/namespaced: "false"
+  labels:
+    crossplane.io/xrd: xrepositoryv0alpha1s.oss.grafana.net.namespaced
+  name: repositoryv0alpha1-namespaced
+spec:
+  compositeTypeRef:
+    apiVersion: oss.grafana.net.namespaced/v1alpha1
+    kind: XRepositoryV0Alpha1
+  mode: Pipeline
+  pipeline:
+    - functionRef:
+        name: function-patch-and-transform
+      input:
+        apiVersion: pt.fn.crossplane.io/v1beta1
+        kind: Resources
+        resources:
+          - base:
+              apiVersion: oss.grafana.crossplane.io/v1alpha1
+              kind: RepositoryV0Alpha1
+            name: repositoryv0alpha1
+            patches:
+              - fromFieldPath: spec.parameters.externalName
+                toFieldPath: "metadata.annotations[\"crossplane.io/external-name\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.selectorLabel
+                toFieldPath: "metadata.labels[\"selector\"]"
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.deletionPolicy
+                toFieldPath: spec.deletionPolicy
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.metadata.folderUid
+                toFieldPath: spec.forProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.metadata.uid
+                toFieldPath: spec.forProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.options.managerIdentity
+                toFieldPath: spec.forProvider.options.managerIdentity
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.options.overwrite
+                toFieldPath: spec.forProvider.options.overwrite
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.secure.token
+                toFieldPath: spec.forProvider.secure.token
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.secure.webhookSecret
+                toFieldPath: spec.forProvider.secure.webhookSecret
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.secureVersion
+                toFieldPath: spec.forProvider.secureVersion
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.bitbucket.branch
+                toFieldPath: spec.forProvider.spec.bitbucket.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.bitbucket.path
+                toFieldPath: spec.forProvider.spec.bitbucket.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.bitbucket.tokenUser
+                toFieldPath: spec.forProvider.spec.bitbucket.tokenUser
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.bitbucket.url
+                toFieldPath: spec.forProvider.spec.bitbucket.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.connection.name
+                toFieldPath: spec.forProvider.spec.connection.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.description
+                toFieldPath: spec.forProvider.spec.description
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.git.branch
+                toFieldPath: spec.forProvider.spec.git.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.git.path
+                toFieldPath: spec.forProvider.spec.git.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.git.tokenUser
+                toFieldPath: spec.forProvider.spec.git.tokenUser
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.git.url
+                toFieldPath: spec.forProvider.spec.git.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.github.branch
+                toFieldPath: spec.forProvider.spec.github.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.github.generateDashboardPreviews
+                toFieldPath: spec.forProvider.spec.github.generateDashboardPreviews
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.github.path
+                toFieldPath: spec.forProvider.spec.github.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.github.url
+                toFieldPath: spec.forProvider.spec.github.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.gitlab.branch
+                toFieldPath: spec.forProvider.spec.gitlab.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.gitlab.path
+                toFieldPath: spec.forProvider.spec.gitlab.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.gitlab.url
+                toFieldPath: spec.forProvider.spec.gitlab.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.local.path
+                toFieldPath: spec.forProvider.spec.local.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.sync.enabled
+                toFieldPath: spec.forProvider.spec.sync.enabled
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.sync.intervalSeconds
+                toFieldPath: spec.forProvider.spec.sync.intervalSeconds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.sync.target
+                toFieldPath: spec.forProvider.spec.sync.target
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.title
+                toFieldPath: spec.forProvider.spec.title
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.type
+                toFieldPath: spec.forProvider.spec.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.webhook.baseUrl
+                toFieldPath: spec.forProvider.spec.webhook.baseUrl
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.spec.workflows
+                toFieldPath: spec.forProvider.spec.workflows
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.folderUid
+                toFieldPath: spec.initProvider.metadata.folderUid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.metadata.uid
+                toFieldPath: spec.initProvider.metadata.uid
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.managerIdentity
+                toFieldPath: spec.initProvider.options.managerIdentity
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.options.overwrite
+                toFieldPath: spec.initProvider.options.overwrite
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.secure.token
+                toFieldPath: spec.initProvider.secure.token
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.secure.webhookSecret
+                toFieldPath: spec.initProvider.secure.webhookSecret
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.secureVersion
+                toFieldPath: spec.initProvider.secureVersion
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.bitbucket.branch
+                toFieldPath: spec.initProvider.spec.bitbucket.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.bitbucket.path
+                toFieldPath: spec.initProvider.spec.bitbucket.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.bitbucket.tokenUser
+                toFieldPath: spec.initProvider.spec.bitbucket.tokenUser
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.bitbucket.url
+                toFieldPath: spec.initProvider.spec.bitbucket.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.connection.name
+                toFieldPath: spec.initProvider.spec.connection.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.description
+                toFieldPath: spec.initProvider.spec.description
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.git.branch
+                toFieldPath: spec.initProvider.spec.git.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.git.path
+                toFieldPath: spec.initProvider.spec.git.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.git.tokenUser
+                toFieldPath: spec.initProvider.spec.git.tokenUser
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.git.url
+                toFieldPath: spec.initProvider.spec.git.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.github.branch
+                toFieldPath: spec.initProvider.spec.github.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.github.generateDashboardPreviews
+                toFieldPath: spec.initProvider.spec.github.generateDashboardPreviews
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.github.path
+                toFieldPath: spec.initProvider.spec.github.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.github.url
+                toFieldPath: spec.initProvider.spec.github.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.gitlab.branch
+                toFieldPath: spec.initProvider.spec.gitlab.branch
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.gitlab.path
+                toFieldPath: spec.initProvider.spec.gitlab.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.gitlab.url
+                toFieldPath: spec.initProvider.spec.gitlab.url
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.local.path
+                toFieldPath: spec.initProvider.spec.local.path
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.sync.enabled
+                toFieldPath: spec.initProvider.spec.sync.enabled
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.sync.intervalSeconds
+                toFieldPath: spec.initProvider.spec.sync.intervalSeconds
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.sync.target
+                toFieldPath: spec.initProvider.spec.sync.target
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.title
+                toFieldPath: spec.initProvider.spec.title
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.type
+                toFieldPath: spec.initProvider.spec.type
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.webhook.baseUrl
+                toFieldPath: spec.initProvider.spec.webhook.baseUrl
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.spec.workflows
+                toFieldPath: spec.initProvider.spec.workflows
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.managementPolicies
+                toFieldPath: spec.managementPolicies
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.name
+                toFieldPath: spec.providerConfigRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolution
+                toFieldPath: spec.providerConfigRef.policy.resolution
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.providerConfigRef.policy.resolve
+                toFieldPath: spec.providerConfigRef.policy.resolve
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.name
+                toFieldPath: spec.writeConnectionSecretToRef.name
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.writeConnectionSecretToRef.namespace
+                toFieldPath: spec.writeConnectionSecretToRef.namespace
+                type: FromCompositeFieldPath
+      step: patch-and-transform
+    - functionRef:
+        name: function-grafana-data
+      step: grafana-data

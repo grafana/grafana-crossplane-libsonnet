@@ -41,6 +41,20 @@
     },
   },
 
+  cloudintegrations(version): {
+    apiVersion: 'pkg.crossplane.io/v1',
+    kind: 'Configuration',
+    metadata: {
+      annotations: {
+        'tanka.dev/namespaced': 'false',
+      },
+      name: 'grafana-namespaced-cloudintegrations',
+    },
+    spec: {
+      package: 'ghcr.io/grafana/crossplane/grafana-namespaced-cloudintegrations:%s' % version,
+    },
+  },
+
   cloudprovider(version): {
     apiVersion: 'pkg.crossplane.io/v1',
     kind: 'Configuration',

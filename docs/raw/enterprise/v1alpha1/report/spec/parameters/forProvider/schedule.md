@@ -63,8 +63,8 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Send the report on the last day of the month Defaults to false.
-Send the report on the last day of the month Defaults to `false`.
+(Boolean) Send the report on the last day of the month
+Send the report on the last day of the month
 ### fn withStartTime
 
 ```jsonnet
@@ -87,8 +87,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Set the report time zone. Defaults to GMT.
-Set the report time zone. Defaults to `GMT`.
+(String) Set the report time zone.
+Set the report time zone.
 ### fn withWorkdaysOnly
 
 ```jsonnet
@@ -100,5 +100,5 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
-(Boolean) Whether to send the report only on work days. Defaults to false.
-Whether to send the report only on work days. Defaults to `false`.
+(Boolean) Whether to send the report only on work days.
+Whether to send the report only on work days.

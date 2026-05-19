@@ -1217,6 +1217,35 @@
           withUrl(value): {
             url: value,
           },
+          '#withUrlSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The OnCall webhook URL (from secret).' } },
+          withUrlSecretRef(value): {
+            urlSecretRef: value,
+          },
+          '#withUrlSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The OnCall webhook URL (from secret).' } },
+          withUrlSecretRefMixin(value): {
+            urlSecretRef+: value,
+          },
+          urlSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                urlSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                urlSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                urlSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
         },
       '#withOpsgenie': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to OpsGenie. (see below for nested schema)\nA contact point that sends notifications to OpsGenie.' } },
       withOpsgenie(value): {
@@ -4491,6 +4520,35 @@
           withUrl(value): {
             url: value,
           },
+          '#withUrlSecretRef': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The OnCall webhook URL (from secret).' } },
+          withUrlSecretRef(value): {
+            urlSecretRef: value,
+          },
+          '#withUrlSecretRefMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['object'] }], help: 'The OnCall webhook URL (from secret).' } },
+          withUrlSecretRefMixin(value): {
+            urlSecretRef+: value,
+          },
+          urlSecretRef+:
+            {
+              '#withKey': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The key to select.' } },
+              withKey(value): {
+                urlSecretRef+: {
+                  key: value,
+                },
+              },
+              '#withName': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Name of the secret.' } },
+              withName(value): {
+                urlSecretRef+: {
+                  name: value,
+                },
+              },
+              '#withNamespace': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'Namespace of the secret.' } },
+              withNamespace(value): {
+                urlSecretRef+: {
+                  namespace: value,
+                },
+              },
+            },
         },
       '#withOpsgenie': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) A contact point that sends notifications to OpsGenie. (see below for nested schema)\nA contact point that sends notifications to OpsGenie.' } },
       withOpsgenie(value): {

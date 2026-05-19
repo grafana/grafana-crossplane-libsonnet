@@ -77,6 +77,7 @@
         * [`fn withFolderUid(value)`](#fn-specparametersforprovidermetadatawithfolderuid)
         * [`fn withUid(value)`](#fn-specparametersforprovidermetadatawithuid)
       * [`obj options`](#obj-specparametersforprovideroptions)
+        * [`fn withManagerIdentity(value)`](#fn-specparametersforprovideroptionswithmanageridentity)
         * [`fn withOverwrite(value=true)`](#fn-specparametersforprovideroptionswithoverwrite)
       * [`obj spec`](#obj-specparametersforproviderspec)
         * [`fn withAnnotations(value)`](#fn-specparametersforproviderspecwithannotations)
@@ -108,7 +109,24 @@
           * [`fn withGroupWait(value)`](#fn-specparametersforproviderspecnotificationsettingswithgroupwait)
           * [`fn withMuteTimings(value)`](#fn-specparametersforproviderspecnotificationsettingswithmutetimings)
           * [`fn withMuteTimingsMixin(value)`](#fn-specparametersforproviderspecnotificationsettingswithmutetimingsmixin)
+          * [`fn withNamedRoutingTree(value)`](#fn-specparametersforproviderspecnotificationsettingswithnamedroutingtree)
+          * [`fn withNamedRoutingTreeMixin(value)`](#fn-specparametersforproviderspecnotificationsettingswithnamedroutingtreemixin)
           * [`fn withRepeatInterval(value)`](#fn-specparametersforproviderspecnotificationsettingswithrepeatinterval)
+          * [`fn withSimplifiedRouting(value)`](#fn-specparametersforproviderspecnotificationsettingswithsimplifiedrouting)
+          * [`fn withSimplifiedRoutingMixin(value)`](#fn-specparametersforproviderspecnotificationsettingswithsimplifiedroutingmixin)
+          * [`obj namedRoutingTree`](#obj-specparametersforproviderspecnotificationsettingsnamedroutingtree)
+            * [`fn withRoutingTree(value)`](#fn-specparametersforproviderspecnotificationsettingsnamedroutingtreewithroutingtree)
+          * [`obj simplifiedRouting`](#obj-specparametersforproviderspecnotificationsettingssimplifiedrouting)
+            * [`fn withActiveTimings(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithactivetimings)
+            * [`fn withActiveTimingsMixin(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithactivetimingsmixin)
+            * [`fn withContactPoint(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithcontactpoint)
+            * [`fn withGroupBy(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithgroupby)
+            * [`fn withGroupByMixin(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithgroupbymixin)
+            * [`fn withGroupInterval(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithgroupinterval)
+            * [`fn withGroupWait(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithgroupwait)
+            * [`fn withMuteTimings(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithmutetimings)
+            * [`fn withMuteTimingsMixin(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithmutetimingsmixin)
+            * [`fn withRepeatInterval(value)`](#fn-specparametersforproviderspecnotificationsettingssimplifiedroutingwithrepeatinterval)
         * [`obj trigger`](#obj-specparametersforproviderspectrigger)
           * [`fn withInterval(value)`](#fn-specparametersforproviderspectriggerwithinterval)
     * [`obj initProvider`](#obj-specparametersinitprovider)
@@ -122,6 +140,7 @@
         * [`fn withFolderUid(value)`](#fn-specparametersinitprovidermetadatawithfolderuid)
         * [`fn withUid(value)`](#fn-specparametersinitprovidermetadatawithuid)
       * [`obj options`](#obj-specparametersinitprovideroptions)
+        * [`fn withManagerIdentity(value)`](#fn-specparametersinitprovideroptionswithmanageridentity)
         * [`fn withOverwrite(value=true)`](#fn-specparametersinitprovideroptionswithoverwrite)
       * [`obj spec`](#obj-specparametersinitproviderspec)
         * [`fn withAnnotations(value)`](#fn-specparametersinitproviderspecwithannotations)
@@ -153,7 +172,24 @@
           * [`fn withGroupWait(value)`](#fn-specparametersinitproviderspecnotificationsettingswithgroupwait)
           * [`fn withMuteTimings(value)`](#fn-specparametersinitproviderspecnotificationsettingswithmutetimings)
           * [`fn withMuteTimingsMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingswithmutetimingsmixin)
+          * [`fn withNamedRoutingTree(value)`](#fn-specparametersinitproviderspecnotificationsettingswithnamedroutingtree)
+          * [`fn withNamedRoutingTreeMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingswithnamedroutingtreemixin)
           * [`fn withRepeatInterval(value)`](#fn-specparametersinitproviderspecnotificationsettingswithrepeatinterval)
+          * [`fn withSimplifiedRouting(value)`](#fn-specparametersinitproviderspecnotificationsettingswithsimplifiedrouting)
+          * [`fn withSimplifiedRoutingMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingswithsimplifiedroutingmixin)
+          * [`obj namedRoutingTree`](#obj-specparametersinitproviderspecnotificationsettingsnamedroutingtree)
+            * [`fn withRoutingTree(value)`](#fn-specparametersinitproviderspecnotificationsettingsnamedroutingtreewithroutingtree)
+          * [`obj simplifiedRouting`](#obj-specparametersinitproviderspecnotificationsettingssimplifiedrouting)
+            * [`fn withActiveTimings(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithactivetimings)
+            * [`fn withActiveTimingsMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithactivetimingsmixin)
+            * [`fn withContactPoint(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithcontactpoint)
+            * [`fn withGroupBy(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithgroupby)
+            * [`fn withGroupByMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithgroupbymixin)
+            * [`fn withGroupInterval(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithgroupinterval)
+            * [`fn withGroupWait(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithgroupwait)
+            * [`fn withMuteTimings(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithmutetimings)
+            * [`fn withMuteTimingsMixin(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithmutetimingsmixin)
+            * [`fn withRepeatInterval(value)`](#fn-specparametersinitproviderspecnotificationsettingssimplifiedroutingwithrepeatinterval)
         * [`obj trigger`](#obj-specparametersinitproviderspectrigger)
           * [`fn withInterval(value)`](#fn-specparametersinitproviderspectriggerwithinterval)
     * [`obj providerConfigRef`](#obj-specparametersproviderconfigref)
@@ -892,6 +928,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.forProvider.withMetadataMixin
 
@@ -903,6 +940,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.forProvider.withOptions
 
@@ -914,6 +952,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.forProvider.withOptionsMixin
 
@@ -925,6 +964,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.forProvider.withSpec
 
@@ -936,6 +976,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
 ###### fn spec.parameters.forProvider.withSpecMixin
 
@@ -947,6 +988,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
 ###### obj spec.parameters.forProvider.metadata
 
@@ -961,7 +1003,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-The UID of the folder to save the resource in.
+(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
 ####### fn spec.parameters.forProvider.metadata.withUid
 
 ```jsonnet
@@ -972,10 +1015,22 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The unique identifier of the resource.
 The unique identifier of the resource.
 ###### obj spec.parameters.forProvider.options
 
 
+####### fn spec.parameters.forProvider.options.withManagerIdentity
+
+```jsonnet
+spec.parameters.forProvider.options.withManagerIdentity(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Override the identity stamped on this resource's manager metadata.
 ####### fn spec.parameters.forProvider.options.withOverwrite
 
 ```jsonnet
@@ -987,6 +1042,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
 Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
 ###### obj spec.parameters.forProvider.spec
 
@@ -1001,6 +1057,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Annotations of the resource.
 Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
 ####### fn spec.parameters.forProvider.spec.withAnnotationsMixin
 
@@ -1012,6 +1069,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Annotations of the resource.
 Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
 ####### fn spec.parameters.forProvider.spec.withExecErrState
 
@@ -1023,6 +1081,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.
 Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.
 ####### fn spec.parameters.forProvider.spec.withExpressions
 
@@ -1034,6 +1093,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 ####### fn spec.parameters.forProvider.spec.withExpressionsMixin
 
@@ -1045,6 +1105,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 ####### fn spec.parameters.forProvider.spec.withFor
 
@@ -1056,6 +1117,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.
 The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.
 ####### fn spec.parameters.forProvider.spec.withKeepFiringFor
 
@@ -1067,6 +1129,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
 The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
 ####### fn spec.parameters.forProvider.spec.withLabels
 
@@ -1078,6 +1141,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 ####### fn spec.parameters.forProvider.spec.withLabelsMixin
 
@@ -1089,6 +1153,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 ####### fn spec.parameters.forProvider.spec.withMissingSeriesEvalsToResolve
 
@@ -1100,6 +1165,7 @@ PARAMETERS:
 
 * **value** (`number`)
 
+(Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.
 The number of missing series evaluations that must occur before the rule is considered to be resolved.
 ####### fn spec.parameters.forProvider.spec.withNoDataState
 
@@ -1111,6 +1177,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.
 Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.
 ####### fn spec.parameters.forProvider.spec.withNotificationSettings
 
@@ -1122,7 +1189,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-Notification settings for the rule. If specified, it overrides the notification policies.
+(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)
+Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing
 ####### fn spec.parameters.forProvider.spec.withNotificationSettingsMixin
 
 ```jsonnet
@@ -1133,7 +1201,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-Notification settings for the rule. If specified, it overrides the notification policies.
+(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)
+Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing
 ####### fn spec.parameters.forProvider.spec.withPanelRef
 
 ```jsonnet
@@ -1144,6 +1213,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 ####### fn spec.parameters.forProvider.spec.withPanelRefMixin
 
@@ -1155,6 +1225,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 ####### fn spec.parameters.forProvider.spec.withPaused
 
@@ -1167,6 +1238,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
+(Boolean) Sets whether the rule should be paused or not.
 Sets whether the rule should be paused or not.
 ####### fn spec.parameters.forProvider.spec.withTitle
 
@@ -1178,6 +1250,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The title of the alert rule.
 The title of the alert rule.
 ####### fn spec.parameters.forProvider.spec.withTrigger
 
@@ -1189,6 +1262,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)
 The trigger configuration for the alert rule.
 ####### fn spec.parameters.forProvider.spec.withTriggerMixin
 
@@ -1200,6 +1274,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)
 The trigger configuration for the alert rule.
 ####### obj spec.parameters.forProvider.spec.notificationSettings
 
@@ -1214,7 +1289,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+Deprecated. A list of time interval names to apply to alerts that match this policy.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withActiveTimingsMixin
 
 ```jsonnet
@@ -1225,7 +1301,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+Deprecated. A list of time interval names to apply to alerts that match this policy.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withContactPoint
 
 ```jsonnet
@@ -1236,7 +1313,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-The contact point to route notifications that match this rule to.
+(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.
+Deprecated. The contact point to route notifications that match this rule to.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupBy
 
 ```jsonnet
@@ -1247,7 +1325,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of alert labels to group alerts into notifications by.
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+Deprecated. A list of alert labels to group alerts into notifications by.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupByMixin
 
 ```jsonnet
@@ -1258,7 +1337,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of alert labels to group alerts into notifications by.
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+Deprecated. A list of alert labels to group alerts into notifications by.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupInterval
 
 ```jsonnet
@@ -1269,7 +1349,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-Minimum time interval between two notifications for the same group.
+(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.
+Deprecated. Minimum time interval between two notifications for the same group.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withGroupWait
 
 ```jsonnet
@@ -1280,7 +1361,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-Time to wait to buffer alerts of the same group before sending a notification.
+(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.
+Deprecated. Time to wait to buffer alerts of the same group before sending a notification.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withMuteTimings
 
 ```jsonnet
@@ -1291,7 +1373,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of mute timing names to apply to alerts that match this policy.
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+Deprecated. A list of mute timing names to apply to alerts that match this policy.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withMuteTimingsMixin
 
 ```jsonnet
@@ -1302,7 +1385,32 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of mute timing names to apply to alerts that match this policy.
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+Deprecated. A list of mute timing names to apply to alerts that match this policy.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withNamedRoutingTree
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withNamedRoutingTree(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)
+Route notifications to a specific routing tree.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withNamedRoutingTreeMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withNamedRoutingTreeMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)
+Route notifications to a specific routing tree.
 ######## fn spec.parameters.forProvider.spec.notificationSettings.withRepeatInterval
 
 ```jsonnet
@@ -1313,6 +1421,169 @@ PARAMETERS:
 
 * **value** (`string`)
 
+sending a notification if an alert is still firing.
+Deprecated. Minimum time interval for re-sending a notification if an alert is still firing.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withSimplifiedRouting
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withSimplifiedRouting(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)
+Simplified routing to a contact point with optional grouping and timing overrides.
+######## fn spec.parameters.forProvider.spec.notificationSettings.withSimplifiedRoutingMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.withSimplifiedRoutingMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)
+Simplified routing to a contact point with optional grouping and timing overrides.
+######## obj spec.parameters.forProvider.spec.notificationSettings.namedRoutingTree
+
+
+######### fn spec.parameters.forProvider.spec.notificationSettings.namedRoutingTree.withRoutingTree
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.namedRoutingTree.withRoutingTree(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of the routing tree to use.
+The name of the routing tree to use.
+######## obj spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting
+
+
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withActiveTimings
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withActiveTimings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withActiveTimingsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withActiveTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withContactPoint
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withContactPoint(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.
+The contact point to route notifications that match this rule to.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupBy
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupBy(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+A list of alert labels to group alerts into notifications by.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupByMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupByMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+A list of alert labels to group alerts into notifications by.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupInterval
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.
+Minimum time interval between two notifications for the same group.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupWait
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withGroupWait(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.
+Time to wait to buffer alerts of the same group before sending a notification.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withMuteTimings
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withMuteTimings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+A list of mute timing names to apply to alerts that match this policy.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withMuteTimingsMixin
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withMuteTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+A list of mute timing names to apply to alerts that match this policy.
+######### fn spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withRepeatInterval
+
+```jsonnet
+spec.parameters.forProvider.spec.notificationSettings.simplifiedRouting.withRepeatInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+sending a notification if an alert is still firing.
 Minimum time interval for re-sending a notification if an alert is still firing.
 ####### obj spec.parameters.forProvider.spec.trigger
 
@@ -1327,6 +1598,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The interval at which the alert rule should be evaluated.
 The interval at which the alert rule should be evaluated.
 ##### obj spec.parameters.initProvider
 
@@ -1341,6 +1613,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.initProvider.withMetadataMixin
 
@@ -1352,6 +1625,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The metadata of the resource. (see below for nested schema)
 The metadata of the resource.
 ###### fn spec.parameters.initProvider.withOptions
 
@@ -1363,6 +1637,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.initProvider.withOptionsMixin
 
@@ -1374,6 +1649,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) Options for applying the resource. (see below for nested schema)
 Options for applying the resource.
 ###### fn spec.parameters.initProvider.withSpec
 
@@ -1385,6 +1661,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
 ###### fn spec.parameters.initProvider.withSpecMixin
 
@@ -1396,6 +1673,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The spec of the resource. (see below for nested schema)
 The spec of the resource.
 ###### obj spec.parameters.initProvider.metadata
 
@@ -1410,7 +1688,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-The UID of the folder to save the resource in.
+(String) The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
+The UID of the folder to save the resource in. For example, it's supported for dashboards and folders. To know if it's supported for the specific resource you're using check the documentation.
 ####### fn spec.parameters.initProvider.metadata.withUid
 
 ```jsonnet
@@ -1421,10 +1700,22 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The unique identifier of the resource.
 The unique identifier of the resource.
 ###### obj spec.parameters.initProvider.options
 
 
+####### fn spec.parameters.initProvider.options.withManagerIdentity
+
+```jsonnet
+spec.parameters.initProvider.options.withManagerIdentity(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+Override the identity stamped on this resource's manager metadata.
 ####### fn spec.parameters.initProvider.options.withOverwrite
 
 ```jsonnet
@@ -1436,6 +1727,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
+(Boolean) Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
 Set to true if you want to overwrite existing resource with newer version, same resource title in folder or same resource uid.
 ###### obj spec.parameters.initProvider.spec
 
@@ -1450,6 +1742,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Annotations of the resource.
 Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
 ####### fn spec.parameters.initProvider.spec.withAnnotationsMixin
 
@@ -1461,6 +1754,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Annotations of the resource.
 Key-value pairs of metadata to attach to the alert rule. They add additional information, such as a `summary` or `runbook_url`, to help identify and investigate alerts.
 ####### fn spec.parameters.initProvider.spec.withExecErrState
 
@@ -1472,6 +1766,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.
 Describes what state to enter when the rule's query is invalid and the rule cannot be executed. Options are OK, Error, KeepLast, and Alerting.
 ####### fn spec.parameters.initProvider.spec.withExpressions
 
@@ -1483,6 +1778,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 ####### fn spec.parameters.initProvider.spec.withExpressionsMixin
 
@@ -1494,6 +1790,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 A sequence of stages that describe the contents of the rule. Each value is a JSON string representing an expression object.
 ####### fn spec.parameters.initProvider.spec.withFor
 
@@ -1505,6 +1802,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.
 The amount of time for which the rule must be breached for the rule to be considered to be Firing. Before this time has elapsed, the rule is only considered to be Pending.
 ####### fn spec.parameters.initProvider.spec.withKeepFiringFor
 
@@ -1516,6 +1814,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
 The amount of time for which the rule will considered to be Recovering after initially Firing. Before this time has elapsed, the rule will continue to fire once it's been triggered.
 ####### fn spec.parameters.initProvider.spec.withLabels
 
@@ -1527,6 +1826,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 ####### fn spec.parameters.initProvider.spec.withLabelsMixin
 
@@ -1538,6 +1838,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 Key-value pairs to attach to the alert rule that can be used in matching, grouping, and routing.
 ####### fn spec.parameters.initProvider.spec.withMissingSeriesEvalsToResolve
 
@@ -1549,6 +1850,7 @@ PARAMETERS:
 
 * **value** (`number`)
 
+(Number) The number of missing series evaluations that must occur before the rule is considered to be resolved.
 The number of missing series evaluations that must occur before the rule is considered to be resolved.
 ####### fn spec.parameters.initProvider.spec.withNoDataState
 
@@ -1560,6 +1862,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.
 Describes what state to enter when the rule's query returns No Data. Options are OK, NoData, KeepLast, and Alerting.
 ####### fn spec.parameters.initProvider.spec.withNotificationSettings
 
@@ -1571,7 +1874,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-Notification settings for the rule. If specified, it overrides the notification policies.
+(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)
+Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing
 ####### fn spec.parameters.initProvider.spec.withNotificationSettingsMixin
 
 ```jsonnet
@@ -1582,7 +1886,8 @@ PARAMETERS:
 
 * **value** (`object`)
 
-Notification settings for the rule. If specified, it overrides the notification policies.
+(Block, Optional) Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing (see below for nested schema)
+Notification settings for the rule. If specified, it overrides the notification policies. The flat configuration is deprecated, please specify one of named_routing_tree or simplified_routing
 ####### fn spec.parameters.initProvider.spec.withPanelRef
 
 ```jsonnet
@@ -1593,6 +1898,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 ####### fn spec.parameters.initProvider.spec.withPanelRefMixin
 
@@ -1604,6 +1910,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Map of String) Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 Reference to a panel that this alert rule is associated with. Should be an object with 'dashboard_uid' (string) and 'panel_id' (number) fields.
 ####### fn spec.parameters.initProvider.spec.withPaused
 
@@ -1616,6 +1923,7 @@ PARAMETERS:
 * **value** (`boolean`)
    - default value: `true`
 
+(Boolean) Sets whether the rule should be paused or not.
 Sets whether the rule should be paused or not.
 ####### fn spec.parameters.initProvider.spec.withTitle
 
@@ -1627,6 +1935,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The title of the alert rule.
 The title of the alert rule.
 ####### fn spec.parameters.initProvider.spec.withTrigger
 
@@ -1638,6 +1947,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)
 The trigger configuration for the alert rule.
 ####### fn spec.parameters.initProvider.spec.withTriggerMixin
 
@@ -1649,6 +1959,7 @@ PARAMETERS:
 
 * **value** (`object`)
 
+(Block, Optional) The trigger configuration for the alert rule. (see below for nested schema)
 The trigger configuration for the alert rule.
 ####### obj spec.parameters.initProvider.spec.notificationSettings
 
@@ -1663,7 +1974,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+Deprecated. A list of time interval names to apply to alerts that match this policy.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withActiveTimingsMixin
 
 ```jsonnet
@@ -1674,7 +1986,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+Deprecated. A list of time interval names to apply to alerts that match this policy.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withContactPoint
 
 ```jsonnet
@@ -1685,7 +1998,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-The contact point to route notifications that match this rule to.
+(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.
+Deprecated. The contact point to route notifications that match this rule to.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupBy
 
 ```jsonnet
@@ -1696,7 +2010,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of alert labels to group alerts into notifications by.
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+Deprecated. A list of alert labels to group alerts into notifications by.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupByMixin
 
 ```jsonnet
@@ -1707,7 +2022,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of alert labels to group alerts into notifications by.
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+Deprecated. A list of alert labels to group alerts into notifications by.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupInterval
 
 ```jsonnet
@@ -1718,7 +2034,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-Minimum time interval between two notifications for the same group.
+(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.
+Deprecated. Minimum time interval between two notifications for the same group.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withGroupWait
 
 ```jsonnet
@@ -1729,7 +2046,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-Time to wait to buffer alerts of the same group before sending a notification.
+(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.
+Deprecated. Time to wait to buffer alerts of the same group before sending a notification.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withMuteTimings
 
 ```jsonnet
@@ -1740,7 +2058,8 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of mute timing names to apply to alerts that match this policy.
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+Deprecated. A list of mute timing names to apply to alerts that match this policy.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withMuteTimingsMixin
 
 ```jsonnet
@@ -1751,7 +2070,32 @@ PARAMETERS:
 
 * **value** (`array`)
 
-A list of mute timing names to apply to alerts that match this policy.
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+Deprecated. A list of mute timing names to apply to alerts that match this policy.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withNamedRoutingTree
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withNamedRoutingTree(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)
+Route notifications to a specific routing tree.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withNamedRoutingTreeMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withNamedRoutingTreeMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Route notifications to a specific routing tree. (see below for nested schema)
+Route notifications to a specific routing tree.
 ######## fn spec.parameters.initProvider.spec.notificationSettings.withRepeatInterval
 
 ```jsonnet
@@ -1762,6 +2106,169 @@ PARAMETERS:
 
 * **value** (`string`)
 
+sending a notification if an alert is still firing.
+Deprecated. Minimum time interval for re-sending a notification if an alert is still firing.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withSimplifiedRouting
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withSimplifiedRouting(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)
+Simplified routing to a contact point with optional grouping and timing overrides.
+######## fn spec.parameters.initProvider.spec.notificationSettings.withSimplifiedRoutingMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.withSimplifiedRoutingMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`object`)
+
+(Block, Optional) Simplified routing to a contact point with optional grouping and timing overrides. (see below for nested schema)
+Simplified routing to a contact point with optional grouping and timing overrides.
+######## obj spec.parameters.initProvider.spec.notificationSettings.namedRoutingTree
+
+
+######### fn spec.parameters.initProvider.spec.notificationSettings.namedRoutingTree.withRoutingTree
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.namedRoutingTree.withRoutingTree(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The name of the routing tree to use.
+The name of the routing tree to use.
+######## obj spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting
+
+
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withActiveTimings
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withActiveTimings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withActiveTimingsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withActiveTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of time interval names to apply to alerts that match this policy.
+A list of time interval names to apply to alerts that match this policy to suppress them unless they are sent at the specified time.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withContactPoint
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withContactPoint(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String, Deprecated) Deprecated. The contact point to route notifications that match this rule to.
+The contact point to route notifications that match this rule to.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupBy
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupBy(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+A list of alert labels to group alerts into notifications by.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupByMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupByMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of alert labels to group alerts into notifications by.
+A list of alert labels to group alerts into notifications by.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupInterval
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String, Deprecated) Deprecated. Minimum time interval between two notifications for the same group.
+Minimum time interval between two notifications for the same group.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupWait
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withGroupWait(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String, Deprecated) Deprecated. Time to wait to buffer alerts of the same group before sending a notification.
+Time to wait to buffer alerts of the same group before sending a notification.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withMuteTimings
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withMuteTimings(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+A list of mute timing names to apply to alerts that match this policy.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withMuteTimingsMixin
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withMuteTimingsMixin(value)
+```
+
+PARAMETERS:
+
+* **value** (`array`)
+
+(List of String, Deprecated) Deprecated. A list of mute timing names to apply to alerts that match this policy.
+A list of mute timing names to apply to alerts that match this policy.
+######### fn spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withRepeatInterval
+
+```jsonnet
+spec.parameters.initProvider.spec.notificationSettings.simplifiedRouting.withRepeatInterval(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+sending a notification if an alert is still firing.
 Minimum time interval for re-sending a notification if an alert is still firing.
 ####### obj spec.parameters.initProvider.spec.trigger
 
@@ -1776,6 +2283,7 @@ PARAMETERS:
 
 * **value** (`string`)
 
+(String) The interval at which the alert rule should be evaluated.
 The interval at which the alert rule should be evaluated.
 ##### obj spec.parameters.providerConfigRef
 

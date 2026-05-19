@@ -43,7 +43,7 @@
           },
         },
       },
-      '#withItem': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Min: 1) (see below for nested schema)' } },
+      '#withItem': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) (see below for nested schema)' } },
       withItem(value): {
         spec+: {
           parameters+: {
@@ -56,7 +56,7 @@
           },
         },
       },
-      '#withItemMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Min: 1) (see below for nested schema)' } },
+      '#withItemMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) (see below for nested schema)' } },
       withItemMixin(value): {
         spec+: {
           parameters+: {
@@ -338,7 +338,7 @@
           },
         },
       },
-      '#withItem': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Min: 1) (see below for nested schema)' } },
+      '#withItem': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) (see below for nested schema)' } },
       withItem(value): {
         spec+: {
           parameters+: {
@@ -351,7 +351,7 @@
           },
         },
       },
-      '#withItemMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set, Min: 1) (see below for nested schema)' } },
+      '#withItemMixin': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['array'] }], help: '(Block Set) (see below for nested schema)' } },
       withItemMixin(value): {
         spec+: {
           parameters+: {

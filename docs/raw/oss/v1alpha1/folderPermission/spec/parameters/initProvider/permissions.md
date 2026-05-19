@@ -61,8 +61,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) Permission to associate with item. Must be one of View, Edit, or Admin.
-Permission to associate with item. Must be one of `View`, `Edit`, or `Admin`.
+(String) Permission to associate with item. Options: View, Edit, Admin.
+Permission to associate with item. Options: View, Edit, Admin.
 ### fn withRole
 
 ```jsonnet
@@ -85,8 +85,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) ID of the team to manage permissions for. Defaults to 0.
-ID of the team to manage permissions for. Defaults to `0`.
+(String) ID of the team to manage permissions for.
+ID of the team to manage permissions for.
 ### fn withTeamRef
 
 ```jsonnet
@@ -141,8 +141,8 @@ PARAMETERS:
 
 * **value** (`string`)
 
-(String) ID of the user or service account to manage permissions for. Defaults to 0.
-ID of the user or service account to manage permissions for. Defaults to `0`.
+(String) ID of the user or service account to manage permissions for.
+ID of the user or service account to manage permissions for.
 ### fn withUserRef
 
 ```jsonnet

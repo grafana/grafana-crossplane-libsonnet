@@ -76,6 +76,7 @@
       * [`fn withDataSourceRefMixin(value)`](#fn-specparametersforproviderwithdatasourcerefmixin)
       * [`fn withDataSourceSelector(value)`](#fn-specparametersforproviderwithdatasourceselector)
       * [`fn withDataSourceSelectorMixin(value)`](#fn-specparametersforproviderwithdatasourceselectormixin)
+      * [`fn withDatasourceType(value)`](#fn-specparametersforproviderwithdatasourcetype)
       * [`fn withDatasourceUid(value)`](#fn-specparametersforproviderwithdatasourceuid)
       * [`fn withOrgId(value)`](#fn-specparametersforproviderwithorgid)
       * [`fn withOrganizationRef(value)`](#fn-specparametersforproviderwithorganizationref)
@@ -121,6 +122,7 @@
       * [`fn withDataSourceRefMixin(value)`](#fn-specparametersinitproviderwithdatasourcerefmixin)
       * [`fn withDataSourceSelector(value)`](#fn-specparametersinitproviderwithdatasourceselector)
       * [`fn withDataSourceSelectorMixin(value)`](#fn-specparametersinitproviderwithdatasourceselectormixin)
+      * [`fn withDatasourceType(value)`](#fn-specparametersinitproviderwithdatasourcetype)
       * [`fn withDatasourceUid(value)`](#fn-specparametersinitproviderwithdatasourceuid)
       * [`fn withOrgId(value)`](#fn-specparametersinitproviderwithorgid)
       * [`fn withOrganizationRef(value)`](#fn-specparametersinitproviderwithorganizationref)
@@ -931,6 +933,18 @@ PARAMETERS:
 * **value** (`object`)
 
 Selector for a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.forProvider.withDatasourceType
+
+```jsonnet
+spec.parameters.forProvider.withDatasourceType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
+The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
 ###### fn spec.parameters.forProvider.withDatasourceUid
 
 ```jsonnet
@@ -1398,6 +1412,18 @@ PARAMETERS:
 * **value** (`object`)
 
 Selector for a DataSource in oss to populate datasourceUid.
+###### fn spec.parameters.initProvider.withDatasourceType
+
+```jsonnet
+spec.parameters.initProvider.withDatasourceType(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+(String) The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
+The plugin type of the datasource (e.g. "prometheus"). If set, skips the lookup of the datasource type from the API.
 ###### fn spec.parameters.initProvider.withDatasourceUid
 
 ```jsonnet

@@ -6,6 +6,8 @@ local crds = import './crds.libsonnet';
 local exclude = [
   'awsresourcemetadatascrapejobs.cloudprovider.grafana.crossplane.io',
   'privatedatasourceconnectnetworktokens.cloud.grafana.crossplane.io',
+  // This doesn't currently work with code generation
+  'resources.oss.grafana.crossplane.io',
 ];
 
 // XRD metadata.name consists of `plural+group`, for some resources this became longer than 63 characters, which resulted in this error:

@@ -50,6 +50,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.labels
                 toFieldPath: spec.forProvider.labels
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.probeNames
+                toFieldPath: spec.forProvider.probeNames
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.probes
                 toFieldPath: spec.forProvider.probes
                 type: FromCompositeFieldPath
@@ -79,6 +82,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.labels
                 toFieldPath: spec.initProvider.labels
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.probeNames
+                toFieldPath: spec.initProvider.probeNames
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.probes
                 toFieldPath: spec.initProvider.probes
