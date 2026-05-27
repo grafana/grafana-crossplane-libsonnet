@@ -8,7 +8,7 @@
           "subdir": ""
         }
       },
-      "version": "master"
+      "version": "8e5e345e7933f3e7c19e950710d5c648eb16e1c8"
     },
     {
       "source": {
@@ -17,7 +17,7 @@
           "subdir": ""
         }
       },
-      "version": "master"
+      "version": "349569e180192547cb37cb94b3caea05384a81ff"
     },
     {
       "source": {
@@ -26,7 +26,7 @@
           "subdir": "crdsonnet"
         }
       },
-      "version": "master"
+      "version": "f2f3c043f329edd4dd59ba89128258a59ee3363e"
     },
     {
       "source": {
@@ -35,7 +35,7 @@
           "subdir": ""
         }
       },
-      "version": "duologic/rfc1123"
+      "version": "6b473999814b9eeede12a65177a529428a3a8e74"
     }
   ],
   "legacyImports": false
