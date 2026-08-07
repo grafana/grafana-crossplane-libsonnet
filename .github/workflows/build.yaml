@@ -23,7 +23,7 @@ jobs:
           version: v0.20.0
 
       - name: setup jrsonnet
-        uses: grafana/shared-workflows/actions/setup-jrsonnet@712fac3f2b51b2a812bf39cf334058346121d67a # setup-jrsonnet/v1.0.2
+        uses: grafana/shared-workflows/actions/setup-jrsonnet@b3d995239390fe5b53ad3c0f5343993bf7fd95cd # setup-jrsonnet/v1.0.3
         with:
           version: 0.5.0-pre96-test
 
