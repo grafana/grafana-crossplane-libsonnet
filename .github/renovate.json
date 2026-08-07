@@ -3,7 +3,9 @@
   "extends": ["github>grafana/grafana-renovate-config//presets/base"],
   "jsonnet-bundler": {
     "enabled": true,
-    "fileMatch": ["(^|/)generator/jsonnetfile\\.json$"]
+    "managerFilePatterns": [
+      "/(^|/)generator/jsonnetfile\\.json$/"
+    ]
   },
   "packageRules": [
     {
