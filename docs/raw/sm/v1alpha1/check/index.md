@@ -75,6 +75,7 @@
       * [`fn withAlertSensitivity(value)`](#fn-specparametersforproviderwithalertsensitivity)
       * [`fn withBasicMetricsOnly(value=true)`](#fn-specparametersforproviderwithbasicmetricsonly)
       * [`fn withEnabled(value=true)`](#fn-specparametersforproviderwithenabled)
+      * [`fn withFolderUid(value)`](#fn-specparametersforproviderwithfolderuid)
       * [`fn withFrequency(value)`](#fn-specparametersforproviderwithfrequency)
       * [`fn withJob(value)`](#fn-specparametersforproviderwithjob)
       * [`fn withLabels(value)`](#fn-specparametersforproviderwithlabels)
@@ -91,6 +92,7 @@
       * [`fn withAlertSensitivity(value)`](#fn-specparametersinitproviderwithalertsensitivity)
       * [`fn withBasicMetricsOnly(value=true)`](#fn-specparametersinitproviderwithbasicmetricsonly)
       * [`fn withEnabled(value=true)`](#fn-specparametersinitproviderwithenabled)
+      * [`fn withFolderUid(value)`](#fn-specparametersinitproviderwithfolderuid)
       * [`fn withFrequency(value)`](#fn-specparametersinitproviderwithfrequency)
       * [`fn withJob(value)`](#fn-specparametersinitproviderwithjob)
       * [`fn withLabels(value)`](#fn-specparametersinitproviderwithlabels)
@@ -867,6 +869,17 @@ PARAMETERS:
 
 (Boolean) Whether to enable the check. Defaults to true.
 Whether to enable the check. Defaults to `true`.
+###### fn spec.parameters.forProvider.withFolderUid
+
+```jsonnet
+spec.parameters.forProvider.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The UID of the folder containing the check. Requires provider-grafana v2.13.0 or later.
 ###### fn spec.parameters.forProvider.withFrequency
 
 ```jsonnet
@@ -1054,6 +1067,17 @@ PARAMETERS:
 
 (Boolean) Whether to enable the check. Defaults to true.
 Whether to enable the check. Defaults to `true`.
+###### fn spec.parameters.initProvider.withFolderUid
+
+```jsonnet
+spec.parameters.initProvider.withFolderUid(value)
+```
+
+PARAMETERS:
+
+* **value** (`string`)
+
+The UID of the folder containing the check. Requires provider-grafana v2.13.0 or later.
 ###### fn spec.parameters.initProvider.withFrequency
 
 ```jsonnet
