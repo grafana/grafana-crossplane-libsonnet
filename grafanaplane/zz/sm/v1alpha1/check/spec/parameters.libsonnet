@@ -63,6 +63,16 @@
           },
         },
       },
+      '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder containing the check. Requires provider-grafana v2.13.0 or later.' } },
+      withFolderUid(value): {
+        spec+: {
+          parameters+: {
+            forProvider+: {
+              folderUid: value,
+            },
+          },
+        },
+      },
       '#withFrequency': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['number'] }], help: '(Number) How often the check runs in milliseconds (the value is not truly a "frequency" but a "period"). The minimum acceptable value is 1 second (1000 ms), and the maximum is 1 hour (3600000 ms). Defaults to 60000.\nHow often the check runs in milliseconds (the value is not truly a "frequency" but a "period"). The minimum acceptable value is 1 second (1000 ms), and the maximum is 1 hour (3600000 ms). Defaults to `60000`.' } },
       withFrequency(value): {
         spec+: {
@@ -1325,6 +1335,16 @@
           parameters+: {
             initProvider+: {
               enabled: value,
+            },
+          },
+        },
+      },
+      '#withFolderUid': { 'function': { args: [{ default: null, enums: null, name: 'value', type: ['string'] }], help: 'The UID of the folder containing the check. Requires provider-grafana v2.13.0 or later.' } },
+      withFolderUid(value): {
+        spec+: {
+          parameters+: {
+            initProvider+: {
+              folderUid: value,
             },
           },
         },
