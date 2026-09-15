@@ -16,7 +16,7 @@ function(providerVersion)
     + metaConf.spec.withDependsOn(
       [
         metaConf.spec.dependsOn.withProvider('xpkg.upbound.io/grafana/provider-grafana')
-        + metaConf.spec.dependsOn.withVersion('>=%s' % providerVersion),
+        + metaConf.spec.dependsOn.withVersion('>=%s' % (if key == 'grafana-namespaced-sm' then 'v2.13.0' else providerVersion)),
         metaConf.spec.dependsOn.withProvider('ghcr.io/grafana/crossplane-function-grafana-data')
         + metaConf.spec.dependsOn.withVersion('>=v0.0.4'),
       ]
