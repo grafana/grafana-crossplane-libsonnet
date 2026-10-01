@@ -41,6 +41,9 @@ spec:
               - fromFieldPath: spec.parameters.forProvider.enabled
                 toFieldPath: spec.forProvider.enabled
                 type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.forProvider.folderUid
+                toFieldPath: spec.forProvider.folderUid
+                type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.forProvider.frequency
                 toFieldPath: spec.forProvider.frequency
                 type: FromCompositeFieldPath
@@ -73,6 +76,9 @@ spec:
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.enabled
                 toFieldPath: spec.initProvider.enabled
+                type: FromCompositeFieldPath
+              - fromFieldPath: spec.parameters.initProvider.folderUid
+                toFieldPath: spec.initProvider.folderUid
                 type: FromCompositeFieldPath
               - fromFieldPath: spec.parameters.initProvider.frequency
                 toFieldPath: spec.initProvider.frequency

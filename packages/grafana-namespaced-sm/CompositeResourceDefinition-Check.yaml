@@ -69,6 +69,9 @@ spec:
                             (Boolean) Whether to enable the check. Defaults to true.
                             Whether to enable the check. Defaults to `true`.
                           type: boolean
+                        folderUid:
+                          description: The UID of the folder containing the check. Requires provider-grafana v2.13.0 or later.
+                          type: string
                         frequency:
                           description: |-
                             (Number) How often the check runs in milliseconds (the value is not truly a "frequency" but a "period"). The minimum acceptable value is 1 second (1000 ms), and the maximum is 1 hour (3600000 ms). Defaults to 60000.
@@ -904,6 +907,9 @@ spec:
                             (Boolean) Whether to enable the check. Defaults to true.
                             Whether to enable the check. Defaults to `true`.
                           type: boolean
+                        folderUid:
+                          description: The UID of the folder containing the check. Requires provider-grafana v2.13.0 or later.
+                          type: string
                         frequency:
                           description: |-
                             (Number) How often the check runs in milliseconds (the value is not truly a "frequency" but a "period"). The minimum acceptable value is 1 second (1000 ms), and the maximum is 1 hour (3600000 ms). Defaults to 60000.
