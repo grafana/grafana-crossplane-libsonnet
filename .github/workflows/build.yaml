@@ -18,7 +18,7 @@ jobs:
         uses: crossplane-contrib/setup-crossplane-action@cb8aac3f1246b19f101e7f85fd0a38623b4d5ad3 # v0.1.1
 
       - name: setup go-jsonnet
-        uses: zendesk/setup-jsonnet@74119dac8a540c99167a65f14aa1ee99ff143ec2 # v16
+        uses: zendesk/setup-jsonnet@76fef91403b40b20e4344a88f6c06a85be4f97d4 # v17
         with:
           version: v0.20.0
 
